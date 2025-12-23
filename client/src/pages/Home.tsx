@@ -25,13 +25,13 @@ export default function Home() {
         
         {/* Left Side: FIRE (Steak) */}
         <div className="relative w-full md:w-1/2 h-1/2 md:h-full group overflow-hidden border-b md:border-b-0 md:border-r border-border">
-          <div className="absolute inset-0 bg-[url('/images/hero-tomahawk.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500"></div>
+          <div className="absolute inset-0 bg-[url('/images/hero-tomahawk-plancha.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
+          <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-colors duration-500"></div>
           
           <div className="absolute inset-0 flex flex-col justify-center items-center p-8 text-center z-10">
             <Flame className="w-16 h-16 text-primary mb-4 animate-pulse" />
             <h1 className="text-6xl md:text-8xl font-display text-white mb-2 tracking-tighter">FIRE</h1>
-            <p className="text-xl md:text-2xl font-body text-gray-300 mb-8 max-w-md">
+            <p className="text-xl md:text-2xl font-body text-gray-200 mb-8 max-w-md">
               Ein Steak. Eine Gruppe. Ein Erlebnis.
             </p>
             <Dialog>
@@ -49,8 +49,8 @@ export default function Home() {
                 
                 <div className="space-y-6 py-4">
                   <div className="bg-muted/50 p-4 border border-border">
-                    <p className="text-sm text-muted-foreground mb-2 font-bold uppercase tracking-wider">Die Regel:</p>
-                    <ul className="text-sm space-y-1 list-disc list-inside text-gray-300">
+                    <p className="text-sm text-gray-400 mb-2 font-bold uppercase tracking-wider">Die Regel:</p>
+                    <ul className="text-sm space-y-1 list-disc list-inside text-gray-200">
                       <li>Nur für Gruppen (2-4 Personen)</li>
                       <li>Nur Tomahawk (800-1500g)</li>
                       <li>Nur Do-So ab 19 Uhr</li>
@@ -93,9 +93,9 @@ export default function Home() {
                     </div>
 
                     <div className="bg-secondary p-4 border border-border text-center">
-                      <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Preis (10€ / 100g)</div>
+                      <div className="text-sm text-gray-400 uppercase tracking-wider mb-1">Preis (10€ / 100g)</div>
                       <div className="text-4xl font-display text-white mb-1">{price}€</div>
-                      <div className="text-sm text-primary">ca. {pricePerPerson}€ pro Person</div>
+                      <div className="text-sm text-primary font-bold">ca. {pricePerPerson}€ pro Person</div>
                     </div>
                     
                     <div className="text-xs text-center text-muted-foreground italic">
@@ -115,7 +115,7 @@ export default function Home() {
         {/* Right Side: 400 (Wine) */}
         <div className="relative w-full md:w-1/2 h-1/2 md:h-full group overflow-hidden">
           <div className="absolute inset-0 bg-[url('/images/hero-wine.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors duration-500"></div>
+          <div className="absolute inset-0 bg-black/70 group-hover:bg-black/50 transition-colors duration-500"></div>
           
           <div className="absolute inset-0 flex flex-col justify-center items-center p-8 text-center z-10">
             <Wine className="w-16 h-16 text-white mb-4" />
@@ -195,7 +195,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
           <div className="absolute bottom-0 left-0 p-8">
             <h3 className="text-4xl font-display text-white mb-2">The Vibe</h3>
-            <p className="text-gray-300">Ab 21 Uhr drehen wir auf. Party-Feeling garantiert.</p>
+            <p className="text-gray-300">Essen bis 21 Uhr. Danach: Eskalation möglich.</p>
           </div>
         </div>
       </section>
