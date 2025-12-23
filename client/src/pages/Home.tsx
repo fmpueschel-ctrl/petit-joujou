@@ -53,7 +53,7 @@ export default function Home() {
                     <ul className="text-sm space-y-1 list-disc list-inside text-gray-200">
                       <li>Nur für Gruppen (2-4 Personen)</li>
                       <li>Nur Tomahawk (800-1500g)</li>
-                      <li>Nur Do-So ab 19 Uhr</li>
+                      <li>Do-Fr ab 18 Uhr, Sa-So ab 12 Uhr</li>
                       <li>Passt nicht? <span className="text-primary font-bold">Move on.</span></li>
                     </ul>
                   </div>
@@ -175,8 +175,8 @@ export default function Home() {
           <Clock className="w-12 h-12 text-primary mb-6" />
           <h3 className="text-2xl font-display text-white mb-4">Nur Do-So</h3>
           <p className="text-gray-400">
-            Donnerstag bis Sonntag ab 19 Uhr. 
-            Maximal 26 Gäste pro Abend. 
+            Do & Fr ab 18 Uhr. Sa & So ab 12 Uhr.
+            Maximal 26 Gäste gleichzeitig. 
             Reservierung zwingend erforderlich.
           </p>
         </div>
@@ -195,7 +195,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
           <div className="absolute bottom-0 left-0 p-8">
             <h3 className="text-4xl font-display text-white mb-2">The Vibe</h3>
-            <p className="text-gray-300">Essen bis 21 Uhr. Danach: Eskalation möglich.</p>
+            <p className="text-gray-300">Grooviger Sound. Ab 20 Uhr drehen wir auf.</p>
           </div>
         </div>
       </section>
