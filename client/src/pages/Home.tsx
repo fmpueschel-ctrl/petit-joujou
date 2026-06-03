@@ -39,47 +39,70 @@ function Nav() {
     { label: "Gesellschaften", href: "#gesellschaften" },
   ];
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50"
-      style={{
-        backgroundColor: "rgba(253,248,244,0.94)",
-        backdropFilter: "blur(14px)",
-        borderBottom: `1px solid ${C.border}`,
-      }}
-    >
-      <div className="container flex items-center justify-between" style={{ height: "60px" }}>
-        <a href="#" style={{ textDecoration: "none" }}>
-          <span className="font-script" style={{ fontSize: "1.7rem", color: C.sageDark, letterSpacing: "0.02em" }}>
-            petit joujou
-          </span>
-        </a>
-        <div className="hidden md:flex items-center gap-7">
+    <>
+      <nav
+        className="fixed top-0 left-0 right-0 z-50"
+        style={{
+          backgroundColor: "rgba(253,248,244,0.94)",
+          backdropFilter: "blur(14px)",
+          borderBottom: `1px solid ${C.border}`,
+        }}
+      >
+        <div className="container flex items-center justify-between" style={{ height: "60px" }}>
+          <a href="#" style={{ textDecoration: "none" }}>
+            <span className="font-script" style={{ fontSize: "1.7rem", color: C.sageDark, letterSpacing: "0.02em" }}>
+              petit joujou
+            </span>
+          </a>
+          <button
+            onClick={() => setOpen(!open)}
+            style={{ background: "none", border: "none", cursor: "pointer", color: C.inkMid, padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
+            aria-label="Menü"
+          >
+            {open ? (
+              <span style={{ fontSize: "1.3rem", color: C.inkMid, lineHeight: 1 }}>✕</span>
+            ) : (
+              <>
+                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: C.inkMid }} />
+                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: C.inkMid }} />
+                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: C.inkMid }} />
+              </>
+            )}
+          </button>
+        </div>
+      </nav>
+      {/* Fullscreen overlay menu */}
+      {open && (
+        <div
+          style={{
+            position: "fixed", inset: 0, zIndex: 49,
+            backgroundColor: C.bg,
+            display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center",
+            gap: "2.5rem",
+          }}
+        >
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.1em", color: C.inkMid, textDecoration: "none", textTransform: "uppercase" }}>
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="font-display"
+              style={{ fontSize: "clamp(1.8rem, 5vw, 2.8rem)", color: C.ink, textDecoration: "none", letterSpacing: "0.05em" }}
+            >
               {l.label}
             </a>
           ))}
-          <a href="#gesellschaften" className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.1em", color: C.bg, textDecoration: "none", textTransform: "uppercase", backgroundColor: C.sageDark, padding: "0.45rem 1rem" }}>
+          <a
+            href="#gesellschaften"
+            onClick={() => setOpen(false)}
+            className="font-body"
+            style={{ marginTop: "1rem", padding: "0.85rem 2.5rem", backgroundColor: C.sageDark, color: "#fff", textDecoration: "none", fontSize: "0.8rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
+          >
             Anfragen
           </a>
         </div>
-        <button className="md:hidden" onClick={() => setOpen(!open)} style={{ background: "none", border: "none", cursor: "pointer", color: C.inkMid, fontSize: "1.4rem" }}>
-          {open ? "✕" : "☰"}
-        </button>
-      </div>
-      {open && (
-        <div className="md:hidden" style={{ backgroundColor: C.bg, borderTop: `1px solid ${C.border}`, padding: "1rem 0" }}>
-          {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block font-body" style={{ padding: "0.75rem 1.5rem", fontSize: "0.8rem", letterSpacing: "0.1em", color: C.inkMid, textDecoration: "none", textTransform: "uppercase" }}>
-              {l.label}
-            </a>
-          ))}
-          <a href="#gesellschaften" onClick={() => setOpen(false)} className="block font-body" style={{ padding: "0.75rem 1.5rem", fontSize: "0.8rem", letterSpacing: "0.1em", color: C.sageDark, textDecoration: "none", textTransform: "uppercase", fontWeight: 700 }}>
-            → Anfragen
-          </a>
-        </div>
       )}
-    </nav>
+    </>
   );
 }
 
@@ -106,7 +129,7 @@ function Hero() {
           <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: C.sageDark, color: C.bg, textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase" }}>
             Weinkeller entdecken
           </a>
-          <a href="#gesellschaften" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: "transparent", color: C.ink, textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", border: `1px solid ${C.ink}` }}>
+          <a href="#gesellschaften" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: C.peachDark, color: C.ink, textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", border: `1px solid ${C.peachDark}` }}>
             Gesellschaft anfragen
           </a>
         </div>
@@ -213,7 +236,7 @@ function ScheuneSection() {
     <section id="scheune" style={{ backgroundColor: C.bg, padding: "0" }}>
       <div style={{ position: "relative", height: "70vh", minHeight: "480px", overflow: "hidden" }}>
         <img
-          src="/manus-storage/pj-scheune-abs_19d7666b.jpg"
+          src="/manus-storage/pj-scheune-crisp_283e6def.jpg"
           alt="Scheune — historischer Dachstuhl"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 20%" }}
         />
