@@ -155,7 +155,7 @@ function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/manus-storage/joujou-hero_9c81f848.jpg')",
+          backgroundImage: "url('/manus-storage/20260603_125842_bf38c1ab.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -395,10 +395,10 @@ function WeinbarSection() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('/manus-storage/joujou-wine_91c3040d.jpg')",
+          backgroundImage: "url('/manus-storage/20260603_125941_8349a303.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.15,
+          opacity: 0.18,
         }}
       />
 
@@ -471,7 +471,7 @@ function WeinbarSection() {
           {/* Right: Image */}
           <div>
             <img
-              src="/manus-storage/joujou-wine_91c3040d.jpg"
+              src="/manus-storage/20260603_125941_8349a303.jpg"
               alt="Weinbar im Gewölbekeller"
               style={{ width: "100%", height: "500px", objectFit: "cover", display: "block" }}
             />
@@ -1031,6 +1031,108 @@ function ReservierungSection() {
   );
 }
 
+// ── Galerie Section ─────────────────────────────────────────
+function GalerieSection() {
+  const photos = [
+    { src: "/manus-storage/20260603_125842_bf38c1ab.jpg", alt: "Eingang — Bruchstein & Kopfsteinpflaster", caption: "Der Eingang" },
+    { src: "/manus-storage/20260603_125849_ea788dd1.jpg", alt: "Eingangsbereich mit Weinfass", caption: "Willkommen" },
+    { src: "/manus-storage/20260603_125941_8349a303.jpg", alt: "Bar mit Holzbalken und Rattan-Lampen", caption: "Die Bar" },
+    { src: "/manus-storage/20260603_125944_e49913a2.jpg", alt: "Treppe zum Gastraum", caption: "Ins Innere" },
+    { src: "/manus-storage/20260603_125950_901e3612.jpg", alt: "Gastraum mit Dachstuhl", caption: "Der Gastraum" },
+    { src: "/manus-storage/20260603_125959_2d0aa515.jpg", alt: "Gastraum von oben", caption: "Unter dem Dach" },
+    { src: "/manus-storage/20260603_130041_672333b5.jpg", alt: "Terrasse mit Sonnenschirmen", caption: "Die Terrasse" },
+    { src: "/manus-storage/20260603_125901_c8d20f5e.jpg", alt: "Seitengebäude mit Weinfässern", caption: "Der Hof" },
+  ];
+
+  return (
+    <section style={{ backgroundColor: C.ivory, padding: "5rem 0" }}>
+      <div className="container">
+        <div className="text-center" style={{ marginBottom: "3rem" }}>
+          <p
+            className="font-body"
+            style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.terra, marginBottom: "0.75rem" }}
+          >
+            Leistadt, Pfalz
+          </p>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.brown }}
+          >
+            Ein Ort mit Geschichte
+          </h2>
+          <div style={{ width: "3rem", height: "1px", backgroundColor: C.terra, margin: "1rem auto 0" }} />
+        </div>
+
+        {/* Masonry-style grid */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateRows: "auto",
+            gap: "0.5rem",
+          }}
+        >
+          {/* Big left: Eingang */}
+          <div style={{ gridColumn: "1 / 3", gridRow: "1 / 3", position: "relative", overflow: "hidden" }}>
+            <img
+              src={photos[0].src}
+              alt={photos[0].alt}
+              style={{ width: "100%", height: "100%", minHeight: "380px", objectFit: "cover", display: "block" }}
+            />
+            <div style={{ position: "absolute", bottom: "1rem", left: "1rem", backgroundColor: "rgba(36,66,55,0.75)", padding: "0.3rem 0.75rem" }}>
+              <span className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.apricotLight }}>{photos[0].caption}</span>
+            </div>
+          </div>
+
+          {/* Top right 1 */}
+          <div style={{ position: "relative", overflow: "hidden" }}>
+            <img src={photos[2].src} alt={photos[2].alt} style={{ width: "100%", height: "185px", objectFit: "cover", display: "block" }} />
+            <div style={{ position: "absolute", bottom: "0.5rem", left: "0.5rem", backgroundColor: "rgba(36,66,55,0.75)", padding: "0.2rem 0.6rem" }}>
+              <span className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.apricotLight }}>{photos[2].caption}</span>
+            </div>
+          </div>
+
+          {/* Top right 2 */}
+          <div style={{ position: "relative", overflow: "hidden" }}>
+            <img src={photos[3].src} alt={photos[3].alt} style={{ width: "100%", height: "185px", objectFit: "cover", display: "block" }} />
+            <div style={{ position: "absolute", bottom: "0.5rem", left: "0.5rem", backgroundColor: "rgba(36,66,55,0.75)", padding: "0.2rem 0.6rem" }}>
+              <span className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.apricotLight }}>{photos[3].caption}</span>
+            </div>
+          </div>
+
+          {/* Bottom right 1 */}
+          <div style={{ position: "relative", overflow: "hidden" }}>
+            <img src={photos[4].src} alt={photos[4].alt} style={{ width: "100%", height: "185px", objectFit: "cover", display: "block" }} />
+            <div style={{ position: "absolute", bottom: "0.5rem", left: "0.5rem", backgroundColor: "rgba(36,66,55,0.75)", padding: "0.2rem 0.6rem" }}>
+              <span className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.apricotLight }}>{photos[4].caption}</span>
+            </div>
+          </div>
+
+          {/* Bottom right 2 */}
+          <div style={{ position: "relative", overflow: "hidden" }}>
+            <img src={photos[6].src} alt={photos[6].alt} style={{ width: "100%", height: "185px", objectFit: "cover", display: "block" }} />
+            <div style={{ position: "absolute", bottom: "0.5rem", left: "0.5rem", backgroundColor: "rgba(36,66,55,0.75)", padding: "0.2rem 0.6rem" }}>
+              <span className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.apricotLight }}>{photos[6].caption}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Second row: full width strip */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem", marginTop: "0.5rem" }}>
+          {[photos[1], photos[5], photos[7]].map((p, i) => (
+            <div key={i} style={{ position: "relative", overflow: "hidden" }}>
+              <img src={p.src} alt={p.alt} style={{ width: "100%", height: "220px", objectFit: "cover", display: "block" }} />
+              <div style={{ position: "absolute", bottom: "0.5rem", left: "0.5rem", backgroundColor: "rgba(36,66,55,0.75)", padding: "0.2rem 0.6rem" }}>
+                <span className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.apricotLight }}>{p.caption}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── Footer ───────────────────────────────────────────────────
 function Footer() {
   return (
@@ -1110,8 +1212,9 @@ export default function Home() {
         <PinsaSection />
         <BegleiterSection />
         <ShopSection />
-        <ReservierungSection />
-      </main>
+      <ReservierungSection />
+      <GalerieSection />
+    </main>
       <Footer />
     </div>
   );
