@@ -125,16 +125,15 @@ function Intro() {
       <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center", padding: "0 1.5rem" }}>
         {/* Punchy tagline */}
         <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1.5rem" }}>
-          Kein Weinkeller hinter Glas.
+          Weinbar · Leistadt, Pfalz
         </p>
-        <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.3 }}>
-          400 Bio-Weine.<br />Du gehst einfach rein.
+        <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.4 }}>
+          das petit joujou möchte dein Wein-Tempel sein.
         </h2>
-        <p className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.85 }}>
-          In Leistadt, mitten in der Pfalz, haben wir einen Ort geschaffen, der Wein neu erlebbar macht.
-          Kein Sommelier, der dir erklärt, was du trinken sollst. Stattdessen: ein historischer Gewölbekeller,
-          vollgepackt mit über 400 Bio-Weinen — biodynamisch, ehrlich, von Winzern, die wir kennen.
-          Du nimmst dir, was dich anspricht. Oder du fragst uns.
+        <p className="font-body" style={{ fontSize: "1.15rem", color: C.inkMid, lineHeight: 2, letterSpacing: "0.02em" }}>
+          Pfalz · Rheinhessen · Österreich · Frankreich.<br />
+          500 Weine &amp; Bubbles. Bio.<br />
+          <span className="font-display" style={{ fontSize: "1.4rem", color: C.ink, fontStyle: "italic" }}>Lecker.</span>
         </p>
         {/* Three pillars */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginTop: "3.5rem" }}>
@@ -188,7 +187,7 @@ function WeinkellerSection() {
         <div style={{ position: "relative", overflow: "hidden" }}>
           <img src="/manus-storage/pj-keller-innen2_63c736b3.jpg" alt="Weinkeller Regale" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", bottom: "1rem", left: "1rem", backgroundColor: "rgba(250,246,239,0.88)", padding: "0.25rem 0.7rem" }}>
-            <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>400 Weine</span>
+            <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>500 Weine</span>
           </div>
         </div>
         <div style={{ position: "relative", overflow: "hidden" }}>
@@ -220,7 +219,7 @@ function WeinkellerSection() {
                 Was euch erwartet
               </p>
               {[
-                "400+ Bio-Weine im begehbaren Keller",
+                "500 Weine & Bubbles im begehbaren Keller",
                 "Biodynamisch, naturnah, fair",
                 "Pfälzer Winzer & internationale Entdeckungen",
                 "Wein zum Trinken & zum Mitnehmen",
