@@ -110,7 +110,7 @@ function Nav() {
 function Hero() {
   return (
     <section style={{ position: "relative", height: "100vh", minHeight: "600px", overflow: "hidden", backgroundColor: C.bgSage }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-final_277877a9.jpg')", backgroundSize: "cover", backgroundPosition: "center 45%" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-kellerabgang_7f041448.jpg')", backgroundSize: "cover", backgroundPosition: "center 45%" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(253,240,232,0.45) 0%, rgba(168,196,184,0.25) 50%, rgba(253,248,244,0.7) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
         <div style={{ marginBottom: "1.5rem" }}>
@@ -242,11 +242,14 @@ function ScheuneSection() {
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(253,248,244,0.92) 0%, rgba(253,248,244,0.1) 55%, transparent 100%)" }} />
         <div style={{ position: "absolute", bottom: "3rem", left: "50%", transform: "translateX(-50%)", textAlign: "center", width: "100%", padding: "0 1.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.75rem" }}>
             Drinnen
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: C.ink }}>
-            Scheune. Seit 1709.
+          <p className="font-display" style={{ fontSize: "clamp(0.65rem, 1.5vw, 0.85rem)", letterSpacing: "0.3em", textTransform: "uppercase", color: C.inkLight, marginBottom: "0.25rem" }}>
+            Seit
+          </p>
+          <h2 className="font-display" style={{ fontSize: "clamp(3.5rem, 9vw, 6.5rem)", color: C.ink, lineHeight: 1, letterSpacing: "0.04em" }}>
+            1709
           </h2>
           <p className="font-script" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: C.sageDark, marginTop: "0.5rem", lineHeight: 1 }}>
             petit joujou
