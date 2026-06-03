@@ -110,7 +110,7 @@ function Nav() {
 function Hero() {
   return (
     <section style={{ position: "relative", height: "100vh", minHeight: "600px", overflow: "hidden", backgroundColor: C.bgSage }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-tight_433ca977.jpg')", backgroundSize: "cover", backgroundPosition: "center 45%" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-final_277877a9.jpg')", backgroundSize: "cover", backgroundPosition: "center 45%" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(253,240,232,0.45) 0%, rgba(168,196,184,0.25) 50%, rgba(253,248,244,0.7) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
         <div style={{ marginBottom: "1.5rem" }}>
@@ -248,24 +248,12 @@ function ScheuneSection() {
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: C.ink }}>
             Scheune. Seit 1709.
           </h2>
-        </div>
-      </div>
-      <div style={{ backgroundColor: C.bgPeach, padding: "5rem 0" }}>
-        <div style={{ maxWidth: "680px", margin: "0 auto", padding: "0 1.5rem", textAlign: "center" }}>
-          <p className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.85 }}>
-            Historischer Dachstuhl. Bruchsteinwände. Rattan-Lampen.
-            Gebaut 1709 — und seitdem nicht langweilig geworden.
-            Hier sitzt man, um zu trinken und zu reden.
+          <p className="font-script" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: C.sageDark, marginTop: "0.5rem", lineHeight: 1 }}>
+            petit joujou
           </p>
-          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginTop: "2rem" }}>
-            {["Historischer Dachstuhl", "Bruchsteinwände", "Bis 60 Gäste innen"].map((tag) => (
-              <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.rose, color: C.inkMid, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
-                {tag}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
+
     </section>
   );
 }
