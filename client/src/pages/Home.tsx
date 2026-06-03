@@ -87,7 +87,7 @@ function Nav() {
 function Hero() {
   return (
     <section style={{ position: "relative", height: "100vh", minHeight: "600px", overflow: "hidden", backgroundColor: C.bgSage }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-keller-bogen_6585f759.jpg')", backgroundSize: "cover", backgroundPosition: "center 40%" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-keller-bogen-sharp_7b2865f7.jpg')", backgroundSize: "cover", backgroundPosition: "center 40%" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(253,240,232,0.45) 0%, rgba(168,196,184,0.25) 50%, rgba(253,248,244,0.7) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
         <div style={{ marginBottom: "1.5rem" }}>
@@ -161,7 +161,7 @@ function WeinkellerSection() {
       {/* Full-width arch entrance photo */}
       <div style={{ position: "relative", height: "80vh", minHeight: "520px", overflow: "hidden" }}>
         <img
-          src="/manus-storage/pj-keller-bogen_6585f759.jpg"
+          src="/manus-storage/pj-keller-bogen-sharp_7b2865f7.jpg"
           alt="Eingang Weinkeller — romanischer Sandsteinbogen"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }}
         />
@@ -179,19 +179,19 @@ function WeinkellerSection() {
       {/* Three-column cellar gallery */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0" }}>
         <div style={{ position: "relative", overflow: "hidden" }}>
-          <img src="/manus-storage/pj-keller-innen1_1672c6fd.jpg" alt="Weinkeller Innenraum" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
+          <img src="/manus-storage/pj-keller-innen1-sharp_239ba768.jpg" alt="Weinkeller Innenraum" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", bottom: "1rem", left: "1rem", backgroundColor: "rgba(250,246,239,0.88)", padding: "0.25rem 0.7rem" }}>
             <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Gewölbe</span>
           </div>
         </div>
         <div style={{ position: "relative", overflow: "hidden" }}>
-          <img src="/manus-storage/pj-keller-innen2_63c736b3.jpg" alt="Weinkeller Regale" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
+          <img src="/manus-storage/pj-keller-innen2-sharp_23cd52dc.jpg" alt="Weinkeller Regale" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", bottom: "1rem", left: "1rem", backgroundColor: "rgba(250,246,239,0.88)", padding: "0.25rem 0.7rem" }}>
             <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>500 Weine</span>
           </div>
         </div>
         <div style={{ position: "relative", overflow: "hidden" }}>
-          <img src="/manus-storage/pj-keller-flaschen_25b9a402.jpg" alt="Weinflaschen auf Fass" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
+          <img src="/manus-storage/pj-keller-flaschen-sharp_608e1591.jpg" alt="Weinflaschen auf Fass" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", bottom: "1rem", left: "1rem", backgroundColor: "rgba(250,246,239,0.88)", padding: "0.25rem 0.7rem" }}>
             <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Empfehlungen</span>
           </div>
@@ -585,7 +585,7 @@ function GesellschaftenSection() {
 function GalerieSection() {
   const photos = [
     { src: "/manus-storage/pj-eingang-abs_b47b4c4c.jpg", alt: "Eingang", caption: "Eingang" },
-    { src: "/manus-storage/pj-keller-innen3_7f5fcf71.jpg", alt: "Weinkeller", caption: "Weinkeller" },
+    { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
     { src: "/manus-storage/pj-hero-abs_0cf7b090.jpg", alt: "Bar", caption: "Bar" },
     { src: "/manus-storage/pj-gastraum-abs_ba8ba180.jpg", alt: "Gastraum", caption: "Gastraum" },
     { src: "/manus-storage/pj-terrasse-abs_9eb9ef23.jpg", alt: "Terrasse", caption: "Terrasse" },
