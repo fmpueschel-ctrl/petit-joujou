@@ -251,9 +251,11 @@ function ScheuneSection() {
           <h2 className="font-display" style={{ fontSize: "clamp(3.5rem, 9vw, 6.5rem)", color: C.ink, lineHeight: 1, letterSpacing: "0.04em" }}>
             1709
           </h2>
-          <p className="font-script" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: C.sageDark, marginTop: "0.5rem", lineHeight: 1 }}>
-            petit joujou
-          </p>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "0.6rem" }}>
+            <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: C.sageDark, lineHeight: 1 }}>
+              petit joujou
+            </span>
+          </div>
         </div>
       </div>
 
