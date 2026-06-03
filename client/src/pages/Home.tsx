@@ -127,18 +127,18 @@ function Intro() {
         <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1.5rem" }}>
           Weinbar · Leistadt, Pfalz
         </p>
-        <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.4 }}>
-petit joujou — dein Weintempel.
+        <h2 className="font-script" style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", color: C.ink, marginBottom: "0.5rem", lineHeight: 1.2 }}>
+          klein · fein · wein
         </h2>
-        <p className="font-body" style={{ fontSize: "1.15rem", color: C.inkMid, lineHeight: 2, letterSpacing: "0.02em" }}>
+        <p className="font-body" style={{ fontSize: "1.15rem", color: C.inkMid, lineHeight: 2, letterSpacing: "0.02em", marginTop: "1.5rem" }}>
           Pfalz · Rheinhessen · Österreich · Frankreich.<br />
           500 Weine &amp; Bubbles. Bio.<br />
-          <span className="font-display" style={{ fontSize: "1.4rem", color: C.ink, fontStyle: "italic" }}>Lecker.</span>
+          <span className="font-display" style={{ fontSize: "1.1rem", color: C.inkLight, fontStyle: "italic" }}>petit joujou — dein Weintempel.</span>
         </p>
         {/* Three pillars */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginTop: "3.5rem" }}>
           {[
-            { title: "Begehbarer Keller", text: "Kein Katalog. Kein Tablet. Echte Flaschen im Regal." },
+            { title: "Begehbare Weinkarte", text: "Kein Katalog. Kein Tablet. Echte Flaschen im Regal." },
             { title: "Nur Bio", text: "Biodynamisch, naturnah, fair — von Winzern, die wir persönlich kennen." },
             { title: "Bis 100 Gäste", text: "Hochzeiten, Geburtstage, Firmen — wir passen uns an euch an." },
           ].map((p) => (
@@ -157,30 +157,12 @@ petit joujou — dein Weintempel.
 function WeinkellerSection() {
   return (
     <section id="weinkeller" style={{ backgroundColor: C.bgCream, padding: "0" }}>
-      {/* Full-width arch entrance photo */}
-      <div style={{ position: "relative", height: "80vh", minHeight: "520px", overflow: "hidden" }}>
-        <img
-          src="/manus-storage/pj-keller-bogen-sharp_7b2865f7.jpg"
-          alt="Eingang Weinkeller — romanischer Sandsteinbogen"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }}
-        />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 30%, rgba(250,246,239,0.95) 100%)" }} />
-        <div style={{ position: "absolute", bottom: "3rem", left: "50%", transform: "translateX(-50%)", textAlign: "center", width: "100%", padding: "0 1.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.5rem" }}>
-            Begehbare Weinkarte
-          </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: C.ink }}>
-            Durch den Bogen in eine andere Welt
-          </h2>
-        </div>
-      </div>
-
-      {/* Single large cellar panorama */}
+      {/* Single large cellar panorama — barrel prominent */}
       <div style={{ position: "relative", overflow: "hidden" }}>
         <img
-          src="/manus-storage/pj-keller-innen1-sharp_239ba768.jpg"
-          alt="Weinkeller — Gewölbe mit Treppe und Weinregalen"
-          style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+          src="/manus-storage/pj-keller-fass-sharp_2a26400b.jpg"
+          alt="Weinkeller — Fass mit Weinflaschen, Gewölbe"
+          style={{ width: "100%", height: "560px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
         />
       </div>
 
