@@ -1,167 +1,141 @@
-/* ============================================================
-   FIRE400 — Brutalist Luxury · Amber Edition
-   Design: Deep charcoal base, warm amber/ember accents,
-   golden bokeh atmosphere. Inspired by premium cocktail bar
-   aesthetics — dark, warm, alive.
-   Fonts: Anton (headlines) + Space Grotesk (body)
-   Colors:
-     --background:  #0d0b09  (near-black with warm undertone)
-     --foreground:  #f0ece4  (warm off-white)
-     --ember:       #ff4500  (ember red-orange, primary CTA)
-     --amber:       #c8841a  (warm amber, secondary accent)
-     --gold:        #d4a843  (gold for highlights)
-     --charcoal:    #1a1612  (card/section bg)
-     --smoke:       #2a2420  (subtle dividers)
-   ============================================================ */
-
 @import "tailwindcss";
 
-@theme inline {
-  --color-background: #0d0b09;
-  --color-foreground: #f0ece4;
-  --color-card: #1a1612;
-  --color-card-foreground: #f0ece4;
-  --color-popover: #1a1612;
-  --color-popover-foreground: #f0ece4;
-  --color-primary: #ff4500;
-  --color-primary-foreground: #f0ece4;
-  --color-secondary: #c8841a;
-  --color-secondary-foreground: #f0ece4;
-  --color-muted: #2a2420;
-  --color-muted-foreground: #a09080;
-  --color-accent: #d4a843;
-  --color-accent-foreground: #0d0b09;
-  --color-destructive: #ff4500;
-  --color-destructive-foreground: #f0ece4;
-  --color-border: #2a2420;
-  --color-input: #2a2420;
-  --color-ring: #c8841a;
-  --radius: 0.125rem;
-  --font-sans: 'Space Grotesk', sans-serif;
-  --font-display: 'Anton', sans-serif;
+/* ============================================================
+   petit joujou — Global CSS
+   Palette: apricot cream · forest green · terracotta · dark brown
+   ============================================================ */
+
+@theme {
+  /* Brand Colors */
+  --color-apricot-50: oklch(97% 0.02 60);
+  --color-apricot-100: oklch(94% 0.04 60);
+  --color-apricot-200: oklch(89% 0.07 55);
+  --color-apricot-300: oklch(83% 0.10 52);
+  --color-apricot-400: oklch(76% 0.13 50);
+  --color-apricot-500: oklch(70% 0.15 48);
+
+  --color-green-forest: oklch(28% 0.06 165);   /* #244237 */
+  --color-green-mid: oklch(38% 0.07 163);       /* #3c6254 */
+  --color-green-light: oklch(44% 0.06 163);     /* #4f6a60 */
+
+  --color-terra-500: oklch(56% 0.12 42);        /* #c8783a terracotta */
+  --color-terra-600: oklch(48% 0.11 40);        /* darker terracotta */
+
+  --color-cream: oklch(88% 0.04 75);            /* #c5b299 */
+  --color-ivory: oklch(96% 0.02 80);            /* near white warm */
+  --color-brown-dark: oklch(20% 0.04 50);       /* #2a1a0e */
+  --color-brown-mid: oklch(35% 0.05 50);
+
+  /* Semantic tokens */
+  --color-background: oklch(97% 0.02 70);
+  --color-foreground: oklch(20% 0.04 50);
+  --color-card: oklch(99% 0.01 70);
+  --color-card-foreground: oklch(20% 0.04 50);
+  --color-primary: oklch(28% 0.06 165);
+  --color-primary-foreground: oklch(97% 0.02 70);
+  --color-secondary: oklch(56% 0.12 42);
+  --color-secondary-foreground: oklch(99% 0.01 70);
+  --color-muted: oklch(93% 0.02 70);
+  --color-muted-foreground: oklch(50% 0.04 60);
+  --color-accent: oklch(83% 0.10 52);
+  --color-accent-foreground: oklch(20% 0.04 50);
+  --color-border: oklch(88% 0.03 65);
+  --color-ring: oklch(28% 0.06 165);
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Lato", system-ui, sans-serif;
+  --font-script: "Dancing Script", cursive;
+
+  /* Radius */
+  --radius: 0.25rem;
 }
 
 @layer base {
+  :root {
+    --background: 97% 0.02 70;
+    --foreground: 20% 0.04 50;
+    --card: 99% 0.01 70;
+    --card-foreground: 20% 0.04 50;
+    --popover: 99% 0.01 70;
+    --popover-foreground: 20% 0.04 50;
+    --primary: 28% 0.06 165;
+    --primary-foreground: 97% 0.02 70;
+    --secondary: 56% 0.12 42;
+    --secondary-foreground: 99% 0.01 70;
+    --muted: 93% 0.02 70;
+    --muted-foreground: 50% 0.04 60;
+    --accent: 83% 0.10 52;
+    --accent-foreground: 20% 0.04 50;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 88% 0.03 65;
+    --input: 88% 0.03 65;
+    --ring: 28% 0.06 165;
+    --radius: 0.25rem;
+  }
+
   * {
-    border-color: var(--color-border);
+    @apply border-border;
+    box-sizing: border-box;
   }
 
   html {
-    color-scheme: dark;
+    scroll-behavior: smooth;
   }
 
   body {
-    background-color: #0d0b09;
-    color: #f0ece4;
-    font-family: 'Space Grotesk', sans-serif;
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 0.02em;
-    color: #f0ece4;
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.2;
   }
 }
 
-@layer components {
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    max-width: 1280px;
-  }
+/* Utility classes */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+.font-script  { font-family: var(--font-script); }
 
-  /* Ember glow effect for primary CTAs */
-  .btn-ember {
-    background-color: #ff4500;
-    color: #f0ece4;
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .btn-ember:hover {
-    background-color: #e03d00;
-    box-shadow: 0 0 24px rgba(255, 69, 0, 0.5);
-  }
-
-  /* Amber accent line */
-  .amber-line {
-    height: 2px;
-    background: linear-gradient(90deg, #c8841a, #d4a843, #c8841a);
-  }
-
-  /* Section with warm charcoal bg */
-  .section-charcoal {
-    background-color: #1a1612;
-  }
-
-  /* Gold text highlight */
-  .text-gold {
-    color: #d4a843;
-  }
-
-  /* Ember text */
-  .text-ember {
-    color: #ff4500;
-  }
-
-  /* Amber text */
-  .text-amber {
-    color: #c8841a;
-  }
-
-  /* Warm overlay for images */
-  .overlay-warm {
-    background: linear-gradient(to bottom, rgba(13,11,9,0.1) 0%, rgba(13,11,9,0.85) 100%);
-  }
-
-  /* Bokeh/glow background effect */
-  .glow-amber {
-    box-shadow: 0 0 60px rgba(200, 132, 26, 0.15), 0 0 120px rgba(200, 132, 26, 0.08);
-  }
+/* Container override */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 1200px;
 }
 
-@layer utilities {
-  .font-display {
-    font-family: 'Anton', sans-serif;
-  }
-
-  .font-body {
-    font-family: 'Space Grotesk', sans-serif;
-  }
-
-  .tracking-brutal {
-    letter-spacing: 0.08em;
-  }
-
-  .tracking-wide-xl {
-    letter-spacing: 0.15em;
-  }
+/* Flex min-size fix */
+.flex {
+  min-width: 0;
+  min-height: 0;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
+/* Divider */
+.divider-apricot {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c8783a, transparent);
 }
 
-::-webkit-scrollbar-track {
-  background: #0d0b09;
+/* Price tag style */
+.price-tag {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #244237;
+  font-weight: 500;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #c8841a;
-  border-radius: 0;
-}
-
-/* Selection color */
-::selection {
-  background: rgba(200, 132, 26, 0.4);
-  color: #f0ece4;
+/* Section padding */
+.section-pad {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }

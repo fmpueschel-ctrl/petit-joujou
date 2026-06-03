@@ -1,403 +1,1118 @@
 /* ============================================================
-   FIRE400 — Home Page · Multi-Theme Edition
-   5 themes: RUSTY · NEON · BLACK · BONE · INFERNO
-   Theme switcher fixed bottom-center, always visible.
+   petit joujou — Home Page
+   Weinbar & Bistro · Leistadt, Pfalz
+   klein, fein, wein
    ============================================================ */
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
-import { Flame, Wine, Users, Clock, GlassWater } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
-// ── Theme Definitions ────────────────────────────────────────
-type Theme = {
-  name: string;
-  label: string;
-  bg: string;
-  bgCard: string;
-  bgSmoke: string;
-  fg: string;
-  fgMuted: string;
-  accent1: string;   // primary CTA / ember
-  accent2: string;   // secondary / gold
-  border: string;
-  btnBg: string;
-  btnText: string;
-  btn2Border: string;
-  btn2Text: string;
-  dividerGrad: string;
-  heroBg: string;    // left hero overlay
-  heroRight: string; // right hero overlay
+// ── Color constants ──────────────────────────────────────────
+const C = {
+  green:      "#244237",
+  greenMid:   "#3c6254",
+  greenLight: "#4f6a60",
+  terra:      "#c8783a",
+  terraDark:  "#a05e2a",
+  apricot:    "#f2c9a0",
+  apricotLight: "#fae8d4",
+  cream:      "#c5b299",
+  ivory:      "#fdf6ee",
+  brown:      "#2a1a0e",
+  brownMid:   "#5c3d20",
+  muted:      "#8a7060",
 };
 
-const themes: Record<string, Theme> = {
-  rusty: {
-    name: "rusty",
-    label: "RUSTY",
-    bg: "#0d0b09",
-    bgCard: "#1a1612",
-    bgSmoke: "#2a2420",
-    fg: "#f0ece4",
-    fgMuted: "#a09080",
-    accent1: "#ff4500",
-    accent2: "#c8841a",
-    border: "#2a2420",
-    btnBg: "#ff4500",
-    btnText: "#f0ece4",
-    btn2Border: "#d4a843",
-    btn2Text: "#d4a843",
-    dividerGrad: "linear-gradient(90deg, #c8841a, #d4a843, #c8841a)",
-    heroBg: "linear-gradient(to bottom, rgba(13,11,9,0.3) 0%, rgba(13,11,9,0.75) 100%)",
-    heroRight: "linear-gradient(to bottom, rgba(13,11,9,0.3) 0%, rgba(13,11,9,0.75) 100%)",
-  },
-  neon: {
-    name: "neon",
-    label: "NEON",
-    bg: "#050510",
-    bgCard: "#0a0a1e",
-    bgSmoke: "#14142a",
-    fg: "#e8e0ff",
-    fgMuted: "#8878cc",
-    accent1: "#00ffcc",
-    accent2: "#ff00aa",
-    border: "#1e1e3a",
-    btnBg: "#00ffcc",
-    btnText: "#050510",
-    btn2Border: "#ff00aa",
-    btn2Text: "#ff00aa",
-    dividerGrad: "linear-gradient(90deg, #00ffcc, #ff00aa, #00ffcc)",
-    heroBg: "linear-gradient(to bottom, rgba(5,5,16,0.4) 0%, rgba(5,5,16,0.8) 100%)",
-    heroRight: "linear-gradient(to bottom, rgba(5,5,16,0.4) 0%, rgba(5,5,16,0.8) 100%)",
-  },
-  black: {
-    name: "black",
-    label: "BLACK",
-    bg: "#000000",
-    bgCard: "#0a0a0a",
-    bgSmoke: "#111111",
-    fg: "#ffffff",
-    fgMuted: "#666666",
-    accent1: "#ffffff",
-    accent2: "#888888",
-    border: "#1a1a1a",
-    btnBg: "#ffffff",
-    btnText: "#000000",
-    btn2Border: "#ffffff",
-    btn2Text: "#ffffff",
-    dividerGrad: "linear-gradient(90deg, #333, #fff, #333)",
-    heroBg: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%)",
-    heroRight: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%)",
-  },
-  bone: {
-    name: "bone",
-    label: "BONE",
-    bg: "#f5f0e8",
-    bgCard: "#ece5d6",
-    bgSmoke: "#d8cfc0",
-    fg: "#1a1510",
-    fgMuted: "#6b5e4e",
-    accent1: "#8b2500",
-    accent2: "#5c3d1e",
-    border: "#c8bfb0",
-    btnBg: "#8b2500",
-    btnText: "#f5f0e8",
-    btn2Border: "#5c3d1e",
-    btn2Text: "#5c3d1e",
-    dividerGrad: "linear-gradient(90deg, #8b2500, #5c3d1e, #8b2500)",
-    heroBg: "linear-gradient(to bottom, rgba(245,240,232,0.2) 0%, rgba(245,240,232,0.7) 100%)",
-    heroRight: "linear-gradient(to bottom, rgba(245,240,232,0.2) 0%, rgba(245,240,232,0.7) 100%)",
-  },
-  inferno: {
-    name: "inferno",
-    label: "INFERNO",
-    bg: "#0a0000",
-    bgCard: "#1a0500",
-    bgSmoke: "#2a0a00",
-    fg: "#fff5e0",
-    fgMuted: "#cc7744",
-    accent1: "#ff6600",
-    accent2: "#ffaa00",
-    border: "#3a1000",
-    btnBg: "#ff6600",
-    btnText: "#0a0000",
-    btn2Border: "#ffaa00",
-    btn2Text: "#ffaa00",
-    dividerGrad: "linear-gradient(90deg, #ff6600, #ffaa00, #ff6600)",
-    heroBg: "linear-gradient(to bottom, rgba(10,0,0,0.2) 0%, rgba(10,0,0,0.7) 100%)",
-    heroRight: "linear-gradient(to bottom, rgba(10,0,0,0.2) 0%, rgba(10,0,0,0.7) 100%)",
-  },
-};
-
-// ── Component ────────────────────────────────────────────────
-export default function Home() {
-  const [activeTheme, setActiveTheme] = useState<string>("rusty");
-  const [weight, setWeight] = useState([1000]);
-  const [guests, setGuests] = useState("2");
-
-  const t = themes[activeTheme];
-  const price = (weight[0] / 100) * 10;
-  const pricePerPerson = Math.round(price / parseInt(guests));
-
-  const cocktails = [
-    { name: "EMBER OLD FASHIONED", base: "Rye Whiskey", desc: "Geräucherter Ahornsirup · Angostura · Rauchsalz · Orangenzeste", note: "Signature" },
-    { name: "FIRE NEGRONI", base: "Gin · Campari · Vermouth", desc: "Getrocknete Blutorange · Rosmarin-Infusion · Fleur de Sel", note: "Klassiker" },
-    { name: "400 SPRITZ", base: "Pfalz Riesling · Aperol", desc: "Holunderblüte · Zitronengras · Prosecco · Limette", note: "Leicht" },
+// ── Nav ──────────────────────────────────────────────────────
+function Nav() {
+  const [open, setOpen] = useState(false);
+  const links = [
+    { label: "Das Entrecôte", href: "#entrecote" },
+    { label: "Weinbar", href: "#weinbar" },
+    { label: "Manna Palatina", href: "#pinsa" },
+    { label: "Weinbegleiter", href: "#begleiter" },
+    { label: "Shop & Events", href: "#shop" },
   ];
-
   return (
-    <div style={{ backgroundColor: t.bg, color: t.fg, minHeight: "100vh", overflowX: "hidden", transition: "background-color 0.4s ease, color 0.4s ease" }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        backgroundColor: "rgba(253,246,238,0.92)",
+        backdropFilter: "blur(12px)",
+        borderBottom: `1px solid ${C.cream}`,
+      }}
+    >
+      <div className="container flex items-center justify-between" style={{ height: "64px" }}>
+        {/* Logo */}
+        <a href="#" className="flex flex-col leading-none" style={{ textDecoration: "none" }}>
+          <span
+            className="font-display"
+            style={{ fontSize: "0.75rem", letterSpacing: "0.15em", color: C.green, textTransform: "uppercase" }}
+          >
+            petit
+          </span>
+          <span
+            className="font-script"
+            style={{ fontSize: "1.5rem", color: C.terra, lineHeight: 1 }}
+          >
+            joujou
+          </span>
+        </a>
 
-      {/* ── HERO: Split Screen ─────────────────────────────── */}
-      <div className="relative h-screen flex flex-col md:flex-row">
-
-        {/* Left: FIRE */}
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full group overflow-hidden" style={{ borderRight: `1px solid ${t.border}` }}>
-          <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-            style={{ backgroundImage: "url('/manus-storage/fire-grill-night_4dc64405.jpg')" }} />
-          <div className="absolute inset-0 transition-colors duration-500" style={{ background: t.heroBg }} />
-
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-8 text-center z-10">
-            <Flame className="w-14 h-14 mb-4" style={{ color: t.accent1 }} />
-            <h1 className="font-display mb-2 tracking-tight" style={{ fontSize: "clamp(4rem,10vw,7rem)", lineHeight: 1, color: t.fg }}>FIRE</h1>
-            <p className="font-body mb-8 max-w-sm" style={{ fontSize: "1.15rem", color: t.fgMuted }}>
-              Ein Steak. Eine Gruppe. Ein Erlebnis.
-            </p>
-            <Dialog>
-              <DialogTrigger asChild>
-                <button className="font-display tracking-wider uppercase px-8 py-4 text-lg" style={{ backgroundColor: t.btnBg, color: t.btnText, border: "none", cursor: "pointer", transition: "opacity 0.2s" }}>
-                  Tisch reservieren
-                </button>
-              </DialogTrigger>
-              <DialogContent style={{ backgroundColor: t.bgCard, border: `1px solid ${t.border}`, color: t.fg, borderRadius: 0, maxWidth: "28rem" }}>
-                <DialogHeader>
-                  <DialogTitle className="font-display text-center uppercase tracking-wider" style={{ fontSize: "1.75rem", color: t.fg }}>
-                    Fire400 Reservierung
-                  </DialogTitle>
-                </DialogHeader>
-                <div className="space-y-6 py-4">
-                  <div className="p-4" style={{ backgroundColor: t.bg, border: `1px solid ${t.border}` }}>
-                    <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: t.accent2 }}>Die Regel:</p>
-                    <ul className="text-sm space-y-1 list-disc list-inside" style={{ color: t.fgMuted }}>
-                      <li>Nur für Gruppen (2–4 Personen)</li>
-                      <li>Nur Tomahawk (800–1500g)</li>
-                      <li>Do–Fr ab 18 Uhr, Sa–So ab 12 Uhr</li>
-                      <li>Passt nicht? <span className="font-bold" style={{ color: t.accent1 }}>Move on.</span></li>
-                    </ul>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <Label style={{ color: t.fgMuted }}>Wie viele Personen seid ihr?</Label>
-                      <Select value={guests} onValueChange={setGuests}>
-                        <SelectTrigger style={{ backgroundColor: t.bg, border: `1px solid ${t.border}`, borderRadius: 0, color: t.fg }}>
-                          <SelectValue placeholder="Wähle Anzahl" />
-                        </SelectTrigger>
-                        <SelectContent style={{ backgroundColor: t.bgCard, border: `1px solid ${t.border}`, borderRadius: 0 }}>
-                          <SelectItem value="2">2 Personen</SelectItem>
-                          <SelectItem value="3">3 Personen</SelectItem>
-                          <SelectItem value="4">4 Personen</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center">
-                        <Label style={{ color: t.fgMuted }}>Wähle dein Gewicht</Label>
-                        <span className="font-display text-xl" style={{ color: t.accent1 }}>{weight[0]}g</span>
-                      </div>
-                      <Slider value={weight} onValueChange={setWeight} min={800} max={1500} step={100} className="py-4" />
-                      <div className="flex justify-between text-xs uppercase tracking-wider" style={{ color: t.fgMuted }}>
-                        <span>800g</span><span>1500g</span>
-                      </div>
-                    </div>
-                    <div className="p-4 text-center" style={{ backgroundColor: t.bg, border: `1px solid ${t.accent2}` }}>
-                      <div className="text-xs uppercase tracking-widest mb-1" style={{ color: t.fgMuted }}>Preis (10€ / 100g)</div>
-                      <div className="font-display mb-1" style={{ fontSize: "2.5rem", color: t.fg }}>{price}€</div>
-                      <div className="text-sm font-bold" style={{ color: t.accent2 }}>ca. {pricePerPerson}€ pro Person</div>
-                    </div>
-                    <div className="text-xs text-center italic" style={{ color: t.fgMuted }}>
-                      *Falls das Steak größer ist als bestellt, gehen die Extra-Gramm aufs Haus.
-                    </div>
-                    <button className="w-full font-display uppercase tracking-wider text-lg py-4" style={{ backgroundColor: t.btnBg, color: t.btnText, border: "none", cursor: "pointer" }}>
-                      Jetzt Anfragen
-                    </button>
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
-          </div>
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="font-body"
+              style={{ fontSize: "0.8rem", letterSpacing: "0.08em", color: C.brownMid, textDecoration: "none", textTransform: "uppercase" }}
+            >
+              {l.label}
+            </a>
+          ))}
         </div>
 
-        {/* Right: 400 */}
-        <div className="relative w-full md:w-1/2 h-1/2 md:h-full group overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-            style={{ backgroundImage: "url('/manus-storage/hero-wine_885d2a21.jpg')" }} />
-          <div className="absolute inset-0 transition-colors duration-500" style={{ background: t.heroRight }} />
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-8 text-center z-10">
-            <Wine className="w-14 h-14 mb-4" style={{ color: t.accent2 }} />
-            <h1 className="font-display mb-2 tracking-tight" style={{ fontSize: "clamp(4rem,10vw,7rem)", lineHeight: 1, color: t.fg }}>400</h1>
-            <p className="font-body mb-8 max-w-sm" style={{ fontSize: "1.15rem", color: t.fgMuted }}>
-              400 Bio-Weine. Gewölbekeller. Walk-in.
-            </p>
-            <button className="font-display uppercase tracking-wider text-lg px-8 py-4" style={{ border: `2px solid ${t.btn2Border}`, color: t.btn2Text, backgroundColor: "transparent", cursor: "pointer" }}>
-              Weinbar Entdecken
-            </button>
-          </div>
-        </div>
+        {/* Reservation CTA */}
+        <a
+          href="#reservierung"
+          className="hidden md:inline-flex items-center font-body"
+          style={{
+            fontSize: "0.75rem",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            backgroundColor: C.green,
+            color: C.ivory,
+            padding: "0.5rem 1.25rem",
+            textDecoration: "none",
+          }}
+        >
+          Reservieren
+        </a>
 
-        {/* Center Diamond */}
-        <div className="absolute top-1/2 left-1/2 z-20 hidden md:block"
-          style={{ backgroundColor: t.bg, border: `1px solid ${t.accent2}`, padding: "1rem", transform: "translate(-50%, -50%) rotate(45deg)" }}>
-          <div className="font-display tracking-widest" style={{ transform: "rotate(-45deg)", fontSize: "1.1rem", color: t.fg }}>
-            FIRE<span style={{ color: t.accent1 }}>400</span>
-          </div>
-        </div>
+        {/* Mobile burger */}
+        <button
+          className="md:hidden"
+          onClick={() => setOpen(!open)}
+          style={{ background: "none", border: "none", cursor: "pointer", color: C.brown }}
+        >
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            {open ? (
+              <>
+                <line x1="3" y1="3" x2="19" y2="19" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="19" y1="3" x2="3" y2="19" stroke="currentColor" strokeWidth="1.5" />
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="6" x2="19" y2="6" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="3" y1="11" x2="19" y2="11" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="3" y1="16" x2="19" y2="16" stroke="currentColor" strokeWidth="1.5" />
+              </>
+            )}
+          </svg>
+        </button>
       </div>
 
-      {/* ── MANIFESTO ──────────────────────────────────────── */}
-      <section className="py-24 px-4" style={{ backgroundColor: t.bg, borderBottom: `1px solid ${t.border}` }}>
-        <div className="max-w-4xl mx-auto text-center">
-          <div style={{ height: "2px", background: t.dividerGrad, width: "4rem", margin: "0 auto 2rem" }} />
-          <h2 className="font-display mb-8 leading-tight" style={{ fontSize: "clamp(2rem,5vw,3.5rem)", color: t.fg }}>
-            Das sicherlich <span style={{ color: t.accent1 }}>nachhaltigste</span> und <span style={{ color: t.accent1 }}>kurioseste</span> Steakerlebnis Deutschlands.
-          </h2>
-          <p className="font-body leading-relaxed max-w-2xl mx-auto" style={{ fontSize: "1.2rem", color: t.fgMuted }}>
-            Wir sind kein Steakhaus. Wir sind ein Ritual.<br />
-            Du kommst nicht alleine. Du kommst mit deiner Crew.<br />
-            Ihr teilt euch ein riesiges Tomahawk vom Bio-Weiderind.<br />
-            Unser Service schneidet es am Tisch auf.<br />
-            Ihr esst zusammen, trinkt Bio-Wein – und ab 20 Uhr eskaliert die Musik.
-          </p>
-          <div style={{ height: "2px", background: t.dividerGrad, width: "4rem", margin: "2rem auto 0" }} />
+      {/* Mobile menu */}
+      {open && (
+        <div
+          className="md:hidden"
+          style={{ backgroundColor: C.ivory, borderTop: `1px solid ${C.cream}`, padding: "1rem 1.5rem 1.5rem" }}
+        >
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="block font-body"
+              style={{ fontSize: "0.85rem", letterSpacing: "0.08em", color: C.brownMid, textDecoration: "none", textTransform: "uppercase", padding: "0.6rem 0", borderBottom: `1px solid ${C.cream}` }}
+            >
+              {l.label}
+            </a>
+          ))}
+          <a
+            href="#reservierung"
+            onClick={() => setOpen(false)}
+            className="block font-body text-center"
+            style={{ fontSize: "0.8rem", letterSpacing: "0.1em", textTransform: "uppercase", backgroundColor: C.green, color: C.ivory, padding: "0.75rem", textDecoration: "none", marginTop: "1rem" }}
+          >
+            Reservieren
+          </a>
         </div>
-      </section>
+      )}
+    </nav>
+  );
+}
 
-      {/* ── DETAILS GRID ───────────────────────────────────── */}
-      <section className="grid grid-cols-1 md:grid-cols-3" style={{ borderBottom: `1px solid ${t.border}` }}>
-        {[
-          { icon: <Users className="w-10 h-10" style={{ color: t.accent1 }} />, title: "Nur Gruppen", text: "Fire400 ist ein soziales Event. Reservierungen nur für 2 bis 4 Personen. Solo-Esser? Besuche unser JouJou Restaurant am Samstag." },
-          { icon: <Flame className="w-10 h-10" style={{ color: t.accent1 }} />, title: "Nur Tomahawk", text: "Keine Karte. Keine Auswahl. Nur das beste Stück vom LandLuft Bio-Weiderind. Dry Aged. 800g bis 1500g. Am Tisch tranchiert." },
-          { icon: <Clock className="w-10 h-10" style={{ color: t.accent1 }} />, title: "Nur Do–So", text: "Do & Fr ab 18 Uhr. Sa & So ab 12 Uhr. Maximal 26 Gäste gleichzeitig. Reservierung zwingend erforderlich." },
-        ].map((item, i) => (
-          <div key={i} className="p-12" style={{ backgroundColor: t.bgCard, borderRight: i < 2 ? `1px solid ${t.border}` : undefined, borderBottom: `1px solid ${t.border}` }}>
-            {item.icon}
-            <h3 className="font-display mt-6 mb-4" style={{ fontSize: "1.5rem", color: t.fg }}>{item.title}</h3>
-            <p style={{ color: t.fgMuted, lineHeight: 1.7 }}>{item.text}</p>
+// ── Hero ─────────────────────────────────────────────────────
+function Hero() {
+  return (
+    <section
+      className="relative"
+      style={{ minHeight: "100vh", overflow: "hidden" }}
+    >
+      {/* Background image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url('/manus-storage/joujou-hero_9c81f848.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      {/* Overlay */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(to bottom, rgba(36,66,55,0.35) 0%, rgba(36,66,55,0.6) 60%, rgba(36,66,55,0.82) 100%)" }}
+      />
+
+      {/* Content */}
+      <div
+        className="relative z-10 flex flex-col items-center justify-center text-center"
+        style={{ minHeight: "100vh", padding: "6rem 1.5rem 4rem" }}
+      >
+        {/* Logo mark */}
+        <div style={{ marginBottom: "2rem" }}>
+          <div
+            className="font-display"
+            style={{ fontSize: "clamp(0.9rem, 2vw, 1.1rem)", letterSpacing: "0.3em", color: C.apricot, textTransform: "uppercase", marginBottom: "0.25rem" }}
+          >
+            petit
           </div>
-        ))}
-      </section>
+          <div
+            className="font-script"
+            style={{ fontSize: "clamp(4rem, 10vw, 7rem)", color: C.apricotLight, lineHeight: 0.9 }}
+          >
+            joujou
+          </div>
+        </div>
 
-      {/* ── COCKTAILS ──────────────────────────────────────── */}
-      <section className="relative overflow-hidden" style={{ borderBottom: `1px solid ${t.border}` }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/manus-storage/cocktail-bar-amber_6ece2f29.jpg')" }} />
-        <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${t.bg}ee 0%, ${t.bgCard}cc 50%, ${t.bg}ee 100%)` }} />
-        <div className="relative z-10 py-24 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <GlassWater className="w-12 h-12 mx-auto mb-4" style={{ color: t.accent2 }} />
-              <h2 className="font-display mb-4" style={{ fontSize: "clamp(2.5rem,6vw,4.5rem)", color: t.fg, letterSpacing: "0.05em" }}>COCKTAILS</h2>
-              <div style={{ height: "2px", background: t.dividerGrad, width: "5rem", margin: "0 auto 1.5rem" }} />
-              <p className="font-body max-w-xl mx-auto" style={{ fontSize: "1.1rem", color: t.fgMuted }}>
-                Handcrafted. Kein Kompromiss. Genau wie das Steak.
-              </p>
+        {/* Divider */}
+        <div style={{ width: "3rem", height: "1px", backgroundColor: C.cream, margin: "0 auto 1.75rem" }} />
+
+        {/* Slogan */}
+        <p
+          className="font-display"
+          style={{ fontSize: "clamp(1.2rem, 3vw, 1.8rem)", color: C.apricotLight, fontStyle: "italic", letterSpacing: "0.05em", marginBottom: "0.75rem" }}
+        >
+          klein, fein, wein
+        </p>
+
+        <p
+          className="font-body"
+          style={{ fontSize: "clamp(0.85rem, 1.5vw, 1rem)", color: C.cream, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "3rem" }}
+        >
+          Weinbar &amp; Bistro · Leistadt, Pfalz
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+          <a
+            href="#entrecote"
+            className="font-body"
+            style={{
+              fontSize: "0.8rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              backgroundColor: C.terra,
+              color: C.ivory,
+              padding: "0.85rem 2.25rem",
+              textDecoration: "none",
+              transition: "opacity 0.2s",
+            }}
+          >
+            Das Entrecôte
+          </a>
+          <a
+            href="#weinbar"
+            className="font-body"
+            style={{
+              fontSize: "0.8rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              border: `1px solid ${C.cream}`,
+              color: C.cream,
+              padding: "0.85rem 2.25rem",
+              textDecoration: "none",
+              backgroundColor: "transparent",
+            }}
+          >
+            Weinbar entdecken
+          </a>
+        </div>
+
+        {/* Scroll hint */}
+        <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)" }}>
+          <div style={{ width: "1px", height: "3rem", backgroundColor: C.cream, margin: "0 auto", opacity: 0.6 }} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Intro Band ───────────────────────────────────────────────
+function IntroBand() {
+  return (
+    <section
+      style={{
+        backgroundColor: C.green,
+        padding: "1.5rem 1.5rem",
+        textAlign: "center",
+      }}
+    >
+      <p
+        className="font-display"
+        style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)", color: C.apricotLight, fontStyle: "italic", letterSpacing: "0.04em" }}
+      >
+        400+ kuratierte Bio-Weine · Gewölbekeller · Nur donnerstags geöffnet
+      </p>
+    </section>
+  );
+}
+
+// ── Entrecôte Section ────────────────────────────────────────
+function EntrecoteSection() {
+  return (
+    <section id="entrecote" style={{ backgroundColor: C.ivory, padding: "5rem 0" }}>
+      <div className="container">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Image */}
+          <div style={{ position: "relative" }}>
+            <img
+              src="/manus-storage/joujou-steak_0f586b2a.jpg"
+              alt="Das Entrecôte — 400g Dry Aged Bio"
+              style={{ width: "100%", height: "460px", objectFit: "cover", display: "block" }}
+            />
+            {/* Price badge */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: "1.5rem",
+                right: "1.5rem",
+                backgroundColor: C.green,
+                color: C.apricotLight,
+                padding: "1rem 1.5rem",
+                textAlign: "center",
+              }}
+            >
+              <div className="font-display" style={{ fontSize: "2.5rem", lineHeight: 1, fontWeight: 500 }}>64</div>
+              <div className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.cream, marginTop: "0.25rem" }}>pro Person</div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0" style={{ border: `1px solid ${t.border}` }}>
-              {cocktails.map((c, i) => (
-                <div key={i} className="p-10" style={{ backgroundColor: `${t.bgCard}dd`, borderRight: i < 2 ? `1px solid ${t.border}` : undefined }}>
-                  <div className="text-xs uppercase tracking-widest mb-3 font-body" style={{ color: t.accent2 }}>{c.note}</div>
-                  <h3 className="font-display mb-2" style={{ fontSize: "1.3rem", color: t.fg, letterSpacing: "0.05em" }}>{c.name}</h3>
-                  <div className="text-sm mb-3 font-body" style={{ color: t.accent2 }}>{c.base}</div>
-                  <p className="text-sm leading-relaxed" style={{ color: t.fgMuted }}>{c.desc}</p>
-                  <div className="mt-6" style={{ height: "1px", background: `linear-gradient(90deg, ${t.accent1}, transparent)` }} />
+          </div>
+
+          {/* Text */}
+          <div>
+            <p
+              className="font-body"
+              style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.terra, marginBottom: "0.75rem" }}
+            >
+              Das Herzstück
+            </p>
+            <h2
+              className="font-display"
+              style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", color: C.brown, marginBottom: "0.5rem", lineHeight: 1.1 }}
+            >
+              Das Entrecôte
+            </h2>
+            <div style={{ width: "3rem", height: "1px", backgroundColor: C.terra, marginBottom: "1.75rem" }} />
+
+            <p
+              className="font-body"
+              style={{ fontSize: "1rem", color: C.brownMid, lineHeight: 1.8, marginBottom: "2rem" }}
+            >
+              400g Dry Aged Bio-Entrecôte. 5 Wochen Reifung. Vom Weiderind der{" "}
+              <strong style={{ color: C.green }}>Land.Luft.bio</strong> — mit Weideschlachtung, weil das der einzige ehrliche Weg ist.
+              Sous-vide gegart, dann auf der Plancha mit perfekter Kruste vollendet.
+            </p>
+
+            {/* Details list */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
+              {[
+                { label: "Gewicht", value: "400g" },
+                { label: "Reifung", value: "5 Wochen Dry Aged" },
+                { label: "Herkunft", value: "Land.Luft.bio" },
+                { label: "Zubereitung", value: "Sous-vide + Plancha" },
+                { label: "Inklusive", value: "Manna Palatina Pinsa" },
+                { label: "Sauce", value: "Vegane Knoblauchsauce" },
+              ].map((d) => (
+                <div key={d.label} style={{ borderBottom: `1px solid ${C.cream}`, paddingBottom: "0.75rem" }}>
+                  <div className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.muted, marginBottom: "0.2rem" }}>{d.label}</div>
+                  <div className="font-display" style={{ fontSize: "1rem", color: C.brown }}>{d.value}</div>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-10">
-              <p className="font-body text-sm" style={{ color: t.fgMuted }}>
-                Alle Cocktails auch alkoholfrei verfügbar · Saisonale Specials auf der Tafel
+
+            {/* Important notice */}
+            <div
+              style={{
+                backgroundColor: C.apricotLight,
+                border: `1px solid ${C.cream}`,
+                padding: "1rem 1.25rem",
+                marginBottom: "1.75rem",
+              }}
+            >
+              <p className="font-body" style={{ fontSize: "0.8rem", color: C.brownMid, lineHeight: 1.7 }}>
+                <strong style={{ color: C.green }}>Nur donnerstags.</strong> Reservierung erforderlich.
+                Bitte Garstufe bei der Reservierung angeben.
               </p>
+            </div>
+
+            <a
+              href="#reservierung"
+              className="font-body"
+              style={{
+                display: "inline-block",
+                fontSize: "0.78rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                backgroundColor: C.green,
+                color: C.ivory,
+                padding: "0.85rem 2rem",
+                textDecoration: "none",
+              }}
+            >
+              Tisch reservieren
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Weinbar Section ──────────────────────────────────────────
+function WeinbarSection() {
+  const weine = [
+    { type: "Weiss / Rosé", glas: "7,50", flasche: "22,50" },
+    { type: "Rot", glas: "8,00", flasche: "23,50" },
+    { type: "Prinz Salm Bubbles", glas: "7,70", flasche: "45,00" },
+  ];
+
+  return (
+    <section id="weinbar" style={{ backgroundColor: C.green, padding: "5rem 0", position: "relative", overflow: "hidden" }}>
+      {/* Background image overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/manus-storage/joujou-wine_91c3040d.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.15,
+        }}
+      />
+
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Left: Text */}
+          <div>
+            <p
+              className="font-body"
+              style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.apricot, marginBottom: "0.75rem" }}
+            >
+              Der Gewölbekeller
+            </p>
+            <h2
+              className="font-display"
+              style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", color: C.apricotLight, marginBottom: "0.5rem", lineHeight: 1.1 }}
+            >
+              Die Weinbar
+            </h2>
+            <div style={{ width: "3rem", height: "1px", backgroundColor: C.terra, marginBottom: "1.75rem" }} />
+
+            <p
+              className="font-body"
+              style={{ fontSize: "1rem", color: C.cream, lineHeight: 1.8, marginBottom: "1.5rem" }}
+            >
+              Über 400 sorgfältig kuratierte Bio-Weine aus dem Gewölbekeller.
+              Kein Mainstream. Kein Kompromiss. Nur Weine, hinter denen wir stehen.
+            </p>
+            <p
+              className="font-body"
+              style={{ fontSize: "1rem", color: C.cream, lineHeight: 1.8, marginBottom: "2.5rem" }}
+            >
+              Walk-in willkommen. Kein Reservierungszwang für die Weinbar.
+              Einfach kommen, setzen, trinken.
+            </p>
+
+            {/* Wine price table */}
+            <div style={{ border: `1px solid rgba(197,178,153,0.3)` }}>
+              <div
+                className="font-body"
+                style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.apricot, padding: "0.75rem 1.25rem", borderBottom: `1px solid rgba(197,178,153,0.2)`, display: "grid", gridTemplateColumns: "1fr auto auto", gap: "1rem" }}
+              >
+                <span>Wein vom Wingert</span>
+                <span>Glas</span>
+                <span>Flasche</span>
+              </div>
+              {weine.map((w, i) => (
+                <div
+                  key={i}
+                  className="font-display"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto auto",
+                    gap: "1rem",
+                    padding: "0.85rem 1.25rem",
+                    borderBottom: i < weine.length - 1 ? `1px solid rgba(197,178,153,0.15)` : "none",
+                    color: C.apricotLight,
+                    fontSize: "1rem",
+                    alignItems: "center",
+                  }}
+                >
+                  <span>{w.type}</span>
+                  <span style={{ color: C.apricot }}>{w.glas}</span>
+                  <span style={{ color: C.apricot }}>{w.flasche}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Image */}
+          <div>
+            <img
+              src="/manus-storage/joujou-wine_91c3040d.jpg"
+              alt="Weinbar im Gewölbekeller"
+              style={{ width: "100%", height: "500px", objectFit: "cover", display: "block" }}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Manna Palatina (Pinsa) Section ───────────────────────────
+function PinsaSection() {
+  const pinsas = [
+    { name: "Palatina Rosso", desc: "Tomatensauce, Mozzarella, frisches Basilikum, Olivenöl", price: "9,90" },
+    { name: "Bianca Salame", desc: "Crème fraîche, Salami, Rucola, Parmesan, Zitronenabrieb", price: "15,00" },
+    { name: "Umami Royale", desc: "Trüffelcreme, Champignons, Taleggio, frischer Thymian", price: "14,80" },
+    { name: "Pink Velvet", desc: "Rote Bete, Ziegenkäse, Walnüsse, Honig, Rucola", price: "13,50" },
+    { name: "Smoked Rebel", desc: "Geräucherter Scamorza, Speck, Birne, Radicchio, Balsamico", price: "16,00" },
+  ];
+
+  return (
+    <section id="pinsa" style={{ backgroundColor: C.apricotLight, padding: "5rem 0" }}>
+      <div className="container">
+        {/* Header */}
+        <div className="text-center" style={{ marginBottom: "3.5rem" }}>
+          <p
+            className="font-body"
+            style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.terra, marginBottom: "0.75rem" }}
+          >
+            Handgemacht · Luftig · Knusprig
+          </p>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", color: C.brown, marginBottom: "0.5rem" }}
+          >
+            Manna Palatina
+          </h2>
+          <div style={{ width: "3rem", height: "1px", backgroundColor: C.terra, margin: "0 auto 1.25rem" }} />
+          <p
+            className="font-body"
+            style={{ fontSize: "1rem", color: C.brownMid, maxWidth: "520px", margin: "0 auto" }}
+          >
+            Unsere Pinsa — leichter als Pizza, knuspriger als Focaccia.
+            Der perfekte Begleiter zum Wein.
+          </p>
+        </div>
+
+        {/* Pinsa grid */}
+        <div className="grid md:grid-cols-2 gap-0" style={{ border: `1px solid ${C.cream}` }}>
+          {pinsas.map((p, i) => (
+            <div
+              key={i}
+              style={{
+                padding: "1.75rem 2rem",
+                borderRight: i % 2 === 0 ? `1px solid ${C.cream}` : "none",
+                borderBottom: i < pinsas.length - 1 ? `1px solid ${C.cream}` : "none",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+                gap: "1rem",
+                backgroundColor: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.4)",
+              }}
+            >
+              <div style={{ flex: 1 }}>
+                <h3
+                  className="font-display"
+                  style={{ fontSize: "1.2rem", color: C.brown, marginBottom: "0.4rem" }}
+                >
+                  {p.name}
+                </h3>
+                <p
+                  className="font-body"
+                  style={{ fontSize: "0.85rem", color: C.muted, lineHeight: 1.6 }}
+                >
+                  {p.desc}
+                </p>
+              </div>
+              <div
+                className="font-display"
+                style={{ fontSize: "1.3rem", color: C.green, whiteSpace: "nowrap", fontWeight: 500 }}
+              >
+                {p.price}
+              </div>
+            </div>
+          ))}
+          {/* Package highlight */}
+          <div
+            style={{
+              padding: "1.75rem 2rem",
+              backgroundColor: C.green,
+              borderTop: `1px solid ${C.cream}`,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "1rem",
+            }}
+          >
+            <div>
+              <div
+                className="font-body"
+                style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.apricot, marginBottom: "0.4rem" }}
+              >
+                Package
+              </div>
+              <h3
+                className="font-display"
+                style={{ fontSize: "1.2rem", color: C.apricotLight, marginBottom: "0.3rem" }}
+              >
+                Pimentos + Sangria
+              </h3>
+              <p
+                className="font-body"
+                style={{ fontSize: "0.85rem", color: C.cream }}
+              >
+                Pimentos de Padrón 8,80 + Sangria 8,00
+              </p>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <div
+                className="font-display"
+                style={{ fontSize: "1.5rem", color: C.apricotLight }}
+              >
+                15,00
+              </div>
+              <div
+                className="font-body"
+                style={{ fontSize: "0.65rem", letterSpacing: "0.1em", color: C.apricot, textTransform: "uppercase" }}
+              >
+                zusammen
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ── IMAGE SHOWCASE ─────────────────────────────────── */}
-      <section className="grid grid-cols-1 md:grid-cols-2" style={{ height: "60vh" }}>
-        <div className="relative group overflow-hidden" style={{ backgroundImage: "url('/manus-storage/fire-grill-night_4dc64405.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
-          <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.3)" }} />
-          <div className="absolute bottom-0 left-0 p-8 z-10">
-            <h3 className="font-display mb-2" style={{ fontSize: "2.5rem", color: "#ffffff" }}>The Cut</h3>
-            <p style={{ color: "#cccccc" }}>LandLuft Bio-Weiderind · 5 Wochen Dry Aged</p>
-          </div>
+        {/* Pinsa image */}
+        <div style={{ marginTop: "3rem" }}>
+          <img
+            src="/manus-storage/joujou-pinsa_421588b0.jpg"
+            alt="Manna Palatina Pinsa"
+            style={{ width: "100%", height: "340px", objectFit: "cover", display: "block" }}
+          />
         </div>
-        <div className="relative group overflow-hidden" style={{ backgroundImage: "url('/manus-storage/event-barn-party_39ecd5b3.jpg')", backgroundSize: "cover", backgroundPosition: "center", borderLeft: `1px solid ${t.border}` }}>
-          <div className="absolute inset-0" style={{ backgroundColor: "rgba(0,0,0,0.3)" }} />
-          <div className="absolute bottom-0 left-0 p-8 z-10">
-            <h3 className="font-display mb-2" style={{ fontSize: "2.5rem", color: "#ffffff" }}>The Vibe</h3>
-            <p style={{ color: "#cccccc" }}>Grooviger Sound · Ab 20 Uhr drehen wir auf</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── COCKTAIL HERO BANNER ───────────────────────────── */}
-      <section className="relative overflow-hidden" style={{ height: "50vh", borderTop: `1px solid ${t.border}` }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/manus-storage/cocktails-hero_f246c9de.png')" }} />
-        <div className="absolute inset-0" style={{ background: `linear-gradient(to right, ${t.bg}dd 0%, ${t.bg}66 60%, ${t.bg}11 100%)` }} />
-        <div className="relative z-10 h-full flex flex-col justify-center px-12 md:px-24">
-          <p className="font-body uppercase tracking-widest text-sm mb-3" style={{ color: t.accent2 }}>Come as you are</p>
-          <h2 className="font-display mb-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)", color: t.fg, maxWidth: "20ch", lineHeight: 1.1 }}>
-            Erst das Steak.<br />Dann die Nacht.
-          </h2>
-          <p className="font-body" style={{ color: t.fgMuted, maxWidth: "30ch", lineHeight: 1.7 }}>
-            Fire400 ist kein Restaurant. Es ist der Beginn eines Abends, der eskaliert.
-          </p>
-        </div>
-      </section>
-
-      {/* ── FOOTER ─────────────────────────────────────────── */}
-      <footer className="py-12" style={{ backgroundColor: t.bg, borderTop: `1px solid ${t.border}` }}>
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-display tracking-widest" style={{ fontSize: "1.5rem", color: t.fg }}>
-            FIRE<span style={{ color: t.accent1 }}>400</span>
-          </div>
-          <div style={{ height: "2px", background: t.dividerGrad, width: "6rem" }} className="hidden md:block" />
-          <div className="text-sm text-center md:text-right" style={{ color: t.fgMuted }}>
-            <p>Eine Marke von JouJou Pfalz</p>
-            <p>Leistadt · Deutschland</p>
-            <p className="mt-2 font-bold" style={{ color: t.accent1 }}>Passt nicht? Move on.</p>
-          </div>
-        </div>
-      </footer>
-
-      {/* ── THEME SWITCHER (fixed) ──────────────────────────── */}
-      <div
-        className="fixed bottom-6 left-1/2 z-50 flex gap-2 px-4 py-3"
-        style={{
-          transform: "translateX(-50%)",
-          backgroundColor: "rgba(0,0,0,0.85)",
-          border: "1px solid rgba(255,255,255,0.15)",
-          backdropFilter: "blur(12px)",
-          borderRadius: "2px",
-        }}
-      >
-        {Object.values(themes).map((th) => (
-          <button
-            key={th.name}
-            onClick={() => setActiveTheme(th.name)}
-            className="font-display text-xs tracking-widest uppercase px-3 py-2 transition-all duration-200"
-            style={{
-              backgroundColor: activeTheme === th.name ? th.accent1 : "transparent",
-              color: activeTheme === th.name ? (th.name === "black" ? "#000" : th.name === "bone" ? "#f5f0e8" : "#fff") : "rgba(255,255,255,0.5)",
-              border: activeTheme === th.name ? "none" : "1px solid rgba(255,255,255,0.2)",
-              cursor: "pointer",
-              minWidth: "4.5rem",
-            }}
-          >
-            {th.label}
-          </button>
-        ))}
       </div>
+    </section>
+  );
+}
 
+// ── Weinbegleiter Section ────────────────────────────────────
+function BegleiterSection() {
+  const items = [
+    { name: "Bio-Blattsalat", price: "7,50" },
+    { name: "Hummus", price: "5,50" },
+    { name: "Bakery Vibes", price: "8,50" },
+    { name: "Oliven", price: "5,00" },
+    { name: "Artischocken", price: "6,00" },
+    { name: "Tomaten", price: "5,50" },
+    { name: "Tagessuppe", price: "6,50" },
+  ];
+
+  return (
+    <section id="begleiter" style={{ backgroundColor: C.ivory, padding: "5rem 0" }}>
+      <div className="container">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          {/* Left */}
+          <div>
+            <p
+              className="font-body"
+              style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.terra, marginBottom: "0.75rem" }}
+            >
+              Kleine Begleiter
+            </p>
+            <h2
+              className="font-display"
+              style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.brown, marginBottom: "0.5rem", lineHeight: 1.1 }}
+            >
+              Weinbegleiter
+            </h2>
+            <div style={{ width: "3rem", height: "1px", backgroundColor: C.terra, marginBottom: "1.75rem" }} />
+            <p
+              className="font-body"
+              style={{ fontSize: "1rem", color: C.brownMid, lineHeight: 1.8, marginBottom: "2rem" }}
+            >
+              Kleine Gerichte, die den Wein sprechen lassen.
+              Ehrlich, saisonal, unkompliziert.
+            </p>
+          </div>
+
+          {/* Right: Menu */}
+          <div>
+            {items.map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "baseline",
+                  padding: "0.85rem 0",
+                  borderBottom: `1px solid ${C.cream}`,
+                }}
+              >
+                <span className="font-display" style={{ fontSize: "1.1rem", color: C.brown }}>{item.name}</span>
+                <span
+                  className="font-display"
+                  style={{ fontSize: "1rem", color: C.green, fontWeight: 500 }}
+                >
+                  {item.price}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Shop & Events Section ────────────────────────────────────
+function ShopSection() {
+  const handleComingSoon = (label: string) => {
+    toast(`${label} — demnächst verfügbar`, {
+      description: "Wir arbeiten daran. Melde dich für Updates an.",
+      duration: 3500,
+    });
+  };
+
+  const cards = [
+    {
+      icon: "🎟",
+      title: "Events & Tickets",
+      desc: "Dégustationen, Weinabende, Sonderveranstaltungen. Exklusiv. Limitiert.",
+      cta: "Tickets kaufen",
+      action: () => handleComingSoon("Tickets"),
+    },
+    {
+      icon: "🛍",
+      title: "Merch Shop",
+      desc: "petit joujou T-Shirts, Caps und mehr. Für alle, die den Vibe nach Hause tragen wollen.",
+      cta: "Shop besuchen",
+      action: () => handleComingSoon("Merch Shop"),
+    },
+    {
+      icon: "🍷",
+      title: "Wein kaufen",
+      desc: "Unsere kuratierten Bio-Weine direkt nach Hause. Bald online bestellbar.",
+      cta: "Wein bestellen",
+      action: () => handleComingSoon("Weinshop"),
+    },
+  ];
+
+  return (
+    <section id="shop" style={{ backgroundColor: C.apricotLight, padding: "5rem 0" }}>
+      <div className="container">
+        {/* Header */}
+        <div className="text-center" style={{ marginBottom: "3.5rem" }}>
+          <p
+            className="font-body"
+            style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.terra, marginBottom: "0.75rem" }}
+          >
+            Mehr petit joujou
+          </p>
+          <h2
+            className="font-display"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", color: C.brown, marginBottom: "0.5rem" }}
+          >
+            Shop &amp; Events
+          </h2>
+          <div style={{ width: "3rem", height: "1px", backgroundColor: C.terra, margin: "0 auto" }} />
+        </div>
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-0" style={{ border: `1px solid ${C.cream}` }}>
+          {cards.map((c, i) => (
+            <div
+              key={i}
+              style={{
+                padding: "2.5rem 2rem",
+                borderRight: i < cards.length - 1 ? `1px solid ${C.cream}` : "none",
+                backgroundColor: i === 1 ? "rgba(255,255,255,0.5)" : "transparent",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+              }}
+            >
+              <div style={{ fontSize: "2rem" }}>{c.icon}</div>
+              <h3
+                className="font-display"
+                style={{ fontSize: "1.4rem", color: C.brown }}
+              >
+                {c.title}
+              </h3>
+              <p
+                className="font-body"
+                style={{ fontSize: "0.9rem", color: C.brownMid, lineHeight: 1.7, flex: 1 }}
+              >
+                {c.desc}
+              </p>
+              <button
+                onClick={c.action}
+                className="font-body"
+                style={{
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  backgroundColor: C.green,
+                  color: C.ivory,
+                  padding: "0.75rem 1.5rem",
+                  border: "none",
+                  cursor: "pointer",
+                  alignSelf: "flex-start",
+                }}
+              >
+                {c.cta}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Reservierung Section ─────────────────────────────────────
+function ReservierungSection() {
+  const [form, setForm] = useState({ name: "", date: "", personen: "2", garstufe: "", notiz: "" });
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSent(true);
+    toast("Reservierungsanfrage gesendet!", {
+      description: "Wir melden uns in Kürze per E-Mail zur Bestätigung.",
+      duration: 5000,
+    });
+  };
+
+  return (
+    <section id="reservierung" style={{ backgroundColor: C.green, padding: "5rem 0" }}>
+      <div className="container">
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          {/* Left: Info */}
+          <div>
+            <p
+              className="font-body"
+              style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.apricot, marginBottom: "0.75rem" }}
+            >
+              Nur donnerstags
+            </p>
+            <h2
+              className="font-display"
+              style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", color: C.apricotLight, marginBottom: "0.5rem", lineHeight: 1.1 }}
+            >
+              Reservierung
+            </h2>
+            <div style={{ width: "3rem", height: "1px", backgroundColor: C.terra, marginBottom: "1.75rem" }} />
+            <p
+              className="font-body"
+              style={{ fontSize: "1rem", color: C.cream, lineHeight: 1.8, marginBottom: "2rem" }}
+            >
+              Das Entrecôte gibt es nur auf Reservierung — und nur donnerstags.
+              Bitte gib bei der Anfrage deine gewünschte Garstufe an.
+              Wir bestätigen per E-Mail.
+            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              {[
+                { label: "Öffnungszeiten", value: "Donnerstags ab 18 Uhr" },
+                { label: "Weinbar", value: "Walk-in willkommen" },
+                { label: "Ort", value: "Leistadt, Pfalz" },
+                { label: "Kontakt", value: "info@petit-joujou.de" },
+              ].map((d) => (
+                <div key={d.label} style={{ display: "flex", gap: "1rem", alignItems: "baseline" }}>
+                  <span
+                    className="font-body"
+                    style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.apricot, minWidth: "120px" }}
+                  >
+                    {d.label}
+                  </span>
+                  <span
+                    className="font-display"
+                    style={{ fontSize: "1rem", color: C.apricotLight }}
+                  >
+                    {d.value}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Form */}
+          <div style={{ backgroundColor: C.ivory, padding: "2.5rem" }}>
+            {sent ? (
+              <div style={{ textAlign: "center", padding: "2rem 0" }}>
+                <div className="font-display" style={{ fontSize: "2rem", color: C.green, marginBottom: "1rem" }}>
+                  Merci!
+                </div>
+                <p className="font-body" style={{ color: C.brownMid }}>
+                  Deine Anfrage ist eingegangen. Wir melden uns bald.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                <h3
+                  className="font-display"
+                  style={{ fontSize: "1.5rem", color: C.brown, marginBottom: "0.5rem" }}
+                >
+                  Tisch anfragen
+                </h3>
+
+                {[
+                  { id: "name", label: "Name", type: "text", placeholder: "Dein Name", required: true },
+                  { id: "date", label: "Wunschdatum (Donnerstag)", type: "date", placeholder: "", required: true },
+                ].map((f) => (
+                  <div key={f.id}>
+                    <label
+                      htmlFor={f.id}
+                      className="font-body"
+                      style={{ display: "block", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", color: C.muted, marginBottom: "0.4rem" }}
+                    >
+                      {f.label}
+                    </label>
+                    <input
+                      id={f.id}
+                      type={f.type}
+                      placeholder={f.placeholder}
+                      required={f.required}
+                      value={(form as any)[f.id]}
+                      onChange={(e) => setForm({ ...form, [f.id]: e.target.value })}
+                      className="font-body"
+                      style={{
+                        width: "100%",
+                        padding: "0.65rem 0.85rem",
+                        border: `1px solid ${C.cream}`,
+                        backgroundColor: "white",
+                        fontSize: "0.9rem",
+                        color: C.brown,
+                        outline: "none",
+                      }}
+                    />
+                  </div>
+                ))}
+
+                {/* Personen */}
+                <div>
+                  <label
+                    htmlFor="personen"
+                    className="font-body"
+                    style={{ display: "block", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", color: C.muted, marginBottom: "0.4rem" }}
+                  >
+                    Anzahl Personen
+                  </label>
+                  <select
+                    id="personen"
+                    value={form.personen}
+                    onChange={(e) => setForm({ ...form, personen: e.target.value })}
+                    className="font-body"
+                    style={{
+                      width: "100%",
+                      padding: "0.65rem 0.85rem",
+                      border: `1px solid ${C.cream}`,
+                      backgroundColor: "white",
+                      fontSize: "0.9rem",
+                      color: C.brown,
+                      outline: "none",
+                    }}
+                  >
+                    {["1", "2", "3", "4", "5", "6"].map((n) => (
+                      <option key={n} value={n}>{n} {n === "1" ? "Person" : "Personen"}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Garstufe */}
+                <div>
+                  <label
+                    htmlFor="garstufe"
+                    className="font-body"
+                    style={{ display: "block", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", color: C.muted, marginBottom: "0.4rem" }}
+                  >
+                    Garstufe
+                  </label>
+                  <select
+                    id="garstufe"
+                    value={form.garstufe}
+                    onChange={(e) => setForm({ ...form, garstufe: e.target.value })}
+                    required
+                    className="font-body"
+                    style={{
+                      width: "100%",
+                      padding: "0.65rem 0.85rem",
+                      border: `1px solid ${C.cream}`,
+                      backgroundColor: "white",
+                      fontSize: "0.9rem",
+                      color: C.brown,
+                      outline: "none",
+                    }}
+                  >
+                    <option value="">Bitte wählen</option>
+                    <option value="rare">Rare (fast roh)</option>
+                    <option value="medium-rare">Medium Rare (rosa, saftig)</option>
+                    <option value="medium">Medium (leicht rosa)</option>
+                    <option value="well-done">Well Done (durchgegart)</option>
+                  </select>
+                </div>
+
+                {/* Notiz */}
+                <div>
+                  <label
+                    htmlFor="notiz"
+                    className="font-body"
+                    style={{ display: "block", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase", color: C.muted, marginBottom: "0.4rem" }}
+                  >
+                    Anmerkungen (optional)
+                  </label>
+                  <textarea
+                    id="notiz"
+                    rows={3}
+                    placeholder="Allergien, besondere Wünsche..."
+                    value={form.notiz}
+                    onChange={(e) => setForm({ ...form, notiz: e.target.value })}
+                    className="font-body"
+                    style={{
+                      width: "100%",
+                      padding: "0.65rem 0.85rem",
+                      border: `1px solid ${C.cream}`,
+                      backgroundColor: "white",
+                      fontSize: "0.9rem",
+                      color: C.brown,
+                      outline: "none",
+                      resize: "vertical",
+                    }}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="font-body"
+                  style={{
+                    fontSize: "0.78rem",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    backgroundColor: C.green,
+                    color: C.ivory,
+                    padding: "0.9rem",
+                    border: "none",
+                    cursor: "pointer",
+                    marginTop: "0.5rem",
+                  }}
+                >
+                  Anfrage absenden
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Footer ───────────────────────────────────────────────────
+function Footer() {
+  return (
+    <footer style={{ backgroundColor: C.brown, padding: "3rem 0" }}>
+      <div className="container">
+        <div className="grid md:grid-cols-3 gap-8 items-start" style={{ marginBottom: "2rem" }}>
+          {/* Brand */}
+          <div>
+            <div className="font-display" style={{ fontSize: "0.75rem", letterSpacing: "0.3em", color: C.cream, textTransform: "uppercase", marginBottom: "0.2rem" }}>petit</div>
+            <div className="font-script" style={{ fontSize: "2rem", color: C.terra, lineHeight: 1, marginBottom: "0.75rem" }}>joujou</div>
+            <p className="font-body" style={{ fontSize: "0.85rem", color: C.muted, lineHeight: 1.7 }}>
+              klein, fein, wein<br />
+              Weinbar &amp; Bistro · Leistadt, Pfalz
+            </p>
+          </div>
+
+          {/* Links */}
+          <div>
+            <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.cream, marginBottom: "1rem" }}>Navigation</p>
+            {["Das Entrecôte", "Weinbar", "Manna Palatina", "Weinbegleiter", "Shop & Events", "Reservierung"].map((l) => (
+              <a
+                key={l}
+                href={`#${l.toLowerCase().replace(/[^a-z]/g, "")}`}
+                className="block font-body"
+                style={{ fontSize: "0.85rem", color: C.muted, textDecoration: "none", marginBottom: "0.4rem" }}
+              >
+                {l}
+              </a>
+            ))}
+          </div>
+
+          {/* Contact */}
+          <div>
+            <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.cream, marginBottom: "1rem" }}>Kontakt</p>
+            <p className="font-body" style={{ fontSize: "0.85rem", color: C.muted, lineHeight: 1.8 }}>
+              Leistadt, Pfalz<br />
+              info@petit-joujou.de<br />
+              <br />
+              Eine Marke von JouJou Pfalz
+            </p>
+          </div>
+        </div>
+
+        <div style={{ borderTop: `1px solid rgba(197,178,153,0.2)`, paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+          <p className="font-body" style={{ fontSize: "0.75rem", color: C.muted }}>
+            © 2025 petit joujou · Alle Rechte vorbehalten
+          </p>
+          <div style={{ display: "flex", gap: "1.5rem" }}>
+            {["Impressum", "Datenschutz"].map((l) => (
+              <a
+                key={l}
+                href="#"
+                className="font-body"
+                style={{ fontSize: "0.75rem", color: C.muted, textDecoration: "none" }}
+                onClick={(e) => { e.preventDefault(); toast(`${l} — demnächst verfügbar`); }}
+              >
+                {l}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// ── Main Export ──────────────────────────────────────────────
+export default function Home() {
+  return (
+    <div style={{ backgroundColor: C.ivory, minHeight: "100vh" }}>
+      <Nav />
+      <main style={{ paddingTop: "64px" }}>
+        <Hero />
+        <IntroBand />
+        <EntrecoteSection />
+        <WeinbarSection />
+        <PinsaSection />
+        <BegleiterSection />
+        <ShopSection />
+        <ReservierungSection />
+      </main>
+      <Footer />
     </div>
   );
 }
