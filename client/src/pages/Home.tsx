@@ -223,16 +223,15 @@ function ScheuneSection() {
             Drinnen
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: C.ink }}>
-            Scheune mit Geschichte
+            Scheune. Seit 1709.
           </h2>
         </div>
       </div>
       <div style={{ backgroundColor: C.bgPeach, padding: "5rem 0" }}>
         <div style={{ maxWidth: "680px", margin: "0 auto", padding: "0 1.5rem", textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.85 }}>
-            Historischer Dachstuhl, Bruchsteinwände, Rattan-Lampen und der Geruch von altem Holz.
-            Kein steriles Weinlokal — ein echter Ort, der Geschichten erzählt.
-            Hier sitzt man nicht, um zu sehen und gesehen zu werden.
+            Historischer Dachstuhl. Bruchsteinwände. Rattan-Lampen.
+            Gebaut 1709 — und seitdem nicht langweilig geworden.
             Hier sitzt man, um zu trinken und zu reden.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginTop: "2rem" }}>
@@ -565,7 +564,7 @@ function GalerieSection() {
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: C.ink }}>
-            Ein Ort mit Geschichte
+            Einblicke
           </h2>
           <div style={{ width: "3rem", height: "1px", backgroundColor: C.peachDark, margin: "1rem auto 0" }} />
         </div>
