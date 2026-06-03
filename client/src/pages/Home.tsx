@@ -128,7 +128,7 @@ function Intro() {
           Weinbar · Leistadt, Pfalz
         </p>
         <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.4 }}>
-          das petit joujou möchte dein Wein-Tempel sein.
+petit joujou — dein Weintempel.
         </h2>
         <p className="font-body" style={{ fontSize: "1.15rem", color: C.inkMid, lineHeight: 2, letterSpacing: "0.02em" }}>
           Pfalz · Rheinhessen · Österreich · Frankreich.<br />
@@ -138,12 +138,11 @@ function Intro() {
         {/* Three pillars */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginTop: "3.5rem" }}>
           {[
-            { icon: "🍷", title: "Begehbarer Keller", text: "Kein Katalog. Kein Tablet. Echte Flaschen im Regal." },
-            { icon: "🌿", title: "Nur Bio", text: "Biodynamisch, naturnah, fair — von Winzern, die wir persönlich kennen." },
-            { icon: "🎉", title: "Bis 100 Gäste", text: "Hochzeiten, Geburtstage, Firmen — wir passen uns an euch an." },
+            { title: "Begehbarer Keller", text: "Kein Katalog. Kein Tablet. Echte Flaschen im Regal." },
+            { title: "Nur Bio", text: "Biodynamisch, naturnah, fair — von Winzern, die wir persönlich kennen." },
+            { title: "Bis 100 Gäste", text: "Hochzeiten, Geburtstage, Firmen — wir passen uns an euch an." },
           ].map((p) => (
-            <div key={p.title} style={{ padding: "1.5rem 1rem", backgroundColor: C.bgSage }}>
-              <div style={{ fontSize: "1.8rem", marginBottom: "0.75rem" }}>{p.icon}</div>
+            <div key={p.title} style={{ padding: "1.5rem 1rem", backgroundColor: C.bgSage, borderTop: `2px solid ${C.sage}` }}>
               <div className="font-display" style={{ fontSize: "1rem", color: C.ink, marginBottom: "0.5rem" }}>{p.title}</div>
               <div className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.65 }}>{p.text}</div>
             </div>
@@ -176,27 +175,15 @@ function WeinkellerSection() {
         </div>
       </div>
 
-      {/* Three-column cellar gallery */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0" }}>
-        <div style={{ position: "relative", overflow: "hidden" }}>
-          <img src="/manus-storage/pj-keller-innen1-sharp_239ba768.jpg" alt="Weinkeller Innenraum" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
-          <div style={{ position: "absolute", bottom: "1rem", left: "1rem", backgroundColor: "rgba(250,246,239,0.88)", padding: "0.25rem 0.7rem" }}>
-            <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Gewölbe</span>
-          </div>
-        </div>
-        <div style={{ position: "relative", overflow: "hidden" }}>
-          <img src="/manus-storage/pj-keller-innen2-sharp_23cd52dc.jpg" alt="Weinkeller Regale" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
-          <div style={{ position: "absolute", bottom: "1rem", left: "1rem", backgroundColor: "rgba(250,246,239,0.88)", padding: "0.25rem 0.7rem" }}>
-            <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>500 Weine</span>
-          </div>
-        </div>
-        <div style={{ position: "relative", overflow: "hidden" }}>
-          <img src="/manus-storage/pj-keller-flaschen-sharp_608e1591.jpg" alt="Weinflaschen auf Fass" style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }} />
-          <div style={{ position: "absolute", bottom: "1rem", left: "1rem", backgroundColor: "rgba(250,246,239,0.88)", padding: "0.25rem 0.7rem" }}>
-            <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Empfehlungen</span>
-          </div>
-        </div>
+      {/* Single large cellar panorama */}
+      <div style={{ position: "relative", overflow: "hidden" }}>
+        <img
+          src="/manus-storage/pj-keller-innen1-sharp_239ba768.jpg"
+          alt="Weinkeller — Gewölbe mit Treppe und Weinregalen"
+          style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+        />
       </div>
+
 
       {/* Text below gallery */}
       <div style={{ backgroundColor: C.bgCream, padding: "5rem 0" }}>
@@ -423,13 +410,12 @@ function GesellschaftenSection() {
             {/* Occasion types */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
               {[
-                { icon: "💍", label: "Hochzeiten", sub: "Bis 100 Gäste" },
-                { icon: "🎂", label: "Geburtstage", sub: "Jede Größe" },
-                { icon: "🏢", label: "Firmen", sub: "Events & Teamabende" },
-                { icon: "🥂", label: "Weinabende", sub: "Privat & exklusiv" },
+                { label: "Hochzeiten", sub: "Bis 100 Gäste" },
+                { label: "Geburtstage", sub: "Jede Größe" },
+                { label: "Firmen", sub: "Events & Teamabende" },
+                { label: "Weinabende", sub: "Privat & exklusiv" },
               ].map((o) => (
-                <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", display: "flex", alignItems: "center", gap: "1rem" }}>
-                  <span style={{ fontSize: "1.5rem" }}>{o.icon}</span>
+                <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `3px solid ${C.sage}` }}>
                   <div>
                     <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink }}>{o.label}</div>
                     <div className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight }}>{o.sub}</div>
@@ -451,9 +437,9 @@ function GesellschaftenSection() {
           <div style={{ backgroundColor: C.bg, padding: "2.5rem" }}>
             {sent ? (
               <div style={{ textAlign: "center", padding: "3rem 1rem" }}>
-                <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🥂</div>
+                <div style={{ width: "3rem", height: "2px", backgroundColor: C.sage, margin: "0 auto 1.5rem" }} />
                 <h3 className="font-display" style={{ fontSize: "1.6rem", color: C.ink, marginBottom: "1rem" }}>
-                  Anfrage erhalten!
+                  Anfrage erhalten.
                 </h3>
                 <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.7 }}>
                   Wir melden uns innerhalb von 24 Stunden bei euch. Versprochen.
