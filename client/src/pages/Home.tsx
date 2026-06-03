@@ -87,7 +87,7 @@ function Nav() {
 function Hero() {
   return (
     <section style={{ position: "relative", height: "100vh", minHeight: "600px", overflow: "hidden", backgroundColor: C.bgSage }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-keller-bogen-sharp_7b2865f7.jpg')", backgroundSize: "cover", backgroundPosition: "center 40%" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-tight_433ca977.jpg')", backgroundSize: "cover", backgroundPosition: "center 45%" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(253,240,232,0.45) 0%, rgba(168,196,184,0.25) 50%, rgba(253,248,244,0.7) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
         <div style={{ marginBottom: "1.5rem" }}>
