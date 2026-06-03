@@ -139,7 +139,7 @@ function Hero() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('/manus-storage/pj-hero-abs_82fae2c0.jpg')",
+          backgroundImage: "url('/manus-storage/pj-hero-abs_d535b352.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }}
@@ -384,7 +384,7 @@ function WeinkarteSection() {
           {/* Image: staircase / entrance to wine area */}
           <div style={{ position: "relative" }}>
             <img
-              src="/manus-storage/pj-treppe-abs_87ed09ec.jpg"
+              src="/manus-storage/pj-treppe-abs_9dd87783.jpg"
               alt="Eingang zur begehbaren Weinkarte"
               style={{ width: "100%", height: "520px", objectFit: "cover", display: "block" }}
             />
@@ -417,7 +417,7 @@ function ScheuneSection() {
       {/* Full-width image */}
       <div style={{ position: "relative", height: "70vh", minHeight: "480px", overflow: "hidden" }}>
         <img
-          src="/manus-storage/pj-scheune-abs_f4acf293.jpg"
+          src="/manus-storage/pj-scheune-abs_e35ee2c7.jpg"
           alt="Die Scheune — historischer Dachstuhl"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 20%" }}
         />
@@ -491,7 +491,7 @@ function GartenSection() {
           {/* Image */}
           <div>
             <img
-              src="/manus-storage/pj-terrasse-abs_abb99ca0.jpg"
+              src="/manus-storage/pj-terrasse-abs_8c8eee28.jpg"
               alt="Garten der Weinbar mit Weinfässern und Sonnenschirmen"
               style={{ width: "100%", height: "480px", objectFit: "cover", display: "block" }}
             />
@@ -656,12 +656,12 @@ function EventsSection() {
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
-    { src: "/manus-storage/pj-eingang-abs_87f4d6d6.jpg", alt: "Eingang", caption: "Der Eingang" },
-    { src: "/manus-storage/pj-hero-abs_82fae2c0.jpg", alt: "Die Bar", caption: "Die Bar" },
-    { src: "/manus-storage/pj-treppe-abs_87ed09ec.jpg", alt: "Treppe", caption: "Ins Innere" },
-    { src: "/manus-storage/pj-gastraum-abs_8a1bb778.jpg", alt: "Gastraum", caption: "Der Gastraum" },
-    { src: "/manus-storage/pj-terrasse-abs_abb99ca0.jpg", alt: "Terrasse", caption: "Der Garten" },
-    { src: "/manus-storage/pj-hof-abs_d3d19619.jpg", alt: "Hof", caption: "Der Hof" },
+    { src: "/manus-storage/pj-eingang-abs_b2d9b6f5.jpg", alt: "Eingang", caption: "Der Eingang" },
+    { src: "/manus-storage/pj-hero-abs_d535b352.jpg", alt: "Die Bar", caption: "Die Bar" },
+    { src: "/manus-storage/pj-treppe-abs_9dd87783.jpg", alt: "Treppe", caption: "Ins Innere" },
+    { src: "/manus-storage/pj-gastraum-abs_e7b5e405.jpg", alt: "Gastraum", caption: "Der Gastraum" },
+    { src: "/manus-storage/pj-terrasse-abs_8c8eee28.jpg", alt: "Terrasse", caption: "Der Garten" },
+    { src: "/manus-storage/pj-hof-abs_01b14aeb.jpg", alt: "Hof", caption: "Der Hof" },
   ];
 
   return (
