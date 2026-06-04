@@ -7,25 +7,26 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
-// ── Pastell-Palette ──────────────────────────────────────────
+// ── Weinbar-Palette (petit joujou) ──────────────────────────
+// #FDDDE0 Rosa-Hintergrund · #FF66C4 Magenta-Akzent · #40818A Joujou-Grün
 const C = {
-  bg:          "#fdf8f4",
-  bgSage:      "#eef3f0",
-  bgPeach:     "#fdf0e8",
-  bgLavender:  "#f3eff8",
-  bgCream:     "#faf6ef",
-  ink:         "#3d2e22",
-  inkMid:      "#6b5444",
-  inkLight:    "#9c8070",
-  sage:        "#a8c4b8",
-  sageDark:    "#7aaa96",
-  peach:       "#f5c9a3",
-  peachDark:   "#e8a87c",
-  lavender:    "#d4c5e2",
-  rose:        "#f2d5cc",
-  hotpink:     "#f472b6",
-  border:      "#e8ddd4",
-  borderSage:  "#c8ddd5",
+  bg:          "#fdf8f9",   // fast weiß, leicht rosa
+  bgSage:      "#fce8ee",   // zartes Rosa (war Salbei)
+  bgPeach:     "#fddde0",   // Candy-Rosa (war Pfirsich)
+  bgLavender:  "#fce8ee",   // Rosa (war Lavendel)
+  bgCream:     "#fdf4f6",   // sehr zartes Rosa (war Creme)
+  ink:         "#1e3a3a",   // tief dunkelgrün (war Braun)
+  inkMid:      "#40818a",   // Joujou-Grün (war Mittelbraun)
+  inkLight:    "#6ba8b0",   // helles Joujou-Grün (war Hellbraun)
+  sage:        "#a8d4d8",   // helles Blaugrün (war Salbei)
+  sageDark:    "#40818a",   // Joujou-Grün — Hauptfarbe
+  peach:       "#ffb3e0",   // helles Pink (war Pfirsich)
+  peachDark:   "#ff66c4",   // Magenta — Akzentfarbe
+  lavender:    "#fddde0",   // Rosa (war Lavendel)
+  rose:        "#fddde0",   // Candy-Rosa (war Rose)
+  hotpink:     "#ff66c4",   // Magenta
+  border:      "#f0d0d8",   // Rosa-Border
+  borderSage:  "#b8dde0",   // Grün-Border
 };
 
 // ── Nav ──────────────────────────────────────────────────────
@@ -43,7 +44,7 @@ function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          backgroundColor: "rgba(253,248,244,0.94)",
+          backgroundColor: "rgba(253,244,246,0.94)",
           backdropFilter: "blur(14px)",
           borderBottom: `1px solid ${C.border}`,
         }}
@@ -330,7 +331,7 @@ function EventsSection() {
             <img
               src="/manus-storage/pj-event-winzerbattle1_d644c4c6.jpg"
               alt="Winzerbattle Rheinhessen vs. Pfalz"
-              style={{ width: "100%", height: "340px", objectFit: "contain", backgroundColor: "#ff69b4", display: "block" }}
+              style={{ width: "100%", height: "340px", objectFit: "contain", backgroundColor: "#fddde0", display: "block" }}
             />
           </div>
 
@@ -344,11 +345,11 @@ function EventsSection() {
           </div>
 
           {/* Frühlingsmarkt — the crazy woman flyer */}
-          <div style={{ position: "relative", overflow: "hidden", backgroundColor: "#b8d4c8" }}>
+          <div style={{ position: "relative", overflow: "hidden", backgroundColor: "#fce8ee" }}>
             <img
               src="/manus-storage/pj-event-fruehlingsmarkt_d8cc0177.jpg"
               alt="Frühlingsmarkt — Let's celebrate spring!"
-              style={{ width: "100%", height: "340px", objectFit: "contain", backgroundColor: "#b8d4c8", display: "block" }}
+              style={{ width: "100%", height: "340px", objectFit: "contain", backgroundColor: "#fce8ee", display: "block" }}
             />
           </div>
         </div>
@@ -356,7 +357,7 @@ function EventsSection() {
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
           <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight }}>
             Aktuelle Events & Tickets auf{" "}
-            <a href="https://www.instagram.com/joujou.pfalz" target="_blank" rel="noopener noreferrer" style={{ color: C.sageDark, textDecoration: "none", fontWeight: 600 }}>
+            <a href="https://www.instagram.com/joujou.pfalz" target="_blank" rel="noopener noreferrer" style={{ color: C.peachDark, textDecoration: "none", fontWeight: 600 }}>
               @joujou.pfalz
             </a>
           </p>
@@ -412,7 +413,7 @@ function GesellschaftenSection() {
                 { label: "Firmen", sub: "Events & Teamabende" },
                 { label: "Weinabende", sub: "Privat & exklusiv" },
               ].map((o) => (
-                <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `3px solid ${C.sage}` }}>
+                <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `3px solid ${C.sageDark}` }}>
                   <div>
                     <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink }}>{o.label}</div>
                     <div className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight }}>{o.sub}</div>
@@ -422,7 +423,7 @@ function GesellschaftenSection() {
             </div>
 
             {/* Key promise */}
-            <div style={{ backgroundColor: C.bg, padding: "1.5rem", borderLeft: `4px solid ${C.sage}` }}>
+            <div style={{ backgroundColor: C.bg, padding: "1.5rem", borderLeft: `4px solid ${C.sageDark}` }}>
               <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.7, fontStyle: "italic" }}>
                 „Kein Pauschalpaket. Kein Mindestverbrauch, der euch überrascht.
                 Wir reden zuerst — und dann rechnen wir."
@@ -434,7 +435,7 @@ function GesellschaftenSection() {
           <div style={{ backgroundColor: C.bg, padding: "2.5rem" }}>
             {sent ? (
               <div style={{ textAlign: "center", padding: "3rem 1rem" }}>
-                <div style={{ width: "3rem", height: "2px", backgroundColor: C.sage, margin: "0 auto 1.5rem" }} />
+                <div style={{ width: "3rem", height: "2px", backgroundColor: C.sageDark, margin: "0 auto 1.5rem" }} />
                 <h3 className="font-display" style={{ fontSize: "1.6rem", color: C.ink, marginBottom: "1rem" }}>
                   Anfrage erhalten.
                 </h3>
@@ -548,7 +549,7 @@ function GesellschaftenSection() {
                   type="submit"
                   disabled={anfrageMutation.isPending}
                   className="font-body"
-                  style={{ width: "100%", padding: "1rem", backgroundColor: anfrageMutation.isPending ? C.sage : C.sageDark, color: C.bg, border: "none", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: anfrageMutation.isPending ? "not-allowed" : "pointer" }}
+                  style={{ width: "100%", padding: "1rem", backgroundColor: anfrageMutation.isPending ? C.sage : C.peachDark, color: C.bg, border: "none", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: anfrageMutation.isPending ? "not-allowed" : "pointer" }}
                 >
                   {anfrageMutation.isPending ? "Wird gesendet..." : "Anfrage absenden"}
                 </button>
@@ -592,7 +593,7 @@ function GalerieSection() {
                 alt={p.alt}
                 style={{ width: "100%", height: i < 2 ? "300px" : "200px", objectFit: "cover", display: "block", filter: "saturate(0.85)" }}
               />
-              <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", backgroundColor: "rgba(253,248,244,0.82)", padding: "0.2rem 0.65rem" }}>
+              <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", backgroundColor: "rgba(253,221,224,0.88)", padding: "0.2rem 0.65rem" }}>
                 <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>
                   {p.caption}
                 </span>
@@ -608,7 +609,7 @@ function GalerieSection() {
 // ── Footer ────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer style={{ backgroundColor: C.ink, padding: "4rem 0 3rem" }}>
+    <footer style={{ backgroundColor: "#1e3a3a", padding: "4rem 0 3rem" }}>
       <div className="container">
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }}>
           <div>
