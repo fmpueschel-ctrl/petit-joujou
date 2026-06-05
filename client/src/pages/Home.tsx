@@ -125,9 +125,6 @@ function Hero() {
             petit joujou
           </h1>
           <div style={{ width: "3rem", height: "1px", backgroundColor: "#ff66c4", margin: "1.5rem auto" }} />
-          <p className="font-display" style={{ fontSize: "clamp(0.85rem, 2vw, 1.1rem)", color: "rgba(253,221,224,0.75)", letterSpacing: "0.2em", fontStyle: "italic" }}>
-            klein · fein · wein
-          </p>
         </div>
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginTop: "2.5rem" }}>
           <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: "#fddde0", textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(253,221,224,0.4)" }}>
@@ -160,10 +157,15 @@ function Intro() {
         <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.sageDark, marginBottom: "1.5rem", lineHeight: 1.15, letterSpacing: "0.02em" }}>
           wein
         </h2>
-        <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto" }}>
+        <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto 2rem" }}>
           Weine, die man anderswo nicht findet.
           Essen, das man nicht vergisst.
           Ein Ort, den man nicht erklären kann — nur erleben.
+        </p>
+        <p className="font-body" style={{ fontSize: "0.88rem", color: C.inkLight, lineHeight: 1.85, letterSpacing: "0.02em", maxWidth: "480px", margin: "0 auto" }}>
+          Kein Massenlokal. Keine Weinkarte von der Stange.
+          Wir kennen unsere Winzer persönlich — aus der Pfalz und von weiter weg.
+          Manche Flaschen gibt es nur bei uns. Manche nur noch einmal.
         </p>
         {/* Three pillars */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
