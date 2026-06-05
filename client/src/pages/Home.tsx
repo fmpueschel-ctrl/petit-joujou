@@ -184,17 +184,23 @@ function Intro() {
 function WeinkellerSection() {
   return (
     <section id="weinkeller" style={{ backgroundColor: C.bgCream, padding: "0" }}>
-      {/* Two-image panorama: Keller + Fass/Bogen */}
+      {/* Quer oben: Blick von unten nach oben im Keller */}
+      <img
+        src="/manus-storage/pj-keller-fass-sharp_2a26400b.jpg"
+        alt="Weinkeller — Blick nach oben"
+        style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 65%", display: "block" }}
+      />
+      {/* Zwei Hochkant-Bilder nebeneinander */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0" }}>
         <img
-          src="/manus-storage/pj-keller-fass-sharp_2a26400b.jpg"
-          alt="Weinkeller — Gewölbe mit Weinflaschen"
-          style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 65%", display: "block" }}
+          src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
+          alt="Weinkeller — Weinflaschen im Regal"
+          style={{ width: "100%", height: "600px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
         />
         <img
           src="/manus-storage/pj-fass-bogen_92b6a0fc.jpg"
           alt="Weinfass vor dem Sandsteinbogen"
-          style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+          style={{ width: "100%", height: "600px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
         />
       </div>
 
@@ -590,7 +596,7 @@ function EssenSection() {
             Alles bio. Alles echt.
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1rem" }}>
-            Essen bei petit joujou
+            À table
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto", lineHeight: 1.8 }}>
             Kleine, feine Küche. Alles biologisch, alles mit Liebe gemacht.
@@ -669,7 +675,7 @@ function EssenSection() {
             </h3>
             <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
               Pfälzer Salami, Coppa, Ziegenkäse, getrocknete Tomaten,
-              Oliven, Artischocken, Sauerteigbrot. Alles bio, alles handverlesen.
+              Oliven, Artischocken, Sauerteigbrot — alles bio, alles handverlesen.
               Die perfekte Begleitung zu einem guten Glas Wein.
             </p>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
@@ -788,10 +794,10 @@ export default function Home() {
         <Intro />
         <WeinkellerSection />
         <ScheuneSection />
+        <EssenSection />
         <GartenSection />
         <EventsSection />
         <GesellschaftenSection />
-        <EssenSection />
         <GalerieSection />
       </main>
       <Footer />
