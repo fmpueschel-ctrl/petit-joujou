@@ -148,15 +148,19 @@ function Intro() {
         <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1.5rem" }}>
           Weinbar · Leistadt, Pfalz
         </p>
-        <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.ink, marginBottom: "0.25rem", lineHeight: 1.15, letterSpacing: "0.02em" }}>
-          klein
-        </h2>
-        <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.peachDark, marginBottom: "0.25rem", lineHeight: 1.15, letterSpacing: "0.02em" }}>
-          fein
-        </h2>
-        <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.sageDark, marginBottom: "1.5rem", lineHeight: 1.15, letterSpacing: "0.02em" }}>
-          wein
-        </h2>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "baseline", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
+          <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.sageDark, lineHeight: 1.15, letterSpacing: "0.02em", margin: 0 }}>
+            wein
+          </h2>
+          <span className="font-script" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: C.inkLight, lineHeight: 1.15, margin: "0 0.25rem" }}>·</span>
+          <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.peachDark, lineHeight: 1.15, letterSpacing: "0.02em", margin: 0 }}>
+            fein
+          </h2>
+          <span className="font-script" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: C.inkLight, lineHeight: 1.15, margin: "0 0.25rem" }}>·</span>
+          <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.ink, lineHeight: 1.15, letterSpacing: "0.02em", margin: 0 }}>
+            klein
+          </h2>
+        </div>
         <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto 2rem" }}>
           Weine, die man anderswo nicht findet.
           Essen, das man nicht vergisst.
@@ -657,9 +661,9 @@ function EssenSection() {
             </div>
           </div>
           <img
-            src="/manus-storage/planche-vogel_1c283b0e.jpg"
+            src="/manus-storage/planche-hochkant_8d179cfd.jpg"
             alt="La Planche du Joujou"
-            style={{ width: "100%", height: "340px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
+            style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
           />
         </div>
       </div>
