@@ -112,25 +112,31 @@ function Hero() {
   return (
     <section style={{ position: "relative", height: "100vh", minHeight: "600px", overflow: "hidden", backgroundColor: C.bgSage }}>
       <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-kellerabgang_7f041448.jpg')", backgroundSize: "cover", backgroundPosition: "center 45%" }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, rgba(253,240,232,0.45) 0%, rgba(168,196,184,0.25) 50%, rgba(253,248,244,0.7) 100%)" }} />
+      {/* Starker Dunkel-Overlay — lässt Bogen als Silhouette wirken */}
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,45,42,0.72) 0%, rgba(20,45,42,0.45) 40%, rgba(20,45,42,0.65) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
         <div style={{ marginBottom: "1.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.5rem" }}>
-            Weinbar · Leistadt, Pfalz
+          {/* 1709 groß oben */}
+          <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(253,221,224,0.7)", marginBottom: "0.75rem" }}>
+            seit
           </p>
-          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)", color: C.ink, lineHeight: 1, textShadow: "0 2px 20px rgba(253,248,244,0.7)" }}>
+          <div className="font-display" style={{ fontSize: "clamp(5rem, 16vw, 11rem)", color: "rgba(253,221,224,0.18)", lineHeight: 0.9, letterSpacing: "-0.02em", userSelect: "none", marginBottom: "-1.5rem" }}>
+            1709
+          </div>
+          {/* petit joujou darunter */}
+          <h1 className="font-script" style={{ fontSize: "clamp(3.2rem, 9vw, 6.5rem)", color: "#fddde0", lineHeight: 1.1, textShadow: "0 2px 30px rgba(20,45,42,0.5)", position: "relative", zIndex: 1 }}>
             petit joujou
           </h1>
-          <div style={{ width: "4rem", height: "1px", backgroundColor: C.peachDark, margin: "1.25rem auto" }} />
-          <p className="font-display" style={{ fontSize: "clamp(1rem, 2.5vw, 1.4rem)", color: C.inkMid, letterSpacing: "0.15em", fontStyle: "italic" }}>
+          <div style={{ width: "3rem", height: "1px", backgroundColor: "#ff66c4", margin: "1.5rem auto" }} />
+          <p className="font-display" style={{ fontSize: "clamp(0.85rem, 2vw, 1.1rem)", color: "rgba(253,221,224,0.75)", letterSpacing: "0.2em", fontStyle: "italic" }}>
             klein · fein · wein
           </p>
         </div>
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginTop: "2rem" }}>
-          <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: C.sageDark, color: C.bg, textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase" }}>
+        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginTop: "2.5rem" }}>
+          <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: "#40818a", color: "#fddde0", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase" }}>
             Weinkeller entdecken
           </a>
-          <a href="#gesellschaften" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: C.peachDark, color: C.ink, textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", border: `1px solid ${C.peachDark}` }}>
+          <a href="#gesellschaften" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: "transparent", color: "#fddde0", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", border: "1px solid rgba(253,221,224,0.5)" }}>
             Gesellschaft anfragen
           </a>
         </div>
