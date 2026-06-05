@@ -187,25 +187,12 @@ function Intro() {
 function WeinkellerSection() {
   return (
     <section id="weinkeller" style={{ backgroundColor: C.bgCream, padding: "0" }}>
-      {/* Quer oben: Blick von unten nach oben im Keller */}
+      {/* Weinregal-Bild */}
       <img
-        src="/manus-storage/pj-keller-fass-sharp_2a26400b.jpg"
-        alt="Weinkeller — Blick nach oben"
-        style={{ width: "100%", height: "460px", objectFit: "cover", objectPosition: "center 15%", display: "block" }}
+        src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
+        alt="Weinkeller — Weinflaschen im Regal"
+        style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
       />
-      {/* Zwei Querformat-Bilder nebeneinander */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0" }}>
-        <img
-          src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
-          alt="Weinkeller — Weinflaschen im Regal"
-          style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
-        />
-        <img
-          src="/manus-storage/pj-fass-bogen_92b6a0fc.jpg"
-          alt="Weinfass vor dem Sandsteinbogen"
-          style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
-        />
-      </div>
 
 
       {/* Text below gallery */}
@@ -642,18 +629,7 @@ function EssenSection() {
                 <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Regional · Saisonal</span>
               </div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
-              <img
-                src="/manus-storage/manna-entrecote_875165ec.jpg"
-                alt="Manna Palatina Entrecôte"
-                style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
-              />
-              <img
-                src="/manus-storage/manna-detail_a2f04458.jpg"
-                alt="Manna Palatina Detail"
-                style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center 25%", display: "block" }}
-              />
-            </div>
+
           </div>
         </div>
 
@@ -678,18 +654,11 @@ function EssenSection() {
               <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Handverlesen · Pfälzer Produzenten</span>
             </div>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-            <img
-              src="/manus-storage/planche-vogel_1c283b0e.jpg"
-              alt="La Planche du Joujou — Vogelperspektive"
-              style={{ width: "100%", height: "280px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
-            />
-            <img
-              src="/manus-storage/planche-detail_74fc0180.jpg"
-              alt="La Planche du Joujou — Detail"
-              style={{ width: "100%", height: "180px", objectFit: "cover", objectPosition: "center 25%", display: "block" }}
-            />
-          </div>
+          <img
+            src="/manus-storage/planche-vogel_1c283b0e.jpg"
+            alt="La Planche du Joujou"
+            style={{ width: "100%", height: "340px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
+          />
         </div>
       </div>
     </section>
