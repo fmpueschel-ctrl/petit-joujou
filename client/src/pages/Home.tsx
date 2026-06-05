@@ -191,19 +191,19 @@ function WeinkellerSection() {
       <img
         src="/manus-storage/pj-keller-fass-sharp_2a26400b.jpg"
         alt="Weinkeller — Blick nach oben"
-        style={{ width: "100%", height: "460px", objectFit: "cover", objectPosition: "center 55%", display: "block" }}
+        style={{ width: "100%", height: "460px", objectFit: "cover", objectPosition: "center 15%", display: "block" }}
       />
       {/* Zwei Querformat-Bilder nebeneinander */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0" }}>
         <img
           src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
           alt="Weinkeller — Weinflaschen im Regal"
-          style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 35%", display: "block" }}
+          style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
         />
         <img
           src="/manus-storage/pj-fass-bogen_92b6a0fc.jpg"
           alt="Weinfass vor dem Sandsteinbogen"
-          style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+          style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
         />
       </div>
 
@@ -274,9 +274,9 @@ function ScheuneSection() {
           </div>
           <div>
             <img
-              src="/manus-storage/pj-scheune-innen_86d7b8a3.jpg"
+              src="/manus-storage/pj-scheune-rot_c36f917d.jpg"
               alt="Scheune — historischer Dachstuhl mit Bar"
-              style={{ width: "100%", height: "420px", objectFit: "cover", display: "block" }}
+              style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
             />
           </div>
         </div>
@@ -610,7 +610,7 @@ function EssenSection() {
           <img
             src="/manus-storage/manna-trio-top_a8c14cd5.jpg"
             alt="Manna Palatina — drei Sorten"
-            style={{ width: "100%", height: "480px", objectFit: "cover", objectPosition: "center 60%", display: "block", marginBottom: "3rem" }}
+            style={{ width: "100%", height: "480px", objectFit: "cover", objectPosition: "center 25%", display: "block", marginBottom: "3rem" }}
           />
           {/* Text + 2 Bilder nebeneinander */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
@@ -646,12 +646,12 @@ function EssenSection() {
               <img
                 src="/manus-storage/manna-entrecote_875165ec.jpg"
                 alt="Manna Palatina Entrecôte"
-                style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+                style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
               />
               <img
                 src="/manus-storage/manna-detail_a2f04458.jpg"
                 alt="Manna Palatina Detail"
-                style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+                style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center 25%", display: "block" }}
               />
             </div>
           </div>
@@ -682,12 +682,12 @@ function EssenSection() {
             <img
               src="/manus-storage/planche-vogel_1c283b0e.jpg"
               alt="La Planche du Joujou — Vogelperspektive"
-              style={{ width: "100%", height: "280px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+              style={{ width: "100%", height: "280px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
             />
             <img
               src="/manus-storage/planche-detail_74fc0180.jpg"
               alt="La Planche du Joujou — Detail"
-              style={{ width: "100%", height: "180px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+              style={{ width: "100%", height: "180px", objectFit: "cover", objectPosition: "center 25%", display: "block" }}
             />
           </div>
         </div>
