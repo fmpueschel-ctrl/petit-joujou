@@ -26,3 +26,20 @@ export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
 // TODO: Add your tables here
+
+export const reservations = mysqlTable("reservations", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 128 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 32 }),
+  date: varchar("date", { length: 16 }).notNull(), // YYYY-MM-DD
+  time: varchar("time", { length: 8 }).notNull(),  // HH:MM
+  guests: int("guests").notNull(),
+  location: mysqlEnum("location", ["scheune", "garten"]).notNull().default("scheune"),
+  message: text("message"),
+  status: mysqlEnum("status", ["pending", "confirmed", "cancelled"]).notNull().default("pending"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Reservation = typeof reservations.$inferSelect;
+export type InsertReservation = typeof reservations.$inferInsert;

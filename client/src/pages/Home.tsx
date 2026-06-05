@@ -119,7 +119,7 @@ function Hero() {
         <div style={{ marginBottom: "1.5rem" }}>
           {/* petit joujou */}
           <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(253,221,224,0.7)", marginBottom: "1.5rem" }}>
-            Weinbar · Leistadt, Pfalz
+            Leistadt, Pfalz
           </p>
           <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)", color: "#fddde0", lineHeight: 1.1, textShadow: "0 2px 30px rgba(20,45,42,0.5)" }}>
             petit joujou
@@ -130,11 +130,8 @@ function Hero() {
           </p>
         </div>
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginTop: "2.5rem" }}>
-          <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: "#40818a", color: "#fddde0", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase" }}>
-            Weinkeller entdecken
-          </a>
-          <a href="#gesellschaften" className="font-body" style={{ padding: "0.85rem 2rem", backgroundColor: "transparent", color: "#fddde0", textDecoration: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", border: "1px solid rgba(253,221,224,0.5)" }}>
-            Gesellschaft anfragen
+          <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: "#fddde0", textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(253,221,224,0.4)" }}>
+            Entdecken
           </a>
         </div>
       </div>
@@ -154,24 +151,30 @@ function Intro() {
         <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1.5rem" }}>
           Weinbar · Leistadt, Pfalz
         </p>
-        <h2 className="font-script" style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", color: C.ink, marginBottom: "0.5rem", lineHeight: 1.2 }}>
-          klein · fein · wein
+        <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.ink, marginBottom: "0.25rem", lineHeight: 1.15, letterSpacing: "0.02em" }}>
+          klein
         </h2>
-        <p className="font-body" style={{ fontSize: "1.15rem", color: C.inkMid, lineHeight: 2, letterSpacing: "0.02em", marginTop: "1.5rem" }}>
-          Pfalz · Rheinhessen · Österreich · Frankreich.<br />
-          500 Weine &amp; Bubbles. Bio.<br />
-          <span className="font-display" style={{ fontSize: "1.1rem", color: C.inkLight, fontStyle: "italic" }}>petit joujou — dein Weintempel.</span>
+        <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.peachDark, marginBottom: "0.25rem", lineHeight: 1.15, letterSpacing: "0.02em" }}>
+          fein
+        </h2>
+        <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.sageDark, marginBottom: "1.5rem", lineHeight: 1.15, letterSpacing: "0.02em" }}>
+          wein
+        </h2>
+        <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto" }}>
+          Weine, die man anderswo nicht findet.
+          Essen, das man nicht vergisst.
+          Ein Ort, den man nicht erklären kann — nur erleben.
         </p>
         {/* Three pillars */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginTop: "3.5rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
           {[
-            { title: "Begehbare Weinkarte", text: "Kein Katalog. Kein Tablet. Echte Flaschen im Regal." },
-            { title: "Nur Bio", text: "Biodynamisch, naturnah, fair — von Winzern, die wir persönlich kennen." },
-            { title: "Bis 100 Gäste", text: "Hochzeiten, Geburtstage, Firmen — wir passen uns an euch an." },
+            { title: "500 Weine", text: "Im begehbaren Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
+            { title: "Bio & Saisonal", text: "Manna Palatina Pinsa und La Planche du Joujou. Alles biologisch, alles handverlesen." },
+            { title: "Tisch reservieren", text: "Scheune oder Garten, zwei bis acht Personen. Größere Gesellschaften auf Anfrage." },
           ].map((p) => (
-            <div key={p.title} style={{ padding: "1.5rem 1rem", backgroundColor: C.bgSage, borderTop: `2px solid ${C.sage}` }}>
-              <div className="font-display" style={{ fontSize: "1rem", color: C.ink, marginBottom: "0.5rem" }}>{p.title}</div>
-              <div className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.65 }}>{p.text}</div>
+            <div key={p.title} style={{ padding: "2rem 1.5rem", borderRight: `1px solid ${C.border}` }}>
+              <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink, marginBottom: "0.6rem", letterSpacing: "0.03em" }}>{p.title}</div>
+              <div className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, lineHeight: 1.7 }}>{p.text}</div>
             </div>
           ))}
         </div>
@@ -211,14 +214,14 @@ function WeinkellerSection() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
             <div>
               <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
-                So funktioniert's
+                Der Keller
               </p>
               <h3 className="font-display" style={{ fontSize: "1.6rem", color: C.ink, marginBottom: "1.25rem" }}>
-                Kein Termin.<br />Kein Dresscode.<br />Einfach reinkommen.
+                Manche Flaschen gibt es nur einmal.
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.8 }}>
-                Walk-in willkommen. Wir sind Do–Fr ab 17 Uhr und Sa–So ab 12 Uhr für euch da.
-                Hunde auch.
+                Wenn sie weg sind, sind sie weg.
+                Do–Fr ab 17 Uhr, Sa–So ab 12 Uhr.
               </p>
             </div>
             <div>
@@ -226,11 +229,10 @@ function WeinkellerSection() {
                 Was euch erwartet
               </p>
               {[
-                "500 Weine & Bubbles im begehbaren Keller",
-                "Biodynamisch, naturnah, fair",
-                "Pfälzer Winzer & internationale Entdeckungen",
+                "500 Weine & Bubbles — biodynamisch, naturnah",
+                "Pfälzer Winzer & internationale Raritäten",
                 "Wein zum Trinken & zum Mitnehmen",
-                "Persönliche Beratung — wenn ihr wollt",
+                "Persönliche Beratung — für die, die sie wollen",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "0.75rem" }}>
                   <span style={{ color: C.sageDark, fontSize: "0.9rem", marginTop: "0.05rem", flexShrink: 0 }}>→</span>
@@ -259,12 +261,11 @@ function ScheuneSection() {
               Die Scheune.<br />Euer Abend.
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Historisches Gemäuer, warmes Licht, guter Wein.
-              Die Scheune ist der Herzraum von petit joujou —
-              für spontane Abende genauso wie für besondere Anlässe.
+              Historisches Gewölbe, warmes Licht, guter Wein.
+              Begrenzte Tischanzahl — Reservierung von Vorteil.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              {["Bis 60 Gäste", "Walk-in willkommen", "Hunde erlaubt"].map((tag) => (
+              {["Manna Palatina & La Planche", "Bis 60 Personen"].map((tag) => (
                 <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.rose, color: C.inkMid, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
                   {tag}
                 </span>
@@ -309,12 +310,11 @@ function GartenSection() {
               Wein unter freiem Himmel
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Zwischen Zypressen, alten Weinfässern und Sonnenschirmen.
-              Kein Biergarten — eine Verlängerung der Scheune unter freiem Himmel.
-              Ideal für warme Abende, spontane Besuche und Wein, der nach Pfalz schmeckt.
+              Zwischen Zypressen und alten Weinfässern.
+              Begrenzte Tischanzahl — Reservierung von Vorteil.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              {["Walk-in willkommen", "Hunde erlaubt", "Kein Dresscode", "Bis 40 Gäste außen"].map((tag) => (
+              {["Bis 40 Personen", "Hunde willkommen"].map((tag) => (
                 <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.rose, color: C.inkMid, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
                   {tag}
                 </span>
@@ -340,7 +340,8 @@ function EventsSection() {
             Events & Abende
           </h2>
           <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
-            Winzerbattles, Frühlingsmärkte, Naturwein-Abende — bei uns passiert immer etwas.
+            Ausgesuchte Abende mit ausgesuchten Winzern.
+            Tickets sind begrenzt.
           </p>
         </div>
 
@@ -414,24 +415,23 @@ function GesellschaftenSection() {
           {/* Left: Info */}
           <div>
             <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
-              Feiern & Gesellschaften
+              Private Abende
             </p>
             <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.25 }}>
-              Euer Abend.<br />Euer Budget.<br />Unsere Bühne.
+              Euer Abend.<br />Unsere Bühne.
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2rem" }}>
-              Wir sind spezialisiert darauf, unser Angebot an eure Wünsche und euer Budget anzupassen —
-              nicht umgekehrt. Ob Hochzeit im Gewölbekeller, Geburtstag in der Scheune oder
-              Firmenevent im Garten: Wir denken mit euch, nicht für euch.
+              Weinabend im Gewölbekeller, Geburtstag in der Scheune,
+              Sommerabend im Garten. Schreibt uns, was ihr vorhabt.
             </p>
 
             {/* Occasion types */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
               {[
-                { label: "Hochzeiten", sub: "Bis 100 Gäste" },
-                { label: "Geburtstage", sub: "Jede Größe" },
-                { label: "Firmen", sub: "Events & Teamabende" },
                 { label: "Weinabende", sub: "Privat & exklusiv" },
+                { label: "Geburtstage", sub: "Kleine Runden" },
+                { label: "Firmen", sub: "Teamabende & Dinners" },
+                { label: "Hochzeiten", sub: "Auf Anfrage" },
               ].map((o) => (
                 <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `3px solid ${C.sageDark}` }}>
                   <div>
@@ -445,8 +445,8 @@ function GesellschaftenSection() {
             {/* Key promise */}
             <div style={{ backgroundColor: C.bg, padding: "1.5rem", borderLeft: `4px solid ${C.sageDark}` }}>
               <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.7, fontStyle: "italic" }}>
-                „Kein Pauschalpaket. Kein Mindestverbrauch, der euch überrascht.
-                Wir reden zuerst — und dann rechnen wir."
+                 „Kein Pauschalpaket. Kein Mindestverbrauch, der überrascht.
+                Wir reden zuerst.“
               </p>
             </div>
           </div>
@@ -599,8 +599,8 @@ function EssenSection() {
             À table
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto", lineHeight: 1.8 }}>
-            Kleine, feine Küche. Alles biologisch, alles mit Liebe gemacht.
-            Perfekt zum Wein — nicht mehr, nicht weniger.
+            Kleine Küche. Alles biologisch, alles aus der Region.
+            Zum Wein gedacht.
           </p>
         </div>
 
@@ -614,9 +614,8 @@ function EssenSection() {
               Manna Palatina
             </h3>
             <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
-              Pinsa aus Urgetreide — luftig, bekömmlich, unverwechselbar.
-              Belegt mit regionalen Bio-Zutaten aus der Pfalz und darüber hinaus.
-              Kein Fastfood. Kein Kompromiss.
+              Pinsa aus Urgetreide, luftig und bekömmlich.
+              Belegt mit Bio-Zutaten aus der Pfalz.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               {[
@@ -675,8 +674,8 @@ function EssenSection() {
             </h3>
             <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
               Pfälzer Salami, Coppa, Ziegenkäse, getrocknete Tomaten,
-              Oliven, Artischocken, Sauerteigbrot — alles bio, alles handverlesen.
-              Die perfekte Begleitung zu einem guten Glas Wein.
+              Oliven, Artischocken, Sauerteigbrot.
+              Alles bio, alles aus der Region.
             </p>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
               <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Handverlesen · Pfälzer Produzenten</span>
