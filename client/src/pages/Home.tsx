@@ -35,6 +35,7 @@ function Nav() {
   const links = [
     { label: "Weinkeller", href: "#weinkeller" },
     { label: "Scheune", href: "#scheune" },
+    { label: "Essen", href: "#essen" },
     { label: "Garten", href: "#garten" },
     { label: "Events", href: "#events" },
     { label: "Gesellschaften", href: "#gesellschaften" },
@@ -111,20 +112,16 @@ function Nav() {
 function Hero() {
   return (
     <section style={{ position: "relative", height: "100vh", minHeight: "600px", overflow: "hidden", backgroundColor: C.bgSage }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-kellerabgang_7f041448.jpg')", backgroundSize: "cover", backgroundPosition: "center 45%" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-neu_33e3b5a6.jpg')", backgroundSize: "cover", backgroundPosition: "center 30%" }} />
       {/* Starker Dunkel-Overlay — lässt Bogen als Silhouette wirken */}
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,45,42,0.72) 0%, rgba(20,45,42,0.45) 40%, rgba(20,45,42,0.65) 100%)" }} />
       <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
         <div style={{ marginBottom: "1.5rem" }}>
-          {/* 1709 groß oben */}
-          <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(253,221,224,0.7)", marginBottom: "0.75rem" }}>
-            seit
+          {/* petit joujou */}
+          <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(253,221,224,0.7)", marginBottom: "1.5rem" }}>
+            Weinbar · Leistadt, Pfalz
           </p>
-          <div className="font-display" style={{ fontSize: "clamp(5rem, 16vw, 11rem)", color: "rgba(253,221,224,0.18)", lineHeight: 0.9, letterSpacing: "-0.02em", userSelect: "none", marginBottom: "-1.5rem" }}>
-            1709
-          </div>
-          {/* petit joujou darunter */}
-          <h1 className="font-script" style={{ fontSize: "clamp(3.2rem, 9vw, 6.5rem)", color: "#fddde0", lineHeight: 1.1, textShadow: "0 2px 30px rgba(20,45,42,0.5)", position: "relative", zIndex: 1 }}>
+          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)", color: "#fddde0", lineHeight: 1.1, textShadow: "0 2px 30px rgba(20,45,42,0.5)" }}>
             petit joujou
           </h1>
           <div style={{ width: "3rem", height: "1px", backgroundColor: "#ff66c4", margin: "1.5rem auto" }} />
@@ -187,12 +184,17 @@ function Intro() {
 function WeinkellerSection() {
   return (
     <section id="weinkeller" style={{ backgroundColor: C.bgCream, padding: "0" }}>
-      {/* Single large cellar panorama — barrel prominent */}
-      <div style={{ position: "relative", overflow: "hidden" }}>
+      {/* Two-image panorama: Keller + Fass/Bogen */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0" }}>
         <img
           src="/manus-storage/pj-keller-fass-sharp_2a26400b.jpg"
-          alt="Weinkeller — Fass mit Weinflaschen, Gewölbe"
-          style={{ width: "100%", height: "560px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
+          alt="Weinkeller — Gewölbe mit Weinflaschen"
+          style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 65%", display: "block" }}
+        />
+        <img
+          src="/manus-storage/pj-fass-bogen_92b6a0fc.jpg"
+          alt="Weinfass vor dem Sandsteinbogen"
+          style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
         />
       </div>
 
@@ -240,32 +242,38 @@ function WeinkellerSection() {
 // ── Scheune ───────────────────────────────────────────────────
 function ScheuneSection() {
   return (
-    <section id="scheune" style={{ backgroundColor: C.bg, padding: "0" }}>
-      <div style={{ position: "relative", height: "70vh", minHeight: "480px", overflow: "hidden" }}>
-        <img
-          src="/manus-storage/pj-scheune-crisp_283e6def.jpg"
-          alt="Scheune — historischer Dachstuhl"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 20%" }}
-        />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(253,248,244,0.92) 0%, rgba(253,248,244,0.1) 55%, transparent 100%)" }} />
-        <div style={{ position: "absolute", bottom: "3rem", left: "50%", transform: "translateX(-50%)", textAlign: "center", width: "100%", padding: "0 1.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.75rem" }}>
-            Drinnen
-          </p>
-          <p className="font-display" style={{ fontSize: "clamp(0.65rem, 1.5vw, 0.85rem)", letterSpacing: "0.3em", textTransform: "uppercase", color: C.inkLight, marginBottom: "0.25rem" }}>
-            Seit
-          </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(3.5rem, 9vw, 6.5rem)", color: C.ink, lineHeight: 1, letterSpacing: "0.04em" }}>
-            1709
-          </h2>
-          <div style={{ display: "flex", justifyContent: "center", marginTop: "0.6rem" }}>
-            <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: C.sageDark, lineHeight: 1 }}>
-              petit joujou
-            </span>
+    <section id="scheune" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
+      <div className="container">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+          <div>
+            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
+              Drinnen
+            </p>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem" }}>
+              Die Scheune.<br />Euer Abend.
+            </h2>
+            <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
+              Historisches Gemäuer, warmes Licht, guter Wein.
+              Die Scheune ist der Herzraum von petit joujou —
+              für spontane Abende genauso wie für besondere Anlässe.
+            </p>
+            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              {["Bis 60 Gäste", "Walk-in willkommen", "Hunde erlaubt"].map((tag) => (
+                <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.rose, color: C.inkMid, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <img
+              src="/manus-storage/pj-scheune-innen_86d7b8a3.jpg"
+              alt="Scheune — historischer Dachstuhl mit Bar"
+              style={{ width: "100%", height: "420px", objectFit: "cover", display: "block" }}
+            />
           </div>
         </div>
       </div>
-
     </section>
   );
 }
@@ -571,6 +579,109 @@ function GesellschaftenSection() {
   );
 }
 
+// ── Essen ───────────────────────────────────────────────────
+function EssenSection() {
+  return (
+    <section id="essen" style={{ backgroundColor: C.bg, padding: "7rem 0" }}>
+      <div className="container">
+        {/* Header */}
+        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
+            Alles bio. Alles echt.
+          </p>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1rem" }}>
+            Essen bei petit joujou
+          </h2>
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto", lineHeight: 1.8 }}>
+            Kleine, feine Küche. Alles biologisch, alles mit Liebe gemacht.
+            Perfekt zum Wein — nicht mehr, nicht weniger.
+          </p>
+        </div>
+
+        {/* Manna Palatina */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center", marginBottom: "5rem" }}>
+          <div>
+            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
+              Unsere Pinsa
+            </p>
+            <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.2 }}>
+              Manna Palatina
+            </h3>
+            <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
+              Pinsa aus Urgetreide — luftig, bekömmlich, unverwechselbar.
+              Belegt mit regionalen Bio-Zutaten aus der Pfalz und darüber hinaus.
+              Kein Fastfood. Kein Kompromiss.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              {[
+                "Spargel · Mozzarella · Rucola",
+                "Rote Bete · Ziegenkäse · Walnuss",
+                "Tomate · Mozzarella · Basilikum",
+                "Entrecôte · Rucola · rote Zwiebeln",
+              ].map((item) => (
+                <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                  <span style={{ color: C.peachDark, fontSize: "0.8rem", flexShrink: 0 }}>—</span>
+                  <span className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid }}>{item}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: "1.5rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
+              <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Regional · Saisonal</span>
+            </div>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
+            <img
+              src="/manus-storage/pj-manna-trio_56e2933c.jpg"
+              alt="Manna Palatina — drei Sorten"
+              style={{ width: "100%", height: "280px", objectFit: "cover", gridColumn: "1 / -1", display: "block" }}
+            />
+            <img
+              src="/manus-storage/pj-manna-entrecote_72b53438.jpg"
+              alt="Manna Palatina Entrecôte"
+              style={{ width: "100%", height: "180px", objectFit: "cover", display: "block" }}
+            />
+            <img
+              src="/manus-storage/pj-platte-detail_47fdeb24.jpg"
+              alt="Platte Detail"
+              style={{ width: "100%", height: "180px", objectFit: "cover", display: "block" }}
+            />
+          </div>
+        </div>
+
+        {/* Trennlinie */}
+        <div style={{ borderTop: `1px solid ${C.border}`, marginBottom: "4rem" }} />
+
+        {/* Platte */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+          <div>
+            <img
+              src="/manus-storage/pj-platte-vogel_2ac759f8.jpg"
+              alt="Joujou Platte — Salami, Coppa, Ziegenkäse, Oliven"
+              style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }}
+            />
+          </div>
+          <div>
+            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
+              Zum Wein
+            </p>
+            <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.2 }}>
+              La Planche du Joujou
+            </h3>
+            <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
+              Pfälzer Salami, Coppa, Ziegenkäse, getrocknete Tomaten,
+              Oliven, Artischocken, Sauerteigbrot. Alles bio, alles handverlesen.
+              Die perfekte Begleitung zu einem guten Glas Wein.
+            </p>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
+              <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Handverlesen · Pfälzer Produzenten</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
@@ -680,6 +791,7 @@ export default function Home() {
         <GartenSection />
         <EventsSection />
         <GesellschaftenSection />
+        <EssenSection />
         <GalerieSection />
       </main>
       <Footer />
