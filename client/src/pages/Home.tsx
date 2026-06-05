@@ -191,19 +191,19 @@ function WeinkellerSection() {
       <img
         src="/manus-storage/pj-keller-fass-sharp_2a26400b.jpg"
         alt="Weinkeller — Blick nach oben"
-        style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 65%", display: "block" }}
+        style={{ width: "100%", height: "460px", objectFit: "cover", objectPosition: "center 55%", display: "block" }}
       />
-      {/* Zwei Hochkant-Bilder nebeneinander */}
+      {/* Zwei Querformat-Bilder nebeneinander */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0" }}>
         <img
           src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
           alt="Weinkeller — Weinflaschen im Regal"
-          style={{ width: "100%", height: "600px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+          style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 35%", display: "block" }}
         />
         <img
           src="/manus-storage/pj-fass-bogen_92b6a0fc.jpg"
           alt="Weinfass vor dem Sandsteinbogen"
-          style={{ width: "100%", height: "600px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+          style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
         />
       </div>
 
@@ -604,67 +604,64 @@ function EssenSection() {
           </p>
         </div>
 
-        {/* Manna Palatina */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center", marginBottom: "5rem" }}>
-          <div>
-            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
-              Unsere Pinsa
-            </p>
-            <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.2 }}>
-              Manna Palatina
-            </h3>
-            <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
-              Pinsa aus Urgetreide, luftig und bekömmlich.
-              Belegt mit Bio-Zutaten aus der Pfalz.
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-              {[
-                "Spargel · Mozzarella · Rucola",
-                "Rote Bete · Ziegenkäse · Walnuss",
-                "Tomate · Mozzarella · Basilikum",
-                "Entrecôte · Rucola · rote Zwiebeln",
-              ].map((item) => (
-                <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ color: C.peachDark, fontSize: "0.8rem", flexShrink: 0 }}>—</span>
-                  <span className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid }}>{item}</span>
-                </div>
-              ))}
+        {/* Manna Palatina — Hauptbild oben quer, darunter Text + 2 Bilder */}
+        <div style={{ marginBottom: "5rem" }}>
+          {/* Hauptbild quer */}
+          <img
+            src="/manus-storage/manna-trio-top_a8c14cd5.jpg"
+            alt="Manna Palatina — drei Sorten"
+            style={{ width: "100%", height: "480px", objectFit: "cover", objectPosition: "center 60%", display: "block", marginBottom: "3rem" }}
+          />
+          {/* Text + 2 Bilder nebeneinander */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+            <div>
+              <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
+                Unsere Pinsa
+              </p>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.2 }}>
+                Manna Palatina
+              </h3>
+              <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
+                Pinsa aus Urgetreide, luftig und bekömmlich.
+                Belegt mit Bio-Zutaten aus der Pfalz.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" }}>
+                {[
+                  "Spargel · Mozzarella · Rucola",
+                  "Rote Bete · Ziegenkäse · Walnuss",
+                  "Tomate · Mozzarella · Basilikum",
+                  "Entrecôte · Rucola · rote Zwiebeln",
+                ].map((item) => (
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                    <span style={{ color: C.peachDark, fontSize: "0.8rem", flexShrink: 0 }}>—</span>
+                    <span className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ display: "inline-flex", alignItems: "center", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
+                <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Regional · Saisonal</span>
+              </div>
             </div>
-            <div style={{ marginTop: "1.5rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
-              <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Regional · Saisonal</span>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+              <img
+                src="/manus-storage/manna-entrecote_875165ec.jpg"
+                alt="Manna Palatina Entrecôte"
+                style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+              />
+              <img
+                src="/manus-storage/manna-detail_a2f04458.jpg"
+                alt="Manna Palatina Detail"
+                style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+              />
             </div>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" }}>
-            <img
-              src="/manus-storage/pj-manna-trio_56e2933c.jpg"
-              alt="Manna Palatina — drei Sorten"
-              style={{ width: "100%", height: "280px", objectFit: "cover", gridColumn: "1 / -1", display: "block" }}
-            />
-            <img
-              src="/manus-storage/pj-manna-entrecote_72b53438.jpg"
-              alt="Manna Palatina Entrecôte"
-              style={{ width: "100%", height: "180px", objectFit: "cover", display: "block" }}
-            />
-            <img
-              src="/manus-storage/pj-platte-detail_47fdeb24.jpg"
-              alt="Platte Detail"
-              style={{ width: "100%", height: "180px", objectFit: "cover", display: "block" }}
-            />
           </div>
         </div>
 
         {/* Trennlinie */}
         <div style={{ borderTop: `1px solid ${C.border}`, marginBottom: "4rem" }} />
 
-        {/* Platte */}
+        {/* La Planche — Text links, Hauptbild quer rechts */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-          <div>
-            <img
-              src="/manus-storage/pj-platte-vogel_2ac759f8.jpg"
-              alt="Joujou Platte — Salami, Coppa, Ziegenkäse, Oliven"
-              style={{ width: "100%", height: "380px", objectFit: "cover", display: "block" }}
-            />
-          </div>
           <div>
             <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
               Zum Wein
@@ -677,9 +674,21 @@ function EssenSection() {
               Oliven, Artischocken, Sauerteigbrot.
               Alles bio, alles aus der Region.
             </p>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
               <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Handverlesen · Pfälzer Produzenten</span>
             </div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            <img
+              src="/manus-storage/planche-vogel_1c283b0e.jpg"
+              alt="La Planche du Joujou — Vogelperspektive"
+              style={{ width: "100%", height: "280px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+            />
+            <img
+              src="/manus-storage/planche-detail_74fc0180.jpg"
+              alt="La Planche du Joujou — Detail"
+              style={{ width: "100%", height: "180px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+            />
           </div>
         </div>
       </div>
