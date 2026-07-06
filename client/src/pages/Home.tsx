@@ -679,10 +679,10 @@ function GalerieSection() {
     { src: "/manus-storage/aussen_nacht_dcd040f5.jpg", alt: "Aussenansicht bei Nacht", caption: "Nacht" },
     { src: "/manus-storage/scheune_innen_tisch_a44f846d.jpg", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
     { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
-    { src: "/manus-storage/weinglaeserfass_rot_4273d69a.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
+    { src: "/manus-storage/weinglaeserfass_fix_b1dc7a51.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
     { src: "/manus-storage/garten_lounge2_df2e49da.jpg", alt: "Garten Lounge", caption: "Garten" },
     { src: "/manus-storage/eingang_schnee_196128fe.jpg", alt: "Eingang bei Schnee", caption: "Eingang" },
-    { src: "/manus-storage/joujou_schild_rot_fb20700f.jpg", alt: "joujou Schild", caption: "joujou" },
+    { src: "/manus-storage/joujou_schild_fix_063accf7.jpg", alt: "joujou Schild", caption: "joujou" },
   ];
 
   return (
@@ -762,7 +762,7 @@ function Footer() {
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, letterSpacing: "0.05em" }}>
-            © 2025 petit joujou · JouJou Pfalz ·{" "}
+            © 2026 petit joujou · JouJou Pfalz ·{" "}
             <a href="/impressum" style={{ color: C.peach, textDecoration: "none" }}>Impressum</a>
           </p>
         </div>
