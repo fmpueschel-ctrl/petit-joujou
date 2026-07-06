@@ -162,7 +162,7 @@ function Intro() {
         </p>
 
         {/* Two pillars */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
+        <div className="intro-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
           {[
             { title: "500 Weine", text: "Im begehbaren Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
             { title: "Bio & Saisonal", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa werden euch verzaubern." },
@@ -186,6 +186,7 @@ function WeinkellerSection() {
       <img
         src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
         alt="Weinkeller — Weinflaschen im Regal"
+        className="mobile-img-tall"
         style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
       />
 
@@ -193,7 +194,7 @@ function WeinkellerSection() {
       {/* Text below gallery */}
       <div style={{ backgroundColor: C.bgCream, padding: "5rem 0" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 1.5rem" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
+          <div className="keller-text-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
             <div>
               <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
                 Der Keller
@@ -234,7 +235,7 @@ function ScheuneSection() {
   return (
     <section id="scheune" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
       <div className="container">
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+        <div className="mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
           <div>
             <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
               Drinnen
@@ -251,6 +252,7 @@ function ScheuneSection() {
             <img
               src="/manus-storage/scheune_innen_tisch_a44f846d.jpg"
               alt="Scheune — gedeckter Tisch unter historischem Dachstuhl"
+              className="mobile-img-first mobile-img-tall"
               style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 25%", display: "block" }}
             />
           </div>
@@ -270,6 +272,7 @@ function GartenSection() {
           <img
             src="/manus-storage/garten_uebersicht_e5617482.jpg"
             alt="Garten — Übersicht mit Sonnenschirmen und Weinfässern"
+            className="mobile-img-tall"
             style={{ width: "100%", height: "500px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
           />
           <div style={{ position: "absolute", bottom: "-1.5rem", right: "2rem", backgroundColor: C.peach, padding: "1.25rem 1.5rem", textAlign: "center" }}>
@@ -321,7 +324,7 @@ function EventsSection() {
         </div>
 
         {/* Real event flyers as cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
+        <div className="events-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
           {/* Winzerbattle 1 — real flyer */}
           <div style={{ position: "relative", overflow: "hidden", backgroundColor: C.bgSage }}>
             <img
@@ -386,7 +389,7 @@ function GesellschaftenSection() {
   return (
     <section id="gesellschaften" style={{ backgroundColor: C.bgLavender, padding: "7rem 0" }}>
       <div className="container">
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
+        <div className="gesellschaft-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
           {/* Left: Info */}
           <div>
             <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
@@ -448,7 +451,7 @@ function GesellschaftenSection() {
                 </p>
 
                 {/* Name + Email */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
+                <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
                   <div>
                     <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Name *</label>
                     <input
@@ -473,7 +476,7 @@ function GesellschaftenSection() {
                 </div>
 
                 {/* Anlass + Gäste */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
+                <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
                   <div>
                     <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Anlass</label>
                     <select
@@ -506,7 +509,7 @@ function GesellschaftenSection() {
                 </div>
 
                 {/* Datum + Telefon */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
+                <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
                   <div>
                     <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Wunschdatum</label>
                     <input
@@ -619,7 +622,7 @@ function EssenSection() {
         </div>
 
         {/* Sharing-Kreationen — 3 Gerichte nebeneinander */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem", marginBottom: "6rem" }}>
+        <div className="essen-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem", marginBottom: "6rem" }}>
           {gerichte.map((g) => (
             <div key={g.name}>
               <div style={{ overflow: "hidden", marginBottom: "1.25rem" }}>
@@ -643,7 +646,7 @@ function EssenSection() {
         </div>
 
         {/* Entrecôte — separat, volle Breite, asymmetrisch */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
+        <div className="entrecote-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
           <div>
             <img
               src="/manus-storage/entrecote_zoom_45d9e10e.jpg"
@@ -694,7 +697,7 @@ function GalerieSection() {
           </h2>
           <div style={{ width: "3rem", height: "1px", backgroundColor: C.peachDark, margin: "1rem auto 0" }} />
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem" }}>
+        <div className="galerie-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem" }}>
           {photos.map((p, i) => (
             <div key={i} style={{ position: "relative", overflow: "hidden" }}>
               <img
@@ -720,7 +723,7 @@ function Footer() {
   return (
     <footer style={{ backgroundColor: "#1e3a3a", padding: "4rem 0 3rem" }}>
       <div className="container">
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }}>
+        <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }}>
           <div>
             <span className="font-script" style={{ fontSize: "2rem", color: C.peach }}>
               petit joujou
