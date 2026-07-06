@@ -277,14 +277,7 @@ function GartenSection() {
             <div className="font-body" style={{ fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Garten & Terrasse</div>
           </div>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-          <div>
-            <img
-              src="/manus-storage/garten_lounge_b0189368.jpg"
-              alt="Garten — Lounge mit Paletten-Sofas"
-              style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
-            />
-          </div>
+        <div style={{ maxWidth: "600px" }}>
           <div>
             <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
               Draußen
@@ -296,7 +289,7 @@ function GartenSection() {
               Zwischen Zypressen und alten Weinfässern. Lass die Seele baumeln.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              {["Bis 40 Personen", "Hunde willkommen"].map((tag) => (
+              {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
                 <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.rose, color: C.inkMid, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
                   {tag}
                 </span>
@@ -686,11 +679,10 @@ function GalerieSection() {
     { src: "/manus-storage/aussen_nacht_dcd040f5.jpg", alt: "Aussenansicht bei Nacht", caption: "Nacht" },
     { src: "/manus-storage/scheune_innen_tisch_a44f846d.jpg", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
     { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
-    { src: "/manus-storage/weinglaeserfass_343c5afe.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
+    { src: "/manus-storage/weinglaeserfass_rot_4273d69a.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
     { src: "/manus-storage/garten_lounge2_df2e49da.jpg", alt: "Garten Lounge", caption: "Garten" },
     { src: "/manus-storage/eingang_schnee_196128fe.jpg", alt: "Eingang bei Schnee", caption: "Eingang" },
-    { src: "/manus-storage/joujou_schild_13b01c69.jpg", alt: "joujou Schild", caption: "joujou" },
-    { src: "/manus-storage/garten_uebersicht_e5617482.jpg", alt: "Garten Übersicht", caption: "Garten" },
+    { src: "/manus-storage/joujou_schild_rot_fb20700f.jpg", alt: "joujou Schild", caption: "joujou" },
   ];
 
   return (
