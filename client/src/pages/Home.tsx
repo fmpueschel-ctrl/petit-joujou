@@ -727,7 +727,7 @@ function Footer() {
             </span>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, marginTop: "0.75rem", lineHeight: 1.7 }}>
               Weinbar · Leistadt, Pfalz<br />
-              Eine Marke von JouJou Pfalz
+              Eine Marke von Joujou Pfalz
             </p>
           </div>
           <div>
@@ -762,8 +762,12 @@ function Footer() {
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, letterSpacing: "0.05em" }}>
-            © 2026 petit joujou · JouJou Pfalz ·{" "}
+            © 2026 petit joujou · Joujou Pfalz ·{" "}
             <a href="/impressum" style={{ color: C.peach, textDecoration: "none" }}>Impressum</a>
+          </p>
+          <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, letterSpacing: "0.05em", marginTop: "0.5rem" }}>
+            Unsere weiteren Angebote findest du auf:{" "}
+            <a href="https://www.joujou-pfalz.de" target="_blank" rel="noopener noreferrer" style={{ color: C.peach, textDecoration: "none" }}>www.joujou-pfalz.de</a>
           </p>
         </div>
       </div>
