@@ -148,18 +148,12 @@ function Intro() {
         <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1.5rem" }}>
           Weinbar · Leistadt, Pfalz
         </p>
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "baseline", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
-          <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.sageDark, lineHeight: 1.15, letterSpacing: "0.02em", margin: 0 }}>
-            wein
-          </h2>
-          <span className="font-script" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: C.inkLight, lineHeight: 1.15, margin: "0 0.25rem" }}>·</span>
-          <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.peachDark, lineHeight: 1.15, letterSpacing: "0.02em", margin: 0 }}>
-            fein
-          </h2>
-          <span className="font-script" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", color: C.inkLight, lineHeight: 1.15, margin: "0 0.25rem" }}>·</span>
-          <h2 className="font-script" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: C.ink, lineHeight: 1.15, letterSpacing: "0.02em", margin: 0 }}>
-            klein
-          </h2>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", marginBottom: "1.5rem", whiteSpace: "nowrap" }}>
+          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
+          <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
+          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
+          <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
+          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.sageDark, lineHeight: 1 }}>wein</span>
         </div>
         <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto 2rem" }}>
           Weine, die man anderswo nicht findet.
@@ -171,12 +165,11 @@ function Intro() {
           Wir kennen unsere Winzer persönlich — aus der Pfalz und von weiter weg.
           Manche Flaschen gibt es nur bei uns. Manche nur noch einmal.
         </p>
-        {/* Three pillars */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
+        {/* Two pillars */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
           {[
             { title: "500 Weine", text: "Im begehbaren Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
-            { title: "Bio & Saisonal", text: "Manna Palatina Pinsa und La Planche du Joujou. Alles biologisch, alles handverlesen." },
-            { title: "Tisch reservieren", text: "Scheune oder Garten, zwei bis acht Personen. Größere Gesellschaften auf Anfrage." },
+            { title: "Bio & Saisonal", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa werden euch verzaubern." },
           ].map((p) => (
             <div key={p.title} style={{ padding: "2rem 1.5rem", borderRight: `1px solid ${C.border}` }}>
               <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink, marginBottom: "0.6rem", letterSpacing: "0.03em" }}>{p.title}</div>
@@ -255,7 +248,6 @@ function ScheuneSection() {
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
               Historisches Gewölbe, warmes Licht, guter Wein.
-              Begrenzte Tischanzahl — Reservierung von Vorteil.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               {["Manna Palatina & La Planche", "Bis 60 Personen"].map((tag) => (
@@ -304,7 +296,6 @@ function GartenSection() {
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
               Zwischen Zypressen und alten Weinfässern.
-              Begrenzte Tischanzahl — Reservierung von Vorteil.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               {["Bis 40 Personen", "Hunde willkommen"].map((tag) => (
@@ -592,8 +583,7 @@ function EssenSection() {
             À table
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto", lineHeight: 1.8 }}>
-            Kleine Küche. Alles biologisch, alles aus der Region.
-            Zum Wein gedacht.
+            Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa werden euch verzaubern.
           </p>
         </div>
 
