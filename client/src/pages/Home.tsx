@@ -254,9 +254,9 @@ function ScheuneSection() {
           </div>
           <div>
             <img
-              src="/manus-storage/pj-scheune-rot_c36f917d.jpg"
-              alt="Scheune — historischer Dachstuhl mit Bar"
-              style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+              src="/manus-storage/scheune_innen_tisch_a44f846d.jpg"
+              alt="Scheune — gedeckter Tisch unter historischem Dachstuhl"
+              style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 25%", display: "block" }}
             />
           </div>
         </div>
@@ -695,14 +695,15 @@ function EssenSection() {
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
-    { src: "/manus-storage/pj-eingang-abs_b47b4c4c.jpg", alt: "Eingang", caption: "Eingang" },
+    { src: "/manus-storage/aussen_nacht_dcd040f5.jpg", alt: "Aussenansicht bei Nacht", caption: "Nacht" },
+    { src: "/manus-storage/scheune_innen_tisch_a44f846d.jpg", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
     { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
-    { src: "/manus-storage/pj-hero-abs_0cf7b090.jpg", alt: "Bar", caption: "Bar" },
-    { src: "/manus-storage/pj-gastraum-abs_ba8ba180.jpg", alt: "Gastraum", caption: "Gastraum" },
     { src: "/manus-storage/wein_kuehlschrank_64c31048.jpg", alt: "Offene Weine & Bestseller", caption: "Offene Weine" },
     { src: "/manus-storage/weinglaeserfass_343c5afe.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
     { src: "/manus-storage/garten_lounge2_df2e49da.jpg", alt: "Garten Lounge", caption: "Garten" },
+    { src: "/manus-storage/eingang_schnee_196128fe.jpg", alt: "Eingang bei Schnee", caption: "Eingang" },
     { src: "/manus-storage/joujou_schild_13b01c69.jpg", alt: "joujou Schild", caption: "joujou" },
+    { src: "/manus-storage/garten_uebersicht_e5617482.jpg", alt: "Garten Übersicht", caption: "Garten" },
   ];
 
   return (
