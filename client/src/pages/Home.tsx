@@ -188,11 +188,6 @@ function WeinkellerSection() {
         alt="Weinkeller — Weinflaschen im Regal"
         style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
       />
-      <img
-        src="/manus-storage/wein_kuehlschrank_64c31048.jpg"
-        alt="Offene Weine & Bestseller im Kühlschrank"
-        style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block", marginTop: "0.5rem" }}
-      />
 
 
       {/* Text below gallery */}
@@ -270,23 +265,25 @@ function GartenSection() {
   return (
     <section id="garten" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
       <div className="container">
-        {/* Hero-Bild: Garten-Übersicht */}
-        <img
-          src="/manus-storage/garten_uebersicht_e5617482.jpg"
-          alt="Garten — Übersicht mit Sonnenschirmen und Weinfässern"
-          style={{ width: "100%", height: "500px", objectFit: "cover", objectPosition: "center 30%", display: "block", marginBottom: "4rem" }}
-        />
+        {/* Hero-Bild: Garten-Übersicht mit draußen-Button */}
+        <div style={{ position: "relative", marginBottom: "4rem" }}>
+          <img
+            src="/manus-storage/garten_uebersicht_e5617482.jpg"
+            alt="Garten — Übersicht mit Sonnenschirmen und Weinfässern"
+            style={{ width: "100%", height: "500px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+          />
+          <div style={{ position: "absolute", bottom: "-1.5rem", right: "2rem", backgroundColor: C.peach, padding: "1.25rem 1.5rem", textAlign: "center" }}>
+            <div className="font-script" style={{ fontSize: "1.6rem", color: C.ink }}>draußen</div>
+            <div className="font-body" style={{ fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Garten & Terrasse</div>
+          </div>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-          <div style={{ position: "relative" }}>
+          <div>
             <img
               src="/manus-storage/garten_lounge_b0189368.jpg"
               alt="Garten — Lounge mit Paletten-Sofas"
               style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
             />
-            <div style={{ position: "absolute", bottom: "-1.5rem", right: "-1.5rem", backgroundColor: C.peach, padding: "1.25rem 1.5rem", textAlign: "center" }}>
-              <div className="font-script" style={{ fontSize: "1.6rem", color: C.ink }}>draußen</div>
-              <div className="font-body" style={{ fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Garten & Terrasse</div>
-            </div>
           </div>
           <div>
             <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
@@ -296,7 +293,7 @@ function GartenSection() {
               Wein unter freiem Himmel
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Zwischen Zypressen und alten Weinfässern. Chill here.
+              Zwischen Zypressen und alten Weinfässern. Lass die Seele baumeln.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               {["Bis 40 Personen", "Hunde willkommen"].map((tag) => (
@@ -576,23 +573,20 @@ function EssenSection() {
     {
       label: "Weinbegleiter",
       name: "Dirty Date",
-      desc: "Dattel · Speck · Salzwandel",
-      price: "9 €",
-      img: "/manus-storage/dirty_date_40d5507d.jpg",
+      desc: "Dattel · Speck · Salzmandel",
+      img: "/manus-storage/dirty_date_65030c39.jpg",
     },
     {
       label: "Weinbegleiter",
       name: "Happy Fried Mushroom",
-      desc: "Gegrillter Romanasalat · Löwenzahn",
-      price: "12 €",
-      img: "/manus-storage/happy_fried_mushroom_706e66c4.jpg",
+      desc: "Gegrillter Romanasalat · Limette",
+      img: "/manus-storage/happy_fried_mushroom_9c7fdfe2.jpg",
     },
     {
       label: "Weinbegleiter",
       name: "Wurst Case",
-      desc: "Dunkelbiermer Wildwurst-Cubes · Tomatensauce",
-      price: "9,80 €",
-      img: "/manus-storage/wurst_case_b1878853.jpg",
+      desc: "Dürkheimer Wildwurst-Cubes · Tomatensauce",
+      img: "/manus-storage/wurst_case_a34b977c.jpg",
     },
   ];
 
@@ -651,9 +645,6 @@ function EssenSection() {
               <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.7, marginBottom: "0.6rem" }}>
                 {g.desc}
               </p>
-              <span className="font-body" style={{ fontSize: "0.9rem", color: C.sageDark, fontWeight: 600 }}>
-                {g.price}
-              </span>
             </div>
           ))}
         </div>
@@ -662,9 +653,9 @@ function EssenSection() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
           <div>
             <img
-              src="/manus-storage/entrecote_100g_d8ac7ce6.jpg"
+              src="/manus-storage/entrecote_zoom_45d9e10e.jpg"
               alt="Entrecôte — Land.luft Premium Dry Age"
-              style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+              style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
             />
           </div>
           <div>
@@ -675,15 +666,12 @@ function EssenSection() {
               Entrecôte
             </h3>
             <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1rem" }}>
-              Land.luft Premium Dry Age Rib Eye — aus der Region, trocken gereift, auf den Punkt gebracht.
+              Land.luft Premium Dry Age Rib Eye — trocken gereift, auf den Punkt gebracht.
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, lineHeight: 1.7, marginBottom: "1.5rem" }}>
               Du entscheidest wie viel.
             </p>
-            <div style={{ display: "inline-flex", alignItems: "baseline", gap: "0.4rem" }}>
-              <span className="font-display" style={{ fontSize: "1.6rem", color: C.sageDark }}>15 €</span>
-              <span className="font-body" style={{ fontSize: "0.78rem", color: C.inkLight, letterSpacing: "0.06em" }}>/ 100g</span>
-            </div>
+
           </div>
         </div>
 
@@ -698,7 +686,6 @@ function GalerieSection() {
     { src: "/manus-storage/aussen_nacht_dcd040f5.jpg", alt: "Aussenansicht bei Nacht", caption: "Nacht" },
     { src: "/manus-storage/scheune_innen_tisch_a44f846d.jpg", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
     { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
-    { src: "/manus-storage/wein_kuehlschrank_64c31048.jpg", alt: "Offene Weine & Bestseller", caption: "Offene Weine" },
     { src: "/manus-storage/weinglaeserfass_343c5afe.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
     { src: "/manus-storage/garten_lounge2_df2e49da.jpg", alt: "Garten Lounge", caption: "Garten" },
     { src: "/manus-storage/eingang_schnee_196128fe.jpg", alt: "Eingang bei Schnee", caption: "Eingang" },
@@ -783,7 +770,8 @@ function Footer() {
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, letterSpacing: "0.05em" }}>
-            © 2025 petit joujou · JouJou Pfalz
+            © 2025 petit joujou · JouJou Pfalz ·{" "}
+            <a href="/impressum" style={{ color: C.peach, textDecoration: "none" }}>Impressum</a>
           </p>
         </div>
       </div>
