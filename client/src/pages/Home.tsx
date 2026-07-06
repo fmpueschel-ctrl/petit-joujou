@@ -700,7 +700,7 @@ function GalerieSection() {
               <img
                 src={p.src}
                 alt={p.alt}
-                style={{ width: "100%", height: i < 2 ? "300px" : "200px", objectFit: "cover", display: "block", filter: "saturate(0.85)" }}
+                style={{ width: "100%", height: i < 3 ? "300px" : "200px", objectFit: "cover", objectPosition: i === 2 ? "center bottom" : "center", display: "block", filter: "saturate(0.85)" }}
               />
               <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", backgroundColor: "rgba(253,221,224,0.88)", padding: "0.2rem 0.65rem" }}>
                 <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>
