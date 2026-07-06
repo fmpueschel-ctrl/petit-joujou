@@ -160,11 +160,7 @@ function Intro() {
           Essen, das man nicht vergisst.
           Ein Ort, den man nicht erklären kann — nur erleben.
         </p>
-        <p className="font-body" style={{ fontSize: "0.88rem", color: C.inkLight, lineHeight: 1.85, letterSpacing: "0.02em", maxWidth: "480px", margin: "0 auto" }}>
-          Kein Massenlokal. Keine Weinkarte von der Stange.
-          Wir kennen unsere Winzer persönlich — aus der Pfalz und von weiter weg.
-          Manche Flaschen gibt es nur bei uns. Manche nur noch einmal.
-        </p>
+
         {/* Two pillars */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
           {[
@@ -191,6 +187,11 @@ function WeinkellerSection() {
         src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
         alt="Weinkeller — Weinflaschen im Regal"
         style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
+      />
+      <img
+        src="/manus-storage/wein_kuehlschrank_64c31048.jpg"
+        alt="Offene Weine & Bestseller im Kühlschrank"
+        style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block", marginTop: "0.5rem" }}
       />
 
 
@@ -249,13 +250,7 @@ function ScheuneSection() {
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
               Historisches Gewölbe, warmes Licht, guter Wein.
             </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              {["Manna Palatina & La Planche", "Bis 60 Personen"].map((tag) => (
-                <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.rose, color: C.inkMid, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
+
           </div>
           <div>
             <img
@@ -275,12 +270,18 @@ function GartenSection() {
   return (
     <section id="garten" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
       <div className="container">
+        {/* Hero-Bild: Garten-Übersicht */}
+        <img
+          src="/manus-storage/garten_uebersicht_e5617482.jpg"
+          alt="Garten — Übersicht mit Sonnenschirmen und Weinfässern"
+          style={{ width: "100%", height: "500px", objectFit: "cover", objectPosition: "center 30%", display: "block", marginBottom: "4rem" }}
+        />
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
           <div style={{ position: "relative" }}>
             <img
-              src="/manus-storage/pj-terrasse-abs_9eb9ef23.jpg"
-              alt="Garten — Terrasse mit Sonnenschirmen"
-              style={{ width: "100%", height: "480px", objectFit: "cover", display: "block" }}
+              src="/manus-storage/garten_lounge_b0189368.jpg"
+              alt="Garten — Lounge mit Paletten-Sofas"
+              style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
             />
             <div style={{ position: "absolute", bottom: "-1.5rem", right: "-1.5rem", backgroundColor: C.peach, padding: "1.25rem 1.5rem", textAlign: "center" }}>
               <div className="font-script" style={{ fontSize: "1.6rem", color: C.ink }}>draußen</div>
@@ -295,7 +296,7 @@ function GartenSection() {
               Wein unter freiem Himmel
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Zwischen Zypressen und alten Weinfässern.
+              Zwischen Zypressen und alten Weinfässern. Chill here.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               {["Bis 40 Personen", "Hunde willkommen"].map((tag) => (
@@ -571,91 +572,121 @@ function GesellschaftenSection() {
 
 // ── Essen ───────────────────────────────────────────────────
 function EssenSection() {
+  const gerichte = [
+    {
+      label: "Weinbegleiter",
+      name: "Dirty Date",
+      desc: "Dattel · Speck · Salzwandel",
+      price: "9 €",
+      img: "/manus-storage/dirty_date_40d5507d.jpg",
+    },
+    {
+      label: "Weinbegleiter",
+      name: "Happy Fried Mushroom",
+      desc: "Gegrillter Romanasalat · Löwenzahn",
+      price: "12 €",
+      img: "/manus-storage/happy_fried_mushroom_706e66c4.jpg",
+    },
+    {
+      label: "Weinbegleiter",
+      name: "Wurst Case",
+      desc: "Dunkelbiermer Wildwurst-Cubes · Tomatensauce",
+      price: "9,80 €",
+      img: "/manus-storage/wurst_case_b1878853.jpg",
+    },
+  ];
+
   return (
     <section id="essen" style={{ backgroundColor: C.bg, padding: "7rem 0" }}>
       <div className="container">
+
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+        <div style={{ textAlign: "center", marginBottom: "5rem" }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
             Alles bio. Alles echt.
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1rem" }}>
-            À table
+            Zum Teilen &amp; Sattwerden
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto", lineHeight: 1.8 }}>
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
             Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa werden euch verzaubern.
           </p>
+          <a
+            href="/manus-storage/PetitJoujou_Speisekarte_Final5_eaf6392f.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body"
+            style={{
+              display: "inline-block",
+              padding: "0.65rem 1.8rem",
+              border: `1px solid ${C.sageDark}`,
+              color: C.sageDark,
+              fontSize: "0.78rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+            }}
+          >
+            Speisekarte ansehen
+          </a>
         </div>
 
-        {/* Manna Palatina — Hauptbild oben quer, darunter Text + 2 Bilder */}
-        <div style={{ marginBottom: "5rem" }}>
-          {/* Hauptbild quer */}
-          <img
-            src="/manus-storage/manna-trio-top_a8c14cd5.jpg"
-            alt="Manna Palatina — drei Sorten"
-            style={{ width: "100%", height: "480px", objectFit: "cover", objectPosition: "center 25%", display: "block", marginBottom: "3rem" }}
-          />
-          {/* Text + 2 Bilder nebeneinander */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
-            <div>
-              <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
-                Unsere Pinsa
+        {/* Sharing-Kreationen — 3 Gerichte nebeneinander */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem", marginBottom: "6rem" }}>
+          {gerichte.map((g) => (
+            <div key={g.name}>
+              <div style={{ overflow: "hidden", marginBottom: "1.25rem" }}>
+                <img
+                  src={g.img}
+                  alt={g.name}
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center", display: "block" }}
+                />
+              </div>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.4rem" }}>
+                {g.label}
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.2 }}>
-                Manna Palatina
+              <h3 className="font-display" style={{ fontSize: "1.4rem", color: C.ink, marginBottom: "0.4rem" }}>
+                {g.name}
               </h3>
-              <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
-                Pinsa aus Urgetreide, luftig und bekömmlich.
-                Belegt mit Bio-Zutaten aus der Pfalz.
+              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.7, marginBottom: "0.6rem" }}>
+                {g.desc}
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" }}>
-                {[
-                  "Spargel · Mozzarella · Rucola",
-                  "Rote Bete · Ziegenkäse · Walnuss",
-                  "Tomate · Mozzarella · Basilikum",
-                  "Entrecôte · Rucola · rote Zwiebeln",
-                ].map((item) => (
-                  <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                    <span style={{ color: C.peachDark, fontSize: "0.8rem", flexShrink: 0 }}>—</span>
-                    <span className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid }}>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div style={{ display: "inline-flex", alignItems: "center", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
-                <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Regional · Saisonal</span>
-              </div>
+              <span className="font-body" style={{ fontSize: "0.9rem", color: C.sageDark, fontWeight: 600 }}>
+                {g.price}
+              </span>
             </div>
-
-          </div>
+          ))}
         </div>
 
-        {/* Trennlinie */}
-        <div style={{ borderTop: `1px solid ${C.border}`, marginBottom: "4rem" }} />
-
-        {/* La Planche — Text links, Hauptbild quer rechts */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+        {/* Entrecôte — separat, volle Breite, asymmetrisch */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
           <div>
-            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
-              Zum Wein
+            <img
+              src="/manus-storage/entrecote_100g_d8ac7ce6.jpg"
+              alt="Entrecôte — Land.luft Premium Dry Age"
+              style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+            />
+          </div>
+          <div>
+            <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.75rem" }}>
+              Pimp it up
             </p>
-            <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.2 }}>
-              La Planche du Joujou
+            <h3 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1rem", lineHeight: 1.15 }}>
+              Entrecôte
             </h3>
-            <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
-              Pfälzer Salami, Coppa, Ziegenkäse, getrocknete Tomaten,
-              Oliven, Artischocken, Sauerteigbrot.
-              Alles bio, alles aus der Region.
+            <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1rem" }}>
+              Land.luft Premium Dry Age Rib Eye — aus der Region, trocken gereift, auf den Punkt gebracht.
             </p>
-            <div style={{ display: "inline-flex", alignItems: "center", backgroundColor: C.bgSage, padding: "0.5rem 1rem" }}>
-              <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.08em", color: C.sageDark }}>100% Bio · Handverlesen · Pfälzer Produzenten</span>
+            <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, lineHeight: 1.7, marginBottom: "1.5rem" }}>
+              Du entscheidest wie viel.
+            </p>
+            <div style={{ display: "inline-flex", alignItems: "baseline", gap: "0.4rem" }}>
+              <span className="font-display" style={{ fontSize: "1.6rem", color: C.sageDark }}>15 €</span>
+              <span className="font-body" style={{ fontSize: "0.78rem", color: C.inkLight, letterSpacing: "0.06em" }}>/ 100g</span>
             </div>
           </div>
-          <img
-            src="/manus-storage/planche-hochkant_8d179cfd.jpg"
-            alt="La Planche du Joujou"
-            style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
-          />
         </div>
+
       </div>
     </section>
   );
@@ -668,8 +699,10 @@ function GalerieSection() {
     { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
     { src: "/manus-storage/pj-hero-abs_0cf7b090.jpg", alt: "Bar", caption: "Bar" },
     { src: "/manus-storage/pj-gastraum-abs_ba8ba180.jpg", alt: "Gastraum", caption: "Gastraum" },
-    { src: "/manus-storage/pj-terrasse-abs_9eb9ef23.jpg", alt: "Terrasse", caption: "Terrasse" },
-    { src: "/manus-storage/pj-hof-abs_c7c86ff4.jpg", alt: "Hof", caption: "Hof" },
+    { src: "/manus-storage/wein_kuehlschrank_64c31048.jpg", alt: "Offene Weine & Bestseller", caption: "Offene Weine" },
+    { src: "/manus-storage/weinglaeserfass_343c5afe.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
+    { src: "/manus-storage/garten_lounge2_df2e49da.jpg", alt: "Garten Lounge", caption: "Garten" },
+    { src: "/manus-storage/joujou_schild_13b01c69.jpg", alt: "joujou Schild", caption: "joujou" },
   ];
 
   return (
