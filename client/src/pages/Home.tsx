@@ -156,9 +156,7 @@ function Intro() {
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.sageDark, lineHeight: 1 }}>wein</span>
         </div>
         <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto 2rem" }}>
-          Weine, die man anderswo nicht findet.
-          Essen, das man nicht vergisst.
-          Ein Ort, den man nicht erklären kann — nur erleben.
+          Wir sind die kleine Weinbar im Joujou. Weine, die man anderswo so nicht findet. Essen, das man gerne teilt. Ein Ort, den man nicht erklären kann — nur erleben.
         </p>
 
         {/* Two pillars */}
@@ -356,8 +354,9 @@ function EventsSection() {
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
           <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight }}>
             Aktuelle Events & Tickets auf{" "}
-            <a href="https://www.instagram.com/joujou.pfalz" target="_blank" rel="noopener noreferrer" style={{ color: C.peachDark, textDecoration: "none", fontWeight: 600 }}>
-              @joujou.pfalz
+            <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.peachDark, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              joujou.bistro
             </a>
           </p>
         </div>
@@ -423,8 +422,7 @@ function GesellschaftenSection() {
             {/* Key promise */}
             <div style={{ backgroundColor: C.bg, padding: "1.5rem", borderLeft: `4px solid ${C.sageDark}` }}>
               <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.7, fontStyle: "italic" }}>
-                 „Kein Pauschalpaket. Kein Mindestverbrauch, der überrascht.
-                Wir reden zuerst.“
+                „Wir lieben Feiern und gesellige Runden. Wir versuchen immer, unser Angebot an eure Möglichkeiten und Wünsche anzupassen. Sprecht uns super gerne einfach an.“
               </p>
             </div>
           </div>
@@ -539,7 +537,7 @@ function GesellschaftenSection() {
                     onChange={(e) => setForm({ ...form, nachricht: e.target.value })}
                     rows={4}
                     style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit", resize: "vertical" }}
-                    placeholder="Was stellt ihr euch vor? Kein Anliegen ist zu groß oder zu klein."
+                    placeholder="Was stellt ihr euch vor?"
                   />
                 </div>
 
@@ -742,8 +740,8 @@ function Footer() {
               ["Sa – So", "ab 12 Uhr"],
               ["Mo – Mi", "geschlossen"],
             ].map(([day, time]) => (
-              <div key={day} style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem" }}>
-                <span className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight }}>{day}</span>
+              <div key={day} style={{ display: "flex", gap: "0.75rem", marginBottom: "0.4rem" }}>
+                <span className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, minWidth: "5rem" }}>{day}</span>
                 <span className="font-body" style={{ fontSize: "0.85rem", color: C.peach }}>{time}</span>
               </div>
             ))}
@@ -757,8 +755,9 @@ function Footer() {
               <a href="mailto:hallo@petit-joujou.de" style={{ color: C.peach, textDecoration: "none" }}>
                 hallo@petit-joujou.de
               </a><br />
-              <a href="https://www.instagram.com/joujou.pfalz" target="_blank" rel="noopener noreferrer" style={{ color: C.peach, textDecoration: "none" }}>
-                @joujou.pfalz
+              <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.peach, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                joujou.bistro
               </a>
             </p>
           </div>
