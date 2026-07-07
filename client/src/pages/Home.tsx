@@ -687,9 +687,9 @@ function EssenSection() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
             <div style={{ overflow: "hidden" }}>
               <img
-                src="/manus-storage/pinsa-trio_799c642d.jpg"
-                alt="Manna Palatina Pinsa — drei Variationen"
-                style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
+                src="/manus-storage/pinsa-pastrami_180108f0.jpg"
+                alt="Manna Palatina Pinsa — Pastrami mit Rucola"
+                style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
               />
             </div>
             <div>
@@ -700,7 +700,7 @@ function EssenSection() {
                 Manna Palatina Pinsa
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
-                Drei Variationen, eine Idee: Teilen. Die Manna Palatina Pinsa kommt auf Holzbrett — knusprig, leicht, mit Belag der Saison.
+                Fünf Variationen, eine Idee: Teilen. Die Manna Palatina Pinsa kommt auf Holzbrett — knusprig, leicht, mit Belag der Saison. Wir wechseln das Angebot regelmäßig, damit immer etwas Neues auf euch wartet.
               </p>
             </div>
           </div>
