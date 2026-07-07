@@ -223,4 +223,29 @@
   .form-2col {
     grid-template-columns: 1fr !important;
   }
+  /* Pinsa-Block: 2-spaltig → 1-spaltig */
+  .pinsa-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  /* Occasion-Karten: 2-spaltig bleibt auf Mobile */
+  .occasion-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Sektions-Padding auf Mobile reduzieren */
+  .mobile-section {
+    padding: 4rem 0 !important;
+  }
+  /* Galerie: kleinere Bilder auf Mobile */
+  .galerie-small-img {
+    height: 150px !important;
+  }
+  /* Events-Bilder auf Mobile kleiner */
+  .event-img {
+    height: 240px !important;
+  }
+  /* Intro-Sektion: weniger Padding */
+  .intro-section {
+    padding: 3.5rem 0 !important;
+  }
 }

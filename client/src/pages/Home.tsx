@@ -329,6 +329,7 @@ function EventsSection() {
             <img
               src="/manus-storage/beats-flyer-cropped_5ffa2e11.jpg"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
+              className="event-img"
               style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
@@ -345,6 +346,7 @@ function EventsSection() {
             <img
               src="/manus-storage/joujou-groovt-event_89067159.jpg"
               alt="TAVOLA BEATS — lange Tafel im Joujou"
+              className="event-img"
               style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
@@ -684,7 +686,7 @@ function EssenSection() {
 
         {/* Manna Palatina Pinsa — breites Bild mit Beschriftung */}
         <div style={{ marginBottom: "6rem", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+          <div className="pinsa-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
             <div style={{ overflow: "hidden" }}>
               <img
                 src="/manus-storage/pinsa-pastrami_180108f0.jpg"
@@ -764,6 +766,7 @@ function GalerieSection() {
               <img
                 src={p.src}
                 alt={p.alt}
+                className={i >= 3 ? "galerie-small-img" : ""}
                 style={{ width: "100%", height: i < 3 ? "300px" : "200px", objectFit: "cover", objectPosition: i === 2 ? "center bottom" : "center", display: "block", filter: "saturate(0.85)" }}
               />
               <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", backgroundColor: "rgba(253,221,224,0.88)", padding: "0.2rem 0.65rem" }}>
