@@ -162,7 +162,7 @@ function Intro() {
         {/* Two pillars */}
         <div className="intro-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
           {[
-            { title: "500 Weine", text: "Im begehbaren Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
+            { title: "500 Weine", text: "Begehbare Weinkarte im Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
             { title: "Bio & Saisonal", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa werden euch verzaubern." },
           ].map((p) => (
             <div key={p.title} style={{ padding: "2rem 1.5rem", borderRight: `1px solid ${C.border}` }}>
