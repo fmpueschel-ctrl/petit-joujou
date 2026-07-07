@@ -1,6 +1,7 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { notifyOwner } from "./_core/notification";
+import { sendMail } from "./_core/mailer";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
@@ -92,9 +93,19 @@ export const appRouter = router({
           input.nachricht ? `\nNachricht:\n${input.nachricht}` : null,
         ].filter(Boolean);
 
+        const mailBody = lines.join("\n");
+
+        // Manus-interne Benachrichtigung
         await notifyOwner({
           title: `🥂 Neue Gesellschaft-Anfrage — ${input.name}`,
-          content: lines.join("\n"),
+          content: mailBody,
+        });
+
+        // E-Mail direkt an hallo@petit-joujou.de
+        await sendMail({
+          to: "hallo@petit-joujou.de",
+          subject: `Neue Anfrage von ${input.name}${input.anlass ? ` — ${input.anlass}` : ""}`,
+          text: `Neue Gesellschaft-Anfrage über die Website:\n\n${mailBody}\n\n---\nGesendet von petit-joujou.de`,
         });
 
         return { success: true };
