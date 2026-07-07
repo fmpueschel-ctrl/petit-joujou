@@ -327,7 +327,7 @@ function EventsSection() {
           {/* BEATS petit joujou */}
           <div style={{ backgroundColor: C.bgCream, overflow: "hidden" }}>
             <img
-              src="/manus-storage/beats-flyer-cropped_1fcc0b59.jpg"
+              src="/manus-storage/beats-flyer-cropped_5ffa2e11.jpg"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
               style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
