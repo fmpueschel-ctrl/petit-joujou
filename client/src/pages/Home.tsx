@@ -321,34 +321,74 @@ function EventsSection() {
           </p>
         </div>
 
-        {/* Real event flyers as cards */}
-        <div className="events-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
-          {/* Winzerbattle 1 — real flyer */}
-          <div style={{ position: "relative", overflow: "hidden", backgroundColor: C.bgSage }}>
+        {/* Aktuelle Events */}
+        <div className="events-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2rem" }}>
+
+          {/* BEATS petit joujou */}
+          <div style={{ backgroundColor: C.bgCream, overflow: "hidden" }}>
             <img
-              src="/manus-storage/pj-event-winzerbattle1_d644c4c6.jpg"
-              alt="Winzerbattle Rheinhessen vs. Pfalz"
-              style={{ width: "100%", height: "340px", objectFit: "contain", backgroundColor: "#fddde0", display: "block" }}
+              src="/manus-storage/beats-petit-joujou-flyer_8c8c25b8.jpg"
+              alt="BEATS petit joujou — DJ Marcel Ullrich"
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "top", display: "block" }}
             />
+            <div style={{ padding: "1.25rem 1.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: C.ink, marginBottom: "0.3rem" }}>BEATS petit joujou</p>
+              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, marginBottom: "0.5rem" }}>DJ Marcel Ullrich</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600 }}>11.06. · 16.07. · 13.08.2026</p>
+              <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkMid, marginTop: "0.3rem" }}>Kostenlos · Eintritt frei</p>
+            </div>
           </div>
 
-          {/* Winzerbattle 2 — real flyer */}
-          <div style={{ position: "relative", overflow: "hidden", backgroundColor: C.bgCream }}>
-            <img
-              src="/manus-storage/pj-event-winzerbattle2_5e56fba0.jpg"
-              alt="Winzerbattle April"
-              style={{ width: "100%", height: "340px", objectFit: "contain", backgroundColor: "#fdf6ee", display: "block" }}
-            />
+          {/* TAVOLA BEATS */}
+          <div style={{ backgroundColor: C.bgSage, overflow: "hidden" }}>
+            <div style={{ height: "360px", backgroundColor: "#2d5a4e", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(253,221,224,0.7)", marginBottom: "1rem" }}>08.08.2026 · ab 16:00 Uhr</p>
+              <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#fddde0", lineHeight: 1.1, marginBottom: "0.75rem" }}>TAVOLA BEATS</p>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(253,221,224,0.8)", marginBottom: "1.25rem", fontStyle: "italic" }}>Apéro · Wines · Food · Italo Beats</p>
+              <div style={{ borderTop: "1px solid rgba(253,221,224,0.25)", paddingTop: "1rem", width: "100%" }}>
+                <p className="font-display" style={{ fontSize: "1.8rem", color: "#fddde0" }}>59 € p.P.</p>
+                <p className="font-body" style={{ fontSize: "0.75rem", color: "rgba(253,221,224,0.65)", marginTop: "0.25rem" }}>inkl. Aperitif · Food (all you can eat) · Wines</p>
+              </div>
+            </div>
+            <div style={{ padding: "1.25rem 1.5rem" }}>
+              <a href="https://services.gastronovi.com/restaurants/68135/reservierung/widget?entry=ordering#1" target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fddde0", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
+                Tickets buchen
+              </a>
+            </div>
           </div>
 
-          {/* Frühlingsmarkt — the crazy woman flyer */}
-          <div style={{ position: "relative", overflow: "hidden", backgroundColor: "#fce8ee" }}>
-            <img
-              src="/manus-storage/pj-event-fruehlingsmarkt_d8cc0177.jpg"
-              alt="Frühlingsmarkt — Let's celebrate spring!"
-              style={{ width: "100%", height: "340px", objectFit: "contain", backgroundColor: "#fce8ee", display: "block" }}
-            />
+          {/* Joujou Groovt */}
+          <div style={{ backgroundColor: "#fdf6ee", overflow: "hidden" }}>
+            <div style={{ height: "280px", backgroundColor: "#f5e6c8", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkMid, marginBottom: "0.75rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
+              <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: C.ink, lineHeight: 1.1, marginBottom: "0.5rem" }}>Joujou Groovt</p>
+              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, fontStyle: "italic", marginBottom: "1rem" }}>Live-Musik & Genuss</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600 }}>30.07. · 27.08.2026</p>
+            </div>
+            <div style={{ padding: "1.25rem 1.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, marginBottom: "0.75rem" }}>Live-Musik-Acts, Spritz, Schorle, Wein — entspannte Sommerabende im Joujou.</p>
+              <a href="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation" target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
+                Tisch reservieren
+              </a>
+            </div>
           </div>
+
+          {/* Herbstmarkt */}
+          <div style={{ backgroundColor: "#f0ebe0", overflow: "hidden" }}>
+            <div style={{ height: "280px", backgroundColor: "#c8a96e", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: "0.75rem" }}>03.10. + 04.10.2026 · ab 12:00 Uhr</p>
+              <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#fff", lineHeight: 1.1, marginBottom: "0.5rem" }}>Herbstmarkt</p>
+              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.85)", fontStyle: "italic" }}>Markt der achtsamen Dinge</p>
+            </div>
+            <div style={{ padding: "1.25rem 1.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, marginBottom: "0.75rem" }}>Regionale Aussteller, Handwerkskunst, Bio-Leckereien und musikalische Begleitung — zwei Tage Herbstzauber.</p>
+              <p className="font-body" style={{ fontSize: "0.78rem", color: C.sageDark, fontWeight: 600 }}>Eintritt frei</p>
+            </div>
+          </div>
+
         </div>
 
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
