@@ -682,6 +682,30 @@ function EssenSection() {
           ))}
         </div>
 
+        {/* Manna Palatina Pinsa — breites Bild mit Beschriftung */}
+        <div style={{ marginBottom: "6rem", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+            <div style={{ overflow: "hidden" }}>
+              <img
+                src="/manus-storage/pinsa-trio_799c642d.jpg"
+                alt="Manna Palatina Pinsa — drei Variationen"
+                style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
+              />
+            </div>
+            <div>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.75rem" }}>
+                Aus der Küche
+              </p>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: C.ink, marginBottom: "1rem", lineHeight: 1.15 }}>
+                Manna Palatina Pinsa
+              </h3>
+              <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem" }}>
+                Drei Variationen, eine Idee: Teilen. Die Manna Palatina Pinsa kommt auf Holzbrett — knusprig, leicht, mit Belag der Saison.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Entrecôte — separat, volle Breite, asymmetrisch */}
         <div className="entrecote-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
           <div>
