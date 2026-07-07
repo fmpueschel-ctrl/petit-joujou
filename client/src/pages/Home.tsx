@@ -327,9 +327,9 @@ function EventsSection() {
           {/* BEATS petit joujou */}
           <div style={{ backgroundColor: C.bgCream, overflow: "hidden" }}>
             <img
-              src="/manus-storage/beats-petit-joujou-flyer_8c8c25b8.jpg"
+              src="/manus-storage/beats-flyer-cropped_1fcc0b59.jpg"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "top", display: "block" }}
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
@@ -342,16 +342,15 @@ function EventsSection() {
 
           {/* TAVOLA BEATS */}
           <div style={{ backgroundColor: C.bgSage, overflow: "hidden" }}>
-            <div style={{ height: "360px", backgroundColor: "#2d5a4e", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(253,221,224,0.7)", marginBottom: "1rem" }}>08.08.2026 · ab 16:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#fddde0", lineHeight: 1.1, marginBottom: "0.75rem" }}>TAVOLA BEATS</p>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(253,221,224,0.8)", marginBottom: "1.25rem", fontStyle: "italic" }}>Apéro · Wines · Food · Italo Beats</p>
-              <div style={{ borderTop: "1px solid rgba(253,221,224,0.25)", paddingTop: "1rem", width: "100%" }}>
-                <p className="font-display" style={{ fontSize: "1.8rem", color: "#fddde0" }}>59 € p.P.</p>
-                <p className="font-body" style={{ fontSize: "0.75rem", color: "rgba(253,221,224,0.65)", marginTop: "0.25rem" }}>inkl. Aperitif · Food (all you can eat) · Wines</p>
-              </div>
-            </div>
+            <img
+              src="/manus-storage/joujou-groovt-event_89067159.jpg"
+              alt="TAVOLA BEATS — lange Tafel im Joujou"
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+            />
             <div style={{ padding: "1.25rem 1.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: C.ink, marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600, marginBottom: "0.5rem" }}>59 € p.P. · inkl. Aperitif, Food & Wines</p>
               <a href="https://services.gastronovi.com/restaurants/68135/reservierung/widget?entry=ordering#1" target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fddde0", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
                 Tickets buchen
