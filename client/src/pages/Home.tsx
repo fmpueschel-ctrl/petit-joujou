@@ -113,14 +113,17 @@ function Nav() {
 function Hero() {
   return (
     <>
-      {/* Hero: Fertiges Composite-Bild — skaliert auf allen Geräten identisch */}
+      {/* Hero: Canva-Bild — Desktop (Querformat) vs. Mobile (Hochformat) */}
       <section style={{ position: "relative", overflow: "hidden" }}>
-        {/* Composite-Bild: Foto + Titel + Illustration eingebrannt */}
-        <img
-          src="/manus-storage/hero-composite_9d1ea1a1.jpg"
-          alt="petit joujou — Weinbar Leistadt Pfalz"
-          style={{ width: "100%", height: "auto", display: "block" }}
-        />
+        <picture>
+          <source media="(max-width: 767px)" srcSet="/manus-storage/JoujouVisitenkarteNEU(2)_ae1e63cf.png" />
+          <source media="(min-width: 768px)" srcSet="/manus-storage/JoujouVisitenkarteNEU(1)_eb657e33.webp" />
+          <img
+            src="/manus-storage/JoujouVisitenkarteNEU(1)_eb657e33.webp"
+            alt="petit joujou — Weinbar Leistadt Pfalz"
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </picture>
 
         {/* Entdecken-Button über dem Bild */}
         <div style={{ position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)", zIndex: 3 }}>
@@ -128,29 +131,10 @@ function Hero() {
             Entdecken
           </a>
         </div>
-
       </section>
 
-      {/* Intro: Weinbar · Leistadt, Pfalz — als Übergang zwischen Hero und nächstem Bild */}
+      {/* Intro: Weinbar · Leistadt, Pfalz — als Übergang zwischen Hero und Weinkeller */}
       <Intro />
-
-      {/* Kellerabgang: Vollbild-Foto */}
-      <section style={{ position: "relative", height: "70vh", minHeight: "400px", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-neu_33e3b5a6.jpg')", backgroundSize: "cover", backgroundPosition: "center 30%" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(42,42,42,0.15) 0%, rgba(42,42,42,0.55) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(250,248,245,0.7)", marginBottom: "1rem" }}>
-            Der Gewölbekeller
-          </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 5vw, 3.5rem)", color: "#faf8f5", letterSpacing: "0.06em", textShadow: "0 2px 20px rgba(42,42,42,0.5)" }}>
-            Die Begehbare Weinkarte
-          </h2>
-          <div style={{ width: "2.5rem", height: "1px", backgroundColor: "#ed7846", margin: "1.2rem auto" }} />
-          <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.85)", maxWidth: "400px", lineHeight: 1.8 }}>
-            500 Weine. Von 1709. Biodynamisch, naturnah, exklusiv kuratiert.
-          </p>
-        </div>
-      </section>
     </>
   );
 }
@@ -863,8 +847,7 @@ function Footer() {
 export default function Home() {
   return (
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
-      <Nav />
-      <main style={{ paddingTop: "60px" }}>
+      <main>
         <Hero />
         <WeinkellerSection />
         <ScheuneSection />
