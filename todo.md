@@ -1,2 +1,2 @@
 
-- [x] Speisekarte: "Rib Eye" zu "Entrecôte" umbenannt (in Home.tsx Zeile 733)
+- [ ] Speisekarte: "Rib Eye" umbenennen zu "Entrecôte" (Quelldatei benötigt, dann PDF neu hochladen)
