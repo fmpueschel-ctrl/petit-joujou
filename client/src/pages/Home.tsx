@@ -114,31 +114,38 @@ function Nav() {
 function Hero() {
   return (
     <>
-      {/* Hero: Vollbild-Nachtfoto mit großer Schrift */}
-      <section style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", overflow: "hidden" }}>
+      {/* Hero: Vollbild-Nachtfoto — Flexbox, vollständig responsiv */}
+      <section className="hero-section" style={{
+        position: "relative",
+        minHeight: "100vh",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}>
         {/* Hintergrundbild */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
-        {/* Dunkles Overlay für Kontrast */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
-        {/* petit joujou — mittig ins Dach: y=28-43%, Mitte bei 35% */}
-        <div style={{ position: "absolute", top: "28%", height: "15%", left: 0, right: 0, zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
-          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)", marginLeft: '42px', marginTop: '-87px' }}>
+        <div className="hero-bg" style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center 35%" }} />
+        {/* Dunkles Overlay */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.35) 0%, rgba(20,15,10,0.55) 60%, rgba(20,15,10,0.75) 100%)" }} />
+
+        {/* Titel — oberes Drittel, zentriert */}
+        <div style={{ position: "relative", zIndex: 3, textAlign: "center", paddingTop: "22vh", width: "100%" }}>
+          <h1 className="font-script" style={{ fontSize: "clamp(3rem, 10vw, 7rem)", color: "#ffffff", lineHeight: 1, textShadow: "0 2px 40px rgba(0,0,0,0.7)" }}>
             petit joujou
           </h1>
-          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '25px', whiteSpace: 'nowrap' }}>
+          <p className="font-body" style={{ fontSize: "clamp(0.55rem, 1.5vw, 0.75rem)", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginTop: "1rem", whiteSpace: "nowrap" }}>
             Weinbar · Leistadt · Pfalz
           </p>
         </div>
 
-        {/* Illustration — mittig ins Scheunentor: Tormitte x=65%, vertikal zentriert bei y=65% */}
-        <div style={{ position: "absolute", top: "50%", left: "65%", transform: "translate(-50%, -50%)", zIndex: 2 }}>
+        {/* Illustration — unteres Drittel, rechts ausgerichtet */}
+        <div style={{ position: "relative", zIndex: 2, display: "flex", justifyContent: "flex-end", paddingRight: "clamp(1rem, 10vw, 14rem)", paddingBottom: "8vh" }}>
           <img
             src="/manus-storage/illustration-final-orange_21a14351.png"
             alt=""
-            style={{ width: '234px', height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))", marginTop: '169px', marginLeft: '162px', marginRight: '-102px', paddingTop: '0px', paddingBottom: '16px', paddingLeft: '11px', paddingRight: '18px' }}
+            style={{ width: "clamp(120px, 16vw, 240px)", height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
           />
         </div>
-
 
       </section>
 

@@ -249,3 +249,11 @@
     padding: 3.5rem 0 !important;
   }
 }
+
+/* Hero: Mobile-Anpassungen */
+@media (max-width: 768px) {
+  /* Hintergrundbild: auf Mobile Scheunentor sichtbar halten */
+  .hero-bg {
+    background-position: center 50% !important;
+  }
+}
