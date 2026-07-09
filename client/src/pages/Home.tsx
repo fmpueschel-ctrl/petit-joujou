@@ -132,7 +132,7 @@ function Hero() {
         </div>
 
         {/* Illustration — rechts ins Scheunentor, responsiv positioniert */}
-        <div className="hero-illustration" style={{ position: "absolute", bottom: "12%", right: "12%", zIndex: 2 }}>
+        <div className="hero-illustration" style={{ position: "absolute", bottom: "10%", right: "22%", zIndex: 2 }}>
           <img
             src="/manus-storage/illustration-final-orange_21a14351.png"
             alt=""
