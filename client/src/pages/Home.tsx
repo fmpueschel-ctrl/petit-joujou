@@ -122,7 +122,7 @@ function Hero() {
         </h1>
         <div style={{ width: "3rem", height: "1.5px", backgroundColor: C.sageDark, margin: "1.5rem auto" }} />
         <img
-          src="/manus-storage/bottle-glass-hires_41914b8c.png"
+          src="/manus-storage/bottle-glass-hires_070fdb30.png"
           alt="Flasche und Weinglas"
           style={{ width: "clamp(200px, 32vw, 380px)", height: "auto", margin: "0.5rem auto 2rem", display: "block" }}
         />
