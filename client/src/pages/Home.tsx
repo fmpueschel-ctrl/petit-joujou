@@ -119,30 +119,32 @@ function Hero() {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_crop_9eb03389.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
         {/* Dunkles Overlay für Kontrast */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
-        {/* Inhalt */}
-        <div style={{ position: "relative", zIndex: 1, padding: "7rem 1.5rem 4rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
-          {/* Illustration — wie Taube/Auster bei Tourist Trap */}
-          <img
-            src="/manus-storage/bottle-sharp-extract_c66c1df7.png"
-            alt=""
-            style={{ width: "clamp(100px, 16vw, 180px)", height: "auto", marginBottom: "1.5rem", opacity: 0.92, filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.4))" }}
-          />
-          {/* Haupttitel — wie THE tourist TRAP */}
-          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, marginBottom: "1.2rem", textShadow: "0 2px 30px rgba(0,0,0,0.5)" }}>
+        {/* petit joujou — aufs Dach: oberes Drittel des Bildes */}
+        <div style={{ position: "absolute", top: "18%", left: 0, right: 0, zIndex: 1, textAlign: "center" }}>
+          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)" }}>
             petit joujou
           </h1>
-          {/* Subzeile — wie HOOKED ON FLAVOUR */}
-          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "2.5rem" }}>
+          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: "0.8rem" }}>
             klein · fein · wein
           </p>
-          <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: "#ffffff", textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.45)" }}>
+        </div>
+
+        {/* Illustration — groß vor dem Scheunentor (Mitte-unten) */}
+        <div style={{ position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)", zIndex: 2, textAlign: "center" }}>
+          <img
+            src="/manus-storage/illustration-transparent_f5cfc1e6.png"
+            alt=""
+            style={{ width: "clamp(200px, 30vw, 380px)", height: "auto", filter: "drop-shadow(0 8px 40px rgba(0,0,0,0.6))" }}
+          />
+        </div>
+
+        {/* Entdecken-Button unten */}
+        <div style={{ position: "absolute", bottom: "3rem", left: "50%", transform: "translateX(-50%)", zIndex: 3 }}>
+          <a href="#weinkeller" className="font-body" style={{ padding: "0.75rem 2rem", backgroundColor: "transparent", color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.35)" }}>
             Entdecken
           </a>
         </div>
-        {/* Scroll-Indikator */}
-        <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", opacity: 0.4 }}>
-          <div style={{ width: "1px", height: "40px", backgroundColor: "#ffffff" }} />
-        </div>
+
       </section>
 
       {/* Kellerabgang: Vollbild-Foto */}
