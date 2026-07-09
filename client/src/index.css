@@ -144,40 +144,28 @@
 
 /* Hero: Mobile-Anpassungen */
 @media (max-width: 768px) {
-  /* Hintergrundbild: auf Mobile tiefer setzen damit Scheunentor sichtbar */
+  /* Hintergrundbild: auf Mobile Scheunentor in der Mitte halten */
   .hero-bg {
-    background-position: center 65% !important;
+    background-position: center 55% !important;
   }
-  /* Titel-Wrapper: auf Mobile vertikal zentriert (statt top:28% mit negativem Margin) */
+  /* Titel: etwas höher auf Mobile */
   .hero-title-wrapper {
-    top: 0 !important;
-    bottom: 0 !important;
-    height: 100% !important;
-    justify-content: center !important;
+    top: 15% !important;
   }
-  /* Titel: feste Pixel-Offsets entfernen */
   .hero-title-wrapper h1 {
-    margin-left: 0 !important;
-    margin-top: 0 !important;
-    font-size: clamp(3rem, 14vw, 5rem) !important;
+    font-size: clamp(2.8rem, 13vw, 4.5rem) !important;
   }
-  /* Untertitel: sichtbar halten */
   .hero-title-wrapper p {
-    margin-top: 0.75rem !important;
-    white-space: nowrap !important;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.3em !important;
   }
-  /* Illustration: auf Mobile unten-mittig, kleiner */
+  /* Illustration: auf Mobile kleiner, unten rechts */
   .hero-illustration {
-    display: block !important;
-    top: auto !important;
-    bottom: 8% !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    bottom: 6% !important;
+    right: 5% !important;
   }
   .hero-illustration img {
-    width: 130px !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    width: 120px !important;
   }
 }
 

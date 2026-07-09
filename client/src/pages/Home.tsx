@@ -115,27 +115,28 @@ function Hero() {
   return (
     <>
       {/* Hero: Vollbild-Nachtfoto mit großer Schrift */}
-      <section className="hero-section" style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", overflow: "hidden" }}>
+      <section className="hero-section" style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
         {/* Hintergrundbild */}
-        <div className="hero-bg" style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div className="hero-bg" style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center 40%" }} />
         {/* Dunkles Overlay für Kontrast */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
-        {/* petit joujou — Desktop: mittig ins Dach (28%), Mobile: vertikal zentriert */}
-        <div className="hero-title-wrapper" style={{ position: "absolute", top: "28%", height: "15%", left: 0, right: 0, zIndex: 3, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
-          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)", marginLeft: '42px', marginTop: '-87px' }}>
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.3) 0%, rgba(20,15,10,0.6) 60%, rgba(20,15,10,0.8) 100%)" }} />
+
+        {/* petit joujou — oben links, im Dachbereich */}
+        <div className="hero-title-wrapper" style={{ position: "absolute", top: "20%", left: 0, right: 0, zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 9vw, 7rem)", color: "#ffffff", lineHeight: 1, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)" }}>
             petit joujou
           </h1>
-          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '25px', whiteSpace: 'nowrap' }}>
+          <p className="font-body" style={{ fontSize: "clamp(0.55rem, 1.2vw, 0.75rem)", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '1rem', whiteSpace: 'nowrap' }}>
             Weinbar · Leistadt · Pfalz
           </p>
         </div>
 
-        {/* Illustration — Desktop: rechts ins Scheunentor; Mobile: unten mittig, kleiner */}
-        <div className="hero-illustration" style={{ position: "absolute", top: "50%", left: "65%", transform: "translate(-50%, -50%)", zIndex: 2 }}>
+        {/* Illustration — rechts ins Scheunentor, responsiv positioniert */}
+        <div className="hero-illustration" style={{ position: "absolute", bottom: "12%", right: "12%", zIndex: 2 }}>
           <img
             src="/manus-storage/illustration-final-orange_21a14351.png"
             alt=""
-            style={{ width: '234px', height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))", marginTop: '169px', marginLeft: '162px', marginRight: '-102px', paddingTop: '0px', paddingBottom: '16px', paddingLeft: '11px', paddingRight: '18px' }}
+            style={{ width: 'clamp(140px, 18vw, 260px)', height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
           />
         </div>
 
