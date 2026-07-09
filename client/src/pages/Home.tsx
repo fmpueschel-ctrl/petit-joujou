@@ -121,10 +121,10 @@ function Hero() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
         {/* petit joujou — mittig ins Dach: y=28-43%, Mitte bei 35% */}
         <div style={{ position: "absolute", top: "28%", height: "15%", left: 0, right: 0, zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
-          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)" }}>
+          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)", marginLeft: '42px', marginTop: '-87px' }}>
             petit joujou
           </h1>
-          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: "0.8rem" }}>
+          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '25px', height: '21px', marginLeft: '32px', marginRight: '3px', paddingLeft: '31px', width: '229px' }}>
             klein · fein · wein
           </p>
         </div>
@@ -134,7 +134,7 @@ function Hero() {
           <img
             src="/manus-storage/illustration-final-orange_21a14351.png"
             alt=""
-            style={{ width: "clamp(120px, 18vw, 240px)", height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
+            style={{ width: '234px', height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))", marginTop: '169px', marginLeft: '162px', marginRight: '-102px', paddingTop: '0px', paddingBottom: '16px', paddingLeft: '11px', paddingRight: '18px' }}
           />
         </div>
 
