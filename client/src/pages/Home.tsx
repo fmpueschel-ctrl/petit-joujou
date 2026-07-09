@@ -119,8 +119,8 @@ function Hero() {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
         {/* Dunkles Overlay für Kontrast */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
-        {/* petit joujou — mittig im Himmel/Dachbereich: y=14-26% = Mitte bei 20% */}
-        <div style={{ position: "absolute", top: "14%", height: "12%", left: 0, right: 0, zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
+        {/* petit joujou — mittig ins Dach: y=28-43%, Mitte bei 35% */}
+        <div style={{ position: "absolute", top: "28%", height: "15%", left: 0, right: 0, zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
           <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)" }}>
             petit joujou
           </h1>
@@ -132,7 +132,7 @@ function Hero() {
         {/* Illustration — direkt vor dem Scheunentor: x=65% (Tormitte), y=47-80% */}
         <div style={{ position: "absolute", top: "47%", bottom: "20%", left: "65%", transform: "translateX(-50%)", zIndex: 2, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <img
-            src="/manus-storage/illustration-nowh_f50e566e.png"
+            src="/manus-storage/illustration-orig-orange_0a7c3ad5.png"
             alt=""
             style={{ width: "clamp(180px, 28vw, 360px)", height: "auto", filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.5))" }}
           />
