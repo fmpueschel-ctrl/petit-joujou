@@ -122,7 +122,7 @@ function Hero() {
         </h1>
         <div style={{ width: "3rem", height: "1.5px", backgroundColor: C.sageDark, margin: "1.5rem auto" }} />
         <img
-          src="/manus-storage/bottle-glass-transparent_51901198.png"
+          src="/manus-storage/bottle-glass-hires_41914b8c.png"
           alt="Flasche und Weinglas"
           style={{ width: "clamp(200px, 32vw, 380px)", height: "auto", margin: "0.5rem auto 2rem", display: "block" }}
         />
@@ -131,7 +131,7 @@ function Hero() {
           <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
           <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: C.sageDark }}>fein</span>
           <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: C.rose }}>wein</span>
+          <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: "#7a1f2e" }}>wein</span>
         </div>
         <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: C.ink, textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${C.border}` }}>
           Entdecken
@@ -147,10 +147,10 @@ function Hero() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(42,42,42,0.15) 0%, rgba(42,42,42,0.55) 100%)" }} />
         <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
           <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(250,248,245,0.7)", marginBottom: "1rem" }}>
-            Begehbare Weinkarte
+            Der Gewölbekeller
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 5vw, 3.5rem)", color: "#faf8f5", letterSpacing: "0.06em", textShadow: "0 2px 20px rgba(42,42,42,0.5)" }}>
-            Der Gewölbekeller
+            Die Begehbare Weinkarte
           </h2>
           <div style={{ width: "2.5rem", height: "1px", backgroundColor: "#ed7846", margin: "1.2rem auto" }} />
           <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.85)", maxWidth: "400px", lineHeight: 1.8 }}>
