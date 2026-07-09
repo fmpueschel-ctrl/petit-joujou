@@ -128,8 +128,8 @@ function Hero() {
         {/* Dunkles Overlay */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.35) 0%, rgba(20,15,10,0.55) 60%, rgba(20,15,10,0.75) 100%)" }} />
 
-        {/* Titel — oberes Drittel, zentriert */}
-        <div style={{ position: "relative", zIndex: 3, textAlign: "center", paddingTop: "22vh", width: "100%" }}>
+        {/* Titel — im Dachbereich, zentriert */}
+        <div style={{ position: "relative", zIndex: 3, textAlign: "center", paddingTop: "32vh", width: "100%" }}>
           <h1 className="font-script" style={{ fontSize: "clamp(3rem, 10vw, 7rem)", color: "#ffffff", lineHeight: 1, textShadow: "0 2px 40px rgba(0,0,0,0.7)" }}>
             petit joujou
           </h1>
@@ -138,12 +138,12 @@ function Hero() {
           </p>
         </div>
 
-        {/* Illustration — unteres Drittel, rechts ausgerichtet */}
-        <div style={{ position: "relative", zIndex: 2, display: "flex", justifyContent: "flex-end", paddingRight: "clamp(1rem, 10vw, 14rem)", paddingBottom: "8vh" }}>
+        {/* Illustration — unten, ins Scheunentor ausgerichtet */}
+        <div style={{ position: "relative", zIndex: 2, display: "flex", justifyContent: "flex-end", paddingRight: "clamp(1rem, 5vw, 8rem)", paddingBottom: "6vh" }}>
           <img
             src="/manus-storage/illustration-final-orange_21a14351.png"
             alt=""
-            style={{ width: "clamp(120px, 16vw, 240px)", height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
+            style={{ width: "clamp(130px, 17vw, 250px)", height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
           />
         </div>
 
