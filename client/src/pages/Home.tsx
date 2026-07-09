@@ -45,9 +45,9 @@ function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          backgroundColor: "rgba(20,15,10,0.55)",
-          backdropFilter: "blur(14px)",
-          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          backgroundColor: "transparent",
+          backdropFilter: "none",
+          borderBottom: "none",
         }}
       >
         <div className="container flex items-center justify-between" style={{ height: "60px" }}>
@@ -163,7 +163,7 @@ function Intro() {
           <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
           <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.sageDark, lineHeight: 1 }}>wein</span>
+          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: "#7a1f2e", lineHeight: 1 }}>wein</span>
         </div>
         <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto 2rem" }}>
           Wir sind die kleine Weinbar im Joujou. Weine, die man anderswo so nicht findet. Essen, das man gerne teilt. Ein Ort, den man nicht erklären kann — nur erleben.
