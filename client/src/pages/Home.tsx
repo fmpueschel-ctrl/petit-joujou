@@ -10,7 +10,7 @@ import { trpc } from "@/lib/trpc";
 // ── Weinbar-Palette (petit joujou) ──────────────────────────
 // Neue Palette: Orange #ed7846 · Weinrot #7a1f2e · Anthrazit #2a2a2a
 const C = {
-  bg:          "#faf8f5",   // warmes Cremeweiß
+  bg:          "#ffffff",   // reines Weiß
   bgSage:      "#f5f0ea",   // zartes Warm-Beige
   bgPeach:     "#fdf4ee",   // sehr helles Orange-Hauch
   bgLavender:  "#f5f0ea",   // Beige
@@ -45,7 +45,7 @@ function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          backgroundColor: "rgba(253,244,246,0.94)",
+          backgroundColor: "rgba(255,255,255,0.95)",
           backdropFilter: "blur(14px)",
           borderBottom: `1px solid ${C.border}`,
         }}
@@ -112,19 +112,15 @@ function Nav() {
 function Hero() {
   return (
     <>
-      {/* Heller Hero: Illustration auf Cremeweiß */}
-      <section style={{ backgroundColor: C.bg, minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "7rem 1.5rem 4rem", position: "relative" }}>
-        <p className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.4em", textTransform: "uppercase", color: C.inkLight, marginBottom: "1.5rem" }}>
+      {/* Heller Hero: Illustration auf Weiß */}
+      <section style={{ backgroundColor: "#ffffff", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "7rem 1.5rem 4rem", position: "relative" }}>
+        <p className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.4em", textTransform: "uppercase", color: C.inkLight, marginBottom: "2.5rem" }}>
           Weinbar · Leistadt · Pfalz
         </p>
-        <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)", color: C.ink, lineHeight: 1.1 }}>
-          petit joujou
-        </h1>
-        <div style={{ width: "3rem", height: "1.5px", backgroundColor: C.sageDark, margin: "1.5rem auto" }} />
         <img
-          src="/manus-storage/bottle-glass-hires_070fdb30.png"
+          src="/manus-storage/bottle-sharp-extract_c66c1df7.png"
           alt="Flasche und Weinglas"
-          style={{ width: "clamp(200px, 32vw, 380px)", height: "auto", margin: "0.5rem auto 2rem", display: "block" }}
+          style={{ width: "clamp(220px, 36vw, 420px)", height: "auto", margin: "0 auto 2.5rem", display: "block" }}
         />
         <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem", flexWrap: "wrap", justifyContent: "center" }}>
           <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: C.ink }}>klein</span>
