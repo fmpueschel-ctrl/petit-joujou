@@ -116,7 +116,7 @@ function Hero() {
       {/* Hero: Vollbild-Nachtfoto mit großer Schrift */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", overflow: "hidden" }}>
         {/* Hintergrundbild */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_dcd040f5.jpg')", backgroundSize: "cover", backgroundPosition: "30% center" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_dcd040f5.jpg')", backgroundSize: "cover", backgroundPosition: "15% center" }} />
         {/* Dunkles Overlay für Kontrast */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
         {/* Inhalt */}
