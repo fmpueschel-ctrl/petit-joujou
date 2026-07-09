@@ -147,26 +147,8 @@ function Hero() {
 
       </section>
 
-      {/* Intro: Weinbar · Leistadt · Pfalz — als Übergang zwischen Hero und nächstem Bild */}
+      {/* Intro: direkt nach Hero */}
       <Intro />
-
-      {/* Kellerabgang: Vollbild-Foto */}
-      <section style={{ position: "relative", height: "70vh", minHeight: "400px", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-neu_33e3b5a6.jpg')", backgroundSize: "cover", backgroundPosition: "center 30%" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(42,42,42,0.15) 0%, rgba(42,42,42,0.55) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(250,248,245,0.7)", marginBottom: "1rem" }}>
-            Der Gewölbekeller
-          </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 5vw, 3.5rem)", color: "#faf8f5", letterSpacing: "0.06em", textShadow: "0 2px 20px rgba(42,42,42,0.5)" }}>
-            Die Begehbare Weinkarte
-          </h2>
-          <div style={{ width: "2.5rem", height: "1px", backgroundColor: "#ed7846", margin: "1.2rem auto" }} />
-          <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.85)", maxWidth: "400px", lineHeight: 1.8 }}>
-            500 Weine. Von 1709. Biodynamisch, naturnah, exklusiv kuratiert.
-          </p>
-        </div>
-      </section>
     </>
   );
 }
@@ -207,14 +189,15 @@ function Intro() {
 // ── Weinkeller ────────────────────────────────────────────────
 function WeinkellerSection() {
   return (
-    <section id="weinkeller" style={{ backgroundColor: C.bgCream, padding: "0" }}>
-      {/* Weinregal-Bild */}
-      <img
-        src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
-        alt="Weinkeller — Weinflaschen im Regal"
-        className="mobile-img-tall"
-        style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
-      />
+    <section id="weinkeller" style={{ backgroundColor: C.bgCream, padding: "4rem 0 0" }}>
+      {/* Weinregal-Bild — eingepasst, nicht Vollbreite */}
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 2rem" }}>
+        <img
+          src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
+          alt="Weinkeller — Weinflaschen im Regal"
+          style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
+        />
+      </div>
 
 
       {/* Text below gallery */}
