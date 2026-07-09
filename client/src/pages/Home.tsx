@@ -678,9 +678,9 @@ function EssenSection() {
           <div className="pinsa-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
             <div style={{ overflow: "hidden" }}>
               <img
-                src="/manus-storage/pinsa-pastrami_180108f0.jpg"
+                src="/manus-storage/pinsa-pastrami-tight_8752abda.jpg"
                 alt="Manna Palatina Pinsa — Pastrami mit Rucola"
-                style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+                style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center center", display: "block" }}
               />
             </div>
             <div>
