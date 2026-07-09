@@ -116,7 +116,7 @@ function Hero() {
       {/* Hero: Vollbild-Nachtfoto mit großer Schrift */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", overflow: "hidden" }}>
         {/* Hintergrundbild */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_crop_9eb03389.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
         {/* Dunkles Overlay für Kontrast */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
         {/* petit joujou — aufs Dach: oberes Drittel des Bildes */}
@@ -132,7 +132,7 @@ function Hero() {
         {/* Illustration — groß vor dem Scheunentor (Mitte-unten) */}
         <div style={{ position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)", zIndex: 2, textAlign: "center" }}>
           <img
-            src="/manus-storage/illustration-transparent_f5cfc1e6.png"
+            src="/manus-storage/illustration-clean_17f48f9e.png"
             alt=""
             style={{ width: "clamp(200px, 30vw, 380px)", height: "auto", filter: "drop-shadow(0 8px 40px rgba(0,0,0,0.6))" }}
           />
