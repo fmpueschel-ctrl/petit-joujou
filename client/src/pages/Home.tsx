@@ -116,10 +116,10 @@ function Hero() {
       {/* Hero: Canva-Bild — Desktop (Querformat) vs. Mobile (Hochformat) */}
       <section style={{ position: "relative", overflow: "hidden" }}>
         <picture>
-          <source media="(max-width: 767px)" srcSet="/manus-storage/JoujouVisitenkarteNEU(2)_ae1e63cf.png" />
-          <source media="(min-width: 768px)" srcSet="/manus-storage/JoujouVisitenkarteNEU(1)_eb657e33.webp" />
+          <source media="(max-width: 767px)" srcSet="/manus-storage/6_3c47d17c.png" />
+          <source media="(min-width: 768px)" srcSet="/manus-storage/5_22ab812a.webp" />
           <img
-            src="/manus-storage/JoujouVisitenkarteNEU(1)_eb657e33.webp"
+            src="/manus-storage/5_22ab812a.webp"
             alt="petit joujou — Weinbar Leistadt Pfalz"
             style={{ width: "100%", height: "auto", display: "block" }}
           />
@@ -678,8 +678,8 @@ function EssenSection() {
           <div className="pinsa-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
             <div style={{ overflow: "hidden" }}>
               <img
-                src="/manus-storage/pinsa-pastrami-tight_8752abda.jpg"
-                alt="Manna Palatina Pinsa — Pastrami mit Rucola"
+                src="/manus-storage/Screenshot_20260709_155209_Gallery_42adc039.jpg"
+                alt="Manna Palatina Pinsa — vier Variationen auf Holzbrettern"
                 style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center center", display: "block" }}
               />
             </div>
