@@ -51,12 +51,6 @@ function Nav() {
         }}
       >
         <div className="container flex items-center justify-between" style={{ height: "60px" }}>
-          <a href="#" style={{ textDecoration: "none" }}>
-            <span className="font-script" style={{ fontSize: "1.7rem", color: "#ffffff", letterSpacing: "0.02em" }}>
-              petit joujou
-            </span>
-          </a>
-
           <button
             onClick={() => setOpen(!open)}
             style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.8)", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
@@ -753,7 +747,6 @@ function EssenSection() {
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
-    { src: "/manus-storage/aussen_nacht_dcd040f5.jpg", alt: "Aussenansicht bei Nacht", caption: "Nacht" },
     { src: "/manus-storage/scheune_innen_tisch_a44f846d.jpg", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
     { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
     { src: "/manus-storage/weinglaeserfass_fix_b1dc7a51.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
