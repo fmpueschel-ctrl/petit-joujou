@@ -142,12 +142,8 @@ function Hero() {
 // ── Intro ─────────────────────────────────────────────────────
 function Intro() {
   return (
-    <section style={{ backgroundColor: C.bg, padding: "6rem 0", borderBottom: `1px solid ${C.border}` }}>
+    <section style={{ backgroundColor: C.bg, padding: "3.5rem 0 6rem", borderBottom: `1px solid ${C.border}` }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center", padding: "0 1.5rem" }}>
-        {/* Punchy tagline */}
-        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1.5rem" }}>
-          Weinbar · Leistadt, Pfalz
-        </p>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", marginBottom: "1.5rem", whiteSpace: "nowrap" }}>
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
           <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
@@ -291,7 +287,7 @@ function GartenSection() {
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
-                <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.rose, color: C.inkMid, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
+                <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.sage, color: C.ink, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
                   {tag}
                 </span>
               ))}
