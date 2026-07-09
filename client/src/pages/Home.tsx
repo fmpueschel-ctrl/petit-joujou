@@ -45,14 +45,14 @@ function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          backgroundColor: "rgba(255,255,255,0.95)",
+          backgroundColor: "rgba(20,15,10,0.55)",
           backdropFilter: "blur(14px)",
-          borderBottom: `1px solid ${C.border}`,
+          borderBottom: "1px solid rgba(255,255,255,0.1)",
         }}
       >
         <div className="container flex items-center justify-between" style={{ height: "60px" }}>
           <a href="#" style={{ textDecoration: "none" }}>
-            <span className="font-script" style={{ fontSize: "1.7rem", color: C.sageDark, letterSpacing: "0.02em" }}>
+            <span className="font-script" style={{ fontSize: "1.7rem", color: "#ffffff", letterSpacing: "0.02em" }}>
               petit joujou
             </span>
           </a>
@@ -63,16 +63,16 @@ function Nav() {
           />
           <button
             onClick={() => setOpen(!open)}
-            style={{ background: "none", border: "none", cursor: "pointer", color: C.inkMid, padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
+            style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.8)", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
             aria-label="Menü"
           >
             {open ? (
               <span style={{ fontSize: "1.3rem", color: C.inkMid, lineHeight: 1 }}>✕</span>
             ) : (
               <>
-                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: C.inkMid }} />
-                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: C.inkMid }} />
-                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: C.inkMid }} />
+                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: "rgba(255,255,255,0.8)" }} />
+                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: "rgba(255,255,255,0.8)" }} />
+                <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: "rgba(255,255,255,0.8)" }} />
               </>
             )}
           </button>
@@ -117,23 +117,31 @@ function Nav() {
 function Hero() {
   return (
     <>
-      {/* Hero: Typografie auf Weiß — kein Bild */}
-      <section style={{ backgroundColor: "#ffffff", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "7rem 1.5rem 4rem", position: "relative" }}>
-        <p className="font-body" style={{ fontSize: "0.78rem", letterSpacing: "0.35em", textTransform: "uppercase", color: C.inkLight, marginBottom: "3rem" }}>
-          Weinbar · Leistadt, Pfalz
-        </p>
-        <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "3rem", flexWrap: "wrap", justifyContent: "center" }}>
-          <span className="font-script" style={{ fontSize: "clamp(2.8rem, 8vw, 5.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
-          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(2.8rem, 8vw, 5.5rem)", color: C.sageDark, lineHeight: 1 }}>fein</span>
-          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(2.8rem, 8vw, 5.5rem)", color: "#7a1f2e", lineHeight: 1 }}>wein</span>
+      {/* Hero: Vollbild-Nachtfoto mit großer Schrift */}
+      <section style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", overflow: "hidden" }}>
+        {/* Hintergrundbild */}
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_dcd040f5.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        {/* Dunkles Overlay für Kontrast */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
+        {/* Inhalt */}
+        <div style={{ position: "relative", zIndex: 1, padding: "7rem 1.5rem 4rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <p className="font-body" style={{ fontSize: "0.75rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "2.5rem" }}>
+            Weinbar · Leistadt, Pfalz
+          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "3rem", flexWrap: "wrap", justifyContent: "center" }}>
+            <span className="font-script" style={{ fontSize: "clamp(3rem, 9vw, 6.5rem)", color: "#ffffff", lineHeight: 1 }}>klein</span>
+            <span style={{ width: "7px", height: "7px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.6)", display: "inline-block", flexShrink: 0 }} />
+            <span className="font-script" style={{ fontSize: "clamp(3rem, 9vw, 6.5rem)", color: "#ed7846", lineHeight: 1 }}>fein</span>
+            <span style={{ width: "7px", height: "7px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.6)", display: "inline-block", flexShrink: 0 }} />
+            <span className="font-script" style={{ fontSize: "clamp(3rem, 9vw, 6.5rem)", color: "#ffffff", lineHeight: 1 }}>wein</span>
+          </div>
+          <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: "#ffffff", textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.45)" }}>
+            Entdecken
+          </a>
         </div>
-        <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: C.ink, textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${C.border}` }}>
-          Entdecken
-        </a>
-        <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", opacity: 0.25 }}>
-          <div style={{ width: "1px", height: "40px", backgroundColor: C.ink }} />
+        {/* Scroll-Indikator */}
+        <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", opacity: 0.4 }}>
+          <div style={{ width: "1px", height: "40px", backgroundColor: "#ffffff" }} />
         </div>
       </section>
 
