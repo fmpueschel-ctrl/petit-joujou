@@ -11,22 +11,29 @@ import { trpc } from "@/lib/trpc";
 // Neue Palette: Orange #ed7846 · Weinrot #7a1f2e · Anthrazit #2a2a2a
 const C = {
   bg:          "#ffffff",   // reines Weiß
-  bgSage:      "#f5f0ea",   // zartes Warm-Beige
-  bgPeach:     "#fdf4ee",   // sehr helles Orange-Hauch
-  bgLavender:  "#f5f0ea",   // Beige
-  bgCream:     "#faf8f5",   // Cremeweiß
-  ink:         "#2a2a2a",   // Anthrazit — Haupttext
-  inkMid:      "#5a5550",   // Mittleres Warm-Grau
-  inkLight:    "#9a9590",   // Helles Warm-Grau
-  sage:        "#f0e8e0",   // sehr helles Beige
-  sageDark:    "#ed7846",   // Orange — Hauptakzent (aus Illustration)
-  peach:       "#f5c4a8",   // helles Orange
-  peachDark:   "#ed7846",   // Orange — Akzentfarbe
-  lavender:    "#fdf4ee",   // Orange-Hauch
-  rose:        "#7a1f2e",   // Weinrot — zweiter Akzent
-  hotpink:     "#ed7846",   // Orange (ersetzt Magenta)
+  bgCream:     "#faf6f1",   // warmes Cremeweiß
+  bgWarm:      "#f5ede4",   // warmes Beige — Abschnittshintergrund
+  bgDark:      "#1a1210",   // sehr dunkles Braun — für dunkle Abschnitte
+  ink:         "#1e1a17",   // Tinte — Haupttext
+  inkMid:      "#5a4f48",   // Mittleres Warm-Grau
+  inkLight:    "#9a8f88",   // Helles Warm-Grau
+  orange:      "#ed7846",   // Joujou-Orange — Hauptakzent
+  orangeLight: "#f5c4a8",   // helles Orange
+  bordeaux:    "#7a1f2e",   // Bordeauxrot — zweiter Akzent
   border:      "#e8ddd5",   // Warm-Beige-Border
-  borderSage:  "#d4c8bc",   // Etwas dunklere Border
+  borderDark:  "#d4c8bc",   // Etwas dunklere Border
+  // Aliases für Rückwärtskompatibilität
+  bgSage:      "#f5ede4",
+  bgPeach:     "#faf6f1",
+  bgLavender:  "#f5ede4",
+  sage:        "#f5ede4",
+  sageDark:    "#ed7846",
+  peach:       "#f5c4a8",
+  peachDark:   "#ed7846",
+  lavender:    "#faf6f1",
+  rose:        "#7a1f2e",
+  hotpink:     "#ed7846",
+  borderSage:  "#d4c8bc",
 };
 
 // ── Nav ──────────────────────────────────────────────────────
@@ -852,7 +859,7 @@ export default function Home() {
   return (
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
       <Nav />
-      <main style={{ paddingTop: "60px" }}>
+      <main style={{ paddingTop: "0" }}>
         <Hero />
         <WeinkellerSection />
         <ScheuneSection />
