@@ -56,6 +56,11 @@ function Nav() {
               petit joujou
             </span>
           </a>
+          <img
+            src="/manus-storage/bottle-sharp-extract_c66c1df7.png"
+            alt=""
+            style={{ height: "34px", width: "auto", opacity: 0.55 }}
+          />
           <button
             onClick={() => setOpen(!open)}
             style={{ background: "none", border: "none", cursor: "pointer", color: C.inkMid, padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
