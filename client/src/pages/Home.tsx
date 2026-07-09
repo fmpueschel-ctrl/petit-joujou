@@ -321,7 +321,7 @@ function EventsSection() {
               src="/manus-storage/beats-flyer-cropped_5ffa2e11.jpg"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
               className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "left top", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
@@ -783,7 +783,7 @@ function Footer() {
               petit joujou
             </span>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", marginTop: "0.75rem", lineHeight: 1.7 }}>
-              Weinbar · Leistadt · Pfalz<br />
+              Weinbar Leistadt Pfalz<br />
               Eine Marke von Joujou Pfalz
             </p>
           </div>
@@ -807,7 +807,7 @@ function Footer() {
               Kontakt
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", lineHeight: 1.8 }}>
-              Leistadt · Pfalz<br />
+              Leistadt Pfalz<br />
               <a href="mailto:hallo@petit-joujou.de" style={{ color: "#ed7846", textDecoration: "none" }}>
                 hallo@petit-joujou.de
               </a><br />
