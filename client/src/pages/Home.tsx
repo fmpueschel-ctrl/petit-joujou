@@ -147,7 +147,7 @@ function Intro() {
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.sageDark, lineHeight: 1 }}>wein</span>
         </div>
         <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto 2rem" }}>
-          Wir sind die kleine Weinbar im Joujou. Weine, die man anderswo so nicht findet. Essen, das man gerne teilt. Ein Ort, den man nicht erklären kann — nur erleben.
+          Die kleine Weinbar im Joujou. Weine, die man anderswo nicht findet. Essen, das man gerne teilt. Ein Ort, den man nicht erklärt — man erlebt ihn.
         </p>
 
         {/* Two pillars */}
@@ -192,8 +192,7 @@ function WeinkellerSection() {
                 Manche Flaschen gibt es nur einmal.
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.8 }}>
-                Wenn sie weg sind, sind sie weg.
-                Do–Fr ab 17 Uhr, Sa–So ab 12 Uhr.
+                Wenn sie weg sind, sind sie weg. Manche Begegnungen gibt es nur einmal — mit Wein ist das genauso.
               </p>
             </div>
             <div>
@@ -233,7 +232,7 @@ function ScheuneSection() {
               Die Scheune.<br />Euer Abend.
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Historisches Gewölbe, warmes Licht, guter Wein.
+              Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.
             </p>
 
           </div>
@@ -278,7 +277,7 @@ function GartenSection() {
               Wein unter freiem Himmel
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Zwischen Zypressen und alten Weinfässern. Lass die Seele baumeln.
+              Sonne auf der Haut, Wein im Glas, Lachen am Nebentisch. Hier vergisst man die Zeit.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
@@ -430,8 +429,7 @@ function GesellschaftenSection() {
               Euer Abend.<br />Unsere Bühne.
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2rem" }}>
-              Weinabend im Gewölbekeller, Geburtstag in der Scheune,
-              Sommerabend im Garten. Schreibt uns, was ihr vorhabt.
+              Euer Geburtstag im Kerzenschein, ein Firmenabend, der kein Firmenabend sein soll, oder einfach ein Grund zum Feiern. Schreibt uns — wir machen den Rest.
             </p>
 
             {/* Occasion types */}
@@ -629,7 +627,7 @@ function EssenSection() {
             Zum Teilen &amp; Sattwerden
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: "rgba(245,240,234,0.7)", maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
-            Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa werden euch verzaubern.
+            Gerichte, die man am liebsten mit allen teilt. Oder heimlich alleine aufisst. Kein Menü — ein Erlebnis.
           </p>
           <a
             href="/manus-storage/PetitJoujou_Speisekarte_Final5_eaf6392f.pdf"
