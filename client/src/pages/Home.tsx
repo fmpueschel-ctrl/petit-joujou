@@ -129,8 +129,8 @@ function Hero() {
           </p>
         </div>
 
-        {/* Illustration — direkt vor dem Scheunentor (Bildmitte horizontal, ca. 42–88% vertikal) */}
-        <div style={{ position: "absolute", top: "42%", bottom: "12%", left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        {/* Illustration — direkt vor dem Scheunentor (rechts der Mitte, ca. 62% von links) */}
+        <div style={{ position: "absolute", top: "42%", bottom: "12%", left: "62%", transform: "translateX(-50%)", zIndex: 2, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <img
             src="/manus-storage/illustration-nowh_f50e566e.png"
             alt=""
