@@ -132,7 +132,7 @@ function Hero() {
         {/* Illustration — groß vor dem Scheunentor (Mitte-unten) */}
         <div style={{ position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)", zIndex: 2, textAlign: "center" }}>
           <img
-            src="/manus-storage/illustration-clean_17f48f9e.png"
+            src="/manus-storage/illustration-nowh_f50e566e.png"
             alt=""
             style={{ width: "clamp(200px, 30vw, 380px)", height: "auto", filter: "drop-shadow(0 8px 40px rgba(0,0,0,0.6))" }}
           />
