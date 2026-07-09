@@ -142,25 +142,37 @@
 
 /* ── Mobile Responsive Helpers ─────────────────────────────── */
 
-/* Hero: Illustration auf Mobile ausblenden, petit joujou zentrieren */
+/* Hero: Mobile-Anpassungen */
 @media (max-width: 768px) {
-  .hero-illustration {
-    display: none !important;
-  }
+  /* Titel: feste Pixel-Offsets entfernen, vertikal höher positionieren */
   .hero-title-wrapper {
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+    top: 30% !important;
     height: auto !important;
+    transform: none !important;
   }
-  .hero-title-wrapper h1 {
+  .hero-title {
     margin-left: 0 !important;
     margin-top: 0 !important;
-    font-size: clamp(3rem, 15vw, 5rem) !important;
+    font-size: clamp(3.2rem, 14vw, 5rem) !important;
   }
-  .hero-title-wrapper p {
-    margin-top: 1rem !important;
-    font-size: 0.62rem !important;
-    letter-spacing: 0.3em !important;
+  .hero-subtitle {
+    margin-top: 0.75rem !important;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.25em !important;
+    white-space: nowrap !important;
+  }
+  /* Illustration: auf Mobile unten-mittig, kleiner */
+  .hero-illustration {
+    display: block !important;
+    top: auto !important;
+    bottom: 8% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .hero-illustration img {
+    width: 140px !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
@@ -272,8 +284,8 @@
     padding: 3.5rem 0 !important;
   }
 
-  /* Alle Sections: Padding auf Mobile reduzieren */
-  section {
+  /* Alle Sections: Padding auf Mobile reduzieren (Hero ausgenommen) */
+  section:not(.hero-section) {
     padding-top: 3.5rem !important;
     padding-bottom: 3.5rem !important;
   }
