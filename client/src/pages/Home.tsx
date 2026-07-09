@@ -8,25 +8,25 @@ import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
 // ── Weinbar-Palette (petit joujou) ──────────────────────────
-// #FDDDE0 Rosa-Hintergrund · #FF66C4 Magenta-Akzent · #40818A Joujou-Grün
+// Neue Palette: Orange #ed7846 · Weinrot #7a1f2e · Anthrazit #2a2a2a
 const C = {
-  bg:          "#fdf8f9",   // fast weiß, leicht rosa
-  bgSage:      "#fce8ee",   // zartes Rosa (war Salbei)
-  bgPeach:     "#fddde0",   // Candy-Rosa (war Pfirsich)
-  bgLavender:  "#fce8ee",   // Rosa (war Lavendel)
-  bgCream:     "#fdf4f6",   // sehr zartes Rosa (war Creme)
-  ink:         "#1e3a3a",   // tief dunkelgrün (war Braun)
-  inkMid:      "#40818a",   // Joujou-Grün (war Mittelbraun)
-  inkLight:    "#6ba8b0",   // helles Joujou-Grün (war Hellbraun)
-  sage:        "#a8d4d8",   // helles Blaugrün (war Salbei)
-  sageDark:    "#40818a",   // Joujou-Grün — Hauptfarbe
-  peach:       "#ffb3e0",   // helles Pink (war Pfirsich)
-  peachDark:   "#ff66c4",   // Magenta — Akzentfarbe
-  lavender:    "#fddde0",   // Rosa (war Lavendel)
-  rose:        "#fddde0",   // Candy-Rosa (war Rose)
-  hotpink:     "#ff66c4",   // Magenta
-  border:      "#f0d0d8",   // Rosa-Border
-  borderSage:  "#b8dde0",   // Grün-Border
+  bg:          "#faf8f5",   // warmes Cremeweiß
+  bgSage:      "#f5f0ea",   // zartes Warm-Beige
+  bgPeach:     "#fdf4ee",   // sehr helles Orange-Hauch
+  bgLavender:  "#f5f0ea",   // Beige
+  bgCream:     "#faf8f5",   // Cremeweiß
+  ink:         "#2a2a2a",   // Anthrazit — Haupttext
+  inkMid:      "#5a5550",   // Mittleres Warm-Grau
+  inkLight:    "#9a9590",   // Helles Warm-Grau
+  sage:        "#f0e8e0",   // sehr helles Beige
+  sageDark:    "#ed7846",   // Orange — Hauptakzent (aus Illustration)
+  peach:       "#f5c4a8",   // helles Orange
+  peachDark:   "#ed7846",   // Orange — Akzentfarbe
+  lavender:    "#fdf4ee",   // Orange-Hauch
+  rose:        "#7a1f2e",   // Weinrot — zweiter Akzent
+  hotpink:     "#ed7846",   // Orange (ersetzt Magenta)
+  border:      "#e8ddd5",   // Warm-Beige-Border
+  borderSage:  "#d4c8bc",   // Etwas dunklere Border
 };
 
 // ── Nav ──────────────────────────────────────────────────────
@@ -111,31 +111,54 @@ function Nav() {
 // ── Hero ─────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section style={{ position: "relative", height: "100vh", minHeight: "600px", overflow: "hidden", backgroundColor: C.bgSage }}>
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-neu_33e3b5a6.jpg')", backgroundSize: "cover", backgroundPosition: "center 30%" }} />
-      {/* Starker Dunkel-Overlay — lässt Bogen als Silhouette wirken */}
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,45,42,0.72) 0%, rgba(20,45,42,0.45) 40%, rgba(20,45,42,0.65) 100%)" }} />
-      <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
-        <div style={{ marginBottom: "1.5rem" }}>
-          {/* petit joujou */}
-          <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(253,221,224,0.7)", marginBottom: "1.5rem" }}>
-            Leistadt, Pfalz
+    <>
+      {/* Heller Hero: Illustration auf Cremeweiß */}
+      <section style={{ backgroundColor: C.bg, minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "7rem 1.5rem 4rem", position: "relative" }}>
+        <p className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.4em", textTransform: "uppercase", color: C.inkLight, marginBottom: "1.5rem" }}>
+          Weinbar · Leistadt · Pfalz
+        </p>
+        <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)", color: C.ink, lineHeight: 1.1 }}>
+          petit joujou
+        </h1>
+        <div style={{ width: "3rem", height: "1.5px", backgroundColor: C.sageDark, margin: "1.5rem auto" }} />
+        <img
+          src="/manus-storage/bottle-glass-transparent_51901198.png"
+          alt="Flasche und Weinglas"
+          style={{ width: "clamp(200px, 32vw, 380px)", height: "auto", margin: "0.5rem auto 2rem", display: "block" }}
+        />
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: C.ink }}>klein</span>
+          <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
+          <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: C.sageDark }}>fein</span>
+          <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
+          <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: C.rose }}>wein</span>
+        </div>
+        <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: C.ink, textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${C.border}` }}>
+          Entdecken
+        </a>
+        <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", opacity: 0.25 }}>
+          <div style={{ width: "1px", height: "40px", backgroundColor: C.ink }} />
+        </div>
+      </section>
+
+      {/* Kellerabgang: Vollbild-Foto */}
+      <section style={{ position: "relative", height: "70vh", minHeight: "400px", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-neu_33e3b5a6.jpg')", backgroundSize: "cover", backgroundPosition: "center 30%" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(42,42,42,0.15) 0%, rgba(42,42,42,0.55) 100%)" }} />
+        <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "0 1.5rem" }}>
+          <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "rgba(250,248,245,0.7)", marginBottom: "1rem" }}>
+            Begehbare Weinkarte
           </p>
-          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 10vw, 7rem)", color: "#fddde0", lineHeight: 1.1, textShadow: "0 2px 30px rgba(20,45,42,0.5)" }}>
-            petit joujou
-          </h1>
-          <div style={{ width: "3rem", height: "1px", backgroundColor: "#ff66c4", margin: "1.5rem auto" }} />
+          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 5vw, 3.5rem)", color: "#faf8f5", letterSpacing: "0.06em", textShadow: "0 2px 20px rgba(42,42,42,0.5)" }}>
+            Der Gewölbekeller
+          </h2>
+          <div style={{ width: "2.5rem", height: "1px", backgroundColor: "#ed7846", margin: "1.2rem auto" }} />
+          <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.85)", maxWidth: "400px", lineHeight: 1.8 }}>
+            500 Weine. Von 1709. Biodynamisch, naturnah, exklusiv kuratiert.
+          </p>
         </div>
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", justifyContent: "center", marginTop: "2.5rem" }}>
-          <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: "#fddde0", textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(253,221,224,0.4)" }}>
-            Entdecken
-          </a>
-        </div>
-      </div>
-      <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", opacity: 0.45 }}>
-        <div style={{ width: "1px", height: "40px", backgroundColor: C.inkMid, margin: "0 auto" }} />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
@@ -785,20 +808,20 @@ function GalerieSection() {
 // ── Footer ────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer style={{ backgroundColor: "#1e3a3a", padding: "4rem 0 3rem" }}>
+    <footer style={{ backgroundColor: "#2a2a2a", padding: "4rem 0 3rem" }}>
       <div className="container">
         <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }}>
           <div>
-            <span className="font-script" style={{ fontSize: "2rem", color: C.peach }}>
+            <span className="font-script" style={{ fontSize: "2rem", color: "#ed7846" }}>
               petit joujou
             </span>
-            <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, marginTop: "0.75rem", lineHeight: 1.7 }}>
+            <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", marginTop: "0.75rem", lineHeight: 1.7 }}>
               Weinbar · Leistadt, Pfalz<br />
               Eine Marke von Joujou Pfalz
             </p>
           </div>
           <div>
-            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
+            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(250,248,245,0.45)", marginBottom: "1rem" }}>
               Öffnungszeiten
             </p>
             {[
@@ -807,21 +830,21 @@ function Footer() {
               ["Mo – Mi", "geschlossen"],
             ].map(([day, time]) => (
               <div key={day} style={{ display: "flex", gap: "0.75rem", marginBottom: "0.4rem" }}>
-                <span className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, minWidth: "5rem" }}>{day}</span>
-                <span className="font-body" style={{ fontSize: "0.85rem", color: C.peach }}>{time}</span>
+                <span className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", minWidth: "5rem" }}>{day}</span>
+                <span className="font-body" style={{ fontSize: "0.85rem", color: "#ed7846" }}>{time}</span>
               </div>
             ))}
           </div>
           <div>
-            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
+            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(250,248,245,0.45)", marginBottom: "1rem" }}>
               Kontakt
             </p>
-            <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, lineHeight: 1.8 }}>
+            <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", lineHeight: 1.8 }}>
               Leistadt, Pfalz<br />
-              <a href="mailto:hallo@petit-joujou.de" style={{ color: C.peach, textDecoration: "none" }}>
+              <a href="mailto:hallo@petit-joujou.de" style={{ color: "#ed7846", textDecoration: "none" }}>
                 hallo@petit-joujou.de
               </a><br />
-              <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.peach, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+              <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: "#ed7846", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 joujou.bistro
               </a>
@@ -829,13 +852,13 @@ function Footer() {
           </div>
         </div>
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", textAlign: "center" }}>
-          <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, letterSpacing: "0.05em" }}>
+          <p className="font-body" style={{ fontSize: "0.72rem", color: "rgba(250,248,245,0.45)", letterSpacing: "0.05em" }}>
             © 2026 petit joujou · Joujou Pfalz ·{" "}
-            <a href="/impressum" style={{ color: C.peach, textDecoration: "none" }}>Impressum</a>
+            <a href="/impressum" style={{ color: "#ed7846", textDecoration: "none" }}>Impressum</a>
           </p>
-          <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, letterSpacing: "0.05em", marginTop: "0.5rem" }}>
+          <p className="font-body" style={{ fontSize: "0.72rem", color: "rgba(250,248,245,0.45)", letterSpacing: "0.05em", marginTop: "0.5rem" }}>
             Unsere weiteren Angebote findest du auf:{" "}
-            <a href="https://www.joujou-pfalz.de" target="_blank" rel="noopener noreferrer" style={{ color: C.peach, textDecoration: "none" }}>www.joujou-pfalz.de</a>
+            <a href="https://www.joujou-pfalz.de" target="_blank" rel="noopener noreferrer" style={{ color: "#ed7846", textDecoration: "none" }}>www.joujou-pfalz.de</a>
           </p>
         </div>
       </div>
