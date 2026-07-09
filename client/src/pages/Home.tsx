@@ -125,7 +125,7 @@ function Hero() {
             petit joujou
           </h1>
           <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '25px', height: '21px', marginLeft: '32px', marginRight: '3px', paddingLeft: '31px', width: '229px' }}>
-            klein · fein · wein
+            Weinbar · Leistadt, Pfalz
           </p>
         </div>
 
@@ -176,10 +176,6 @@ function Intro() {
   return (
     <section style={{ backgroundColor: C.bg, padding: "6rem 0", borderBottom: `1px solid ${C.border}` }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center", padding: "0 1.5rem" }}>
-        {/* Punchy tagline */}
-        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1.5rem" }}>
-          Weinbar · Leistadt, Pfalz
-        </p>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", marginBottom: "1.5rem", whiteSpace: "nowrap" }}>
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
           <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
