@@ -296,7 +296,7 @@ function GartenSection() {
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
-                <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.rose, color: C.inkMid, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
+                <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: "transparent", border: `1px solid ${C.peachDark}`, color: C.peachDark, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
                   {tag}
                 </span>
               ))}
