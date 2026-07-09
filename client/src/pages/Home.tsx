@@ -115,28 +115,27 @@ function Hero() {
   return (
     <>
       {/* Hero: Vollbild-Nachtfoto mit großer Schrift */}
-      <section className="hero-section" style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
+      <section style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", overflow: "hidden" }}>
         {/* Hintergrundbild */}
-        <div className="hero-bg" style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center 40%" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
         {/* Dunkles Overlay für Kontrast */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.3) 0%, rgba(20,15,10,0.6) 60%, rgba(20,15,10,0.8) 100%)" }} />
-
-        {/* petit joujou — oben links, im Dachbereich */}
-        <div className="hero-title-wrapper" style={{ position: "absolute", top: "20%", left: 0, right: 0, zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 9vw, 7rem)", color: "#ffffff", lineHeight: 1, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)" }}>
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
+        {/* petit joujou — mittig ins Dach: y=28-43%, Mitte bei 35% */}
+        <div style={{ position: "absolute", top: "28%", height: "15%", left: 0, right: 0, zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
+          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)", marginLeft: '42px', marginTop: '-87px' }}>
             petit joujou
           </h1>
-          <p className="font-body" style={{ fontSize: "clamp(0.55rem, 1.2vw, 0.75rem)", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '1rem', whiteSpace: 'nowrap' }}>
+          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '25px', whiteSpace: 'nowrap' }}>
             Weinbar · Leistadt · Pfalz
           </p>
         </div>
 
-        {/* Illustration — rechts ins Scheunentor, responsiv positioniert */}
-        <div className="hero-illustration" style={{ position: "absolute", bottom: "10%", right: "22%", zIndex: 2 }}>
+        {/* Illustration — mittig ins Scheunentor: Tormitte x=65%, vertikal zentriert bei y=65% */}
+        <div style={{ position: "absolute", top: "50%", left: "65%", transform: "translate(-50%, -50%)", zIndex: 2 }}>
           <img
             src="/manus-storage/illustration-final-orange_21a14351.png"
             alt=""
-            style={{ width: 'clamp(140px, 18vw, 260px)', height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
+            style={{ width: '234px', height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))", marginTop: '169px', marginLeft: '162px', marginRight: '-102px', paddingTop: '0px', paddingBottom: '16px', paddingLeft: '11px', paddingRight: '18px' }}
           />
         </div>
 
@@ -154,7 +153,7 @@ function Intro() {
   return (
     <section style={{ backgroundColor: "#faf6f1", padding: "6rem 0", borderBottom: `1px solid ${C.border}` }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center", padding: "0 1.5rem" }}>
-        <div className="intro-slogan" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", marginBottom: "1.5rem", whiteSpace: "nowrap" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", marginBottom: "1.5rem", whiteSpace: "nowrap" }}>
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
           <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
@@ -191,7 +190,6 @@ function WeinkellerSection() {
         <img
           src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
           alt="Weinkeller — Weinflaschen im Regal"
-          className="keller-img"
           style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
         />
       </div>
@@ -277,10 +275,10 @@ function GartenSection() {
           <img
             src="/manus-storage/garten_uebersicht_e5617482.jpg"
             alt="Garten — Übersicht mit Sonnenschirmen und Weinfässern"
-            className="mobile-img-tall garten-img"
+            className="mobile-img-tall"
             style={{ width: "100%", height: "500px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
           />
-          <div className="garten-badge" style={{ position: "absolute", bottom: "-1.5rem", right: "2rem", backgroundColor: C.bgCream, padding: "1.25rem 1.5rem", textAlign: "center", border: `1px solid ${C.border}` }}>
+          <div style={{ position: "absolute", bottom: "-1.5rem", right: "2rem", backgroundColor: C.bgCream, padding: "1.25rem 1.5rem", textAlign: "center", border: `1px solid ${C.border}` }}>
             <div className="font-script" style={{ fontSize: "1.6rem", color: C.ink }}>draußen</div>
             <div className="font-body" style={{ fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Garten & Terrasse</div>
           </div>
@@ -476,7 +474,7 @@ function GesellschaftenSection() {
           </div>
 
           {/* Right: Form */}
-          <div className="gesellschaft-form" style={{ backgroundColor: C.bg, padding: "2.5rem" }}>
+          <div style={{ backgroundColor: C.bg, padding: "2.5rem" }}>
             {sent ? (
               <div style={{ textAlign: "center", padding: "3rem 1rem" }}>
                 <div style={{ width: "3rem", height: "2px", backgroundColor: C.sageDark, margin: "0 auto 1.5rem" }} />

@@ -141,34 +141,6 @@
 }
 
 /* ── Mobile Responsive Helpers ─────────────────────────────── */
-
-/* Hero: Mobile-Anpassungen */
-@media (max-width: 768px) {
-  /* Hintergrundbild: auf Mobile Scheunentor in der Mitte halten */
-  .hero-bg {
-    background-position: center 55% !important;
-  }
-  /* Titel: etwas höher auf Mobile */
-  .hero-title-wrapper {
-    top: 15% !important;
-  }
-  .hero-title-wrapper h1 {
-    font-size: clamp(2.8rem, 13vw, 4.5rem) !important;
-  }
-  .hero-title-wrapper p {
-    font-size: 0.58rem !important;
-    letter-spacing: 0.3em !important;
-  }
-  /* Illustration: auf Mobile kleiner, unten rechts */
-  .hero-illustration {
-    bottom: 6% !important;
-    right: 5% !important;
-  }
-  .hero-illustration img {
-    width: 120px !important;
-  }
-}
-
 @media (max-width: 768px) {
   /* Grid: 2-spaltig → 1-spaltig */
   .mobile-stack {
@@ -275,59 +247,5 @@
   /* Intro-Sektion: weniger Padding */
   .intro-section {
     padding: 3.5rem 0 !important;
-  }
-
-  /* Alle Sections: Padding auf Mobile reduzieren (Hero ausgenommen) */
-  section:not(.hero-section) {
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
-  }
-
-  /* Intro: klein·fein·wein nicht umbrechen lassen */
-  .intro-slogan {
-    flex-wrap: wrap !important;
-    gap: 0.6rem !important;
-    white-space: normal !important;
-  }
-
-  /* Garten: Overlay-Badge auf Mobile kleiner */
-  .garten-badge {
-    right: 0.75rem !important;
-    padding: 0.75rem 1rem !important;
-    bottom: -1rem !important;
-  }
-
-  /* Gesellschaft-Formular: volle Breite, weniger Padding */
-  .gesellschaft-form {
-    padding: 1.5rem !important;
-  }
-
-  /* Container: etwas mehr Seitenabstand auf kleinen Screens */
-  .container {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-  }
-
-  /* Weinkeller-Bild: Höhe reduzieren */
-  .keller-img {
-    height: 260px !important;
-  }
-
-  /* Garten-Bild: Höhe reduzieren */
-  .garten-img {
-    height: 320px !important;
-  }
-
-  /* Occasion-Grid: 2-spaltig auf Mobile */
-  .occasion-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 0.75rem !important;
-  }
-
-  /* Galerie: 1-spaltig auf sehr kleinen Screens */
-  @media (max-width: 480px) {
-    .galerie-grid {
-      grid-template-columns: 1fr !important;
-    }
   }
 }
