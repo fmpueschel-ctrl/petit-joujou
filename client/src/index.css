@@ -144,21 +144,22 @@
 
 /* Hero: Mobile-Anpassungen */
 @media (max-width: 768px) {
-  /* Titel: feste Pixel-Offsets entfernen, vertikal höher positionieren */
+  /* Titel-Wrapper: auf Mobile vertikal zentriert (statt top:28% mit negativem Margin) */
   .hero-title-wrapper {
-    top: 30% !important;
-    height: auto !important;
-    transform: none !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    justify-content: center !important;
   }
-  .hero-title {
+  /* Titel: feste Pixel-Offsets entfernen */
+  .hero-title-wrapper h1 {
     margin-left: 0 !important;
     margin-top: 0 !important;
-    font-size: clamp(3.2rem, 14vw, 5rem) !important;
+    font-size: clamp(3rem, 14vw, 5rem) !important;
   }
-  .hero-subtitle {
+  /* Untertitel: sichtbar halten */
+  .hero-title-wrapper p {
     margin-top: 0.75rem !important;
-    font-size: 0.6rem !important;
-    letter-spacing: 0.25em !important;
     white-space: nowrap !important;
   }
   /* Illustration: auf Mobile unten-mittig, kleiner */
@@ -170,7 +171,7 @@
     transform: translateX(-50%) !important;
   }
   .hero-illustration img {
-    width: 140px !important;
+    width: 130px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
