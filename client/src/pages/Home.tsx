@@ -56,11 +56,7 @@ function Nav() {
               petit joujou
             </span>
           </a>
-          <img
-            src="/manus-storage/bottle-sharp-extract_c66c1df7.png"
-            alt=""
-            style={{ height: "34px", width: "auto", opacity: 0.55 }}
-          />
+
           <button
             onClick={() => setOpen(!open)}
             style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.8)", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
@@ -125,16 +121,20 @@ function Hero() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
         {/* Inhalt */}
         <div style={{ position: "relative", zIndex: 1, padding: "7rem 1.5rem 4rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <p className="font-body" style={{ fontSize: "0.75rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "2.5rem" }}>
-            Weinbar · Leistadt, Pfalz
+          {/* Illustration — wie Taube/Auster bei Tourist Trap */}
+          <img
+            src="/manus-storage/bottle-sharp-extract_c66c1df7.png"
+            alt=""
+            style={{ width: "clamp(100px, 16vw, 180px)", height: "auto", marginBottom: "1.5rem", opacity: 0.92, filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.4))" }}
+          />
+          {/* Haupttitel — wie THE tourist TRAP */}
+          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, marginBottom: "1.2rem", textShadow: "0 2px 30px rgba(0,0,0,0.5)" }}>
+            petit joujou
+          </h1>
+          {/* Subzeile — wie HOOKED ON FLAVOUR */}
+          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "2.5rem" }}>
+            klein · fein · wein
           </p>
-          <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "3rem", flexWrap: "wrap", justifyContent: "center" }}>
-            <span className="font-script" style={{ fontSize: "clamp(3rem, 9vw, 6.5rem)", color: "#ffffff", lineHeight: 1 }}>klein</span>
-            <span style={{ width: "7px", height: "7px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.6)", display: "inline-block", flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(3rem, 9vw, 6.5rem)", color: "#ed7846", lineHeight: 1 }}>fein</span>
-            <span style={{ width: "7px", height: "7px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.6)", display: "inline-block", flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(3rem, 9vw, 6.5rem)", color: "#ffffff", lineHeight: 1 }}>wein</span>
-          </div>
           <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: "#ffffff", textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.45)" }}>
             Entdecken
           </a>
