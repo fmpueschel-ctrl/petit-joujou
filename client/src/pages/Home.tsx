@@ -119,8 +119,8 @@ function Hero() {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
         {/* Dunkles Overlay für Kontrast */}
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
-        {/* petit joujou — aufs Dach: oberes Drittel des Bildes */}
-        <div style={{ position: "absolute", top: "18%", left: 0, right: 0, zIndex: 1, textAlign: "center" }}>
+        {/* petit joujou — mittig aufs Dach: horizontal + vertikal zentriert im Dachbereich (ca. 10–38% von oben) */}
+        <div style={{ position: "absolute", top: "10%", height: "28%", left: 0, right: 0, zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
           <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)" }}>
             petit joujou
           </h1>
@@ -129,12 +129,12 @@ function Hero() {
           </p>
         </div>
 
-        {/* Illustration — groß vor dem Scheunentor (Mitte-unten) */}
-        <div style={{ position: "absolute", bottom: "8%", left: "50%", transform: "translateX(-50%)", zIndex: 2, textAlign: "center" }}>
+        {/* Illustration — direkt vor dem Scheunentor (Bildmitte horizontal, ca. 42–88% vertikal) */}
+        <div style={{ position: "absolute", top: "42%", bottom: "12%", left: "50%", transform: "translateX(-50%)", zIndex: 2, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <img
             src="/manus-storage/illustration-nowh_f50e566e.png"
             alt=""
-            style={{ width: "clamp(200px, 30vw, 380px)", height: "auto", filter: "drop-shadow(0 8px 40px rgba(0,0,0,0.6))" }}
+            style={{ width: "clamp(180px, 28vw, 360px)", height: "auto", filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.5))" }}
           />
         </div>
 
