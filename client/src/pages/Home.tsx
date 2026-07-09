@@ -112,22 +112,17 @@ function Nav() {
 function Hero() {
   return (
     <>
-      {/* Heller Hero: Illustration auf Weiß */}
+      {/* Hero: Typografie auf Weiß — kein Bild */}
       <section style={{ backgroundColor: "#ffffff", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "7rem 1.5rem 4rem", position: "relative" }}>
-        <p className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.4em", textTransform: "uppercase", color: C.inkLight, marginBottom: "2.5rem" }}>
-          Weinbar · Leistadt · Pfalz
+        <p className="font-body" style={{ fontSize: "0.78rem", letterSpacing: "0.35em", textTransform: "uppercase", color: C.inkLight, marginBottom: "3rem" }}>
+          Weinbar · Leistadt, Pfalz
         </p>
-        <img
-          src="/manus-storage/bottle-sharp-extract_c66c1df7.png"
-          alt="Flasche und Weinglas"
-          style={{ width: "clamp(220px, 36vw, 420px)", height: "auto", margin: "0 auto 2.5rem", display: "block" }}
-        />
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2.5rem", flexWrap: "wrap", justifyContent: "center" }}>
-          <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: C.ink }}>klein</span>
-          <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: C.sageDark }}>fein</span>
-          <span style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2.2rem)", color: "#7a1f2e" }}>wein</span>
+        <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "3rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <span className="font-script" style={{ fontSize: "clamp(2.8rem, 8vw, 5.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
+          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
+          <span className="font-script" style={{ fontSize: "clamp(2.8rem, 8vw, 5.5rem)", color: C.sageDark, lineHeight: 1 }}>fein</span>
+          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.inkMid, display: "inline-block", flexShrink: 0 }} />
+          <span className="font-script" style={{ fontSize: "clamp(2.8rem, 8vw, 5.5rem)", color: "#7a1f2e", lineHeight: 1 }}>wein</span>
         </div>
         <a href="#weinkeller" className="font-body" style={{ padding: "0.85rem 2.5rem", backgroundColor: "transparent", color: C.ink, textDecoration: "none", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${C.border}` }}>
           Entdecken
