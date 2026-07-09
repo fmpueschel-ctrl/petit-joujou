@@ -125,12 +125,7 @@ function Hero() {
           />
         </picture>
 
-        {/* Entdecken-Button über dem Bild */}
-        <div style={{ position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)", zIndex: 3 }}>
-          <a href="#weinkeller" className="font-body" style={{ padding: "0.75rem 2rem", backgroundColor: "transparent", color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.35)", whiteSpace: "nowrap" }}>
-            Entdecken
-          </a>
-        </div>
+
       </section>
 
       {/* Intro: Weinbar · Leistadt, Pfalz — als Übergang zwischen Hero und Weinkeller */}
@@ -738,7 +733,6 @@ function EssenSection() {
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
-    { src: "/manus-storage/aussen_nacht_dcd040f5.jpg", alt: "Aussenansicht bei Nacht", caption: "Nacht" },
     { src: "/manus-storage/scheune_innen_tisch_a44f846d.jpg", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
     { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
     { src: "/manus-storage/weinglaeserfass_fix_b1dc7a51.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
@@ -789,7 +783,7 @@ function Footer() {
               petit joujou
             </span>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", marginTop: "0.75rem", lineHeight: 1.7 }}>
-              Weinbar · Leistadt, Pfalz<br />
+              Weinbar · Leistadt · Pfalz<br />
               Eine Marke von Joujou Pfalz
             </p>
           </div>
@@ -813,7 +807,7 @@ function Footer() {
               Kontakt
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", lineHeight: 1.8 }}>
-              Leistadt, Pfalz<br />
+              Leistadt · Pfalz<br />
               <a href="mailto:hallo@petit-joujou.de" style={{ color: "#ed7846", textDecoration: "none" }}>
                 hallo@petit-joujou.de
               </a><br />
