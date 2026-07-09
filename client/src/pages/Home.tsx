@@ -730,7 +730,7 @@ function EssenSection() {
               Entrecôte
             </h3>
             <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1rem" }}>
-              Land.luft Premium Dry Age Rib Eye — trocken gereift, auf den Punkt gebracht.
+              Land.luft Premium Dry Age Entrecôte — trocken gereift, auf den Punkt gebracht.
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, lineHeight: 1.7, marginBottom: "1.5rem" }}>
               Du entscheidest wie viel.
