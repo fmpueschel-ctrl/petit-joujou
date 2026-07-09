@@ -129,12 +129,12 @@ function Hero() {
           </p>
         </div>
 
-        {/* Illustration — direkt vor dem Scheunentor: x=65% (Tormitte), y=47-80% */}
-        <div style={{ position: "absolute", top: "47%", bottom: "20%", left: "65%", transform: "translateX(-50%)", zIndex: 2, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        {/* Illustration — mittig ins Scheunentor: Tormitte x=65%, vertikal zentriert bei y=65% */}
+        <div style={{ position: "absolute", top: "50%", left: "65%", transform: "translate(-50%, -50%)", zIndex: 2 }}>
           <img
             src="/manus-storage/illustration-final-orange_21a14351.png"
             alt=""
-            style={{ width: "clamp(180px, 28vw, 360px)", height: "auto", filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.5))" }}
+            style={{ width: "clamp(120px, 18vw, 240px)", height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
           />
         </div>
 
