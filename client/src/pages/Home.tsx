@@ -139,12 +139,6 @@ function Hero() {
           />
         </div>
 
-        {/* Entdecken-Button unten */}
-        <div style={{ position: "absolute", bottom: "3rem", left: "50%", transform: "translateX(-50%)", zIndex: 3 }}>
-          <a href="#weinkeller" className="font-body" style={{ padding: "0.75rem 2rem", backgroundColor: "transparent", color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.35)" }}>
-            Entdecken
-          </a>
-        </div>
 
       </section>
 
