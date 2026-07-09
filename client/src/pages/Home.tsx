@@ -147,6 +147,9 @@ function Hero() {
 
       </section>
 
+      {/* Intro: Weinbar · Leistadt, Pfalz — als Übergang zwischen Hero und nächstem Bild */}
+      <Intro />
+
       {/* Kellerabgang: Vollbild-Foto */}
       <section style={{ position: "relative", height: "70vh", minHeight: "400px", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/pj-hero-bogen-neu_33e3b5a6.jpg')", backgroundSize: "cover", backgroundPosition: "center 30%" }} />
@@ -879,7 +882,6 @@ export default function Home() {
       <Nav />
       <main style={{ paddingTop: "60px" }}>
         <Hero />
-        <Intro />
         <WeinkellerSection />
         <ScheuneSection />
         <EssenSection />
