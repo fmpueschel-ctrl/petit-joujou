@@ -144,6 +144,10 @@
 
 /* Hero: Mobile-Anpassungen */
 @media (max-width: 768px) {
+  /* Hintergrundbild: auf Mobile tiefer setzen damit Scheunentor sichtbar */
+  .hero-bg {
+    background-position: center 65% !important;
+  }
   /* Titel-Wrapper: auf Mobile vertikal zentriert (statt top:28% mit negativem Margin) */
   .hero-title-wrapper {
     top: 0 !important;
