@@ -317,10 +317,10 @@ function EventsSection() {
           {/* BEATS petit joujou */}
           <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
             <img
-              src="/manus-storage/beats-flyer-cropped_5ffa2e11.jpg"
+              src="/manus-storage/Screenshot_20260709_155209_Gallery_42adc039.jpg"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
               className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "0% 0%", display: "block" }}
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
@@ -678,7 +678,7 @@ function EssenSection() {
           <div className="pinsa-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
             <div style={{ overflow: "hidden" }}>
               <img
-                src="/manus-storage/Screenshot_20260709_155209_Gallery_42adc039.jpg"
+                src="/manus-storage/pinsa-vier_00fabee9.jpg"
                 alt="Manna Palatina Pinsa — vier Variationen auf Holzbrettern"
                 style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center center", display: "block" }}
               />
