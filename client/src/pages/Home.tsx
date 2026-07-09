@@ -151,7 +151,7 @@ function Hero() {
 // ── Intro ─────────────────────────────────────────────────────
 function Intro() {
   return (
-    <section style={{ backgroundColor: C.bg, padding: "6rem 0", borderBottom: `1px solid ${C.border}` }}>
+    <section style={{ backgroundColor: "#faf6f1", padding: "6rem 0", borderBottom: `1px solid ${C.border}` }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center", padding: "0 1.5rem" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", marginBottom: "1.5rem", whiteSpace: "nowrap" }}>
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
@@ -167,8 +167,8 @@ function Intro() {
         {/* Two pillars */}
         <div className="intro-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
           {[
-            { title: "500 Weine", text: "Begehbare Weinkarte im Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
-            { title: "Bio & Saisonal", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa werden euch verzaubern." },
+            { title: "500 Weine", text: "Ein Keller voller Entdeckungen. Flaschen, die Geschichten erzählen. Winzer, die ihr Herzblut reingesteckt haben." },
+            { title: "Essen & Teilen", text: "Gerichte, die man nicht bestellt — sondern erlebt. Auf den Tisch, in die Mitte, für alle." },
           ].map((p) => (
             <div key={p.title} style={{ padding: "2rem 1.5rem", borderRight: `1px solid ${C.border}` }}>
               <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink, marginBottom: "0.6rem", letterSpacing: "0.03em" }}>{p.title}</div>
@@ -184,7 +184,7 @@ function Intro() {
 // ── Weinkeller ────────────────────────────────────────────────
 function WeinkellerSection() {
   return (
-    <section id="weinkeller" style={{ backgroundColor: C.bgCream, padding: "4rem 0 0" }}>
+    <section id="weinkeller" style={{ backgroundColor: "#1a1210", padding: "4rem 0 0" }}>
       {/* Weinregal-Bild — eingepasst, nicht Vollbreite */}
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 2rem" }}>
         <img
@@ -196,7 +196,7 @@ function WeinkellerSection() {
 
 
       {/* Text below gallery */}
-      <div style={{ backgroundColor: C.bgCream, padding: "5rem 0" }}>
+      <div style={{ backgroundColor: "#1a1210", padding: "5rem 0" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 1.5rem" }}>
           <div className="keller-text-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
             <div>
@@ -207,8 +207,7 @@ function WeinkellerSection() {
                 Manche Flaschen gibt es nur einmal.
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.8 }}>
-                Wenn sie weg sind, sind sie weg.
-                Do–Fr ab 17 Uhr, Sa–So ab 12 Uhr.
+                Dieser Keller riecht nach Geschichte. 1709 gebaut, heute voller Flaschen, die anderswo niemand kennt. Wer reinkommt, kommt wieder.
               </p>
             </div>
             <div>
@@ -237,7 +236,7 @@ function WeinkellerSection() {
 // ── Scheune ───────────────────────────────────────────────────
 function ScheuneSection() {
   return (
-    <section id="scheune" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
+    <section id="scheune" style={{ backgroundColor: "#faf6f1", padding: "6rem 0" }}>
       <div className="container">
         <div className="mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
           <div>
@@ -248,7 +247,7 @@ function ScheuneSection() {
               Die Scheune.<br />Euer Abend.
             </h2>
             <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Historisches Gewölbe, warmes Licht, guter Wein.
+              Der Moment, wenn man reinkommt und sofort weiß: hier bleibe ich. Warmes Licht, alte Balken, Stimmen die sich vermischen. Abende, die länger werden als geplant.
             </p>
 
           </div>
@@ -269,7 +268,7 @@ function ScheuneSection() {
 // ── Garten ────────────────────────────────────────────────────
 function GartenSection() {
   return (
-    <section id="garten" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
+    <section id="garten" style={{ backgroundColor: "#1a1210", padding: "6rem 0" }}>
       <div className="container">
         {/* Hero-Bild: Garten-Übersicht mit draußen-Button */}
         <div style={{ position: "relative", marginBottom: "4rem" }}>
@@ -312,7 +311,7 @@ function GartenSection() {
 // ── Events ────────────────────────────────────────────────────
 function EventsSection() {
   return (
-    <section id="events" style={{ backgroundColor: C.bg, padding: "6rem 0" }}>
+    <section id="events" style={{ backgroundColor: "#faf6f1", padding: "6rem 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
@@ -433,7 +432,7 @@ function GesellschaftenSection() {
   };
 
   return (
-    <section id="gesellschaften" style={{ backgroundColor: C.bgLavender, padding: "7rem 0" }}>
+    <section id="gesellschaften" style={{ backgroundColor: "#1a1210", padding: "7rem 0" }}>
       <div className="container">
         <div className="gesellschaft-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
           {/* Left: Info */}
@@ -632,7 +631,7 @@ function EssenSection() {
   ];
 
   return (
-    <section id="essen" style={{ backgroundColor: C.bg, padding: "7rem 0" }}>
+    <section id="essen" style={{ backgroundColor: "#faf6f1", padding: "7rem 0" }}>
       <div className="container">
 
         {/* Header */}
