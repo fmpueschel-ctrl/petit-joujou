@@ -113,34 +113,18 @@ function Nav() {
 function Hero() {
   return (
     <>
-      {/* Hero: Vollbild-Nachtfoto mit großer Schrift */}
-      <section style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", overflow: "hidden" }}>
-        {/* Hintergrundbild */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/manus-storage/aussen_nacht_no_antenna_15e63440.png')", backgroundSize: "cover", backgroundPosition: "center" }} />
-        {/* Dunkles Overlay für Kontrast */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(20,15,10,0.45) 0%, rgba(20,15,10,0.65) 100%)" }} />
-        {/* petit joujou — mittig ins Dach: y=28-43%, Mitte bei 35% */}
-        <div style={{ position: "absolute", top: "28%", height: "15%", left: 0, right: 0, zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center" }}>
-          <h1 className="font-script" style={{ fontSize: "clamp(3.5rem, 11vw, 8rem)", color: "#ffffff", lineHeight: 0.95, textShadow: "0 2px 40px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4)", marginLeft: '42px', marginTop: '-87px' }}>
-            petit joujou
-          </h1>
-          <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '25px', height: '21px', marginLeft: '32px', marginRight: '3px', paddingLeft: '31px', width: '229px' }}>
-            klein · fein · wein
-          </p>
-        </div>
+      {/* Hero: Fertiges Composite-Bild — skaliert auf allen Geräten identisch */}
+      <section style={{ position: "relative", overflow: "hidden" }}>
+        {/* Composite-Bild: Foto + Titel + Illustration eingebrannt */}
+        <img
+          src="/manus-storage/hero-composite_a2979757.jpg"
+          alt="petit joujou — Weinbar Leistadt Pfalz"
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
 
-        {/* Illustration — mittig ins Scheunentor: Tormitte x=65%, vertikal zentriert bei y=65% */}
-        <div style={{ position: "absolute", top: "50%", left: "65%", transform: "translate(-50%, -50%)", zIndex: 2 }}>
-          <img
-            src="/manus-storage/illustration-final-orange_21a14351.png"
-            alt=""
-            style={{ width: '234px', height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))", marginTop: '169px', marginLeft: '162px', marginRight: '-102px', paddingTop: '0px', paddingBottom: '16px', paddingLeft: '11px', paddingRight: '18px' }}
-          />
-        </div>
-
-        {/* Entdecken-Button unten */}
-        <div style={{ position: "absolute", bottom: "3rem", left: "50%", transform: "translateX(-50%)", zIndex: 3 }}>
-          <a href="#weinkeller" className="font-body" style={{ padding: "0.75rem 2rem", backgroundColor: "transparent", color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.35)" }}>
+        {/* Entdecken-Button über dem Bild */}
+        <div style={{ position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)", zIndex: 3 }}>
+          <a href="#weinkeller" className="font-body" style={{ padding: "0.75rem 2rem", backgroundColor: "transparent", color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", border: "1px solid rgba(255,255,255,0.35)", whiteSpace: "nowrap" }}>
             Entdecken
           </a>
         </div>
