@@ -1,5 +1,5 @@
 /* ============================================================
-   petit joujou — Weinbar · Leistadt, Pfalz
+   petit joujou — Weinbar · Leistadt · Pfalz
    klein · fein · wein
    ============================================================ */
 
@@ -125,7 +125,7 @@ function Hero() {
             petit joujou
           </h1>
           <p className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginTop: '25px', height: '21px', marginLeft: '32px', marginRight: '3px', paddingLeft: '31px', width: '229px' }}>
-            Weinbar · Leistadt, Pfalz
+            Weinbar · Leistadt · Pfalz
           </p>
         </div>
 
@@ -147,7 +147,7 @@ function Hero() {
 
       </section>
 
-      {/* Intro: Weinbar · Leistadt, Pfalz — als Übergang zwischen Hero und nächstem Bild */}
+      {/* Intro: Weinbar · Leistadt · Pfalz — als Übergang zwischen Hero und nächstem Bild */}
       <Intro />
 
       {/* Kellerabgang: Vollbild-Foto */}
@@ -821,7 +821,7 @@ function Footer() {
               petit joujou
             </span>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", marginTop: "0.75rem", lineHeight: 1.7 }}>
-              Weinbar · Leistadt, Pfalz<br />
+              Weinbar · Leistadt · Pfalz<br />
               Eine Marke von Joujou Pfalz
             </p>
           </div>
