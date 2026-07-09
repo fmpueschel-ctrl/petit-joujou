@@ -144,7 +144,7 @@ function Intro() {
           <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
           <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
           <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.sageDark, lineHeight: 1 }}>wein</span>
+          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: "#722F37", lineHeight: 1 }}>wein</span>
         </div>
         <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto 2rem" }}>
           Die kleine Weinbar im Joujou. Weine, die man anderswo nicht findet. Essen, das man gerne teilt. Ein Ort, den man nicht erklärt — man erlebt ihn.
@@ -320,7 +320,7 @@ function EventsSection() {
               src="/manus-storage/beats-flyer-cropped_5ffa2e11.jpg"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
               className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "left top", display: "block" }}
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "0% 0%", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
@@ -334,10 +334,10 @@ function EventsSection() {
           {/* TAVOLA BEATS */}
           <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
             <img
-              src="/manus-storage/joujou-groovt-event_89067159.jpg"
-              alt="TAVOLA BEATS — lange Tafel im Joujou"
+              src="/manus-storage/tavola_beats_cropped_30dd8c65.jpg"
+              alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
               className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
@@ -703,7 +703,7 @@ function EssenSection() {
             <img
               src="/manus-storage/entrecote_zoom_45d9e10e.jpg"
               alt="Entrecôte — Land.luft Premium Dry Age"
-              style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
+              style={{ width: "100%", height: "400px", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
             />
           </div>
           <div>
