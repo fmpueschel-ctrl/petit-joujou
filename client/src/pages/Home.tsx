@@ -334,10 +334,10 @@ function EventsSection() {
           {/* TAVOLA BEATS */}
           <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
             <img
-              src="/manus-storage/tavola_beats_cropped_30dd8c65.jpg"
+              src="/manus-storage/tavola_beats_with_price_1caabb52.jpg"
               alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
               className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
+              style={{ width: "100%", height: "420px", objectFit: "contain", objectPosition: "center center", display: "block", backgroundColor: "#fddde0" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
@@ -699,11 +699,11 @@ function EssenSection() {
 
         {/* Entrecôte — separat, volle Breite, asymmetrisch */}
         <div className="entrecote-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
-          <div>
+          <div style={{ overflow: "hidden", borderRadius: "2px" }}>
             <img
               src="/manus-storage/entrecote_zoom_45d9e10e.jpg"
               alt="Entrecôte — Land.luft Premium Dry Age"
-              style={{ width: "100%", height: "400px", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
+              style={{ width: "100%", height: "400px", objectFit: "cover", objectPosition: "center 70%", display: "block", transform: "scale(1.7)", transformOrigin: "center 68%" }}
             />
           </div>
           <div>
@@ -717,7 +717,7 @@ function EssenSection() {
               Land.luft Premium Dry Age Rib Eye — trocken gereift, auf den Punkt gebracht.
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(245,240,234,0.5)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              Du entscheidest wie viel.
+              In Portionen à 100 Gramm. Du entscheidest wie viel.
             </p>
 
           </div>
