@@ -138,12 +138,12 @@ function Hero() {
           </p>
         </div>
 
-        {/* Illustration — unten, ins Scheunentor ausgerichtet */}
-        <div style={{ position: "relative", zIndex: 2, display: "flex", justifyContent: "flex-end", paddingRight: "clamp(1rem, 5vw, 8rem)", paddingBottom: "6vh" }}>
+        {/* Illustration — absolut positioniert: Scheunentor bei ~65% links, ~55% oben */}
+        <div style={{ position: "absolute", top: "52%", left: "58%", zIndex: 2 }}>
           <img
             src="/manus-storage/illustration-final-orange_21a14351.png"
             alt=""
-            style={{ width: "clamp(130px, 17vw, 250px)", height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
+            style={{ width: "clamp(130px, 17vw, 240px)", height: "auto", filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.6))" }}
           />
         </div>
 
