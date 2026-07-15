@@ -38,6 +38,7 @@ function Nav() {
     { label: "Essen", href: "#essen" },
     { label: "Garten", href: "#garten" },
     { label: "Events", href: "#events" },
+    { label: "Reservierung", href: "#reservierung" },
     { label: "Gesellschaften", href: "#gesellschaften" },
   ];
   return (
@@ -391,6 +392,48 @@ function EventsSection() {
             </a>
           </p>
         </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Reservierung ─────────────────────────────────────────────
+function ReservierungSection() {
+  return (
+    <section id="reservierung" style={{ backgroundColor: C.bgCream, padding: "6rem 0" }}>
+      <div className="container">
+        <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
+            Tisch reservieren
+          </p>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink }}>
+            Weinbar
+          </h2>
+          <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
+            Donnerstag & Freitag ab 16:00 Uhr. Reserviert euren Platz.
+          </p>
+        </div>
+
+        <div style={{ maxWidth: "700px", margin: "0 auto", backgroundColor: C.bg, border: `1px solid ${C.border}`, overflow: "hidden" }}>
+          <iframe
+            src="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
+            title="Gastronovi Reservierung — Joujou Weinbar"
+            style={{ width: "100%", height: "600px", border: "none" }}
+            loading="lazy"
+          />
+        </div>
+
+        <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textAlign: "center", marginTop: "1.5rem" }}>
+          Reservierung via Gastronovi. Alternativ:{" "}
+          <a
+            href="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: C.sageDark, textDecoration: "none" }}
+          >
+            In neuem Tab öffnen
+          </a>
+        </p>
       </div>
     </section>
   );
@@ -842,6 +885,7 @@ export default function Home() {
         <EssenSection />
         <GartenSection />
         <EventsSection />
+        <ReservierungSection />
         <GesellschaftenSection />
         <GalerieSection />
       </main>
