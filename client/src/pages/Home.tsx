@@ -442,8 +442,17 @@ function GesellschaftenSection() {
   };
 
   return (
-    <section id="gesellschaften" style={{ backgroundColor: C.bgLavender, padding: "7rem 0" }}>
-      <div className="container">
+    <section id="gesellschaften" style={{ position: "relative", padding: "7rem 0", overflow: "hidden" }}>
+      {/* Background: Chef Franz Rank am Grill */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <img
+          src="/manus-storage/chef-franz-rank_cc11fb77.jpg"
+          alt="Chef Franz Rank am Grill"
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }}
+        />
+        <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(245, 241, 235, 0.82)" }} />
+      </div>
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <div className="gesellschaft-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
           {/* Left: Info */}
           <div>
@@ -611,6 +620,10 @@ function GesellschaftenSection() {
             )}
           </div>
         </div>
+        {/* Chef credit */}
+        <p className="font-body" style={{ fontSize: "0.7rem", color: C.inkLight, textAlign: "right", marginTop: "2rem", fontStyle: "italic" }}>
+          Chef Franz Rank
+        </p>
       </div>
     </section>
   );
