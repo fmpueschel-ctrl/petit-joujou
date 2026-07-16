@@ -833,7 +833,7 @@ function Footer() {
               Öffnungszeiten
             </p>
             {[
-              ["Do – Fr", "ab 17 Uhr"],
+              ["Do – Fr", "ab 16 Uhr"],
               ["Sa – So", "ab 12 Uhr"],
               ["Mo – Mi", "geschlossen"],
             ].map(([day, time]) => (
