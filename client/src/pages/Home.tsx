@@ -172,47 +172,37 @@ function Intro() {
 function WeinkellerSection() {
   return (
     <section id="weinkeller" style={{ backgroundColor: "#1a1210", padding: "0" }}>
-      {/* Weinregal-Bild */}
-      <img
-        src="/manus-storage/pj-keller-innen3-sharp_a0791967.jpg"
-        alt="Weinkeller — Weinflaschen im Regal"
-        className="mobile-img-tall"
-        style={{ width: "100%", height: "420px", objectFit: "cover", objectPosition: "center 20%", display: "block" }}
-      />
+      <div className="split-section">
+        {/* Links: Grosses Weinregal-Bild */}
+        <img
+          src="/manus-storage/wine-shelf-buerklin_ef856dd1.jpg"
+          alt="Weinkeller — Dr. Bürklin-Wolf Riesling im Regal"
+          className="split-image"
+          style={{ objectPosition: "center 30%" }}
+        />
 
-
-      {/* Text below gallery */}
-      <div style={{ backgroundColor: "#1a1210", padding: "5rem 0" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 1.5rem" }}>
-          <div className="keller-text-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
-            <div>
-              <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
-                Der Keller
-              </p>
-<h3 className="font-display" style={{ fontSize: "1.6rem", color: "#f5f0ea", marginBottom: "1.25rem" }}>
-                Manche Flaschen gibt es nur einmal.
-              </h3>
-              <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.8 }}>
-                Wenn sie weg sind, sind sie weg. Manche Begegnungen gibt es nur einmal — mit Wein ist das genauso.
-              </p>
+        {/* Rechts: Text */}
+        <div className="split-content" style={{ backgroundColor: "#1a1210" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
+            Der Keller
+          </p>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#f5f0ea", marginBottom: "1.25rem", lineHeight: 1.15 }}>
+            Manche Flaschen gibt es nur einmal.
+          </h2>
+          <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.85, marginBottom: "2rem" }}>
+            Wenn sie weg sind, sind sie weg. Manche Begegnungen gibt es nur einmal — mit Wein ist das genauso.
+          </p>
+          {[
+            "500 Weine & Bubbles — biodynamisch, naturnah",
+            "Pfälzer Winzer & internationale Raritäten",
+            "Wein zum Trinken & zum Mitnehmen",
+            "Persönliche Beratung — für die, die sie wollen",
+          ].map((item) => (
+            <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "0.75rem" }}>
+              <span style={{ color: C.sageDark, fontSize: "0.9rem", marginTop: "0.05rem", flexShrink: 0 }}>→</span>
+              <span className="font-body" style={{ fontSize: "0.9rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.6 }}>{item}</span>
             </div>
-            <div>
-              <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
-                Was euch erwartet
-              </p>
-              {[
-                "500 Weine & Bubbles — biodynamisch, naturnah",
-                "Pfälzer Winzer & internationale Raritäten",
-                "Wein zum Trinken & zum Mitnehmen",
-                "Persönliche Beratung — für die, die sie wollen",
-              ].map((item) => (
-                <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "0.75rem" }}>
-                  <span style={{ color: C.sageDark, fontSize: "0.9rem", marginTop: "0.05rem", flexShrink: 0 }}>→</span>
-                  <span className="font-body" style={{ fontSize: "0.9rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.6 }}>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -222,29 +212,27 @@ function WeinkellerSection() {
 // ── Scheune ───────────────────────────────────────────────────
 function ScheuneSection() {
   return (
-    <section id="scheune" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
-      <div className="container">
-        <div className="mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-          <div>
-            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
-              Drinnen
-            </p>
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem" }}>
-              Die Scheune.<br />Euer Abend.
-            </h2>
-            <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.
-            </p>
+    <section id="scheune" style={{ backgroundColor: C.bgSage, padding: "0" }}>
+      <div className="split-section" style={{ direction: "rtl" }}>
+        {/* Rechts: Grosses Scheune-Bild */}
+        <img
+          src="/manus-storage/scheune_innen_tisch_a44f846d.jpg"
+          alt="Scheune — gedeckter Tisch unter historischem Dachstuhl"
+          className="split-image"
+          style={{ objectPosition: "center 25%" }}
+        />
 
-          </div>
-          <div>
-            <img
-              src="/manus-storage/scheune_innen_tisch_a44f846d.jpg"
-              alt="Scheune — gedeckter Tisch unter historischem Dachstuhl"
-              className="mobile-img-first mobile-img-tall"
-              style={{ width: "100%", height: "520px", objectFit: "cover", objectPosition: "center 25%", display: "block" }}
-            />
-          </div>
+        {/* Links: Text */}
+        <div className="split-content" style={{ backgroundColor: C.bgSage, direction: "ltr" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
+            Drinnen
+          </p>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.15 }}>
+            Die Scheune.<br />Euer Abend.
+          </h2>
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85 }}>
+            Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.
+          </p>
         </div>
       </div>
     </section>
@@ -254,39 +242,33 @@ function ScheuneSection() {
 // ── Garten ────────────────────────────────────────────────────
 function GartenSection() {
   return (
-    <section id="garten" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
-      <div className="container">
-        {/* Hero-Bild: Garten-Übersicht mit draußen-Button */}
-        <div style={{ position: "relative", marginBottom: "4rem" }}>
-          <img
-            src="/manus-storage/garten_uebersicht_e5617482.jpg"
-            alt="Garten — Übersicht mit Sonnenschirmen und Weinfässern"
-            className="mobile-img-tall"
-            style={{ width: "100%", height: "500px", objectFit: "cover", objectPosition: "center 30%", display: "block" }}
-          />
-          <div style={{ position: "absolute", bottom: "-1.5rem", right: "2rem", backgroundColor: C.peach, padding: "1.25rem 1.5rem", textAlign: "center" }}>
-            <div className="font-script" style={{ fontSize: "1.6rem", color: C.ink }}>draußen</div>
-            <div className="font-body" style={{ fontSize: "0.6rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>Garten & Terrasse</div>
-          </div>
-        </div>
-        <div style={{ maxWidth: "600px" }}>
-          <div>
-            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
-              Draußen
-            </p>
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem" }}>
-              Wein unter freiem Himmel
-            </h2>
-            <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              Sonne auf der Haut, Wein im Glas, Lachen am Nebentisch. Hier vergisst man die Zeit.
-            </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
-                <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.sage, color: C.ink, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
+    <section id="garten" style={{ backgroundColor: C.bgSage, padding: "0" }}>
+      <div className="split-section">
+        {/* Links: Grosses Terrassen-Bild mit Gästen */}
+        <img
+          src="/manus-storage/garden-terrace_061af555.jpg"
+          alt="Garten — Terrasse voller Gäste unter Sonnenschirmen mit Zypressen"
+          className="split-image"
+          style={{ objectPosition: "center 40%" }}
+        />
+
+        {/* Rechts: Text */}
+        <div className="split-content" style={{ backgroundColor: C.bgSage }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
+            Draußen
+          </p>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.15 }}>
+            Wein unter freiem Himmel
+          </h2>
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2rem" }}>
+            Sonne auf der Haut, Wein im Glas, Lachen am Nebentisch. Hier vergisst man die Zeit.
+          </p>
+          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
+              <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.sage, color: C.ink, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -721,8 +703,8 @@ function EssenSection() {
           <div className="pinsa-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
             <div style={{ overflow: "hidden" }}>
               <img
-                src="/manus-storage/pinsa-vier_00fabee9.jpg"
-                alt="Manna Palatina Pinsa — vier Variationen auf Holzbrettern"
+                src="/manus-storage/sharing-plate_d55881ec.jpg"
+                alt="Sharing-Teller mit Weinglas — saisonale Kreation auf Keramik"
                 style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center center", display: "block" }}
               />
             </div>
@@ -731,10 +713,10 @@ function EssenSection() {
                 Aus der Küche
               </p>
               <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: "#f5f0ea", marginBottom: "1rem", lineHeight: 1.15 }}>
-                Manna Palatina Pinsa
+                Sharing-Kreationen & Pinsa
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.85, marginBottom: "1.5rem" }}>
-                Fünf Variationen, eine Idee: Teilen. Die Manna Palatina Pinsa kommt auf Holzbrett — knusprig, leicht, mit Belag der Saison. Wir wechseln das Angebot regelmäßig, damit immer etwas Neues auf euch wartet.
+                Saisonale Teller zum Teilen — raffiniert, bio, auf den Punkt. Dazu Manna Palatina Pinsa vom Holzbrett: knusprig, leicht, mit Belag der Saison.
               </p>
             </div>
           </div>
@@ -875,6 +857,27 @@ function Footer() {
 }
 
 // ── Page ──────────────────────────────────────────────────────
+// ── Siegel-Leiste ────────────────────────────────────────────
+function SiegelSection() {
+  return (
+    <section style={{ backgroundColor: C.bg, padding: "4rem 0", borderTop: `1px solid ${C.border}` }}>
+      <div className="container">
+        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkLight, textAlign: "center", marginBottom: "2rem" }}>
+          Unsere Werte & Zertifikate
+        </p>
+        <div className="siegel-grid">
+          <img src="/manus-storage/slowfood-genussfuehrer_bcdf713f.jpg" alt="Slow Food Deutschland — Genussführer" title="Slow Food Genussführer" />
+          <img src="/manus-storage/nachhaltiges-reiseziel_b134e42a.png" alt="Nachhaltiges Reiseziel — Partner" title="Nachhaltiges Reiseziel Deutsche Weinstraße" />
+          <img src="/manus-storage/happycow-logo_b801cec6.png" alt="HappyCow — gelistet" title="HappyCow" />
+        </div>
+        <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textAlign: "center", marginTop: "1.5rem", lineHeight: 1.7 }}>
+          Biozertifiziert (DE-ÖKO-037) · AHVV Tierwohl · 100% Weiderind · Regional & Saisonal
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
@@ -887,6 +890,7 @@ export default function Home() {
         <EventsSection />
         <ReservierungSection />
         <GesellschaftenSection />
+        <SiegelSection />
         <GalerieSection />
       </main>
       <Footer />
