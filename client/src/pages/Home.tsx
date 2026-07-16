@@ -448,9 +448,9 @@ function GesellschaftenSection() {
         <img
           src="/manus-storage/chef-franz-rank_cc11fb77.jpg"
           alt="Chef Franz Rank am Grill"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 60%" }}
         />
-        <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(245, 241, 235, 0.82)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(245, 241, 235, 0.72)" }} />
       </div>
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <div className="gesellschaft-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
