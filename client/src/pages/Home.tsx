@@ -450,7 +450,7 @@ function GesellschaftenSection() {
           alt="Chef Franz Rank am Grill"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 70%" }}
         />
-        <p className="font-body" style={{ position: "absolute", bottom: "1rem", right: "1rem", fontSize: "0.7rem", color: "rgba(255,255,255,0.8)", fontStyle: "italic", margin: 0 }}>
+        <p className="font-body" style={{ position: "absolute", bottom: "1rem", right: "1rem", fontSize: "0.75rem", color: C.ink, fontStyle: "italic", margin: 0, backgroundColor: "rgba(255,255,255,0.7)", padding: "0.3rem 0.6rem" }}>
           Chef Franz Rank
         </p>
       </div>
@@ -614,9 +614,7 @@ function GesellschaftenSection() {
                 >
                   {anfrageMutation.isPending ? "Wird gesendet..." : "Anfrage absenden"}
                 </button>
-                <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, textAlign: "center", marginTop: "0.75rem" }}>
-                  Wir antworten innerhalb von 24 Stunden.
-                </p>
+
               </form>
             )}
           </div>
@@ -885,17 +883,17 @@ function Footer() {
 // ── Siegel-Leiste ────────────────────────────────────────────
 function SiegelSection() {
   return (
-    <section style={{ backgroundColor: C.bg, padding: "4rem 0", borderTop: `1px solid ${C.border}` }}>
+    <section style={{ backgroundColor: C.bg, padding: "5rem 0", borderTop: `1px solid ${C.border}` }}>
       <div className="container">
-        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkLight, textAlign: "center", marginBottom: "2rem" }}>
+        <p className="font-body" style={{ fontSize: "0.85rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkMid, textAlign: "center", marginBottom: "2.5rem" }}>
           Unsere Werte & Zertifikate
         </p>
-        <div className="siegel-grid">
-          <img src="/manus-storage/slowfood-genussfuehrer_bcdf713f.jpg" alt="Slow Food Deutschland — Genussführer" title="Slow Food Genussführer" />
-          <img src="/manus-storage/nachhaltiges-reiseziel_b134e42a.png" alt="Nachhaltiges Reiseziel — Partner" title="Nachhaltiges Reiseziel Deutsche Weinstraße" />
-          <img src="/manus-storage/happycow-logo_b801cec6.png" alt="HappyCow — gelistet" title="HappyCow" />
+        <div className="siegel-grid" style={{ gap: "3rem" }}>
+          <img src="/manus-storage/slowfood-genussfuehrer_bcdf713f.jpg" alt="Slow Food Deutschland — Genussführer" title="Slow Food Genussführer" style={{ maxHeight: "5rem" }} />
+          <img src="/manus-storage/nachhaltiges-reiseziel_b134e42a.png" alt="Nachhaltiges Reiseziel — Partner" title="Nachhaltiges Reiseziel Deutsche Weinstraße" style={{ maxHeight: "5rem" }} />
+          <img src="/manus-storage/happycow-logo_b801cec6.png" alt="HappyCow — gelistet" title="HappyCow" style={{ maxHeight: "5rem" }} />
         </div>
-        <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textAlign: "center", marginTop: "1.5rem", lineHeight: 1.7 }}>
+        <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, textAlign: "center", marginTop: "2rem", lineHeight: 1.7 }}>
           Biozertifiziert (DE-ÖKO-037) · AHVV Tierwohl · 100% Weiderind · Regional & Saisonal
         </p>
       </div>
@@ -909,10 +907,10 @@ export default function Home() {
       <main>
         <Hero />
         <WeinkellerSection />
-        <ScheuneSection />
-        <EssenSection />
         <GartenSection />
+        <EssenSection />
         <EventsSection />
+        <ScheuneSection />
         <ReservierungSection />
         <GesellschaftenSection />
         <SiegelSection />
