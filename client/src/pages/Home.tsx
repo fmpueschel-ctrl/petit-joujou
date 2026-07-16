@@ -442,57 +442,58 @@ function GesellschaftenSection() {
   };
 
   return (
-    <section id="gesellschaften" style={{ position: "relative", padding: "7rem 0", overflow: "hidden" }}>
-      {/* Background: Chef Franz Rank am Grill */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+    <section id="gesellschaften" className="split-section">
+      {/* Left: Chef Franz Rank Bild */}
+      <div className="split-image">
         <img
           src="/manus-storage/chef-franz-rank_cc11fb77.jpg"
           alt="Chef Franz Rank am Grill"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 60%" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 70%" }}
         />
-        <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(245, 241, 235, 0.72)" }} />
+        <p className="font-body" style={{ position: "absolute", bottom: "1rem", right: "1rem", fontSize: "0.7rem", color: "rgba(255,255,255,0.8)", fontStyle: "italic", margin: 0 }}>
+          Chef Franz Rank
+        </p>
       </div>
-      <div className="container" style={{ position: "relative", zIndex: 1 }}>
-        <div className="gesellschaft-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
-          {/* Left: Info */}
-          <div>
-            <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
-              Private Abende
-            </p>
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.25 }}>
-              Euer Abend.<br />Unsere Bühne.
-            </h2>
-            <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2rem" }}>
-              Euer Geburtstag im Kerzenschein, ein Firmenabend, der kein Firmenabend sein soll, oder einfach ein Grund zum Feiern. Schreibt uns — wir machen den Rest.
-            </p>
 
-            {/* Occasion types */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
-              {[
-                { label: "Weinabende", sub: "Privat & exklusiv" },
-                { label: "Geburtstage", sub: "Kleine Runden" },
-                { label: "Firmen", sub: "Teamabende & Dinners" },
-                { label: "Hochzeiten", sub: "Auf Anfrage" },
-              ].map((o) => (
-                <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `3px solid ${C.sageDark}` }}>
-                  <div>
-                    <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink }}>{o.label}</div>
-                    <div className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight }}>{o.sub}</div>
-                  </div>
+      {/* Right: Content + Form */}
+      <div className="split-content" style={{ backgroundColor: C.bgLavender }}>
+        <div style={{ maxWidth: "32rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
+            Private Abende
+          </p>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.25 }}>
+            Euer Abend.<br />Unsere Bühne.
+          </h2>
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2rem" }}>
+            Euer Geburtstag im Kerzenschein, ein Firmenabend, der kein Firmenabend sein soll, oder einfach ein Grund zum Feiern. Schreibt uns — wir machen den Rest.
+          </p>
+
+          {/* Occasion types */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
+            {[
+              { label: "Weinabende", sub: "Privat & exklusiv" },
+              { label: "Geburtstage", sub: "Kleine Runden" },
+              { label: "Firmen", sub: "Teamabende & Dinners" },
+              { label: "Hochzeiten", sub: "Auf Anfrage" },
+            ].map((o) => (
+              <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `3px solid ${C.sageDark}` }}>
+                <div>
+                  <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink }}>{o.label}</div>
+                  <div className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight }}>{o.sub}</div>
                 </div>
-              ))}
-            </div>
-
-            {/* Key promise */}
-            <div style={{ backgroundColor: C.bg, padding: "1.5rem", borderLeft: `4px solid ${C.sageDark}` }}>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.7, fontStyle: "italic" }}>
-                „Wir lieben Feiern und gesellige Runden. Wir versuchen immer, unser Angebot an eure Möglichkeiten und Wünsche anzupassen. Sprecht uns super gerne einfach an.“
-              </p>
-            </div>
+              </div>
+            ))}
           </div>
 
-          {/* Right: Form */}
-          <div style={{ backgroundColor: C.bg, padding: "2.5rem" }}>
+          {/* Key promise */}
+          <div style={{ backgroundColor: C.bg, padding: "1.5rem", borderLeft: `4px solid ${C.sageDark}`, marginBottom: "2.5rem" }}>
+            <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.7, fontStyle: "italic" }}>
+              „Wir lieben Feiern und gesellige Runden. Wir versuchen immer, unser Angebot an eure Möglichkeiten und Wünsche anzupassen. Sprecht uns super gerne einfach an."
+            </p>
+          </div>
+
+          {/* Form */}
+          <div style={{ backgroundColor: C.bg, padding: "2rem" }}>
             {sent ? (
               <div style={{ textAlign: "center", padding: "3rem 1rem" }}>
                 <div style={{ width: "3rem", height: "2px", backgroundColor: C.sageDark, margin: "0 auto 1.5rem" }} />
@@ -620,10 +621,6 @@ function GesellschaftenSection() {
             )}
           </div>
         </div>
-        {/* Chef credit */}
-        <p className="font-body" style={{ fontSize: "0.7rem", color: C.inkLight, textAlign: "right", marginTop: "2rem", fontStyle: "italic" }}>
-          Chef Franz Rank
-        </p>
       </div>
     </section>
   );
