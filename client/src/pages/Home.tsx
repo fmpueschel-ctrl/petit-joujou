@@ -195,7 +195,7 @@ function WeinkellerSection() {
           {[
             "500 Weine & Bubbles — biodynamisch, naturnah",
             "Pfälzer Winzer & internationale Raritäten",
-            "Wein zum Trinken & zum Mitnehmen",
+            "Mitnehmen zu Kellerpreisen — oder hier trinken (+10 € Korkgeld)",
             "Persönliche Beratung — für die, die sie wollen",
           ].map((item) => (
             <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "0.75rem" }}>
@@ -698,53 +698,68 @@ function EssenSection() {
           ))}
         </div>
 
-        {/* Manna Palatina Pinsa — breites Bild mit Beschriftung */}
-        <div style={{ marginBottom: "6rem", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
-          <div className="pinsa-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-            <div style={{ overflow: "hidden" }}>
-              <img
-                src="/manus-storage/sharing-plate_d55881ec.jpg"
-                alt="Sharing-Teller mit Weinglas — saisonale Kreation auf Keramik"
-                style={{ width: "100%", height: "380px", objectFit: "cover", objectPosition: "center center", display: "block" }}
-              />
-            </div>
+        {/* Drei Hauptgerichte — gleichberechtigtes 3er-Grid */}
+        <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
+          <div className="hauptgerichte-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
+            {/* Sharing-Kreationen */}
             <div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.75rem" }}>
+              <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
+                <img
+                  src="/manus-storage/sharing-plate_d55881ec.jpg"
+                  alt="Sharing-Teller mit Weinglas — saisonale Kreation auf Keramik"
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
+                />
+              </div>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
                 Aus der Küche
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: "#f5f0ea", marginBottom: "1rem", lineHeight: 1.15 }}>
-                Sharing-Kreationen & Pinsa
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#f5f0ea", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+                Sharing-Kreationen
               </h3>
-              <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.85, marginBottom: "1.5rem" }}>
-                Saisonale Teller zum Teilen — raffiniert, bio, auf den Punkt. Dazu Manna Palatina Pinsa vom Holzbrett: knusprig, leicht, mit Belag der Saison.
+              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.75 }}>
+                Saisonale Teller zum Teilen — raffiniert, bio, auf den Punkt.
               </p>
             </div>
-          </div>
-        </div>
 
-        {/* Entrecôte — separat, volle Breite, asymmetrisch */}
-        <div className="entrecote-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center", borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
-          <div style={{ overflow: "hidden", borderRadius: "2px" }}>
-            <img
-              src="/manus-storage/entrecote_zoom_45d9e10e.jpg"
-              alt="Entrecôte — Land.luft Premium Dry Age"
-              style={{ width: "100%", height: "400px", objectFit: "cover", objectPosition: "center 70%", display: "block", transform: "scale(1.7)", transformOrigin: "center 68%" }}
-            />
-          </div>
-          <div>
-            <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.75rem" }}>
-              Pimp it up
-            </p>
-            <h3 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#f5f0ea", marginBottom: "1rem", lineHeight: 1.15 }}>
-              Entrecôte
-            </h3>
-            <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.85, marginBottom: "1rem" }}>
-              Land.luft Premium Dry Age Rib Eye — trocken gereift, auf den Punkt gebracht.
-            </p>
-            <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(245,240,234,0.5)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              In Portionen à 100 Gramm. Du entscheidest wie viel.
-            </p>
+            {/* Manna Palatina Pinsa */}
+            <div>
+              <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
+                <img
+                  src="/manus-storage/pinsa-pastrami-notable_d37755d3.jpg"
+                  alt="Manna Palatina Pinsa — knusprig vom Holzbrett"
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
+                />
+              </div>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
+                Vom Holzbrett
+              </p>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#f5f0ea", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+                Manna Palatina Pinsa
+              </h3>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.75 }}>
+                Knusprig, leicht, mit Belag der Saison. Die bessere Pizza.
+              </p>
+            </div>
 
+            {/* Entrecôte */}
+            <div>
+              <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
+                <img
+                  src="/manus-storage/entrecote_zoom_45d9e10e.jpg"
+                  alt="Entrecôte — Land.luft Premium Dry Age"
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 70%", display: "block", transform: "scale(1.7)", transformOrigin: "center 68%" }}
+                />
+              </div>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
+                Pimp it up
+              </p>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#f5f0ea", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+                Entrecôte
+              </h3>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.75 }}>
+                Land.luft Premium Dry Age — trocken gereift, auf den Punkt. In Portionen à 100g.
+              </p>
+            </div>
           </div>
         </div>
 

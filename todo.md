@@ -6,3 +6,10 @@
 - [x] SEO: Sitemap.xml + robots.txt
 - [x] Neues BEATS-Bild (Sonnenuntergang/DJ) einsetzen
 - [x] Pinsa-Bild: rauszoomen, Holztisch minimieren
+- [x] E-Mail-Adresse auf hallo@joujou-pfalz.de geändert (Footer + Formular-Ziel)
+- [x] Öffnungszeiten Do/Fr auf 16 Uhr korrigiert
+- [x] SEO: Keywords erweitert (Weinbar, Steak, Entrecote, Rib-Eye, Pfalz, nachhaltig, biozertifiziert, Öko)
+- [x] Domain petit-joujou.de eingerichtet und DNS konfiguriert
+- [x] Split-Layout Redesign: Weinkeller, Scheune, Garten, Essen-Sections
+- [x] Neue Bilder integriert: Terrasse, Weinregal Dr. Bürklin-Wolf, Sharing-Teller
+- [x] Siegel-Leiste: Slow Food, Nachhaltiges Reiseziel, Happy Cow
