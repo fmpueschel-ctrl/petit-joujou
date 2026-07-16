@@ -747,7 +747,7 @@ function EssenSection() {
                 <img
                   src="/manus-storage/entrecote_zoom_45d9e10e.jpg"
                   alt="Entrecôte — Land.luft Premium Dry Age"
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 70%", display: "block", transform: "scale(1.7)", transformOrigin: "center 68%" }}
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 35%", display: "block", transform: "scale(1.7)", transformOrigin: "center 40%" }}
                 />
               </div>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
