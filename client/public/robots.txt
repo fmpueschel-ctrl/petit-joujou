@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://fire400steak-kebhziqe.manus.space/sitemap.xml
+Sitemap: https://petit-joujou.de/sitemap.xml
