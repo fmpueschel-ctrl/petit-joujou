@@ -101,9 +101,9 @@ export const appRouter = router({
           content: mailBody,
         });
 
-        // E-Mail direkt an hallo@petit-joujou.de
+        // E-Mail direkt an hallo@joujou-pfalz.de
         await sendMail({
-          to: "hallo@petit-joujou.de",
+          to: "hallo@joujou-pfalz.de",
           subject: `Neue Anfrage von ${input.name}${input.anlass ? ` — ${input.anlass}` : ""}`,
           text: `Neue Gesellschaft-Anfrage über die Website:\n\n${mailBody}\n\n---\nGesendet von petit-joujou.de`,
         });

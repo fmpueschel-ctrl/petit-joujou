@@ -410,7 +410,7 @@ function ReservierungSection() {
             Weinbar
           </h2>
           <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
-            Donnerstag & Freitag ab 16:00 Uhr. Reserviert euren Platz.
+            Do & Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr. Reserviert euren Platz.
           </p>
         </div>
 
@@ -849,8 +849,8 @@ function Footer() {
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", lineHeight: 1.8 }}>
               Leistadt Pfalz<br />
-              <a href="mailto:hallo@petit-joujou.de" style={{ color: "#ed7846", textDecoration: "none" }}>
-                hallo@petit-joujou.de
+              <a href="mailto:hallo@joujou-pfalz.de" style={{ color: "#ed7846", textDecoration: "none" }}>
+                hallo@joujou-pfalz.de
               </a><br />
               <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: "#ed7846", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
