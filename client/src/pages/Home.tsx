@@ -110,58 +110,93 @@ function Nav() {
   );
 }
 
-// ── Hero ─────────────────────────────────────────────────────
+// ── Hero (Split-Layout: Bild links, Content rechts) ─────────
 function Hero() {
   return (
-    <>
-      {/* Hero: Canva-Bild — Desktop (Querformat) vs. Mobile (Hochformat) */}
-      <section style={{ position: "relative", overflow: "hidden" }}>
-        <picture>
+    <section style={{ backgroundColor: C.bg, padding: "0" }}>
+      <div className="split-section hero-split">
+        {/* Links: Canva-Bild */}
+        <picture className="split-image" style={{ objectPosition: "center center" }}>
           <source media="(max-width: 767px)" srcSet="/manus-storage/6_3c47d17c.png" />
           <source media="(min-width: 768px)" srcSet="/manus-storage/5_22ab812a.webp" />
           <img
             src="/manus-storage/5_22ab812a.webp"
             alt="petit joujou — Weinbar Leistadt Pfalz"
-            style={{ width: "100%", height: "auto", display: "block" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
           />
         </picture>
 
+        {/* Rechts: klein · fein · wein + CTAs */}
+        <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start" }}>
+          {/* Logo-Schriftzug */}
+          <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: C.ink, lineHeight: 1, marginBottom: "1.5rem" }}>
+            petit joujou
+          </span>
 
-      </section>
+          {/* klein · fein · wein */}
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem", flexWrap: "wrap" }}>
+            <span className="font-script" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
+            <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
+            <span className="font-script" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
+            <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
+            <span className="font-script" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", color: "#722F37", lineHeight: 1 }}>wein</span>
+          </div>
 
-      {/* Intro: Weinbar · Leistadt, Pfalz — als Übergang zwischen Hero und Weinkeller */}
-      <Intro />
-    </>
-  );
-}
+          {/* Kurzbeschreibung */}
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2.5rem", maxWidth: "380px" }}>
+            Die kleine Weinbar im Joujou. Weine, die man anderswo nicht findet. Essen, das man gerne teilt. Ein Ort, den man nicht erklärt — man erlebt ihn.
+          </p>
 
-// ── Intro ─────────────────────────────────────────────────────
-function Intro() {
-  return (
-    <section style={{ backgroundColor: C.bg, padding: "3.5rem 0 6rem", borderBottom: `1px solid ${C.border}` }}>
-      <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center", padding: "0 1.5rem" }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", marginBottom: "1.5rem", whiteSpace: "nowrap" }}>
-          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
-          <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
-          <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: "#111", flexShrink: 0 }} />
-          <span className="font-script" style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)", color: "#722F37", lineHeight: 1 }}>wein</span>
-        </div>
-        <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.9, letterSpacing: "0.03em", maxWidth: "520px", margin: "0 auto 2rem" }}>
-          Die kleine Weinbar im Joujou. Weine, die man anderswo nicht findet. Essen, das man gerne teilt. Ein Ort, den man nicht erklärt — man erlebt ihn.
-        </p>
+          {/* CTAs */}
+          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            <a
+              href="#reservierung"
+              className="font-body"
+              style={{
+                display: "inline-block",
+                padding: "0.75rem 2rem",
+                backgroundColor: C.sageDark,
+                color: "#fff",
+                fontSize: "0.78rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+              }}
+            >
+              Reservieren
+            </a>
+            <a
+              href="/manus-storage/PetitJoujou_Speisekarte_Final5_eaf6392f.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body"
+              style={{
+                display: "inline-block",
+                padding: "0.75rem 2rem",
+                border: `1px solid ${C.ink}`,
+                color: C.ink,
+                fontSize: "0.78rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+              }}
+            >
+              Speisekarte
+            </a>
+          </div>
 
-        {/* Two pillars */}
-        <div className="intro-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "4rem", borderTop: `1px solid ${C.border}` }}>
-          {[
-            { title: "500 Weine", text: "Begehbare Weinkarte im Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
-            { title: "Bio & Saisonal", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa werden euch verzaubern." },
-          ].map((p) => (
-            <div key={p.title} style={{ padding: "2rem 1.5rem", borderRight: `1px solid ${C.border}` }}>
-              <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink, marginBottom: "0.6rem", letterSpacing: "0.03em" }}>{p.title}</div>
-              <div className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, lineHeight: 1.7 }}>{p.text}</div>
-            </div>
-          ))}
+          {/* Zwei Pillars */}
+          <div className="intro-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "3rem", borderTop: `1px solid ${C.border}`, width: "100%" }}>
+            {[
+              { title: "500 Weine", text: "Begehbare Weinkarte im Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
+              { title: "Bio & Saisonal", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa." },
+            ].map((p) => (
+              <div key={p.title} style={{ padding: "1.5rem 1.2rem 1.5rem 0", borderRight: `1px solid ${C.border}` }}>
+                <div className="font-display" style={{ fontSize: "0.9rem", color: C.ink, marginBottom: "0.5rem", letterSpacing: "0.03em" }}>{p.title}</div>
+                <div className="font-body" style={{ fontSize: "0.78rem", color: C.inkMid, lineHeight: 1.7 }}>{p.text}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -450,7 +485,7 @@ function GesellschaftenSection() {
           alt="Chef Franz Rank am Grill"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 70%" }}
         />
-        <p className="font-body" style={{ position: "absolute", bottom: "1rem", right: "1rem", fontSize: "0.75rem", color: C.ink, fontStyle: "italic", margin: 0, backgroundColor: "rgba(255,255,255,0.7)", padding: "0.3rem 0.6rem" }}>
+        <p className="font-body" style={{ position: "absolute", bottom: 0, left: 0, right: 0, fontSize: "0.7rem", color: C.bg, fontStyle: "italic", margin: 0, padding: "0.5rem 1rem", background: "linear-gradient(transparent, rgba(0,0,0,0.5))" }}>
           Chef Franz Rank
         </p>
       </div>

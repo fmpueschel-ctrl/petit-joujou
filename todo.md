@@ -13,3 +13,4 @@
 - [x] Split-Layout Redesign: Weinkeller, Scheune, Garten, Essen-Sections
 - [x] Neue Bilder integriert: Terrasse, Weinregal Dr. Bürklin-Wolf, Sharing-Teller
 - [x] Siegel-Leiste: Slow Food, Nachhaltiges Reiseziel, Happy Cow
+- [ ] Hero-Section als Split-Layout umbauen (Canva-Bild links, "klein · fein · wein" + CTAs rechts)
