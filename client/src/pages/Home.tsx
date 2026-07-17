@@ -128,11 +128,6 @@ function Hero() {
 
         {/* Rechts: klein · fein · wein + CTAs */}
         <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start" }}>
-          {/* Weinbar · Leistadt, Pfalz — dezenter Untertitel */}
-          <span className="font-display" style={{ fontSize: "0.7rem", color: C.inkMid, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
-            Weinbar &middot; Leistadt, Pfalz
-          </span>
-
           {/* klein · fein · wein — PROMINENT */}
           <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
             <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: C.ink, lineHeight: 1 }}>klein</span>
@@ -144,7 +139,7 @@ function Hero() {
 
           {/* Kurzbeschreibung */}
           <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2.5rem", maxWidth: "380px" }}>
-            Die kleine Weinbar im Joujou. Weine, die man anderswo nicht findet. Essen, das man gerne teilt. Ein Ort, den man nicht erklärt — man erlebt ihn.
+            Die Weinbar im Joujou. Wir möchten euch verzaubern. Schnappt euch eine Flasche Wein, genießt die Sharing-Kreationen von Chef Franz und vergesst einfach die Zeit.
           </p>
 
           {/* CTAs */}
@@ -188,8 +183,8 @@ function Hero() {
           {/* Zwei Pillars */}
           <div className="intro-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "3rem", borderTop: `1px solid ${C.border}`, width: "100%" }}>
             {[
-              { title: "500 Weine", text: "Begehbare Weinkarte im Gewölbekeller von 1709. Biodynamisch, naturnah, exklusiv kuratiert." },
-              { title: "Bio & Saisonal", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa." },
+              { title: "500 Weine — nur bio", text: "Begehbare Weinkarte im Gewölbekeller. Für überraschende Geschmackserlebnisse. Come in and wine out." },
+              { title: "Essen ständig neu gedacht", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa — bio & saisonal." },
             ].map((p) => (
               <div key={p.title} style={{ padding: "1.5rem 1.2rem 1.5rem 0", borderRight: `1px solid ${C.border}` }}>
                 <div className="font-display" style={{ fontSize: "0.9rem", color: C.ink, marginBottom: "0.5rem", letterSpacing: "0.03em" }}>{p.title}</div>
