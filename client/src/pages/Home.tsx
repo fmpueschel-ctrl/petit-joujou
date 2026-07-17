@@ -282,7 +282,7 @@ function GartenSection() {
           src="/manus-storage/garden-terrace_061af555.jpg"
           alt="Garten — Terrasse voller Gäste unter Sonnenschirmen mit Zypressen"
           className="split-image"
-          style={{ objectPosition: "center 50%", transform: "scale(1.3)", transformOrigin: "center 50%" }}
+          style={{ objectPosition: "center 70%" }}
         />
 
         {/* Rechts: Text */}
