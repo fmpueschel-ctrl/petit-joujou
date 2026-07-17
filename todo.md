@@ -16,3 +16,10 @@
 - [x] Hero-Section als Split-Layout umbauen (Canva-Bild links, "klein · fein · wein" + CTAs rechts)
 - [ ] Hero-Split: "petit joujou" rechts entfernen (steht im Bild), "klein · fein · wein" prominenter
 - [ ] Englische Variante der Webseite (Sprachumschalter) — Planung
+
+- [x] Bilder auf optimale Größe verkleinern (max 2x Anzeigegröße) und als WebP hochladen
+- [x] Width/height Attribute an allen Bildern setzen (CLS vermeiden)
+- [x] Lazy-loading für alle Bilder unterhalb des Viewports
+- [x] H1-Überschrift ergänzen (SEO)
+- [x] Open Graph Meta-Tags (og:image, og:title, og:description) + Twitter Card
+- [x] Meta-Description auf ~155 Zeichen kürzen

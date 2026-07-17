@@ -128,6 +128,8 @@ function Hero() {
 
         {/* Rechts: klein · fein · wein + CTAs */}
         <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start" }}>
+          {/* SEO H1 — visually hidden but accessible */}
+          <h1 className="sr-only">petit joujou — Weinbar in Leistadt, Pfalz</h1>
           {/* klein · fein · wein — PROMINENT */}
           <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
             <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: C.ink, lineHeight: 1 }}>klein</span>
@@ -204,8 +206,8 @@ function WeinkellerSection() {
     <section id="weinkeller" style={{ backgroundColor: "#1a1210", padding: "0" }}>
       <div className="split-section">
         {/* Links: Grosses Weinregal-Bild */}
-        <img
-          src="/manus-storage/wine-shelf-buerklin_ef856dd1.jpg"
+        <img loading="lazy"
+          src="/manus-storage/wine-shelf-buerklin_0ac797ee.webp"
           alt="Weinkeller — Dr. Bürklin-Wolf Riesling im Regal"
           className="split-image"
           style={{ objectPosition: "center 30%" }}
@@ -248,8 +250,8 @@ function ScheuneSection() {
     <section id="scheune" style={{ backgroundColor: C.bgSage, padding: "0" }}>
       <div className="split-section" style={{ direction: "rtl" }}>
         {/* Rechts: Grosses Scheune-Bild */}
-        <img
-          src="/manus-storage/scheune_innen_tisch_a44f846d.jpg"
+        <img loading="lazy"
+          src="/manus-storage/scheune_innen_tisch_48ac2208.webp"
           alt="Scheune — gedeckter Tisch unter historischem Dachstuhl"
           className="split-image"
           style={{ objectPosition: "center 25%" }}
@@ -278,8 +280,8 @@ function GartenSection() {
     <section id="garten" style={{ backgroundColor: C.bgSage, padding: "0" }}>
       <div className="split-section">
         {/* Links: Grosses Terrassen-Bild mit Gästen */}
-        <img
-          src="/manus-storage/garden-terrace_061af555.jpg"
+        <img loading="lazy"
+          src="/manus-storage/garden-terrace_ece44896.webp"
           alt="Garten — Terrasse voller Gäste unter Sonnenschirmen mit Zypressen"
           className="split-image"
           style={{ objectPosition: "center 70%" }}
@@ -335,8 +337,8 @@ function EventsSection() {
 
           {/* BEATS petit joujou */}
           <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
-            <img
-              src="/manus-storage/Screenshot_20260709_155209_Gallery_42adc039.jpg"
+            <img loading="lazy"
+              src="/manus-storage/screenshot_beats_8be8965a.webp"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
               className="event-img"
               style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
@@ -352,8 +354,8 @@ function EventsSection() {
 
           {/* TAVOLA BEATS */}
           <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
-            <img
-              src="/manus-storage/tavola_beats_with_price_1caabb52.jpg"
+            <img loading="lazy"
+              src="/manus-storage/tavola_beats_70e575c5.webp"
               alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
               className="event-img"
               style={{ width: "100%", height: "420px", objectFit: "contain", objectPosition: "center center", display: "block", backgroundColor: "#fddde0" }}
@@ -481,8 +483,8 @@ function GesellschaftenSection() {
     <section id="gesellschaften" className="split-section">
       {/* Left: Chef Franz Rank Bild */}
       <div className="split-image">
-        <img
-          src="/manus-storage/chef-franz-rank_cc11fb77.jpg"
+        <img loading="lazy"
+          src="/manus-storage/chef-franz-rank_43086e69.webp"
           alt="Chef Franz Rank beim Joujou BBQ-Event"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(1.3)", transformOrigin: "center 30%" }}
         />
@@ -667,19 +669,19 @@ function EssenSection() {
       label: "Weinbegleiter",
       name: "Dirty Date",
       desc: "Dattel · Speck · Salzmandel",
-      img: "/manus-storage/dirty_date_65030c39.jpg",
+      img: "/manus-storage/dirty_date_6050d05f.webp",
     },
     {
       label: "Weinbegleiter",
       name: "Happy Fried Mushroom",
       desc: "Gegrillter Romanasalat · Limette",
-      img: "/manus-storage/happy_fried_mushroom_9c7fdfe2.jpg",
+      img: "/manus-storage/happy_fried_mushroom_dac2adf9.webp",
     },
     {
       label: "Weinbegleiter",
       name: "Wurst Case",
       desc: "Dürkheimer Wildwurst-Cubes · Tomatensauce",
-      img: "/manus-storage/wurst_case_a34b977c.jpg",
+      img: "/manus-storage/wurst_case_33c8e650.webp",
     },
   ];
 
@@ -726,7 +728,7 @@ function EssenSection() {
           {gerichte.map((g) => (
             <div key={g.name}>
               <div style={{ overflow: "hidden", marginBottom: "1.25rem" }}>
-                <img
+                <img loading="lazy"
                   src={g.img}
                   alt={g.name}
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center", display: "block" }}
@@ -751,8 +753,8 @@ function EssenSection() {
             {/* Sharing-Kreationen */}
             <div>
               <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
-                <img
-                  src="/manus-storage/sharing-plate_d55881ec.jpg"
+                <img loading="lazy"
+                  src="/manus-storage/sharing-plate_c60cc98c.webp"
                   alt="Sharing-Teller mit Weinglas — saisonale Kreation auf Keramik"
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
                 />
@@ -771,8 +773,8 @@ function EssenSection() {
             {/* Manna Palatina Pinsa */}
             <div>
               <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
-                <img
-                  src="/manus-storage/pinsa-pastrami-notable_d37755d3.jpg"
+                <img loading="lazy"
+                  src="/manus-storage/pinsa-pastrami-notable_48b3aa52.webp"
                   alt="Manna Palatina Pinsa — knusprig vom Holzbrett"
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
                 />
@@ -791,8 +793,8 @@ function EssenSection() {
             {/* Entrecôte */}
             <div>
               <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
-                <img
-                  src="/manus-storage/entrecote_zoom_45d9e10e.jpg"
+                <img loading="lazy"
+                  src="/manus-storage/entrecote_zoom_d4e27da5.webp"
                   alt="Entrecôte — Land.luft Premium Dry Age"
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 35%", display: "block", transform: "scale(1.7)", transformOrigin: "center 40%" }}
                 />
@@ -818,12 +820,12 @@ function EssenSection() {
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
-    { src: "/manus-storage/scheune_innen_tisch_a44f846d.jpg", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
-    { src: "/manus-storage/pj-keller-innen3-sharp_a0791967.jpg", alt: "Weinkeller", caption: "Weinkeller" },
-    { src: "/manus-storage/weinglaeserfass_fix_b1dc7a51.jpg", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
-    { src: "/manus-storage/garten_lounge2_df2e49da.jpg", alt: "Garten Lounge", caption: "Garten" },
-    { src: "/manus-storage/eingang_schnee_196128fe.jpg", alt: "Eingang bei Schnee", caption: "Eingang" },
-    { src: "/manus-storage/joujou_schild_fix_063accf7.jpg", alt: "joujou Schild", caption: "joujou" },
+    { src: "/manus-storage/scheune_innen_tisch_48ac2208.webp", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
+    { src: "/manus-storage/pj-keller-innen3-sharp_214c0cfa.webp", alt: "Weinkeller", caption: "Weinkeller" },
+    { src: "/manus-storage/weinglaeserfass_fix_9b22d6a7.webp", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
+    { src: "/manus-storage/garten_lounge2_920a5dfa.webp", alt: "Garten Lounge", caption: "Garten" },
+    { src: "/manus-storage/eingang_schnee_6c82eeca.webp", alt: "Eingang bei Schnee", caption: "Eingang" },
+    { src: "/manus-storage/joujou_schild_fix_12020ddf.webp", alt: "joujou Schild", caption: "joujou" },
   ];
 
   return (
@@ -838,7 +840,7 @@ function GalerieSection() {
         <div className="galerie-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem" }}>
           {photos.map((p, i) => (
             <div key={i} style={{ position: "relative", overflow: "hidden" }}>
-              <img
+              <img loading="lazy"
                 src={p.src}
                 alt={p.alt}
                 className={i >= 3 ? "galerie-small-img" : ""}
@@ -928,9 +930,9 @@ function SiegelSection() {
           Unsere Werte & Zertifikate
         </p>
         <div className="siegel-grid" style={{ gap: "3rem" }}>
-          <img src="/manus-storage/slowfood-genussfuehrer_bcdf713f.jpg" alt="Slow Food Deutschland — Genussführer" title="Slow Food Genussführer" style={{ maxHeight: "5rem" }} />
-          <img src="/manus-storage/nachhaltiges-reiseziel_b134e42a.png" alt="Nachhaltiges Reiseziel — Partner" title="Nachhaltiges Reiseziel Deutsche Weinstraße" style={{ maxHeight: "5rem" }} />
-          <img src="/manus-storage/happycow-logo_b801cec6.png" alt="HappyCow — gelistet" title="HappyCow" style={{ maxHeight: "5rem" }} />
+          <img loading="lazy" src="/manus-storage/slowfood-genussfuehrer_bcdf713f.jpg" alt="Slow Food Deutschland — Genussführer" title="Slow Food Genussführer" style={{ maxHeight: "5rem" }} />
+          <img loading="lazy" src="/manus-storage/nachhaltiges-reiseziel_b134e42a.png" alt="Nachhaltiges Reiseziel — Partner" title="Nachhaltiges Reiseziel Deutsche Weinstraße" style={{ maxHeight: "5rem" }} />
+          <img loading="lazy" src="/manus-storage/happycow-logo_b801cec6.png" alt="HappyCow — gelistet" title="HappyCow" style={{ maxHeight: "5rem" }} />
         </div>
         <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, textAlign: "center", marginTop: "2rem", lineHeight: 1.7 }}>
           Biozertifiziert (DE-ÖKO-037) · AHVV Tierwohl · 100% Weiderind · Regional & Saisonal
