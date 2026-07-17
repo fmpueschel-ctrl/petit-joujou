@@ -23,3 +23,7 @@
 - [x] H1-Überschrift ergänzen (SEO)
 - [x] Open Graph Meta-Tags (og:image, og:title, og:description) + Twitter Card
 - [x] Meta-Description auf ~155 Zeichen kürzen
+- [x] Datenschutz-Link im Footer ergänzen (neben Impressum)
+- [x] Favicon + apple-touch-icon + theme-color ergänzen
+- [x] Formular-Labels mit for/id verknüpfen (Barrierefreiheit)
+- [x] Telefonnummer als tel:-Link im Footer/Kontakt ergänzen

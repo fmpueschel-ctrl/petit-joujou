@@ -554,8 +554,9 @@ function GesellschaftenSection() {
                 {/* Name + Email */}
                 <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
                   <div>
-                    <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Name *</label>
+                    <label htmlFor="ges-name" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Name *</label>
                     <input
+                      id="ges-name"
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -564,8 +565,9 @@ function GesellschaftenSection() {
                     />
                   </div>
                   <div>
-                    <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>E-Mail *</label>
+                    <label htmlFor="ges-email" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>E-Mail *</label>
                     <input
+                      id="ges-email"
                       required
                       type="email"
                       value={form.email}
@@ -579,8 +581,9 @@ function GesellschaftenSection() {
                 {/* Anlass + Gäste */}
                 <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
                   <div>
-                    <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Anlass</label>
+                    <label htmlFor="ges-anlass" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Anlass</label>
                     <select
+                      id="ges-anlass"
                       value={form.anlass}
                       onChange={(e) => setForm({ ...form, anlass: e.target.value })}
                       style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: form.anlass ? C.ink : C.inkLight, outline: "none", fontFamily: "inherit" }}
@@ -594,8 +597,9 @@ function GesellschaftenSection() {
                     </select>
                   </div>
                   <div>
-                    <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Gästeanzahl</label>
+                    <label htmlFor="ges-gaeste" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Gästeanzahl</label>
                     <select
+                      id="ges-gaeste"
                       value={form.gaeste}
                       onChange={(e) => setForm({ ...form, gaeste: e.target.value })}
                       style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: form.gaeste ? C.ink : C.inkLight, outline: "none", fontFamily: "inherit" }}
@@ -612,8 +616,9 @@ function GesellschaftenSection() {
                 {/* Datum + Telefon */}
                 <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
                   <div>
-                    <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Wunschdatum</label>
+                    <label htmlFor="ges-datum" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Wunschdatum</label>
                     <input
+                      id="ges-datum"
                       type="date"
                       value={form.datum}
                       onChange={(e) => setForm({ ...form, datum: e.target.value })}
@@ -621,8 +626,9 @@ function GesellschaftenSection() {
                     />
                   </div>
                   <div>
-                    <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Telefon</label>
+                    <label htmlFor="ges-telefon" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Telefon</label>
                     <input
+                      id="ges-telefon"
                       type="tel"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -634,8 +640,9 @@ function GesellschaftenSection() {
 
                 {/* Nachricht */}
                 <div style={{ marginBottom: "1.5rem" }}>
-                  <label className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Eure Wünsche & Budget-Vorstellung</label>
+                  <label htmlFor="ges-nachricht" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Eure Wünsche & Budget-Vorstellung</label>
                   <textarea
+                    id="ges-nachricht"
                     value={form.nachricht}
                     onChange={(e) => setForm({ ...form, nachricht: e.target.value })}
                     rows={4}
@@ -895,6 +902,9 @@ function Footer() {
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", lineHeight: 1.8 }}>
               Leistadt Pfalz<br />
+              <a href="tel:+4963229899797" style={{ color: "#ed7846", textDecoration: "none" }}>
+                06322 / 989 97 97
+              </a><br />
               <a href="mailto:hallo@joujou-pfalz.de" style={{ color: "#ed7846", textDecoration: "none" }}>
                 hallo@joujou-pfalz.de
               </a><br />
@@ -908,7 +918,8 @@ function Footer() {
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.72rem", color: "rgba(250,248,245,0.45)", letterSpacing: "0.05em" }}>
             © 2026 petit joujou · Joujou Pfalz ·{" "}
-            <a href="/impressum" style={{ color: "#ed7846", textDecoration: "none" }}>Impressum</a>
+            <a href="/impressum" style={{ color: "#ed7846", textDecoration: "none" }}>Impressum</a>{" · "}
+            <a href="/datenschutz" style={{ color: "#ed7846", textDecoration: "none" }}>Datenschutz</a>
           </p>
           <p className="font-body" style={{ fontSize: "0.72rem", color: "rgba(250,248,245,0.45)", letterSpacing: "0.05em", marginTop: "0.5rem" }}>
             Unsere weiteren Angebote findest du auf:{" "}
