@@ -294,7 +294,7 @@ function GartenSection() {
             Wein unter freiem Himmel
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
-            „Der Garten ist etwas ganz Besonderes. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit.“
+            „Die beiden Gärten haben etwas Magisches. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit.“
           </p>
           <p className="font-body" style={{ fontSize: "0.85rem", color: C.ink, marginBottom: "2rem" }}>
             — Frank
@@ -693,10 +693,10 @@ function EssenSection() {
             Alles bio. Alles echt.
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#f5f0ea", marginBottom: "1rem" }}>
-            Zum Teilen &amp; Sattwerden
+            Zum Teilen, Sattwerden & <span style={{ color: C.peachDark, fontStyle: "italic" }}>Staunen</span>
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: "rgba(245,240,234,0.7)", maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
-            Gerichte, die man am liebsten mit allen teilt. Oder heimlich alleine aufisst. Kein Menü — ein Erlebnis.
+            Franz erschafft ständig raffinierte saisonale Kreationen. Der Aha-Moment ist bei uns normal. Weil wir Genuss & das Außergewöhnliche beim Essen genauso lieben wie beim Wein. Bonne dégustation.
           </p>
           <a
             href="/manus-storage/PetitJoujou_Speisekarte_Final5_eaf6392f.pdf"
@@ -719,6 +719,9 @@ function EssenSection() {
         </div>
 
         {/* Sharing-Kreationen — 3 Gerichte nebeneinander */}
+        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(245,240,234,0.5)", textAlign: "center", marginBottom: "2.5rem" }}>
+          Eine Auswahl
+        </p>
         <div className="essen-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem", marginBottom: "6rem" }}>
           {gerichte.map((g) => (
             <div key={g.name}>
