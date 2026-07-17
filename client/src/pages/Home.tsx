@@ -483,11 +483,11 @@ function GesellschaftenSection() {
       <div className="split-image">
         <img
           src="/manus-storage/chef-franz-rank_cc11fb77.jpg"
-          alt="Chef Franz Rank am Grill"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 70%" }}
+          alt="Chef Franz Rank beim Joujou BBQ-Event"
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(1.3)", transformOrigin: "center 30%" }}
         />
         <p className="font-body" style={{ position: "absolute", bottom: 0, left: 0, right: 0, fontSize: "0.7rem", color: C.bg, fontStyle: "italic", margin: 0, padding: "0.5rem 1rem", background: "linear-gradient(transparent, rgba(0,0,0,0.5))" }}>
-          Chef Franz Rank
+          Chef Franz Rank beim Joujou BBQ-Event
         </p>
       </div>
 
