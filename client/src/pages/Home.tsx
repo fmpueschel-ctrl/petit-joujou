@@ -217,16 +217,19 @@ function WeinkellerSection() {
             Der Keller
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#f5f0ea", marginBottom: "1.25rem", lineHeight: 1.15 }}>
-            Manche Flaschen gibt es nur einmal.
+            Leidenschaftlich kuratiert.
           </h2>
           <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.85, marginBottom: "2rem" }}>
-            Wenn sie weg sind, sind sie weg. Manche Begegnungen gibt es nur einmal — mit Wein ist das genauso.
+            Mareile & Frank gehen für euch ans Limit — für das spannendste Weinangebot.
           </p>
           {[
-            "500 Weine & Bubbles — biodynamisch, naturnah",
-            "Pfälzer Winzer & internationale Raritäten",
-            "Mitnehmen zu Kellerpreisen — oder hier trinken (+10 € Korkgeld)",
-            "Persönliche Beratung — für die, die sie wollen",
+            "500 Weine & Bubbles",
+            "Pfalz, Rheinhessen, Österreich, Frankreich — fertig",
+            "Klassisch oder freak-show",
+            "No chemical pesticides — nur bio",
+            "Mitnehmen zu Kellerpreisen — oder hier trinken (10 € Korkgeld)",
+            "Großes & spannendes Sortiment alkoholfrei und alkoholreduziert",
+            "Hat jemand alkoholfrei gesagt?",
           ].map((item) => (
             <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "0.75rem" }}>
               <span style={{ color: C.sageDark, fontSize: "0.9rem", marginTop: "0.05rem", flexShrink: 0 }}>→</span>
