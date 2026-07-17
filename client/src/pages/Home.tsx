@@ -128,18 +128,18 @@ function Hero() {
 
         {/* Rechts: klein · fein · wein + CTAs */}
         <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start" }}>
-          {/* Logo-Schriftzug */}
-          <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: C.ink, lineHeight: 1, marginBottom: "1.5rem" }}>
-            petit joujou
+          {/* Weinbar · Leistadt, Pfalz — dezenter Untertitel */}
+          <span className="font-display" style={{ fontSize: "0.7rem", color: C.inkMid, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+            Weinbar &middot; Leistadt, Pfalz
           </span>
 
-          {/* klein · fein · wein */}
-          <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "2rem", flexWrap: "wrap" }}>
-            <span className="font-script" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", color: C.ink, lineHeight: 1 }}>klein</span>
-            <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
-            <span style={{ display: "inline-block", width: "5px", height: "5px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", color: "#722F37", lineHeight: 1 }}>wein</span>
+          {/* klein · fein · wein — PROMINENT */}
+          <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
+            <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: C.ink, lineHeight: 1 }}>klein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
+            <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
+            <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: "#722F37", lineHeight: 1 }}>wein</span>
           </div>
 
           {/* Kurzbeschreibung */}
