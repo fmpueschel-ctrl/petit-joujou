@@ -282,7 +282,7 @@ function GartenSection() {
           src="/manus-storage/garden-terrace_061af555.jpg"
           alt="Garten — Terrasse voller Gäste unter Sonnenschirmen mit Zypressen"
           className="split-image"
-          style={{ objectPosition: "center 40%" }}
+          style={{ objectPosition: "center 50%", transform: "scale(1.3)", transformOrigin: "center 50%" }}
         />
 
         {/* Rechts: Text */}
@@ -293,8 +293,11 @@ function GartenSection() {
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.15 }}>
             Wein unter freiem Himmel
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2rem" }}>
-            Sonne auf der Haut, Wein im Glas, Lachen am Nebentisch. Hier vergisst man die Zeit.
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
+            „Der Garten ist etwas ganz Besonderes. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit.“
+          </p>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: C.ink, marginBottom: "2rem" }}>
+            — Frank
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
