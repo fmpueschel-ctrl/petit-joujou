@@ -27,3 +27,7 @@
 - [x] Favicon + apple-touch-icon + theme-color ergänzen
 - [x] Formular-Labels mit for/id verknüpfen (Barrierefreiheit)
 - [x] Telefonnummer als tel:-Link im Footer/Kontakt ergänzen
+- [x] Farbschema umbauen: Anthrazit-Basis + Rosé/Pink Akzent (weg von Braun/Gold)
+- [x] Bar-Innenansicht als neues Bild einbauen (statt Scheune)
+- [x] CSS-Variablen und Hintergründe anpassen
+- [x] Alle Section-Hintergründe auf neues Farbschema umstellen

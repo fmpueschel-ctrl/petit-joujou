@@ -2,45 +2,42 @@
 
 /* ============================================================
    petit joujou — Global CSS
-   Palette: apricot cream · forest green · terracotta · dark brown
+   Palette: anthrazit · rosé/pink · sandstein · warmweiß
+   Inspired by: Pure Bakery (bildstark) + Frenchie (intim, dunkel)
    ============================================================ */
 
 @theme {
-  /* Brand Colors */
-  --color-apricot-50: oklch(97% 0.02 60);
-  --color-apricot-100: oklch(94% 0.04 60);
-  --color-apricot-200: oklch(89% 0.07 55);
-  --color-apricot-300: oklch(83% 0.10 52);
-  --color-apricot-400: oklch(76% 0.13 50);
-  --color-apricot-500: oklch(70% 0.15 48);
+  /* Brand Colors — new palette */
+  --color-anthrazit-900: oklch(18% 0.01 260);    /* #1e1e24 deep dark */
+  --color-anthrazit-800: oklch(22% 0.01 260);    /* #2a2a32 */
+  --color-anthrazit-700: oklch(28% 0.01 260);    /* #3a3a44 */
+  --color-anthrazit-600: oklch(35% 0.01 260);    /* #4a4a55 */
 
-  --color-green-forest: oklch(28% 0.06 165);   /* #244237 */
-  --color-green-mid: oklch(38% 0.07 163);       /* #3c6254 */
-  --color-green-light: oklch(44% 0.06 163);     /* #4f6a60 */
+  --color-rose-100: oklch(92% 0.04 350);         /* very light pink */
+  --color-rose-200: oklch(85% 0.08 350);         /* soft rosé */
+  --color-rose-300: oklch(75% 0.12 350);         /* medium pink */
+  --color-rose-400: oklch(65% 0.16 345);         /* vibrant rosé */
+  --color-rose-500: oklch(58% 0.20 340);         /* strong pink */
 
-  --color-terra-500: oklch(56% 0.12 42);        /* #c8783a terracotta */
-  --color-terra-600: oklch(48% 0.11 40);        /* darker terracotta */
-
-  --color-cream: oklch(88% 0.04 75);            /* #c5b299 */
-  --color-ivory: oklch(96% 0.02 80);            /* near white warm */
-  --color-brown-dark: oklch(20% 0.04 50);       /* #2a1a0e */
-  --color-brown-mid: oklch(35% 0.05 50);
+  --color-sandstein: oklch(82% 0.04 70);         /* warm sand */
+  --color-warmweiss: oklch(96% 0.01 70);         /* warm white */
+  --color-creme: oklch(93% 0.02 65);             /* soft cream */
 
   /* Semantic tokens */
-  --color-background: oklch(97% 0.02 70);
-  --color-foreground: oklch(20% 0.04 50);
-  --color-card: oklch(99% 0.01 70);
-  --color-card-foreground: oklch(20% 0.04 50);
-  --color-primary: oklch(28% 0.06 165);
-  --color-primary-foreground: oklch(97% 0.02 70);
-  --color-secondary: oklch(56% 0.12 42);
-  --color-secondary-foreground: oklch(99% 0.01 70);
-  --color-muted: oklch(93% 0.02 70);
-  --color-muted-foreground: oklch(50% 0.04 60);
-  --color-accent: oklch(83% 0.10 52);
-  --color-accent-foreground: oklch(20% 0.04 50);
-  --color-border: oklch(88% 0.03 65);
-  --color-ring: oklch(28% 0.06 165);
+  --color-background: oklch(18% 0.01 260);       /* anthrazit dark */
+  --color-foreground: oklch(93% 0.02 65);        /* warm cream text */
+  --color-card: oklch(22% 0.01 260);             /* slightly lighter dark */
+  --color-card-foreground: oklch(93% 0.02 65);
+  --color-primary: oklch(65% 0.16 345);          /* rosé/pink */
+  --color-primary-foreground: oklch(18% 0.01 260);
+  --color-secondary: oklch(82% 0.04 70);         /* sandstein */
+  --color-secondary-foreground: oklch(18% 0.01 260);
+  --color-muted: oklch(28% 0.01 260);            /* muted dark */
+  --color-muted-foreground: oklch(65% 0.02 60);  /* muted text */
+  --color-accent: oklch(75% 0.12 350);           /* medium pink accent */
+  --color-accent-foreground: oklch(18% 0.01 260);
+  --color-border: oklch(30% 0.01 260);           /* subtle dark border */
+  --color-ring: oklch(65% 0.16 345);             /* rosé ring */
 
   /* Typography */
   --font-display: "Cormorant Garamond", Georgia, serif;
@@ -53,25 +50,25 @@
 
 @layer base {
   :root {
-    --background: 97% 0.02 70;
-    --foreground: 20% 0.04 50;
-    --card: 99% 0.01 70;
-    --card-foreground: 20% 0.04 50;
-    --popover: 99% 0.01 70;
-    --popover-foreground: 20% 0.04 50;
-    --primary: 28% 0.06 165;
-    --primary-foreground: 97% 0.02 70;
-    --secondary: 56% 0.12 42;
-    --secondary-foreground: 99% 0.01 70;
-    --muted: 93% 0.02 70;
-    --muted-foreground: 50% 0.04 60;
-    --accent: 83% 0.10 52;
-    --accent-foreground: 20% 0.04 50;
+    --background: 18% 0.01 260;
+    --foreground: 93% 0.02 65;
+    --card: 22% 0.01 260;
+    --card-foreground: 93% 0.02 65;
+    --popover: 22% 0.01 260;
+    --popover-foreground: 93% 0.02 65;
+    --primary: 65% 0.16 345;
+    --primary-foreground: 18% 0.01 260;
+    --secondary: 82% 0.04 70;
+    --secondary-foreground: 18% 0.01 260;
+    --muted: 28% 0.01 260;
+    --muted-foreground: 65% 0.02 60;
+    --accent: 75% 0.12 350;
+    --accent-foreground: 18% 0.01 260;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 88% 0.03 65;
-    --input: 88% 0.03 65;
-    --ring: 28% 0.06 165;
+    --border: 30% 0.01 260;
+    --input: 30% 0.01 260;
+    --ring: 65% 0.16 345;
     --radius: 0.25rem;
   }
 
@@ -120,17 +117,17 @@
   min-height: 0;
 }
 
-/* Divider */
+/* Divider — now rosé */
 .divider-apricot {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #c8783a, transparent);
+  background: linear-gradient(90deg, transparent, oklch(65% 0.16 345), transparent);
 }
 
 /* Price tag style */
 .price-tag {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  color: #244237;
+  color: oklch(93% 0.02 65);
   font-weight: 500;
 }
 
@@ -142,109 +139,83 @@
 
 /* ── Mobile Responsive Helpers ─────────────────────────────── */
 @media (max-width: 768px) {
-  /* Grid: 2-spaltig → 1-spaltig */
   .mobile-stack {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
-  /* Grid: 3-spaltig → 1-spaltig */
   .mobile-stack-3 {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
-  /* Grid: 3-spaltig → 2-spaltig */
   .mobile-2col {
     grid-template-columns: 1fr 1fr !important;
     gap: 0.4rem !important;
   }
-  /* Bild-Höhe auf Mobile anpassen */
   .mobile-img-tall {
     height: 280px !important;
   }
   .mobile-img-full {
     height: 260px !important;
   }
-  /* Padding reduzieren */
   .mobile-pad {
     padding: 3.5rem 0 !important;
   }
-  /* Text-Ausrichtung */
   .mobile-center {
     text-align: center !important;
   }
-  /* Reihenfolge umkehren: Bild zuerst auf Mobile */
   .mobile-img-first {
     order: -1 !important;
   }
-  /* Galerie: 3-spaltig → 2-spaltig auf Mobile */
   .galerie-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 0.4rem !important;
   }
-  /* Footer: 3-spaltig → 1-spaltig */
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
-  /* Gesellschaften: 2-spaltig → 1-spaltig */
   .gesellschaft-grid {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
   }
-  /* Intro-Pillars: 2-spaltig → 1-spaltig */
   .intro-pillars {
     grid-template-columns: 1fr !important;
   }
-  /* Events: 3-spaltig → 1-spaltig */
   .events-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
-  /* Essen: 3-spaltig → 1-spaltig */
   .essen-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
-  /* Entrecôte: 2-spaltig → 1-spaltig */
   .entrecote-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
-  /* Weinkeller-Text: 2-spaltig → 1-spaltig */
   .keller-text-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
-  /* Gesellschaft Occasion-Grid: 2-spaltig bleibt */
   .occasion-grid {
     grid-template-columns: 1fr 1fr !important;
   }
-  /* Formular: 2-spaltig → 1-spaltig */
   .form-2col {
     grid-template-columns: 1fr !important;
   }
-  /* Pinsa-Block: 2-spaltig → 1-spaltig */
   .pinsa-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
-  /* Occasion-Karten: 2-spaltig bleibt auf Mobile */
-  .occasion-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  /* Sektions-Padding auf Mobile reduzieren */
   .mobile-section {
     padding: 4rem 0 !important;
   }
-  /* Galerie: kleinere Bilder auf Mobile */
   .galerie-small-img {
     height: 150px !important;
   }
-  /* Events-Bilder auf Mobile kleiner */
   .event-img {
     height: 240px !important;
   }
-  /* Intro-Sektion: weniger Padding */
   .intro-section {
     padding: 3.5rem 0 !important;
   }
@@ -304,13 +275,13 @@
   height: 60px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(0.2);
+  filter: grayscale(0.2) brightness(1.2);
   opacity: 0.85;
   transition: opacity 0.2s ease, filter 0.2s ease;
 }
 .siegel-grid img:hover {
   opacity: 1;
-  filter: grayscale(0);
+  filter: grayscale(0) brightness(1.2);
 }
 
 @media (max-width: 768px) {
