@@ -122,7 +122,7 @@ function Hero() {
           <img
             src="/manus-storage/bar-quer_ae6538a9.webp"
             alt="petit joujou — Die Bar mit Weinregalen und warmem Licht"
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 65%", display: "block" }}
           />
         </picture>
 
