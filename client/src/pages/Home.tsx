@@ -115,13 +115,13 @@ function Hero() {
   return (
     <section style={{ backgroundColor: C.bg, padding: "0" }}>
       <div className="split-section hero-split">
-        {/* Links: Canva-Bild */}
+        {/* Links: Bar-Bild */}
         <picture className="split-image" style={{ objectPosition: "center center" }}>
-          <source media="(max-width: 767px)" srcSet="/manus-storage/6_3c47d17c.png" />
-          <source media="(min-width: 768px)" srcSet="/manus-storage/5_22ab812a.webp" />
+          <source media="(max-width: 767px)" srcSet="/manus-storage/bar-hochkant_633f0b00.webp" />
+          <source media="(min-width: 768px)" srcSet="/manus-storage/bar-quer_ae6538a9.webp" />
           <img
-            src="/manus-storage/5_22ab812a.webp"
-            alt="petit joujou — Weinbar Leistadt Pfalz"
+            src="/manus-storage/bar-quer_ae6538a9.webp"
+            alt="petit joujou — Die Bar mit Weinregalen und warmem Licht"
             style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
           />
         </picture>
