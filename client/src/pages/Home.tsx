@@ -704,18 +704,18 @@ function EssenSection() {
   ];
 
   return (
-    <section id="essen" style={{ backgroundColor: C.bgSage, padding: "7rem 0" }}>
+    <section id="essen" style={{ backgroundColor: C.bg, padding: "7rem 0" }}>
       <div className="container">
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
             Alles bio. Alles echt.
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff", marginBottom: "1rem" }}>
-            Zum Teilen, Sattwerden & <span style={{ color: C.peach, fontStyle: "italic" }}>Staunen</span>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1rem" }}>
+            Zum Teilen, Sattwerden & <span style={{ color: C.rose, fontStyle: "italic" }}>Staunen</span>
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.75)", maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
             Franz erschafft ständig raffinierte saisonale Kreationen. Der Aha-Moment ist bei uns normal. Weil wir Genuss & das Außergewöhnliche beim Essen genauso lieben wie beim Wein. Bonne dégustation.
           </p>
           <a
@@ -726,8 +726,8 @@ function EssenSection() {
             style={{
               display: "inline-block",
               padding: "0.65rem 1.8rem",
-              border: "1px solid rgba(255,255,255,0.4)",
-              color: "#fff",
+              border: `1px solid ${C.sageDark}`,
+              color: C.sageDark,
               fontSize: "0.78rem",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
@@ -739,7 +739,7 @@ function EssenSection() {
         </div>
 
         {/* Sharing-Kreationen — 3 Gerichte nebeneinander */}
-        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", textAlign: "center", marginBottom: "2.5rem" }}>
+        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkLight, textAlign: "center", marginBottom: "2.5rem" }}>
           Eine Auswahl
         </p>
         <div className="essen-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem", marginBottom: "6rem" }}>
@@ -752,13 +752,13 @@ function EssenSection() {
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center", display: "block" }}
                 />
               </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.4rem" }}>
                 {g.label}
               </p>
-              <h3 className="font-display" style={{ fontSize: "1.4rem", color: "#fff", marginBottom: "0.4rem" }}>
+              <h3 className="font-display" style={{ fontSize: "1.4rem", color: C.ink, marginBottom: "0.4rem" }}>
                 {g.name}
               </h3>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "0.6rem" }}>
+              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.7, marginBottom: "0.6rem" }}>
                 {g.desc}
               </p>
             </div>
@@ -766,7 +766,7 @@ function EssenSection() {
         </div>
 
         {/* Drei Hauptgerichte — gleichberechtigtes 3er-Grid */}
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.15)", paddingTop: "5rem" }}>
+        <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
           <div className="hauptgerichte-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
             {/* Sharing-Kreationen */}
             <div>
@@ -777,13 +777,13 @@ function EssenSection() {
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
                 />
               </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peach, marginBottom: "0.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
                 Aus der Küche
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#fff", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Sharing-Kreationen
               </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
                 Saisonale Teller zum Teilen — raffiniert, bio, auf den Punkt.
               </p>
             </div>
@@ -797,13 +797,13 @@ function EssenSection() {
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
                 />
               </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peach, marginBottom: "0.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
                 Vom Holzbrett
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#fff", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Manna Palatina Pinsa
               </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
                 Knusprig, leicht, mit Belag der Saison. Die bessere Pizza.
               </p>
             </div>
@@ -817,13 +817,13 @@ function EssenSection() {
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 35%", display: "block", transform: "scale(1.7)", transformOrigin: "center 40%" }}
                 />
               </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peach, marginBottom: "0.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
                 Pimp it up
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#fff", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Entrecôte
               </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
                 Land.luft Premium Dry Age — trocken gereift, auf den Punkt. In Portionen à 100g.
               </p>
             </div>
@@ -847,13 +847,13 @@ function GalerieSection() {
   ];
 
   return (
-    <section style={{ backgroundColor: C.bgSage, padding: "5rem 0" }}>
+    <section style={{ backgroundColor: C.bgPeach, padding: "5rem 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: "#fff" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: C.ink }}>
             Einblicke
           </h2>
-          <div style={{ width: "3rem", height: "1px", backgroundColor: C.peachDark, margin: "1rem auto 0" }} />
+          <div style={{ width: "3rem", height: "1px", backgroundColor: C.rose, margin: "1rem auto 0" }} />
         </div>
         <div className="galerie-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem" }}>
           {photos.map((p, i) => (
@@ -864,8 +864,8 @@ function GalerieSection() {
                 className={i >= 3 ? "galerie-small-img" : ""}
                 style={{ width: "100%", height: i < 3 ? "300px" : "200px", objectFit: "cover", objectPosition: i === 2 ? "center bottom" : "center", display: "block", filter: "saturate(0.85)" }}
               />
-              <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", backgroundColor: "rgba(253,221,224,0.88)", padding: "0.2rem 0.65rem" }}>
-                <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>
+              <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", backgroundColor: "rgba(255,255,255,0.9)", padding: "0.2rem 0.65rem" }}>
+                <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.sageDark }}>
                   {p.caption}
                 </span>
               </div>

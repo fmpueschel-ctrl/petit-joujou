@@ -198,6 +198,11 @@
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
+  /* Hauptgerichte: 3-spaltig → 1-spaltig */
+  .hauptgerichte-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
   /* Entrecôte: 2-spaltig → 1-spaltig */
   .entrecote-grid {
     grid-template-columns: 1fr !important;
@@ -229,7 +234,11 @@
   .mobile-section {
     padding: 4rem 0 !important;
   }
-  /* Galerie: kleinere Bilder auf Mobile */
+  /* Galerie: Bilder auf Mobile mit fester Höhe */
+  .galerie-grid img {
+    height: 180px !important;
+    object-fit: cover !important;
+  }
   .galerie-small-img {
     height: 150px !important;
   }

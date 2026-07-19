@@ -30,3 +30,6 @@
 - [x] Hero-Bild: Bar-Foto (bar-quer / bar-hochkant) statt Scheune-Nachtbild eingesetzt
 - [x] Farbschema komplett auf Anthrazit + Rosé umgestellt (C-Objekt, CSS-Variablen, alle Sections)
 - [x] petit joujou Text-Overlay auf Hero-Bild (mit WEINBAR · LEISTADT · PFALZ)
+- [x] Farbschema auf Pastellgrün-Basis umgestellt (Dunkelgrün + Rosé + Orange Akzente)
+- [ ] Galerie-Bilder Verzerrung auf Mobile fixen (zu schmal/hochkant)
+- [ ] Hintergrund-Rhythmus: Essen + Galerie auf hellen Hintergrund wechseln (statt alles Dunkelgrün)
