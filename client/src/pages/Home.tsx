@@ -8,25 +8,25 @@ import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
 // ── Weinbar-Palette (petit joujou) ──────────────────────────
-// Neue Palette: Anthrazit + Rosé
+// Pastellgrün-Basis + Dunkelgrün + Rosé + Orange (Pure Bakery)
 const C = {
-  bg:          "#1e1e24",   // Anthrazit dunkel — Haupthintergrund
-  bgSage:      "#2a2a32",   // Anthrazit mittel — Section-Wechsel
-  bgPeach:     "#24242c",   // Anthrazit leicht heller
-  bgLavender:  "#2a2a32",   // Anthrazit mittel
-  bgCream:     "#222228",   // Anthrazit warm
-  ink:         "#ece5d8",   // Warmweiß — Haupttext
-  inkMid:      "#b8b0a4",   // Gedämpftes Warmweiß
-  inkLight:    "#8a8278",   // Dezentes Grau
-  sage:        "#2e2e36",   // Anthrazit für Karten/Boxen
-  sageDark:    "#d4688a",   // Rosé — Hauptakzent
-  peach:       "#e8a0b4",   // Helles Rosé
-  peachDark:   "#d4688a",   // Rosé — Akzentfarbe
-  lavender:    "#24242c",   // Anthrazit-Hauch
-  rose:        "#d4688a",   // Rosé — zweiter Akzent
+  bg:          "#f2f7f4",   // Pastellgrün — Haupthintergrund
+  bgSage:      "#2a4a3e",   // Dunkelgrün/Sage — dunkle Sections
+  bgPeach:     "#e8f2ec",   // Etwas kräftigeres Pastellgrün
+  bgLavender:  "#dceee4",   // Zartes Grün für Abwechslung
+  bgCream:     "#f8fcfa",   // Fast-Weiß mit Grünstich — Karten
+  ink:         "#1a2a24",   // Dunkelgrün-Schwarz — Haupttext
+  inkMid:      "#4a5a54",   // Mittleres Grün-Grau
+  inkLight:    "#7a8a84",   // Helles Grün-Grau
+  sage:        "#3a6a5a",   // Sage-Grün mittel
+  sageDark:    "#2a4a3e",   // Dunkelgrün
+  peach:       "#f4a87a",   // Helles Orange (Pure Bakery)
+  peachDark:   "#ed7846",   // Orange (Pure Bakery) — Akzent 2
+  lavender:    "#e8f2ec",   // Zartes Grün
+  rose:        "#d4688a",   // Rosé — Akzent 1
   hotpink:     "#d4688a",   // Rosé (Buttons, CTAs)
-  border:      "#3a3a44",   // Anthrazit-Border
-  borderSage:  "#4a4a54",   // Etwas hellere Border
+  border:      "#d0e0d8",   // Zarter grüner Border
+  borderSage:  "#b0c8be",   // Etwas kräftigere Border
 };
 
 // ── Nav ──────────────────────────────────────────────────────
@@ -46,9 +46,9 @@ function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          backgroundColor: "rgba(30,30,36,0.75)",
+          backgroundColor: "rgba(42,74,62,0.85)",
           backdropFilter: "blur(14px)",
-          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          borderBottom: "1px solid rgba(255,255,255,0.15)",
         }}
       >
         <div className="container flex items-center justify-between" style={{ height: "60px" }}>
@@ -226,13 +226,13 @@ function WeinkellerSection() {
 
         {/* Rechts: Text */}
         <div className="split-content" style={{ backgroundColor: C.bgSage }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
             Der Keller
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.15 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff", marginBottom: "1.25rem", lineHeight: 1.15 }}>
             Leidenschaftlich kuratiert.
           </h2>
-          <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2rem" }}>
+          <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.85, marginBottom: "2rem" }}>
             Mareile & Frank gehen für euch ans Limit — für das spannendste Weinangebot.
           </p>
           {[
@@ -245,8 +245,8 @@ function WeinkellerSection() {
             "Hat jemand alkoholfrei gesagt?",
           ].map((item) => (
             <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "0.75rem" }}>
-              <span style={{ color: C.sageDark, fontSize: "0.9rem", marginTop: "0.05rem", flexShrink: 0 }}>→</span>
-              <span className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.6 }}>{item}</span>
+              <span style={{ color: C.peach, fontSize: "0.9rem", marginTop: "0.05rem", flexShrink: 0 }}>→</span>
+              <span className="font-body" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.6 }}>{item}</span>
             </div>
           ))}
         </div>
@@ -270,13 +270,13 @@ function ScheuneSection() {
 
         {/* Links: Text */}
         <div className="split-content" style={{ backgroundColor: C.bgSage, direction: "ltr" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
             Drinnen
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.15 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff", marginBottom: "1.5rem", lineHeight: 1.15 }}>
             Die Scheune.<br />Euer Abend.
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85 }}>
+          <p className="font-body" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.85 }}>
             Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.
           </p>
         </div>
@@ -300,21 +300,21 @@ function GartenSection() {
 
         {/* Rechts: Text */}
         <div className="split-content" style={{ backgroundColor: C.bgSage }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
             Draußen
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.15 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff", marginBottom: "1.5rem", lineHeight: 1.15 }}>
             Wein unter freiem Himmel
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
+          <p className="font-body" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.8)", lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
             „Die beiden Gärten haben etwas Magisches. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit.“
           </p>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: C.ink, marginBottom: "2rem" }}>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: "#fff", marginBottom: "2rem" }}>
             — Frank
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
-              <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: C.sage, color: C.ink, fontSize: "0.72rem", letterSpacing: "0.06em" }}>
+              <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.85)", fontSize: "0.72rem", letterSpacing: "0.06em", border: "1px solid rgba(255,255,255,0.2)" }}>
                 {tag}
               </span>
             ))}
@@ -331,13 +331,13 @@ function EventsSection() {
     <section id="events" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "0.75rem" }}>
             Was passiert
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff" }}>
             Events & Abende
           </h2>
-          <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
+          <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
             Ausgesuchte Abende mit ausgesuchten Winzern.
             Tickets sind begrenzt.
           </p>
@@ -355,11 +355,11 @@ function EventsSection() {
               style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: C.ink, marginBottom: "0.3rem" }}>BEATS petit joujou</p>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, marginBottom: "0.5rem" }}>DJ Marcel Ullrich</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600 }}>11.06. · 16.07. · 13.08.2026</p>
-              <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkLight, marginTop: "0.3rem" }}>Kostenlos · Eintritt frei</p>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>BEATS petit joujou</p>
+              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>DJ Marcel Ullrich</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600 }}>11.06. · 16.07. · 13.08.2026</p>
+              <p className="font-body" style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.6)", marginTop: "0.3rem" }}>Kostenlos · Eintritt frei</p>
             </div>
           </div>
 
@@ -372,9 +372,9 @@ function EventsSection() {
               style={{ width: "100%", height: "420px", objectFit: "contain", objectPosition: "center center", display: "block", backgroundColor: C.sage }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: C.ink, marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600, marginBottom: "0.5rem" }}>59 € p.P. · inkl. Aperitif, Food & Wines</p>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>59 € p.P. · inkl. Aperitif, Food & Wines</p>
               <a href="https://services.gastronovi.com/restaurants/68135/reservierung/widget?entry=ordering#1" target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
                 Tickets buchen
@@ -385,13 +385,13 @@ function EventsSection() {
           {/* Joujou Groovt */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden" }}>
             <div style={{ height: "280px", backgroundColor: C.bgSage, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkLight, marginBottom: "0.75rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
-              <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: C.ink, lineHeight: 1.1, marginBottom: "0.5rem" }}>Joujou Groovt</p>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, fontStyle: "italic", marginBottom: "1rem" }}>Live-Musik & Genuss</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600 }}>30.07. · 27.08.2026</p>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "0.75rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
+              <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#fff", lineHeight: 1.1, marginBottom: "0.5rem" }}>Joujou Groovt</p>
+              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.75)", fontStyle: "italic", marginBottom: "1rem" }}>Live-Musik & Genuss</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600 }}>30.07. · 27.08.2026</p>
             </div>
             <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight, marginBottom: "0.75rem" }}>Live-Musik-Acts, Spritz, Schorle, Wein — entspannte Sommerabende im Joujou.</p>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.75rem" }}>Live-Musik-Acts, Spritz, Schorle, Wein — entspannte Sommerabende im Joujou.</p>
               <a href="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation" target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
                 Tisch reservieren
@@ -407,17 +407,17 @@ function EventsSection() {
               <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.85)", fontStyle: "italic" }}>Markt der achtsamen Dinge</p>
             </div>
             <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight, marginBottom: "0.75rem" }}>Regionale Aussteller, Handwerkskunst, Bio-Leckereien und musikalische Begleitung — zwei Tage Herbstzauber.</p>
-              <p className="font-body" style={{ fontSize: "0.78rem", color: C.sageDark, fontWeight: 600 }}>Eintritt frei</p>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.75rem" }}>Regionale Aussteller, Handwerkskunst, Bio-Leckereien und musikalische Begleitung — zwei Tage Herbstzauber.</p>
+              <p className="font-body" style={{ fontSize: "0.78rem", color: C.peach, fontWeight: 600 }}>Eintritt frei</p>
             </div>
           </div>
 
         </div>
 
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight }}>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.7)" }}>
             Aktuelle Events & Tickets auf{" "}
-            <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.peachDark, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+            <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.peach, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               joujou.bistro
             </a>
@@ -709,13 +709,13 @@ function EssenSection() {
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
             Alles bio. Alles echt.
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1rem" }}>
-            Zum Teilen, Sattwerden & <span style={{ color: C.peachDark, fontStyle: "italic" }}>Staunen</span>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff", marginBottom: "1rem" }}>
+            Zum Teilen, Sattwerden & <span style={{ color: C.peach, fontStyle: "italic" }}>Staunen</span>
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
+          <p className="font-body" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.75)", maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
             Franz erschafft ständig raffinierte saisonale Kreationen. Der Aha-Moment ist bei uns normal. Weil wir Genuss & das Außergewöhnliche beim Essen genauso lieben wie beim Wein. Bonne dégustation.
           </p>
           <a
@@ -726,8 +726,8 @@ function EssenSection() {
             style={{
               display: "inline-block",
               padding: "0.65rem 1.8rem",
-              border: `1px solid ${C.sageDark}`,
-              color: C.sageDark,
+              border: "1px solid rgba(255,255,255,0.4)",
+              color: "#fff",
               fontSize: "0.78rem",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
@@ -739,7 +739,7 @@ function EssenSection() {
         </div>
 
         {/* Sharing-Kreationen — 3 Gerichte nebeneinander */}
-        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkLight, textAlign: "center", marginBottom: "2.5rem" }}>
+        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", textAlign: "center", marginBottom: "2.5rem" }}>
           Eine Auswahl
         </p>
         <div className="essen-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem", marginBottom: "6rem" }}>
@@ -752,13 +752,13 @@ function EssenSection() {
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center", display: "block" }}
                 />
               </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.4rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>
                 {g.label}
               </p>
-              <h3 className="font-display" style={{ fontSize: "1.4rem", color: C.ink, marginBottom: "0.4rem" }}>
+              <h3 className="font-display" style={{ fontSize: "1.4rem", color: "#fff", marginBottom: "0.4rem" }}>
                 {g.name}
               </h3>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.7, marginBottom: "0.6rem" }}>
+              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "0.6rem" }}>
                 {g.desc}
               </p>
             </div>
@@ -766,7 +766,7 @@ function EssenSection() {
         </div>
 
         {/* Drei Hauptgerichte — gleichberechtigtes 3er-Grid */}
-        <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.15)", paddingTop: "5rem" }}>
           <div className="hauptgerichte-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
             {/* Sharing-Kreationen */}
             <div>
@@ -777,13 +777,13 @@ function EssenSection() {
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
                 />
               </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peach, marginBottom: "0.5rem" }}>
                 Aus der Küche
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#fff", marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Sharing-Kreationen
               </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
                 Saisonale Teller zum Teilen — raffiniert, bio, auf den Punkt.
               </p>
             </div>
@@ -797,13 +797,13 @@ function EssenSection() {
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
                 />
               </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peach, marginBottom: "0.5rem" }}>
                 Vom Holzbrett
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#fff", marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Manna Palatina Pinsa
               </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
                 Knusprig, leicht, mit Belag der Saison. Die bessere Pizza.
               </p>
             </div>
@@ -817,13 +817,13 @@ function EssenSection() {
                   style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 35%", display: "block", transform: "scale(1.7)", transformOrigin: "center 40%" }}
                 />
               </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peach, marginBottom: "0.5rem" }}>
                 Pimp it up
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#fff", marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Entrecôte
               </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
                 Land.luft Premium Dry Age — trocken gereift, auf den Punkt. In Portionen à 100g.
               </p>
             </div>
@@ -850,7 +850,7 @@ function GalerieSection() {
     <section style={{ backgroundColor: C.bgSage, padding: "5rem 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: C.ink }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: "#fff" }}>
             Einblicke
           </h2>
           <div style={{ width: "3rem", height: "1px", backgroundColor: C.peachDark, margin: "1rem auto 0" }} />
@@ -926,7 +926,7 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", textAlign: "center" }}>
+        <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: "1.5rem", textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, letterSpacing: "0.05em" }}>
             © 2026 petit joujou · Joujou Pfalz ·{" "}
             <a href="/impressum" style={{ color: C.rose, textDecoration: "none" }}>Impressum</a>{" · "}

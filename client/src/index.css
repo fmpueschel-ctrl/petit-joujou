@@ -2,38 +2,37 @@
 
 /* ============================================================
    petit joujou — Global CSS
-   Palette: Anthrazit + Rosé
+   Palette: Pastellgrün + Dunkelgrün + Rosé + Orange
    ============================================================ */
 
 @theme {
-  /* Brand Colors — Anthrazit + Rosé */
-  --color-anthrazit-900: oklch(18% 0.01 280);   /* #1e1e24 */
-  --color-anthrazit-800: oklch(22% 0.01 280);   /* #2a2a32 */
-  --color-anthrazit-700: oklch(26% 0.01 280);   /* #3a3a44 */
-  --color-anthrazit-600: oklch(30% 0.01 280);   /* #4a4a54 */
+  /* Brand Colors — Pastellgrün + Sage + Rosé + Orange */
+  --color-sage-900: oklch(28% 0.05 160);        /* #2a4a3e Dunkelgrün */
+  --color-sage-700: oklch(38% 0.06 160);        /* #3a6a5a Sage mittel */
+  --color-sage-500: oklch(55% 0.06 160);        /* #6a9a8a Sage hell */
+  --color-sage-200: oklch(88% 0.03 160);        /* #dceee4 Pastellgrün */
+  --color-sage-100: oklch(95% 0.02 160);        /* #f2f7f4 Hintergrund */
 
-  --color-rose-300: oklch(75% 0.10 350);        /* #e8a0b4 helles Rosé */
-  --color-rose-400: oklch(63% 0.14 350);        /* #d4688a Rosé Hauptakzent */
-  --color-rose-500: oklch(55% 0.15 350);        /* dunkleres Rosé */
+  --color-rose-400: oklch(63% 0.14 350);        /* #d4688a Rosé Akzent 1 */
+  --color-rose-500: oklch(55% 0.15 350);        /* #a84868 dunkleres Rosé */
 
-  --color-warmwhite: oklch(93% 0.02 70);        /* #ece5d8 */
-  --color-warmgrey: oklch(75% 0.02 70);         /* #b8b0a4 */
-  --color-mutedgrey: oklch(58% 0.02 70);        /* #8a8278 */
+  --color-orange-300: oklch(78% 0.12 55);       /* #f4a87a helles Orange */
+  --color-orange-400: oklch(68% 0.15 45);       /* #ed7846 Orange Akzent 2 */
 
   /* Semantic tokens */
-  --color-background: oklch(18% 0.01 280);
-  --color-foreground: oklch(93% 0.02 70);
-  --color-card: oklch(22% 0.01 280);
-  --color-card-foreground: oklch(93% 0.02 70);
+  --color-background: oklch(95% 0.02 160);
+  --color-foreground: oklch(20% 0.04 160);
+  --color-card: oklch(97% 0.01 160);
+  --color-card-foreground: oklch(20% 0.04 160);
   --color-primary: oklch(63% 0.14 350);
-  --color-primary-foreground: oklch(97% 0.01 70);
-  --color-secondary: oklch(26% 0.01 280);
-  --color-secondary-foreground: oklch(93% 0.02 70);
-  --color-muted: oklch(22% 0.01 280);
-  --color-muted-foreground: oklch(58% 0.02 70);
-  --color-accent: oklch(63% 0.14 350);
-  --color-accent-foreground: oklch(97% 0.01 70);
-  --color-border: oklch(26% 0.01 280);
+  --color-primary-foreground: oklch(98% 0.01 0);
+  --color-secondary: oklch(88% 0.03 160);
+  --color-secondary-foreground: oklch(28% 0.05 160);
+  --color-muted: oklch(90% 0.02 160);
+  --color-muted-foreground: oklch(45% 0.04 160);
+  --color-accent: oklch(68% 0.15 45);
+  --color-accent-foreground: oklch(98% 0.01 0);
+  --color-border: oklch(85% 0.03 160);
   --color-ring: oklch(63% 0.14 350);
 
   /* Typography */
@@ -47,24 +46,24 @@
 
 @layer base {
   :root {
-    --background: 18% 0.01 280;
-    --foreground: 93% 0.02 70;
-    --card: 22% 0.01 280;
-    --card-foreground: 93% 0.02 70;
-    --popover: 22% 0.01 280;
-    --popover-foreground: 93% 0.02 70;
+    --background: 95% 0.02 160;
+    --foreground: 20% 0.04 160;
+    --card: 97% 0.01 160;
+    --card-foreground: 20% 0.04 160;
+    --popover: 97% 0.01 160;
+    --popover-foreground: 20% 0.04 160;
     --primary: 63% 0.14 350;
-    --primary-foreground: 97% 0.01 70;
-    --secondary: 26% 0.01 280;
-    --secondary-foreground: 93% 0.02 70;
-    --muted: 22% 0.01 280;
-    --muted-foreground: 58% 0.02 70;
-    --accent: 63% 0.14 350;
-    --accent-foreground: 97% 0.01 70;
+    --primary-foreground: 98% 0.01 0;
+    --secondary: 88% 0.03 160;
+    --secondary-foreground: 28% 0.05 160;
+    --muted: 90% 0.02 160;
+    --muted-foreground: 45% 0.04 160;
+    --accent: 68% 0.15 45;
+    --accent-foreground: 98% 0.01 0;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 26% 0.01 280;
-    --input: 26% 0.01 280;
+    --border: 85% 0.03 160;
+    --input: 85% 0.03 160;
     --ring: 63% 0.14 350;
     --radius: 0.25rem;
   }
