@@ -8,25 +8,25 @@ import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
 // ── Weinbar-Palette (petit joujou) ──────────────────────────
-// Palette: Anthrazit + Rosé/Pink · Inspiriert von Frenchie + Pure Bakery
+// Neue Palette: Orange #ed7846 · Weinrot #7a1f2e · Anthrazit #2a2a2a
 const C = {
-  bg:          "#1e1e24",   // Anthrazit dunkel — Haupthintergrund
-  bgSage:      "#2a2a32",   // Anthrazit mittel
-  bgPeach:     "#1e1e24",   // Anthrazit dunkel
-  bgLavender:  "#2a2a32",   // Anthrazit mittel (Formulare)
-  bgCream:     "#2a2a32",   // Anthrazit mittel (Reservierung)
-  ink:         "#ece5d8",   // Warmweiß — Haupttext auf dunkel
-  inkMid:      "rgba(236,229,216,0.7)",  // Warmweiß gedämpft
-  inkLight:    "rgba(236,229,216,0.5)",  // Warmweiß leicht
-  sage:        "#3a3a44",   // Anthrazit hell (Tags)
-  sageDark:    "#d4688a",   // Rosé/Pink — Hauptakzent
-  peach:       "#e8a0b4",   // Helles Rosé
-  peachDark:   "#d4688a",   // Rosé/Pink — Akzentfarbe
-  lavender:    "#2a2a32",   // Anthrazit mittel
-  rose:        "#c4607a",   // Rosé dunkel
-  hotpink:     "#d4688a",   // Rosé/Pink
-  border:      "rgba(236,229,216,0.12)",  // Subtile helle Border
-  borderSage:  "rgba(236,229,216,0.18)",  // Etwas sichtbarere Border
+  bg:          "#ffffff",   // reines Weiß
+  bgSage:      "#f5f0ea",   // zartes Warm-Beige
+  bgPeach:     "#fdf4ee",   // sehr helles Orange-Hauch
+  bgLavender:  "#f5f0ea",   // Beige
+  bgCream:     "#faf8f5",   // Cremeweiß
+  ink:         "#2a2a2a",   // Anthrazit — Haupttext
+  inkMid:      "#5a5550",   // Mittleres Warm-Grau
+  inkLight:    "#9a9590",   // Helles Warm-Grau
+  sage:        "#f0e8e0",   // sehr helles Beige
+  sageDark:    "#ed7846",   // Orange — Hauptakzent (aus Illustration)
+  peach:       "#f5c4a8",   // helles Orange
+  peachDark:   "#ed7846",   // Orange — Akzentfarbe
+  lavender:    "#fdf4ee",   // Orange-Hauch
+  rose:        "#7a1f2e",   // Weinrot — zweiter Akzent
+  hotpink:     "#ed7846",   // Orange (ersetzt Magenta)
+  border:      "#e8ddd5",   // Warm-Beige-Border
+  borderSage:  "#d4c8bc",   // Etwas dunklere Border
 };
 
 // ── Nav ──────────────────────────────────────────────────────
@@ -46,7 +46,7 @@ function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          backgroundColor: "rgba(30,30,36,0.75)",
+          backgroundColor: "rgba(20,15,10,0.55)",
           backdropFilter: "blur(14px)",
           borderBottom: "1px solid rgba(255,255,255,0.1)",
         }}
@@ -136,7 +136,7 @@ function Hero() {
             <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
             <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
             <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: "#d4688a", lineHeight: 1 }}>wein</span>
+            <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: "#722F37", lineHeight: 1 }}>wein</span>
           </div>
 
           {/* Kurzbeschreibung */}
@@ -203,7 +203,7 @@ function Hero() {
 // ── Weinkeller ────────────────────────────────────────────────
 function WeinkellerSection() {
   return (
-    <section id="weinkeller" style={{ backgroundColor: "#1e1e24", padding: "0" }}>
+    <section id="weinkeller" style={{ backgroundColor: "#1a1210", padding: "0" }}>
       <div className="split-section">
         {/* Links: Grosses Weinregal-Bild */}
         <img loading="lazy"
@@ -214,11 +214,11 @@ function WeinkellerSection() {
         />
 
         {/* Rechts: Text */}
-        <div className="split-content" style={{ backgroundColor: "#1e1e24" }}>
+        <div className="split-content" style={{ backgroundColor: "#1a1210" }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
             Der Keller
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#ece5d8", marginBottom: "1.25rem", lineHeight: 1.15 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#f5f0ea", marginBottom: "1.25rem", lineHeight: 1.15 }}>
             Leidenschaftlich kuratiert.
           </h2>
           <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.85, marginBottom: "2rem" }}>
@@ -251,10 +251,10 @@ function ScheuneSection() {
       <div className="split-section" style={{ direction: "rtl" }}>
         {/* Rechts: Grosses Scheune-Bild */}
         <img loading="lazy"
-          src="/manus-storage/bar-hochkant_633f0b00.webp"
-          alt="Die Bar — Tresen mit Weinregalen und warmem Licht"
+          src="/manus-storage/scheune_innen_tisch_48ac2208.webp"
+          alt="Scheune — gedeckter Tisch unter historischem Dachstuhl"
           className="split-image"
-          style={{ objectPosition: "center 40%" }}
+          style={{ objectPosition: "center 25%" }}
         />
 
         {/* Links: Text */}
@@ -263,7 +263,7 @@ function ScheuneSection() {
             Drinnen
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.15 }}>
-            Die Bar.<br />Euer Treffpunkt.
+            Die Scheune.<br />Euer Abend.
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85 }}>
             Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.
@@ -317,13 +317,13 @@ function GartenSection() {
 // ── Events ────────────────────────────────────────────────────
 function EventsSection() {
   return (
-    <section id="events" style={{ backgroundColor: "#1e1e24", padding: "6rem 0" }}>
+    <section id="events" style={{ backgroundColor: "#1a1210", padding: "6rem 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
             Was passiert
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#ece5d8" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#f5f0ea" }}>
             Events & Abende
           </h2>
           <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(245,240,234,0.7)", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
@@ -336,7 +336,7 @@ function EventsSection() {
         <div className="events-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2rem" }}>
 
           {/* BEATS petit joujou */}
-          <div style={{ backgroundColor: "#2a2a32", overflow: "hidden" }}>
+          <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
             <img loading="lazy"
               src="/manus-storage/screenshot_beats_8be8965a.webp"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
@@ -345,7 +345,7 @@ function EventsSection() {
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: "#ece5d8", marginBottom: "0.3rem" }}>BEATS petit joujou</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: "#f5f0ea", marginBottom: "0.3rem" }}>BEATS petit joujou</p>
               <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(245,240,234,0.6)", marginBottom: "0.5rem" }}>DJ Marcel Ullrich</p>
               <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600 }}>11.06. · 16.07. · 13.08.2026</p>
               <p className="font-body" style={{ fontSize: "0.78rem", color: "rgba(245,240,234,0.5)", marginTop: "0.3rem" }}>Kostenlos · Eintritt frei</p>
@@ -353,7 +353,7 @@ function EventsSection() {
           </div>
 
           {/* TAVOLA BEATS */}
-          <div style={{ backgroundColor: "#2a2a32", overflow: "hidden" }}>
+          <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
             <img loading="lazy"
               src="/manus-storage/tavola_beats_70e575c5.webp"
               alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
@@ -362,7 +362,7 @@ function EventsSection() {
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: "#ece5d8", marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: "#f5f0ea", marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
               <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600, marginBottom: "0.5rem" }}>59 € p.P. · inkl. Aperitif, Food & Wines</p>
               <a href="https://services.gastronovi.com/restaurants/68135/reservierung/widget?entry=ordering#1" target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fddde0", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
@@ -372,10 +372,10 @@ function EventsSection() {
           </div>
 
           {/* Joujou Groovt */}
-          <div style={{ backgroundColor: "#2a2a32", overflow: "hidden" }}>
-            <div style={{ height: "280px", backgroundColor: "#3a3a44", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
+          <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
+            <div style={{ height: "280px", backgroundColor: "#3a2820", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(245,240,234,0.6)", marginBottom: "0.75rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
-              <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#ece5d8", lineHeight: 1.1, marginBottom: "0.5rem" }}>Joujou Groovt</p>
+              <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#f5f0ea", lineHeight: 1.1, marginBottom: "0.5rem" }}>Joujou Groovt</p>
               <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(245,240,234,0.7)", fontStyle: "italic", marginBottom: "1rem" }}>Live-Musik & Genuss</p>
               <p className="font-body" style={{ fontSize: "0.82rem", color: C.peachDark, fontWeight: 600 }}>30.07. · 27.08.2026</p>
             </div>
@@ -389,8 +389,8 @@ function EventsSection() {
           </div>
 
           {/* Herbstmarkt */}
-          <div style={{ backgroundColor: "#2a2a32", overflow: "hidden" }}>
-            <div style={{ height: "280px", backgroundColor: "#d4688a", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
+          <div style={{ backgroundColor: "#2a1e1a", overflow: "hidden" }}>
+            <div style={{ height: "280px", backgroundColor: "#c8a96e", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: "0.75rem" }}>03.10. + 04.10.2026 · ab 12:00 Uhr</p>
               <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#fff", lineHeight: 1.1, marginBottom: "0.5rem" }}>Herbstmarkt</p>
               <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.85)", fontStyle: "italic" }}>Markt der achtsamen Dinge</p>
@@ -420,7 +420,7 @@ function EventsSection() {
 // ── Reservierung ─────────────────────────────────────────────
 function ReservierungSection() {
   return (
-    <section id="reservierung" style={{ backgroundColor: "#2a2a32", padding: "6rem 0" }}>
+    <section id="reservierung" style={{ backgroundColor: C.bgCream, padding: "6rem 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
@@ -434,7 +434,7 @@ function ReservierungSection() {
           </p>
         </div>
 
-        <div style={{ maxWidth: "700px", margin: "0 auto", backgroundColor: "#1e1e24", border: `1px solid rgba(236,229,216,0.12)`, overflow: "hidden" }}>
+        <div style={{ maxWidth: "700px", margin: "0 auto", backgroundColor: C.bg, border: `1px solid ${C.border}`, overflow: "hidden" }}>
           <iframe
             src="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
             title="Gastronovi Reservierung — Joujou Weinbar"
@@ -488,7 +488,7 @@ function GesellschaftenSection() {
           alt="Chef Franz Rank beim Joujou BBQ-Event"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(1.3)", transformOrigin: "center 30%" }}
         />
-        <p className="font-body" style={{ position: "absolute", bottom: 0, left: 0, right: 0, fontSize: "0.7rem", color: "#fff", fontStyle: "italic", margin: 0, padding: "0.5rem 1rem", background: "linear-gradient(transparent, rgba(0,0,0,0.5))" }}>
+        <p className="font-body" style={{ position: "absolute", bottom: 0, left: 0, right: 0, fontSize: "0.7rem", color: C.bg, fontStyle: "italic", margin: 0, padding: "0.5rem 1rem", background: "linear-gradient(transparent, rgba(0,0,0,0.5))" }}>
           Chef Franz Rank beim Joujou BBQ-Event
         </p>
       </div>
@@ -514,7 +514,7 @@ function GesellschaftenSection() {
               { label: "Firmen", sub: "Teamabende & Dinners" },
               { label: "Hochzeiten", sub: "Auf Anfrage" },
             ].map((o) => (
-              <div key={o.label} style={{ backgroundColor: "#1e1e24", padding: "1.25rem", borderLeft: `3px solid ${C.sageDark}` }}>
+              <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `3px solid ${C.sageDark}` }}>
                 <div>
                   <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink }}>{o.label}</div>
                   <div className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight }}>{o.sub}</div>
@@ -524,14 +524,14 @@ function GesellschaftenSection() {
           </div>
 
           {/* Key promise */}
-          <div style={{ backgroundColor: "#1e1e24", padding: "1.5rem", borderLeft: `4px solid ${C.sageDark}`, marginBottom: "2.5rem" }}>
+          <div style={{ backgroundColor: C.bg, padding: "1.5rem", borderLeft: `4px solid ${C.sageDark}`, marginBottom: "2.5rem" }}>
             <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.7, fontStyle: "italic" }}>
               „Wir lieben Feiern und gesellige Runden. Wir versuchen immer, unser Angebot an eure Möglichkeiten und Wünsche anzupassen. Sprecht uns super gerne einfach an."
             </p>
           </div>
 
           {/* Form */}
-          <div style={{ backgroundColor: "#1e1e24", padding: "2rem" }}>
+          <div style={{ backgroundColor: C.bg, padding: "2rem" }}>
             {sent ? (
               <div style={{ textAlign: "center", padding: "3rem 1rem" }}>
                 <div style={{ width: "3rem", height: "2px", backgroundColor: C.sageDark, margin: "0 auto 1.5rem" }} />
@@ -560,7 +560,7 @@ function GesellschaftenSection() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.borderSage}`, backgroundColor: "#3a3a44", fontSize: "0.9rem", color: "#ece5d8", outline: "none", fontFamily: "inherit" }}
+                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
                       placeholder="Euer Name"
                     />
                   </div>
@@ -572,7 +572,7 @@ function GesellschaftenSection() {
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.borderSage}`, backgroundColor: "#3a3a44", fontSize: "0.9rem", color: "#ece5d8", outline: "none", fontFamily: "inherit" }}
+                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
                       placeholder="email@beispiel.de"
                     />
                   </div>
@@ -586,7 +586,7 @@ function GesellschaftenSection() {
                       id="ges-anlass"
                       value={form.anlass}
                       onChange={(e) => setForm({ ...form, anlass: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.borderSage}`, backgroundColor: "#3a3a44", fontSize: "0.9rem", color: form.anlass ? "#ece5d8" : "rgba(236,229,216,0.5)", outline: "none", fontFamily: "inherit" }}
+                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: form.anlass ? C.ink : C.inkLight, outline: "none", fontFamily: "inherit" }}
                     >
                       <option value="">Wählen...</option>
                       <option value="hochzeit">Hochzeit</option>
@@ -602,7 +602,7 @@ function GesellschaftenSection() {
                       id="ges-gaeste"
                       value={form.gaeste}
                       onChange={(e) => setForm({ ...form, gaeste: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.borderSage}`, backgroundColor: "#3a3a44", fontSize: "0.9rem", color: form.gaeste ? "#ece5d8" : "rgba(236,229,216,0.5)", outline: "none", fontFamily: "inherit" }}
+                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: form.gaeste ? C.ink : C.inkLight, outline: "none", fontFamily: "inherit" }}
                     >
                       <option value="">Anzahl...</option>
                       <option value="bis20">Bis 20 Personen</option>
@@ -622,7 +622,7 @@ function GesellschaftenSection() {
                       type="date"
                       value={form.datum}
                       onChange={(e) => setForm({ ...form, datum: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.borderSage}`, backgroundColor: "#3a3a44", fontSize: "0.9rem", color: "#ece5d8", outline: "none", fontFamily: "inherit" }}
+                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
                     />
                   </div>
                   <div>
@@ -632,7 +632,7 @@ function GesellschaftenSection() {
                       type="tel"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.borderSage}`, backgroundColor: "#3a3a44", fontSize: "0.9rem", color: "#ece5d8", outline: "none", fontFamily: "inherit" }}
+                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
                       placeholder="+49..."
                     />
                   </div>
@@ -646,7 +646,7 @@ function GesellschaftenSection() {
                     value={form.nachricht}
                     onChange={(e) => setForm({ ...form, nachricht: e.target.value })}
                     rows={4}
-                    style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.borderSage}`, backgroundColor: "#3a3a44", fontSize: "0.9rem", color: "#ece5d8", outline: "none", fontFamily: "inherit", resize: "vertical" }}
+                    style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit", resize: "vertical" }}
                     placeholder="Was stellt ihr euch vor?"
                   />
                 </div>
@@ -655,7 +655,7 @@ function GesellschaftenSection() {
                   type="submit"
                   disabled={anfrageMutation.isPending}
                   className="font-body"
-                  style={{ width: "100%", padding: "1rem", backgroundColor: anfrageMutation.isPending ? "#3a3a44" : C.peachDark, color: "#fff", border: "none", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: anfrageMutation.isPending ? "not-allowed" : "pointer" }}
+                  style={{ width: "100%", padding: "1rem", backgroundColor: anfrageMutation.isPending ? C.sage : C.peachDark, color: C.bg, border: "none", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: anfrageMutation.isPending ? "not-allowed" : "pointer" }}
                 >
                   {anfrageMutation.isPending ? "Wird gesendet..." : "Anfrage absenden"}
                 </button>
@@ -693,7 +693,7 @@ function EssenSection() {
   ];
 
   return (
-    <section id="essen" style={{ backgroundColor: "#1e1e24", padding: "7rem 0" }}>
+    <section id="essen" style={{ backgroundColor: "#1a1210", padding: "7rem 0" }}>
       <div className="container">
 
         {/* Header */}
@@ -701,7 +701,7 @@ function EssenSection() {
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peachDark, marginBottom: "1rem" }}>
             Alles bio. Alles echt.
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#ece5d8", marginBottom: "1rem" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#f5f0ea", marginBottom: "1rem" }}>
             Zum Teilen, Sattwerden & <span style={{ color: C.peachDark, fontStyle: "italic" }}>Staunen</span>
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: "rgba(245,240,234,0.7)", maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
@@ -744,7 +744,7 @@ function EssenSection() {
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.4rem" }}>
                 {g.label}
               </p>
-              <h3 className="font-display" style={{ fontSize: "1.4rem", color: "#ece5d8", marginBottom: "0.4rem" }}>
+              <h3 className="font-display" style={{ fontSize: "1.4rem", color: "#f5f0ea", marginBottom: "0.4rem" }}>
                 {g.name}
               </h3>
               <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.7, marginBottom: "0.6rem" }}>
@@ -755,7 +755,7 @@ function EssenSection() {
         </div>
 
         {/* Drei Hauptgerichte — gleichberechtigtes 3er-Grid */}
-        <div style={{ borderTop: "1px solid rgba(236,229,216,0.12)", paddingTop: "5rem" }}>
+        <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
           <div className="hauptgerichte-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
             {/* Sharing-Kreationen */}
             <div>
@@ -769,7 +769,7 @@ function EssenSection() {
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
                 Aus der Küche
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#ece5d8", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#f5f0ea", marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Sharing-Kreationen
               </h3>
               <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.75 }}>
@@ -789,7 +789,7 @@ function EssenSection() {
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
                 Vom Holzbrett
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#ece5d8", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#f5f0ea", marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Manna Palatina Pinsa
               </h3>
               <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.75 }}>
@@ -809,7 +809,7 @@ function EssenSection() {
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.peachDark, marginBottom: "0.5rem" }}>
                 Pimp it up
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#ece5d8", marginBottom: "0.75rem", lineHeight: 1.15 }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: "#f5f0ea", marginBottom: "0.75rem", lineHeight: 1.15 }}>
                 Entrecôte
               </h3>
               <p className="font-body" style={{ fontSize: "0.9rem", color: "rgba(245,240,234,0.7)", lineHeight: 1.75 }}>
@@ -827,7 +827,7 @@ function EssenSection() {
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
-    { src: "/manus-storage/bar-quer_ae6538a9.webp", alt: "Die Bar — Tresen und Weinregale", caption: "Die Bar" },
+    { src: "/manus-storage/scheune_innen_tisch_48ac2208.webp", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
     { src: "/manus-storage/pj-keller-innen3-sharp_214c0cfa.webp", alt: "Weinkeller", caption: "Weinkeller" },
     { src: "/manus-storage/weinglaeserfass_fix_9b22d6a7.webp", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
     { src: "/manus-storage/garten_lounge2_920a5dfa.webp", alt: "Garten Lounge", caption: "Garten" },
@@ -836,10 +836,10 @@ function GalerieSection() {
   ];
 
   return (
-    <section style={{ backgroundColor: "#1e1e24", padding: "5rem 0" }}>
+    <section style={{ backgroundColor: C.bgSage, padding: "5rem 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: "#ece5d8" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", color: C.ink }}>
             Einblicke
           </h2>
           <div style={{ width: "3rem", height: "1px", backgroundColor: C.peachDark, margin: "1rem auto 0" }} />
@@ -853,8 +853,8 @@ function GalerieSection() {
                 className={i >= 3 ? "galerie-small-img" : ""}
                 style={{ width: "100%", height: i < 3 ? "300px" : "200px", objectFit: "cover", objectPosition: i === 2 ? "center bottom" : "center", display: "block", filter: "saturate(0.85)" }}
               />
-              <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", backgroundColor: "rgba(212,104,138,0.85)", padding: "0.2rem 0.65rem" }}>
-                <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#fff" }}>
+              <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", backgroundColor: "rgba(253,221,224,0.88)", padding: "0.2rem 0.65rem" }}>
+                <span className="font-body" style={{ fontSize: "0.62rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>
                   {p.caption}
                 </span>
               </div>
@@ -869,11 +869,11 @@ function GalerieSection() {
 // ── Footer ────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer style={{ backgroundColor: "#1e1e24", padding: "4rem 0 3rem", borderTop: "1px solid rgba(236,229,216,0.08)" }}>
+    <footer style={{ backgroundColor: "#2a2a2a", padding: "4rem 0 3rem" }}>
       <div className="container">
         <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }}>
           <div>
-            <span className="font-script" style={{ fontSize: "2rem", color: "#d4688a" }}>
+            <span className="font-script" style={{ fontSize: "2rem", color: "#ed7846" }}>
               petit joujou
             </span>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", marginTop: "0.75rem", lineHeight: 1.7 }}>
@@ -892,7 +892,7 @@ function Footer() {
             ].map(([day, time]) => (
               <div key={day} style={{ display: "flex", gap: "0.75rem", marginBottom: "0.4rem" }}>
                 <span className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", minWidth: "5rem" }}>{day}</span>
-                <span className="font-body" style={{ fontSize: "0.85rem", color: "#d4688a" }}>{time}</span>
+                <span className="font-body" style={{ fontSize: "0.85rem", color: "#ed7846" }}>{time}</span>
               </div>
             ))}
           </div>
@@ -902,13 +902,13 @@ function Footer() {
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(250,248,245,0.6)", lineHeight: 1.8 }}>
               Leistadt Pfalz<br />
-              <a href="tel:+4963229899797" style={{ color: "#d4688a", textDecoration: "none" }}>
+              <a href="tel:+4963229899797" style={{ color: "#ed7846", textDecoration: "none" }}>
                 06322 / 989 97 97
               </a><br />
-              <a href="mailto:hallo@joujou-pfalz.de" style={{ color: "#d4688a", textDecoration: "none" }}>
+              <a href="mailto:hallo@joujou-pfalz.de" style={{ color: "#ed7846", textDecoration: "none" }}>
                 hallo@joujou-pfalz.de
               </a><br />
-              <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: "#d4688a", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+              <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: "#ed7846", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 joujou.bistro
               </a>
@@ -918,12 +918,12 @@ function Footer() {
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "1.5rem", textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.72rem", color: "rgba(250,248,245,0.45)", letterSpacing: "0.05em" }}>
             © 2026 petit joujou · Joujou Pfalz ·{" "}
-            <a href="/impressum" style={{ color: "#d4688a", textDecoration: "none" }}>Impressum</a>{" · "}
-            <a href="/datenschutz" style={{ color: "#d4688a", textDecoration: "none" }}>Datenschutz</a>
+            <a href="/impressum" style={{ color: "#ed7846", textDecoration: "none" }}>Impressum</a>{" · "}
+            <a href="/datenschutz" style={{ color: "#ed7846", textDecoration: "none" }}>Datenschutz</a>
           </p>
           <p className="font-body" style={{ fontSize: "0.72rem", color: "rgba(250,248,245,0.45)", letterSpacing: "0.05em", marginTop: "0.5rem" }}>
             Unsere weiteren Angebote findest du auf:{" "}
-            <a href="https://www.joujou-pfalz.de" target="_blank" rel="noopener noreferrer" style={{ color: "#d4688a", textDecoration: "none" }}>www.joujou-pfalz.de</a>
+            <a href="https://www.joujou-pfalz.de" target="_blank" rel="noopener noreferrer" style={{ color: "#ed7846", textDecoration: "none" }}>www.joujou-pfalz.de</a>
           </p>
         </div>
       </div>
@@ -935,7 +935,7 @@ function Footer() {
 // ── Siegel-Leiste ────────────────────────────────────────────
 function SiegelSection() {
   return (
-    <section style={{ backgroundColor: "#2a2a32", padding: "5rem 0", borderTop: "1px solid rgba(236,229,216,0.08)" }}>
+    <section style={{ backgroundColor: C.bg, padding: "5rem 0", borderTop: `1px solid ${C.border}` }}>
       <div className="container">
         <p className="font-body" style={{ fontSize: "0.85rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkMid, textAlign: "center", marginBottom: "2.5rem" }}>
           Unsere Werte & Zertifikate
