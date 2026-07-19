@@ -115,16 +115,27 @@ function Hero() {
   return (
     <section style={{ backgroundColor: C.bg, padding: "0" }}>
       <div className="split-section hero-split">
-        {/* Links: Bar-Bild */}
-        <picture className="split-image" style={{ objectPosition: "center center" }}>
-          <source media="(max-width: 767px)" srcSet="/manus-storage/bar-hochkant_633f0b00.webp" />
-          <source media="(min-width: 768px)" srcSet="/manus-storage/bar-quer_ae6538a9.webp" />
-          <img
-            src="/manus-storage/bar-quer_ae6538a9.webp"
-            alt="petit joujou — Die Bar mit Weinregalen und warmem Licht"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 65%", display: "block" }}
-          />
-        </picture>
+        {/* Links: Bar-Bild mit Overlay */}
+        <div className="split-image" style={{ position: "relative", overflow: "hidden" }}>
+          <picture style={{ width: "100%", height: "100%", display: "block" }}>
+            <source media="(max-width: 767px)" srcSet="/manus-storage/bar-hochkant_633f0b00.webp" />
+            <source media="(min-width: 768px)" srcSet="/manus-storage/bar-quer_ae6538a9.webp" />
+            <img
+              src="/manus-storage/bar-quer_ae6538a9.webp"
+              alt="petit joujou — Die Bar mit Weinregalen und warmem Licht"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 65%", display: "block" }}
+            />
+          </picture>
+          {/* Text-Overlay */}
+          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "3rem 2rem 2rem", background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+            <span className="font-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", color: "#fff", lineHeight: 1.1 }}>
+              petit joujou
+            </span>
+            <span className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.8)", marginTop: "0.5rem" }}>
+              Weinbar &middot; Leistadt &middot; Pfalz
+            </span>
+          </div>
+        </div>
 
         {/* Rechts: klein · fein · wein + CTAs */}
         <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start" }}>
