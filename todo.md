@@ -28,3 +28,5 @@
 - [x] Formular-Labels mit for/id verknüpfen (Barrierefreiheit)
 - [x] Telefonnummer als tel:-Link im Footer/Kontakt ergänzen
 - [x] Hero-Bild: Bar-Foto (bar-quer / bar-hochkant) statt Scheune-Nachtbild eingesetzt
+- [x] Farbschema komplett auf Anthrazit + Rosé umgestellt (C-Objekt, CSS-Variablen, alle Sections)
+- [x] petit joujou Text-Overlay auf Hero-Bild (mit WEINBAR · LEISTADT · PFALZ)

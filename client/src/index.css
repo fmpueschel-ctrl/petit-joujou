@@ -2,45 +2,39 @@
 
 /* ============================================================
    petit joujou — Global CSS
-   Palette: apricot cream · forest green · terracotta · dark brown
+   Palette: Anthrazit + Rosé
    ============================================================ */
 
 @theme {
-  /* Brand Colors */
-  --color-apricot-50: oklch(97% 0.02 60);
-  --color-apricot-100: oklch(94% 0.04 60);
-  --color-apricot-200: oklch(89% 0.07 55);
-  --color-apricot-300: oklch(83% 0.10 52);
-  --color-apricot-400: oklch(76% 0.13 50);
-  --color-apricot-500: oklch(70% 0.15 48);
+  /* Brand Colors — Anthrazit + Rosé */
+  --color-anthrazit-900: oklch(18% 0.01 280);   /* #1e1e24 */
+  --color-anthrazit-800: oklch(22% 0.01 280);   /* #2a2a32 */
+  --color-anthrazit-700: oklch(26% 0.01 280);   /* #3a3a44 */
+  --color-anthrazit-600: oklch(30% 0.01 280);   /* #4a4a54 */
 
-  --color-green-forest: oklch(28% 0.06 165);   /* #244237 */
-  --color-green-mid: oklch(38% 0.07 163);       /* #3c6254 */
-  --color-green-light: oklch(44% 0.06 163);     /* #4f6a60 */
+  --color-rose-300: oklch(75% 0.10 350);        /* #e8a0b4 helles Rosé */
+  --color-rose-400: oklch(63% 0.14 350);        /* #d4688a Rosé Hauptakzent */
+  --color-rose-500: oklch(55% 0.15 350);        /* dunkleres Rosé */
 
-  --color-terra-500: oklch(56% 0.12 42);        /* #c8783a terracotta */
-  --color-terra-600: oklch(48% 0.11 40);        /* darker terracotta */
-
-  --color-cream: oklch(88% 0.04 75);            /* #c5b299 */
-  --color-ivory: oklch(96% 0.02 80);            /* near white warm */
-  --color-brown-dark: oklch(20% 0.04 50);       /* #2a1a0e */
-  --color-brown-mid: oklch(35% 0.05 50);
+  --color-warmwhite: oklch(93% 0.02 70);        /* #ece5d8 */
+  --color-warmgrey: oklch(75% 0.02 70);         /* #b8b0a4 */
+  --color-mutedgrey: oklch(58% 0.02 70);        /* #8a8278 */
 
   /* Semantic tokens */
-  --color-background: oklch(97% 0.02 70);
-  --color-foreground: oklch(20% 0.04 50);
-  --color-card: oklch(99% 0.01 70);
-  --color-card-foreground: oklch(20% 0.04 50);
-  --color-primary: oklch(28% 0.06 165);
-  --color-primary-foreground: oklch(97% 0.02 70);
-  --color-secondary: oklch(56% 0.12 42);
-  --color-secondary-foreground: oklch(99% 0.01 70);
-  --color-muted: oklch(93% 0.02 70);
-  --color-muted-foreground: oklch(50% 0.04 60);
-  --color-accent: oklch(83% 0.10 52);
-  --color-accent-foreground: oklch(20% 0.04 50);
-  --color-border: oklch(88% 0.03 65);
-  --color-ring: oklch(28% 0.06 165);
+  --color-background: oklch(18% 0.01 280);
+  --color-foreground: oklch(93% 0.02 70);
+  --color-card: oklch(22% 0.01 280);
+  --color-card-foreground: oklch(93% 0.02 70);
+  --color-primary: oklch(63% 0.14 350);
+  --color-primary-foreground: oklch(97% 0.01 70);
+  --color-secondary: oklch(26% 0.01 280);
+  --color-secondary-foreground: oklch(93% 0.02 70);
+  --color-muted: oklch(22% 0.01 280);
+  --color-muted-foreground: oklch(58% 0.02 70);
+  --color-accent: oklch(63% 0.14 350);
+  --color-accent-foreground: oklch(97% 0.01 70);
+  --color-border: oklch(26% 0.01 280);
+  --color-ring: oklch(63% 0.14 350);
 
   /* Typography */
   --font-display: "Cormorant Garamond", Georgia, serif;
@@ -53,25 +47,25 @@
 
 @layer base {
   :root {
-    --background: 97% 0.02 70;
-    --foreground: 20% 0.04 50;
-    --card: 99% 0.01 70;
-    --card-foreground: 20% 0.04 50;
-    --popover: 99% 0.01 70;
-    --popover-foreground: 20% 0.04 50;
-    --primary: 28% 0.06 165;
-    --primary-foreground: 97% 0.02 70;
-    --secondary: 56% 0.12 42;
-    --secondary-foreground: 99% 0.01 70;
-    --muted: 93% 0.02 70;
-    --muted-foreground: 50% 0.04 60;
-    --accent: 83% 0.10 52;
-    --accent-foreground: 20% 0.04 50;
+    --background: 18% 0.01 280;
+    --foreground: 93% 0.02 70;
+    --card: 22% 0.01 280;
+    --card-foreground: 93% 0.02 70;
+    --popover: 22% 0.01 280;
+    --popover-foreground: 93% 0.02 70;
+    --primary: 63% 0.14 350;
+    --primary-foreground: 97% 0.01 70;
+    --secondary: 26% 0.01 280;
+    --secondary-foreground: 93% 0.02 70;
+    --muted: 22% 0.01 280;
+    --muted-foreground: 58% 0.02 70;
+    --accent: 63% 0.14 350;
+    --accent-foreground: 97% 0.01 70;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 88% 0.03 65;
-    --input: 88% 0.03 65;
-    --ring: 28% 0.06 165;
+    --border: 26% 0.01 280;
+    --input: 26% 0.01 280;
+    --ring: 63% 0.14 350;
     --radius: 0.25rem;
   }
 
@@ -123,14 +117,14 @@
 /* Divider */
 .divider-apricot {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #c8783a, transparent);
+  background: linear-gradient(90deg, transparent, #d4688a, transparent);
 }
 
 /* Price tag style */
 .price-tag {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  color: #244237;
+  color: #ece5d8;
   font-weight: 500;
 }
 
