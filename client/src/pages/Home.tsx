@@ -287,7 +287,7 @@ function ScheuneSection() {
 // ── Garten ────────────────────────────────────────────────────
 function GartenSection() {
   return (
-    <section id="garten" style={{ backgroundColor: C.bg, padding: "0" }}>
+    <section id="garten" style={{ backgroundColor: "#ede4d6", padding: "0" }}>
       <div className="split-section">
         {/* Links: Grosses Terrassen-Bild mit Gästen */}
         <img loading="lazy"
@@ -298,7 +298,7 @@ function GartenSection() {
         />
 
         {/* Rechts: Text — warmer Cream-Ton statt Dunkelgrün */}
-        <div className="split-content" style={{ backgroundColor: "#f5f0e8" }}>
+        <div className="split-content" style={{ backgroundColor: "#ede4d6" }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
             Draußen
           </p>
