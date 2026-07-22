@@ -287,7 +287,7 @@ function ScheuneSection() {
 // ── Garten ────────────────────────────────────────────────────
 function GartenSection() {
   return (
-    <section id="garten" style={{ backgroundColor: C.bgSage, padding: "0" }}>
+    <section id="garten" style={{ backgroundColor: C.bg, padding: "0" }}>
       <div className="split-section">
         {/* Links: Grosses Terrassen-Bild mit Gästen */}
         <img loading="lazy"
@@ -346,7 +346,7 @@ function EventsSection() {
         <div className="events-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2rem" }}>
 
           {/* BEATS petit joujou */}
-          <div style={{ backgroundColor: C.sage, overflow: "hidden" }}>
+          <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <img loading="lazy"
               src="/manus-storage/screenshot_beats_8be8965a.webp"
               alt="BEATS petit joujou — DJ Marcel Ullrich"
@@ -363,7 +363,7 @@ function EventsSection() {
           </div>
 
           {/* TAVOLA BEATS */}
-          <div style={{ backgroundColor: C.sage, overflow: "hidden" }}>
+          <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <img loading="lazy"
               src="/manus-storage/tavola_beats_70e575c5.webp"
               alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
@@ -382,7 +382,7 @@ function EventsSection() {
           </div>
 
           {/* Joujou Groovt */}
-          <div style={{ backgroundColor: C.sage, overflow: "hidden" }}>
+          <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <div style={{ height: "280px", backgroundColor: C.bgSage, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "0.75rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
               <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#fff", lineHeight: 1.1, marginBottom: "0.5rem" }}>Joujou Groovt</p>
@@ -399,7 +399,7 @@ function EventsSection() {
           </div>
 
           {/* Herbstmarkt */}
-          <div style={{ backgroundColor: C.sage, overflow: "hidden" }}>
+          <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <div style={{ height: "280px", backgroundColor: C.bgSage, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: "0.75rem" }}>03.10. + 04.10.2026 · ab 12:00 Uhr</p>
               <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#fff", lineHeight: 1.1, marginBottom: "0.5rem" }}>Herbstmarkt</p>
@@ -837,7 +837,7 @@ function EssenSection() {
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
-    { src: "/manus-storage/scheune_innen_tisch_48ac2208.webp", alt: "Scheune — gedeckter Tisch", caption: "Scheune" },
+    { src: "/manus-storage/wein_kuehlschrank_web_9095ec1a.webp", alt: "Weinkühlschrank mit Kreidetafel", caption: "Weinbar" },
     { src: "/manus-storage/pj-keller-innen3-sharp_214c0cfa.webp", alt: "Weinkeller", caption: "Weinkeller" },
     { src: "/manus-storage/weinglaeserfass_fix_9b22d6a7.webp", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
     { src: "/manus-storage/garten_lounge2_920a5dfa.webp", alt: "Garten Lounge", caption: "Garten" },

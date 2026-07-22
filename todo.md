@@ -38,3 +38,6 @@
 - [ ] Admin-Panel: UI mit Login, Events-Verwaltung, Karten-Upload
 - [ ] Startseite: Events dynamisch aus Datenbank laden (statt hart-codiert)
 - [ ] Admin-Panel: Mitarbeiter-Accounts mit eingeschränkten Rechten
+- [x] Garten-Section: Anderen Hintergrund als Dunkelgrün (hebt sich nicht ab von Section darüber)
+- [x] Events-Section: Rahmen/Border um Event-Karten (wirken zu düster auf dunklem Grün)
+- [x] Scheune-Tischbild: Doppelt (Scheune-Section + 6er-Galerie) — eines austauschen
