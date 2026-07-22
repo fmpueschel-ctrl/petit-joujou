@@ -287,7 +287,7 @@ function ScheuneSection() {
 // ── Garten ────────────────────────────────────────────────────
 function GartenSection() {
   return (
-    <section id="garten" style={{ backgroundColor: "#ede4d6", padding: "0" }}>
+    <section id="garten" style={{ backgroundColor: C.bgSage, padding: "0" }}>
       <div className="split-section">
         {/* Links: Grosses Terrassen-Bild mit Gästen */}
         <img loading="lazy"
@@ -297,23 +297,23 @@ function GartenSection() {
           style={{ objectPosition: "center 70%" }}
         />
 
-        {/* Rechts: Text — warmer Cream-Ton statt Dunkelgrün */}
-        <div className="split-content" style={{ backgroundColor: "#ede4d6" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
+        {/* Rechts: Text — Dunkelgrün wie Weinkeller */}
+        <div className="split-content" style={{ backgroundColor: C.bgSage }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
             Draußen
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.15 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff", marginBottom: "1.5rem", lineHeight: 1.15 }}>
             Wein unter freiem Himmel
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
-            „Die beiden Gärten haben etwas Magisches. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit."
+          <p className="font-body" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
+            „Die beiden Gärten haben etwas Magisches. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit.“
           </p>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: C.ink, marginBottom: "2rem" }}>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: "#fff", marginBottom: "2rem" }}>
             — Frank
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
-              <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: "rgba(42,74,62,0.08)", color: C.ink, fontSize: "0.72rem", letterSpacing: "0.06em", border: `1px solid ${C.border}` }}>
+              <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.85)", fontSize: "0.72rem", letterSpacing: "0.06em", border: "1px solid rgba(255,255,255,0.2)" }}>
                 {tag}
               </span>
             ))}
@@ -327,16 +327,16 @@ function GartenSection() {
 // ── Events ────────────────────────────────────────────────────
 function EventsSection() {
   return (
-    <section id="events" style={{ backgroundColor: C.bgSage, padding: "6rem 0" }}>
+    <section id="events" style={{ backgroundColor: C.bg, padding: "6rem 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "0.75rem" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sage, marginBottom: "0.75rem" }}>
             Was passiert
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink }}>
             Events & Abende
           </h2>
-          <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
+          <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
             Ausgesuchte Abende mit ausgesuchten Winzern.
             Tickets sind begrenzt.
           </p>
@@ -414,9 +414,9 @@ function EventsSection() {
         </div>
 
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.7)" }}>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid }}>
             Aktuelle Events & Tickets auf{" "}
-            <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.peach, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+            <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.sage, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               joujou.bistro
             </a>
@@ -827,7 +827,7 @@ function EssenSection() {
                 Das wahrscheinlich beste Steak der Pfalz.
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                Dry-Aged Entrecôte vom Weiderind — auf den Punkt gegrillt, mit Beilagen der Saison. Für alle, die wissen, was gut ist.
+                Dry-Aged Entrecôte · puristisch · 100-Gramm-weise · Signature Cut
               </p>
               <a href="/manus-storage/einleger_entrecote_c0034170.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.sage, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
                 Mehr erfahren

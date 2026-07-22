@@ -48,3 +48,6 @@
 - [x] Metro Gastropreis 2024 der Nachhaltigkeit ergänzen (Nachhaltigste Gastronomie Deutschlands)
 - [x] Reihenfolge ändern: Essen vor Garten (Wein → Essen → Garten → Events → Scheune → Rest)
 - [x] Entrecôte: Eigene Zeile unterhalb 3er-Grid (Option B — breites Bild + Text, abgesetzt)
+- [x] Entrecôte-Text: "Das wahrscheinlich beste Steak der Pfalz." + "Dry-Aged Entrecôte · puristisch · 100-Gramm-weise · Signature Cut"
+- [x] Garten-Section: Zurück auf Dunkelgrün (bgSage) mit heller Schrift (wie Weinkeller)
+- [x] Events-Section: Auf Pastellgrün (bg) mit dunkler Schrift
