@@ -41,3 +41,10 @@
 - [x] Garten-Section: Anderen Hintergrund als Dunkelgrün (hebt sich nicht ab von Section darüber)
 - [x] Events-Section: Rahmen/Border um Event-Karten (wirken zu düster auf dunklem Grün)
 - [x] Scheune-Tischbild: Doppelt (Scheune-Section + 6er-Galerie) — eines austauschen
+- [ ] Garten-Section: Sichtbaren Hintergrundunterschied zum Weinkeller darüber schaffen (aktuell beide dunkelgrün)
+- [ ] Galerie/Einblicke: Weinbar-Bild (querformatig) entfernen, nur 5 Bilder belassen
+- [ ] Werte & Zertifikate: Unter jedem Logo beschriften (Slow Food, Natürlich, Happy Cow etc.)
+- [ ] Recherche: Prüfen ob petit joujou bei Feinschmecker, Espresso Gastro und anderen gelistet ist
+- [ ] Metro Gastropreis 2024 der Nachhaltigkeit ergänzen (nachhaltigstes Bistro Deutschlands)
+- [x] Reihenfolge ändern: Essen vor Garten (Wein → Essen → Garten → Events → Scheune → Rest)
+- [x] Entrecôte: Eigene Zeile unterhalb 3er-Grid (Option B — breites Bild + Text, abgesetzt)

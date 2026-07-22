@@ -297,23 +297,23 @@ function GartenSection() {
           style={{ objectPosition: "center 70%" }}
         />
 
-        {/* Rechts: Text */}
-        <div className="split-content" style={{ backgroundColor: C.bgSage }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
+        {/* Rechts: Text — warmer Cream-Ton statt Dunkelgrün */}
+        <div className="split-content" style={{ backgroundColor: "#f5f0e8" }}>
+          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
             Draußen
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff", marginBottom: "1.5rem", lineHeight: 1.15 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.15 }}>
             Wein unter freiem Himmel
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.8)", lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
-            „Die beiden Gärten haben etwas Magisches. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit.“
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
+            „Die beiden Gärten haben etwas Magisches. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit."
           </p>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: "#fff", marginBottom: "2rem" }}>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: C.ink, marginBottom: "2rem" }}>
             — Frank
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             {["Hunde willkommen", "Weinfreaks auch"].map((tag) => (
-              <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.85)", fontSize: "0.72rem", letterSpacing: "0.06em", border: "1px solid rgba(255,255,255,0.2)" }}>
+              <span key={tag} className="font-body" style={{ padding: "0.4rem 0.9rem", backgroundColor: "rgba(42,74,62,0.08)", color: C.ink, fontSize: "0.72rem", letterSpacing: "0.06em", border: `1px solid ${C.border}` }}>
                 {tag}
               </span>
             ))}
@@ -764,9 +764,9 @@ function EssenSection() {
           ))}
         </div>
 
-        {/* Drei Hauptgerichte — gleichberechtigtes 3er-Grid */}
+        {/* 2er-Grid: Sharing + Pinsa */}
         <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
-          <div className="hauptgerichte-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
+          <div className="pinsa-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "3rem", maxWidth: "750px", margin: "0 auto" }}>
             {/* Sharing-Kreationen */}
             <div>
               <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
@@ -806,24 +806,31 @@ function EssenSection() {
                 Knusprig, leicht, mit Belag der Saison. Die bessere Pizza.
               </p>
             </div>
+          </div>
+        </div>
 
-            {/* Entrecôte */}
+        {/* Entrecôte — eigene prominente Zeile */}
+        <div style={{ marginTop: "5rem", paddingTop: "4rem", borderTop: `1px solid ${C.border}` }}>
+          <div className="entrecote-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center" }}>
+            <div style={{ overflow: "hidden" }}>
+              <img loading="lazy"
+                src="/manus-storage/entrecote_zoom_d4e27da5.webp"
+                alt="Entrecôte — Premium Dry Age"
+                style={{ width: "100%", height: "400px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+              />
+            </div>
             <div>
-              <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
-                <img loading="lazy"
-                  src="/manus-storage/entrecote_zoom_d4e27da5.webp"
-                  alt="Entrecôte — Premium Dry Age"
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 40%", display: "block", transform: "scale(1.3)", transformOrigin: "center 40%" }}
-                />
-              </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
                 Premium Entrecôte
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.25, fontStyle: "italic" }}>
+              <h3 className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.2 }}>
                 Das wahrscheinlich beste Steak der Pfalz.
               </h3>
-              <a href="/manus-storage/einleger_entrecote_c0034170.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.8rem", color: C.sage, textDecoration: "underline", textUnderlineOffset: "3px" }}>
-                Mehr
+              <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                Dry-Aged Entrecôte vom Weiderind — auf den Punkt gegrillt, mit Beilagen der Saison. Für alle, die wissen, was gut ist.
+              </p>
+              <a href="/manus-storage/einleger_entrecote_c0034170.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.sage, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
+                Mehr erfahren
               </a>
             </div>
           </div>
@@ -837,7 +844,6 @@ function EssenSection() {
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
   const photos = [
-    { src: "/manus-storage/wein_kuehlschrank_web_9095ec1a.webp", alt: "Weinkühlschrank mit Kreidetafel", caption: "Weinbar" },
     { src: "/manus-storage/pj-keller-innen3-sharp_214c0cfa.webp", alt: "Weinkeller", caption: "Weinkeller" },
     { src: "/manus-storage/weinglaeserfass_fix_9b22d6a7.webp", alt: "Weingläser auf dem Fass", caption: "Atmosphäre" },
     { src: "/manus-storage/garten_lounge2_920a5dfa.webp", alt: "Garten Lounge", caption: "Garten" },
@@ -854,7 +860,7 @@ function GalerieSection() {
           </h2>
           <div style={{ width: "3rem", height: "1px", backgroundColor: C.rose, margin: "1rem auto 0" }} />
         </div>
-        <div className="galerie-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem" }}>
+        <div className="galerie-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem", maxWidth: "900px", margin: "0 auto" }}>
           {photos.map((p, i) => (
             <div key={i} style={{ position: "relative", overflow: "hidden" }}>
               <img loading="lazy"
@@ -944,6 +950,12 @@ function Footer() {
 // ── Page ──────────────────────────────────────────────────────
 // ── Siegel-Leiste ────────────────────────────────────────────
 function SiegelSection() {
+  const siegel = [
+    { src: "/manus-storage/slowfood-genussfuehrer_bcdf713f.jpg", alt: "Slow Food Deutschland — Genussführer", label: "Slow Food Genussführer" },
+    { src: "/manus-storage/nachhaltiges-reiseziel_b134e42a.png", alt: "Nachhaltiges Reiseziel — Partner", label: "Natürlich — Nachhaltiges Reiseziel" },
+    { src: "/manus-storage/happycow-logo_b801cec6.png", alt: "HappyCow — gelistet", label: "Happy Cow" },
+  ];
+
   return (
     <section style={{ backgroundColor: C.bg, padding: "5rem 0", borderTop: `1px solid ${C.border}` }}>
       <div className="container">
@@ -951,11 +963,25 @@ function SiegelSection() {
           Unsere Werte & Zertifikate
         </p>
         <div className="siegel-grid" style={{ gap: "3rem" }}>
-          <img loading="lazy" src="/manus-storage/slowfood-genussfuehrer_bcdf713f.jpg" alt="Slow Food Deutschland — Genussführer" title="Slow Food Genussführer" style={{ maxHeight: "5rem" }} />
-          <img loading="lazy" src="/manus-storage/nachhaltiges-reiseziel_b134e42a.png" alt="Nachhaltiges Reiseziel — Partner" title="Nachhaltiges Reiseziel Deutsche Weinstraße" style={{ maxHeight: "5rem" }} />
-          <img loading="lazy" src="/manus-storage/happycow-logo_b801cec6.png" alt="HappyCow — gelistet" title="HappyCow" style={{ maxHeight: "5rem" }} />
+          {siegel.map((s, i) => (
+            <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem" }}>
+              <img loading="lazy" src={s.src} alt={s.alt} title={s.label} style={{ maxHeight: "5rem" }} />
+              <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid }}>{s.label}</span>
+            </div>
+          ))}
         </div>
-        <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, textAlign: "center", marginTop: "2rem", lineHeight: 1.7 }}>
+
+        {/* Metro Gastropreis */}
+        <div style={{ textAlign: "center", marginTop: "3rem", paddingTop: "2.5rem", borderTop: `1px solid ${C.border}` }}>
+          <p className="font-display" style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)", color: C.ink, marginBottom: "0.5rem" }}>
+            Nachhaltigste Gastronomie Deutschlands
+          </p>
+          <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, lineHeight: 1.6 }}>
+            METRO GastroPreis 2024 — Kategorie Nachhaltigkeit
+          </p>
+        </div>
+
+        <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, textAlign: "center", marginTop: "2.5rem", lineHeight: 1.7 }}>
           Biozertifiziert (DE-ÖKO-037) · AHVV Tierwohl · 100% Weiderind · Regional & Saisonal
         </p>
       </div>
@@ -979,8 +1005,8 @@ export default function Home() {
           </div>
         </div>
         <WeinkellerSection />
-        <GartenSection />
         <EssenSection />
+        <GartenSection />
         <EventsSection />
         <ScheuneSection />
         <ReservierungSection />
