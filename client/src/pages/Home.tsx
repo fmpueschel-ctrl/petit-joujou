@@ -997,11 +997,11 @@ export default function Home() {
         {/* klein · fein · wein — Transition-Banner (Metallic Bronze) */}
         <div style={{ backgroundColor: C.bg, textAlign: "center", padding: "2.5rem 1.5rem" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", flexWrap: "wrap" }}>
-            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", lineHeight: 1 }}>klein</span>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", background: "linear-gradient(135deg, #c8a96a, #8b6914)", flexShrink: 0 }} />
-            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", lineHeight: 1 }}>fein</span>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", background: "linear-gradient(135deg, #c8a96a, #8b6914)", flexShrink: 0 }} />
-            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", lineHeight: 1 }}>wein</span>
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>klein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.sage, flexShrink: 0 }} />
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>fein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.sage, flexShrink: 0 }} />
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>wein</span>
           </div>
         </div>
         <WeinkellerSection />
