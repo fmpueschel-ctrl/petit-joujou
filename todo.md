@@ -33,3 +33,8 @@
 - [x] Farbschema auf Pastellgrün-Basis umgestellt (Dunkelgrün + Rosé + Orange Akzente)
 - [ ] Galerie-Bilder Verzerrung auf Mobile fixen (zu schmal/hochkant)
 - [ ] Hintergrund-Rhythmus: Essen + Galerie auf hellen Hintergrund wechseln (statt alles Dunkelgrün)
+- [ ] Admin-Panel: Datenbank-Schema für Events und Karten (Speisekarte/Weinkarte)
+- [ ] Admin-Panel: tRPC-Routen für Events CRUD + Karten-Upload
+- [ ] Admin-Panel: UI mit Login, Events-Verwaltung, Karten-Upload
+- [ ] Startseite: Events dynamisch aus Datenbank laden (statt hart-codiert)
+- [ ] Admin-Panel: Mitarbeiter-Accounts mit eingeschränkten Rechten

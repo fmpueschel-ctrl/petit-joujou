@@ -137,22 +137,21 @@ function Hero() {
           </div>
         </div>
 
-        {/* Rechts: klein · fein · wein + CTAs */}
-        <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start" }}>
+        {/* Rechts: Content + CTAs */}
+        <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start", position: "relative", overflow: "hidden" }}>
           {/* SEO H1 — visually hidden but accessible */}
           <h1 className="sr-only">petit joujou — Weinbar in Leistadt, Pfalz</h1>
-          {/* klein · fein · wein — PROMINENT */}
-          <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
-            <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: C.ink, lineHeight: 1 }}>klein</span>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: C.peachDark, lineHeight: 1 }}>fein</span>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.ink, flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)", color: "#d4688a", lineHeight: 1 }}>wein</span>
-          </div>
+          {/* Weinbar-Illustration — oben rechts reinragend */}
+          <img
+            src="/manus-storage/weinbar_correct_5d2f0ca9.png"
+            alt=""
+            aria-hidden="true"
+            style={{ position: "absolute", top: "-10px", right: "-20px", width: "clamp(120px, 20vw, 190px)", opacity: 0.85, pointerEvents: "none" }}
+          />
 
           {/* Kurzbeschreibung */}
           <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2.5rem", maxWidth: "380px" }}>
-            Die Weinbar im Joujou. Wir möchten euch verzaubern. Schnappt euch eine Flasche Wein, genießt die Sharing-Kreationen von Chef Franz und vergesst einfach die Zeit.
+            <span style={{ fontWeight: 700, color: C.ink }}>Die Weinbar im Joujou.</span> Wir möchten euch verzaubern. Schnappt euch eine Flasche Wein, genießt die Sharing-Kreationen von Chef Franz und vergesst einfach die Zeit.
           </p>
 
           {/* CTAs */}
@@ -749,7 +748,7 @@ function EssenSection() {
                 <img loading="lazy"
                   src={g.img}
                   alt={g.name}
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center", display: "block" }}
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 45%", display: "block", transform: "scale(1.15)", transformOrigin: "center 45%" }}
                 />
               </div>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.4rem" }}>
@@ -774,7 +773,7 @@ function EssenSection() {
                 <img loading="lazy"
                   src="/manus-storage/sharing-plate_c60cc98c.webp"
                   alt="Sharing-Teller mit Weinglas — saisonale Kreation auf Keramik"
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 45%", display: "block", transform: "scale(1.2)", transformOrigin: "center 45%" }}
                 />
               </div>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
@@ -794,7 +793,7 @@ function EssenSection() {
                 <img loading="lazy"
                   src="/manus-storage/pinsa-pastrami-notable_48b3aa52.webp"
                   alt="Manna Palatina Pinsa — knusprig vom Holzbrett"
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center center", display: "block" }}
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 40%", display: "block", transform: "scale(1.2)", transformOrigin: "center 40%" }}
                 />
               </div>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
@@ -813,19 +812,19 @@ function EssenSection() {
               <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
                 <img loading="lazy"
                   src="/manus-storage/entrecote_zoom_d4e27da5.webp"
-                  alt="Entrecôte — Land.luft Premium Dry Age"
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 35%", display: "block", transform: "scale(1.7)", transformOrigin: "center 40%" }}
+                  alt="Entrecôte — Premium Dry Age"
+                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 40%", display: "block", transform: "scale(1.3)", transformOrigin: "center 40%" }}
                 />
               </div>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
-                Pimp it up
+                Premium Entrecôte
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
-                Entrecôte
+              <h3 className="font-display" style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.25, fontStyle: "italic" }}>
+                Das wahrscheinlich beste Steak der Pfalz.
               </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
-                Land.luft Premium Dry Age — trocken gereift, auf den Punkt. In Portionen à 100g.
-              </p>
+              <a href="/manus-storage/einleger_entrecote_c0034170.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.8rem", color: C.sage, textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                Mehr
+              </a>
             </div>
           </div>
         </div>
@@ -969,6 +968,16 @@ export default function Home() {
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
       <main>
         <Hero />
+        {/* klein · fein · wein — Transition-Banner */}
+        <div style={{ backgroundColor: C.bg, textAlign: "center", padding: "2.5rem 1.5rem" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", flexWrap: "wrap" }}>
+            <span className="font-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", color: C.ink, lineHeight: 1 }}>klein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#d4688a", flexShrink: 0 }} />
+            <span className="font-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", color: C.ink, lineHeight: 1 }}>fein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#d4688a", flexShrink: 0 }} />
+            <span className="font-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", color: C.ink, lineHeight: 1 }}>wein</span>
+          </div>
+        </div>
         <WeinkellerSection />
         <GartenSection />
         <EssenSection />
