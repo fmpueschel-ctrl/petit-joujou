@@ -226,7 +226,7 @@ function WeinkellerSection() {
         {/* Rechts: Text */}
         <div className="split-content" style={{ backgroundColor: C.bgSage }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
-            Der Keller
+            Der Weinkeller
           </p>
           <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: "#fff", marginBottom: "1.25rem", lineHeight: 1.15 }}>
             Leidenschaftlich kuratiert.
@@ -994,14 +994,14 @@ export default function Home() {
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
       <main>
         <Hero />
-        {/* klein · fein · wein — Transition-Banner */}
+        {/* klein · fein · wein — Transition-Banner (Metallic Bronze) */}
         <div style={{ backgroundColor: C.bg, textAlign: "center", padding: "2.5rem 1.5rem" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", flexWrap: "wrap" }}>
-            <span className="font-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", color: C.ink, lineHeight: 1 }}>klein</span>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#d4688a", flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", color: C.ink, lineHeight: 1 }}>fein</span>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#d4688a", flexShrink: 0 }} />
-            <span className="font-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", color: C.ink, lineHeight: 1 }}>wein</span>
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", lineHeight: 1 }}>klein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", background: "linear-gradient(135deg, #c8a96a, #8b6914)", flexShrink: 0 }} />
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", lineHeight: 1 }}>fein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", background: "linear-gradient(135deg, #c8a96a, #8b6914)", flexShrink: 0 }} />
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", lineHeight: 1 }}>wein</span>
           </div>
         </div>
         <WeinkellerSection />

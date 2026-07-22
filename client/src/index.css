@@ -97,6 +97,25 @@
 .font-body    { font-family: var(--font-body); }
 .font-script  { font-family: var(--font-script); }
 
+/* Metallic Bronze — 3D-like gradient text */
+.metallic-bronze {
+  background: linear-gradient(
+    135deg,
+    #3d2b1f 0%,
+    #6b4c2a 20%,
+    #c8a96a 40%,
+    #e8d5a3 50%,
+    #c8a96a 60%,
+    #6b4c2a 80%,
+    #3d2b1f 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 1px 1px rgba(200, 169, 106, 0.3));
+}
+
 /* Container override */
 .container {
   width: 100%;
