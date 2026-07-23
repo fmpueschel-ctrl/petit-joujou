@@ -92,3 +92,6 @@
 - [x] C-6: Product JSON-LD Schema im Shop (schema.org/Product + Offer)
 - [x] C-7: Telefonnummer vereinheitlicht (+49 6322 989 97 97 in Impressum)
 - [x] /versand Seite anlegen (Versandkosten, Zahlungsarten, Abholung)
+
+- [x] Essen-Section: Neue Bilder einbauen (einheitliche Bildsprache, keine Titel außer Entrecôte)
+- [x] Garten/Atmosphäre-Section: Neue Bilder einbauen (Paar, Oliven, Wein anstoßen, Service)

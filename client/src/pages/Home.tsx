@@ -329,16 +329,17 @@ function ScheuneSection() {
 function GartenSection() {
   return (
     <section id="garten" style={{ backgroundColor: C.bgSage, padding: "0" }}>
+      {/* Top: Split layout — image left, text right */}
       <div className="split-section">
-        {/* Links: Grosses Terrassen-Bild mit Gästen */}
+        {/* Links: Gäste am Tisch im Garten */}
         <img loading="lazy"
-          src="/manus-storage/garden-terrace_ece44896.webp"
-          alt="Garten — Terrasse voller Gäste unter Sonnenschirmen mit Zypressen"
+          src="/manus-storage/gaeste-garten_6e5dcfea.webp"
+          alt="Gäste genießen das Essen im sonnigen Garten"
           className="split-image"
-          style={{ objectPosition: "center 70%" }}
+          style={{ objectPosition: "center 40%" }}
         />
 
-        {/* Rechts: Text — Dunkelgrün wie Weinkeller */}
+        {/* Rechts: Text */}
         <div className="split-content" style={{ backgroundColor: C.bgSage }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.peach, marginBottom: "1rem" }}>
             Draußen
@@ -347,7 +348,7 @@ function GartenSection() {
             Wein unter freiem Himmel
           </h2>
           <p className="font-body" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.85, marginBottom: "1.5rem", fontStyle: "italic" }}>
-            „Die beiden Gärten haben etwas Magisches. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit.“
+            „Die beiden Gärten haben etwas Magisches. Manch ein Gast genießt die Ruhe und liest ein Buch. Andere sitzen versteckt im Eck und schauen sich verliebt in die Augen. Gruppen an Freunden, die lachen, und am langen Hochtisch lernen sich Leute kennen und werden Freunde. Für einen Tag oder ein ganzes Leben. Wein fließt, das Essen fasziniert — und ihr vergesst die Zeit."
           </p>
           <p className="font-body" style={{ fontSize: "0.85rem", color: "#fff", marginBottom: "2rem" }}>
             — Frank
@@ -361,9 +362,29 @@ function GartenSection() {
           </div>
         </div>
       </div>
+
+      {/* Bottom: Atmosphere image strip */}
+      <div className="grid grid-cols-3 gap-0" style={{ height: "280px" }}>
+        <img loading="lazy"
+          src="/manus-storage/oliven-board_169d2816.webp"
+          alt="Oliven-Board und Snacks zum Teilen"
+          className="w-full h-full object-cover"
+        />
+        <img loading="lazy"
+          src="/manus-storage/wein-anstossen_719ab057.webp"
+          alt="Zwei Gläser Wein anstoßen im Grünen"
+          className="w-full h-full object-cover"
+        />
+        <img loading="lazy"
+          src="/manus-storage/service-einschenken_d9348507.webp"
+          alt="Service schenkt Wein ein"
+          className="w-full h-full object-cover"
+        />
+      </div>
     </section>
   );
 }
+
 
 // ── Events ────────────────────────────────────────────────────
 function EventsSection() {
@@ -722,150 +743,76 @@ function GesellschaftenSection() {
 
 // ── Essen ───────────────────────────────────────────────────
 function EssenSection() {
-  const gerichte = [
-    {
-      label: "Weinbegleiter",
-      name: "Dirty Date",
-      desc: "Dattel · Speck · Salzmandel",
-      img: "/manus-storage/dirty_date_6050d05f.webp",
-    },
-    {
-      label: "Weinbegleiter",
-      name: "Happy Fried Mushroom",
-      desc: "Gegrillter Romanasalat · Limette",
-      img: "/manus-storage/happy_fried_mushroom_dac2adf9.webp",
-    },
-    {
-      label: "Weinbegleiter",
-      name: "Wurst Case",
-      desc: "Dürkheimer Wildwurst-Cubes · Tomatensauce",
-      img: "/manus-storage/wurst_case_33c8e650.webp",
-    },
-  ];
-
   return (
-    <section id="essen" style={{ backgroundColor: C.bg, padding: "7rem 0" }}>
-      <div className="container">
+    <section id="essen" className="relative" style={{ backgroundColor: C.bgCream, paddingTop: "6rem", paddingBottom: "6rem" }}>
+      <div className="container max-w-6xl">
 
-        {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
-            Alles bio. Alles echt.
+        {/* Section Header */}
+        <div className="text-center" style={{ marginBottom: "4rem" }}>
+          <p className="font-body uppercase tracking-widest" style={{ fontSize: "0.75rem", color: C.sage, marginBottom: "0.75rem", letterSpacing: "0.2em" }}>
+            Küche
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1rem" }}>
-            Zum Teilen, Sattwerden & <span style={{ color: C.rose, fontStyle: "italic" }}>Staunen</span>
+          <h2 className="font-display" style={{ fontSize: "clamp(2.2rem,5vw,3.2rem)", color: C.ink, marginBottom: "1rem" }}>
+            Sharing Purely
           </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, maxWidth: "560px", margin: "0 auto 2rem", lineHeight: 1.8 }}>
-            Franz erschafft ständig raffinierte saisonale Kreationen. Der Aha-Moment ist bei uns normal. Weil wir Genuss & das Außergewöhnliche beim Essen genauso lieben wie beim Wein. Bonne dégustation.
+          <p className="font-body mx-auto" style={{ maxWidth: "38rem", fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.8 }}>
+            Saisonale Gerichte zum Teilen — puristisch, ehrlich, auf den Punkt.
+            Keine Titel nötig, das Erlebnis spricht für sich.
           </p>
-          <a
-            href="/manus-storage/PetitJoujou_Speisekarte_Final5_eaf6392f.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body"
-            style={{
-              display: "inline-block",
-              padding: "0.65rem 1.8rem",
-              border: `1px solid ${C.sageDark}`,
-              color: C.sageDark,
-              fontSize: "0.78rem",
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              textDecoration: "none",
-            }}
-          >
-            Speisekarte ansehen
-          </a>
         </div>
 
-        {/* Sharing-Kreationen — 3 Gerichte nebeneinander */}
-        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.inkLight, textAlign: "center", marginBottom: "2.5rem" }}>
-          Eine Auswahl
-        </p>
-        <div className="essen-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem", marginBottom: "6rem" }}>
-          {gerichte.map((g) => (
-            <div key={g.name}>
-              <div style={{ overflow: "hidden", marginBottom: "1.25rem" }}>
-                <img loading="lazy"
-                  src={g.img}
-                  alt={g.name}
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 45%", display: "block", transform: "scale(1.15)", transformOrigin: "center 45%" }}
-                />
-              </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.4rem" }}>
-                {g.label}
-              </p>
-              <h3 className="font-display" style={{ fontSize: "1.4rem", color: C.ink, marginBottom: "0.4rem" }}>
-                {g.name}
-              </h3>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.7, marginBottom: "0.6rem" }}>
-                {g.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* 2er-Grid: Sharing + Pinsa */}
-        <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: "5rem" }}>
-          <div className="pinsa-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "3rem", maxWidth: "750px", margin: "0 auto" }}>
-            {/* Sharing-Kreationen */}
-            <div>
-              <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
-                <img loading="lazy"
-                  src="/manus-storage/sharing-plate_c60cc98c.webp"
-                  alt="Sharing-Teller mit Weinglas — saisonale Kreation auf Keramik"
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 45%", display: "block", transform: "scale(1.2)", transformOrigin: "center 45%" }}
-                />
-              </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
-                Aus der Küche
-              </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
-                Sharing-Kreationen
-              </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
-                Saisonale Teller zum Teilen — raffiniert, bio, auf den Punkt.
-              </p>
-            </div>
-
-            {/* Manna Palatina Pinsa */}
-            <div>
-              <div style={{ overflow: "hidden", marginBottom: "1.5rem" }}>
-                <img loading="lazy"
-                  src="/manus-storage/pinsa-pastrami-notable_48b3aa52.webp"
-                  alt="Manna Palatina Pinsa — knusprig vom Holzbrett"
-                  style={{ width: "100%", height: "320px", objectFit: "cover", objectPosition: "center 40%", display: "block", transform: "scale(1.2)", transformOrigin: "center 40%" }}
-                />
-              </div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "0.5rem" }}>
-                Vom Holzbrett
-              </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)", color: C.ink, marginBottom: "0.75rem", lineHeight: 1.15 }}>
-                Manna Palatina Pinsa
-              </h3>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.75 }}>
-                Knusprig, leicht, mit Belag der Saison. Die bessere Pizza.
-              </p>
-            </div>
+        {/* Image Grid — no dish titles, just visual storytelling */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4" style={{ marginBottom: "4rem" }}>
+          {/* Sharing bunt — colorful, appetizing */}
+          <div className="overflow-hidden" style={{ borderRadius: "2px" }}>
+            <img
+              src="/manus-storage/sharing-bunt_39a03aa9.webp"
+              alt="Saisonales Sharing-Gericht"
+              className="w-full h-full object-cover"
+              style={{ aspectRatio: "3/4" }}
+              loading="lazy"
+            />
+          </div>
+          {/* Käse + Wein — moody, atmospheric */}
+          <div className="overflow-hidden" style={{ borderRadius: "2px" }}>
+            <img
+              src="/manus-storage/kaese-wein_99ebd13f.webp"
+              alt="Käseauswahl mit Wein"
+              className="w-full h-full object-cover"
+              style={{ aspectRatio: "3/4" }}
+              loading="lazy"
+            />
+          </div>
+          {/* Zucchini vegetarisch — variety */}
+          <div className="overflow-hidden col-span-2 md:col-span-1" style={{ borderRadius: "2px" }}>
+            <img
+              src="/manus-storage/zucchini-vegetarisch_e453b004.webp"
+              alt="Vegetarisches Gericht"
+              className="w-full h-full object-cover"
+              style={{ aspectRatio: "3/4" }}
+              loading="lazy"
+            />
           </div>
         </div>
 
-        {/* Entrecôte — eigene prominente Zeile */}
-        <div style={{ marginTop: "5rem", paddingTop: "4rem", borderTop: `1px solid ${C.border}` }}>
-          <div className="entrecote-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center" }}>
-            <div style={{ overflow: "hidden" }}>
-              <img loading="lazy"
-                src="/manus-storage/entrecote_zoom_d4e27da5.webp"
-                alt="Entrecôte — Premium Dry Age"
-                style={{ width: "100%", height: "400px", objectFit: "cover", objectPosition: "center 40%", display: "block" }}
+        {/* Entrecôte Signature — gets its own spotlight */}
+        <div className="relative overflow-hidden" style={{ borderRadius: "2px", border: `1px solid ${C.border}` }}>
+          <div className="flex flex-col md:flex-row">
+            <div className="w-full md:w-1/2">
+              <img
+                src="/manus-storage/entrecote-signature_206a9933.webp"
+                alt="Dry-Aged Entrecôte — Signature Cut"
+                className="w-full h-full object-cover"
+                style={{ aspectRatio: "3/4", maxHeight: "500px" }}
+                loading="lazy"
               />
             </div>
-            <div>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.18em", textTransform: "uppercase", color: C.sage, marginBottom: "1rem" }}>
-                Premium Entrecôte
+            <div className="w-full md:w-1/2 flex flex-col justify-center" style={{ padding: "2.5rem 2rem" }}>
+              <p className="font-body uppercase tracking-widest" style={{ fontSize: "0.7rem", color: C.sage, marginBottom: "0.5rem", letterSpacing: "0.2em" }}>
+                Signature
               </p>
-              <h3 className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: C.ink, marginBottom: "1.25rem", lineHeight: 1.2 }}>
-                Das wahrscheinlich beste Steak der Pfalz.
+              <h3 className="font-display" style={{ fontSize: "clamp(1.8rem,3vw,2.4rem)", color: C.ink, marginBottom: "1rem" }}>
+                Entrecôte
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
                 Dry-Aged Entrecôte · puristisch · 100-Gramm-weise · Signature Cut
@@ -881,6 +828,7 @@ function EssenSection() {
     </section>
   );
 }
+
 
 // ── Galerie ───────────────────────────────────────────────────
 function GalerieSection() {
