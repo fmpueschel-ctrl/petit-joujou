@@ -102,3 +102,5 @@
 - [x] Reservierung + "Euer Abend/Unsere Bühne" als Split-Layout nebeneinander (links Reservierung, rechts Euer Abend)
 - [x] Shop/ProductDetail: Event-Ticket-Produkte separat rendern (keine Wein-Metadaten wie Grundpreis, Jahrgang, Alkohol)
 - [x] Shop grid: Produktkarten für Event-Tickets konditional anpassen (keine weinspezifischen Hinweise bei Tickets)
+- [x] Delete free event products from Shopify (Herbstmarkt + Joujou Groovt)
+- [x] Add event image to TAVOLA BEATS ticket product in Shopify

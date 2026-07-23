@@ -456,9 +456,9 @@ function EventsSection() {
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Joujou Groovt</p>
               <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Live-Musik, Spritz, Schorle, Wein — entspannte Sommerabende.</p>
               <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>30.07. · 27.08.2026</p>
-              <a href="/shop/joujou-groovt-tisch"
+              <a href="#reservierung"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
-                Mehr erfahren
+                Tisch reservieren
               </a>
             </div>
           </div>
@@ -476,7 +476,7 @@ function EventsSection() {
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Herbstmarkt</p>
               <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Markt der achtsamen Dinge — regionale Aussteller, Handwerkskunst & Live-Musik.</p>
               <p className="font-body" style={{ fontSize: "0.78rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>Eintritt frei</p>
-              <a href="/shop/herbstmarkt-2026"
+              <a href="#reservierung"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
                 Mehr erfahren
               </a>
