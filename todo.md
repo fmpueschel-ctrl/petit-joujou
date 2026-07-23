@@ -14,7 +14,7 @@
 - [x] Neue Bilder integriert: Terrasse, Weinregal Dr. Bürklin-Wolf, Sharing-Teller
 - [x] Siegel-Leiste: Slow Food, Nachhaltiges Reiseziel, Happy Cow
 - [x] Hero-Section als Split-Layout umbauen (Canva-Bild links, "klein · fein · wein" + CTAs rechts)
-- [ ] Hero-Split: "petit joujou" rechts entfernen (steht im Bild), "klein · fein · wein" prominenter
+- [x] Hero-Split: "petit joujou" rechts entfernt, "klein · fein · wein" als Claim prominent im Hero
 - [ ] Englische Variante der Webseite (Sprachumschalter) — Planung
 
 - [x] Bilder auf optimale Größe verkleinern (max 2x Anzeigegröße) und als WebP hochladen
@@ -31,8 +31,8 @@
 - [x] Farbschema komplett auf Anthrazit + Rosé umgestellt (C-Objekt, CSS-Variablen, alle Sections)
 - [x] petit joujou Text-Overlay auf Hero-Bild (mit WEINBAR · LEISTADT · PFALZ)
 - [x] Farbschema auf Pastellgrün-Basis umgestellt (Dunkelgrün + Rosé + Orange Akzente)
-- [ ] Galerie-Bilder Verzerrung auf Mobile fixen (zu schmal/hochkant)
-- [ ] Hintergrund-Rhythmus: Essen + Galerie auf hellen Hintergrund wechseln (statt alles Dunkelgrün)
+- [x] Galerie-Bilder Verzerrung auf Mobile fixen (aspect-ratio 4/3 statt fester Höhe)
+- [x] Hintergrund-Rhythmus: Essen (bgCream) + Galerie (bgPeach) bereits auf hellem Hintergrund
 - [ ] Admin-Panel: Datenbank-Schema für Events und Karten (Speisekarte/Weinkarte)
 - [ ] Admin-Panel: tRPC-Routen für Events CRUD + Karten-Upload
 - [ ] Admin-Panel: UI mit Login, Events-Verwaltung, Karten-Upload
