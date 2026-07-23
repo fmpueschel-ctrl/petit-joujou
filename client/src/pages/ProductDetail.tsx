@@ -55,6 +55,7 @@ export default function ProductDetail() {
 
   const variant = product.variants[0];
   const image = product.images[0];
+  const isEventTicket = product.productType === "Event-Ticket";
 
   const handleAdd = async () => {
     if (!variant || !variant.availableForSale) return;
@@ -105,14 +106,18 @@ export default function ProductDetail() {
 
               <div style={{ marginBottom: "1.5rem" }}>
                 <span className="font-display" style={{ fontSize: "2rem", color: C.ink }}>
-                  {formatMoney(product.priceRange.min)}
+                  {parseFloat(product.priceRange.min.amount) === 0 ? "Kostenlos" : formatMoney(product.priceRange.min)}
                 </span>
-                <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
-                  inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
-                </span>
-                <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
-                  zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
-                </span>
+                {!isEventTicket && (
+                  <>
+                    <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
+                      inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
+                    </span>
+                    <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
+                      zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
+                    </span>
+                  </>
+                )}
               </div>
 
               {product.description && (
@@ -142,16 +147,18 @@ export default function ProductDetail() {
                 {adding ? "..." : variant?.availableForSale ? "In den Warenkorb" : "Ausverkauft"}
               </button>
 
-              {/* Wine details */}
-              <div style={{ marginTop: "2rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
-                <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, margin: 0, lineHeight: 1.8 }}>
-                  <strong style={{ color: C.ink }}>Alkoholgehalt:</strong> 10,5 % vol.<br />
-                  <strong style={{ color: C.ink }}>Jahrgang:</strong> 2025<br />
-                  <strong style={{ color: C.ink }}>Weingut:</strong> Egon Schmitt, Bad Dürkheim<br />
-                  <strong style={{ color: C.ink }}>Inhalt:</strong> 6 × 1 Liter<br />
-                  Enthält Sulfite.
-                </p>
-              </div>
+              {/* Wine details — only for non-ticket products */}
+              {!isEventTicket && (
+                <div style={{ marginTop: "2rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
+                  <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, margin: 0, lineHeight: 1.8 }}>
+                    <strong style={{ color: C.ink }}>Alkoholgehalt:</strong> 10,5 % vol.<br />
+                    <strong style={{ color: C.ink }}>Jahrgang:</strong> 2025<br />
+                    <strong style={{ color: C.ink }}>Weingut:</strong> Egon Schmitt, Bad Dürkheim<br />
+                    <strong style={{ color: C.ink }}>Inhalt:</strong> 6 × 1 Liter<br />
+                    Enthält Sulfite.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

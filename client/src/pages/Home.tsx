@@ -434,46 +434,56 @@ function EventsSection() {
               src="/manus-storage/tavola_beats_70e575c5.webp"
               alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
               className="event-img"
-              style={{ width: "100%", height: "420px", objectFit: "contain", objectPosition: "center center", display: "block", backgroundColor: C.sage }}
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
               <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>59 € p.P. · inkl. Aperitif, Food & Wines</p>
-              <a href="https://services.gastronovi.com/restaurants/68135/reservierung/widget?entry=ordering#1" target="_blank" rel="noopener noreferrer"
+              <a href="/shop/tavola-beats-ticket"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
-                Tickets buchen
+                Ticket kaufen
               </a>
             </div>
           </div>
 
           {/* Joujou Groovt */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-            <div style={{ height: "280px", backgroundColor: C.bgSage, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "0.75rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
-              <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#fff", lineHeight: 1.1, marginBottom: "0.5rem" }}>Joujou Groovt</p>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.75)", fontStyle: "italic", marginBottom: "1rem" }}>Live-Musik & Genuss</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600 }}>30.07. · 27.08.2026</p>
-            </div>
+            <img loading="lazy"
+              src="/manus-storage/joujou-groovt-event_408957c5.webp"
+              alt="Joujou Groovt — Live-Musik & Genuss"
+              className="event-img"
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
+            />
             <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.75rem" }}>Live-Musik-Acts, Spritz, Schorle, Wein — entspannte Sommerabende im Joujou.</p>
-              <a href="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation" target="_blank" rel="noopener noreferrer"
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Joujou Groovt</p>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Live-Musik, Spritz, Schorle, Wein — entspannte Sommerabende.</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>30.07. · 27.08.2026</p>
+              <a href="/shop/joujou-groovt-tisch"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
-                Tisch reservieren
+                Mehr erfahren
               </a>
             </div>
           </div>
 
           {/* Herbstmarkt */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-            <div style={{ height: "280px", backgroundColor: C.bgSage, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)", marginBottom: "0.75rem" }}>03.10. + 04.10.2026 · ab 12:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#fff", lineHeight: 1.1, marginBottom: "0.5rem" }}>Herbstmarkt</p>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.85)", fontStyle: "italic" }}>Markt der achtsamen Dinge</p>
-            </div>
+            <img loading="lazy"
+              src="/manus-storage/herbstmarkt-event-oRNY9AhCWC4maJwNzE4n7g.webp"
+              alt="Herbstmarkt — Markt der achtsamen Dinge"
+              className="event-img"
+              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
+            />
             <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.75rem" }}>Regionale Aussteller, Handwerkskunst, Bio-Leckereien und musikalische Begleitung — zwei Tage Herbstzauber.</p>
-              <p className="font-body" style={{ fontSize: "0.78rem", color: C.peach, fontWeight: 600 }}>Eintritt frei</p>
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>03. + 04. Oktober 2026 · ab 12:00 Uhr</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Herbstmarkt</p>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Markt der achtsamen Dinge — regionale Aussteller, Handwerkskunst & Live-Musik.</p>
+              <p className="font-body" style={{ fontSize: "0.78rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>Eintritt frei</p>
+              <a href="/shop/herbstmarkt-2026"
+                style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
+                Mehr erfahren
+              </a>
             </div>
           </div>
 
@@ -493,50 +503,8 @@ function EventsSection() {
   );
 }
 
-// ── Reservierung ─────────────────────────────────────────────
-function ReservierungSection() {
-  return (
-    <section id="reservierung" style={{ backgroundColor: C.bgCream, padding: "6rem 0" }}>
-      <div className="container">
-        <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
-            Tisch reservieren
-          </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink }}>
-            Weinbar
-          </h2>
-          <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, marginTop: "1rem", maxWidth: "500px", margin: "1rem auto 0" }}>
-            Do & Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr. Reserviert euren Platz.
-          </p>
-        </div>
-
-        <div style={{ maxWidth: "700px", margin: "0 auto", backgroundColor: C.bg, border: `1px solid ${C.border}`, overflow: "hidden" }}>
-          <iframe
-            src="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
-            title="Gastronovi Reservierung — Joujou Weinbar"
-            style={{ width: "100%", height: "600px", border: "none" }}
-            loading="lazy"
-          />
-        </div>
-
-        <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textAlign: "center", marginTop: "1.5rem" }}>
-          Reservierung via Gastronovi. Alternativ:{" "}
-          <a
-            href="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: C.sageDark, textDecoration: "none" }}
-          >
-            In neuem Tab öffnen
-          </a>
-        </p>
-      </div>
-    </section>
-  );
-}
-
-// ── Gesellschaften ────────────────────────────────────────────
-function GesellschaftenSection() {
+// ── Reservierung & Gesellschaften (Combined Split Layout) ────────
+function ReservierungUndGesellschaftenSection() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", anlass: "", gaeste: "", datum: "", budget: "", nachricht: "" });
   const [sent, setSent] = useState(false);
 
@@ -556,189 +524,215 @@ function GesellschaftenSection() {
   };
 
   return (
-    <section id="gesellschaften" className="split-section">
-      {/* Left: Chef Franz Rank Bild */}
-      <div className="split-image">
-        <img loading="lazy"
-          src="/manus-storage/chef-franz-rank_43086e69.webp"
-          alt="Chef Franz Rank beim Joujou BBQ-Event"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(1.3)", transformOrigin: "center 30%" }}
-        />
-        <p className="font-body" style={{ position: "absolute", bottom: 0, left: 0, right: 0, fontSize: "0.7rem", color: "#fff", fontStyle: "italic", margin: 0, padding: "0.5rem 1rem", background: "linear-gradient(transparent, rgba(0,0,0,0.5))" }}>
-          Chef Franz Rank beim Joujou BBQ-Event
-        </p>
-      </div>
+    <section id="reservierung" style={{ backgroundColor: C.bgCream, padding: "6rem 0" }}>
+      <div className="container">
+        {/* Split: Reservierung LEFT | Euer Abend RIGHT */}
+        <div className="reservierung-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
 
-      {/* Right: Content + Form */}
-      <div className="split-content" style={{ backgroundColor: C.bgLavender }}>
-        <div style={{ maxWidth: "32rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "1rem" }}>
-            Private Abende
-          </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", color: C.ink, marginBottom: "1.5rem", lineHeight: 1.25 }}>
-            Euer Abend.<br />Unsere Bühne.
-          </h2>
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2rem" }}>
-            Euer Geburtstag im Kerzenschein, ein Firmenabend, der kein Firmenabend sein soll, oder einfach ein Grund zum Feiern. Schreibt uns — wir machen den Rest.
-          </p>
-
-          {/* Occasion types */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
-            {[
-              { label: "Weinabende", sub: "Privat & exklusiv" },
-              { label: "Geburtstage", sub: "Kleine Runden" },
-              { label: "Firmen", sub: "Teamabende & Dinners" },
-              { label: "Hochzeiten", sub: "Auf Anfrage" },
-            ].map((o) => (
-              <div key={o.label} style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `3px solid ${C.sageDark}` }}>
-                <div>
-                  <div className="font-display" style={{ fontSize: "0.95rem", color: C.ink }}>{o.label}</div>
-                  <div className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight }}>{o.sub}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Key promise */}
-          <div style={{ backgroundColor: C.bg, padding: "1.5rem", borderLeft: `4px solid ${C.sageDark}`, marginBottom: "2.5rem" }}>
-            <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.7, fontStyle: "italic" }}>
-              „Wir lieben Feiern und gesellige Runden. Wir versuchen immer, unser Angebot an eure Möglichkeiten und Wünsche anzupassen. Sprecht uns super gerne einfach an."
+          {/* LEFT: Reservierung */}
+          <div id="reservierung-widget">
+            <div style={{ marginBottom: "2rem" }}>
+              <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
+                Tisch reservieren
+              </p>
+              <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink }}>
+                Weinbar
+              </h2>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, marginTop: "0.75rem" }}>
+                Do & Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr.
+              </p>
+            </div>
+            <div style={{ backgroundColor: C.bg, border: `1px solid ${C.border}`, overflow: "hidden" }}>
+              <iframe
+                src="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
+                title="Gastronovi Reservierung — Joujou Weinbar"
+                style={{ width: "100%", height: "550px", border: "none" }}
+                loading="lazy"
+              />
+            </div>
+            <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, marginTop: "1rem" }}>
+              Reservierung via Gastronovi.{" "}
+              <a
+                href="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: C.sageDark, textDecoration: "none" }}
+              >
+                In neuem Tab öffnen
+              </a>
             </p>
           </div>
 
-          {/* Form */}
-          <div style={{ backgroundColor: C.bg, padding: "2rem" }}>
-            {sent ? (
-              <div style={{ textAlign: "center", padding: "3rem 1rem" }}>
-                <div style={{ width: "3rem", height: "2px", backgroundColor: C.sageDark, margin: "0 auto 1.5rem" }} />
-                <h3 className="font-display" style={{ fontSize: "1.6rem", color: C.ink, marginBottom: "1rem" }}>
-                  Anfrage erhalten.
-                </h3>
-                <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.7 }}>
-                  Wir melden uns innerhalb von 24 Stunden bei euch. Versprochen.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <h3 className="font-display" style={{ fontSize: "1.4rem", color: C.ink, marginBottom: "0.5rem" }}>
-                  Anfrage stellen
-                </h3>
-                <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkLight, marginBottom: "2rem" }}>
-                  Kein Formular-Friedhof — nur das Wichtigste.
-                </p>
+          {/* RIGHT: Euer Abend / Unsere Bühne */}
+          <div id="gesellschaften">
+            <div style={{ marginBottom: "2rem" }}>
+              <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sageDark, marginBottom: "0.75rem" }}>
+                Private Abende
+              </p>
+              <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink, lineHeight: 1.25 }}>
+                Euer Abend.<br />Unsere Bühne.
+              </h2>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, marginTop: "0.75rem", lineHeight: 1.7 }}>
+                Euer Geburtstag im Kerzenschein, ein Firmenabend, der kein Firmenabend sein soll, oder einfach ein Grund zum Feiern.
+              </p>
+            </div>
 
-                {/* Name + Email */}
-                <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
-                  <div>
-                    <label htmlFor="ges-name" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Name *</label>
-                    <input
-                      id="ges-name"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
-                      placeholder="Euer Name"
+            {/* Occasion types */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem", marginBottom: "1.5rem" }}>
+              {[
+                { label: "Weinabende", sub: "Privat & exklusiv" },
+                { label: "Geburtstage", sub: "Kleine Runden" },
+                { label: "Firmen", sub: "Teamabende & Dinners" },
+                { label: "Hochzeiten", sub: "Auf Anfrage" },
+              ].map((o) => (
+                <div key={o.label} style={{ backgroundColor: C.bg, padding: "1rem", borderLeft: `3px solid ${C.sageDark}` }}>
+                  <div className="font-display" style={{ fontSize: "0.85rem", color: C.ink }}>{o.label}</div>
+                  <div className="font-body" style={{ fontSize: "0.7rem", color: C.inkLight }}>{o.sub}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Key promise */}
+            <div style={{ backgroundColor: C.bg, padding: "1.25rem", borderLeft: `4px solid ${C.sageDark}`, marginBottom: "2rem" }}>
+              <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.7, fontStyle: "italic" }}>
+                „Wir lieben Feiern und gesellige Runden. Sprecht uns super gerne einfach an.“
+              </p>
+            </div>
+
+            {/* Form */}
+            <div style={{ backgroundColor: C.bg, padding: "1.5rem" }}>
+              {sent ? (
+                <div style={{ textAlign: "center", padding: "2rem 1rem" }}>
+                  <div style={{ width: "3rem", height: "2px", backgroundColor: C.sageDark, margin: "0 auto 1.5rem" }} />
+                  <h3 className="font-display" style={{ fontSize: "1.4rem", color: C.ink, marginBottom: "0.75rem" }}>
+                    Anfrage erhalten.
+                  </h3>
+                  <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.7 }}>
+                    Wir melden uns innerhalb von 24 Stunden.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  <h3 className="font-display" style={{ fontSize: "1.2rem", color: C.ink, marginBottom: "0.4rem" }}>
+                    Anfrage stellen
+                  </h3>
+                  <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkLight, marginBottom: "1.5rem" }}>
+                    Kein Formular-Friedhof — nur das Wichtigste.
+                  </p>
+
+                  {/* Name + Email */}
+                  <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem", marginBottom: "0.75rem" }}>
+                    <div>
+                      <label htmlFor="ges-name" className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.3rem" }}>Name *</label>
+                      <input
+                        id="ges-name"
+                        required
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        style={{ width: "100%", padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.85rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
+                        placeholder="Euer Name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="ges-email" className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.3rem" }}>E-Mail *</label>
+                      <input
+                        id="ges-email"
+                        required
+                        type="email"
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        style={{ width: "100%", padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.85rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
+                        placeholder="email@beispiel.de"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Anlass + Gäste */}
+                  <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem", marginBottom: "0.75rem" }}>
+                    <div>
+                      <label htmlFor="ges-anlass" className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.3rem" }}>Anlass</label>
+                      <select
+                        id="ges-anlass"
+                        value={form.anlass}
+                        onChange={(e) => setForm({ ...form, anlass: e.target.value })}
+                        style={{ width: "100%", padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.85rem", color: form.anlass ? C.ink : C.inkLight, outline: "none", fontFamily: "inherit" }}
+                      >
+                        <option value="">Wählen...</option>
+                        <option value="hochzeit">Hochzeit</option>
+                        <option value="geburtstag">Geburtstag</option>
+                        <option value="firmenevent">Firmenevent</option>
+                        <option value="weinabend">Privater Weinabend</option>
+                        <option value="sonstiges">Sonstiges</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="ges-gaeste" className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.3rem" }}>Gästeanzahl</label>
+                      <select
+                        id="ges-gaeste"
+                        value={form.gaeste}
+                        onChange={(e) => setForm({ ...form, gaeste: e.target.value })}
+                        style={{ width: "100%", padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.85rem", color: form.gaeste ? C.ink : C.inkLight, outline: "none", fontFamily: "inherit" }}
+                      >
+                        <option value="">Anzahl...</option>
+                        <option value="bis20">Bis 20 Personen</option>
+                        <option value="bis40">21–40 Personen</option>
+                        <option value="bis60">41–60 Personen</option>
+                        <option value="bis100">61–100 Personen</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Datum + Telefon */}
+                  <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem", marginBottom: "0.75rem" }}>
+                    <div>
+                      <label htmlFor="ges-datum" className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.3rem" }}>Wunschdatum</label>
+                      <input
+                        id="ges-datum"
+                        type="date"
+                        value={form.datum}
+                        onChange={(e) => setForm({ ...form, datum: e.target.value })}
+                        style={{ width: "100%", padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.85rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="ges-telefon" className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.3rem" }}>Telefon</label>
+                      <input
+                        id="ges-telefon"
+                        type="tel"
+                        value={form.phone}
+                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        style={{ width: "100%", padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.85rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
+                        placeholder="+49..."
+                      />
+                    </div>
+                  </div>
+
+                  {/* Nachricht */}
+                  <div style={{ marginBottom: "1.25rem" }}>
+                    <label htmlFor="ges-nachricht" className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.3rem" }}>Eure Wünsche & Budget</label>
+                    <textarea
+                      id="ges-nachricht"
+                      value={form.nachricht}
+                      onChange={(e) => setForm({ ...form, nachricht: e.target.value })}
+                      rows={3}
+                      style={{ width: "100%", padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.85rem", color: C.ink, outline: "none", fontFamily: "inherit", resize: "vertical" }}
+                      placeholder="Was stellt ihr euch vor?"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="ges-email" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>E-Mail *</label>
-                    <input
-                      id="ges-email"
-                      required
-                      type="email"
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
-                      placeholder="email@beispiel.de"
-                    />
-                  </div>
-                </div>
 
-                {/* Anlass + Gäste */}
-                <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
-                  <div>
-                    <label htmlFor="ges-anlass" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Anlass</label>
-                    <select
-                      id="ges-anlass"
-                      value={form.anlass}
-                      onChange={(e) => setForm({ ...form, anlass: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: form.anlass ? C.ink : C.inkLight, outline: "none", fontFamily: "inherit" }}
-                    >
-                      <option value="">Wählen...</option>
-                      <option value="hochzeit">Hochzeit</option>
-                      <option value="geburtstag">Geburtstag</option>
-                      <option value="firmenevent">Firmenevent</option>
-                      <option value="weinabend">Privater Weinabend</option>
-                      <option value="sonstiges">Sonstiges</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="ges-gaeste" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Gästeanzahl</label>
-                    <select
-                      id="ges-gaeste"
-                      value={form.gaeste}
-                      onChange={(e) => setForm({ ...form, gaeste: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: form.gaeste ? C.ink : C.inkLight, outline: "none", fontFamily: "inherit" }}
-                    >
-                      <option value="">Anzahl...</option>
-                      <option value="bis20">Bis 20 Personen</option>
-                      <option value="bis40">21–40 Personen</option>
-                      <option value="bis60">41–60 Personen</option>
-                      <option value="bis100">61–100 Personen</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Datum + Telefon */}
-                <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
-                  <div>
-                    <label htmlFor="ges-datum" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Wunschdatum</label>
-                    <input
-                      id="ges-datum"
-                      type="date"
-                      value={form.datum}
-                      onChange={(e) => setForm({ ...form, datum: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="ges-telefon" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Telefon</label>
-                    <input
-                      id="ges-telefon"
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit" }}
-                      placeholder="+49..."
-                    />
-                  </div>
-                </div>
-
-                {/* Nachricht */}
-                <div style={{ marginBottom: "1.5rem" }}>
-                  <label htmlFor="ges-nachricht" className="font-body" style={{ fontSize: "0.68rem", letterSpacing: "0.1em", textTransform: "uppercase", color: C.inkMid, display: "block", marginBottom: "0.4rem" }}>Eure Wünsche & Budget-Vorstellung</label>
-                  <textarea
-                    id="ges-nachricht"
-                    value={form.nachricht}
-                    onChange={(e) => setForm({ ...form, nachricht: e.target.value })}
-                    rows={4}
-                    style={{ width: "100%", padding: "0.7rem 0.9rem", border: `1px solid ${C.border}`, backgroundColor: C.bgCream, fontSize: "0.9rem", color: C.ink, outline: "none", fontFamily: "inherit", resize: "vertical" }}
-                    placeholder="Was stellt ihr euch vor?"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={anfrageMutation.isPending}
-                  className="font-body"
-                  style={{ width: "100%", padding: "1rem", backgroundColor: anfrageMutation.isPending ? C.sage : C.peachDark, color: "#fff", border: "none", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: anfrageMutation.isPending ? "not-allowed" : "pointer" }}
-                >
-                  {anfrageMutation.isPending ? "Wird gesendet..." : "Anfrage absenden"}
-                </button>
-
-              </form>
-            )}
+                  <button
+                    type="submit"
+                    disabled={anfrageMutation.isPending}
+                    className="font-body"
+                    style={{ width: "100%", padding: "0.9rem", backgroundColor: anfrageMutation.isPending ? C.sage : C.peachDark, color: "#fff", border: "none", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", cursor: anfrageMutation.isPending ? "not-allowed" : "pointer" }}
+                  >
+                    {anfrageMutation.isPending ? "Wird gesendet..." : "Anfrage absenden"}
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -816,7 +810,7 @@ function EssenSection() {
                 Signature
               </p>
               <h3 className="font-display" style={{ fontSize: "clamp(1.8rem,3vw,2.4rem)", color: C.ink, marginBottom: "1rem" }}>
-                Entrecôte
+                Das wahrscheinlich beste Steak der Pfalz.
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
                 Dry-Aged Entrecôte · puristisch · 100-Gramm-weise · Signature Cut
@@ -1032,8 +1026,7 @@ export default function Home() {
         <GartenSection />
         <EventsSection />
         <ScheuneSection />
-        <ReservierungSection />
-        <GesellschaftenSection />
+        <ReservierungUndGesellschaftenSection />
         <SiegelSection />
         <GalerieSection />
         <TheOneSection />

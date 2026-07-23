@@ -191,6 +191,11 @@
   .mobile-img-first {
     order: -1 !important;
   }
+  /* Reservierung + Gesellschaften Split → 1-spaltig auf Mobile */
+  .reservierung-split {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
   /* Galerie: 3-spaltig → 2-spaltig auf Mobile */
   .galerie-grid {
     grid-template-columns: 1fr 1fr !important;

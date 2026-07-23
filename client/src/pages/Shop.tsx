@@ -213,6 +213,7 @@ function ProductCard({ product }: { product: Product }) {
   const image = product.images[0];
   const [adding, setAdding] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const isEventTicket = product.productType === "Event-Ticket";
 
   const handleAdd = async () => {
     if (!variant || !variant.availableForSale) return;
@@ -273,21 +274,27 @@ function ProductCard({ product }: { product: Product }) {
             )}
           </div>
         )}
-        {/* EU-Weinkennzeichnung (A-8) */}
-        <p className="font-body" style={{ fontSize: "0.7rem", color: C.inkLight, margin: "0.5rem 0 0", lineHeight: 1.6 }}>
-          10,5 % vol. · Enthält Sulfite · Abfüller: Weingut Egon Schmitt, Bad Dürkheim
-        </p>
+        {/* EU-Weinkennzeichnung (A-8) — nur für Wein */}
+        {!isEventTicket && (
+          <p className="font-body" style={{ fontSize: "0.7rem", color: C.inkLight, margin: "0.5rem 0 0", lineHeight: 1.6 }}>
+            10,5 % vol. · Enthält Sulfite · Abfüller: Weingut Egon Schmitt, Bad Dürkheim
+          </p>
+        )}
         <div style={{ marginTop: "auto", paddingTop: "1rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div>
             <span className="font-display" style={{ fontSize: "1.4rem", color: C.ink }}>
-              {formatMoney(product.priceRange.min)}
+              {parseFloat(product.priceRange.min.amount) === 0 ? "Kostenlos" : formatMoney(product.priceRange.min)}
             </span>
-            <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
-              inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
-            </span>
-            <span className="font-body" style={{ display: "block", fontSize: "0.65rem", color: C.inkLight, marginTop: "0.15rem" }}>
-              zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
-            </span>
+            {!isEventTicket && (
+              <>
+                <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
+                  inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
+                </span>
+                <span className="font-body" style={{ display: "block", fontSize: "0.65rem", color: C.inkLight, marginTop: "0.15rem" }}>
+                  zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
+                </span>
+              </>
+            )}
           </div>
           <button
             onClick={handleAdd}

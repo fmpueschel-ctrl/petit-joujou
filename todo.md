@@ -95,3 +95,10 @@
 
 - [x] Essen-Section: Neue Bilder einbauen (einheitliche Bildsprache, keine Titel außer Entrecôte)
 - [x] Garten/Atmosphäre-Section: Neue Bilder einbauen (Paar, Oliven, Wein anstoßen, Service)
+- [x] Entrecôte spotlight: "Das wahrscheinlich beste Steak der Pfalz." als Headline
+- [x] Event-Karten: BEATS + Tavola bildlich füllend (object-fit cover), gut lesbar
+- [x] Tickets im Shop: Event-Tickets als Shopify-Produkte anlegen + auf Homepage verlinken
+- [x] Franz-Bild aus Gesellschaften-Section entfernen
+- [x] Reservierung + "Euer Abend/Unsere Bühne" als Split-Layout nebeneinander (links Reservierung, rechts Euer Abend)
+- [x] Shop/ProductDetail: Event-Ticket-Produkte separat rendern (keine Wein-Metadaten wie Grundpreis, Jahrgang, Alkohol)
+- [x] Shop grid: Produktkarten für Event-Tickets konditional anpassen (keine weinspezifischen Hinweise bei Tickets)
