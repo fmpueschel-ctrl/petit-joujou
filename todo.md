@@ -56,3 +56,5 @@
 - [x] Cart drawer with add/remove/quantity/checkout flow
 - [x] Shop link in navigation menu (Home overlay)
 - [x] German locale for price formatting (EUR)
+- [x] Shop-Button sichtbar in der Top-Navigation (neben Reservieren, Speisekarte)
+- [x] Shop-Minisektion auf Hauptseite (Konzept-Erklärung + Link zum Shop)

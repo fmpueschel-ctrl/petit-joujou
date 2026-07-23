@@ -198,6 +198,22 @@ function Hero() {
             >
               Speisekarte
             </a>
+            <a
+              href="/shop"
+              className="font-body"
+              style={{
+                display: "inline-block",
+                padding: "0.75rem 2rem",
+                border: `1px solid ${C.ink}`,
+                color: C.ink,
+                fontSize: "0.78rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+              }}
+            >
+              Shop | The One
+            </a>
           </div>
 
           {/* Zwei Pillars */}
@@ -997,6 +1013,42 @@ function SiegelSection() {
   );
 }
 
+// ── The One — Shop Teaser ─────────────────────────────────────
+function TheOneSection() {
+  return (
+    <section style={{ backgroundColor: C.bgSage, padding: "5rem 0" }}>
+      <div className="container" style={{ maxWidth: "700px", textAlign: "center" }}>
+        <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "1rem" }}>
+          petit joujou
+        </p>
+        <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "#fff", marginBottom: "1.25rem" }}>
+          Shop | The One
+        </h2>
+        <p className="font-body" style={{ fontSize: "1rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.85, marginBottom: "2.5rem" }}>
+          Nur das Beste aus jeder Kategorie — und nur, wenn es unseren Nachhaltigkeitskriterien standhält. Das Beste der Nachhaltigen. Kuratiert, nicht sortiert. Ein Produkt pro Kategorie. The very One.
+        </p>
+        <a
+          href="/shop"
+          className="font-body"
+          style={{
+            display: "inline-block",
+            padding: "0.85rem 2.5rem",
+            backgroundColor: "#fff",
+            color: C.sageDark,
+            fontSize: "0.78rem",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            textDecoration: "none",
+            fontWeight: 600,
+          }}
+        >
+          Zum Shop
+        </a>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
@@ -1021,6 +1073,7 @@ export default function Home() {
         <GesellschaftenSection />
         <SiegelSection />
         <GalerieSection />
+        <TheOneSection />
       </main>
       <Footer />
     </div>
