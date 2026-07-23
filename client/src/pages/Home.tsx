@@ -198,6 +198,23 @@ function Hero() {
             >
               Speisekarte
             </a>
+            <button
+              onClick={() => { const t = document.createElement('div'); t.textContent = 'Weinkarte kommt bald'; Object.assign(t.style, { position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#2a4a3e', color: '#fff', padding: '0.75rem 1.5rem', fontSize: '0.85rem', zIndex: '9999', letterSpacing: '0.05em' }); document.body.appendChild(t); setTimeout(() => t.remove(), 2500); }}
+              className="font-body"
+              style={{
+                display: "inline-block",
+                padding: "0.75rem 2rem",
+                border: `1px solid ${C.ink}`,
+                color: C.ink,
+                fontSize: "0.78rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                background: "none",
+                cursor: "pointer",
+              }}
+            >
+              Weinkarte
+            </button>
             <a
               href="/shop"
               className="font-body"

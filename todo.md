@@ -58,3 +58,7 @@
 - [x] German locale for price formatting (EUR)
 - [x] Shop-Button sichtbar in der Top-Navigation (neben Reservieren, Speisekarte)
 - [x] Shop-Minisektion auf Hauptseite (Konzept-Erklärung + Link zum Shop)
+- [ ] Weinkarte-Button im Live-Auftritt prüfen/fixen
+- [x] Shop-Text ändern (neuer Intro-Text über Konzept)
+- [x] 6er Karton besser kennzeichnen im Produkttitel
+- [ ] petit-joujou.de lädt nicht — prüfen

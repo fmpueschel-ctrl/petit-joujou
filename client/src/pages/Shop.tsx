@@ -298,8 +298,8 @@ export default function Shop() {
           <h1 className="font-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.2rem)", color: C.ink, margin: "0 0 1rem", lineHeight: 1.15, fontWeight: 600 }}>
             The One
           </h1>
-          <p className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.8, margin: "0 auto", maxWidth: "550px" }}>
-            Nur das Beste aus jeder Kategorie — und nur, wenn es unseren Nachhaltigkeitskriterien standhält. Kuratiert, nicht sortiert. Ein Produkt pro Kategorie. The very One.
+          <p className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.8, margin: "0 auto", maxWidth: "600px" }}>
+            Dieser Shop enthält von jedem Artikel nur einen Einzigen — den für uns Besten! Wir haben für dich getestet, damit sparst du dir das Aussuchen und Vergleichen. Alle Artikel erfüllen die Joujou Nachhaltigkeitskriterien und wurden von einem internen Gremium gegenüber den jeweils anderen Kandidaten ausgewählt.
           </p>
         </div>
       </section>
