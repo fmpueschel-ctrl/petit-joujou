@@ -6,6 +6,7 @@
 import { trpc } from "@/lib/trpc";
 import { formatMoney } from "@/lib/format";
 import { useCart } from "@/contexts/CartContext";
+import { usePageMeta } from "@/hooks/usePageMeta";
 import type { Product } from "@shared/commerce/types";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -245,7 +246,9 @@ function ProductCard({ product }: { product: Product }) {
       {/* Content */}
       <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem", flex: 1 }}>
         <h3 className="font-display" style={{ fontSize: "1.3rem", color: C.ink, margin: 0, lineHeight: 1.3 }}>
-          {product.title}
+          <Link href={`/shop/${product.handle}`} style={{ color: "inherit", textDecoration: "none" }}>
+            {product.title}
+          </Link>
         </h3>
         {product.description && (
           <div>
@@ -270,6 +273,10 @@ function ProductCard({ product }: { product: Product }) {
             )}
           </div>
         )}
+        {/* EU-Weinkennzeichnung (A-8) */}
+        <p className="font-body" style={{ fontSize: "0.7rem", color: C.inkLight, margin: "0.5rem 0 0", lineHeight: 1.6 }}>
+          10,5 % vol. · Enthält Sulfite · Abfüller: Weingut Egon Schmitt, Bad Dürkheim
+        </p>
         <div style={{ marginTop: "auto", paddingTop: "1rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div>
             <span className="font-display" style={{ fontSize: "1.4rem", color: C.ink }}>
@@ -313,8 +320,41 @@ export default function Shop() {
   const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery();
   const { itemCount, openCart } = useCart();
 
+  usePageMeta({
+    title: "Shop | The One — petit joujou",
+    description: "Kuratierter Shop: Das Beste aus jeder Kategorie, nachhaltig ausgewählt. 6 x Schorle-Riesling trocken (1L) vom Weingut Egon Schmitt, Bad Dürkheim.",
+    canonical: "https://www.petit-joujou.de/shop",
+    ogTitle: "Shop | The One — petit joujou",
+    ogDescription: "Kuratierter Shop: Das Beste aus jeder Kategorie, nachhaltig ausgewählt vom petit joujou Gremium.",
+  });
+
+  // Product JSON-LD for SEO (C-6)
+  const productJsonLd = products.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": products[0].title,
+    "description": products[0].description,
+    "image": products[0].images[0]?.url,
+    "brand": { "@type": "Brand", "name": "petit joujou | The One" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.petit-joujou.de/shop",
+      "priceCurrency": "EUR",
+      "price": products[0].priceRange.min.amount,
+      "availability": products[0].variants[0]?.availableForSale ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "seller": { "@type": "Organization", "name": "Joujou GmbH" },
+    },
+  } : null;
+
   return (
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
+      {/* Product JSON-LD */}
+      {productJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        />
+      )}
       <ShopNav />
       <CartDrawer />
 

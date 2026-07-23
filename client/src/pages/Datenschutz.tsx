@@ -3,8 +3,15 @@
    ============================================================ */
 
 import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Datenschutz() {
+  usePageMeta({
+    title: "Datenschutzerklärung — petit joujou",
+    description: "Datenschutzerklärung der Joujou GmbH. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.",
+    canonical: "https://www.petit-joujou.de/datenschutz",
+  });
+
   return (
     <div style={{ backgroundColor: "#fdf8f9", minHeight: "100vh", paddingTop: "6rem", paddingBottom: "6rem" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 2rem" }}>

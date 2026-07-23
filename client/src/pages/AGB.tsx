@@ -3,8 +3,15 @@
    ============================================================ */
 
 import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function AGB() {
+  usePageMeta({
+    title: "AGB — petit joujou",
+    description: "Allgemeine Geschäftsbedingungen für den Online-Shop der Joujou GmbH. Fernabsatz, Wein, Alkoholabgabe.",
+    canonical: "https://www.petit-joujou.de/agb",
+  });
+
   return (
     <div style={{ backgroundColor: "#fdf8f9", minHeight: "100vh", paddingTop: "6rem", paddingBottom: "6rem" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 2rem" }}>

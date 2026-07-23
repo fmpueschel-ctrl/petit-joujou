@@ -3,8 +3,15 @@
    ============================================================ */
 
 import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Versand() {
+  usePageMeta({
+    title: "Versand & Zahlung — petit joujou",
+    description: "Versandkosten, Lieferzeiten und Zahlungsarten im petit joujou Online-Shop. Versand innerhalb Deutschlands 5,90 €, frei ab 60 €.",
+    canonical: "https://www.petit-joujou.de/versand",
+  });
+
   return (
     <div style={{ backgroundColor: "#fdf8f9", minHeight: "100vh", paddingTop: "6rem", paddingBottom: "6rem" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 2rem" }}>

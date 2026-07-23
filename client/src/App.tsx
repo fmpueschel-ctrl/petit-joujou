@@ -11,12 +11,14 @@ import AGB from "./pages/AGB";
 import Widerruf from "./pages/Widerruf";
 import Versand from "./pages/Versand";
 import Shop from "./pages/Shop";
+import ProductDetail from "./pages/ProductDetail";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/shop"} component={Shop} />
+      <Route path={"/shop/:handle"} component={ProductDetail} />
       <Route path={"/impressum"} component={Impressum} />
       <Route path={"/datenschutz"} component={Datenschutz} />
       <Route path={"/agb"} component={AGB} />

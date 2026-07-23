@@ -75,20 +75,20 @@
 - [x] A-5: MwSt + Versandkosten-Hinweis unter Preis + Link auf /versand
 - [x] A-6: Lieferzeit am Artikel
 - [x] A-7: Altersbestätigung vor Checkout (Pflicht-Häkchen, 16 Jahre)
-- [ ] A-8: EU-Weinkennzeichnung (Alkoholgehalt, Zutaten, Nährwerte, Abfüller, Sulfite)
+- [x] A-8: EU-Weinkennzeichnung (Alkoholgehalt, Sulfite, Abfüller am Produkt)
 - [x] A-9: Fußzeile auf allen Routen
 - [x] A-11: Verbraucherschlichtungs-Hinweis im Impressum + OS-Link
 - [x] B-1: Preis als 42,00 € statt 42 € (formatMoney minimumFractionDigits:2)
-- [ ] B-2: Textfehler im Artikel fixen (Karton2025 etc.)
-- [ ] B-4: Produkt-Deeplink /shop/:handle anlegen
+- [x] B-2: Textfehler im Artikel gefixt (Shopify description_html neu formatiert)
+- [x] B-4: Produkt-Deeplink /shop/:handle (ProductDetail.tsx + Route)
 - [x] B-5: Zahlungsarten-Icons anzeigen (Visa, MC, PayPal, Apple Pay, Google Pay, Shop Pay)
 - [x] B-7: Kontakt (Tel + E-Mail) auf Shop-Seite
 - [x] B-9: Checkout im selben Tab (window.location.href statt window.open)
 - [x] C-1: Canonical auf www.petit-joujou.de/ gesetzt
-- [ ] C-2: Title/Description/OG pro Route individuell
+- [x] C-2: Title/Description/OG pro Route (usePageMeta Hook + Shop-Integration)
 - [x] C-3: Sitemap erweitert (/shop, /impressum, /datenschutz, /agb, /widerruf, /versand)
 - [x] C-4: Canonical + OG-URLs auf www-Variante
 - [x] C-5: 404-Seite auf Deutsch (brand-konform)
-- [ ] C-6: Product JSON-LD Schema für Shop
+- [x] C-6: Product JSON-LD Schema im Shop (schema.org/Product + Offer)
 - [x] C-7: Telefonnummer vereinheitlicht (+49 6322 989 97 97 in Impressum)
 - [x] /versand Seite anlegen (Versandkosten, Zahlungsarten, Abholung)

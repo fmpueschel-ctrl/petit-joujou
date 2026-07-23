@@ -2,7 +2,15 @@
    petit joujou — Impressum
    ============================================================ */
 
+import { usePageMeta } from "@/hooks/usePageMeta";
+
 export default function Impressum() {
+  usePageMeta({
+    title: "Impressum — petit joujou",
+    description: "Impressum der Joujou GmbH, Weinbar petit joujou in Leistadt, Pfalz. Angaben gemäß § 5 TMG.",
+    canonical: "https://www.petit-joujou.de/impressum",
+  });
+
   return (
     <div style={{ backgroundColor: "#fdf8f9", minHeight: "100vh", paddingTop: "6rem", paddingBottom: "6rem" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 2rem" }}>

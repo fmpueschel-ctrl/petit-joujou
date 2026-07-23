@@ -3,8 +3,15 @@
    ============================================================ */
 
 import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Widerruf() {
+  usePageMeta({
+    title: "Widerrufsbelehrung — petit joujou",
+    description: "Widerrufsbelehrung und Muster-Widerrufsformular für Bestellungen im Online-Shop der Joujou GmbH.",
+    canonical: "https://www.petit-joujou.de/widerruf",
+  });
+
   return (
     <div style={{ backgroundColor: "#fdf8f9", minHeight: "100vh", paddingTop: "6rem", paddingBottom: "6rem" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 2rem" }}>
