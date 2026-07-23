@@ -466,7 +466,7 @@ function EventsSection() {
           {/* Herbstmarkt */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <img loading="lazy"
-              src="/manus-storage/herbstmarkt-event-oRNY9AhCWC4maJwNzE4n7g.webp"
+              src="/manus-storage/herbstmarkt-new_b3b20b88.png"
               alt="Herbstmarkt — Markt der achtsamen Dinge"
               className="event-img"
               style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
