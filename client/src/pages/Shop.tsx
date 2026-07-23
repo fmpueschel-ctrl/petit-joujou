@@ -56,7 +56,7 @@ function ShopNav() {
 
 // ── Cart Drawer ──────────────────────────────────────────────
 function CartDrawer() {
-  const { cart, isOpen, closeCart, itemCount, updateQuantity, removeItem, proceedToCheckout, loading } = useCart();
+  const { cart, isOpen, closeCart, itemCount, updateQuantity, removeItem, proceedToCheckout, loading, ageConfirmed, setAgeConfirmed } = useCart();
 
   if (!isOpen) return null;
 
@@ -161,15 +161,36 @@ function CartDrawer() {
                 {formatMoney(cart.total)}
               </span>
             </div>
+            {/* Age confirmation checkbox */}
+            <label
+              className="font-body"
+              style={{
+                display: "flex", alignItems: "flex-start", gap: "0.5rem",
+                marginBottom: "1rem", cursor: "pointer",
+                fontSize: "0.78rem", color: C.inkMid, lineHeight: 1.5,
+              }}
+            >
+              <input
+                type="checkbox"
+                checked={ageConfirmed}
+                onChange={(e) => setAgeConfirmed(e.target.checked)}
+                style={{ marginTop: "2px", accentColor: C.bgSage }}
+              />
+              <span>
+                Ich bestätige, dass ich mindestens 16 Jahre alt bin.
+              </span>
+            </label>
+
             <button
               onClick={proceedToCheckout}
-              disabled={loading}
+              disabled={loading || !ageConfirmed}
               className="font-body"
               style={{
                 width: "100%", padding: "1rem",
-                backgroundColor: C.bgSage, color: "#fff",
-                border: "none", cursor: "pointer",
+                backgroundColor: ageConfirmed ? C.bgSage : C.border, color: ageConfirmed ? "#fff" : C.inkLight,
+                border: "none", cursor: ageConfirmed ? "pointer" : "not-allowed",
                 fontSize: "0.85rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600,
+                transition: "background-color 0.2s, color 0.2s",
               }}
             >
               Zur Kasse
@@ -255,7 +276,10 @@ function ProductCard({ product }: { product: Product }) {
               {formatMoney(product.priceRange.min)}
             </span>
             <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
-              inkl. MwSt. · {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
+              inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
+            </span>
+            <span className="font-body" style={{ display: "block", fontSize: "0.65rem", color: C.inkLight, marginTop: "0.15rem" }}>
+              zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
             </span>
           </div>
           <button
@@ -369,17 +393,31 @@ export default function Shop() {
               Versand & Zahlung
             </p>
             <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight, margin: 0, lineHeight: 1.7 }}>
-              Versand innerhalb Deutschlands: 5,90 € (frei ab 60 €) · Lieferzeit 2–4 Werktage<br />
-              Zahlung via Kreditkarte, PayPal, Google Pay, Shop Pay
+              Versand innerhalb Deutschlands: 5,90 € (frei ab 60 €) · Lieferzeit 2–4 Werktage
             </p>
+            <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", marginTop: "0.75rem", flexWrap: "wrap" }}>
+              {["Visa", "Mastercard", "PayPal", "Apple Pay", "Google Pay", "Shop Pay"].map((m) => (
+                <span key={m} className="font-body" style={{ fontSize: "0.65rem", color: C.inkMid, padding: "0.25rem 0.5rem", border: `1px solid ${C.border}`, backgroundColor: "#fff" }}>{m}</span>
+              ))}
+            </div>
           </div>
 
           {/* Alcohol Notice */}
           <div style={{ marginBottom: "1.5rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
             <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkMid, margin: 0, lineHeight: 1.7 }}>
-              Kein Verkauf an Personen unter 18 Jahren. Altersverifikation bei Zustellung.<br />
+              Kein Verkauf an Personen unter 16 Jahren. Altersverifikation bei Zustellung.<br />
               Enthält Sulfite. Alkoholgehalt und Füllmenge siehe Produktdetails.<br />
               Verantwortungsvoller Genuss — bitte trinke bewusst.
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div style={{ marginBottom: "1.5rem" }}>
+            <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, margin: "0 0 0.3rem", fontWeight: 600 }}>
+              Fragen?
+            </p>
+            <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight, margin: 0, lineHeight: 1.7 }}>
+              <a href="tel:+4963229899797" style={{ color: C.sage, textDecoration: "none" }}>+49 6322 989 97 97</a> · <a href="mailto:hallo@joujou-pfalz.de" style={{ color: C.sage, textDecoration: "none" }}>hallo@joujou-pfalz.de</a>
             </p>
           </div>
 
@@ -405,6 +443,9 @@ export default function Shop() {
             </Link>
             <Link href="/widerruf" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
               Widerruf
+            </Link>
+            <Link href="/versand" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
+              Versand
             </Link>
           </div>
           <Link href="/" className="font-body" style={{ fontSize: "0.8rem", color: C.sage, display: "inline-block" }}>

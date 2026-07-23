@@ -38,6 +38,8 @@ type CartContextValue = {
   isOpen: boolean;
   loading: boolean;
   itemCount: number;
+  ageConfirmed: boolean;
+  setAgeConfirmed: (v: boolean) => void;
   openCart: () => void;
   closeCart: () => void;
   addItem: (variantId: string, quantity?: number) => Promise<void>;
@@ -54,6 +56,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<Cart | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
 
   const utils = trpc.useUtils();
 
@@ -162,9 +165,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const proceedToCheckout = useCallback(() => {
     if (!cart?.checkoutUrl) return;
-    // checkoutUrl already has channel=online_store appended server-side.
-    window.open(cart.checkoutUrl, "_blank", "noopener,noreferrer");
-  }, [cart]);
+    if (!ageConfirmed) return; // blocked until age is confirmed
+    // Navigate in same tab for better UX (user can use browser back)
+    window.location.href = cart.checkoutUrl;
+  }, [cart, ageConfirmed]);
 
   const value = useMemo<CartContextValue>(
     () => ({
@@ -172,6 +176,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       isOpen,
       loading,
       itemCount,
+      ageConfirmed,
+      setAgeConfirmed,
       openCart,
       closeCart,
       addItem,
@@ -185,6 +191,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       isOpen,
       loading,
       itemCount,
+      ageConfirmed,
       openCart,
       closeCart,
       addItem,

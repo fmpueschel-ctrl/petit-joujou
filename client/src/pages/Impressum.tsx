@@ -32,7 +32,7 @@ export default function Impressum() {
               Kontakt
             </h2>
             <p>
-              Telefon: +49 06322 7906693<br />
+              Telefon: +49 6322 989 97 97<br />
               E-Mail: <a href="mailto:hallo@joujou-pfalz.de" style={{ color: "#40818a" }}>hallo@joujou-pfalz.de</a><br />
               Web: <a href="https://www.joujou-pfalz.de" target="_blank" rel="noopener noreferrer" style={{ color: "#40818a" }}>www.joujou-pfalz.de</a>
             </p>
@@ -103,6 +103,15 @@ export default function Impressum() {
 
           <section style={{ marginBottom: "2.5rem" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+              Verbraucherstreitbeilegung
+            </h2>
+            <p>
+              Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
+          </section>
+
+          <section style={{ marginBottom: "2.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
               Haftungsausschluss
             </h2>
             <p style={{ marginBottom: "1rem" }}>
@@ -117,7 +126,7 @@ export default function Impressum() {
           </section>
 
           <p style={{ fontSize: "0.8rem", color: "#6ba8b0", borderTop: "1px solid #f0d0d8", paddingTop: "2rem" }}>
-            Zuletzt geändert am 17.01.2026 · Copyright Joujou GmbH
+            Stand: Juli 2026 · Joujou GmbH
           </p>
 
         </div>

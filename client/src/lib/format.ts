@@ -22,10 +22,10 @@ export function formatMoney(value: Money | string | number, currencyCode?: strin
     return new Intl.NumberFormat("de-DE", {
       style: "currency",
       currency: code,
-      minimumFractionDigits: amountNum % 1 === 0 ? 0 : 2,
+      minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(amountNum);
   } catch {
-    return `${amountNum.toFixed(0)} €`;
+    return `${amountNum.toFixed(2).replace(".", ",")} €`;
   }
 }

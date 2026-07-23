@@ -1,52 +1,50 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+/* ============================================================
+   petit joujou — 404 Seite nicht gefunden
+   ============================================================ */
+
+import { Link } from "wouter";
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
-
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
-            </div>
-          </div>
+    <div style={{ backgroundColor: "#fdf8f9", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem" }}>
+      <div style={{ textAlign: "center", maxWidth: "480px" }}>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
+        <p className="font-script" style={{ fontSize: "1.2rem", color: "#3a6a5a", marginBottom: "0.5rem" }}>
+          petit joujou
+        </p>
 
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
-          </h2>
+        <h1 className="font-display" style={{ fontSize: "clamp(4rem, 10vw, 6rem)", color: "#1e3a3a", margin: "0 0 0.5rem", lineHeight: 1 }}>
+          404
+        </h1>
 
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
-            <br />
-            It may have been moved or deleted.
-          </p>
+        <h2 className="font-display" style={{ fontSize: "1.3rem", color: "#1e3a3a", margin: "0 0 1.5rem", fontWeight: 400 }}>
+          Seite nicht gefunden
+        </h2>
 
-          <div
-            id="not-found-button-group"
-            className="flex flex-col sm:flex-row gap-3 justify-center"
-          >
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+        <p className="font-body" style={{ fontSize: "0.95rem", color: "#4a5a54", lineHeight: 1.7, marginBottom: "2.5rem" }}>
+          Die angeforderte Seite existiert leider nicht. Vielleicht wurde sie verschoben oder entfernt.
+        </p>
+
+        <Link
+          href="/"
+          style={{
+            display: "inline-block",
+            fontFamily: "var(--font-body)",
+            fontSize: "0.8rem",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            color: "#ffffff",
+            backgroundColor: "#2a4a3e",
+            textDecoration: "none",
+            padding: "0.9rem 2.5rem",
+            fontWeight: 600,
+            transition: "opacity 0.2s",
+          }}
+        >
+          Zur Startseite
+        </Link>
+
+      </div>
     </div>
   );
 }
