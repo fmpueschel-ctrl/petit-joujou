@@ -464,7 +464,7 @@ export default function Shop() {
               Fragen?
             </p>
             <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight, margin: 0, lineHeight: 1.7 }}>
-              <a href="tel:+4963229899797" style={{ color: C.sage, textDecoration: "none" }}>+49 6322 989 97 97</a> · <a href="mailto:hallo@joujou-pfalz.de" style={{ color: C.sage, textDecoration: "none" }}>hallo@joujou-pfalz.de</a>
+              <a href="tel:+4963227906693" style={{ color: C.sage, textDecoration: "none" }}>+49 6322 7906693</a> · <a href="mailto:hallo@joujou-pfalz.de" style={{ color: C.sage, textDecoration: "none" }}>hallo@joujou-pfalz.de</a>
             </p>
           </div>
 

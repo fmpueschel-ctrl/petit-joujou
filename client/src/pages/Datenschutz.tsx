@@ -34,7 +34,7 @@ export default function Datenschutz() {
               Hauptstraße 34<br />
               67098 Bad Dürkheim<br />
               E-Mail: <a href="mailto:hallo@joujou-pfalz.de" style={{ color: "#40818a" }}>hallo@joujou-pfalz.de</a><br />
-              Telefon: +49 6322 989 97 97
+              Telefon: +49 6322 7906693
             </p>
           </section>
 

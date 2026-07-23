@@ -39,12 +39,12 @@ export function usePageMeta(meta: PageMeta) {
 
     // Cleanup: restore defaults on unmount
     return () => {
-      document.title = "petit joujou — Weinbar Leistadt Pfalz | Bio-Weine, Entrecôte, Steak & Events";
-      if (descEl) descEl.setAttribute("content", "petit joujou — Weinbar in Leistadt, Pfalz. 500 Bio-Weine im Gewölbekeller von 1709. Sharing-Küche, Entrecôte & Pinsa. Do–Fr ab 16, Sa–So ab 12 Uhr.");
+      document.title = "petit joujou — Weinbar Bad Dürkheim Pfalz | Bio-Weine, Entrecôte, Steak & Events";
+      if (descEl) descEl.setAttribute("content", "petit joujou — Weinbar in Bad Dürkheim, Pfalz. 500 Bio-Weine im Gewölbekeller von 1709. Sharing-Küche, Entrecôte & Pinsa. Do–Fr ab 16, Sa–So ab 12 Uhr.");
       const link = document.querySelector('link[rel="canonical"]');
       if (link) link.setAttribute("href", "https://www.petit-joujou.de/");
-      if (ogTitleEl) ogTitleEl.setAttribute("content", "petit joujou — Weinbar Leistadt Pfalz");
-      if (ogDescEl) ogDescEl.setAttribute("content", "Nachhaltige Weinbar in Leistadt, Pfalz. Über 500 biozertifizierte Weine, Entrecôte & Rib-Eye vom Weiderind, Pinsa, Events & Weinabende. klein · fein · wein.");
+      if (ogTitleEl) ogTitleEl.setAttribute("content", "petit joujou — Weinbar Bad Dürkheim Pfalz");
+      if (ogDescEl) ogDescEl.setAttribute("content", "Nachhaltige Weinbar in Bad Dürkheim, Pfalz. Über 500 biozertifizierte Weine, Entrecôte & Rib-Eye vom Weiderind, Pinsa, Events & Weinabende. klein · fein · wein.");
       if (ogUrlEl) ogUrlEl.setAttribute("content", "https://www.petit-joujou.de/");
     };
   }, [meta.title, meta.description, meta.canonical, meta.ogTitle, meta.ogDescription]);

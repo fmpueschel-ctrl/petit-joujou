@@ -104,3 +104,12 @@
 - [x] Shop grid: Produktkarten für Event-Tickets konditional anpassen (keine weinspezifischen Hinweise bei Tickets)
 - [x] Delete free event products from Shopify (Herbstmarkt + Joujou Groovt)
 - [x] Add event image to TAVOLA BEATS ticket product in Shopify
+- [x] Fix: Abgelaufene Event-Termine entfernen (11.06. + 16.07. bei BEATS)
+- [x] Fix: Adresse + Telefon vereinheitlichen (Hauptstr. 34 Bad Dürkheim, 06322 7906693)
+- [x] Fix: Bewertungs-Markup (4,9/120) entfernen
+- [x] Fix: Metro GastroPreis Formulierung schärfen
+- [x] Fix: Sticky Navigation (schmale Leiste mit Reservieren + Shop)
+- [x] Fix: /datenschutz 404 beheben (war kein Bug, Route existiert)
+- [x] Fix: Shop-Textfehler (descriptionHtml statt plaintext)
+- [x] Fix: Widerrufsrecht-Ausschluss am TAVOLA BEATS Ticket (§312g Abs.2 Nr.9 BGB)
+- [ ] Newsletter-Anmeldung (Klärung offen, für später)

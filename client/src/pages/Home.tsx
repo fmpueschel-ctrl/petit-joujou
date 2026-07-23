@@ -57,7 +57,9 @@ function Nav() {
               petit joujou
             </span>
           </a>
-
+          <div className="flex items-center" style={{ gap: "0.6rem" }}>
+            <a href="#reservierung" className="font-body" style={{ padding: "0.4rem 1rem", backgroundColor: "rgba(255,255,255,0.15)", color: "#fff", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)" }}>Reservieren</a>
+            <a href="/shop" className="font-body" style={{ padding: "0.4rem 1rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none" }}>Shop</a>
           <button
             onClick={() => setOpen(!open)}
             style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.8)", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
@@ -73,6 +75,7 @@ function Nav() {
               </>
             )}
           </button>
+          </div>
         </div>
       </nav>
       {/* Fullscreen overlay menu */}
@@ -148,7 +151,7 @@ function Hero() {
         {/* Rechts: Content + CTAs */}
         <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start", position: "relative", overflow: "hidden" }}>
           {/* SEO H1 — visually hidden but accessible */}
-          <h1 className="sr-only">petit joujou — Weinbar in Leistadt, Pfalz</h1>
+          <h1 className="sr-only">petit joujou — Weinbar in Bad Dürkheim, Pfalz</h1>
           {/* Weinbar-Illustration — oben rechts reinragend */}
           <img
             src="/manus-storage/weinbar_correct_5d2f0ca9.png"
@@ -419,7 +422,7 @@ function EventsSection() {
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>BEATS petit joujou</p>
               <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>DJ Marcel Ullrich</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600 }}>11.06. · 16.07. · 13.08.2026</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600 }}>13.08.2026</p>
               <p className="font-body" style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.6)", marginTop: "0.3rem" }}>Kostenlos · Eintritt frei</p>
             </div>
           </div>
@@ -876,7 +879,7 @@ function Footer() {
               petit joujou
             </span>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, marginTop: "0.75rem", lineHeight: 1.7 }}>
-              Weinbar Leistadt Pfalz<br />
+              Weinbar Bad Dürkheim Pfalz<br />
               Eine Marke von Joujou Pfalz
             </p>
           </div>
@@ -900,9 +903,9 @@ function Footer() {
               Kontakt
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.8 }}>
-              Leistadt Pfalz<br />
-              <a href="tel:+4963229899797" style={{ color: C.rose, textDecoration: "none" }}>
-                06322 / 989 97 97
+              Hauptstraße 34, 67098 Bad Dürkheim<br />
+              <a href="tel:+4963227906693" style={{ color: C.rose, textDecoration: "none" }}>
+                06322 / 790 66 93
               </a><br />
               <a href="mailto:hallo@joujou-pfalz.de" style={{ color: C.rose, textDecoration: "none" }}>
                 hallo@joujou-pfalz.de
@@ -957,10 +960,10 @@ function SiegelSection() {
         {/* Metro Gastropreis */}
         <div style={{ textAlign: "center", marginTop: "3rem", paddingTop: "2.5rem", borderTop: `1px solid ${C.border}` }}>
           <p className="font-display" style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)", color: C.ink, marginBottom: "0.5rem" }}>
-            Nachhaltigste Gastronomie Deutschlands
+            METRO GastroPreis 2024 — Sieger Kategorie Nachhaltigkeit
           </p>
           <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, lineHeight: 1.6 }}>
-            METRO GastroPreis 2024 — Kategorie Nachhaltigkeit
+            Ausgezeichnet für bio-zertifizierte Küche, regionale Lieferketten & Zero-Waste-Konzept
           </p>
         </div>
 

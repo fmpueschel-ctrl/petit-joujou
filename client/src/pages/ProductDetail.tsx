@@ -120,11 +120,13 @@ export default function ProductDetail() {
                 )}
               </div>
 
-              {product.description && (
+              {product.descriptionHtml ? (
+                <div className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }} dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
+              ) : product.description ? (
                 <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
                   {product.description}
                 </p>
-              )}
+              ) : null}
 
               <button
                 onClick={handleAdd}
@@ -146,6 +148,15 @@ export default function ProductDetail() {
               >
                 {adding ? "..." : variant?.availableForSale ? "In den Warenkorb" : "Ausverkauft"}
               </button>
+
+              {/* Ticket legal notice — Widerrufsrecht-Ausschluss */}
+              {isEventTicket && (
+                <div style={{ marginTop: "1.5rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
+                  <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkMid, margin: 0, lineHeight: 1.7 }}>
+                    <strong style={{ color: C.ink }}>Hinweis:</strong> Das Widerrufsrecht erlischt bei Verträgen zur Erbringung von Dienstleistungen im Zusammenhang mit Freizeitbetätigungen, wenn der Vertrag für die Erbringung einen spezifischen Termin vorsieht (§ 312g Abs. 2 Nr. 9 BGB). Eine Rückerstattung ist nach Buchung nicht möglich.
+                  </p>
+                </div>
+              )}
 
               {/* Wine details — only for non-ticket products */}
               {!isEventTicket && (

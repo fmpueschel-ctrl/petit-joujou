@@ -7,7 +7,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 export default function Impressum() {
   usePageMeta({
     title: "Impressum — petit joujou",
-    description: "Impressum der Joujou GmbH, Weinbar petit joujou in Leistadt, Pfalz. Angaben gemäß § 5 TMG.",
+    description: "Impressum der Joujou GmbH, Weinbar petit joujou in Bad Dürkheim, Pfalz. Angaben gemäß § 5 TMG.",
     canonical: "https://www.petit-joujou.de/impressum",
   });
 
@@ -40,7 +40,7 @@ export default function Impressum() {
               Kontakt
             </h2>
             <p>
-              Telefon: +49 6322 989 97 97<br />
+              Telefon: +49 6322 7906693<br />
               E-Mail: <a href="mailto:hallo@joujou-pfalz.de" style={{ color: "#40818a" }}>hallo@joujou-pfalz.de</a><br />
               Web: <a href="https://www.joujou-pfalz.de" target="_blank" rel="noopener noreferrer" style={{ color: "#40818a" }}>www.joujou-pfalz.de</a>
             </p>

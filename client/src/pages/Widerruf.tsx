@@ -40,7 +40,7 @@ export default function Widerruf() {
               Hauptstraße 34<br />
               67098 Bad Dürkheim<br />
               E-Mail: hallo@joujou-pfalz.de<br />
-              Telefon: +49 6322 989 97 97
+              Telefon: +49 6322 7906693
             </p>
             <p style={{ marginBottom: "1rem" }}>
               mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
