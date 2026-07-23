@@ -51,3 +51,8 @@
 - [x] Entrecôte-Text: "Das wahrscheinlich beste Steak der Pfalz." + "Dry-Aged Entrecôte · puristisch · 100-Gramm-weise · Signature Cut"
 - [x] Garten-Section: Zurück auf Dunkelgrün (bgSage) mit heller Schrift (wie Weinkeller)
 - [x] Events-Section: Auf Pastellgrün (bg) mit dunkler Schrift
+- [x] Shopify integration (commerce router, CartProvider, env vars)
+- [x] Shop page (/shop) with product display from Shopify Storefront API
+- [x] Cart drawer with add/remove/quantity/checkout flow
+- [x] Shop link in navigation menu (Home overlay)
+- [x] German locale for price formatting (EUR)

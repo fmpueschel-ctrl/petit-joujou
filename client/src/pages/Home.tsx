@@ -97,6 +97,14 @@ function Nav() {
             </a>
           ))}
           <a
+            href="/shop"
+            onClick={() => setOpen(false)}
+            className="font-display"
+            style={{ fontSize: "clamp(1.8rem, 5vw, 2.8rem)", color: C.rose, textDecoration: "none", letterSpacing: "0.05em" }}
+          >
+            Shop
+          </a>
+          <a
             href="#gesellschaften"
             onClick={() => setOpen(false)}
             className="font-body"
