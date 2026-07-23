@@ -157,13 +157,9 @@ function Hero() {
             style={{ position: "absolute", top: "-10px", right: "-20px", width: "clamp(120px, 20vw, 190px)", opacity: 0.85, pointerEvents: "none" }}
           />
 
-          {/* Claim */}
-          <p className="font-script" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", color: C.sageDark, lineHeight: 1.2, marginBottom: "0.75rem" }}>
-            klein &middot; fein &middot; wein
-          </p>
           {/* Kurzbeschreibung */}
           <p className="font-body" style={{ fontSize: "1rem", color: C.inkMid, lineHeight: 1.85, marginBottom: "2.5rem", maxWidth: "380px" }}>
-            Wir möchten euch verzaubern. Schnappt euch eine Flasche Wein, genießt die Sharing-Kreationen von Chef Franz und vergesst einfach die Zeit.
+            <span style={{ fontWeight: 700, color: C.ink }}>Die Weinbar im Joujou.</span> Wir möchten euch verzaubern. Schnappt euch eine Flasche Wein, genießt die Sharing-Kreationen von Chef Franz und vergesst einfach die Zeit.
           </p>
 
           {/* CTAs */}
@@ -450,7 +446,7 @@ function EventsSection() {
           {/* Joujou Groovt */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <img loading="lazy"
-              src="/manus-storage/joujou-groovt-event_408957c5.webp"
+              src="/manus-storage/joujou-groovt-new_9f6c6713.png"
               alt="Joujou Groovt — Live-Musik & Genuss"
               className="event-img"
               style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
@@ -798,7 +794,7 @@ function EssenSection() {
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-1/2">
               <img
-                src="/manus-storage/entrecote-signature_206a9933.webp"
+                src="/manus-storage/entrecote_zoom_d4e27da5.webp"
                 alt="Dry-Aged Entrecôte — Signature Cut"
                 className="w-full h-full object-cover"
                 style={{ aspectRatio: "3/4", maxHeight: "500px" }}
@@ -1017,9 +1013,15 @@ export default function Home() {
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
       <main>
         <Hero />
-        {/* Subtle divider line between Hero and Weinkeller */}
-        <div style={{ backgroundColor: C.bg, textAlign: "center", padding: "1.5rem 0" }}>
-          <div style={{ width: "4rem", height: "1px", backgroundColor: C.border, margin: "0 auto" }} />
+        {/* klein · fein · wein — Transition-Banner (Metallic Bronze) */}
+        <div style={{ backgroundColor: C.bg, textAlign: "center", padding: "2.5rem 1.5rem" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", flexWrap: "wrap" }}>
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>klein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.sage, flexShrink: 0 }} />
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>fein</span>
+            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.sage, flexShrink: 0 }} />
+            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>wein</span>
+          </div>
         </div>
         <WeinkellerSection />
         <EssenSection />
