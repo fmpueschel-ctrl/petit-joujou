@@ -190,6 +190,7 @@ function ProductCard({ product }: { product: Product }) {
   const variant = product.variants[0];
   const image = product.images[0];
   const [adding, setAdding] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleAdd = async () => {
     if (!variant || !variant.availableForSale) return;
@@ -226,14 +227,37 @@ function ProductCard({ product }: { product: Product }) {
           {product.title}
         </h3>
         {product.description && (
-          <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, margin: 0, lineHeight: 1.6, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-            {product.description}
-          </p>
+          <div>
+            <p className="font-body" style={{
+              fontSize: "0.85rem", color: C.inkMid, margin: 0, lineHeight: 1.6,
+              ...(!expanded ? { display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" as const, overflow: "hidden" } : {}),
+            }}>
+              {product.description}
+            </p>
+            {product.description.length > 120 && (
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className="font-body"
+                style={{
+                  background: "none", border: "none", cursor: "pointer",
+                  fontSize: "0.8rem", color: C.sage, padding: "0.3rem 0 0",
+                  textDecoration: "underline", textUnderlineOffset: "2px",
+                }}
+              >
+                {expanded ? "Weniger anzeigen" : "Mehr lesen"}
+              </button>
+            )}
+          </div>
         )}
         <div style={{ marginTop: "auto", paddingTop: "1rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <span className="font-display" style={{ fontSize: "1.4rem", color: C.ink }}>
-            {formatMoney(product.priceRange.min)}
-          </span>
+          <div>
+            <span className="font-display" style={{ fontSize: "1.4rem", color: C.ink }}>
+              {formatMoney(product.priceRange.min)}
+            </span>
+            <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
+              inkl. MwSt. · {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
+            </span>
+          </div>
           <button
             onClick={handleAdd}
             disabled={!variant?.availableForSale || loading || adding}
@@ -336,14 +360,57 @@ export default function Shop() {
         </div>
       </section>
 
-      {/* Footer hint */}
-      <footer style={{ padding: "2rem 0 3rem", textAlign: "center", borderTop: `1px solid ${C.border}` }}>
-        <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight, margin: 0 }}>
-          Versand aus Deutschland · Nachhaltig produziert · Sichere Zahlung via Shopify
-        </p>
-        <Link href="/" className="font-body" style={{ fontSize: "0.8rem", color: C.sage, marginTop: "0.5rem", display: "inline-block" }}>
-          ← Zurück zur Weinbar
-        </Link>
+      {/* Shop Info Section */}
+      <section style={{ padding: "2rem 0 0", borderTop: `1px solid ${C.border}` }}>
+        <div className="container" style={{ maxWidth: "700px", textAlign: "center" }}>
+          {/* Shipping & Payment */}
+          <div style={{ marginBottom: "1.5rem" }}>
+            <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, margin: "0 0 0.3rem", fontWeight: 600 }}>
+              Versand & Zahlung
+            </p>
+            <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight, margin: 0, lineHeight: 1.7 }}>
+              Versand innerhalb Deutschlands: 5,90 € (frei ab 60 €) · Lieferzeit 2–4 Werktage<br />
+              Zahlung via Kreditkarte, PayPal, Google Pay, Shop Pay
+            </p>
+          </div>
+
+          {/* Alcohol Notice */}
+          <div style={{ marginBottom: "1.5rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
+            <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkMid, margin: 0, lineHeight: 1.7 }}>
+              Kein Verkauf an Personen unter 18 Jahren. Altersverifikation bei Zustellung.<br />
+              Enthält Sulfite. Alkoholgehalt und Füllmenge siehe Produktdetails.<br />
+              Verantwortungsvoller Genuss — bitte trinke bewusst.
+            </p>
+          </div>
+
+          {/* Price Notice */}
+          <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, margin: "0 0 1.5rem", lineHeight: 1.6 }}>
+            Alle Preise inkl. MwSt. · Grundpreis wird am Produkt ausgewiesen.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer with Legal Links */}
+      <footer style={{ padding: "1.5rem 0 3rem", textAlign: "center", borderTop: `1px solid ${C.border}` }}>
+        <div className="container" style={{ maxWidth: "700px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem", marginBottom: "1rem" }}>
+            <Link href="/impressum" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
+              Impressum
+            </Link>
+            <Link href="/datenschutz" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
+              Datenschutz
+            </Link>
+            <Link href="/agb" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
+              AGB
+            </Link>
+            <Link href="/widerruf" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
+              Widerruf
+            </Link>
+          </div>
+          <Link href="/" className="font-body" style={{ fontSize: "0.8rem", color: C.sage, display: "inline-block" }}>
+            ← Zurück zur Weinbar
+          </Link>
+        </div>
       </footer>
     </div>
   );

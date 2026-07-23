@@ -58,7 +58,15 @@
 - [x] German locale for price formatting (EUR)
 - [x] Shop-Button sichtbar in der Top-Navigation (neben Reservieren, Speisekarte)
 - [x] Shop-Minisektion auf Hauptseite (Konzept-Erklärung + Link zum Shop)
-- [ ] Weinkarte-Button im Live-Auftritt prüfen/fixen
+- [x] Weinkarte-Button im Live-Auftritt prüfen/fixen
 - [x] Shop-Text ändern (neuer Intro-Text über Konzept)
 - [x] 6er Karton besser kennzeichnen im Produkttitel
-- [ ] petit-joujou.de lädt nicht — prüfen
+- [x] petit-joujou.de lädt nicht — prüfen (SSL bei Strato aktiviert, jetzt gelöst)
+- [x] Produktbeschreibung aufklappbar machen (Mehr lesen Button)
+- [x] Rechtliche Hinweise im Shop-Footer (Impressum, AGB, Widerruf Links)
+- [x] Preisangabe verbessern: inkl. MwSt + Grundpreis pro Liter
+- [x] Versandkosten + Lieferzeit angeben
+- [x] Alkohol-Hinweise: Jugendschutz, Sulfithinweis, Alkoholgehalt
+- [x] Bestellbutton-Text prüfen (Shopify Checkout)
+- [ ] Rechtstexte-Seiten (/impressum, /datenschutz, /agb, /widerruf) anlegen oder extern verlinken
+- [ ] Alkoholgehalt (%) im Produkt anzeigen (aus Shopify-Beschreibung parsen)
