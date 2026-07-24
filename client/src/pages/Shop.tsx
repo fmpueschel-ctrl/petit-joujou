@@ -303,26 +303,49 @@ function ProductCard({ product }: { product: Product }) {
               </span>
             )}
           </div>
-          <button
-            onClick={handleAdd}
-            disabled={!variant?.availableForSale || loading || adding}
-            className="font-body"
-            style={{
-              padding: "0.7rem 1.5rem",
-              backgroundColor: variant?.availableForSale ? C.bgSage : C.border,
-              color: variant?.availableForSale ? "#fff" : C.inkLight,
-              border: "none",
-              cursor: variant?.availableForSale ? "pointer" : "not-allowed",
-              fontSize: "0.75rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              fontWeight: 600,
-              transition: "opacity 0.15s",
-              opacity: adding ? 0.6 : 1,
-            }}
-          >
-            {adding ? "..." : variant?.availableForSale ? "In den Korb" : "Ausverkauft"}
-          </button>
+          {/* Multi-variant products (merch) → link to detail page for selection */}
+          {isMerch && product.variants.length > 1 ? (
+            <Link
+              href={`/shop/${product.handle}`}
+              className="font-body"
+              style={{
+                padding: "0.7rem 1.5rem",
+                backgroundColor: C.bgSage,
+                color: "#fff",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "0.75rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 600,
+                textDecoration: "none",
+                display: "inline-block",
+              }}
+            >
+              Auswählen
+            </Link>
+          ) : (
+            <button
+              onClick={handleAdd}
+              disabled={!variant?.availableForSale || loading || adding}
+              className="font-body"
+              style={{
+                padding: "0.7rem 1.5rem",
+                backgroundColor: variant?.availableForSale ? C.bgSage : C.border,
+                color: variant?.availableForSale ? "#fff" : C.inkLight,
+                border: "none",
+                cursor: variant?.availableForSale ? "pointer" : "not-allowed",
+                fontSize: "0.75rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                fontWeight: 600,
+                transition: "opacity 0.15s",
+                opacity: adding ? 0.6 : 1,
+              }}
+            >
+              {adding ? "..." : variant?.availableForSale ? "In den Korb" : "Ausverkauft"}
+            </button>
+          )}
         </div>
       </div>
     </div>

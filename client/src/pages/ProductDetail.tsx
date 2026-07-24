@@ -109,7 +109,7 @@ export default function ProductDetail() {
       {/* Product Content */}
       <section style={{ paddingTop: "100px", paddingBottom: "4rem" }}>
         <div className="container" style={{ maxWidth: "900px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-start">
             {/* Image */}
             <div style={{ backgroundColor: "#fff", border: `1px solid ${C.border}`, padding: "2rem", display: "flex", alignItems: "center", justifyContent: "center", aspectRatio: "1" }}>
               {displayImage ? (

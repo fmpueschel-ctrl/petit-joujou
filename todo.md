@@ -118,3 +118,4 @@
 - [x] ProductDetail.tsx: variant picker (color/size) for merch products
 - [x] ProductDetail.tsx: merch info box (material, sizes, colors, Spreadconnect note)
 - [x] ProductDetail: Bild wechselt bei Farbauswahl (Varianten-Bilder von Spreadconnect)
+- [x] Shop-Übersicht: Bei Multi-Varianten-Produkten (T-Shirt) keinen direkten "In den Korb"-Button, sondern "Auswählen" → Detailseite
