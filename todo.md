@@ -119,6 +119,11 @@
 - [x] ProductDetail.tsx: merch info box (material, sizes, colors, Spreadconnect note)
 - [x] ProductDetail: Bild wechselt bei Farbauswahl (Varianten-Bilder von Spreadconnect)
 - [x] Shop-Übersicht: Bei Multi-Varianten-Produkten (T-Shirt) keinen direkten "In den Korb"-Button, sondern "Auswählen" → Detailseite
-- [ ] Flaschenfreunde: Alle 14 Weine recherchieren (Beschreibungen + Bilder)
-- [ ] Flaschenfreunde: Alle 14 Weine als Shopify-Produkte anlegen (Mitnahmepreis)
-- [ ] Flaschenfreunde: Weinkarte-Seite auf der Website (mit Korkgeld-Erklärung)
+- [x] Flaschenfreunde: Alle 14 Weine recherchiert (Beschreibungen + Bilder — Nature One Demo-Bild, echtes Bild ausstehend)
+- [x] Flaschenfreunde: Alle 14 Weine + 3 Pakete als Shopify-Produkte angelegt (Mitnahmepreis)
+- [x] Flaschenfreunde: Weinkarte-Seite auf der Website (mit Korkgeld-Erklärung 10€)
+- [x] Shop: Kategorie-Tabs (Wein / Events / Joujou)
+- [x] Shop: URL-Parameter ?tab=wein|events|joujou für Deep-Linking
+- [x] Homepage: Shop-Teaser (TheOneSection) mit 3 Kategorie-Karten → /shop?tab=...
+- [ ] Nature One: Echtes Flaschenbild hochladen (Nutzer liefert noch)
+- [ ] Weinkarte-Seitenname: Stärkere Alternative zu "Flaschenfreunde" (Nutzer-Entscheidung offen)

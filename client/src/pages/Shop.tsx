@@ -398,7 +398,16 @@ function categorizeProduct(product: Product): Category {
 export default function Shop() {
   const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery();
   const { itemCount, openCart } = useCart();
-  const [activeCategory, setActiveCategory] = useState<Category>("Wein");
+
+  // Read ?tab= from URL to allow deep-linking from homepage
+  const getInitialTab = (): Category => {
+    const params = new URLSearchParams(window.location.search);
+    const tab = params.get("tab");
+    if (tab === "events") return "Events";
+    if (tab === "joujou") return "Joujou";
+    return "Wein";
+  };
+  const [activeCategory, setActiveCategory] = useState<Category>(getInitialTab);
 
   const counts = useMemo(() => {
     const c: Record<Category, number> = { Wein: 0, Events: 0, Joujou: 0 };
