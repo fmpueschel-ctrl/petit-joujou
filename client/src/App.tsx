@@ -10,6 +10,7 @@ import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import Widerruf from "./pages/Widerruf";
 import Versand from "./pages/Versand";
+import Flaschenfreunde from "./pages/Flaschenfreunde";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 
@@ -24,6 +25,7 @@ function Router() {
       <Route path={"/agb"} component={AGB} />
       <Route path={"/widerruf"} component={Widerruf} />
       <Route path={"/versand"} component={Versand} />
+      <Route path={"/flaschenfreunde"} component={Flaschenfreunde} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

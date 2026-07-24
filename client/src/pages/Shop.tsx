@@ -8,7 +8,7 @@ import { formatMoney } from "@/lib/format";
 import { useCart } from "@/contexts/CartContext";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import type { Product } from "@shared/commerce/types";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "wouter";
 
 // ── Palette (same as Home.tsx) ───────────────────────────────
@@ -276,10 +276,10 @@ function ProductCard({ product }: { product: Product }) {
             )}
           </div>
         )}
-        {/* EU-Weinkennzeichnung (A-8) — nur für Wein */}
+        {/* EU-Weinkennzeichnung — nur für Wein */}
         {isWine && (
           <p className="font-body" style={{ fontSize: "0.7rem", color: C.inkLight, margin: "0.5rem 0 0", lineHeight: 1.6 }}>
-            10,5 % vol. · Enthält Sulfite · Abfüller: Weingut Egon Schmitt, Bad Dürkheim
+            Enthält Sulfite · {product.vendor && `${product.vendor}`}
           </p>
         )}
         <div style={{ marginTop: "auto", paddingTop: "1rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -290,7 +290,7 @@ function ProductCard({ product }: { product: Product }) {
             {isWine && (
               <>
                 <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
-                  inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
+                  inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / (product.tags.includes("Paket") ? 4.5 : product.title.includes("6 x") ? 6 : 0.75)).toFixed(2).replace(".", ",")} €/L
                 </span>
                 <span className="font-body" style={{ display: "block", fontSize: "0.65rem", color: C.inkLight, marginTop: "0.15rem" }}>
                   zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
@@ -352,10 +352,63 @@ function ProductCard({ product }: { product: Product }) {
   );
 }
 
+// ── Category Tabs ───────────────────────────────────────────
+type Category = "Wein" | "Events" | "Joujou";
+
+function CategoryTabs({ active, onChange, counts }: { active: Category; onChange: (c: Category) => void; counts: Record<Category, number> }) {
+  const tabs: { key: Category; label: string }[] = [
+    { key: "Wein", label: "Wein" },
+    { key: "Events", label: "Events" },
+    { key: "Joujou", label: "Joujou" },
+  ];
+  return (
+    <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
+      {tabs.filter(t => counts[t.key] > 0).map((t) => (
+        <button
+          key={t.key}
+          onClick={() => onChange(t.key)}
+          className="font-body"
+          style={{
+            padding: "0.6rem 1.5rem",
+            fontSize: "0.8rem",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            fontWeight: 600,
+            border: `1px solid ${active === t.key ? C.bgSage : C.border}`,
+            backgroundColor: active === t.key ? C.bgSage : "transparent",
+            color: active === t.key ? "#fff" : C.inkMid,
+            cursor: "pointer",
+            transition: "all 0.2s ease",
+          }}
+        >
+          {t.label} ({counts[t.key]})
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function categorizeProduct(product: Product): Category {
+  if (product.productType === "Event-Ticket" || product.tags.includes("Event")) return "Events";
+  if (product.vendor === "Spreadconnect" || product.tags.includes("Joujou")) return "Joujou";
+  return "Wein";
+}
+
 // ── Main Shop Page ───────────────────────────────────────────
 export default function Shop() {
   const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery();
   const { itemCount, openCart } = useCart();
+  const [activeCategory, setActiveCategory] = useState<Category>("Wein");
+
+  const counts = useMemo(() => {
+    const c: Record<Category, number> = { Wein: 0, Events: 0, Joujou: 0 };
+    products.forEach(p => c[categorizeProduct(p)]++);
+    return c;
+  }, [products]);
+
+  const filteredProducts = useMemo(() => {
+    return products.filter(p => categorizeProduct(p) === activeCategory);
+  }, [products, activeCategory]);
 
   usePageMeta({
     title: "Shop | The One — petit joujou",
@@ -432,6 +485,11 @@ export default function Shop() {
       {/* Divider */}
       <div style={{ width: "60px", height: "1px", backgroundColor: C.sage, margin: "0 auto 3rem", opacity: 0.4 }} />
 
+      {/* Category Tabs */}
+      {!isLoading && products.length > 0 && (
+        <CategoryTabs active={activeCategory} onChange={setActiveCategory} counts={counts} />
+      )}
+
       {/* Products Grid */}
       <section style={{ paddingBottom: "6rem" }}>
         <div className="container" style={{ maxWidth: "1000px" }}>
@@ -439,7 +497,7 @@ export default function Shop() {
             <div style={{ textAlign: "center", padding: "4rem 0" }}>
               <p className="font-body" style={{ color: C.inkLight }}>Laden...</p>
             </div>
-          ) : products.length === 0 ? (
+          ) : filteredProducts.length === 0 ? (
             <div style={{ textAlign: "center", padding: "4rem 0" }}>
               <p className="font-body" style={{ color: C.inkLight, fontSize: "1rem" }}>
                 Bald verfügbar — wir kuratieren gerade.
@@ -448,12 +506,12 @@ export default function Shop() {
           ) : (
             <div style={{
               display: "grid",
-              gridTemplateColumns: products.length === 1 ? "1fr" : "repeat(auto-fill, minmax(320px, 1fr))",
+              gridTemplateColumns: filteredProducts.length === 1 ? "1fr" : "repeat(auto-fill, minmax(320px, 1fr))",
               gap: "2rem",
-              maxWidth: products.length === 1 ? "480px" : "100%",
-              margin: products.length === 1 ? "0 auto" : undefined,
+              maxWidth: filteredProducts.length === 1 ? "480px" : "100%",
+              margin: filteredProducts.length === 1 ? "0 auto" : undefined,
             }}>
-              {products.map((product) => (
+              {filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
