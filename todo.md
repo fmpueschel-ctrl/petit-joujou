@@ -113,3 +113,7 @@
 - [x] Fix: Shop-Textfehler (descriptionHtml statt plaintext)
 - [x] Fix: Widerrufsrecht-Ausschluss am TAVOLA BEATS Ticket (§312g Abs.2 Nr.9 BGB)
 - [ ] Newsletter-Anmeldung (Klärung offen, für später)
+- [x] Spreadconnect T-shirt published to Manus storefront channel
+- [x] Shop.tsx: merch products display without wine metadata (no Grundpreis/L, no Sulfite)
+- [x] ProductDetail.tsx: variant picker (color/size) for merch products
+- [x] ProductDetail.tsx: merch info box (material, sizes, colors, Spreadconnect note)

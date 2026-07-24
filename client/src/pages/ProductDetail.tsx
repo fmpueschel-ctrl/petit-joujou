@@ -6,7 +6,7 @@ import { trpc } from "@/lib/trpc";
 import { formatMoney } from "@/lib/format";
 import { useCart } from "@/contexts/CartContext";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link, useParams, useLocation } from "wouter";
 
 const C = {
@@ -26,6 +26,7 @@ export default function ProductDetail() {
   const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery();
   const { addItem, loading: cartLoading } = useCart();
   const [adding, setAdding] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
 
   // Find product by its Shopify handle
   const product = products.find((p) => p.handle === handle);
@@ -35,6 +36,23 @@ export default function ProductDetail() {
     description: product?.description?.slice(0, 155) || "Kuratiertes Produkt aus dem petit joujou Shop | The One.",
     canonical: `https://www.petit-joujou.de/shop/${handle}`,
   });
+
+  // Determine selected variant based on chosen options
+  const selectedVariant = useMemo(() => {
+    if (!product) return null;
+    if (product.variants.length <= 1) return product.variants[0] || null;
+
+    // If no options selected yet, return first variant
+    const optionKeys = Object.keys(selectedOptions);
+    if (optionKeys.length === 0) return product.variants[0] || null;
+
+    // Find variant matching all selected options
+    return product.variants.find((v) =>
+      v.selectedOptions.every(
+        (opt) => !selectedOptions[opt.name] || selectedOptions[opt.name] === opt.value
+      )
+    ) || product.variants[0];
+  }, [product, selectedOptions]);
 
   if (isLoading) {
     return (
@@ -53,14 +71,16 @@ export default function ProductDetail() {
     );
   }
 
-  const variant = product.variants[0];
   const image = product.images[0];
   const isEventTicket = product.productType === "Event-Ticket";
+  const isMerch = product.vendor === "Spreadconnect" || product.tags.includes("Spreadconnect");
+  const isWine = !isEventTicket && !isMerch;
+  const hasVariantOptions = product.options.length > 0 && product.variants.length > 1;
 
   const handleAdd = async () => {
-    if (!variant || !variant.availableForSale) return;
+    if (!selectedVariant || !selectedVariant.availableForSale) return;
     setAdding(true);
-    await addItem(variant.id, 1);
+    await addItem(selectedVariant.id, 1);
     setAdding(false);
   };
 
@@ -108,7 +128,7 @@ export default function ProductDetail() {
                 <span className="font-display" style={{ fontSize: "2rem", color: C.ink }}>
                   {parseFloat(product.priceRange.min.amount) === 0 ? "Kostenlos" : formatMoney(product.priceRange.min)}
                 </span>
-                {!isEventTicket && (
+                {isWine && (
                   <>
                     <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
                       inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
@@ -117,6 +137,11 @@ export default function ProductDetail() {
                       zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
                     </span>
                   </>
+                )}
+                {(isMerch || isEventTicket) && (
+                  <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
+                    inkl. MwSt. · zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link>
+                  </span>
                 )}
               </div>
 
@@ -128,16 +153,57 @@ export default function ProductDetail() {
                 </p>
               ) : null}
 
+              {/* Variant Picker (for merch with multiple options) */}
+              {hasVariantOptions && (
+                <div style={{ marginBottom: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+                  {product.options.map((option) => (
+                    <div key={option.name}>
+                      <label className="font-body" style={{ display: "block", fontSize: "0.8rem", fontWeight: 600, color: C.ink, marginBottom: "0.5rem" }}>
+                        {option.name === "Color" ? "Farbe" : option.name === "Size" ? "Größe" : option.name}
+                        {selectedOptions[option.name] && (
+                          <span style={{ fontWeight: 400, color: C.inkMid, marginLeft: "0.5rem" }}>
+                            — {selectedOptions[option.name]}
+                          </span>
+                        )}
+                      </label>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                        {option.values.map((value) => {
+                          const isSelected = selectedOptions[option.name] === value;
+                          return (
+                            <button
+                              key={value}
+                              onClick={() => setSelectedOptions((prev) => ({ ...prev, [option.name]: value }))}
+                              className="font-body"
+                              style={{
+                                padding: "0.4rem 0.8rem",
+                                fontSize: "0.75rem",
+                                border: `1px solid ${isSelected ? C.bgSage : C.border}`,
+                                backgroundColor: isSelected ? C.bgSage : "#fff",
+                                color: isSelected ? "#fff" : C.ink,
+                                cursor: "pointer",
+                                transition: "all 0.15s ease",
+                              }}
+                            >
+                              {value}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <button
                 onClick={handleAdd}
-                disabled={!variant?.availableForSale || cartLoading || adding}
+                disabled={!selectedVariant?.availableForSale || cartLoading || adding}
                 className="font-body"
                 style={{
                   padding: "1rem 2.5rem",
-                  backgroundColor: variant?.availableForSale ? C.bgSage : C.border,
-                  color: variant?.availableForSale ? "#fff" : C.inkLight,
+                  backgroundColor: selectedVariant?.availableForSale ? C.bgSage : C.border,
+                  color: selectedVariant?.availableForSale ? "#fff" : C.inkLight,
                   border: "none",
-                  cursor: variant?.availableForSale ? "pointer" : "not-allowed",
+                  cursor: selectedVariant?.availableForSale ? "pointer" : "not-allowed",
                   fontSize: "0.8rem",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
@@ -146,7 +212,7 @@ export default function ProductDetail() {
                   transition: "opacity 0.15s",
                 }}
               >
-                {adding ? "..." : variant?.availableForSale ? "In den Warenkorb" : "Ausverkauft"}
+                {adding ? "..." : selectedVariant?.availableForSale ? "In den Warenkorb" : "Ausverkauft"}
               </button>
 
               {/* Ticket legal notice — Widerrufsrecht-Ausschluss */}
@@ -158,8 +224,8 @@ export default function ProductDetail() {
                 </div>
               )}
 
-              {/* Wine details — only for non-ticket products */}
-              {!isEventTicket && (
+              {/* Wine details — only for wine products */}
+              {isWine && (
                 <div style={{ marginTop: "2rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
                   <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, margin: 0, lineHeight: 1.8 }}>
                     <strong style={{ color: C.ink }}>Alkoholgehalt:</strong> 10,5 % vol.<br />
@@ -167,6 +233,19 @@ export default function ProductDetail() {
                     <strong style={{ color: C.ink }}>Weingut:</strong> Egon Schmitt, Bad Dürkheim<br />
                     <strong style={{ color: C.ink }}>Inhalt:</strong> 6 × 1 Liter<br />
                     Enthält Sulfite.
+                  </p>
+                </div>
+              )}
+
+              {/* Merch details — material info */}
+              {isMerch && (
+                <div style={{ marginTop: "2rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
+                  <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, margin: 0, lineHeight: 1.8 }}>
+                    <strong style={{ color: C.ink }}>Material:</strong> 100% Bio-Baumwolle<br />
+                    <strong style={{ color: C.ink }}>Schnitt:</strong> Oversized / Unisex<br />
+                    <strong style={{ color: C.ink }}>Farben:</strong> {product.options.find(o => o.name === "Color")?.values.join(", ") || "Diverse"}<br />
+                    <strong style={{ color: C.ink }}>Größen:</strong> {product.options.find(o => o.name === "Size")?.values.join(", ") || "XS–3XL"}<br />
+                    Produktion & Versand durch Spreadconnect (Print-on-Demand).
                   </p>
                 </div>
               )}
