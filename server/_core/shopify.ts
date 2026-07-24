@@ -184,6 +184,7 @@ const VARIANT_FRAGMENT = /* GraphQL */ `
     price { ...MoneyFields }
     compareAtPrice { ...MoneyFields }
     selectedOptions { name value }
+    image { url altText width height }
   }
 `;
 
@@ -207,7 +208,7 @@ const PRODUCT_FRAGMENT = /* GraphQL */ `
     images(first: 8) {
       edges { node { ...ImageFields } }
     }
-    variants(first: 25) {
+    variants(first: 100) {
       edges { node { ...VariantFields } }
     }
   }

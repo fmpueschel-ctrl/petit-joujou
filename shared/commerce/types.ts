@@ -44,6 +44,8 @@ export type ProductVariant = {
   availableForSale: boolean;
   /** Flat list of selected options — sized for variant pickers. */
   selectedOptions: SelectedOption[];
+  /** Variant-specific image (e.g. color swatch photo). */
+  image: Image | null;
 };
 
 export type Product = {

@@ -117,3 +117,4 @@
 - [x] Shop.tsx: merch products display without wine metadata (no Grundpreis/L, no Sulfite)
 - [x] ProductDetail.tsx: variant picker (color/size) for merch products
 - [x] ProductDetail.tsx: merch info box (material, sizes, colors, Spreadconnect note)
+- [x] ProductDetail: Bild wechselt bei Farbauswahl (Varianten-Bilder von Spreadconnect)

@@ -40,6 +40,7 @@ type RawVariant = {
   price: RawMoney;
   compareAtPrice: RawMoney | null;
   selectedOptions: RawSelectedOption[];
+  image: RawImage | null;
 };
 
 export type RawProduct = {
@@ -115,6 +116,7 @@ function normalizeVariant(v: RawVariant): ProductVariant {
     compareAtPrice: v.compareAtPrice ? normalizeMoney(v.compareAtPrice) : null,
     availableForSale: v.availableForSale,
     selectedOptions: (v.selectedOptions ?? []).map(normalizeSelectedOption),
+    image: v.image ? normalizeImage(v.image) : null,
   };
 }
 

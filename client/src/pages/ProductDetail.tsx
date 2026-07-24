@@ -71,7 +71,8 @@ export default function ProductDetail() {
     );
   }
 
-  const image = product.images[0];
+  // Use variant image if available, otherwise fall back to first product image
+  const displayImage = selectedVariant?.image || product.images[0];
   const isEventTicket = product.productType === "Event-Ticket";
   const isMerch = product.vendor === "Spreadconnect" || product.tags.includes("Spreadconnect");
   const isWine = !isEventTicket && !isMerch;
@@ -111,8 +112,8 @@ export default function ProductDetail() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
             {/* Image */}
             <div style={{ backgroundColor: "#fff", border: `1px solid ${C.border}`, padding: "2rem", display: "flex", alignItems: "center", justifyContent: "center", aspectRatio: "1" }}>
-              {image ? (
-                <img src={image.url} alt={image.altText || product.title} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+              {displayImage ? (
+                <img src={displayImage.url} alt={displayImage.altText || product.title} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", transition: "opacity 0.2s ease" }} />
               ) : (
                 <div style={{ width: "120px", height: "120px", backgroundColor: C.border, borderRadius: "50%" }} />
               )}
