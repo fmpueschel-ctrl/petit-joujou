@@ -60,3 +60,4 @@
 - [x] M13: Sticky Navigation Startseite (war bereits vorhanden: fixed top-0, Zeile 47)
 - [x] M3–M11: Bereits in vorheriger Session umgesetzt (Weinkarte, Gastronovi, Datenschutz, Newsletter, Sitemap, www-Redirect, Mobile, Skip-Link)
 - [ ] M12: Produktbilder hochladen (wird separat erledigt, keine Code-Änderung nötig)
+- [x] Beef Crudo Top-Down-Foto in Essen-Sektion (ersetzt Käsebild)

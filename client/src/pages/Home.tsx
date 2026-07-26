@@ -800,11 +800,11 @@ function EssenSection() {
               loading="lazy"
             />
           </div>
-          {/* Käse + Wein — moody, atmospheric */}
+          {/* Beef Crudo — top-down, Fleisch-Highlight */}
           <div className="overflow-hidden" style={{ borderRadius: "2px" }}>
             <img
-              src="/manus-storage/kaese-wein_99ebd13f.webp"
-              alt="Käseauswahl mit Wein"
+              src="/manus-storage/20260725_203611_a452b770.jpg"
+              alt="Beef Crudo mit Gemüsechips und Kräutern"
               className="w-full h-full object-cover"
               style={{ aspectRatio: "3/4" }}
               loading="lazy"
