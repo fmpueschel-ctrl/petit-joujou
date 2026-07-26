@@ -143,7 +143,7 @@ function Hero() {
               petit joujou
             </span>
             <span className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)", marginTop: "0.5rem", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
-              Weinbar &middot; Leistadt &middot; Pfalz
+              Weinbar &middot; Bad Dürkheim &middot; Pfalz
             </span>
           </div>
         </div>
@@ -201,8 +201,8 @@ function Hero() {
             >
               Speisekarte
             </a>
-            <button
-              onClick={() => { const t = document.createElement('div'); t.textContent = 'Weinkarte kommt bald'; Object.assign(t.style, { position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#2a4a3e', color: '#fff', padding: '0.75rem 1.5rem', fontSize: '0.85rem', zIndex: '9999', letterSpacing: '0.05em' }); document.body.appendChild(t); setTimeout(() => t.remove(), 2500); }}
+            <a
+              href="/flaschenfreunde"
               className="font-body"
               style={{
                 display: "inline-block",
@@ -212,12 +212,11 @@ function Hero() {
                 fontSize: "0.78rem",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                background: "none",
-                cursor: "pointer",
+                textDecoration: "none",
               }}
             >
               Weinkarte
-            </button>
+            </a>
             <a
               href="/shop"
               className="font-body"
@@ -506,6 +505,7 @@ function EventsSection() {
 function ReservierungUndGesellschaftenSection() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", anlass: "", gaeste: "", datum: "", budget: "", nachricht: "" });
   const [sent, setSent] = useState(false);
+  const [iframeConsent, setIframeConsent] = useState(false);
 
   const anfrageMutation = trpc.gesellschaft.anfrage.useMutation({
     onSuccess: () => {
@@ -542,12 +542,33 @@ function ReservierungUndGesellschaftenSection() {
               </p>
             </div>
             <div style={{ backgroundColor: C.bg, border: `1px solid ${C.border}`, overflow: "hidden" }}>
-              <iframe
-                src="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
-                title="Gastronovi Reservierung — Joujou Weinbar"
-                style={{ width: "100%", height: "550px", border: "none" }}
-                loading="lazy"
-              />
+              {iframeConsent ? (
+                <iframe
+                  src="https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar"
+                  title="Gastronovi Reservierung — Joujou Weinbar"
+                  style={{ width: "100%", height: "550px", border: "none" }}
+                />
+              ) : (
+                <div style={{ padding: "3rem 2rem", textAlign: "center", minHeight: "300px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
+                  <p className="font-display" style={{ fontSize: "1.2rem", color: C.ink, margin: 0 }}>
+                    Reservierung über Gastronovi
+                  </p>
+                  <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, margin: 0, maxWidth: "360px", lineHeight: 1.7 }}>
+                    Beim Laden werden Daten an services.gastronovi.com übertragen.
+                  </p>
+                  <button
+                    onClick={() => setIframeConsent(true)}
+                    className="font-body"
+                    style={{
+                      padding: "0.7rem 1.8rem", backgroundColor: C.bgSage, color: "#fff",
+                      border: "none", cursor: "pointer", fontSize: "0.8rem",
+                      letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600,
+                    }}
+                  >
+                    Reservierung laden
+                  </button>
+                </div>
+              )}
             </div>
             <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, marginTop: "1rem" }}>
               Reservierung via Gastronovi.{" "}
@@ -727,6 +748,15 @@ function ReservierungUndGesellschaftenSection() {
                   >
                     {anfrageMutation.isPending ? "Wird gesendet..." : "Anfrage absenden"}
                   </button>
+                  <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, marginTop: "1rem", lineHeight: 1.7 }}>
+                    Wir verwenden deine Angaben ausschließlich zur Bearbeitung deiner Anfrage.
+                    Näheres in unserer{" "}
+                    <a href="/datenschutz" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Datenschutzerklärung</a>.
+                  </p>
+                  <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, marginTop: "0.5rem", lineHeight: 1.7 }}>
+                    Wir informieren dich gelegentlich per E-Mail über eigene Angebote.
+                    Du kannst dem jederzeit kostenfrei widersprechen.
+                  </p>
                 </form>
               )}
             </div>
@@ -904,8 +934,11 @@ function Footer() {
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, lineHeight: 1.8 }}>
               Hauptstraße 34, 67098 Bad Dürkheim<br />
+              <a href="https://maps.google.com/?q=Hauptstra%C3%9Fe+34,+67098+Bad+D%C3%BCrkheim" target="_blank" rel="noopener noreferrer" style={{ color: C.sage, textDecoration: "none", fontSize: "0.78rem" }}>
+                Route in Google Maps →
+              </a><br />
               <a href="tel:+4963227906693" style={{ color: C.rose, textDecoration: "none" }}>
-                06322 / 790 66 93
+                +49 6322 7906693
               </a><br />
               <a href="mailto:hallo@joujou-pfalz.de" style={{ color: C.rose, textDecoration: "none" }}>
                 hallo@joujou-pfalz.de
@@ -915,8 +948,14 @@ function Footer() {
                 joujou.bistro
               </a>
             </p>
+            <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkLight, marginTop: "0.75rem", lineHeight: 1.6 }}>
+              Parkplätze direkt am Haus. Anfahrt über die B271.
+            </p>
           </div>
         </div>
+        {/* Newsletter Signup */}
+        <NewsletterFooter />
+
         <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: "1.5rem", textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkLight, letterSpacing: "0.05em" }}>
             © 2026 petit joujou · Joujou Pfalz ·{" "}
@@ -934,6 +973,67 @@ function Footer() {
 }
 
 // ── Page ──────────────────────────────────────────────────────
+// ── Newsletter Footer ─────────────────────────────────────────
+function NewsletterFooter() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const subscribe = trpc.newsletter.subscribe.useMutation({
+    onSuccess: () => setSubmitted(true),
+    onError: () => toast.error("Etwas ist schiefgelaufen. Bitte versuche es erneut."),
+  });
+
+  return (
+    <div style={{ borderTop: `1px solid ${C.border}`, padding: "2rem 0", marginBottom: "1.5rem", textAlign: "center" }}>
+      <p className="font-display" style={{ fontSize: "1rem", color: C.ink, marginBottom: "0.5rem" }}>
+        Newsletter
+      </p>
+      <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, marginBottom: "1rem", maxWidth: "400px", margin: "0 auto 1rem" }}>
+        Neue Weine, Events und Angebote — ca. 1× im Monat, kein Spam.
+      </p>
+      {submitted ? (
+        <p className="font-body" style={{ fontSize: "0.85rem", color: C.sage }}>
+          Danke! Bitte prüfe dein Postfach und bestätige dein Abo.
+        </p>
+      ) : (
+        <form
+          onSubmit={(e) => { e.preventDefault(); if (email) subscribe.mutate({ email, source: "footer" }); }}
+          style={{ display: "flex", gap: "0.5rem", justifyContent: "center", maxWidth: "360px", margin: "0 auto" }}
+        >
+          <input
+            type="email"
+            required
+            placeholder="deine@email.de"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="font-body"
+            style={{
+              flex: 1, padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`,
+              backgroundColor: "#fff", fontSize: "0.82rem", outline: "none",
+            }}
+          />
+          <button
+            type="submit"
+            disabled={subscribe.isPending}
+            className="font-body"
+            style={{
+              padding: "0.6rem 1.2rem", backgroundColor: C.bgSage, color: "#fff",
+              border: "none", fontSize: "0.75rem", letterSpacing: "0.08em",
+              textTransform: "uppercase", cursor: "pointer", fontWeight: 600,
+            }}
+          >
+            {subscribe.isPending ? "…" : "Anmelden"}
+          </button>
+        </form>
+      )}
+      <p className="font-body" style={{ fontSize: "0.68rem", color: C.inkLight, marginTop: "0.75rem", lineHeight: 1.6 }}>
+        Wir informieren dich gelegentlich per E-Mail über eigene Angebote.
+        Du kannst dem jederzeit kostenfrei widersprechen.{" "}
+        <a href="/datenschutz" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Datenschutzerklärung</a>
+      </p>
+    </div>
+  );
+}
+
 // ── Siegel-Leiste ────────────────────────────────────────────
 function SiegelSection() {
   const siegel = [

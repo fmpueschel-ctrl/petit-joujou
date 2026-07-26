@@ -279,6 +279,15 @@
   .intro-section {
     padding: 3.5rem 0 !important;
   }
+  /* 4.3: Minimum font size for body text on mobile */
+  .font-body {
+    font-size: max(0.82rem, 15px) !important;
+  }
+  /* 4.3: Minimum touch target for interactive elements */
+  button, a, [role="button"], input, select, textarea {
+    min-height: 40px;
+    min-width: 40px;
+  }
 }
 
 /* ── Hero Split: höhere min-height, picture als Container ──── */

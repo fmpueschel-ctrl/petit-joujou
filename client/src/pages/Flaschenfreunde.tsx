@@ -130,10 +130,16 @@ export default function Flaschenfreunde() {
           Flaschenfreunde
         </h1>
 
+        {/* Contextual intro — links to full cellar */}
+        <p className="font-body" style={{ fontSize: "0.9rem", color: C.sage, lineHeight: 1.8, marginBottom: "2rem", fontStyle: "italic" }}>
+          Unsere Favoriten zum Mitnehmen — von uns verkostet und ausgewählt.<br />
+          Die vollständige Karte mit über 500 Bio-Weinen wartet im Gewölbekeller auf euch.
+        </p>
+
         {/* Concept explanation */}
         <div className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, lineHeight: 1.9, marginBottom: "3rem" }}>
           <p style={{ marginBottom: "1.5rem" }}>
-            <strong style={{ color: C.ink }}>Flaschenfreunde</strong> — das sind unsere Favoriten. Die Weine, die aus unserer Sicht die besten ihrer jeweiligen Art sind. Jede Flasche wurde von unserem internen Gremium verkostet, verglichen und für würdig befunden, euch empfohlen zu werden.
+            <strong style={{ color: C.ink }}>Flaschenfreunde</strong> — das sind unsere Favoriten. Die Weine, die aus unserer Sicht die besten ihrer jeweiligen Art sind. Jede Flasche wurde zusammen mit Gästen und Freunden verkostet, verglichen und für würdig befunden, euch empfohlen zu werden.
           </p>
           <p style={{ marginBottom: "1.5rem" }}>
             Wir zeigen euch den <strong style={{ color: C.ink }}>Mitnahmepreis</strong> — das ist der Preis, zu dem ihr die Flasche mit nach Hause nehmt oder online bestellt. Wer die Flasche lieber direkt bei uns an der Bar oder im Restaurant genießen möchte, zahlt <strong style={{ color: C.ink }}>+10 € Korkgeld</strong> pro Flasche.

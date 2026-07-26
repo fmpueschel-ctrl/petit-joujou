@@ -6,8 +6,9 @@ import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { getDb } from "./db";
-import { reservations, events, menus } from "../drizzle/schema";
+import { reservations, events, menus, newsletterSubscribers } from "../drizzle/schema";
 import { eq, asc, desc } from "drizzle-orm";
+import crypto from "crypto";
 import { storagePut } from "./storage";
 import { commerceRouter } from "./routers/commerce";
 
@@ -237,6 +238,72 @@ export const appRouter = router({
         const { url } = await storagePut(key, buffer, input.contentType);
         return { url };
       }),
+  }),
+
+  // ── Newsletter (Double-Opt-in) ────────────────────────────────
+  newsletter: router({
+    subscribe: publicProcedure
+      .input(z.object({ email: z.string().email(), source: z.string().optional() }))
+      .mutation(async ({ input, ctx }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const token = crypto.randomBytes(32).toString("hex");
+        const ip = ctx.req.headers["x-forwarded-for"]?.toString().split(",")[0] || ctx.req.socket.remoteAddress || "";
+        try {
+          await db.insert(newsletterSubscribers).values({
+            email: input.email,
+            token,
+            ipSignup: ip,
+            source: input.source || "footer",
+            status: "pending",
+          });
+        } catch (e: any) {
+          // Duplicate email — silently succeed (don't reveal existing subscriptions)
+          if (e?.code === "ER_DUP_ENTRY") return { success: true };
+          throw e;
+        }
+        // Send confirmation email
+        const confirmUrl = `https://www.petit-joujou.de/api/newsletter/confirm?token=${token}`;
+        await sendMail({
+          to: input.email,
+          subject: "Bestätige dein Abo — petit joujou",
+          text: `Hallo!\n\nBitte bestätige dein Newsletter-Abo bei petit joujou:\n\n${confirmUrl}\n\nFalls du dich nicht angemeldet hast, ignoriere diese E-Mail einfach.\n\nÀ bientôt!\npetit joujou`,
+        });
+        return { success: true };
+      }),
+
+    confirm: publicProcedure
+      .input(z.object({ token: z.string().min(1) }))
+      .mutation(async ({ input, ctx }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const ip = ctx.req.headers["x-forwarded-for"]?.toString().split(",")[0] || ctx.req.socket.remoteAddress || "";
+        const [sub] = await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.token, input.token)).limit(1);
+        if (!sub) return { success: false, message: "Token ungültig" };
+        if (sub.status === "confirmed") return { success: true, message: "Bereits bestätigt" };
+        await db.update(newsletterSubscribers)
+          .set({ status: "confirmed", confirmAt: new Date(), ipConfirm: ip })
+          .where(eq(newsletterSubscribers.id, sub.id));
+        return { success: true, message: "Bestätigt" };
+      }),
+
+    unsubscribe: publicProcedure
+      .input(z.object({ token: z.string().min(1) }))
+      .mutation(async ({ input }) => {
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        await db.update(newsletterSubscribers)
+          .set({ status: "unsubscribed" })
+          .where(eq(newsletterSubscribers.token, input.token));
+        return { success: true };
+      }),
+
+    // Admin: Export all confirmed subscribers
+    exportAll: adminProcedure.query(async () => {
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+      return db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.status, "confirmed"));
+    }),
   }),
 
   gesellschaft: router({
