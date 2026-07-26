@@ -9,6 +9,53 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 import { useState, useMemo } from "react";
 import { Link, useParams, useLocation } from "wouter";
 
+/* Cart button for the nav bar */
+function CartNavButton() {
+  const { itemCount } = useCart();
+  const [, setLocation] = useLocation();
+  return (
+    <button
+      onClick={() => setLocation("/shop/warenkorb")}
+      className="font-body flex items-center gap-1"
+      style={{
+        background: "none",
+        border: "none",
+        color: "rgba(255,255,255,0.9)",
+        cursor: "pointer",
+        fontSize: "0.8rem",
+        letterSpacing: "0.08em",
+        textTransform: "uppercase",
+        position: "relative",
+      }}
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      Warenkorb
+      {itemCount > 0 && (
+        <span style={{
+          position: "absolute",
+          top: "-4px",
+          right: "-8px",
+          backgroundColor: "#22c55e",
+          color: "#fff",
+          fontSize: "0.6rem",
+          fontWeight: 700,
+          width: "16px",
+          height: "16px",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}>
+          {itemCount}
+        </span>
+      )}
+    </button>
+  );
+}
+
 const C = {
   bg: "#f2f7f4",
   bgSage: "#2a4a3e",
@@ -100,9 +147,12 @@ export default function ProductDetail() {
           <Link href="/" style={{ textDecoration: "none" }}>
             <span className="font-script" style={{ fontSize: "1.7rem", color: "#ffffff" }}>petit joujou</span>
           </Link>
-          <Link href="/shop" className="font-body" style={{ color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: "0.85rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-            ← Shop
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link href="/shop" className="font-body" style={{ color: "rgba(255,255,255,0.8)", textDecoration: "none", fontSize: "0.85rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              ← Shop
+            </Link>
+            <CartNavButton />
+          </div>
         </div>
       </nav>
 
@@ -139,9 +189,14 @@ export default function ProductDetail() {
                     </span>
                   </>
                 )}
-                {(isMerch || isEventTicket) && (
+                {isMerch && (
                   <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
                     inkl. MwSt. · zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link>
+                  </span>
+                )}
+                {isEventTicket && (
+                  <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
+                    inkl. MwSt. · kein Versand — Eintritt vor Ort
                   </span>
                 )}
               </div>

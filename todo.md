@@ -53,3 +53,10 @@
 ### Ausstehend (Frank-Input nötig)
 - [ ] Nature One: Echtes Flaschenbild (Nutzer liefert)
 - [ ] Weinkarte-Seitenname: Alternative zu "Flaschenfreunde" (offen)
+
+## Claude-Audit v3 — Briefing Manus (26.07.2026)
+- [x] M1: Warenkorb-Button + Zähler auf Produktdetailseiten (CartNavButton)
+- [x] M2: Versandhinweis bei Tickets: "kein Versand — Eintritt vor Ort" statt "zzgl. Versandkosten"
+- [x] M13: Sticky Navigation Startseite (war bereits vorhanden: fixed top-0, Zeile 47)
+- [x] M3–M11: Bereits in vorheriger Session umgesetzt (Weinkarte, Gastronovi, Datenschutz, Newsletter, Sitemap, www-Redirect, Mobile, Skip-Link)
+- [ ] M12: Produktbilder hochladen (wird separat erledigt, keine Code-Änderung nötig)
