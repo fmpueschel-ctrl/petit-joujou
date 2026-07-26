@@ -149,7 +149,7 @@ export default function ProductDetail() {
               {product.descriptionHtml ? (
                 <div className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }} dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
               ) : product.description ? (
-                <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem" }}>
+                <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, lineHeight: 1.8, marginBottom: "1.5rem", whiteSpace: "pre-line" }}>
                   {product.description}
                 </p>
               ) : null}

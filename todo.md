@@ -1,129 +1,55 @@
 # Project TODO
 
-- [ ] Speisekarte: "Rib Eye" umbenennen zu "Entrecôte" (Quelldatei benötigt, dann PDF neu hochladen)
-- [x] SEO: Meta-Tags (title, description) + Open Graph in index.html
-- [x] SEO: Schema.org JSON-LD (LocalBusiness, Restaurant, Events)
-- [x] SEO: Sitemap.xml + robots.txt
-- [x] Neues BEATS-Bild (Sonnenuntergang/DJ) einsetzen
-- [x] Pinsa-Bild: rauszoomen, Holztisch minimieren
-- [x] E-Mail-Adresse auf hallo@joujou-pfalz.de geändert (Footer + Formular-Ziel)
-- [x] Öffnungszeiten Do/Fr auf 16 Uhr korrigiert
-- [x] SEO: Keywords erweitert (Weinbar, Steak, Entrecote, Rib-Eye, Pfalz, nachhaltig, biozertifiziert, Öko)
-- [x] Domain petit-joujou.de eingerichtet und DNS konfiguriert
-- [x] Split-Layout Redesign: Weinkeller, Scheune, Garten, Essen-Sections
-- [x] Neue Bilder integriert: Terrasse, Weinregal Dr. Bürklin-Wolf, Sharing-Teller
-- [x] Siegel-Leiste: Slow Food, Nachhaltiges Reiseziel, Happy Cow
-- [x] Hero-Section als Split-Layout umbauen (Canva-Bild links, "klein · fein · wein" + CTAs rechts)
-- [x] Hero-Split: "petit joujou" rechts entfernt, "klein · fein · wein" als Claim prominent im Hero
-- [ ] Englische Variante der Webseite (Sprachumschalter) — Planung
+## Abgeschlossen (Archiv)
+- [x] SEO: Meta-Tags, Schema.org, Sitemap, robots.txt
+- [x] Domain petit-joujou.de eingerichtet
+- [x] Split-Layout Redesign aller Sections
+- [x] Hero-Section, Galerie, Farbschema Pastellgrün
+- [x] Shopify Integration (Commerce Router, Cart, Checkout)
+- [x] Shop: Produktdarstellung, Preisformat, Compliance
+- [x] Rechtsseiten: Datenschutz, AGB, Widerruf, Versand, Impressum
+- [x] Spreadconnect T-Shirt (Varianten-Picker, Bildwechsel)
+- [x] Flaschenfreunde: 14 Weine + 3 Pakete in Shopify
+- [x] Flaschenfreunde: Weinkarte-Seite mit Korkgeld
+- [x] Shop: Kategorie-Tabs (Wein/Events/Joujou)
+- [x] Shop: URL-Parameter Deep-Linking
+- [x] Homepage: Shop-Teaser (TheOneSection)
+- [x] aggregateRating entfernt
+- [x] Metro GastroPreis präzisiert
+- [x] Canonical/Title/Description pro Route (usePageMeta)
+- [x] Product JSON-LD im Shop
+- [x] 404-Seite auf Deutsch
+- [x] Abgelaufene Event-Termine entfernt
+- [x] Sitemap auf 7 Einträge erweitert
 
-- [x] Bilder auf optimale Größe verkleinern (max 2x Anzeigegröße) und als WebP hochladen
-- [x] Width/height Attribute an allen Bildern setzen (CLS vermeiden)
-- [x] Lazy-loading für alle Bilder unterhalb des Viewports
-- [x] H1-Überschrift ergänzen (SEO)
-- [x] Open Graph Meta-Tags (og:image, og:title, og:description) + Twitter Card
-- [x] Meta-Description auf ~155 Zeichen kürzen
-- [x] Datenschutz-Link im Footer ergänzen (neben Impressum)
-- [x] Favicon + apple-touch-icon + theme-color ergänzen
-- [x] Formular-Labels mit for/id verknüpfen (Barrierefreiheit)
-- [x] Telefonnummer als tel:-Link im Footer/Kontakt ergänzen
-- [x] Hero-Bild: Bar-Foto (bar-quer / bar-hochkant) statt Scheune-Nachtbild eingesetzt
-- [x] Farbschema komplett auf Anthrazit + Rosé umgestellt (C-Objekt, CSS-Variablen, alle Sections)
-- [x] petit joujou Text-Overlay auf Hero-Bild (mit WEINBAR · LEISTADT · PFALZ)
-- [x] Farbschema auf Pastellgrün-Basis umgestellt (Dunkelgrün + Rosé + Orange Akzente)
-- [x] Galerie-Bilder Verzerrung auf Mobile fixen (aspect-ratio 4/3 statt fester Höhe)
-- [x] Hintergrund-Rhythmus: Essen (bgCream) + Galerie (bgPeach) bereits auf hellem Hintergrund
-- [ ] Admin-Panel: Datenbank-Schema für Events und Karten (Speisekarte/Weinkarte)
-- [ ] Admin-Panel: tRPC-Routen für Events CRUD + Karten-Upload
-- [ ] Admin-Panel: UI mit Login, Events-Verwaltung, Karten-Upload
-- [ ] Startseite: Events dynamisch aus Datenbank laden (statt hart-codiert)
-- [ ] Admin-Panel: Mitarbeiter-Accounts mit eingeschränkten Rechten
-- [x] Garten-Section: Anderen Hintergrund als Dunkelgrün (hebt sich nicht ab von Section darüber)
-- [x] Events-Section: Rahmen/Border um Event-Karten (wirken zu düster auf dunklem Grün)
-- [x] Scheune-Tischbild: Doppelt (Scheune-Section + 6er-Galerie) — eines austauschen
-- [x] Garten-Section: Sichtbaren Hintergrundunterschied zum Weinkeller darüber schaffen (jetzt warmes Beige #ede4d6)
-- [x] Galerie/Einblicke: Weinbar-Bild (querformatig) entfernen, nur 5 Bilder belassen (war bereits entfernt)
-- [x] Werte & Zertifikate: Unter jedem Logo beschriften (Slow Food, Natürlich, Happy Cow etc.)
-- [x] Recherche: Prüfen ob petit joujou bei Feinschmecker, Espresso Gastro und anderen gelistet ist (nicht bestätigt)
-- [x] Metro Gastropreis 2024 der Nachhaltigkeit ergänzen (Nachhaltigste Gastronomie Deutschlands)
-- [x] Reihenfolge ändern: Essen vor Garten (Wein → Essen → Garten → Events → Scheune → Rest)
-- [x] Entrecôte: Eigene Zeile unterhalb 3er-Grid (Option B — breites Bild + Text, abgesetzt)
-- [x] Entrecôte-Text: "Das wahrscheinlich beste Steak der Pfalz." + "Dry-Aged Entrecôte · puristisch · 100-Gramm-weise · Signature Cut"
-- [x] Garten-Section: Zurück auf Dunkelgrün (bgSage) mit heller Schrift (wie Weinkeller)
-- [x] Events-Section: Auf Pastellgrün (bg) mit dunkler Schrift
-- [x] Shopify integration (commerce router, CartProvider, env vars)
-- [x] Shop page (/shop) with product display from Shopify Storefront API
-- [x] Cart drawer with add/remove/quantity/checkout flow
-- [x] Shop link in navigation menu (Home overlay)
-- [x] German locale for price formatting (EUR)
-- [x] Shop-Button sichtbar in der Top-Navigation (neben Reservieren, Speisekarte)
-- [x] Shop-Minisektion auf Hauptseite (Konzept-Erklärung + Link zum Shop)
-- [x] Weinkarte-Button im Live-Auftritt prüfen/fixen
-- [x] Shop-Text ändern (neuer Intro-Text über Konzept)
-- [x] 6er Karton besser kennzeichnen im Produkttitel
-- [x] petit-joujou.de lädt nicht — prüfen (SSL bei Strato aktiviert, jetzt gelöst)
-- [x] Produktbeschreibung aufklappbar machen (Mehr lesen Button)
-- [x] Rechtliche Hinweise im Shop-Footer (Impressum, AGB, Widerruf Links)
-- [x] Preisangabe verbessern: inkl. MwSt + Grundpreis pro Liter
-- [x] Versandkosten + Lieferzeit angeben
-- [x] Alkohol-Hinweise: Jugendschutz, Sulfithinweis, Alkoholgehalt
-- [x] Bestellbutton-Text prüfen (Shopify Checkout)
-- [x] A-1: /datenschutz Seite anlegen (DSGVO-konform, Shopify, Analytics, Kontaktformular)
-- [x] A-2: /agb Seite anlegen (Fernabsatz-AGB, Alkoholabgabe)
-- [x] A-3: /widerruf Seite anlegen (Widerrufsbelehrung + Muster-Formular)
-- [x] A-4: Grundpreis 7,00€/L korrekt anzeigen
-- [x] A-5: MwSt + Versandkosten-Hinweis unter Preis + Link auf /versand
-- [x] A-6: Lieferzeit am Artikel
-- [x] A-7: Altersbestätigung vor Checkout (Pflicht-Häkchen, 16 Jahre)
-- [x] A-8: EU-Weinkennzeichnung (Alkoholgehalt, Sulfite, Abfüller am Produkt)
-- [x] A-9: Fußzeile auf allen Routen
-- [x] A-11: Verbraucherschlichtungs-Hinweis im Impressum + OS-Link
-- [x] B-1: Preis als 42,00 € statt 42 € (formatMoney minimumFractionDigits:2)
-- [x] B-2: Textfehler im Artikel gefixt (Shopify description_html neu formatiert)
-- [x] B-4: Produkt-Deeplink /shop/:handle (ProductDetail.tsx + Route)
-- [x] B-5: Zahlungsarten-Icons anzeigen (Visa, MC, PayPal, Apple Pay, Google Pay, Shop Pay)
-- [x] B-7: Kontakt (Tel + E-Mail) auf Shop-Seite
-- [x] B-9: Checkout im selben Tab (window.location.href statt window.open)
-- [x] C-1: Canonical auf www.petit-joujou.de/ gesetzt
-- [x] C-2: Title/Description/OG pro Route (usePageMeta Hook + Shop-Integration)
-- [x] C-3: Sitemap erweitert (/shop, /impressum, /datenschutz, /agb, /widerruf, /versand)
-- [x] C-4: Canonical + OG-URLs auf www-Variante
-- [x] C-5: 404-Seite auf Deutsch (brand-konform)
-- [x] C-6: Product JSON-LD Schema im Shop (schema.org/Product + Offer)
-- [x] C-7: Telefonnummer vereinheitlicht (+49 6322 989 97 97 in Impressum)
-- [x] /versand Seite anlegen (Versandkosten, Zahlungsarten, Abholung)
+## Claude-Audit v2 — 26.07.2026
 
-- [x] Essen-Section: Neue Bilder einbauen (einheitliche Bildsprache, keine Titel außer Entrecôte)
-- [x] Garten/Atmosphäre-Section: Neue Bilder einbauen (Paar, Oliven, Wein anstoßen, Service)
-- [x] Entrecôte spotlight: "Das wahrscheinlich beste Steak der Pfalz." als Headline
-- [x] Event-Karten: BEATS + Tavola bildlich füllend (object-fit cover), gut lesbar
-- [x] Tickets im Shop: Event-Tickets als Shopify-Produkte anlegen + auf Homepage verlinken
-- [x] Franz-Bild aus Gesellschaften-Section entfernen
-- [x] Reservierung + "Euer Abend/Unsere Bühne" als Split-Layout nebeneinander (links Reservierung, rechts Euer Abend)
-- [x] Shop/ProductDetail: Event-Ticket-Produkte separat rendern (keine Wein-Metadaten wie Grundpreis, Jahrgang, Alkohol)
-- [x] Shop grid: Produktkarten für Event-Tickets konditional anpassen (keine weinspezifischen Hinweise bei Tickets)
-- [x] Delete free event products from Shopify (Herbstmarkt + Joujou Groovt)
-- [x] Add event image to TAVOLA BEATS ticket product in Shopify
-- [x] Fix: Abgelaufene Event-Termine entfernen (11.06. + 16.07. bei BEATS)
-- [x] Fix: Adresse + Telefon vereinheitlichen (Hauptstr. 34 Bad Dürkheim, 06322 7906693)
-- [x] Fix: Bewertungs-Markup (4,9/120) entfernen
-- [x] Fix: Metro GastroPreis Formulierung schärfen
-- [x] Fix: Sticky Navigation (schmale Leiste mit Reservieren + Shop)
-- [x] Fix: /datenschutz 404 beheben (war kein Bug, Route existiert)
-- [x] Fix: Shop-Textfehler (descriptionHtml statt plaintext)
-- [x] Fix: Widerrufsrecht-Ausschluss am TAVOLA BEATS Ticket (§312g Abs.2 Nr.9 BGB)
-- [ ] Newsletter-Anmeldung (Klärung offen, für später)
-- [x] Spreadconnect T-shirt published to Manus storefront channel
-- [x] Shop.tsx: merch products display without wine metadata (no Grundpreis/L, no Sulfite)
-- [x] ProductDetail.tsx: variant picker (color/size) for merch products
-- [x] ProductDetail.tsx: merch info box (material, sizes, colors, Spreadconnect note)
-- [x] ProductDetail: Bild wechselt bei Farbauswahl (Varianten-Bilder von Spreadconnect)
-- [x] Shop-Übersicht: Bei Multi-Varianten-Produkten (T-Shirt) keinen direkten "In den Korb"-Button, sondern "Auswählen" → Detailseite
-- [x] Flaschenfreunde: Alle 14 Weine recherchiert (Beschreibungen + Bilder — Nature One Demo-Bild, echtes Bild ausstehend)
-- [x] Flaschenfreunde: Alle 14 Weine + 3 Pakete als Shopify-Produkte angelegt (Mitnahmepreis)
-- [x] Flaschenfreunde: Weinkarte-Seite auf der Website (mit Korkgeld-Erklärung 10€)
-- [x] Shop: Kategorie-Tabs (Wein / Events / Joujou)
-- [x] Shop: URL-Parameter ?tab=wein|events|joujou für Deep-Linking
-- [x] Homepage: Shop-Teaser (TheOneSection) mit 3 Kategorie-Karten → /shop?tab=...
-- [ ] Nature One: Echtes Flaschenbild hochladen (Nutzer liefert noch)
-- [ ] Weinkarte-Seitenname: Stärkere Alternative zu "Flaschenfreunde" (Nutzer-Entscheidung offen)
+### TEIL 1 — Blockierend (vor Newsletter/Kampagne 08.08.)
+- [ ] 1.1 Warenkorb: "Warenkorb"-Label neben Zähler + Toast-Feedback beim Hinzufügen
+- [ ] 1.2 Zeilenumbrüche in Produktbeschreibungen (white-space: pre-line)
+- [ ] 1.3 Filter "Alle" als Standard im Shop (statt nur Wein)
+- [ ] 1.4 Shop-Einleitungstext neu (3 Absätze, Frank-freigegeben)
+- [ ] 1.4b Startseite: "nur bio" → "bio" (Wort "nur" streichen, 2 Stellen)
+- [ ] 1.5 Weinhinweise (Sulfite, Jugendschutz) nur bei Wein-Produkten anzeigen
+
+### TEIL 2 — Startseite
+- [ ] 2.1 Vollständige Adresse in Fußzeile + Google Maps Link (Frank liefert Adresse)
+- [ ] 2.2 Weinkarte-Button: Variante A (→ /flaschenfreunde + Einordnungssatz) oder B (entfernen) — Frank entscheidet
+- [ ] 2.3 Sticky-Navigation auf Startseite (Reservieren + Shop, fixiert)
+- [ ] 2.4 Telefonnummer vereinheitlichen (Frank liefert welche gilt)
+
+### TEIL 3 — Recht und Datenschutz
+- [ ] 3.1 Gastronovi-Iframe: Zwei-Klick-Lösung (Platzhalter + Laden-Button)
+- [ ] 3.2 Datenschutzhinweis unter Anfrageformular
+- [ ] 3.3 Newsletter-Anmeldung: Fußzeile, Double-Opt-in, DB mit 5 Feldern, exportierbar
+- [ ] 3.4 Widerspruchshinweis bei jeder E-Mail-Erhebung (Formular + Newsletter)
+
+### TEIL 4 — Auffindbarkeit und Technik
+- [ ] 4.1 Sitemap: Produktseiten + /flaschenfreunde ergänzen, lastmod automatisch
+- [ ] 4.2 www/non-www: 301-Redirect prüfen
+- [ ] 4.3 Mobile: Mindestgrößen (Fließtext 15px, Klickziele 40px, kein Overflow)
+- [ ] 4.4 Skip-Link "Zum Inhalt springen"
+
+### Ausstehend (Frank-Input nötig)
+- [ ] Nature One: Echtes Flaschenbild (Nutzer liefert)
+- [ ] Weinkarte-Seitenname: Alternative zu "Flaschenfreunde" (offen)

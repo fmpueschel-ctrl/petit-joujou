@@ -239,7 +239,7 @@ function Hero() {
           {/* Zwei Pillars */}
           <div className="intro-pillars" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0", marginTop: "3rem", borderTop: `1px solid ${C.border}`, width: "100%" }}>
             {[
-              { title: "500 Weine — nur bio", text: "Begehbare Weinkarte im Gewölbekeller. Für überraschende Geschmackserlebnisse. Come in and wine out." },
+              { title: "500 Weine — bio", text: "Begehbare Weinkarte im Gewölbekeller. Für überraschende Geschmackserlebnisse. Come in and wine out." },
               { title: "Essen ständig neu gedacht", text: "Raffinierte Sharing-Kreationen, Entrecôte-Streifen sowie Manna Palatina Pinsa — bio & saisonal." },
             ].map((p) => (
               <div key={p.title} style={{ padding: "1.5rem 1.2rem 1.5rem 0", borderRight: `1px solid ${C.border}` }}>
@@ -282,7 +282,7 @@ function WeinkellerSection() {
             "500 Weine & Bubbles",
             "Pfalz, Rheinhessen, Österreich, Frankreich — fertig",
             "Klassisch oder freak-show",
-            "No chemical pesticides — nur bio",
+            "No chemical pesticides — bio",
             "Mitnehmen zu Kellerpreisen — oder hier trinken (10 € Korkgeld)",
             "Großes & spannendes Sortiment alkoholfrei und alkoholreduziert",
             "Hat jemand alkoholfrei gesagt?",

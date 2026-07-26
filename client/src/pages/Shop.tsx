@@ -207,7 +207,7 @@ function CartDrawer() {
 }
 
 // ── Product Card ─────────────────────────────────────────────
-function ProductCard({ product }: { product: Product }) {
+function ProductCard({ product, onAdded }: { product: Product; onAdded?: () => void }) {
   const { addItem, loading } = useCart();
   const variant = product.variants[0];
   const image = product.images[0];
@@ -222,6 +222,7 @@ function ProductCard({ product }: { product: Product }) {
     setAdding(true);
     await addItem(variant.id, 1);
     setAdding(false);
+    onAdded?.();
   };
 
   return (
@@ -257,6 +258,7 @@ function ProductCard({ product }: { product: Product }) {
           <div>
             <p className="font-body" style={{
               fontSize: "0.85rem", color: C.inkMid, margin: 0, lineHeight: 1.6,
+              whiteSpace: "pre-line",
               ...(!expanded ? { display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" as const, overflow: "hidden" } : {}),
             }}>
               {product.description}
@@ -353,17 +355,21 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 // ── Category Tabs ───────────────────────────────────────────
-type Category = "Wein" | "Events" | "Joujou";
+type Category = "Alle" | "Wein" | "Events" | "Joujou";
 
-function CategoryTabs({ active, onChange, counts }: { active: Category; onChange: (c: Category) => void; counts: Record<Category, number> }) {
-  const tabs: { key: Category; label: string }[] = [
-    { key: "Wein", label: "Wein" },
-    { key: "Events", label: "Events" },
-    { key: "Joujou", label: "Joujou" },
+type SubCategory = "Wein" | "Events" | "Joujou";
+
+function CategoryTabs({ active, onChange, counts }: { active: Category; onChange: (c: Category) => void; counts: Record<SubCategory, number> }) {
+  const total = counts.Wein + counts.Events + counts.Joujou;
+  const tabs: { key: Category; label: string; count: number }[] = [
+    { key: "Alle", label: "Alle", count: total },
+    { key: "Wein", label: "Wein", count: counts.Wein },
+    { key: "Events", label: "Events", count: counts.Events },
+    { key: "Joujou", label: "Joujou", count: counts.Joujou },
   ];
   return (
     <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem", marginBottom: "2.5rem", flexWrap: "wrap" }}>
-      {tabs.filter(t => counts[t.key] > 0).map((t) => (
+      {tabs.filter(t => t.key === "Alle" || t.count > 0).map((t) => (
         <button
           key={t.key}
           onClick={() => onChange(t.key)}
@@ -381,7 +387,7 @@ function CategoryTabs({ active, onChange, counts }: { active: Category; onChange
             transition: "all 0.2s ease",
           }}
         >
-          {t.label} ({counts[t.key]})
+          {t.label} ({t.count})
         </button>
       ))}
     </div>
@@ -398,24 +404,39 @@ function categorizeProduct(product: Product): Category {
 export default function Shop() {
   const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery();
   const { itemCount, openCart } = useCart();
+  const [toastVisible, setToastVisible] = useState(false);
+  const toastTimer = useState<ReturnType<typeof setTimeout> | null>(null);
+
+  const showAddedToast = () => {
+    setToastVisible(true);
+    if (toastTimer[0]) clearTimeout(toastTimer[0]);
+    toastTimer[0] = setTimeout(() => setToastVisible(false), 2500);
+  };
 
   // Read ?tab= from URL to allow deep-linking from homepage
   const getInitialTab = (): Category => {
     const params = new URLSearchParams(window.location.search);
     const tab = params.get("tab");
+    if (tab === "wein") return "Wein";
     if (tab === "events") return "Events";
     if (tab === "joujou") return "Joujou";
-    return "Wein";
+    return "Alle";
   };
   const [activeCategory, setActiveCategory] = useState<Category>(getInitialTab);
 
   const counts = useMemo(() => {
-    const c: Record<Category, number> = { Wein: 0, Events: 0, Joujou: 0 };
-    products.forEach(p => c[categorizeProduct(p)]++);
+    const c = { Wein: 0, Events: 0, Joujou: 0 };
+    products.forEach(p => {
+      const cat = categorizeProduct(p);
+      if (cat === "Wein") c.Wein++;
+      else if (cat === "Events") c.Events++;
+      else if (cat === "Joujou") c.Joujou++;
+    });
     return c;
   }, [products]);
 
   const filteredProducts = useMemo(() => {
+    if (activeCategory === "Alle") return products;
     return products.filter(p => categorizeProduct(p) === activeCategory);
   }, [products, activeCategory]);
 
@@ -457,24 +478,38 @@ export default function Shop() {
       <ShopNav />
       <CartDrawer />
 
-      {/* Cart FAB */}
-      {itemCount > 0 && (
-        <button
-          onClick={openCart}
-          style={{
-            position: "fixed", bottom: "2rem", right: "2rem", zIndex: 90,
-            width: "56px", height: "56px", borderRadius: "50%",
-            backgroundColor: C.bgSage, color: "#fff",
-            border: "none", cursor: "pointer",
-            boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
+      {/* Cart Button in header area — always visible */}
+      <button
+        onClick={openCart}
+        style={{
+          position: "fixed", bottom: "1.5rem", right: "1.5rem", zIndex: 90,
+          padding: "0.7rem 1.2rem",
+          borderRadius: "2rem",
+          backgroundColor: C.bgSage, color: "#fff",
+          border: "none", cursor: "pointer",
+          boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
+          display: "flex", alignItems: "center", gap: "0.5rem",
+          fontSize: "0.8rem", fontWeight: 600,
+          letterSpacing: "0.05em",
+        }}
+        aria-label="Warenkorb öffnen"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span>Warenkorb</span>
+        {itemCount > 0 && (
+          <span style={{
+            backgroundColor: "#fff", color: C.bgSage,
+            borderRadius: "50%", width: "20px", height: "20px",
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: "1.2rem", fontWeight: 700,
-          }}
-          aria-label="Warenkorb öffnen"
-        >
-          {itemCount}
-        </button>
-      )}
+            fontSize: "0.7rem", fontWeight: 700,
+          }}>
+            {itemCount}
+          </span>
+        )}
+      </button>
 
       {/* Hero / Intro */}
       <section style={{ paddingTop: "120px", paddingBottom: "4rem", textAlign: "center" }}>
@@ -485,9 +520,20 @@ export default function Shop() {
           <h1 className="font-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.2rem)", color: C.ink, margin: "0 0 1rem", lineHeight: 1.15, fontWeight: 600 }}>
             The One
           </h1>
-          <p className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.8, margin: "0 auto", maxWidth: "600px" }}>
-            Dieser Shop enthält von jedem Artikel nur einen Einzigen — den für uns Besten! Wir haben für dich getestet, damit sparst du dir das Aussuchen und Vergleichen. Alle Artikel erfüllen die Joujou Nachhaltigkeitskriterien und wurden von einem internen Gremium gegenüber den jeweils anderen Kandidaten ausgewählt.
-          </p>
+          <div className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.8, margin: "0 auto", maxWidth: "600px" }}>
+            <p style={{ margin: "0 0 1rem" }}>
+              Dieser Shop enthält von jedem Artikel nur einen Einzigen — the One — bei dem
+              Preis und Genuss, Design oder Funktion am besten zusammenpassen.
+            </p>
+            <p style={{ margin: "0 0 1rem" }}>
+              Wir haben zusammen mit Gästen und Freunden für dich getestet. Damit sparst du
+              dir das Aussuchen und Vergleichen.
+            </p>
+            <p style={{ margin: 0 }}>
+              Alle Artikel erfüllen unsere Nachhaltigkeitskriterien — biozertifiziert, in
+              Umstellung oder auf andere Weise nachhaltig. Was nicht bio ist, steht am Produkt.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -521,7 +567,7 @@ export default function Shop() {
               margin: filteredProducts.length === 1 ? "0 auto" : undefined,
             }}>
               {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} onAdded={showAddedToast} />
               ))}
             </div>
           )}
@@ -546,14 +592,16 @@ export default function Shop() {
             </div>
           </div>
 
-          {/* Alcohol Notice */}
-          <div style={{ marginBottom: "1.5rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
-            <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkMid, margin: 0, lineHeight: 1.7 }}>
-              Kein Verkauf an Personen unter 16 Jahren. Altersverifikation bei Zustellung.<br />
-              Enthält Sulfite. Alkoholgehalt und Füllmenge siehe Produktdetails.<br />
-              Verantwortungsvoller Genuss — bitte trinke bewusst.
-            </p>
-          </div>
+          {/* Alcohol Notice — only when wine products are visible */}
+          {(activeCategory === "Alle" ? counts.Wein > 0 : activeCategory === "Wein") && (
+            <div style={{ marginBottom: "1.5rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
+              <p className="font-body" style={{ fontSize: "0.75rem", color: C.inkMid, margin: 0, lineHeight: 1.7 }}>
+                Kein Verkauf an Personen unter 16 Jahren. Altersverifikation bei Zustellung.<br />
+                Enthält Sulfite. Alkoholgehalt und Füllmenge siehe Produktdetails.<br />
+                Verantwortungsvoller Genuss — bitte trinke bewusst.
+              </p>
+            </div>
+          )}
 
           {/* Contact */}
           <div style={{ marginBottom: "1.5rem" }}>
@@ -597,6 +645,35 @@ export default function Shop() {
           </Link>
         </div>
       </footer>
+
+      {/* Toast Notification */}
+      {toastVisible && (
+        <div
+          style={{
+            position: "fixed", bottom: "5rem", right: "1.5rem", zIndex: 200,
+            backgroundColor: C.bgSage, color: "#fff",
+            padding: "0.8rem 1.2rem",
+            borderRadius: "0.5rem",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.25)",
+            display: "flex", alignItems: "center", gap: "0.75rem",
+            fontSize: "0.85rem",
+            animation: "fadeInUp 0.2s ease-out",
+          }}
+        >
+          <span className="font-body">Zum Warenkorb hinzugefügt</span>
+          <button
+            onClick={openCart}
+            className="font-body"
+            style={{
+              background: "none", border: "none", cursor: "pointer",
+              color: C.peach, textDecoration: "underline", fontSize: "0.85rem",
+              textUnderlineOffset: "2px",
+            }}
+          >
+            Warenkorb ansehen
+          </button>
+        </div>
+      )}
     </div>
   );
 }
