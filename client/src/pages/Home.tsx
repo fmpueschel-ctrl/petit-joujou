@@ -1155,6 +1155,7 @@ function TheOneSection() {
 export default function Home() {
   return (
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
+      <Nav />
       <main>
         <Hero />
         {/* klein · fein · wein — Transition-Banner (Metallic Bronze) */}

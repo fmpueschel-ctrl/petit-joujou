@@ -66,10 +66,10 @@ export default function AGB() {
               § 4 Lieferung
             </h2>
             <p style={{ marginBottom: "1rem" }}>
-              Die Lieferung erfolgt innerhalb Deutschlands. Die Lieferzeit beträgt 2–4 Werktage nach Zahlungseingang, sofern beim Artikel nichts anderes angegeben ist.
+              Die Lieferung erfolgt ausschließlich innerhalb Deutschlands. Die Lieferzeit beträgt 3–5 Werktage (Standard) bzw. 1–2 Werktage (Express) nach Zahlungseingang, sofern beim Artikel nichts anderes angegeben ist.
             </p>
             <p>
-              Versandkosten: 5,90 € innerhalb Deutschlands. Ab einem Bestellwert von 60,00 € liefern wir versandkostenfrei.
+              Versandkosten: 5,99 € (Standard) bzw. 9,99 € (Express) innerhalb Deutschlands. Wir liefern ausschließlich nach Deutschland.
             </p>
           </section>
 

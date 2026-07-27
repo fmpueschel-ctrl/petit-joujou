@@ -189,14 +189,19 @@ export default function ProductDetail() {
                       inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
                     </span>
                     <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
-                      zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
+                      zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link> · Lieferzeit 3–5 Werktage
                     </span>
                   </>
                 )}
                 {isMerch && (
-                  <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
-                    inkl. MwSt. · zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link>
-                  </span>
+                  <>
+                    <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
+                      inkl. MwSt. · zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link>
+                    </span>
+                    <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.25rem", fontStyle: "italic" }}>
+                      Wird von Spreadconnect separat gefertigt und versendet. Bei Wein + Textil entstehen zwei Sendungen.
+                    </span>
+                  </>
                 )}
                 {isEventTicket && (
                   <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>

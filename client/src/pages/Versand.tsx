@@ -8,7 +8,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 export default function Versand() {
   usePageMeta({
     title: "Versand & Zahlung — petit joujou",
-    description: "Versandkosten, Lieferzeiten und Zahlungsarten im petit joujou Online-Shop. Versand innerhalb Deutschlands 5,90 €, frei ab 60 €.",
+    description: "Versandkosten, Lieferzeiten und Zahlungsarten im petit joujou Online-Shop. Versand innerhalb Deutschlands 5,99 €, Express 9,99 €.",
     canonical: "https://www.petit-joujou.de/versand",
   });
 
@@ -30,29 +30,29 @@ export default function Versand() {
               Versandkosten
             </h2>
             <p style={{ marginBottom: "1rem" }}>
-              Wir liefern innerhalb Deutschlands. Die Versandkosten betragen:
+              Wir liefern ausschließlich nach Deutschland.
             </p>
             <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "1rem" }}>
               <thead>
                 <tr style={{ borderBottom: "1px solid #d0e0d8" }}>
-                  <th style={{ textAlign: "left", padding: "0.5rem 0", color: "#1e3a3a", fontSize: "0.85rem" }}>Bestellwert</th>
-                  <th style={{ textAlign: "right", padding: "0.5rem 0", color: "#1e3a3a", fontSize: "0.85rem" }}>Versandkosten</th>
+                  <th style={{ textAlign: "left", padding: "0.5rem 0", color: "#1e3a3a", fontSize: "0.85rem" }}>Versandart</th>
+                  <th style={{ textAlign: "right", padding: "0.5rem 0", color: "#1e3a3a", fontSize: "0.85rem" }}>Kosten</th>
+                  <th style={{ textAlign: "right", padding: "0.5rem 0", color: "#1e3a3a", fontSize: "0.85rem" }}>Lieferzeit</th>
                 </tr>
               </thead>
               <tbody>
                 <tr style={{ borderBottom: "1px solid #e8f0ec" }}>
-                  <td style={{ padding: "0.5rem 0", fontSize: "0.9rem" }}>bis 59,99 €</td>
-                  <td style={{ textAlign: "right", padding: "0.5rem 0", fontSize: "0.9rem" }}>5,90 €</td>
+                  <td style={{ padding: "0.5rem 0", fontSize: "0.9rem" }}>Standard</td>
+                  <td style={{ textAlign: "right", padding: "0.5rem 0", fontSize: "0.9rem" }}>5,99 €</td>
+                  <td style={{ textAlign: "right", padding: "0.5rem 0", fontSize: "0.9rem" }}>3–5 Werktage</td>
                 </tr>
                 <tr>
-                  <td style={{ padding: "0.5rem 0", fontSize: "0.9rem" }}>ab 60,00 €</td>
-                  <td style={{ textAlign: "right", padding: "0.5rem 0", fontSize: "0.9rem", fontWeight: 600, color: "#1e3a3a" }}>kostenlos</td>
+                  <td style={{ padding: "0.5rem 0", fontSize: "0.9rem" }}>Express</td>
+                  <td style={{ textAlign: "right", padding: "0.5rem 0", fontSize: "0.9rem" }}>9,99 €</td>
+                  <td style={{ textAlign: "right", padding: "0.5rem 0", fontSize: "0.9rem" }}>1–2 Werktage</td>
                 </tr>
               </tbody>
             </table>
-            <p style={{ fontSize: "0.85rem" }}>
-              Lieferungen ins Ausland sind derzeit nicht möglich.
-            </p>
           </section>
 
           <section style={{ marginBottom: "2.5rem" }}>
@@ -60,7 +60,16 @@ export default function Versand() {
               Lieferzeit
             </h2>
             <p>
-              Die Lieferzeit beträgt in der Regel <strong style={{ color: "#1e3a3a" }}>2–4 Werktage</strong> nach Zahlungseingang. Sollte ein Artikel vorübergehend nicht verfügbar sein, informieren wir Sie umgehend.
+              Die Lieferzeit beträgt in der Regel <strong style={{ color: "#1e3a3a" }}>3–5 Werktage</strong> (Standard) bzw. <strong style={{ color: "#1e3a3a" }}>1–2 Werktage</strong> (Express) nach Zahlungseingang. Sollte ein Artikel vorübergehend nicht verfügbar sein, informieren wir Sie umgehend.
+            </p>
+          </section>
+
+          <section style={{ marginBottom: "2.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+              Hinweis zu Textilbestellungen (T-Shirts)
+            </h2>
+            <p>
+              Unsere Textilprodukte werden von Spreadconnect (sprd.net AG, Leipzig) gefertigt und direkt an Sie versendet. Bei einer Bestellung, die sowohl Wein als auch Textilien enthält, entstehen <strong style={{ color: "#1e3a3a" }}>zwei separate Sendungen</strong> mit jeweils eigenen Versandkosten.
             </p>
           </section>
 

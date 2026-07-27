@@ -295,7 +295,7 @@ function ProductCard({ product, onAdded }: { product: Product; onAdded?: () => v
                   inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / (product.tags.includes("Paket") ? 4.5 : product.title.includes("6 x") ? 6 : 0.75)).toFixed(2).replace(".", ",")} €/L
                 </span>
                 <span className="font-body" style={{ display: "block", fontSize: "0.65rem", color: C.inkLight, marginTop: "0.15rem" }}>
-                  zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link> · Lieferzeit 2–4 Werktage
+                  zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link> · Lieferzeit 3–5 Werktage
                 </span>
               </>
             )}
@@ -583,7 +583,7 @@ export default function Shop() {
               Versand & Zahlung
             </p>
             <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight, margin: 0, lineHeight: 1.7 }}>
-              Versand innerhalb Deutschlands: 5,90 € (frei ab 60 €) · Lieferzeit 2–4 Werktage
+              Versand innerhalb Deutschlands: 5,99 € · Express: 9,99 € · Lieferzeit 3–5 Werktage
             </p>
             <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", marginTop: "0.75rem", flexWrap: "wrap" }}>
               {["Visa", "Mastercard", "PayPal", "Apple Pay", "Google Pay", "Shop Pay"].map((m) => (

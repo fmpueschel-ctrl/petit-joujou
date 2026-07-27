@@ -72,6 +72,35 @@ async function startServer() {
     }
   });
 
+  // Dynamic sitemap.xml with real Shopify product handles
+  app.get("/sitemap.xml", async (_req, res) => {
+    try {
+      const { listProducts } = await import("./shopify");
+      const products = await listProducts({ first: 50 });
+      const today = new Date().toISOString().split("T")[0];
+      const staticPages = [
+        { loc: "/", priority: "1.0", freq: "weekly" },
+        { loc: "/shop", priority: "0.9", freq: "weekly" },
+        { loc: "/flaschenfreunde", priority: "0.8", freq: "weekly" },
+        { loc: "/versand", priority: "0.4", freq: "monthly" },
+        { loc: "/impressum", priority: "0.3", freq: "monthly" },
+        { loc: "/datenschutz", priority: "0.3", freq: "monthly" },
+        { loc: "/agb", priority: "0.3", freq: "monthly" },
+        { loc: "/widerruf", priority: "0.3", freq: "monthly" },
+      ];
+      const urls = staticPages.map(p => `  <url>\n    <loc>https://www.petit-joujou.de${p.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${p.freq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`);
+      for (const product of products) {
+        urls.push(`  <url>\n    <loc>https://www.petit-joujou.de/shop/${product.handle}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`);
+      }
+      const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
+      res.setHeader("Content-Type", "application/xml");
+      res.send(xml);
+    } catch (e) {
+      console.error("Sitemap generation failed:", e);
+      res.status(500).send("Sitemap generation failed");
+    }
+  });
+
   // tRPC API
   app.use(
     "/api/trpc",

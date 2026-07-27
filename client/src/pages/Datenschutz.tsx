@@ -70,6 +70,18 @@ export default function Datenschutz() {
 
           <section style={{ marginBottom: "2.5rem" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+              4a. Textilproduktion und -versand (Spreadconnect)
+            </h2>
+            <p style={{ marginBottom: "1rem" }}>
+              Die Fertigung und den Versand unserer Textilprodukte (T-Shirts) übernimmt die sprd.net AG (Gießerstraße 27, 04229 Leipzig, Deutschland), die unter der Marke Spreadshirt/Spreadconnect agiert. Bei einer Bestellung von Textilprodukten werden Ihr Name, Ihre Lieferadresse und ggf. Ihre E-Mail-Adresse an die sprd.net AG übermittelt, damit diese die Ware fertigen, versenden und etwaige Retouren entgegennehmen kann.
+            </p>
+            <p>
+              Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Die sprd.net AG ist als Auftragsverarbeiter für uns tätig. Die Verarbeitung erfolgt ausschließlich in Deutschland/EU. Weitere Informationen finden Sie in der <a href="https://www.spreadshirt.de/datenschutzerklaerung-C3310" target="_blank" rel="noopener noreferrer" style={{ color: "#40818a" }}>Datenschutzerklärung von Spreadshirt</a>.
+            </p>
+          </section>
+
+          <section style={{ marginBottom: "2.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
               5. Zahlungsdienstleister
             </h2>
             <p>

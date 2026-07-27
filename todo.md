@@ -62,3 +62,8 @@
 - [ ] M12: Produktbilder hochladen (wird separat erledigt, keine Code-Änderung nötig)
 - [x] Beef Crudo Top-Down-Foto in Essen-Sektion (ersetzt Käsebild)
 - [x] Bug: Warenkorb-Button auf Produktdetailseite navigierte zu /shop/warenkorb (404) — jetzt öffnet er den Cart-Drawer
+- [x] Versandkosten aktualisieren: 5,99€ Standard, 9,99€ Express, kein Gratisversand, Spreadconnect-Hinweis beim T-Shirt
+- [x] Spreadconnect/Spreadshirt als Auftragsverarbeiter in Datenschutzerklärung
+- [x] Sticky Navigation auf Startseite (Nav-Komponente war definiert aber nicht gerendert)
+- [x] Sitemap: dynamisch aus echten Shopify-Handles generieren (server-route)
+- [x] Nature One Sandstein-Foto in Shopify hochladen
