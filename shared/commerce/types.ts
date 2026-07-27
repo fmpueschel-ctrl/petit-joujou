@@ -46,6 +46,14 @@ export type ProductVariant = {
   selectedOptions: SelectedOption[];
   /** Variant-specific image (e.g. color swatch photo). */
   image: Image | null;
+  /** Unit price measurement from Shopify for PAngV Grundpreis compliance. */
+  unitPriceMeasurement: {
+    measuredType: string;
+    quantityValue: number;
+    quantityUnit: string;
+    referenceValue: number;
+    referenceUnit: string;
+  } | null;
 };
 
 export type Product = {

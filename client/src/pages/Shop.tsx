@@ -289,16 +289,23 @@ function ProductCard({ product, onAdded }: { product: Product; onAdded?: () => v
             <span className="font-display" style={{ fontSize: "1.4rem", color: C.ink }}>
               {parseFloat(product.priceRange.min.amount) === 0 ? "Kostenlos" : formatMoney(product.priceRange.min)}
             </span>
-            {isWine && (
-              <>
-                <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
-                  inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / (product.tags.includes("Paket") ? 4.5 : product.title.includes("6 x") ? 6 : 0.75)).toFixed(2).replace(".", ",")} €/L
-                </span>
-                <span className="font-body" style={{ display: "block", fontSize: "0.65rem", color: C.inkLight, marginTop: "0.15rem" }}>
-                  zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link> · Lieferzeit 3–5 Werktage
-                </span>
-              </>
-            )}
+            {isWine && (() => {
+              const upm = product.variants[0]?.unitPriceMeasurement;
+              const price = parseFloat(product.priceRange.min.amount);
+              const grundpreis = upm && upm.quantityValue > 0
+                ? (price / upm.quantityValue * upm.referenceValue).toFixed(2).replace(".", ",")
+                : null;
+              return (
+                <>
+                  <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
+                    inkl. MwSt.{grundpreis && <> · Grundpreis {grundpreis} €/{upm!.referenceUnit.toLowerCase()}</>}
+                  </span>
+                  <span className="font-body" style={{ display: "block", fontSize: "0.65rem", color: C.inkLight, marginTop: "0.15rem" }}>
+                    zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link> · Lieferzeit 3–5 Werktage
+                  </span>
+                </>
+              );
+            })()}
             {isMerch && (
               <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
                 inkl. MwSt. · zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Versandkosten</Link>

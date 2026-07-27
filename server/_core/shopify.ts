@@ -185,6 +185,13 @@ const VARIANT_FRAGMENT = /* GraphQL */ `
     compareAtPrice { ...MoneyFields }
     selectedOptions { name value }
     image { url altText width height }
+    unitPriceMeasurement {
+      measuredType
+      quantityValue
+      quantityUnit
+      referenceValue
+      referenceUnit
+    }
   }
 `;
 

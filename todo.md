@@ -67,3 +67,4 @@
 - [x] Sticky Navigation auf Startseite (Nav-Komponente war definiert aber nicht gerendert)
 - [x] Sitemap: dynamisch aus echten Shopify-Handles generieren (server-route)
 - [x] Nature One Sandstein-Foto in Shopify hochladen
+- [x] Grundpreis aus Shopify-API (unitPriceMeasurement) statt hardcoded Berechnung (PAngV-konform)

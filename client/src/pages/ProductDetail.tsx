@@ -183,16 +183,23 @@ export default function ProductDetail() {
                 <span className="font-display" style={{ fontSize: "2rem", color: C.ink }}>
                   {parseFloat(product.priceRange.min.amount) === 0 ? "Kostenlos" : formatMoney(product.priceRange.min)}
                 </span>
-                {isWine && (
-                  <>
-                    <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
-                      inkl. MwSt. · Grundpreis {(parseFloat(product.priceRange.min.amount) / 6).toFixed(2).replace(".", ",")} €/L
-                    </span>
-                    <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
-                      zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link> · Lieferzeit 3–5 Werktage
-                    </span>
-                  </>
-                )}
+                {isWine && (() => {
+                  const upm = product.variants[0]?.unitPriceMeasurement;
+                  const price = parseFloat(product.priceRange.min.amount);
+                  const grundpreis = upm && upm.quantityValue > 0
+                    ? (price / upm.quantityValue * upm.referenceValue).toFixed(2).replace(".", ",")
+                    : null;
+                  return (
+                    <>
+                      <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
+                        inkl. MwSt.{grundpreis && <> · Grundpreis {grundpreis} €/{upm!.referenceUnit.toLowerCase()}</>}
+                      </span>
+                      <span className="font-body" style={{ display: "block", fontSize: "0.7rem", color: C.inkLight, marginTop: "0.15rem" }}>
+                        zzgl. <Link href="/versand" style={{ color: C.sage, textDecoration: "underline" }}>Versandkosten</Link> · Lieferzeit 3–5 Werktage
+                      </span>
+                    </>
+                  );
+                })()}
                 {isMerch && (
                   <>
                     <span className="font-body" style={{ display: "block", fontSize: "0.75rem", color: C.inkLight, marginTop: "0.25rem" }}>
