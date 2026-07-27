@@ -296,18 +296,7 @@ export default function ProductDetail() {
                 </div>
               )}
 
-              {/* Wine details — only for wine products */}
-              {isWine && (
-                <div style={{ marginTop: "2rem", padding: "1rem", backgroundColor: "rgba(42,74,62,0.04)", border: `1px solid ${C.border}` }}>
-                  <p className="font-body" style={{ fontSize: "0.8rem", color: C.inkMid, margin: 0, lineHeight: 1.8 }}>
-                    <strong style={{ color: C.ink }}>Alkoholgehalt:</strong> 10,5 % vol.<br />
-                    <strong style={{ color: C.ink }}>Jahrgang:</strong> 2025<br />
-                    <strong style={{ color: C.ink }}>Weingut:</strong> Egon Schmitt, Bad Dürkheim<br />
-                    <strong style={{ color: C.ink }}>Inhalt:</strong> 6 × 1 Liter<br />
-                    Enthält Sulfite.
-                  </p>
-                </div>
-              )}
+
 
               {/* Merch details — material info */}
               {isMerch && (

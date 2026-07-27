@@ -68,3 +68,4 @@
 - [x] Sitemap: dynamisch aus echten Shopify-Handles generieren (server-route)
 - [x] Nature One Sandstein-Foto in Shopify hochladen
 - [x] Grundpreis aus Shopify-API (unitPriceMeasurement) statt hardcoded Berechnung (PAngV-konform)
+- [x] Hardcoded Schorle-Daten (Alkoholgehalt, Weingut, Inhalt) von Produktdetailseite entfernt — Infos kommen jetzt aus Shopify-Beschreibung
