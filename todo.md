@@ -61,3 +61,4 @@
 - [x] M3–M11: Bereits in vorheriger Session umgesetzt (Weinkarte, Gastronovi, Datenschutz, Newsletter, Sitemap, www-Redirect, Mobile, Skip-Link)
 - [ ] M12: Produktbilder hochladen (wird separat erledigt, keine Code-Änderung nötig)
 - [x] Beef Crudo Top-Down-Foto in Essen-Sektion (ersetzt Käsebild)
+- [x] Bug: Warenkorb-Button auf Produktdetailseite navigierte zu /shop/warenkorb (404) — jetzt öffnet er den Cart-Drawer

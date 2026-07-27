@@ -11,11 +11,15 @@ import { Link, useParams, useLocation } from "wouter";
 
 /* Cart button for the nav bar */
 function CartNavButton() {
-  const { itemCount } = useCart();
+  const { itemCount, openCart } = useCart();
   const [, setLocation] = useLocation();
   return (
     <button
-      onClick={() => setLocation("/shop/warenkorb")}
+      onClick={() => {
+        // Navigate to shop and open the cart drawer
+        setLocation("/shop");
+        setTimeout(() => openCart(), 100);
+      }}
       className="font-body flex items-center gap-1"
       style={{
         background: "none",
