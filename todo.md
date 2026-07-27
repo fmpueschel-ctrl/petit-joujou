@@ -69,3 +69,5 @@
 - [x] Nature One Sandstein-Foto in Shopify hochladen
 - [x] Grundpreis aus Shopify-API (unitPriceMeasurement) statt hardcoded Berechnung (PAngV-konform)
 - [x] Hardcoded Schorle-Daten (Alkoholgehalt, Weingut, Inhalt) von Produktdetailseite entfernt — Infos kommen jetzt aus Shopify-Beschreibung
+- [x] Shop-Einleitung ergänzt: "und beim Verschenken das Grübeln"
+- [x] Produktbilder korrigiert: Feral, Durst, Messmer Schlossgarten (Tablett-Fotos ersetzt durch Winzer-Website-Bilder)

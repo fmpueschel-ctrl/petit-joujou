@@ -534,7 +534,7 @@ export default function Shop() {
             </p>
             <p style={{ margin: "0 0 1rem" }}>
               Wir haben zusammen mit Gästen und Freunden für dich getestet. Damit sparst du
-              dir das Aussuchen und Vergleichen.
+              dir das Aussuchen und Vergleichen — und beim Verschenken das Grübeln.
             </p>
             <p style={{ margin: 0 }}>
               Alle Artikel erfüllen unsere Nachhaltigkeitskriterien — biozertifiziert, in
