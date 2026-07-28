@@ -74,7 +74,7 @@ const C = {
 export default function ProductDetail() {
   const { handle } = useParams<{ handle: string }>();
   const [, setLocation] = useLocation();
-  const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery();
+  const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery({ collectionHandle: "weine" });
   const { addItem, loading: cartLoading } = useCart();
   const [adding, setAdding] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});

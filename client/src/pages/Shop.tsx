@@ -409,7 +409,7 @@ function categorizeProduct(product: Product): Category {
 
 // ── Main Shop Page ───────────────────────────────────────────
 export default function Shop() {
-  const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery();
+  const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery({ collectionHandle: "weine" });
   const { itemCount, openCart } = useCart();
   const [toastVisible, setToastVisible] = useState(false);
   const toastTimer = useState<ReturnType<typeof setTimeout> | null>(null);

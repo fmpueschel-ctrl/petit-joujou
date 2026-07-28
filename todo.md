@@ -86,3 +86,7 @@
 - [x] Sommerglück: Beschreibung korrigiert (Joujou/Kraus, kein Croix d'Or, kein 10% Rabatt), Preis 96€
 - [x] Sommerabend: 10% Rabatt entfernt, Preis 140€
 - [x] Riesling Total: 10% Rabatt entfernt, Preis 224€
+- [x] Shop: Sortierung aus "Weine"-Kollektion (weiß → rosé → rot → pakete)
+- [x] Mobile Nav: Logo-Text nowrap + clamp, Buttons auf <480px ausgeblendet
+- [x] Orange Icon: Position korrigiert (top:70px, right:15px, unterhalb Nav)
+- [x] Feral: "Hat jemand alkoholfrei gesagt?" als Beschreibungs-Einleitung

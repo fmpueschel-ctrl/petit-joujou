@@ -353,6 +353,12 @@
   filter: grayscale(0);
 }
 
+@media (max-width: 480px) {
+  .nav-cta-hide-mobile {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-split {
     min-height: auto !important;

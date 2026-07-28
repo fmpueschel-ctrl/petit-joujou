@@ -52,14 +52,14 @@ function Nav() {
         }}
       >
         <div className="container flex items-center justify-between" style={{ height: "60px" }}>
-          <a href="#" style={{ textDecoration: "none" }}>
-            <span className="font-script" style={{ fontSize: "1.7rem", color: "#ffffff", letterSpacing: "0.02em" }}>
+          <a href="#" style={{ textDecoration: "none", flexShrink: 0 }}>
+            <span className="font-script" style={{ fontSize: "clamp(1.2rem, 4vw, 1.7rem)", color: "#ffffff", letterSpacing: "0.02em", whiteSpace: "nowrap" }}>
               petit joujou
             </span>
           </a>
-          <div className="flex items-center" style={{ gap: "0.6rem" }}>
-            <a href="#reservierung" className="font-body" style={{ padding: "0.4rem 1rem", backgroundColor: "rgba(255,255,255,0.15)", color: "#fff", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)" }}>Reservieren</a>
-            <a href="/shop" className="font-body" style={{ padding: "0.4rem 1rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none" }}>Shop</a>
+          <div className="flex items-center" style={{ gap: "0.4rem", flexShrink: 0 }}>
+            <a href="#reservierung" className="font-body nav-cta-hide-mobile" style={{ padding: "0.4rem 0.8rem", backgroundColor: "rgba(255,255,255,0.15)", color: "#fff", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)", whiteSpace: "nowrap" }}>Reservieren</a>
+            <a href="/shop" className="font-body nav-cta-hide-mobile" style={{ padding: "0.4rem 0.8rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", whiteSpace: "nowrap" }}>Shop</a>
           <button
             onClick={() => setOpen(!open)}
             style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.8)", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
@@ -149,7 +149,7 @@ function Hero() {
         </div>
 
         {/* Rechts: Content + CTAs */}
-        <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start", position: "relative", overflow: "hidden" }}>
+        <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start", position: "relative" }}>
           {/* SEO H1 — visually hidden but accessible */}
           <h1 className="sr-only">petit joujou — Weinbar in Bad Dürkheim, Pfalz</h1>
           {/* Weinbar-Illustration — oben rechts reinragend */}
@@ -157,7 +157,7 @@ function Hero() {
             src="/manus-storage/weinbar_correct_5d2f0ca9.png"
             alt=""
             aria-hidden="true"
-            style={{ position: "absolute", top: "-10px", right: "0px", width: "clamp(90px, 18vw, 190px)", opacity: 0.85, pointerEvents: "none" }}
+            style={{ position: "absolute", top: "70px", right: "15px", width: "clamp(60px, 12vw, 120px)", opacity: 0.85, pointerEvents: "none", zIndex: 1 }}
           />
 
           {/* Kurzbeschreibung */}
