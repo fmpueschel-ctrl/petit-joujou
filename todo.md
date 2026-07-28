@@ -81,3 +81,8 @@
 - [x] Neues Produkt: Sauvignon Blanc Croix d'Or 2024 (Oliver Zeter) angelegt, 13€
 - [x] Sommerglück-Paket: Fumé → Croix d'Or 2024 (Beschreibung + Gruppenbild aktualisiert)
 - [x] Nature One: Preis von 20€ auf 24€ angepasst
+- [x] Pink Otto: Preis von 25€ auf 21€ korrigiert
+- [x] Sauvignon Blanc: "Croix d'Or" aus Produktname entfernt
+- [x] Sommerglück: Beschreibung korrigiert (Joujou/Kraus, kein Croix d'Or, kein 10% Rabatt), Preis 96€
+- [x] Sommerabend: 10% Rabatt entfernt, Preis 140€
+- [x] Riesling Total: 10% Rabatt entfernt, Preis 224€
