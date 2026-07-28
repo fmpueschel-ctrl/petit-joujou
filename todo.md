@@ -74,3 +74,7 @@
 - [x] "Kein Formular-Friedhof" Text entfernt
 - [x] Weinflaschen-Icon: overflow auf Mobile gefixt (right: 0px statt -20px)
 - [x] Mobile: padding-top 60px auf Hero für fixed Nav
+- [x] Sommerglück-Paket: Zusammensetzung ändern (Pink Otto + Fleur de Rosé 2025 + Zeter Sauvignon Blanc)
+- [x] Sommerglück-Paket: Gruppenbild hochladen
+- [x] Sommerabend-Paket: Gruppenbild hochladen
+- [x] Nature One: Neues Sandstein-Foto hochladen (bessere Qualität)
