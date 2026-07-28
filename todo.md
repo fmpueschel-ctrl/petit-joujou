@@ -78,3 +78,6 @@
 - [x] Sommerglück-Paket: Gruppenbild hochladen
 - [x] Sommerabend-Paket: Gruppenbild hochladen
 - [x] Nature One: Neues Sandstein-Foto hochladen (bessere Qualität)
+- [x] Neues Produkt: Sauvignon Blanc Croix d'Or 2024 (Oliver Zeter) angelegt, 13€
+- [x] Sommerglück-Paket: Fumé → Croix d'Or 2024 (Beschreibung + Gruppenbild aktualisiert)
+- [x] Nature One: Preis von 20€ auf 24€ angepasst
