@@ -157,7 +157,7 @@ function Hero() {
             src="/manus-storage/weinbar_correct_5d2f0ca9.png"
             alt=""
             aria-hidden="true"
-            style={{ position: "absolute", top: "70px", right: "15px", width: "clamp(60px, 12vw, 120px)", opacity: 0.85, pointerEvents: "none", zIndex: 1 }}
+            className="weinbar-icon"
           />
 
           {/* Kurzbeschreibung */}

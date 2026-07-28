@@ -353,6 +353,17 @@
   filter: grayscale(0);
 }
 
+/* Weinbar illustration icon */
+.weinbar-icon {
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  width: clamp(60px, 12vw, 120px);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+}
+
 @media (max-width: 480px) {
   .nav-cta-hide-mobile {
     display: none !important;
@@ -360,6 +371,12 @@
 }
 
 @media (max-width: 768px) {
+  .weinbar-icon {
+    top: 15px;
+    right: 10px;
+    width: 45px;
+    opacity: 0.6;
+  }
   .hero-split {
     min-height: auto !important;
     padding-top: 60px;

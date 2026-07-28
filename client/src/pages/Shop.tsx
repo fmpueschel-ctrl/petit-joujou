@@ -409,7 +409,18 @@ function categorizeProduct(product: Product): Category {
 
 // ── Main Shop Page ───────────────────────────────────────────
 export default function Shop() {
-  const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery({ collectionHandle: "weine" });
+  // Load all products (no collection filter) so Events + Joujou items appear too
+  const { data: allProducts = [], isLoading: loadingAll } = trpc.commerce.products.list.useQuery({ first: 100 });
+  // Load wine collection separately for correct sort order
+  const { data: wineCollectionProducts = [], isLoading: loadingWines } = trpc.commerce.products.list.useQuery({ collectionHandle: "weine" });
+  const isLoading = loadingAll || loadingWines;
+
+  // Merge: use wine collection order for wines, append non-wine products at the end
+  const products = useMemo(() => {
+    const wineIds = new Set(wineCollectionProducts.map(p => p.id));
+    const nonWineProducts = allProducts.filter(p => !wineIds.has(p.id));
+    return [...wineCollectionProducts, ...nonWineProducts];
+  }, [allProducts, wineCollectionProducts]);
   const { itemCount, openCart } = useCart();
   const [toastVisible, setToastVisible] = useState(false);
   const toastTimer = useState<ReturnType<typeof setTimeout> | null>(null);

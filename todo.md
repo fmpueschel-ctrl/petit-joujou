@@ -90,3 +90,10 @@
 - [x] Mobile Nav: Logo-Text nowrap + clamp, Buttons auf <480px ausgeblendet
 - [x] Orange Icon: Position korrigiert (top:70px, right:15px, unterhalb Nav)
 - [x] Feral: "Hat jemand alkoholfrei gesagt?" als Beschreibungs-Einleitung
+- [x] Orange Icon: Mobile-Fix (CSS-Klasse .weinbar-icon, auf Mobile kleiner + oben rechts ohne Text-Überlappung)
+- [x] Shop: Dual-Query-Fix (alle Produkte + Weine-Kollektion laden, mergen für korrekte Sortierung + Events/Joujou sichtbar)
+
+### Ausstehend (Nutzer-Input nötig)
+- [ ] Spätburgunder Dorf N/V (Durst): Flaschenfoto fehlt — Nutzer liefert später
+- [ ] Riesling Total 6er Paket: Gruppenfoto fehlt — Nutzer liefert später
+- [ ] Weinkarte-Seitenname: Alternative zu "Flaschenfreunde" — offen
