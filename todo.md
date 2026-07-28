@@ -71,3 +71,6 @@
 - [x] Hardcoded Schorle-Daten (Alkoholgehalt, Weingut, Inhalt) von Produktdetailseite entfernt — Infos kommen jetzt aus Shopify-Beschreibung
 - [x] Shop-Einleitung ergänzt: "und beim Verschenken das Grübeln"
 - [x] Produktbilder korrigiert: Feral, Durst, Messmer Schlossgarten (Tablett-Fotos ersetzt durch Winzer-Website-Bilder)
+- [x] "Kein Formular-Friedhof" Text entfernt
+- [x] Weinflaschen-Icon: overflow auf Mobile gefixt (right: 0px statt -20px)
+- [x] Mobile: padding-top 60px auf Hero für fixed Nav

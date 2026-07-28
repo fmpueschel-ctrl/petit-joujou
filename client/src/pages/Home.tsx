@@ -157,7 +157,7 @@ function Hero() {
             src="/manus-storage/weinbar_correct_5d2f0ca9.png"
             alt=""
             aria-hidden="true"
-            style={{ position: "absolute", top: "-10px", right: "-20px", width: "clamp(120px, 20vw, 190px)", opacity: 0.85, pointerEvents: "none" }}
+            style={{ position: "absolute", top: "-10px", right: "0px", width: "clamp(90px, 18vw, 190px)", opacity: 0.85, pointerEvents: "none" }}
           />
 
           {/* Kurzbeschreibung */}
@@ -636,9 +636,7 @@ function ReservierungUndGesellschaftenSection() {
                   <h3 className="font-display" style={{ fontSize: "1.2rem", color: C.ink, marginBottom: "0.4rem" }}>
                     Anfrage stellen
                   </h3>
-                  <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkLight, marginBottom: "1.5rem" }}>
-                    Kein Formular-Friedhof — nur das Wichtigste.
-                  </p>
+
 
                   {/* Name + Email */}
                   <div className="form-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem", marginBottom: "0.75rem" }}>
