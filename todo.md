@@ -51,15 +51,15 @@
 - [x] 4.4 Skip-Link "Zum Inhalt springen"
 
 ### Ausstehend (Frank-Input nötig)
-- [ ] Nature One: Echtes Flaschenbild (Nutzer liefert)
-- [ ] Weinkarte-Seitenname: Alternative zu "Flaschenfreunde" (offen)
+- [x] Nature One: Flaschenbild hochgeladen
+- [x] Weinkarte-Seitenname: bleibt "Flaschenfreunde" (entschieden)
 
 ## Claude-Audit v3 — Briefing Manus (26.07.2026)
 - [x] M1: Warenkorb-Button + Zähler auf Produktdetailseiten (CartNavButton)
 - [x] M2: Versandhinweis bei Tickets: "kein Versand — Eintritt vor Ort" statt "zzgl. Versandkosten"
 - [x] M13: Sticky Navigation Startseite (war bereits vorhanden: fixed top-0, Zeile 47)
 - [x] M3–M11: Bereits in vorheriger Session umgesetzt (Weinkarte, Gastronovi, Datenschutz, Newsletter, Sitemap, www-Redirect, Mobile, Skip-Link)
-- [ ] M12: Produktbilder hochladen (wird separat erledigt, keine Code-Änderung nötig)
+- [x] M12: Produktbilder hochladen — erledigt durch einzelne Uploads (Grauburgunder, Pink Otto, Spätburgunder Dorf, Schorle-Riesling 6er, Sommerglück, Tavola Beats)
 - [x] Beef Crudo Top-Down-Foto in Essen-Sektion (ersetzt Käsebild)
 - [x] Bug: Warenkorb-Button auf Produktdetailseite navigierte zu /shop/warenkorb (404) — jetzt öffnet er den Cart-Drawer
 - [x] Versandkosten aktualisieren: 5,99€ Standard, 9,99€ Express, kein Gratisversand, Spreadconnect-Hinweis beim T-Shirt
@@ -94,9 +94,9 @@
 - [x] Shop: Dual-Query-Fix (alle Produkte + Weine-Kollektion laden, mergen für korrekte Sortierung + Events/Joujou sichtbar)
 
 ### Ausstehend (Nutzer-Input nötig)
-- [ ] Spätburgunder Dorf N/V (Durst): Flaschenfoto fehlt — Nutzer liefert später
+- [x] Spätburgunder Dorf N/V (Durst): Flaschenfoto hochgeladen
 - [x] Riesling Total 6er Paket: auf Draft gesetzt (nicht aktiv im Shop, aber erhalten)
-- [ ] Weinkarte-Seitenname: Alternative zu "Flaschenfreunde" — offen
+- [x] Weinkarte-Seitenname: bleibt "Flaschenfreunde"
 - [x] Sauvignon Blanc fumé (Zeter): komplett aus Shop entfernen (Produkt unpublishen + aus Weine-Kollektion entfernen)
 - [x] Sauvignon Blanc 2024 (Zeter): archivieren + aus Weine-Kollektion entfernen
 - [x] Grauburgunder 2024 (Oliver Zeter): neues Produkt anlegen, 13€, Foto hochladen
@@ -112,7 +112,7 @@
 - [x] Fleur de Rosé: Jahrgang 2025 → 2024 korrigiert (Shop + Flaschenfreunde)
 - [x] Rosé Sekt brut nature (Eppelmann): auf Draft gesetzt, aus Flaschenfreunde entfernt
 - [x] Pink Otto Rosé Crémant: als Einzelprodukt angelegt (21€), in Weine-Kollektion (Rosé-Sektion) eingefügt
-- [ ] Pink Otto: Flaschenfoto fehlt noch (Nutzer muss liefern)
+- [x] Pink Otto: Flaschenfoto hochgeladen
 - [x] Flaschenfreunde-Seite: alle Weingut-Namen an finale PDF angepasst (Reibold, Revelette/Provence, Domaine l'enclos, Wasem Doppelstück, etc.)
 - [x] Flaschenfreunde PDF FINAL-2 erneut hochgeladen (identischer Dateiname, neuer Storage-Pfad)
 - [x] Pink Otto: Einzelfoto als Shopify-Produktbild hochgeladen
