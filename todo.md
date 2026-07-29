@@ -115,3 +115,6 @@
 - [ ] Pink Otto: Flaschenfoto fehlt noch (Nutzer muss liefern)
 - [x] Flaschenfreunde-Seite: alle Weingut-Namen an finale PDF angepasst (Reibold, Revelette/Provence, Domaine l'enclos, Wasem Doppelstück, etc.)
 - [x] Flaschenfreunde PDF FINAL-2 erneut hochgeladen (identischer Dateiname, neuer Storage-Pfad)
+- [x] Pink Otto: Einzelfoto als Shopify-Produktbild hochgeladen
+- [x] Tavola Beats: neues Bild (Bella Italia Flyer) auf Homepage, im Shop-Produkt und Events-Sektion eingebaut
+- [x] Events-Sektion: Link zum Shop (/shop?tab=events) hinzugefügt

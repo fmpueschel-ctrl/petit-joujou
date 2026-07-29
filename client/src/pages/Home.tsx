@@ -429,7 +429,7 @@ function EventsSection() {
           {/* TAVOLA BEATS */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <img loading="lazy"
-              src="/manus-storage/tavola_beats_70e575c5.webp"
+              src="/manus-storage/IMG-20260728-WA0013_f8c247f6.jpg"
               alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
               className="event-img"
               style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
@@ -437,6 +437,7 @@ function EventsSection() {
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Joujou in Bella Italia — Apéro, Wines, Food & Italo Beats</p>
               <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>59 € p.P. · inkl. Aperitif, Food & Wines</p>
               <a href="/shop/tavola-beats-ticket"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
@@ -489,7 +490,11 @@ function EventsSection() {
 
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
           <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid }}>
-            Aktuelle Events & Tickets auf{" "}
+            Alle Events & Tickets findest du im{" "}
+            <a href="/shop?tab=events" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "3px", fontWeight: 600 }}>
+              Shop
+            </a>
+            {" "}oder auf{" "}
             <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.sage, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               joujou.bistro
