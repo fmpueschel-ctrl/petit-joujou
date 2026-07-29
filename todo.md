@@ -121,3 +121,4 @@
 - [x] Bug: Tavola Beats "Ticket kaufen" Link auf Homepage führt zu "Produkt nicht gefunden" — Fix: ProductDetail fetcht jetzt alle Produkte, nicht nur Weine-Kollektion
 - [x] Bug: Tavola Beats Bild zu klein — Fix: Event-Tickets bekommen 4:5 Aspect Ratio mit object-fit:cover statt 1:1 mit contain
 - [x] Shop-Bilder Optimierung: Shopify CDN width-Parameter (Kacheln: 800px + srcset 400/600/800, Detail: 1200px + srcset 600/900/1200, Cart: 128px)
+- [x] Shop: Fette Rebsorte/Typ-Kategorie über Weinnamen in Produktkacheln (Weißburgunder, Chardonnay, Chablis, Weißweincuvée, Riesling Kabinett, Riesling GG, Riesling Natur, Grauburgunder, Weißwein alkoholfrei, Blanc de Noir, Rosé, Rosé Crémant, Cabernet Sauvignon, Spätburgunder)

@@ -24,6 +24,24 @@ const C = {
   border: "#d0e0d8",
 };
 
+// ── Wine category labels (Rebsorte/Typ) ─────────────────────
+const WINE_CATEGORY: Record<string, string> = {
+  "weissburgunder-schlossgarten-2020": "Weißburgunder",
+  "chardonnay-le-petit-2023": "Chardonnay",
+  "chablis-a-louest-2023": "Chablis",
+  "pur-blanc-2022": "Weißweincuvée",
+  "riesling-kabinett-2021": "Riesling Kabinett",
+  "riesling-felseneck-gg-2014": "Riesling GG",
+  "nature-one-riesling-2024": "Riesling Natur",
+  "grauburgunder-2024": "Grauburgunder",
+  "feral-no-1-white": "Weißwein alkoholfrei",
+  "spatburgunder-blanc-de-noir-2023": "Blanc de Noir",
+  "fleur-de-rose-2024": "Rosé",
+  "pink-otto-rose-cremant": "Rosé Crémant",
+  "cabernet-sauvignon-reserve-2021": "Cabernet Sauvignon",
+  "spatburgunder-dorf-n-v": "Spätburgunder",
+};
+
 // ── Nav (simplified for shop page) ───────────────────────────
 function ShopNav() {
   return (
@@ -252,6 +270,11 @@ function ProductCard({ product, onAdded }: { product: Product; onAdded?: () => v
 
       {/* Content */}
       <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem", flex: 1 }}>
+        {WINE_CATEGORY[product.handle] && (
+          <span className="font-body" style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: C.sage, margin: 0 }}>
+            {WINE_CATEGORY[product.handle]}
+          </span>
+        )}
         <h3 className="font-display" style={{ fontSize: "1.3rem", color: C.ink, margin: 0, lineHeight: 1.3 }}>
           <Link href={`/shop/${product.handle}`} style={{ color: "inherit", textDecoration: "none" }}>
             {product.title}
