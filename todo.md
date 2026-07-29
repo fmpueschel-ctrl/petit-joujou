@@ -97,3 +97,12 @@
 - [ ] Spätburgunder Dorf N/V (Durst): Flaschenfoto fehlt — Nutzer liefert später
 - [ ] Riesling Total 6er Paket: Gruppenfoto fehlt — Nutzer liefert später
 - [ ] Weinkarte-Seitenname: Alternative zu "Flaschenfreunde" — offen
+- [x] Sauvignon Blanc fumé (Zeter): komplett aus Shop entfernen (Produkt unpublishen + aus Weine-Kollektion entfernen)
+- [x] Sauvignon Blanc 2024 (Zeter): archivieren + aus Weine-Kollektion entfernen
+- [x] Grauburgunder 2024 (Oliver Zeter): neues Produkt anlegen, 13€, Foto hochladen
+- [x] Sommerglück-Paket: Beschreibung aktualisieren (Grauburgunder statt Sauvignon Blanc) + neues Gruppenbild
+- [x] Spätburgunder Dorf N/V (Durst): Flaschenfoto hochladen
+- [x] Schorle-Riesling 6er Paket (Egon Schmitt): Gruppenfoto hochladen (altes webp-Bild ersetzt)
+- [x] Isegrim Blanc de Noir: Preis korrigiert 22€ → 12€
+- [x] Sommerabend-Paket: Preis korrigiert 140€ → 120€ (Chardonnay 18 + Isegrim 12 + Cabernet 30 = 60×2)
+- [x] Riesling Total: falsch hochgeladenes Schmitt-Foto wieder entfernt (Paket bleibt ohne Bild)
