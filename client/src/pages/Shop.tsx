@@ -32,14 +32,14 @@ const WINE_CATEGORY: Record<string, string> = {
   "pur-blanc-2022": "Weißweincuvée",
   "riesling-kabinett-2021": "Riesling Kabinett",
   "riesling-felseneck-gg-2014": "Riesling GG",
-  "nature-one-riesling-2024": "Riesling Natur",
+  "riesling-nature-one-2024": "Riesling Natur",
   "grauburgunder-2024": "Grauburgunder",
   "feral-no-1-white": "Weißwein alkoholfrei",
-  "spatburgunder-blanc-de-noir-2023": "Blanc de Noir",
-  "fleur-de-rose-2024": "Rosé",
+  "spaetburgunder-blanc-de-noir-2023": "Blanc de Noir",
+  "fleur-de-rose-2025": "Rosé",
   "pink-otto-rose-cremant": "Rosé Crémant",
   "cabernet-sauvignon-reserve-2021": "Cabernet Sauvignon",
-  "spatburgunder-dorf-n-v": "Spätburgunder",
+  "spaetburgunder-dorf": "Spätburgunder",
 };
 
 // ── Nav (simplified for shop page) ───────────────────────────
