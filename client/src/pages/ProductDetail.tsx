@@ -3,7 +3,7 @@
    ============================================================ */
 
 import { trpc } from "@/lib/trpc";
-import { formatMoney } from "@/lib/format";
+import { formatMoney, shopifyImageUrl, shopifyImageSrcSet } from "@/lib/format";
 import { useCart } from "@/contexts/CartContext";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { useState, useMemo } from "react";
@@ -170,7 +170,7 @@ export default function ProductDetail() {
             {/* Image */}
             <div style={{ backgroundColor: isEventTicket ? "#1a2a24" : "#fff", border: isEventTicket ? "none" : `1px solid ${C.border}`, padding: isEventTicket ? "0" : "2rem", display: "flex", alignItems: "center", justifyContent: "center", aspectRatio: isEventTicket ? "4/5" : "1" }}>
               {displayImage ? (
-                <img src={displayImage.url} alt={displayImage.altText || product.title} style={{ width: "100%", height: "100%", objectFit: isEventTicket ? "cover" : "contain", transition: "opacity 0.2s ease" }} />
+                <img src={shopifyImageUrl(displayImage, 1200)} srcSet={shopifyImageSrcSet(displayImage, [600, 900, 1200])} sizes="(max-width: 640px) 100vw, 50vw" alt={displayImage.altText || product.title} style={{ width: "100%", height: "100%", objectFit: isEventTicket ? "cover" : "contain", transition: "opacity 0.2s ease" }} />
               ) : (
                 <div style={{ width: "120px", height: "120px", backgroundColor: C.border, borderRadius: "50%" }} />
               )}

@@ -1,4 +1,30 @@
-import type { Money } from "@shared/commerce/types";
+import type { Money, Image } from "@shared/commerce/types";
+
+/**
+ * Append Shopify CDN width parameter to an image URL for server-side resizing.
+ * Shopify CDN URLs support `&width=N` (or `?width=N`) to deliver pre-scaled images.
+ * Falls back to the original URL for non-Shopify sources.
+ */
+export function shopifyImageUrl(image: Image | null | undefined, width: number): string {
+  if (!image?.url) return "";
+  const url = image.url;
+  // Only append width param to Shopify CDN URLs
+  if (!url.includes("cdn.shopify.com")) return url;
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}width=${width}`;
+}
+
+/**
+ * Generate srcSet string for responsive images from Shopify CDN.
+ * Returns empty string for non-Shopify URLs.
+ */
+export function shopifyImageSrcSet(image: Image | null | undefined, widths: number[]): string {
+  if (!image?.url) return "";
+  if (!image.url.includes("cdn.shopify.com")) return "";
+  return widths
+    .map(w => `${shopifyImageUrl(image, w)} ${w}w`)
+    .join(", ");
+}
 
 /**
  * Format a Money or raw amount string into a localized currency string.

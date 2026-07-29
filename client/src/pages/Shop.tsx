@@ -4,7 +4,7 @@
    ============================================================ */
 
 import { trpc } from "@/lib/trpc";
-import { formatMoney } from "@/lib/format";
+import { formatMoney, shopifyImageUrl, shopifyImageSrcSet } from "@/lib/format";
 import { useCart } from "@/contexts/CartContext";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import type { Product } from "@shared/commerce/types";
@@ -104,7 +104,7 @@ function CartDrawer() {
                 <div key={item.lineId} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
                   {item.image && (
                     <img
-                      src={item.image.url}
+                      src={shopifyImageUrl(item.image, 128)}
                       alt={item.productTitle}
                       style={{ width: "64px", height: "64px", objectFit: "contain", borderRadius: "4px", backgroundColor: "#fff" }}
                     />
@@ -238,8 +238,11 @@ function ProductCard({ product, onAdded }: { product: Product; onAdded?: () => v
       <div style={{ aspectRatio: isEventTicket ? "4/5" : "1", backgroundColor: isEventTicket ? "#1a2a24" : "#fafcfb", display: "flex", alignItems: "center", justifyContent: "center", padding: isEventTicket ? "0" : "2rem" }}>
         {image ? (
           <img
-            src={image.url}
+            src={shopifyImageUrl(image, 800)}
+            srcSet={shopifyImageSrcSet(image, [400, 600, 800])}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             alt={image.altText || product.title}
+            loading="lazy"
             style={{ width: "100%", height: "100%", objectFit: isEventTicket ? "cover" : "contain" }}
           />
         ) : (
