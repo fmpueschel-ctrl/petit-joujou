@@ -113,3 +113,5 @@
 - [x] Rosé Sekt brut nature (Eppelmann): auf Draft gesetzt, aus Flaschenfreunde entfernt
 - [x] Pink Otto Rosé Crémant: als Einzelprodukt angelegt (21€), in Weine-Kollektion (Rosé-Sektion) eingefügt
 - [ ] Pink Otto: Flaschenfoto fehlt noch (Nutzer muss liefern)
+- [x] Flaschenfreunde-Seite: alle Weingut-Namen an finale PDF angepasst (Reibold, Revelette/Provence, Domaine l'enclos, Wasem Doppelstück, etc.)
+- [x] Flaschenfreunde PDF FINAL-2 erneut hochgeladen (identischer Dateiname, neuer Storage-Pfad)

@@ -26,29 +26,29 @@ type WineEntry = {
 };
 
 const weisswein: WineEntry[] = [
-  { name: "Riesling Nature One", winery: "Joujou × Meßmer", region: "Pfalz", year: "2024", price: 20, note: "Unser eigener Naturwein-Riesling" },
-  { name: "Weissburgunder Schlossgarten", winery: "Weingut Herbert Meßmer", region: "Pfalz", year: "2020", price: 24, note: "VDP.Erste Lage" },
+  { name: "Riesling Nature One", winery: "Joujou Sonderabfüllung", region: "Pfalz", year: "2024", price: 20 },
+  { name: "Weissburgunder Schlossgarten", winery: "Messmer", region: "Pfalz", year: "2020", price: 24 },
   { name: "Grauburgunder", winery: "Oliver Zeter", region: "Pfalz", year: "2024", price: 13 },
-  { name: "Chardonnay Le Petit", winery: "Weingut Rebholz", region: "Pfalz", year: "2023", price: 18 },
-  { name: "Riesling Kabinett", winery: "Weingut Eppelmann", region: "Rheinhessen", year: "2021", price: 20 },
-  { name: "Spätburgunder Blanc de Noir", winery: "Weingut Isegrim", region: "Pfalz", year: "2023", price: 12 },
-  { name: "PUR Blanc", winery: "Weingut Kreydenweiss", region: "Franken", year: "2022", price: 38 },
-  { name: "Chablis à l'ouest", winery: "Domaine Vendier", region: "Burgund", year: "2023", price: 42 },
-  { name: "Riesling Felseneck GG", winery: "Prinz Salm", region: "Nahe", year: "2014", price: 68, note: "VDP.Großes Gewächs" },
+  { name: "Chardonnay Le Petit", winery: "Reibold", region: "Pfalz", year: "2023", price: 18 },
+  { name: "Riesling Kabinett", winery: "Eppelmann", region: "Rheinhessen", year: "2021", price: 20 },
+  { name: "Spätburgunder Blanc de Noir", winery: "Isegrim", region: "Pfalz", year: "2023", price: 12 },
+  { name: "PUR Blanc", winery: "Revelette", region: "Provence", year: "2022", price: 38, note: "Ugni Blanc · Carignan Blanc · Rolle" },
+  { name: "Chablis à l'ouest", winery: "Domaine l'enclos", region: "Burgund", year: "2023", price: 42 },
+  { name: "Riesling Felseneck GG", winery: "Prinz Salm", region: "Nahe", year: "2014", price: 68 },
 ];
 
 const alkoholfrei: WineEntry[] = [
-  { name: "Feral No 1 White", winery: "Feral Drinks", region: "Pfalz", year: "—", price: 23, note: "Alkoholfrei" },
+  { name: "Feral No 1 White", winery: "Hop · Szechuan Pepper", region: "", year: "—", price: 23 },
 ];
 
 const roseUndSekt: WineEntry[] = [
-  { name: "Fleur de Rosé", winery: "Weingut Rings", region: "Pfalz", year: "2024", price: 14 },
-  { name: "Pink Otto Rosé Crémant", winery: "Joujou · Lukas Kraus", region: "Pfalz", year: "—", price: 21 },
+  { name: "Fleur de Rosé", winery: "Rings", region: "Pfalz", year: "2024", price: 14 },
+  { name: "Pink Otto Rosé Crémant", winery: "Lukas Krauss", region: "Pfalz", year: "—", price: 21 },
 ];
 
 const rotwein: WineEntry[] = [
-  { name: "Spätburgunder Dorf", winery: "Weingut Andreas Durst", region: "Pfalz", year: "N/V", price: 19 },
-  { name: "Cabernet Sauvignon Reserve", winery: "Weingut Doppelstück", region: "Rheinhessen", year: "2021", price: 30 },
+  { name: "Spätburgunder Dorf", winery: "Andreas Durst", region: "Pfalz", year: "N/V", price: 19 },
+  { name: "Cabernet Sauvignon Reserve", winery: "Wasem Doppelstück", region: "Rheinhessen", year: "2021", price: 30 },
 ];
 
 function WineTable({ wines, title }: { wines: WineEntry[]; title: string }) {
@@ -92,7 +92,7 @@ function WineTable({ wines, title }: { wines: WineEntry[]; title: string }) {
               )}
               <br />
               <span className="font-body" style={{ fontSize: "0.8rem", color: C.inkLight }}>
-                {w.winery} · {w.region} · {w.year}
+                {w.winery}{w.region ? ` · ${w.region}` : ""}{w.year !== "—" ? ` · ${w.year}` : ""}
               </span>
             </div>
             <div style={{ textAlign: "right" }}>
@@ -166,7 +166,7 @@ export default function Flaschenfreunde() {
 
         {/* Wine Lists */}
         <WineTable wines={weisswein} title="Weißwein" />
-        <WineTable wines={alkoholfrei} title="Alkoholfrei" />
+        <WineTable wines={alkoholfrei} title="Non Alcoholic" />
         <WineTable wines={roseUndSekt} title="Rosé & Sekt" />
         <WineTable wines={rotwein} title="Rotwein" />
 
