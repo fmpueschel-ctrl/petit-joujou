@@ -28,10 +28,10 @@ type WineEntry = {
 const weisswein: WineEntry[] = [
   { name: "Riesling Nature One", winery: "Joujou × Meßmer", region: "Pfalz", year: "2024", price: 20, note: "Unser eigener Naturwein-Riesling" },
   { name: "Weissburgunder Schlossgarten", winery: "Weingut Herbert Meßmer", region: "Pfalz", year: "2020", price: 24, note: "VDP.Erste Lage" },
-  { name: "Sauvignon Blanc fumé", winery: "Oliver Zeter", region: "Pfalz", year: "2023", price: 20 },
+  { name: "Grauburgunder", winery: "Oliver Zeter", region: "Pfalz", year: "2024", price: 13 },
   { name: "Chardonnay Le Petit", winery: "Weingut Rebholz", region: "Pfalz", year: "2023", price: 18 },
   { name: "Riesling Kabinett", winery: "Weingut Eppelmann", region: "Rheinhessen", year: "2021", price: 20 },
-  { name: "Spätburgunder Blanc de Noir", winery: "Weingut Isegrim", region: "Pfalz", year: "2023", price: 22 },
+  { name: "Spätburgunder Blanc de Noir", winery: "Weingut Isegrim", region: "Pfalz", year: "2023", price: 12 },
   { name: "PUR Blanc", winery: "Weingut Kreydenweiss", region: "Franken", year: "2022", price: 38 },
   { name: "Chablis à l'ouest", winery: "Domaine Vendier", region: "Burgund", year: "2023", price: 42 },
   { name: "Riesling Felseneck GG", winery: "Prinz Salm", region: "Nahe", year: "2014", price: 68, note: "VDP.Großes Gewächs" },

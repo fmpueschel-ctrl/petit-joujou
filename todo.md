@@ -95,7 +95,7 @@
 
 ### Ausstehend (Nutzer-Input nötig)
 - [ ] Spätburgunder Dorf N/V (Durst): Flaschenfoto fehlt — Nutzer liefert später
-- [ ] Riesling Total 6er Paket: Gruppenfoto fehlt — Nutzer liefert später
+- [x] Riesling Total 6er Paket: auf Draft gesetzt (nicht aktiv im Shop, aber erhalten)
 - [ ] Weinkarte-Seitenname: Alternative zu "Flaschenfreunde" — offen
 - [x] Sauvignon Blanc fumé (Zeter): komplett aus Shop entfernen (Produkt unpublishen + aus Weine-Kollektion entfernen)
 - [x] Sauvignon Blanc 2024 (Zeter): archivieren + aus Weine-Kollektion entfernen
@@ -106,3 +106,6 @@
 - [x] Isegrim Blanc de Noir: Preis korrigiert 22€ → 12€
 - [x] Sommerabend-Paket: Preis korrigiert 140€ → 120€ (Chardonnay 18 + Isegrim 12 + Cabernet 30 = 60×2)
 - [x] Riesling Total: falsch hochgeladenes Schmitt-Foto wieder entfernt (Paket bleibt ohne Bild)
+- [x] Flaschenfreunde-Karte: Sauvignon Blanc fumé → Grauburgunder 2024 (13€) ersetzt
+- [x] Flaschenfreunde-Karte: Isegrim Blanc de Noir Preis 22€ → 12€ korrigiert
+- [x] Neue Flaschenfreunde PDF hochgeladen (PetitJoujou_Flaschenfreunde_A4_FINAL-2)
