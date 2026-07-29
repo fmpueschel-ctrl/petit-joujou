@@ -1172,9 +1172,9 @@ export default function Home() {
         <EventsSection />
         <ScheuneSection />
         <ReservierungUndGesellschaftenSection />
+        <TheOneSection />
         <SiegelSection />
         <GalerieSection />
-        <TheOneSection />
       </main>
       <Footer />
     </div>
