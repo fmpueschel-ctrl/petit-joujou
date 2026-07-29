@@ -109,3 +109,7 @@
 - [x] Flaschenfreunde-Karte: Sauvignon Blanc fumé → Grauburgunder 2024 (13€) ersetzt
 - [x] Flaschenfreunde-Karte: Isegrim Blanc de Noir Preis 22€ → 12€ korrigiert
 - [x] Neue Flaschenfreunde PDF hochgeladen (PetitJoujou_Flaschenfreunde_A4_FINAL-2)
+- [x] Fleur de Rosé: Jahrgang 2025 → 2024 korrigiert (Shop + Flaschenfreunde)
+- [x] Rosé Sekt brut nature (Eppelmann): auf Draft gesetzt, aus Flaschenfreunde entfernt
+- [x] Pink Otto Rosé Crémant: als Einzelprodukt angelegt (21€), in Weine-Kollektion (Rosé-Sektion) eingefügt
+- [ ] Pink Otto: Flaschenfoto fehlt noch (Nutzer muss liefern)

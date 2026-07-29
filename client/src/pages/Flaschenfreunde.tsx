@@ -42,8 +42,8 @@ const alkoholfrei: WineEntry[] = [
 ];
 
 const roseUndSekt: WineEntry[] = [
-  { name: "Fleur de Rosé", winery: "Weingut Rings", region: "Pfalz", year: "2025", price: 14 },
-  { name: "Rosé Sekt brut nature", winery: "Weingut Eppelmann", region: "Rheinhessen", year: "2023", price: 25 },
+  { name: "Fleur de Rosé", winery: "Weingut Rings", region: "Pfalz", year: "2024", price: 14 },
+  { name: "Pink Otto Rosé Crémant", winery: "Joujou · Lukas Kraus", region: "Pfalz", year: "—", price: 21 },
 ];
 
 const rotwein: WineEntry[] = [
