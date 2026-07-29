@@ -235,12 +235,12 @@ function ProductCard({ product, onAdded }: { product: Product; onAdded?: () => v
       transition: "box-shadow 0.2s ease",
     }}>
       {/* Image */}
-      <div style={{ aspectRatio: "1", backgroundColor: "#fafcfb", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem" }}>
+      <div style={{ aspectRatio: isEventTicket ? "4/5" : "1", backgroundColor: isEventTicket ? "#1a2a24" : "#fafcfb", display: "flex", alignItems: "center", justifyContent: "center", padding: isEventTicket ? "0" : "2rem" }}>
         {image ? (
           <img
             src={image.url}
             alt={image.altText || product.title}
-            style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+            style={{ width: "100%", height: "100%", objectFit: isEventTicket ? "cover" : "contain" }}
           />
         ) : (
           <div style={{ width: "80px", height: "80px", backgroundColor: C.border, borderRadius: "50%" }} />

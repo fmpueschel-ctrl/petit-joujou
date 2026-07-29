@@ -118,3 +118,5 @@
 - [x] Pink Otto: Einzelfoto als Shopify-Produktbild hochgeladen
 - [x] Tavola Beats: neues Bild (Bella Italia Flyer) auf Homepage, im Shop-Produkt und Events-Sektion eingebaut
 - [x] Events-Sektion: Link zum Shop (/shop?tab=events) hinzugefügt
+- [x] Bug: Tavola Beats "Ticket kaufen" Link auf Homepage führt zu "Produkt nicht gefunden" — Fix: ProductDetail fetcht jetzt alle Produkte, nicht nur Weine-Kollektion
+- [x] Bug: Tavola Beats Bild zu klein — Fix: Event-Tickets bekommen 4:5 Aspect Ratio mit object-fit:cover statt 1:1 mit contain

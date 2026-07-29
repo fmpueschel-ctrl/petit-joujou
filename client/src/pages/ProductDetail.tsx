@@ -74,7 +74,10 @@ const C = {
 export default function ProductDetail() {
   const { handle } = useParams<{ handle: string }>();
   const [, setLocation] = useLocation();
-  const { data: products = [], isLoading } = trpc.commerce.products.list.useQuery({ collectionHandle: "weine" });
+  const { data: weineProducts = [], isLoading: weineLoading } = trpc.commerce.products.list.useQuery({ collectionHandle: "weine" });
+  const { data: allProducts = [], isLoading: allLoading } = trpc.commerce.products.list.useQuery({ first: 50 });
+  const isLoading = weineLoading || allLoading;
+  const products = allProducts.length > weineProducts.length ? allProducts : [...weineProducts, ...allProducts.filter(p => !weineProducts.find(w => w.handle === p.handle))];
   const { addItem, loading: cartLoading } = useCart();
   const [adding, setAdding] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
@@ -165,9 +168,9 @@ export default function ProductDetail() {
         <div className="container" style={{ maxWidth: "900px" }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-start">
             {/* Image */}
-            <div style={{ backgroundColor: "#fff", border: `1px solid ${C.border}`, padding: "2rem", display: "flex", alignItems: "center", justifyContent: "center", aspectRatio: "1" }}>
+            <div style={{ backgroundColor: isEventTicket ? "#1a2a24" : "#fff", border: isEventTicket ? "none" : `1px solid ${C.border}`, padding: isEventTicket ? "0" : "2rem", display: "flex", alignItems: "center", justifyContent: "center", aspectRatio: isEventTicket ? "4/5" : "1" }}>
               {displayImage ? (
-                <img src={displayImage.url} alt={displayImage.altText || product.title} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", transition: "opacity 0.2s ease" }} />
+                <img src={displayImage.url} alt={displayImage.altText || product.title} style={{ width: "100%", height: "100%", objectFit: isEventTicket ? "cover" : "contain", transition: "opacity 0.2s ease" }} />
               ) : (
                 <div style={{ width: "120px", height: "120px", backgroundColor: C.border, borderRadius: "50%" }} />
               )}

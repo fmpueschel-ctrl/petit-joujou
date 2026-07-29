@@ -428,12 +428,14 @@ function EventsSection() {
 
           {/* TAVOLA BEATS */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-            <img loading="lazy"
-              src="/manus-storage/IMG-20260728-WA0013_f8c247f6.jpg"
-              alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
-              className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
-            />
+            <a href="/shop/tavola-beats-ticket" style={{ display: "block" }}>
+              <img loading="lazy"
+                src="/manus-storage/IMG-20260728-WA0013_f8c247f6.jpg"
+                alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
+                className="event-img"
+                style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
+              />
+            </a>
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
