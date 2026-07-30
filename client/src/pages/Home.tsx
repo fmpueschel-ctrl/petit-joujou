@@ -1120,7 +1120,7 @@ function TheOneSection() {
             es kann nur eines geben
           </p>
           <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
-            Nur das Beste aus jeder Kategorie — und nur, wenn es unseren Nachhaltigkeitskriterien standhält.
+            Dieser Shop enthält von jedem Produkt nur eines. Alle Produkte erfüllen unsere Nachhaltigkeitskriterien.
           </p>
         </div>
 

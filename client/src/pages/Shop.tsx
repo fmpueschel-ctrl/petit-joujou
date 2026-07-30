@@ -569,7 +569,7 @@ export default function Shop() {
           </p>
           <div className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.8, margin: "0 auto", maxWidth: "600px" }}>
             <p style={{ margin: "0 0 1rem" }}>
-              Dieser Shop enthält von jedem Artikel nur einen Einzigen — the One — bei dem
+              Dieser Shop enthält von jedem Produkt nur eines — the One — bei dem
               Preis und Genuss, Design oder Funktion am besten zusammenpassen.
             </p>
             <p style={{ margin: "0 0 1rem" }}>
@@ -577,7 +577,7 @@ export default function Shop() {
               dir das Aussuchen und Vergleichen — und beim Verschenken das Grübeln.
             </p>
             <p style={{ margin: 0 }}>
-              Alle Artikel erfüllen unsere Nachhaltigkeitskriterien — biozertifiziert, in
+              Alle Produkte erfüllen unsere Nachhaltigkeitskriterien — biozertifiziert, in
               Umstellung oder auf andere Weise nachhaltig. Was nicht bio ist, steht am Produkt.
             </p>
           </div>
