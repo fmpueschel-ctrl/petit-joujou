@@ -1113,9 +1113,12 @@ function TheOneSection() {
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "1rem" }}>
             petit joujou
           </p>
-          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "#fff", marginBottom: "1rem" }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "#fff", marginBottom: "0.4rem" }}>
             Shop | The One
           </h2>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: C.rose, letterSpacing: "0.06em", margin: "0 0 1rem", fontStyle: "italic" }}>
+            es kann nur eines geben
+          </p>
           <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
             Nur das Beste aus jeder Kategorie — und nur, wenn es unseren Nachhaltigkeitskriterien standhält.
           </p>

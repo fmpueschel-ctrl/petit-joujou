@@ -148,3 +148,4 @@
 - [ ] DHL-Account anbinden (eigener Versand-Account)
 - [ ] Versandverpackung: Nur 6er-Kartons für alle Weine?
 - [ ] Positionierung: „Wir sind nicht billig. Auch keine Winzer. Wir sind Kuratoren."
+- [x] Claim "es kann nur eines geben" in Akzentfarbe Rosa: im Shop-Header + auf Startseite (Shop-Vorstellung/TheOneSection)

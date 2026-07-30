@@ -564,7 +564,7 @@ export default function Shop() {
           <h1 className="font-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.2rem)", color: C.ink, margin: "0 0 0.4rem", lineHeight: 1.15, fontWeight: 600 }}>
             The One
           </h1>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkLight, letterSpacing: "0.06em", margin: "0 0 1.2rem", fontStyle: "italic" }}>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: C.rose, letterSpacing: "0.06em", margin: "0 0 1.2rem", fontStyle: "italic" }}>
             es kann nur eines geben
           </p>
           <div className="font-body" style={{ fontSize: "1.05rem", color: C.inkMid, lineHeight: 1.8, margin: "0 auto", maxWidth: "600px" }}>
