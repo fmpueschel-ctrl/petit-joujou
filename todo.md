@@ -141,7 +141,7 @@
 - [ ] Versandverpackung: Nur 6er-Kartons für alle Weine?
 - [ ] Positionierung: „Wir sind nicht billig. Auch keine Winzer. Wir sind Kuratoren."
 - [x] Nature One Riesling: Preis +10€ (von 24€ auf 34€)
-- [x] Schorle-Riesling 6er: Preis +1€ (von 42€ auf 43€)
+- [x] Schorle-Riesling 6er: Preis +6€ (von 42€ auf 48€, je Flasche +1€)
 - [x] Sommerabend-Paket: Preis +10€ (von 120€ auf 130€) wegen Nature One Preiserhöhung
 
 ### Memo (tbd — später)
