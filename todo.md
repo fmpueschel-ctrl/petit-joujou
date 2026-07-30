@@ -124,3 +124,4 @@
 - [x] Shop: Fette Rebsorte/Typ-Kategorie über Weinnamen in Produktkacheln (Weißburgunder, Chardonnay, Chablis, Weißweincuvée, Riesling Kabinett, Riesling GG, Riesling Natur, Grauburgunder, Weißwein alkoholfrei, Blanc de Noir, Rosé, Rosé Crémant, Cabernet Sauvignon, Spätburgunder)
 - [x] Flaschenfreunde: PDF-Bild im Speisekarten-Design eingebunden (rosa Streifen); Mengenrabatt bleibt in PDF (Nutzer-Entscheidung: gilt für Vor-Ort-Gäste)
 - [x] Bug: Weinkategorie-Labels (Rosé, Spätburgunder, Riesling Natur, Blanc de Noir) fehlten im Shop — Fix: WINE_CATEGORY-Mapping korrigiert (Shopify Storefront API nutzt andere Handles: ae statt ä, anderer Vintage-Suffix, kein N/V-Suffix)
+- [x] Shop: Claim "es kann nur eines geben" unter "The One" als Untertitel ergänzen
