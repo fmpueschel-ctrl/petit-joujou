@@ -125,3 +125,26 @@
 - [x] Flaschenfreunde: PDF-Bild im Speisekarten-Design eingebunden (rosa Streifen); Mengenrabatt bleibt in PDF (Nutzer-Entscheidung: gilt für Vor-Ort-Gäste)
 - [x] Bug: Weinkategorie-Labels (Rosé, Spätburgunder, Riesling Natur, Blanc de Noir) fehlten im Shop — Fix: WINE_CATEGORY-Mapping korrigiert (Shopify Storefront API nutzt andere Handles: ae statt ä, anderer Vintage-Suffix, kein N/V-Suffix)
 - [x] Shop: Claim "es kann nur eines geben" unter "The One" als Untertitel ergänzen
+- [ ] Nature One Riesling: Preis +10€ (von 24€ auf 34€)
+- [ ] Schorle-Riesling 6er: Preis +1€ (von 42€ auf 43€)
+
+### Memo (tbd — später)
+- [ ] DHL-Account anbinden (eigener Versand-Account)
+- [ ] Versandverpackung: Nur 6er-Kartons für alle Weine?
+- [ ] Positionierung: „Wir sind nicht billig. Auch keine Winzer. Wir sind Kuratoren."
+- [ ] Nature One Riesling: Preis +10€ (von 24€ auf 34€)
+- [ ] Schorle-Riesling 6er: Preis +1€ (von 42€ auf 43€)
+- [ ] Sommerabend-Paket: Preis +10€ (von 120€ auf 130€) wegen Nature One Preiserhöhung
+
+### Memo (tbd — später)
+- [ ] DHL-Account anbinden (eigener Versand-Account)
+- [ ] Versandverpackung: Nur 6er-Kartons für alle Weine?
+- [ ] Positionierung: „Wir sind nicht billig. Auch keine Winzer. Wir sind Kuratoren."
+- [x] Nature One Riesling: Preis +10€ (von 24€ auf 34€)
+- [x] Schorle-Riesling 6er: Preis +1€ (von 42€ auf 43€)
+- [x] Sommerabend-Paket: Preis +10€ (von 120€ auf 130€) wegen Nature One Preiserhöhung
+
+### Memo (tbd — später)
+- [ ] DHL-Account anbinden (eigener Versand-Account)
+- [ ] Versandverpackung: Nur 6er-Kartons für alle Weine?
+- [ ] Positionierung: „Wir sind nicht billig. Auch keine Winzer. Wir sind Kuratoren."
