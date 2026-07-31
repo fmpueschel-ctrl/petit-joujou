@@ -149,3 +149,5 @@
 - [ ] Versandverpackung: Nur 6er-Kartons für alle Weine?
 - [ ] Positionierung: „Wir sind nicht billig. Auch keine Winzer. Wir sind Kuratoren."
 - [x] Claim "es kann nur eines geben" in Akzentfarbe Rosa: im Shop-Header + auf Startseite (Shop-Vorstellung/TheOneSection)
+- [x] Tavola Beats: Text "Joujou in Bella Italia" → "La Dolce Vita im Joujou" in Home.tsx (Zeile 442 + Alt-Text Zeile 434)
+- [x] Tavola Beats: Neues Flyerbild v2 ausgetauscht (tavola_beats_flyer_v2_23f46472.webp)

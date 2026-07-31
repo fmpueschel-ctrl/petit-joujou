@@ -430,8 +430,8 @@ function EventsSection() {
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <a href="/shop/tavola-beats-ticket" style={{ display: "block" }}>
               <img loading="lazy"
-                src="/manus-storage/IMG-20260728-WA0013_f8c247f6.jpg"
-                alt="TAVOLA BEATS — Apéro, Wines, Food & Italo Beats"
+                src="/manus-storage/tavola_beats_flyer_v2_23f46472.webp"
+                alt="TAVOLA BEATS — La Dolce Vita im Joujou"
                 className="event-img"
                 style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
               />
@@ -439,7 +439,7 @@ function EventsSection() {
             <div style={{ padding: "1.25rem 1.5rem" }}>
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Joujou in Bella Italia — Apéro, Wines, Food & Italo Beats</p>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>La Dolce Vita im Joujou — Apéro, Wines, Food & Italo Beats</p>
               <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>59 € p.P. · inkl. Aperitif, Food & Wines</p>
               <a href="/shop/tavola-beats-ticket"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
