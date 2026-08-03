@@ -151,3 +151,5 @@
 - [x] Claim "es kann nur eines geben" in Akzentfarbe Rosa: im Shop-Header + auf Startseite (Shop-Vorstellung/TheOneSection)
 - [x] Tavola Beats: Text "Joujou in Bella Italia" → "La Dolce Vita im Joujou" in Home.tsx (Zeile 442 + Alt-Text Zeile 434)
 - [x] Tavola Beats: Neues Flyerbild v2 ausgetauscht (tavola_beats_flyer_v2_23f46472.webp)
+- [x] Küche-Sektion: Linkes Bild ersetzt durch neues Kartoffel-Kräuter-Gericht (20260725_203546)
+- [x] Impressionen: Service-Einschenken ersetzt durch neue Fassade bei Nacht mit Glasfenster (20260802_214909)

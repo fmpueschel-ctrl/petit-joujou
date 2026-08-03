@@ -378,8 +378,8 @@ function GartenSection() {
           className="w-full h-full object-cover"
         />
         <img loading="lazy"
-          src="/manus-storage/service-einschenken_d9348507.webp"
-          alt="Service schenkt Wein ein"
+src="/manus-storage/20260802_214909_f13ce581.jpg"
+           alt="Joujou Fassade bei Nacht — neues Glasfenster im Tor"
           className="w-full h-full object-cover"
         />
       </div>
@@ -795,11 +795,11 @@ function EssenSection() {
 
         {/* Image Grid — no dish titles, just visual storytelling */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4" style={{ marginBottom: "4rem" }}>
-          {/* Sharing bunt — colorful, appetizing */}
+          {/* Kartoffel-Kräuter-Gericht — warm, erdig */}
           <div className="overflow-hidden" style={{ borderRadius: "2px" }}>
             <img
-              src="/manus-storage/sharing-bunt_39a03aa9.webp"
-              alt="Saisonales Sharing-Gericht"
+src="/manus-storage/20260725_203546_1de1a1ad.jpg"
+               alt="Kartoffel-Kräuter-Gericht mit Schnittlauch und Microgreens"
               className="w-full h-full object-cover"
               style={{ aspectRatio: "3/4" }}
               loading="lazy"
