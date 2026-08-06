@@ -993,7 +993,7 @@ function NewsletterFooter() {
         Newsletter
       </p>
       <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, marginBottom: "1rem", maxWidth: "400px", margin: "0 auto 1rem" }}>
-        Neue Weine, Events und Angebote — ca. 1× im Monat, kein Spam.
+        Neue Weine, Events und Angebote.
       </p>
       {submitted ? (
         <p className="font-body" style={{ fontSize: "0.85rem", color: C.sage }}>
@@ -1120,7 +1120,7 @@ function TheOneSection() {
             es kann nur eines geben
           </p>
           <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
-            Dieser Shop enthält von jedem Produkt nur eines. Alle Produkte erfüllen unsere Nachhaltigkeitskriterien.
+            Dieser Shop enthält von jedem Produkt nur eines — the One — bei dem Preis und Genuss, Design oder Funktion am besten zusammenpassen.
           </p>
         </div>
 
