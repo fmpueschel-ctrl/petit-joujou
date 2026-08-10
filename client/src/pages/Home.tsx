@@ -426,24 +426,23 @@ function EventsSection() {
             </div>
           </div>
 
-          {/* TAVOLA BEATS */}
+         {/* TAVOLA BEATS */}
+          {/* Newsletter-Hinweis (ersetzt abgelaufene Tavola Beats) */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-            <a href="/shop/tavola-beats-ticket" style={{ display: "block" }}>
-              <img loading="lazy"
-                src="/manus-storage/tavola_beats_flyer_v2_23f46472.webp"
-                alt="TAVOLA BEATS — La Dolce Vita im Joujou"
-                className="event-img"
-                style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
-              />
-            </a>
+            <img loading="lazy"
+              src="/manus-storage/1000100944_6f171278.jpg"
+              alt="Gedeckte Tafel in der Scheune — Wein, Kerzen, Zitronen"
+              className="event-img"
+              style={{ width: "100%", height: "auto", aspectRatio: "4/3", objectFit: "cover", display: "block" }}
+            />
             <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Sa, 08. August · 16:00–22:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>TAVOLA BEATS</p>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>La Dolce Vita im Joujou — Apéro, Wines, Food & Italo Beats</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>59 € p.P. · inkl. Aperitif, Food & Wines</p>
-              <a href="/shop/tavola-beats-ticket"
+              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Nächste Termine</p>
+              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Ihr erfahrt es zuerst</p>
+              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Neue Abende, Verkostungen und Aktionen kündigen wir hier an — und vorher im Newsletter.</p>
+              <a href="https://t711d0237.emailsys1a.net/237/2274/257bdcff21/subscribe/form.html?_g=1785505556"
+                target="_blank" rel="noopener noreferrer"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
-                Ticket kaufen
+                Newsletter abonnieren
               </a>
             </div>
           </div>
@@ -460,7 +459,7 @@ function EventsSection() {
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Joujou Groovt</p>
               <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Live-Musik, Spritz, Schorle, Wein — entspannte Sommerabende.</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>30.07. · 27.08.2026</p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>27.08.2026</p>
               <a href="#reservierung"
                 style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
                 Tisch reservieren

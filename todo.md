@@ -153,3 +153,6 @@
 - [x] Tavola Beats: Neues Flyerbild v2 ausgetauscht (tavola_beats_flyer_v2_23f46472.webp)
 - [x] Küche-Sektion: Linkes Bild ersetzt durch neues Kartoffel-Kräuter-Gericht (20260725_203546)
 - [x] Impressionen: Service-Einschenken ersetzt durch neue Fassade bei Nacht mit Glasfenster (20260802_214909)
+- [x] Tavola Beats Kachel ersetzen durch Newsletter-Kachel (Bild: gedeckte Tafel Scheune, Link: emailsys Newsletter)
+- [x] JSON-LD: Abgelaufenes TAVOLA BEATS FoodEvent aus client/index.html entfernen
+- [x] Joujou Groovt: Datum "30.07. · 27.08.2026" kürzen auf "27.08.2026"
