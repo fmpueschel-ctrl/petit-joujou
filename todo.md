@@ -156,3 +156,10 @@
 - [x] Tavola Beats Kachel ersetzen durch Newsletter-Kachel (Bild: gedeckte Tafel Scheune, Link: emailsys Newsletter)
 - [x] JSON-LD: Abgelaufenes TAVOLA BEATS FoodEvent aus client/index.html entfernen
 - [x] Joujou Groovt: Datum "30.07. · 27.08.2026" kürzen auf "27.08.2026"
+- [ ] Backup: Alle zugänglichen Projekt- und Home-Verzeichnis-Dateien inventarisieren
+- [ ] Backup: Privates GitHub-Repository petit-joujou-website vollständig sichern
+- [ ] Backup: Privates GitHub-Repository petit-joujou-strategie vollständig sichern
+- [ ] Backup: Privates GitHub-Repository yuiken vollständig sichern
+- [ ] Backup: Privates GitHub-Repository roman vollständig sichern
+- [ ] Backup: Remote-Inhalte und Commit-Stände aller vier Repositories verifizieren
+- [ ] Backup: Manifest zu gesicherten und nicht zugänglichen Dateien erstellen
