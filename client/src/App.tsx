@@ -11,15 +11,18 @@ import AGB from "./pages/AGB";
 import Widerruf from "./pages/Widerruf";
 import Versand from "./pages/Versand";
 import Flaschenfreunde from "./pages/Flaschenfreunde";
-import Shop from "./pages/Shop";
-import ProductDetail from "./pages/ProductDetail";
+import ComingSoon from "./pages/ComingSoon";
+// Shop/ProductDetail bleiben im Repo, sind aber ausgeroutet (Shop wandert zu The One).
+// Rückbau: die beiden /shop-Routen wieder auf Shop bzw. ProductDetail zeigen lassen.
+// import Shop from "./pages/Shop";
+// import ProductDetail from "./pages/ProductDetail";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/shop"} component={Shop} />
-      <Route path={"/shop/:handle"} component={ProductDetail} />
+      <Route path={"/shop"} component={ComingSoon} />
+      <Route path={"/shop/:handle"} component={ComingSoon} />
       <Route path={"/impressum"} component={Impressum} />
       <Route path={"/datenschutz"} component={Datenschutz} />
       <Route path={"/agb"} component={AGB} />

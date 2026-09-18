@@ -1081,78 +1081,22 @@ function SiegelSection() {
 
 // ── The One — Shop Teaser ─────────────────────────────────────
 function TheOneSection() {
-  const categories = [
-    {
-      title: "Wein",
-      subtitle: "Die Besten.",
-      text: "Unsere Favoriten — kuratiert, nicht sortiert. Nur das Beste aus jeder Kategorie.",
-      href: "/shop?tab=wein",
-      cta: "Weine entdecken",
-    },
-    {
-      title: "Events",
-      subtitle: "Unvergesslich.",
-      text: "Tavola Beats, Degustationen und mehr — Erlebnisse, die man nicht verpasst.",
-      href: "/shop?tab=events",
-      cta: "Events ansehen",
-    },
-    {
-      title: "Joujou",
-      subtitle: "Weil ihr es so wollt.",
-      text: "T-Shirts, Caps und alles, was Joujou ausmacht — zum Mitnehmen.",
-      href: "/shop?tab=joujou",
-      cta: "Joujou Goods",
-    },
-  ];
-
   return (
     <section style={{ backgroundColor: C.bgSage, padding: "5rem 0" }}>
       <div className="container">
-        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-          <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", marginBottom: "1rem" }}>
-            petit joujou
-          </p>
+        <div style={{ textAlign: "center", maxWidth: "620px", margin: "0 auto" }}>
           <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "#fff", marginBottom: "0.4rem" }}>
             Shop | The One
           </h2>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: C.rose, letterSpacing: "0.06em", margin: "0 0 1rem", fontStyle: "italic" }}>
+          <p className="font-body" style={{ fontSize: "0.85rem", color: C.rose, letterSpacing: "0.06em", margin: "0 0 1.25rem", fontStyle: "italic" }}>
             es kann nur eines geben
           </p>
-          <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.8, maxWidth: "600px", margin: "0 auto" }}>
-            Dieser Shop enthält von jedem Produkt nur eines — the One — bei dem Preis und Genuss, Design oder Funktion am besten zusammenpassen.
+          <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.8, margin: "0 auto 2rem" }}>
+            Von jeder Kategorie nur eines — das Eine, bei dem Preis, Genuss, Design und Funktion am besten zusammenkommen. Unser Shop wird eigenständig als The One.
           </p>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.5rem", maxWidth: "900px", margin: "0 auto" }}>
-          {categories.map((cat) => (
-            <a
-              key={cat.title}
-              href={cat.href}
-              style={{
-                display: "block",
-                padding: "2.5rem 2rem",
-                backgroundColor: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                textDecoration: "none",
-                transition: "background-color 0.2s ease",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.06)")}
-            >
-              <p className="font-display" style={{ fontSize: "1.4rem", color: "#fff", marginBottom: "0.25rem" }}>
-                {cat.title}
-              </p>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: C.peach, letterSpacing: "0.05em", marginBottom: "1rem" }}>
-                {cat.subtitle}
-              </p>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-                {cat.text}
-              </p>
-              <span className="font-body" style={{ fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#fff", borderBottom: "1px solid rgba(255,255,255,0.4)", paddingBottom: "0.2rem" }}>
-                {cat.cta}
-              </span>
-            </a>
-          ))}
+          <a href="/shop" className="font-body" style={{ display: "inline-block", fontSize: "0.75rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#fff", border: "1px solid rgba(255,255,255,0.5)", padding: "0.7rem 1.5rem", textDecoration: "none" }}>
+            theone.shop · bald
+          </a>
         </div>
       </div>
     </section>
