@@ -364,6 +364,10 @@
   z-index: 1;
 }
 
+.rapidmail-signup-frame {
+  height: 360px;
+}
+
 @media (max-width: 480px) {
   .nav-cta-hide-mobile {
     display: none !important;
@@ -374,8 +378,10 @@
   .weinbar-icon {
     top: 15px;
     right: 10px;
-    width: 45px;
     opacity: 0.6;
+  }
+  .rapidmail-signup-frame {
+    height: 460px;
   }
   .hero-split {
     min-height: auto !important;
