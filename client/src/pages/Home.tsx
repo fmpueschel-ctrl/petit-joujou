@@ -145,7 +145,7 @@ function Hero() {
         <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start", position: "relative" }}>
           {/* SEO H1 — visually hidden but accessible */}
           <h1 className="sr-only">petit joujou — Weinbar in Bad Dürkheim, Pfalz</h1>
-          {/* Weinbar-Illustration — oben rechts reinragend */}
+          {/* Weinbar-Illustration — oben rechts im normalen Layoutfluss */}
           <img
             src="/manus-storage/weinbar_correct_5d2f0ca9.png"
             alt=""

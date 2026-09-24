@@ -63,6 +63,8 @@ describe("petit-joujou briefing 2026-09-24", () => {
 
   it("uses the requested responsive size for the hero hand icon", () => {
     expect(css).toContain("width: clamp(120px, 13vw, 168px);");
+    expect(css).toContain("align-self: flex-end;");
     expect(css).not.toContain("width: 45px;");
+    expect(css).not.toMatch(/\.weinbar-icon\s*\{[^}]*position:\s*absolute/s);
   });
 });

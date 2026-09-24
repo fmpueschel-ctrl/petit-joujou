@@ -355,13 +355,12 @@
 
 /* Weinbar illustration icon */
 .weinbar-icon {
-  position: absolute;
-  top: 70px;
-  right: 15px;
+  position: static;
+  align-self: flex-end;
   width: clamp(120px, 13vw, 168px);
+  margin: 0 0 1rem;
   opacity: 0.85;
   pointer-events: none;
-  z-index: 1;
 }
 
 .rapidmail-signup-frame {
@@ -376,8 +375,7 @@
 
 @media (max-width: 768px) {
   .weinbar-icon {
-    top: 15px;
-    right: 10px;
+    margin-bottom: 0.75rem;
     opacity: 0.6;
   }
   .rapidmail-signup-frame {
