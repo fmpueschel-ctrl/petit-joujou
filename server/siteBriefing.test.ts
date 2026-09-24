@@ -79,6 +79,14 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(css).toContain("background-color: #f2f7f4 !important;");
   });
 
+  it("starts a plain reload at the hero while preserving intentional hash targets", () => {
+    expect(indexHtml).toContain('navigation?.type !== "reload" || window.location.hash');
+    expect(indexHtml).toContain('history.scrollRestoration = "manual"');
+    expect(indexHtml).toContain("window.scrollTo(0, 0)");
+    expect(indexHtml).toContain('history.scrollRestoration = "auto"');
+    expect(home).toContain("document.getElementById(targetId)?.scrollIntoView()");
+  });
+
   it("uses stable WebDev copies of both current Weinbar menus", () => {
     expect(home).toContain("/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf");
     expect(home).toContain("/manus-storage/petit-joujou-getraenkekarte-weinbar-2026-09_bd5bcde3.pdf");
@@ -105,6 +113,10 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(indexHtml).toContain("clash-display@600&f[]=archivo@300,400");
     expect(home).toContain('aria-label="klein. fein. wein."');
     expect(home).not.toContain("metallic-bronze");
+    expect(home.match(/organic winebar &middot; pfalz/g)).toHaveLength(2);
+    expect(home).not.toContain('organic winebar &middot; Pfalz');
+    expect(home).not.toContain("Weinbar &middot; Bad Dürkheim &middot; Pfalz");
+    expect(indexHtml).toContain("Weinbar Bad Dürkheim Pfalz");
   });
 
   it("keeps split content readable on large and ultrawide screens", () => {

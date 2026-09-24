@@ -6,6 +6,32 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <script>
+      (() => {
+        const [navigation] = performance.getEntriesByType("navigation");
+        if (navigation?.type !== "reload" || window.location.hash) return;
+
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = "manual";
+        }
+
+        const resetReloadPosition = () => {
+          window.scrollTo(0, 0);
+          requestAnimationFrame(() => {
+            window.scrollTo(0, 0);
+            if ("scrollRestoration" in history) {
+              history.scrollRestoration = "auto";
+            }
+          });
+        };
+
+        if (document.readyState === "complete") {
+          resetReloadPosition();
+        } else {
+          window.addEventListener("load", resetReloadPosition, { once: true });
+        }
+      })();
+    </script>
     <title>petit joujou — Weinbar Bad Dürkheim Pfalz | Bio-Weine, Entrecôte, Steak & Events</title>
     <meta name="description" content="petit joujou — Weinbar in Bad Dürkheim, Pfalz. 500 Bio-Weine im Gewölbekeller von 1709. Sharing-Küche, Entrecôte & Pinsa. Do–Fr ab 16, Sa–So ab 12 Uhr." />
     <meta name="keywords" content="Weinbar, Weinbar Pfalz, Weinbar Bad Dürkheim, Weinbar Leistadt, Bio-Wein, Naturwein, biozertifiziert, Öko-Gastronomie, nachhaltig, Steak, Entrecôte, Rib-Eye, Fleisch, Tierwohl, Weiderind, Pinsa, Weinkeller, Events, Weinabend, petit joujou, Restaurant Pfalz, Bad Dürkheim, Deutsche Weinstraße" />

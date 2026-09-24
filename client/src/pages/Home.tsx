@@ -153,8 +153,8 @@ function Hero() {
             <span className="font-script" style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", color: "#fff", lineHeight: 1.1, textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}>
               petit joujou
             </span>
-            <span className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.85)", marginTop: "0.5rem", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
-              Weinbar &middot; Bad Dürkheim &middot; Pfalz
+            <span className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", color: "rgba(255,255,255,0.85)", marginTop: "0.5rem", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
+              organic winebar &middot; pfalz
             </span>
           </div>
         </div>
@@ -883,7 +883,7 @@ function Footer() {
               petit joujou
             </span>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, marginTop: "0.75rem", lineHeight: 1.7 }}>
-              Weinbar Bad Dürkheim Pfalz<br />
+              organic winebar &middot; pfalz<br />
               Eine Marke von Joujou Pfalz
             </p>
           </div>
@@ -1015,6 +1015,29 @@ function TheOneSection() {
 }
 
 export default function Home() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const targetId = decodeURIComponent(hash.slice(1));
+    const scrollToTarget = () => {
+      document.getElementById(targetId)?.scrollIntoView();
+    };
+    const firstFrame = requestAnimationFrame(scrollToTarget);
+    const observer = new ResizeObserver(scrollToTarget);
+    observer.observe(document.body);
+    const stopObserving = window.setTimeout(() => observer.disconnect(), 2000);
+    window.addEventListener("load", scrollToTarget, { once: true });
+    document.fonts?.ready.then(scrollToTarget);
+
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      window.clearTimeout(stopObserving);
+      observer.disconnect();
+      window.removeEventListener("load", scrollToTarget);
+    };
+  }, []);
+
   return (
     <div style={{ backgroundColor: C.bg, minHeight: "100vh" }}>
       <Nav />
