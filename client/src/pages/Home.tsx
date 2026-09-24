@@ -6,6 +6,8 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import RapidmailSignup from "@/components/RapidmailSignup";
+import TheOneComingSoonContent from "@/components/TheOneComingSoonContent";
 
 // ── Weinbar-Palette (petit joujou) ──────────────────────────
 // Pastellgrün-Basis + Dunkelgrün + Rosé + Orange (Pure Bakery)
@@ -59,7 +61,6 @@ function Nav() {
           </a>
           <div className="flex items-center" style={{ gap: "0.4rem", flexShrink: 0 }}>
             <a href="#reservierung" className="font-body nav-cta-hide-mobile" style={{ padding: "0.4rem 0.8rem", backgroundColor: "rgba(255,255,255,0.15)", color: "#fff", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)", whiteSpace: "nowrap" }}>Reservieren</a>
-            <a href="/shop" className="font-body nav-cta-hide-mobile" style={{ padding: "0.4rem 0.8rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", whiteSpace: "nowrap" }}>Shop</a>
           <button
             onClick={() => setOpen(!open)}
             style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.8)", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
@@ -99,14 +100,6 @@ function Nav() {
               {l.label}
             </a>
           ))}
-          <a
-            href="/shop"
-            onClick={() => setOpen(false)}
-            className="font-display"
-            style={{ fontSize: "clamp(1.8rem, 5vw, 2.8rem)", color: C.rose, textDecoration: "none", letterSpacing: "0.05em" }}
-          >
-            Shop
-          </a>
           <a
             href="#gesellschaften"
             onClick={() => setOpen(false)}
@@ -184,7 +177,7 @@ function Hero() {
               Reservieren
             </a>
             <a
-              href="/manus-storage/PetitJoujou_Speisekarte_Final5_eaf6392f.pdf"
+              href="/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body"
@@ -202,7 +195,9 @@ function Hero() {
               Speisekarte
             </a>
             <a
-              href="/flaschenfreunde"
+              href="/manus-storage/petit-joujou-getraenkekarte-weinbar-2026-09_bd5bcde3.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-body"
               style={{
                 display: "inline-block",
@@ -406,67 +401,8 @@ function EventsSection() {
           </p>
         </div>
 
-        {/* Aktuelle Events */}
-        <div className="events-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2rem" }}>
-
-          {/* BEATS petit joujou */}
-          <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-            <img loading="lazy"
-              src="/manus-storage/screenshot_beats_8be8965a.webp"
-              alt="BEATS petit joujou — DJ Marcel Ullrich"
-              className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
-            />
-            <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Joujou After Work · ab 18:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>BEATS petit joujou</p>
-              <p className="font-body" style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>DJ Marcel Ullrich</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600 }}>13.08.2026</p>
-              <p className="font-body" style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.6)", marginTop: "0.3rem" }}>Kostenlos · Eintritt frei</p>
-            </div>
-          </div>
-
-         {/* TAVOLA BEATS */}
-          {/* Newsletter-Hinweis (ersetzt abgelaufene Tavola Beats) */}
-          <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-            <img loading="lazy"
-              src="/manus-storage/1000100944_6f171278.jpg"
-              alt="Gedeckte Tafel in der Scheune — Wein, Kerzen, Zitronen"
-              className="event-img"
-              style={{ width: "100%", height: "auto", aspectRatio: "4/3", objectFit: "cover", display: "block" }}
-            />
-            <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Nächste Termine</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Ihr erfahrt es zuerst</p>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Neue Abende, Verkostungen und Aktionen kündigen wir hier an — und vorher im Newsletter.</p>
-              <a href="https://t711d0237.emailsys1a.net/237/2274/257bdcff21/subscribe/form.html?_g=1785505556"
-                target="_blank" rel="noopener noreferrer"
-                style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
-                Newsletter abonnieren
-              </a>
-            </div>
-          </div>
-
-          {/* Joujou Groovt */}
-          <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-            <img loading="lazy"
-              src="/manus-storage/joujou-groovt-new_9f6c6713.png"
-              alt="Joujou Groovt — Live-Musik & Genuss"
-              className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
-            />
-            <div style={{ padding: "1.25rem 1.5rem" }}>
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>Jeden letzten Donnerstag · 18:00–21:30 Uhr</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Joujou Groovt</p>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Live-Musik, Spritz, Schorle, Wein — entspannte Sommerabende.</p>
-              <p className="font-body" style={{ fontSize: "0.82rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>27.08.2026</p>
-              <a href="#reservierung"
-                style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.peachDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
-                Tisch reservieren
-              </a>
-            </div>
-          </div>
-
+        {/* Kommendes Event */}
+        <div style={{ maxWidth: "620px", margin: "0 auto" }}>
           {/* Herbstmarkt */}
           <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <img loading="lazy"
@@ -491,11 +427,7 @@ function EventsSection() {
 
         <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
           <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid }}>
-            Alle Events & Tickets findest du im{" "}
-            <a href="/shop?tab=events" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "3px", fontWeight: 600 }}>
-              Shop
-            </a>
-            {" "}oder auf{" "}
+            Alle Events & Tickets findest du auf{" "}
             <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.sage, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               joujou.bistro
@@ -979,13 +911,6 @@ function Footer() {
 // ── Page ──────────────────────────────────────────────────────
 // ── Newsletter Footer ─────────────────────────────────────────
 function NewsletterFooter() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const subscribe = trpc.newsletter.subscribe.useMutation({
-    onSuccess: () => setSubmitted(true),
-    onError: () => toast.error("Etwas ist schiefgelaufen. Bitte versuche es erneut."),
-  });
-
   return (
     <div style={{ borderTop: `1px solid ${C.border}`, padding: "2rem 0", marginBottom: "1.5rem", textAlign: "center" }}>
       <p className="font-display" style={{ fontSize: "1rem", color: C.ink, marginBottom: "0.5rem" }}>
@@ -994,46 +919,7 @@ function NewsletterFooter() {
       <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, marginBottom: "1rem", maxWidth: "400px", margin: "0 auto 1rem" }}>
         Neue Weine, Events und Angebote.
       </p>
-      {submitted ? (
-        <p className="font-body" style={{ fontSize: "0.85rem", color: C.sage }}>
-          Danke! Bitte prüfe dein Postfach und bestätige dein Abo.
-        </p>
-      ) : (
-        <form
-          onSubmit={(e) => { e.preventDefault(); if (email) subscribe.mutate({ email, source: "footer" }); }}
-          style={{ display: "flex", gap: "0.5rem", justifyContent: "center", maxWidth: "360px", margin: "0 auto" }}
-        >
-          <input
-            type="email"
-            required
-            placeholder="deine@email.de"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="font-body"
-            style={{
-              flex: 1, padding: "0.6rem 0.8rem", border: `1px solid ${C.border}`,
-              backgroundColor: "#fff", fontSize: "0.82rem", outline: "none",
-            }}
-          />
-          <button
-            type="submit"
-            disabled={subscribe.isPending}
-            className="font-body"
-            style={{
-              padding: "0.6rem 1.2rem", backgroundColor: C.bgSage, color: "#fff",
-              border: "none", fontSize: "0.75rem", letterSpacing: "0.08em",
-              textTransform: "uppercase", cursor: "pointer", fontWeight: 600,
-            }}
-          >
-            {subscribe.isPending ? "…" : "Anmelden"}
-          </button>
-        </form>
-      )}
-      <p className="font-body" style={{ fontSize: "0.68rem", color: C.inkLight, marginTop: "0.75rem", lineHeight: 1.6 }}>
-        Wir informieren dich gelegentlich per E-Mail über eigene Angebote.
-        Du kannst dem jederzeit kostenfrei widersprechen.{" "}
-        <a href="/datenschutz" style={{ color: C.sage, textDecoration: "underline", textUnderlineOffset: "2px" }}>Datenschutzerklärung</a>
-      </p>
+      <RapidmailSignup compact />
     </div>
   );
 }
@@ -1084,20 +970,7 @@ function TheOneSection() {
   return (
     <section style={{ backgroundColor: C.bgSage, padding: "5rem 0" }}>
       <div className="container">
-        <div style={{ textAlign: "center", maxWidth: "620px", margin: "0 auto" }}>
-          <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", color: "#fff", marginBottom: "0.4rem" }}>
-            Shop | The One
-          </h2>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: C.rose, letterSpacing: "0.06em", margin: "0 0 1.25rem", fontStyle: "italic" }}>
-            es kann nur eines geben
-          </p>
-          <p className="font-body" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.8, margin: "0 auto 2rem" }}>
-            Von jeder Kategorie nur eines — das Eine, bei dem Preis, Genuss, Design und Funktion am besten zusammenkommen. Unser Shop wird eigenständig als The One.
-          </p>
-          <a href="/shop" className="font-body" style={{ display: "inline-block", fontSize: "0.75rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#fff", border: "1px solid rgba(255,255,255,0.5)", padding: "0.7rem 1.5rem", textDecoration: "none" }}>
-            theone.shop · bald
-          </a>
-        </div>
+        <TheOneComingSoonContent />
       </div>
     </section>
   );
