@@ -63,6 +63,22 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(home).toContain('href="/agb"');
   });
 
+  it("keeps the fullscreen navigation usable and contrasted at every viewport size", () => {
+    expect(home).toContain('className="site-menu-overlay"');
+    expect(home).toContain('className="font-display site-menu-link"');
+    expect(home).toContain('className="nav-menu-close"');
+    expect(home).toContain("document.body.style.overflow = \"hidden\"");
+    expect(css).toContain("height: calc(100dvh - 60px);");
+    expect(css).toContain("font-size: clamp(22px, 4vh, 44px) !important;");
+    expect(css).toMatch(/\.nav-menu-close\s*\{[^}]*color:\s*#fff;/s);
+  });
+
+  it("keeps the pale events layer opaque above the preceding photo strip", () => {
+    expect(css).toMatch(/\.events-section\s*\{[^}]*isolation:\s*isolate;/s);
+    expect(css).toMatch(/\.events-section\s*\{[^}]*overflow:\s*hidden;/s);
+    expect(css).toContain("background-color: #f2f7f4 !important;");
+  });
+
   it("uses stable WebDev copies of both current Weinbar menus", () => {
     expect(home).toContain("/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf");
     expect(home).toContain("/manus-storage/petit-joujou-getraenkekarte-weinbar-2026-09_bd5bcde3.pdf");

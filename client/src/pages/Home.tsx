@@ -3,7 +3,7 @@
    klein. fein. wein.
    ============================================================ */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import RapidmailSignup from "@/components/RapidmailSignup";
@@ -43,6 +43,21 @@ function Nav() {
     { label: "Reservierung", href: "#reservierung" },
     { label: "Gesellschaften", href: "#gesellschaften" },
   ];
+
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
+
   return (
     <>
       <nav
@@ -63,11 +78,13 @@ function Nav() {
             <a href="#reservierung" className="font-body nav-cta-hide-mobile" style={{ padding: "0.4rem 0.8rem", backgroundColor: "rgba(255,255,255,0.15)", color: "#fff", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)", whiteSpace: "nowrap" }}>Reservieren</a>
           <button
             onClick={() => setOpen(!open)}
+            className="nav-menu-toggle"
             style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.8)", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
             aria-label="Menü"
+            aria-expanded={open}
           >
             {open ? (
-              <span style={{ fontSize: "1.3rem", color: C.inkMid, lineHeight: 1 }}>✕</span>
+              <span className="nav-menu-close" aria-hidden="true">✕</span>
             ) : (
               <>
                 <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: "rgba(255,255,255,0.8)" }} />
@@ -82,32 +99,33 @@ function Nav() {
       {/* Fullscreen overlay menu */}
       {open && (
         <div
+          className="site-menu-overlay"
           style={{
             position: "fixed", inset: 0, zIndex: 49,
             backgroundColor: C.bg,
-            display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center",
-            gap: "2.5rem",
           }}
         >
-          {links.map((l) => (
+          <div className="site-menu-list">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="font-display site-menu-link"
+                style={{ color: C.ink, textDecoration: "none", letterSpacing: "0.03em" }}
+              >
+                {l.label}
+              </a>
+            ))}
             <a
-              key={l.href}
-              href={l.href}
+              href="#gesellschaften"
               onClick={() => setOpen(false)}
-              className="font-display"
-              style={{ fontSize: "clamp(1.8rem, 5vw, 2.8rem)", color: C.ink, textDecoration: "none", letterSpacing: "0.05em" }}
+              className="font-body site-menu-cta"
+              style={{ backgroundColor: C.sageDark, color: "#fff", textDecoration: "none", letterSpacing: "0.15em", textTransform: "uppercase" }}
             >
-              {l.label}
+              Anfragen
             </a>
-          ))}
-          <a
-            href="#gesellschaften"
-            onClick={() => setOpen(false)}
-            className="font-body"
-            style={{ marginTop: "1rem", padding: "0.85rem 2.5rem", backgroundColor: C.sageDark, color: "#fff", textDecoration: "none", fontSize: "0.8rem", letterSpacing: "0.15em", textTransform: "uppercase" }}
-          >
-            Anfragen
-          </a>
+          </div>
         </div>
       )}
     </>
