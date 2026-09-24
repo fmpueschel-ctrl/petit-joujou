@@ -386,9 +386,9 @@ src="/manus-storage/20260802_214909_f13ce581.jpg"
 // ── Events ────────────────────────────────────────────────────
 function EventsSection() {
   return (
-    <section id="events" style={{ backgroundColor: C.bg, padding: "6rem 0" }}>
+    <section id="events" className="events-section" style={{ backgroundColor: C.bg }}>
       <div className="container">
-        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+        <div className="events-intro" style={{ textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.sage, marginBottom: "0.75rem" }}>
             Was passiert
           </p>
@@ -402,16 +402,16 @@ function EventsSection() {
         </div>
 
         {/* Kommendes Event */}
-        <div style={{ maxWidth: "620px", margin: "0 auto" }}>
+        <div className="events-card-wrap">
           {/* Herbstmarkt */}
-          <div style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
+          <div className="events-card" style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
             <img loading="lazy"
               src="/manus-storage/herbstmarkt-new_b3b20b88.png"
               alt="Herbstmarkt — Markt der achtsamen Dinge"
               className="event-img"
-              style={{ width: "100%", height: "360px", objectFit: "cover", objectPosition: "center top", display: "block" }}
+              style={{ width: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
             />
-            <div style={{ padding: "1.25rem 1.5rem" }}>
+            <div className="events-card-content">
               <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>03. + 04. Oktober 2026 · ab 12:00 Uhr</p>
               <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Herbstmarkt</p>
               <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Markt der achtsamen Dinge — regionale Aussteller, Handwerkskunst & Live-Musik.</p>
@@ -425,7 +425,7 @@ function EventsSection() {
 
         </div>
 
-        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+        <div className="events-follow" style={{ textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid }}>
             Alle Events & Tickets findest du auf{" "}
             <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.sage, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
@@ -475,7 +475,10 @@ function ReservierungUndGesellschaftenSection() {
               <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink }}>
                 Weinbar
               </h2>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, marginTop: "0.75rem" }}>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, marginTop: "0.75rem", lineHeight: 1.7 }}>
+                Für die Weinbar bucht ihr hier euren Tisch. Wir setzen euch nach Wetterlage drinnen oder draußen — sagt uns gern, was euch lieber ist.
+              </p>
+              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, marginTop: "0.5rem" }}>
                 Do & Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr.
               </p>
             </div>
@@ -492,7 +495,10 @@ function ReservierungUndGesellschaftenSection() {
                     Reservierung über Gastronovi
                   </p>
                   <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, margin: 0, maxWidth: "360px", lineHeight: 1.7 }}>
-                    Beim Laden werden Daten an services.gastronovi.com übertragen.
+                    Beim Laden werden Daten an services.gastronovi.com übertragen, darunter eure IP-Adresse. Näheres in unserer{" "}
+                    <a href="/datenschutz" style={{ color: C.sageDark, textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                      Datenschutzerklärung
+                    </a>.
                   </p>
                   <button
                     onClick={() => setIframeConsent(true)}
@@ -519,6 +525,20 @@ function ReservierungUndGesellschaftenSection() {
                 In neuem Tab öffnen
               </a>
             </p>
+            <div style={{ marginTop: "2rem", padding: "1.5rem", backgroundColor: C.bg, borderLeft: `4px solid ${C.sageDark}` }}>
+              <h3 className="font-display" style={{ fontSize: "1.2rem", color: C.ink, marginBottom: "0.75rem" }}>
+                Wenn etwas dazwischenkommt
+              </h3>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, lineHeight: 1.75, marginBottom: "0.75rem" }}>
+                Wir kochen und backen jeden Morgen frisch, für die Zahl der Gäste, die angemeldet sind. Bleibt ein Tisch leer, ist die Arbeit trotzdem getan. Deshalb berechnen wir eine Gebühr, wenn ihr nicht kommt, erst in den letzten 24 Stunden absagt oder kurzfristig mit weniger Personen erscheint: <strong style={{ color: C.ink }}>30 Euro pro Person beim Brunch, 50 Euro am Abend.</strong>
+              </p>
+              <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMid, lineHeight: 1.75, margin: 0 }}>
+                Absagen dürft ihr trotzdem jederzeit, und ihr dürft euren Tisch auch weitergeben. Wird der Platz noch besetzt, entfällt die Gebühr; dass kein oder ein kleinerer Schaden entstanden ist, könnt ihr immer nachweisen. Es gelten unsere{" "}
+                <a href="/agb" style={{ color: C.sageDark, textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                  Stornierungsbedingungen laut AGB
+                </a>.
+              </p>
+            </div>
           </div>
 
           {/* RIGHT: Euer Abend / Unsere Bühne */}

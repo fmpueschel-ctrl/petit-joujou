@@ -48,6 +48,19 @@ describe("petit-joujou briefing 2026-09-24", () => {
     const events = jsonLdBlocks.find(block => Array.isArray(block));
     expect(events).toHaveLength(1);
     expect(events[0].name).toContain("Herbstmarkt");
+    expect(home).toContain('className="events-card"');
+    expect(css).toContain("grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);");
+    expect(css).toContain("padding: clamp(72px, 6vw, 112px) 0;");
+    expect(css).toContain("scroll-margin-top: 84px;");
+  });
+
+  it("keeps the complete reservation explanation and cancellation rules on the page", () => {
+    expect(home).toContain("Für die Weinbar bucht ihr hier euren Tisch.");
+    expect(home).toContain("darunter eure IP-Adresse");
+    expect(home).toContain("Wenn etwas dazwischenkommt");
+    expect(home).toContain("30 Euro pro Person beim Brunch, 50 Euro am Abend.");
+    expect(home).toContain("Stornierungsbedingungen laut AGB");
+    expect(home).toContain('href="/agb"');
   });
 
   it("uses stable WebDev copies of both current Weinbar menus", () => {
