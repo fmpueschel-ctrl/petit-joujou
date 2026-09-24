@@ -10,8 +10,6 @@
 
 import { useEffect } from "react";
 import { Link } from "wouter";
-import TheOneComingSoonContent from "@/components/TheOneComingSoonContent";
-import { usePageMeta } from "@/hooks/usePageMeta";
 
 const PAPIER = "#F5F0E6";
 const TINTE = "#1F3D5C";
@@ -37,15 +35,8 @@ function Bottle({ accent = false }: { accent?: boolean }) {
 }
 
 export default function ComingSoon() {
-  usePageMeta({
-    title: "Shop | The One — bald | petit joujou",
-    description: "The One wird der eigenständige Shop von petit joujou. Melde dich zum Newsletter an und erfahre zuerst, wann The One öffnet.",
-    canonical: "https://www.petit-joujou.de/shop",
-    ogTitle: "Shop | The One — bald",
-    ogDescription: "Es kann nur eines geben. Sei dabei, wenn The One öffnet.",
-  });
-
   useEffect(() => {
+    document.title = "The One — bald verfügbar | petit joujou";
     // Clash Display + Archivo (Fontshare) nur für diese Seite nachladen
     const id = "theone-fontshare";
     if (!document.getElementById(id)) {
@@ -60,13 +51,17 @@ export default function ComingSoon() {
   return (
     <>
       <style>{`
-        .tos-root{background:${PAPIER};color:${TINTE};min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+        .tos-root{background:${PAPIER};color:${TINTE};min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem;position:relative;overflow:hidden;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
         .tos-grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.05;mix-blend-mode:multiply;z-index:0}
-        .tos-wrap{position:relative;z-index:1;width:min(760px,100%)}
-        .tos-bottles{display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,2.4vw,22px);margin-bottom:2rem}
-        .tos-bottle{height:clamp(90px,15vh,130px);width:auto}
-        .tos-bottle--accent{height:clamp(104px,17vh,148px)}
-        .tos-back{display:block;font-size:.82rem;color:${TINTE_SOFT};text-decoration:none;letter-spacing:.03em;margin-top:1.8rem}
+        .tos-wrap{position:relative;z-index:1;max-width:560px}
+        .tos-bottles{display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,2.4vw,22px);margin-bottom:2.25rem}
+        .tos-bottle{height:clamp(112px,18vh,150px);width:auto}
+        .tos-bottle--accent{height:clamp(126px,20vh,168px)}
+        .tos-h1{font-family:'Clash Display',sans-serif;font-weight:600;font-size:clamp(2.1rem,5.4vw,3.1rem);line-height:1.1;letter-spacing:-0.01em;margin:0 0 1rem}
+        .tos-lead{font-size:1rem;line-height:1.8;opacity:.82;max-width:40ch;margin:0 auto 1.6rem}
+        .tos-claim{font-family:'Clash Display',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.01em;margin:0 0 2.4rem}
+        .tos-soon{display:inline-block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:${TINTE};border:1px solid ${TINTE};padding:.6rem 1.3rem;margin-bottom:2.4rem}
+        .tos-back{display:block;font-size:.82rem;color:${TINTE_SOFT};text-decoration:none;letter-spacing:.03em}
         .tos-back:hover{color:${TINTE}}
       `}</style>
 
@@ -84,7 +79,11 @@ export default function ComingSoon() {
             <Bottle />
             <Bottle accent />
           </div>
-          <TheOneComingSoonContent headingLevel="h1" tone="light" eagerNewsletter />
+
+          <h1 className="tos-h1">Der Shop zieht um.</h1>
+          <p className="tos-lead">Unser Shop wird eigenständig als The One. Die Weinbar hat weiter geöffnet.</p>
+          <p className="tos-claim">Es kann nur eines geben – der Shop</p>
+          <span className="tos-soon">theone.shop · bald</span>
           <Link href="/" className="tos-back">Zurück zur Weinbar</Link>
         </div>
       </section>
