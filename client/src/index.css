@@ -332,6 +332,16 @@
   padding: 4rem 3.5rem;
 }
 
+/* Keep editorial copy compact and readable inside very wide 50/50 panels. */
+.split-section .split-content > :not(.weinbar-icon) {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-split .split-content > p:not(.sr-only) {
+  max-width: 560px !important;
+}
+
 /* Siegel-Leiste */
 .siegel-grid {
   display: flex;
@@ -358,13 +368,39 @@
   position: static;
   align-self: flex-end;
   width: clamp(120px, 13vw, 168px);
-  margin: 0 0 1rem;
+  margin: 0 max(0px, calc((100% - 680px) / 2)) 1rem 0;
   opacity: 0.85;
   pointer-events: none;
 }
 
 .rapidmail-signup-frame {
   height: 360px;
+}
+
+/* Large and ultrawide desktops: use the available space without letting
+   images dwarf the copy or leaving navigation and text visually tiny. */
+@media (min-width: 1800px) {
+  html {
+    font-size: clamp(18px, 0.94vw, 36px);
+  }
+  .container {
+    max-width: clamp(1440px, 52vw, 2000px);
+  }
+  .split-section .split-content {
+    padding: 5rem clamp(5rem, 7vw, 11rem);
+  }
+  .split-section .split-content > :not(.weinbar-icon) {
+    max-width: clamp(680px, 31vw, 1200px);
+  }
+  .hero-split .split-content > p:not(.sr-only) {
+    max-width: clamp(560px, 24vw, 920px) !important;
+  }
+  .weinbar-icon {
+    margin-right: max(0px, calc((100% - clamp(680px, 31vw, 1200px)) / 2));
+  }
+  nav .container {
+    height: clamp(60px, 2.4vw, 84px) !important;
+  }
 }
 
 @media (max-width: 480px) {

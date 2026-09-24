@@ -67,4 +67,12 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(css).not.toContain("width: 45px;");
     expect(css).not.toMatch(/\.weinbar-icon\s*\{[^}]*position:\s*absolute/s);
   });
+
+  it("keeps split content readable on large and ultrawide screens", () => {
+    expect(css).toContain("max-width: 680px;");
+    expect(css).toContain("@media (min-width: 1800px)");
+    expect(css).toContain("font-size: clamp(18px, 0.94vw, 36px);");
+    expect(css).toContain("max-width: clamp(680px, 31vw, 1200px);");
+    expect(css).toContain("max-width: clamp(1440px, 52vw, 2000px);");
+  });
 });
