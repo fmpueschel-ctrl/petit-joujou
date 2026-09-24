@@ -69,7 +69,7 @@ function Nav() {
         }}
       >
         <div className="container flex items-center justify-between" style={{ height: "60px" }}>
-          <a href="#" style={{ textDecoration: "none", flexShrink: 0 }}>
+          <a href="#" onClick={() => setOpen(false)} style={{ textDecoration: "none", flexShrink: 0 }}>
             <span className="font-script" style={{ fontSize: "clamp(1.2rem, 4vw, 1.7rem)", color: "#ffffff", letterSpacing: "0.02em", whiteSpace: "nowrap" }}>
               petit joujou
             </span>
@@ -77,14 +77,18 @@ function Nav() {
           <div className="flex items-center" style={{ gap: "0.4rem", flexShrink: 0 }}>
             <a href="#reservierung" className="font-body nav-cta-hide-mobile" style={{ padding: "0.4rem 0.8rem", backgroundColor: "rgba(255,255,255,0.15)", color: "#fff", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)", whiteSpace: "nowrap" }}>Reservieren</a>
           <button
-            onClick={() => setOpen(!open)}
-            className="nav-menu-toggle"
+            type="button"
+            onClick={() => setOpen(current => !current)}
+            className={`nav-menu-toggle${open ? " is-open" : ""}`}
             style={{ background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.8)", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "5px", alignItems: "center", justifyContent: "center" }}
-            aria-label="Menü"
+            aria-label={open ? "Menü schließen" : "Menü öffnen"}
             aria-expanded={open}
           >
             {open ? (
-              <span className="nav-menu-close" aria-hidden="true">✕</span>
+              <>
+                <span className="nav-menu-close-label">Schließen</span>
+                <span className="nav-menu-close" aria-hidden="true">✕</span>
+              </>
             ) : (
               <>
                 <span style={{ display: "block", width: "22px", height: "1.5px", backgroundColor: "rgba(255,255,255,0.8)" }} />
@@ -125,6 +129,13 @@ function Nav() {
             >
               Anfragen
             </a>
+            <button
+              type="button"
+              className="font-body site-menu-return"
+              onClick={() => setOpen(false)}
+            >
+              Zurück zur Seite
+            </button>
           </div>
         </div>
       )}

@@ -32,6 +32,11 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(comingSoon).toContain("eagerNewsletter");
     expect(rapidmail).toContain("/237/2274/257bdcff21/subscribe/form.html");
     expect(rapidmail).toContain("Newsletter-Anmeldung über rapidmail");
+    expect(comingSoon).toContain('className="tos-nav"');
+    expect(comingSoon).toContain('className="tos-wordmark"');
+    expect(comingSoon).toContain('className="tos-nav-back"');
+    expect(comingSoon).toContain("← Zurück zur Weinbar");
+    expect(comingSoon).toContain("position:fixed;top:0;left:0;right:0");
   });
 
   it("keeps only the upcoming Herbstmarkt in visible and structured event data", () => {
@@ -66,11 +71,15 @@ describe("petit-joujou briefing 2026-09-24", () => {
   it("keeps the fullscreen navigation usable and contrasted at every viewport size", () => {
     expect(home).toContain('className="site-menu-overlay"');
     expect(home).toContain('className="font-display site-menu-link"');
-    expect(home).toContain('className="nav-menu-close"');
+    expect(home).toContain('aria-label={open ? "Menü schließen" : "Menü öffnen"}');
+    expect(home).toContain('className="nav-menu-close-label"');
+    expect(home).toContain('className="font-body site-menu-return"');
+    expect(home).toContain("Zurück zur Seite");
     expect(home).toContain("document.body.style.overflow = \"hidden\"");
     expect(css).toContain("height: calc(100dvh - 60px);");
     expect(css).toContain("font-size: clamp(22px, 4vh, 44px) !important;");
     expect(css).toMatch(/\.nav-menu-close\s*\{[^}]*color:\s*#fff;/s);
+    expect(css).toContain("min-width: 112px;");
   });
 
   it("keeps the pale events layer opaque above the preceding photo strip", () => {

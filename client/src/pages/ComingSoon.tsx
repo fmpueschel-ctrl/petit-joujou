@@ -60,7 +60,11 @@ export default function ComingSoon() {
   return (
     <>
       <style>{`
-        .tos-root{background:${PAPIER};color:${TINTE};min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+        .tos-nav{position:fixed;top:0;left:0;right:0;z-index:10;height:60px;padding:0 clamp(18px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(245,240,230,.94);border-bottom:1px solid rgba(31,61,92,.18);backdrop-filter:blur(12px)}
+        .tos-wordmark{color:${TINTE};font-family:'Dancing Script',cursive;font-size:24px;font-weight:600;line-height:1;text-decoration:none;white-space:nowrap}
+        .tos-nav-back{min-height:40px;padding:0 16px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(31,61,92,.5);color:${TINTE};font-family:'Archivo',system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+        .tos-nav-back:hover,.tos-nav-back:focus-visible{background:${TINTE};color:${PAPIER}}
+        .tos-root{background:${PAPIER};color:${TINTE};min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(3rem + 60px) 1.5rem 3rem;position:relative;overflow:hidden;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
         .tos-grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.05;mix-blend-mode:multiply;z-index:0}
         .tos-wrap{position:relative;z-index:1;width:min(760px,100%)}
         .tos-bottles{display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,2.4vw,22px);margin-bottom:2rem}
@@ -69,6 +73,11 @@ export default function ComingSoon() {
         .tos-back{display:block;font-size:.82rem;color:${TINTE_SOFT};text-decoration:none;letter-spacing:.03em;margin-top:1.8rem}
         .tos-back:hover{color:${TINTE}}
       `}</style>
+
+      <header className="tos-nav">
+        <Link href="/" className="tos-wordmark">petit joujou</Link>
+        <Link href="/" className="tos-nav-back">← Zurück zur Weinbar</Link>
+      </header>
 
       <section className="tos-root">
         <svg className="tos-grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
