@@ -355,16 +355,13 @@
 
 /* Weinbar illustration icon */
 .weinbar-icon {
-  position: static;
-  align-self: flex-end;
+  position: absolute;
+  top: 70px;
+  right: 15px;
   width: clamp(120px, 13vw, 168px);
-  margin: 0 0 1rem;
   opacity: 0.85;
   pointer-events: none;
-}
-
-.rapidmail-signup-frame {
-  height: 360px;
+  z-index: 1;
 }
 
 @media (max-width: 480px) {
@@ -375,11 +372,10 @@
 
 @media (max-width: 768px) {
   .weinbar-icon {
-    margin-bottom: 0.75rem;
+    top: 15px;
+    right: 10px;
+    width: 45px;
     opacity: 0.6;
-  }
-  .rapidmail-signup-frame {
-    height: 460px;
   }
   .hero-split {
     min-height: auto !important;
