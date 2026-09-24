@@ -334,6 +334,7 @@
 
 /* Keep editorial copy compact and readable inside very wide 50/50 panels. */
 .split-section .split-content > :not(.weinbar-icon) {
+  width: 100%;
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;

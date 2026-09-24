@@ -69,6 +69,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("keeps split content readable on large and ultrawide screens", () => {
+    expect(css).toMatch(/\.split-section \.split-content > :not\(\.weinbar-icon\) \{\s*width: 100%;/);
     expect(css).toContain("max-width: 680px;");
     expect(css).toContain("@media (min-width: 1800px)");
     expect(css).toContain("font-size: clamp(18px, 0.94vw, 36px);");
