@@ -36,8 +36,8 @@
   --color-ring: oklch(63% 0.14 350);
 
   /* Typography */
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Lato", system-ui, sans-serif;
+  --font-display: "Clash Display", Arial, sans-serif;
+  --font-body: "Archivo", system-ui, sans-serif;
   --font-script: "Dancing Script", cursive;
 
   /* Radius */
@@ -87,8 +87,9 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 400;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -97,26 +98,18 @@
 .font-body    { font-family: var(--font-body); }
 .font-script  { font-family: var(--font-script); }
 
-/* Metallic Bronze — 3D embossed gradient text */
-.metallic-bronze {
-  background: linear-gradient(
-    170deg,
-    #2a1d12 0%,
-    #5c3d1e 15%,
-    #8b6914 35%,
-    #a67c2e 45%,
-    #7a5518 55%,
-    #5c3d1e 70%,
-    #2a1d12 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  filter:
-    drop-shadow(0 -1px 0 rgba(168, 130, 60, 0.4))
-    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5))
-    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+/* Shared Joujou family language; periods are part of the word rhythm. */
+.family-slogan {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(0.65rem, 2vw, 1.5rem);
+  color: #22302a;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
 /* Container override */
@@ -367,10 +360,10 @@
 /* Weinbar illustration icon */
 .weinbar-icon {
   position: static;
-  align-self: flex-end;
-  width: clamp(120px, 13vw, 168px);
-  margin: 0 max(0px, calc((100% - 680px) / 2)) 1rem 0;
-  opacity: 0.85;
+  align-self: center;
+  width: clamp(190px, 24vw, 320px);
+  margin: 0 0 2rem;
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -397,7 +390,7 @@
     max-width: clamp(560px, 24vw, 920px) !important;
   }
   .weinbar-icon {
-    margin-right: max(0px, calc((100% - clamp(680px, 31vw, 1200px)) / 2));
+    width: clamp(320px, 15vw, 580px);
   }
   nav .container {
     height: clamp(60px, 2.4vw, 84px) !important;
@@ -412,8 +405,8 @@
 
 @media (max-width: 768px) {
   .weinbar-icon {
-    margin-bottom: 0.75rem;
-    opacity: 0.6;
+    width: clamp(150px, 45vw, 190px);
+    margin-bottom: 1rem;
   }
   .rapidmail-signup-frame {
     height: 460px;

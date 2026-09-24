@@ -62,10 +62,20 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("uses the requested responsive size for the hero hand icon", () => {
-    expect(css).toContain("width: clamp(120px, 13vw, 168px);");
-    expect(css).toContain("align-self: flex-end;");
+    expect(css).toContain("width: clamp(190px, 24vw, 320px);");
+    expect(css).toContain("align-self: center;");
     expect(css).not.toContain("width: 45px;");
     expect(css).not.toMatch(/\.weinbar-icon\s*\{[^}]*position:\s*absolute/s);
+    expect(home).toContain('/manus-storage/petit-joujou-self-drawing_744a37eb.svg');
+  });
+
+  it("uses the Joujou family typography while preserving the petit wordmark", () => {
+    expect(css).toContain('--font-display: "Clash Display", Arial, sans-serif;');
+    expect(css).toContain('--font-body: "Archivo", system-ui, sans-serif;');
+    expect(css).toContain('--font-script: "Dancing Script", cursive;');
+    expect(indexHtml).toContain("clash-display@600&f[]=archivo@300,400");
+    expect(home).toContain('aria-label="klein. fein. wein."');
+    expect(home).not.toContain("metallic-bronze");
   });
 
   it("keeps split content readable on large and ultrawide screens", () => {

@@ -1,6 +1,6 @@
 /* ============================================================
    petit joujou — Weinbar · Leistadt, Pfalz
-   klein · fein · wein
+   klein. fein. wein.
    ============================================================ */
 
 import { useState } from "react";
@@ -145,9 +145,9 @@ function Hero() {
         <div className="split-content" style={{ backgroundColor: C.bg, justifyContent: "center", alignItems: "flex-start", position: "relative" }}>
           {/* SEO H1 — visually hidden but accessible */}
           <h1 className="sr-only">petit joujou — Weinbar in Bad Dürkheim, Pfalz</h1>
-          {/* Weinbar-Illustration — oben rechts im normalen Layoutfluss */}
+          {/* Originale Petit-Joujou-Illustration — zeichnet sich beim Laden selbst */}
           <img
-            src="/manus-storage/weinbar_correct_5d2f0ca9.png"
+            src="/manus-storage/petit-joujou-self-drawing_744a37eb.svg"
             alt=""
             aria-hidden="true"
             className="weinbar-icon"
@@ -982,14 +982,12 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        {/* klein · fein · wein — Transition-Banner (Metallic Bronze) */}
+        {/* Shared Joujou family slogan — petit wording, restaurant typography */}
         <div style={{ backgroundColor: C.bg, textAlign: "center", padding: "2.5rem 1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "1.2rem", flexWrap: "wrap" }}>
-            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>klein</span>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.sage, flexShrink: 0 }} />
-            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>fein</span>
-            <span style={{ display: "inline-block", width: "6px", height: "6px", borderRadius: "50%", backgroundColor: C.sage, flexShrink: 0 }} />
-            <span className="font-script metallic-bronze" style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)", lineHeight: 1 }}>wein</span>
+          <div className="family-slogan" aria-label="klein. fein. wein.">
+            <span>klein.</span>
+            <span>fein.</span>
+            <span>wein.</span>
           </div>
         </div>
         <WeinkellerSection />

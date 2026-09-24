@@ -44,7 +44,7 @@ export function usePageMeta(meta: PageMeta) {
       const link = document.querySelector('link[rel="canonical"]');
       if (link) link.setAttribute("href", "https://www.petit-joujou.de/");
       if (ogTitleEl) ogTitleEl.setAttribute("content", "petit joujou — Weinbar Bad Dürkheim Pfalz");
-      if (ogDescEl) ogDescEl.setAttribute("content", "Nachhaltige Weinbar in Bad Dürkheim, Pfalz. Über 500 biozertifizierte Weine, Entrecôte & Rib-Eye vom Weiderind, Pinsa, Events & Weinabende. klein · fein · wein.");
+      if (ogDescEl) ogDescEl.setAttribute("content", "Nachhaltige Weinbar in Bad Dürkheim, Pfalz. Über 500 biozertifizierte Weine, Entrecôte & Rib-Eye vom Weiderind, Pinsa, Events & Weinabende. klein. fein. wein.");
       if (ogUrlEl) ogUrlEl.setAttribute("content", "https://www.petit-joujou.de/");
     };
   }, [meta.title, meta.description, meta.canonical, meta.ogTitle, meta.ogDescription]);
