@@ -118,6 +118,21 @@ export default function Datenschutz() {
 
           <section style={{ marginBottom: "2.5rem" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
+              8a. Newsletter (rapidmail)
+            </h2>
+            <p style={{ marginBottom: "1rem" }}>
+              Für den Versand unseres Newsletters nutzen wir den Dienst der rapidmail GmbH, Ingeborg-Krummer-Schroth-Straße 18a, 79106 Freiburg im Breisgau. Die Anmeldung erfolgt über ein eingebettetes Formular von rapidmail, das die Daten in unserem Auftrag verarbeitet (Auftragsverarbeitung nach Art. 28 DSGVO). Die Anmeldung läuft im Double-Opt-in-Verfahren: Nach Eingabe Ihrer E-Mail-Adresse erhalten Sie eine Bestätigungs-E-Mail; erst nach Bestätigung nehmen wir Sie auf. Zum Nachweis der Einwilligung protokollieren wir den Zeitpunkt von Anmeldung und Bestätigung sowie die IP-Adresse. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO; die Abmeldung ist jederzeit über den Link in jeder E-Mail möglich.
+            </p>
+            <p style={{ marginBottom: "1rem" }}>
+              Das Formular lädt Skripte des rapidmail-Systems (emailsys1a.net). Zum Schutz vor automatisierten Anmeldungen ist ein Captcha der CaptchaFox GmbH, Fokkerstr. 2, 85399 Hallbergmoos, eingebunden (geladen von cdn.captchafox.com), das dabei technische Verbindungsdaten einschließlich der IP-Adresse verarbeitet. Rechtsgrundlage ist unser berechtigtes Interesse an der Missbrauchsabwehr nach Art. 6 Abs. 1 lit. f DSGVO.
+            </p>
+            <p>
+              Weitere Informationen: <a href="https://www.rapidmail.de/datenschutz" target="_blank" rel="noopener noreferrer" style={{ color: "#40818a" }}>Datenschutz rapidmail</a>, <a href="https://captchafox.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: "#40818a" }}>Datenschutz CaptchaFox</a>.
+            </p>
+          </section>
+
+          <section style={{ marginBottom: "2.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
               9. Technisch notwendige Speicherung (localStorage)
             </h2>
             <p>
@@ -146,7 +161,7 @@ export default function Datenschutz() {
           </section>
 
           <p style={{ fontSize: "0.8rem", color: "#6ba8b0", borderTop: "1px solid #f0d0d8", paddingTop: "2rem" }}>
-            Stand: Juli 2026 · Joujou GmbH
+            Stand: 9. Oktober 2026 · Joujou GmbH
           </p>
 
         </div>

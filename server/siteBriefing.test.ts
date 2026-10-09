@@ -39,21 +39,21 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(comingSoon).toContain("position:fixed;top:0;left:0;right:0");
   });
 
-  it("keeps only the upcoming Herbstmarkt in visible and structured event data", () => {
-    for (const expired of ["BEATS petit joujou", "TAVOLA BEATS", "Joujou Groovt"]) {
+  it("removes expired events while preserving the event section and its follow link", () => {
+    for (const expired of ["BEATS petit joujou", "TAVOLA BEATS", "Joujou Groovt", "Herbstmarkt"]) {
       expect(home).not.toContain(expired);
       expect(indexHtml).not.toContain(expired);
     }
-    expect(home).toContain("Herbstmarkt");
+    expect(home).toContain('id="events"');
+    expect(home).toContain("Events & Abende");
     expect(home).toContain("Alle Events & Tickets findest du auf");
     expect(home).not.toContain("shop?tab=events");
 
     const jsonLdBlocks = [...indexHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
       .map(match => JSON.parse(match[1]));
-    const events = jsonLdBlocks.find(block => Array.isArray(block));
-    expect(events).toHaveLength(1);
-    expect(events[0].name).toContain("Herbstmarkt");
-    expect(home).toContain('className="events-card"');
+    expect(jsonLdBlocks).toHaveLength(1);
+    expect(jsonLdBlocks[0]["@type"]).toBe("Restaurant");
+    expect(home).not.toContain('className="events-card-wrap"');
     expect(css).toContain("grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);");
     expect(css).toContain("padding: clamp(72px, 6vw, 112px) 0;");
     expect(css).toContain("scroll-margin-top: 84px;");

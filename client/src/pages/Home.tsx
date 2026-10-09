@@ -430,30 +430,6 @@ function EventsSection() {
           </p>
         </div>
 
-        {/* Kommendes Event */}
-        <div className="events-card-wrap">
-          {/* Herbstmarkt */}
-          <div className="events-card" style={{ backgroundColor: C.sage, overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)" }}>
-            <img loading="lazy"
-              src="/manus-storage/herbstmarkt-new_b3b20b88.png"
-              alt="Herbstmarkt — Markt der achtsamen Dinge"
-              className="event-img"
-              style={{ width: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
-            />
-            <div className="events-card-content">
-              <p className="font-body" style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: C.peach, marginBottom: "0.4rem" }}>03. + 04. Oktober 2026 · ab 12:00 Uhr</p>
-              <p className="font-display" style={{ fontSize: "1.3rem", color: "#fff", marginBottom: "0.3rem" }}>Herbstmarkt</p>
-              <p className="font-body" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginBottom: "0.5rem" }}>Markt der achtsamen Dinge — regionale Aussteller, Handwerkskunst & Live-Musik.</p>
-              <p className="font-body" style={{ fontSize: "0.78rem", color: C.peach, fontWeight: 600, marginBottom: "0.5rem" }}>Eintritt frei</p>
-              <a href="#reservierung"
-                style={{ display: "inline-block", padding: "0.6rem 1.4rem", backgroundColor: C.sageDark, color: "#fff", fontSize: "0.75rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "inherit" }}>
-                Mehr erfahren
-              </a>
-            </div>
-          </div>
-
-        </div>
-
         <div className="events-follow" style={{ textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid }}>
             Alle Events & Tickets findest du auf{" "}
