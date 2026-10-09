@@ -46,7 +46,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
     }
     expect(home).toContain('id="events"');
     expect(home).toContain("Events & Abende");
-    expect(home).toContain("Alle Events & Tickets findest du auf");
+    expect(home).toContain("Alle Termine und Tickets auf");
     expect(home).not.toContain("shop?tab=events");
 
     const jsonLdBlocks = [...indexHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
@@ -57,6 +57,33 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(css).toContain("grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);");
     expect(css).toContain("padding: clamp(72px, 6vw, 112px) 0;");
     expect(css).toContain("scroll-margin-top: 84px;");
+  });
+
+  it("points visitors to the three approved Restaurant events and their ticket overview", () => {
+    const events = home.slice(home.indexOf("function EventsSection()"), home.indexOf("function ReservierungUndGesellschaftenSection()"));
+    expect(events).toContain("Aktuell finden besondere Abende im Joujou Restaurant statt:");
+    expect(events).toContain("Pilates & Brunch (17.10.)");
+    expect(events).toContain("Joujou × Vinaturel – Österreich im Glas (04.11.)");
+    expect(events).toContain("Allie’s Kitchen meets Joujou (29.11.)");
+    expect(events).toContain('href="https://joujou-pfalz.de/events" target="_blank" rel="noopener noreferrer"');
+    expect(events).toContain("Ausgesuchte Abende mit ausgesuchten Winzern.");
+    expect(events).not.toContain("instagram.com");
+  });
+
+  it("keeps Friday-only afternoon opening and weekend hours consistent everywhere", () => {
+    expect(home).toContain("Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr · Mo–Do geschlossen");
+    const footer = home.slice(home.indexOf("function Footer()"));
+    expect(footer).toContain('["Fr", "ab 16:00 Uhr"]');
+    expect(footer).toContain('["Sa & So", "ab 12:00 Uhr"]');
+    expect(footer).toContain('["Mo–Do", "geschlossen"]');
+    expect(home).not.toContain("Do & Fr ab");
+    const business = JSON.parse(indexHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]);
+    expect(business.openingHoursSpecification.map((hours: { dayOfWeek: string[]; opens: string }) => ({ days: hours.dayOfWeek, opens: hours.opens }))).toEqual([
+      { days: ["Friday"], opens: "16:00" },
+      { days: ["Saturday", "Sunday"], opens: "12:00" },
+    ]);
+    expect(indexHtml).not.toContain("Do–Fr ab 16");
+    expect(read("client/src/hooks/usePageMeta.ts")).not.toContain("Do–Fr ab 16");
   });
 
   it("keeps the complete reservation explanation and cancellation rules on the page", () => {

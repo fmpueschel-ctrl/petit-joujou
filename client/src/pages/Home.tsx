@@ -431,12 +431,11 @@ function EventsSection() {
         </div>
 
         <div className="events-follow" style={{ textAlign: "center" }}>
-          <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid }}>
-            Alle Events & Tickets findest du auf{" "}
-            <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.sage, textDecoration: "none", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-              joujou.bistro
-            </a>
+          <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMid, maxWidth: "680px", margin: "0 auto", lineHeight: 1.8 }}>
+            Aktuell finden besondere Abende im Joujou Restaurant statt: Pilates & Brunch (17.10.), Joujou × Vinaturel – Österreich im Glas (04.11.) und Allie’s Kitchen meets Joujou (29.11.). Alle Termine und Tickets auf{" "}
+            <a href="https://joujou-pfalz.de/events" target="_blank" rel="noopener noreferrer" style={{ color: C.sageDark, textDecoration: "underline", textUnderlineOffset: "3px", fontWeight: 600 }}>
+              joujou-pfalz.de/events
+            </a>.
           </p>
         </div>
       </div>
@@ -484,7 +483,7 @@ function ReservierungUndGesellschaftenSection() {
                 Für die Weinbar bucht ihr hier euren Tisch. Wir setzen euch nach Wetterlage drinnen oder draußen — sagt uns gern, was euch lieber ist.
               </p>
               <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMid, marginTop: "0.5rem" }}>
-                Do & Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr.
+                Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr · Mo–Do geschlossen
               </p>
             </div>
             <div style={{ backgroundColor: C.bg, border: `1px solid ${C.border}`, overflow: "hidden" }}>
@@ -879,9 +878,9 @@ function Footer() {
               Öffnungszeiten
             </p>
             {[
-              ["Do – Fr", "ab 16 Uhr"],
-              ["Sa – So", "ab 12 Uhr"],
-              ["Mo – Mi", "geschlossen"],
+              ["Fr", "ab 16:00 Uhr"],
+              ["Sa & So", "ab 12:00 Uhr"],
+              ["Mo–Do", "geschlossen"],
             ].map(([day, time]) => (
               <div key={day} style={{ display: "flex", gap: "0.75rem", marginBottom: "0.4rem" }}>
                 <span className="font-body" style={{ fontSize: "0.85rem", color: C.inkMid, minWidth: "5rem" }}>{day}</span>
