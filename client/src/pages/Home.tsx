@@ -373,22 +373,25 @@ function GartenSection() {
         </div>
       </div>
 
-      {/* Bottom: Atmosphere image strip */}
-      <div className="grid grid-cols-3 gap-0" style={{ height: "280px" }}>
+      {/* Full photos in their original proportions — no narrow cropped strip. */}
+      <div className="garden-atmosphere-gallery">
         <img loading="lazy"
           src="/manus-storage/oliven-board_169d2816.webp"
           alt="Oliven-Board und Snacks zum Teilen"
-          className="w-full h-full object-cover"
+          width={533}
+          height={800}
         />
         <img loading="lazy"
           src="/manus-storage/wein-anstossen_719ab057.webp"
           alt="Zwei Gläser Wein anstoßen im Grünen"
-          className="w-full h-full object-cover"
+          width={533}
+          height={800}
         />
         <img loading="lazy"
-src="/manus-storage/20260802_214909_f13ce581.jpg"
-           alt="Joujou Fassade bei Nacht — neues Glasfenster im Tor"
-          className="w-full h-full object-cover"
+          src="/manus-storage/20260802_214909_f13ce581.jpg"
+          alt="Joujou Fassade bei Nacht — neues Glasfenster im Tor"
+          width={4000}
+          height={3000}
         />
       </div>
     </section>

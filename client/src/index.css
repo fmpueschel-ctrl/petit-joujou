@@ -631,3 +631,33 @@ div[id] {
     letter-spacing: 0.12em;
   }
 }
+
+/* Garden photographs: two portraits plus one landscape, shown in full.
+   Columns follow the source ratios (533/800, 533/800, 4000/3000). */
+.garden-atmosphere-gallery {
+  display: grid;
+  grid-template-columns: 533fr 533fr 1066.666667fr;
+  gap: 12px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px clamp(16px, 2vw, 32px) 32px;
+}
+.garden-atmosphere-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  object-fit: contain;
+  align-self: start;
+}
+@media (max-width: 768px) {
+  .garden-atmosphere-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 16px 16px 24px;
+  }
+  .garden-atmosphere-gallery img:last-child {
+    grid-column: 1 / -1;
+  }
+}
