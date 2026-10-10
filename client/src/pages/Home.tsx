@@ -460,29 +460,23 @@ function ReservierungUndGesellschaftenSection() {
           {/* LEFT: Reservierung */}
           <div id="reservierung-widget">
             <div style={{ marginBottom: "2rem" }}>
-              <p className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: C.accentStrong, marginBottom: "0.75rem" }}>
-                Tisch reservieren
-              </p>
               <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink }}>
-                Weinbar
+                Tisch reservieren
               </h2>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMuted, marginTop: "0.75rem", lineHeight: 1.7 }}>
-                Alles läuft über ein Fenster. Ihr wählt den Bereich „Joujou Weinbar", die Zahl der Gäste, Tag und Uhrzeit — den Rest machen wir.
-              </p>
-              <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMuted, marginTop: "0.5rem" }}>
-                Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen
-              </p>
             </div>
             <ol className="schritte font-body">
-              <li><strong>Bereich wählen.</strong> Wählt „Joujou Weinbar". „Joujou Restaurant" und „Yoga &amp; Brunch" sind die Bereiche nebenan.</li>
+              <li><strong>Bereich wählen.</strong> „Joujou Weinbar" für euren Tisch hier. „Joujou Restaurant" (Brunch &amp; Dinner, <a href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer">joujou.restaurant</a>) und „Yoga &amp; Brunch" sind die anderen Bereiche im selben Fenster.</li>
               <li><strong>Personenzahl, Tag und Uhrzeit wählen.</strong> Ist eure Wunschzeit belegt, schlägt euch das Fenster andere Zeiten und den nächsten freien Tag vor.</li>
-              <li><strong>Namen und Kontakt eintragen.</strong> Besonderheiten wie Unverträglichkeiten oder Hund gehören ins Feld „Anmerkung" — dann wissen wir es vorher.</li>
-              <li><strong>Bestätigung abwarten.</strong> Ihr bekommt sie sofort per E-Mail, mit Termin zum Eintragen in den Kalender. Kommt nichts an, schaut in den Spam-Ordner oder ruft uns an.</li>
+              <li><strong>Namen und Kontakt eintragen.</strong> Besonderheiten wie Unverträglichkeiten oder Hund gehört ins Feld „Anmerkung" — dann wissen wir es vorher.</li>
+              <li><strong>Bestätigung abwarten.</strong> Ihr bekommt sie sofort per E-Mail, mit Termin zum Eintragen in den Kalender. Kommt nichts an, schaut in den Spam-Ordner.</li>
             </ol>
-            <p className="hinweis font-body"><strong>Drinnen oder draußen:</strong> Garten oder drinnen ist ein Wunsch, keine feste Zusage — notiert ihn trotzdem gern; bei schlechtem Wetter sitzt niemand draußen.</p>
-            <p className="hinweis font-body"><strong>Veranstaltungen:</strong> Besondere Abende finden derzeit im Joujou Restaurant statt — Termine und Tickets auf <a href="https://joujou-pfalz.de/events" target="_blank" rel="noopener noreferrer">joujou-pfalz.de/events</a>.</p>
-            <p className="hinweis font-body"><strong>Brot und Kuchen für daheim:</strong> vorab im <a href="https://thepurebakery.shop/" target="_blank" rel="noopener noreferrer">Onlineshop der Pure Bakery</a> zur Abholung bestellen.</p>
-            <p className="hinweis font-body"><strong>Große Runden und Feiern:</strong> ab acht Personen lieber direkt — über unser <a href="#gesellschaften">Anfrageformular weiter unten (Private Abende)</a> oder <a href="mailto:hallo@joujou-pfalz.de">per Mail</a>.</p>
+            <p className="hinweis font-body"><strong>Drinnen oder draußen:</strong> Wir setzen euch nach Wetter und Besetzung, feste Zusagen gibt es nicht. Schreibt uns, was euch lieber wäre.</p>
+            <p className="hinweis font-body"><strong>Veranstaltungen:</strong> Besondere Abende finden derzeit im Joujou Restaurant statt — Termine und Tickets auf <a href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer">joujou.restaurant</a>.</p>
+            <p className="hinweis font-body"><strong>Brot und Kuchen für daheim:</strong> Backwaren aus unserer Bio-Backmanufaktur bestellt ihr am besten vorab zur Abholung im <a href="https://thepurebakery.shop/" target="_blank" rel="noopener noreferrer">Onlineshop der Pure Bakery</a>.</p>
+            <p className="hinweis font-body"><strong>Große Runden und Feiern:</strong> Ab acht Personen oder für einen eigenen Abend schreibt uns lieber direkt an <a href="mailto:hallo@joujou-pfalz.de">hallo@joujou-pfalz.de</a>.</p>
+            <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMuted, marginTop: "1.5rem", marginBottom: "1.5rem", lineHeight: 1.7 }}>
+              Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen
+            </p>
             <div style={{ backgroundColor: C.paper, border: `1px solid ${C.border}`, overflow: "hidden" }}>
               {iframeConsent ? (
                 <iframe
@@ -525,6 +519,9 @@ function ReservierungUndGesellschaftenSection() {
               >
                 In neuem Tab öffnen
               </a>
+            </p>
+            <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMuted, marginTop: "0.75rem", lineHeight: 1.7 }}>
+              Außerdem im selben Fenster: Gutschein kaufen
             </p>
             <div style={{ marginTop: "2rem", padding: "1.5rem", backgroundColor: C.paper, borderLeft: `4px solid ${C.accentStrong}` }}>
               <h3 className="font-display" style={{ fontSize: "1.2rem", color: C.ink, marginBottom: "0.75rem" }}>

@@ -7,37 +7,48 @@ const home = readFileSync(resolve(root, "client/src/pages/Home.tsx"), "utf8");
 const css = readFileSync(resolve(root, "client/src/index.css"), "utf8");
 const section = home.slice(home.indexOf('<div id="reservierung-widget">'), home.indexOf('{/* RIGHT: Euer Abend'));
 const widgetUrl = "https://services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar";
+const text = (html: string) => html.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
 
-describe("Shared Joujou reservation explanation", () => {
-  it("places introduction, hours, four steps and four hints before consent and cancellation", () => {
-    const markers = ["Alles läuft über ein Fenster.", "Freitag ab 16 Uhr", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "{iframeConsent ? (", "Wenn etwas dazwischenkommt"];
+const steps = [
+  'Bereich wählen. „Joujou Weinbar" für euren Tisch hier. „Joujou Restaurant" (Brunch & Dinner, joujou.restaurant) und „Yoga & Brunch" sind die anderen Bereiche im selben Fenster.',
+  'Personenzahl, Tag und Uhrzeit wählen. Ist eure Wunschzeit belegt, schlägt euch das Fenster andere Zeiten und den nächsten freien Tag vor.',
+  'Namen und Kontakt eintragen. Besonderheiten wie Unverträglichkeiten oder Hund gehört ins Feld „Anmerkung" — dann wissen wir es vorher.',
+  'Bestätigung abwarten. Ihr bekommt sie sofort per E-Mail, mit Termin zum Eintragen in den Kalender. Kommt nichts an, schaut in den Spam-Ordner.',
+];
+const hints = [
+  'Drinnen oder draußen: Wir setzen euch nach Wetter und Besetzung, feste Zusagen gibt es nicht. Schreibt uns, was euch lieber wäre.',
+  'Veranstaltungen: Besondere Abende finden derzeit im Joujou Restaurant statt — Termine und Tickets auf joujou.restaurant.',
+  'Brot und Kuchen für daheim: Backwaren aus unserer Bio-Backmanufaktur bestellt ihr am besten vorab zur Abholung im Onlineshop der Pure Bakery.',
+  'Große Runden und Feiern: Ab acht Personen oder für einen eigenen Abend schreibt uns lieber direkt an hallo@joujou-pfalz.de.',
+];
+
+describe("Final shared Joujou reservation explanation", () => {
+  it("starts directly with the heading and steps, without an introduction", () => {
+    const prefix = section.slice(0, section.indexOf('<ol className="schritte font-body">'));
+    expect(prefix).toContain("Tisch reservieren");
+    expect(prefix).not.toContain("<p ");
+    expect(section).not.toContain("Alles läuft über ein Fenster.");
+    const markers = ["Tisch reservieren", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "Freitag ab 16 Uhr", "{iframeConsent ? (", "Außerdem im selben Fenster: Gutschein kaufen", "Wenn etwas dazwischenkommt"];
     const indices = markers.map(marker => section.indexOf(marker));
     expect(indices.every(index => index >= 0)).toBe(true);
     expect(indices).toEqual([...indices].sort((a, b) => a - b));
-    expect(section.match(/<li>/g)).toHaveLength(4);
-    expect(section.match(/className="hinweis font-body"/g)).toHaveLength(4);
-    expect(section).not.toContain("Für die Weinbar bucht ihr hier euren Tisch.");
   });
-  it("retains every supplied step and bold hint prefix", () => {
-    for (const copy of [
-      "Bereich wählen.", "Wählt „Joujou Weinbar\".", "Personenzahl, Tag und Uhrzeit wählen.",
-      "andere Zeiten und den nächsten freien Tag vor.", "Namen und Kontakt eintragen.",
-      "Besonderheiten wie Unverträglichkeiten oder Hund gehören ins Feld „Anmerkung\"",
-      "Bestätigung abwarten.", "schaut in den Spam-Ordner oder ruft uns an.",
-      "Garten oder drinnen ist ein Wunsch, keine feste Zusage", "bei schlechtem Wetter sitzt niemand draußen.",
-      "Besondere Abende finden derzeit im Joujou Restaurant statt", "vorab im",
-      "zur Abholung bestellen.", "ab acht Personen lieber direkt",
-    ]) expect(section).toContain(copy);
+  it("uses exactly the four final steps and four hints", () => {
+    expect([...section.matchAll(/<li>(.*?)<\/li>/g)].map(match => text(match[1]))).toEqual(steps);
+    expect([...section.matchAll(/<p className="hinweis font-body">(.*?)<\/p>/g)].map(match => text(match[1]))).toEqual(hints);
     expect(section.match(/<strong>/g)).toHaveLength(8);
+    expect(section).not.toContain("oder ruft uns an");
   });
-  it("links hints to events, bakery, local enquiry form and house email", () => {
-    for (const target of ["https://joujou-pfalz.de/events", "https://thepurebakery.shop/", "#gesellschaften", "mailto:hallo@joujou-pfalz.de"]) {
-      expect(section).toContain(`href="${target}"`);
-    }
+  it("links the restaurant twice, the bakery and the house email", () => {
+    expect(section.split('href="https://joujou.restaurant"')).toHaveLength(3);
+    expect(section).toContain('href="https://thepurebakery.shop/"');
+    expect(section).toContain('href="mailto:hallo@joujou-pfalz.de"');
+    expect(section).not.toContain('href="https://joujou-pfalz.de/events"');
+    expect(section).not.toContain('href="#gesellschaften"');
     expect(section).toContain('href="/datenschutz"');
     expect(section).toContain('href="/agb"');
   });
-  it("preserves state-based consent and the Weinbar URL in both entry paths", () => {
+  it("preserves state-based consent, both Weinbar entry paths and cancellation", () => {
     expect(home).toContain("const [iframeConsent, setIframeConsent] = useState(false)");
     expect(section).toContain("{iframeConsent ? (");
     expect(section).toContain("onClick={() => setIframeConsent(true)}");
@@ -46,12 +57,13 @@ describe("Shared Joujou reservation explanation", () => {
     expect(section).toContain("In neuem Tab öffnen");
     expect(section).toContain("30 Euro pro Person beim Brunch, 50 Euro am Abend.");
   });
-  it("uses the supplied counter, spacing and readable text sizes within the reservation scope", () => {
-    expect(css).toContain("#reservierung-widget .schritte");
-    expect(css).toContain("counter-reset: schritt;");
-    expect(css).toContain("counter-increment: schritt;");
-    expect(css).toContain("content: counter(schritt);");
-    expect(css).toContain("padding-left: 40px;");
-    expect(css).toContain("max-width: 640px;");
+  it("preserves hours and offers only the voucher in the post-window line", () => {
+    expect(section).toContain("Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen");
+    const voucher = section.slice(section.indexOf("Außerdem im selben Fenster:"), section.indexOf("Wenn etwas dazwischenkommt"));
+    expect(voucher).toContain("Gutschein kaufen");
+    expect(voucher).not.toContain("Veranstaltungen");
+  });
+  it("keeps the supplied counter spacing and visible links", () => {
+    for (const rule of ["counter-reset: schritt;", "counter-increment: schritt;", "content: counter(schritt);", "padding-left: 40px;", "max-width: 640px;", "#reservierung-widget .schritte a,"]) expect(css).toContain(rule);
   });
 });

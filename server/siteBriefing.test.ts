@@ -87,7 +87,9 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("keeps the complete reservation explanation and cancellation rules on the page", () => {
-    expect(home).toContain("Alles läuft über ein Fenster.");
+    expect(home).toContain("Bereich wählen.");
+    expect(home).not.toContain("Alles läuft über ein Fenster.");
+    expect(home).toContain("Außerdem im selben Fenster: Gutschein kaufen");
     expect(home).toContain("darunter eure IP-Adresse");
     expect(home).toContain("Wenn etwas dazwischenkommt");
     expect(home).toContain("30 Euro pro Person beim Brunch, 50 Euro am Abend.");

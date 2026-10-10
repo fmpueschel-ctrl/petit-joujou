@@ -706,6 +706,7 @@ div[id] {
   font-weight: 600;
   color: var(--winebar-ink);
 }
+#reservierung-widget .schritte a,
 #reservierung-widget .hinweis a {
   color: var(--winebar-accent-strong);
   text-decoration: underline;
