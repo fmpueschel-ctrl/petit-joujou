@@ -139,7 +139,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(css).toContain("align-self: center;");
     expect(css).not.toContain("width: 45px;");
     expect(css).not.toMatch(/\.weinbar-icon\s*\{[^}]*position:\s*absolute/s);
-    expect(home).toContain('/manus-storage/petit-joujou-hand-static_f02c319e.svg');
+    expect(home).toContain('/manus-storage/petit-joujou-self-drawing_744a37eb.svg');
   });
 
   it("uses the Joujou family typography while preserving the petit wordmark", () => {

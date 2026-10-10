@@ -77,9 +77,9 @@ describe("Joujou family style 2026-10-10", () => {
     expect(nav).toContain("rgba(34,48,42,0.96)");
   });
 
-  it("uses the original orange hand without a drawing animation", () => {
-    expect(home).toContain("/manus-storage/petit-joujou-hand-static_f02c319e.svg");
-    expect(home).not.toContain("self-drawing");
+  it("restores the original self-drawing orange hand without changing its layout", () => {
+    expect(home).toContain("/manus-storage/petit-joujou-self-drawing_744a37eb.svg");
+    expect(home).not.toContain("petit-joujou-hand-static");
     expect(css).not.toContain("pj-draw");
   });
 

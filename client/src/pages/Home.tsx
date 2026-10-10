@@ -155,9 +155,9 @@ function Hero() {
         <div className="split-content winebar-paper" style={{ backgroundColor: C.paper, justifyContent: "center", alignItems: "flex-start", position: "relative" }}>
           {/* SEO H1 — visually hidden but accessible */}
           <h1 className="sr-only">petit joujou — Weinbar in Bad Dürkheim, Pfalz</h1>
-          {/* Originale Petit-Joujou-Illustration — statisch, im Hausorange */}
+          {/* Originale Petit-Joujou-Illustration — zeichnet sich beim Laden, im Hausorange */}
           <img
-            src="/manus-storage/petit-joujou-hand-static_f02c319e.svg"
+            src="/manus-storage/petit-joujou-self-drawing_744a37eb.svg"
             alt=""
             aria-hidden="true"
             className="weinbar-icon"
