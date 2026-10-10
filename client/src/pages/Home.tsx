@@ -43,16 +43,17 @@ function Nav() {
       <nav
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          backgroundColor: "rgba(41,35,31,0.96)",
+          backgroundColor: "rgba(34,48,42,0.96)",
           backdropFilter: "blur(14px)",
           borderBottom: "1px solid rgba(255,255,255,0.15)",
         }}
       >
         <div className="container flex items-center justify-between" style={{ height: "60px" }}>
-          <a href="#" onClick={() => setOpen(false)} style={{ textDecoration: "none", flexShrink: 0 }}>
+          <a href="#" className="winebar-brandmark" onClick={() => setOpen(false)} style={{ textDecoration: "none", flexShrink: 0 }}>
             <span className="font-script" style={{ fontSize: "clamp(1.2rem, 4vw, 1.7rem)", color: "#ffffff", letterSpacing: "0.02em", whiteSpace: "nowrap" }}>
               petit joujou
             </span>
+            <span className="winebar-brand-subtitle">organic wine bar</span>
           </a>
           <div className="flex items-center" style={{ gap: "0.4rem", flexShrink: 0 }}>
             <a href="#reservierung" className="font-body nav-cta-hide-mobile" style={{ padding: "0.4rem 0.8rem", backgroundColor: "rgba(255,255,255,0.15)", color: "#fff", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(255,255,255,0.3)", whiteSpace: "nowrap" }}>Reservieren</a>
@@ -145,7 +146,7 @@ function Hero() {
               petit joujou
             </span>
             <span className="font-body" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", color: "rgba(255,255,255,0.85)", marginTop: "0.5rem", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
-              organic winebar &middot; pfalz
+              organic wine bar &middot; pfalz
             </span>
           </div>
         </div>
@@ -326,7 +327,7 @@ function ScheuneSection() {
             Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.
           </p>
           <p className="font-body barn-season-note" style={{ fontSize: "0.85rem", color: "rgba(245,240,230,0.82)", lineHeight: 1.8, marginTop: "1.75rem", paddingTop: "1.25rem", borderTop: `1px solid ${C.accentStrong}` }}>
-            An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander. Sagt bei der Reservierung gern Bescheid, wir setzen euch passend.
+            An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.
           </p>
         </div>
       </div>
@@ -852,7 +853,7 @@ function Footer() {
               petit joujou
             </span>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMuted, marginTop: "0.75rem", lineHeight: 1.7 }}>
-              organic winebar &middot; pfalz<br />
+              organic wine bar &middot; pfalz<br />
               Eine Marke von Joujou Pfalz
             </p>
           </div>

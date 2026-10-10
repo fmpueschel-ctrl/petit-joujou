@@ -3,7 +3,7 @@
 export const WINEBAR_THEME = {
   paper: "#F5F0E6",
   paperRaised: "#FBF7EF",
-  dark: "#29231F",
+  dark: "#22302A",
   ink: "#22302A",
   inkMuted: "#555A52",
   inkSoft: "#666B62",

@@ -149,8 +149,8 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(indexHtml).toContain("clash-display@600&f[]=archivo@300,400");
     expect(home).toContain('aria-label="klein. fein. wein."');
     expect(home).not.toContain("metallic-bronze");
-    expect(home.match(/organic winebar &middot; pfalz/g)).toHaveLength(2);
-    expect(home).not.toContain('organic winebar &middot; Pfalz');
+    expect(home.match(/organic wine bar &middot; pfalz/g)).toHaveLength(2);
+    expect(home).not.toContain('organic wine bar &middot; Pfalz');
     expect(home).not.toContain("Weinbar &middot; Bad Dürkheim &middot; Pfalz");
     expect(indexHtml).toContain("Weinbar Bad Dürkheim Pfalz");
   });

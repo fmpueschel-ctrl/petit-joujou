@@ -24,11 +24,12 @@ describe("Joujou family style 2026-10-10", () => {
   it("adds exactly the approved seasonal explanation below the existing barn copy", () => {
     const barn = home.slice(home.indexOf("function ScheuneSection()"), home.indexOf("function GartenSection()"));
     const original = "Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.";
-    const note = "An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander. Sagt bei der Reservierung gern Bescheid, wir setzen euch passend.";
+    const note = "An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.";
     expect(barn).toContain(original);
     expect(barn).toContain(note);
     expect(barn.indexOf(note)).toBeGreaterThan(barn.indexOf(original));
     expect(barn).toContain("barn-season-note");
+    expect(barn).not.toContain("Sagt bei der Reservierung gern Bescheid, wir setzen euch passend.");
   });
 
   it("uses family paper, ink and a single orange house accent without legacy pink/green accents", () => {
@@ -54,7 +55,7 @@ describe("Joujou family style 2026-10-10", () => {
   });
 
   it("keeps warm candlelit dark sections with readable headings and body text", () => {
-    expect(C.dark).toBe("#29231F");
+    expect(C.dark).toBe("#22302A");
     for (const id of ["weinkeller", "garten", "scheune"]) {
       expect(home).toContain(`id="${id}" className="winebar-dark"`);
     }
@@ -63,6 +64,17 @@ describe("Joujou family style 2026-10-10", () => {
     expect(contrast(C.accentLight, C.dark)).toBeGreaterThan(4.5);
     expect(contrast(C.accentStrong, C.paper)).toBeGreaterThan(4.5);
     expect(contrast("#ffffff", C.accentStrong)).toBeGreaterThan(4.5);
+  });
+
+  it("adds the discreet restaurant-style header subtitle and consistent three-word spelling", () => {
+    const nav = home.slice(home.indexOf("function Nav()"), home.indexOf("function Hero()"));
+    expect(nav).toContain('className="winebar-brand-subtitle">organic wine bar</span>');
+    expect(css).toMatch(/\.winebar-brandmark\s*\{[^}]*align-items: baseline;[^}]*gap: 10px;/s);
+    expect(css).toMatch(/\.winebar-brand-subtitle\s*\{[^}]*font-size: 11px !important;[^}]*letter-spacing: 0.16em;[^}]*text-transform: uppercase;/s);
+    expect(home.match(/organic wine bar &middot; pfalz/g)).toHaveLength(2);
+    expect(home).not.toContain("organic winebar");
+    expect(css).not.toContain("#29231F");
+    expect(nav).toContain("rgba(34,48,42,0.96)");
   });
 
   it("uses the original orange hand without a drawing animation", () => {

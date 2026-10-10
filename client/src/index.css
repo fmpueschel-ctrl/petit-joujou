@@ -7,7 +7,7 @@
 
 @theme {
   /* One house accent, family paper and ink; legacy aliases stay compatible. */
-  --color-sage-900: #29231F;
+  --color-sage-900: #22302A;
   --color-sage-700: #A43D25;
   --color-sage-500: #C9573B;
   --color-sage-200: #E9E1D3;
@@ -574,7 +574,7 @@ div[id] {
   --winebar-ink: #22302A;
   --winebar-accent: #C9573B;
   --winebar-accent-strong: #A43D25;
-  --winebar-dark: #29231F;
+  --winebar-dark: #22302A;
   --winebar-paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.085' filter='url(%23paper)'/%3E%3C/svg%3E");
 }
 .winebar-paper {
@@ -602,4 +602,32 @@ div[id] {
 }
 .barn-season-note {
   font-weight: 300;
+}
+
+/* Same baseline, tracking and restrained caps as joujou.restaurant's brandmark. */
+.winebar-brandmark {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.winebar-brand-subtitle {
+  font-family: var(--font-body);
+  font-size: 11px !important;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 230, 0.78);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .winebar-brandmark {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  .winebar-brand-subtitle {
+    font-size: 10px !important;
+    letter-spacing: 0.12em;
+  }
 }
