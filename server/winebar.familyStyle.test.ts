@@ -84,7 +84,7 @@ describe("Joujou family style 2026-10-10", () => {
   });
 
   it("retains links, opening times, official newsletter and reservation consent", () => {
-    expect(home).toContain('href="https://joujou-pfalz.de/events"');
+    expect(home).toContain('href="https://joujou.restaurant"');
     expect(home).toContain("Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen");
     expect(home).toContain("services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar");
     expect(home).toContain("{iframeConsent ? (");

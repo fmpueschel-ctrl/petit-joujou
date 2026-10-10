@@ -65,7 +65,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(events).toContain("Pilates & Brunch (17.10.)");
     expect(events).toContain("Joujou × Vinaturel – Österreich im Glas (04.11.)");
     expect(events).toContain("Allie’s Kitchen meets Joujou (29.11.)");
-    expect(events).toContain('href="https://joujou-pfalz.de/events" target="_blank" rel="noopener noreferrer"');
+    expect(events).toContain('href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer"');
     expect(events).toContain("Ausgesuchte Abende mit ausgesuchten Winzern.");
     expect(events).not.toContain("instagram.com");
   });

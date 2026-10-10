@@ -325,7 +325,6 @@ export default function ProductDetail() {
             <Link href="/impressum" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>Impressum</Link>
             <Link href="/datenschutz" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>Datenschutz</Link>
             <Link href="/agb" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>AGB</Link>
-            <Link href="/widerruf" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>Widerruf</Link>
             <Link href="/versand" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>Versand</Link>
           </div>
         </div>

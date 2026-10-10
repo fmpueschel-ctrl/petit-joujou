@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
-import Widerruf from "./pages/Widerruf";
 import Versand from "./pages/Versand";
 import Flaschenfreunde from "./pages/Flaschenfreunde";
 import ComingSoon from "./pages/ComingSoon";
@@ -26,7 +25,6 @@ function Router() {
       <Route path={"/impressum"} component={Impressum} />
       <Route path={"/datenschutz"} component={Datenschutz} />
       <Route path={"/agb"} component={AGB} />
-      <Route path={"/widerruf"} component={Widerruf} />
       <Route path={"/versand"} component={Versand} />
       <Route path={"/flaschenfreunde"} component={Flaschenfreunde} />
       <Route path={"/404"} component={NotFound} />

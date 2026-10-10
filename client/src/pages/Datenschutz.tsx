@@ -58,39 +58,6 @@ export default function Datenschutz() {
 
           <section style={{ marginBottom: "2.5rem" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
-              4. Online-Shop und Bestellabwicklung (Shopify)
-            </h2>
-            <p style={{ marginBottom: "1rem" }}>
-              Für unseren Online-Shop nutzen wir die Plattform Shopify (Shopify International Limited, Victoria Buildings, 2nd Floor, 1-2 Haddington Road, Dublin 4, D04 XN32, Irland). Bei einer Bestellung werden die von Ihnen eingegebenen Daten (Name, Adresse, E-Mail, Zahlungsdaten) an Shopify übermittelt und dort verarbeitet. Shopify ist als Auftragsverarbeiter für uns tätig.
-            </p>
-            <p>
-              Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Shopify speichert Ihre Daten auf Servern in der EU und in Kanada. Kanada verfügt über einen Angemessenheitsbeschluss der EU-Kommission. Weitere Informationen finden Sie in der <a href="https://www.shopify.com/de/legal/datenschutz" target="_blank" rel="noopener noreferrer" style={{ color: "#40818a" }}>Datenschutzerklärung von Shopify</a>.
-            </p>
-          </section>
-
-          <section style={{ marginBottom: "2.5rem" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
-              4a. Textilproduktion und -versand (Spreadconnect)
-            </h2>
-            <p style={{ marginBottom: "1rem" }}>
-              Die Fertigung und den Versand unserer Textilprodukte (T-Shirts) übernimmt die sprd.net AG (Gießerstraße 27, 04229 Leipzig, Deutschland), die unter der Marke Spreadshirt/Spreadconnect agiert. Bei einer Bestellung von Textilprodukten werden Ihr Name, Ihre Lieferadresse und ggf. Ihre E-Mail-Adresse an die sprd.net AG übermittelt, damit diese die Ware fertigen, versenden und etwaige Retouren entgegennehmen kann.
-            </p>
-            <p>
-              Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Die sprd.net AG ist als Auftragsverarbeiter für uns tätig. Die Verarbeitung erfolgt ausschließlich in Deutschland/EU. Weitere Informationen finden Sie in der <a href="https://www.spreadshirt.de/datenschutzerklaerung-C3310" target="_blank" rel="noopener noreferrer" style={{ color: "#40818a" }}>Datenschutzerklärung von Spreadshirt</a>.
-            </p>
-          </section>
-
-          <section style={{ marginBottom: "2.5rem" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
-              5. Zahlungsdienstleister
-            </h2>
-            <p>
-              Die Zahlungsabwicklung erfolgt über Shopify Payments (basierend auf Stripe, Inc., 510 Townsend Street, San Francisco, CA 94103, USA). Bei der Zahlung werden Ihre Zahlungsdaten direkt an den Zahlungsdienstleister übermittelt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Weitere Informationen: <a href="https://stripe.com/de/privacy" target="_blank" rel="noopener noreferrer" style={{ color: "#40818a" }}>Datenschutzerklärung von Stripe</a>.
-            </p>
-          </section>
-
-          <section style={{ marginBottom: "2.5rem" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
               6. Webanalyse (Umami)
             </h2>
             <p>

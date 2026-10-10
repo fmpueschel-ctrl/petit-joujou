@@ -680,9 +680,6 @@ export default function Shop() {
             <Link href="/agb" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
               AGB
             </Link>
-            <Link href="/widerruf" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
-              Widerruf
-            </Link>
             <Link href="/versand" className="font-body" style={{ fontSize: "0.75rem", color: C.inkLight, textDecoration: "none" }}>
               Versand
             </Link>

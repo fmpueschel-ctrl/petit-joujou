@@ -33,7 +33,7 @@ describe("Newsletter privacy addition 2026-10-09", () => {
 
   it("preserves existing heading numbers and legal navigation", () => {
     const headings = Array.from(html.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/g)).map(match => match[1]);
-    expect(headings.map(heading => heading.split(". ")[0])).toEqual(["1", "2", "3", "4", "4a", "5", "6", "7", "8", "8a", "9", "10"]);
+    expect(headings.map(heading => heading.split(". ")[0])).toEqual(["1", "2", "3", "6", "7", "8", "8a", "9", "10"]);
     expect(html).toContain('href="/impressum"');
     expect(html).toContain('href="/"');
     expect(html).toContain("Stand: 9. Oktober 2026");

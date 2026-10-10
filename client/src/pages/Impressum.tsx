@@ -139,7 +139,10 @@ export default function Impressum() {
 
         </div>
 
-        <div style={{ marginTop: "3rem" }}>
+        <div style={{ marginTop: "3rem", display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+          <a href="/agb" style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#40818a", textDecoration: "none", borderBottom: "1px solid #40818a", paddingBottom: "2px" }}>
+            AGB
+          </a>
           <a
             href="/"
             style={{

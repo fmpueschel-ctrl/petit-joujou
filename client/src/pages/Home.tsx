@@ -158,8 +158,7 @@ function Hero() {
           {/* Originale Petit-Joujou-Illustration — zeichnet sich beim Laden, im Hausorange */}
           <img
             src="/manus-storage/petit-joujou-self-drawing_744a37eb.svg"
-            alt=""
-            aria-hidden="true"
+            alt="Orange Hand schenkt Wein in ein Glas ein"
             className="weinbar-icon"
           />
 
@@ -420,8 +419,8 @@ function EventsSection() {
         <div className="events-follow" style={{ textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMuted, maxWidth: "680px", margin: "0 auto", lineHeight: 1.8 }}>
             Aktuell finden besondere Abende im Joujou Restaurant statt: Pilates & Brunch (17.10.), Joujou × Vinaturel – Österreich im Glas (04.11.) und Allie’s Kitchen meets Joujou (29.11.). Alle Termine und Tickets auf{" "}
-            <a href="https://joujou-pfalz.de/events" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "3px", fontWeight: 600 }}>
-              joujou-pfalz.de/events
+            <a href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "3px", fontWeight: 600 }}>
+              joujou.restaurant
             </a>.
           </p>
         </div>
@@ -887,19 +886,10 @@ function Footer() {
               Kontakt
             </p>
             <p className="font-body" style={{ fontSize: "0.85rem", color: C.inkMuted, lineHeight: 1.8 }}>
+              Joujou GmbH<br />
               Hauptstraße 34, 67098 Bad Dürkheim<br />
-              <a href="https://maps.google.com/?q=Hauptstra%C3%9Fe+34,+67098+Bad+D%C3%BCrkheim" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "none", fontSize: "0.78rem" }}>
-                Route in Google Maps →
-              </a><br />
-              <a href="tel:+4963227906693" style={{ color: C.accentStrong, textDecoration: "none" }}>
-                +49 6322 7906693
-              </a><br />
               <a href="mailto:hallo@joujou-pfalz.de" style={{ color: C.accentStrong, textDecoration: "none" }}>
                 hallo@joujou-pfalz.de
-              </a><br />
-              <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                joujou.bistro
               </a>
             </p>
             <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkSoft, marginTop: "0.75rem", lineHeight: 1.6 }}>
@@ -914,7 +904,8 @@ function Footer() {
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkSoft, letterSpacing: "0.05em" }}>
             © 2026 petit joujou · Joujou Pfalz ·{" "}
             <a href="/impressum" style={{ color: C.accentStrong, textDecoration: "none" }}>Impressum</a>{" · "}
-            <a href="/datenschutz" style={{ color: C.accentStrong, textDecoration: "none" }}>Datenschutz</a>
+            <a href="/datenschutz" style={{ color: C.accentStrong, textDecoration: "none" }}>Datenschutz</a>{" · "}
+            <a href="/agb" style={{ color: C.accentStrong, textDecoration: "none" }}>AGB</a>
           </p>
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkSoft, letterSpacing: "0.05em", marginTop: "0.5rem" }}>
             Unsere weiteren Angebote findest du auf:{" "}
