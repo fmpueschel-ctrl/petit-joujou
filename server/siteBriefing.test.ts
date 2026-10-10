@@ -96,7 +96,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("keeps the fullscreen navigation usable and contrasted at every viewport size", () => {
-    expect(home).toContain('className="site-menu-overlay"');
+    expect(home).toContain('className="site-menu-overlay winebar-paper"');
     expect(home).toContain('className="font-display site-menu-link"');
     expect(home).toContain('aria-label={open ? "Menü schließen" : "Menü öffnen"}');
     expect(home).toContain('className="nav-menu-close-label"');
@@ -112,7 +112,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
   it("keeps the pale events layer opaque above the preceding photo strip", () => {
     expect(css).toMatch(/\.events-section\s*\{[^}]*isolation:\s*isolate;/s);
     expect(css).toMatch(/\.events-section\s*\{[^}]*overflow:\s*hidden;/s);
-    expect(css).toContain("background-color: #f2f7f4 !important;");
+    expect(css).toContain("background-color: #F5F0E6 !important;");
   });
 
   it("starts a plain reload at the hero while preserving intentional hash targets", () => {
@@ -139,7 +139,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(css).toContain("align-self: center;");
     expect(css).not.toContain("width: 45px;");
     expect(css).not.toMatch(/\.weinbar-icon\s*\{[^}]*position:\s*absolute/s);
-    expect(home).toContain('/manus-storage/petit-joujou-self-drawing_744a37eb.svg');
+    expect(home).toContain('/manus-storage/petit-joujou-hand-static_f02c319e.svg');
   });
 
   it("uses the Joujou family typography while preserving the petit wordmark", () => {
@@ -156,7 +156,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("keeps split content readable on large and ultrawide screens", () => {
-    expect(css).toMatch(/\.split-section \.split-content > :not\(\.weinbar-icon\) \{\s*width: 100%;/);
+    expect(css).toMatch(/\.split-section \.split-content > :not\(\.weinbar-icon\):not\(\.sr-only\) \{\s*width: 100%;/);
     expect(css).toContain("max-width: 680px;");
     expect(css).toContain("@media (min-width: 1800px)");
     expect(css).toContain("font-size: clamp(18px, 0.94vw, 36px);");

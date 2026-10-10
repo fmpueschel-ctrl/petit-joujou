@@ -2,20 +2,20 @@
    petit joujou — Shop „Coming Soon", in The-One-Identität
    Der Headless-Shop wird zu The One (eigenständig, theone.shop).
    Bis The One öffentlich ist, führen alle /shop-Links hierher.
-   Design: Büttenpapier + Tinte #1F3D5C + Clash Display/Archivo +
+   Design: Familienpapier + Tusche #22302A + Hausorange + Clash Display/Archivo +
    die echte Drei-Flaschen-Zeichnung (aus marketing\theone_shop_startseite.html),
    die rechte tritt deckend hervor — „es kann nur eines".
    Rückbau: in App.tsx die /shop-Routen wieder auf Shop/ProductDetail zeigen.
    ============================================================ */
 
-import { useEffect } from "react";
 import { Link } from "wouter";
 import TheOneComingSoonContent from "@/components/TheOneComingSoonContent";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { WINEBAR_THEME as C } from "@/lib/winebarTheme";
 
-const PAPIER = "#F5F0E6";
-const TINTE = "#1F3D5C";
-const TINTE_SOFT = "#5a7089";
+const PAPIER = C.paper;
+const TINTE = C.ink;
+const TINTE_SOFT = C.inkMuted;
 
 // Echte The-One-Flaschenkontur (Symbol #flasche-umriss)
 const BOTTLE_PATH =
@@ -26,8 +26,8 @@ function Bottle({ accent = false }: { accent?: boolean }) {
     <svg className={accent ? "tos-bottle tos-bottle--accent" : "tos-bottle"} viewBox="53 94.6 4.8 19.8" aria-hidden="true">
       <path
         d={BOTTLE_PATH}
-        fill={accent ? TINTE : "none"}
-        stroke={TINTE}
+        fill={accent ? C.accent : "none"}
+        stroke={accent ? C.accent : TINTE}
         strokeWidth="0.28"
         strokeLinecap="round"
       />
@@ -45,27 +45,15 @@ export default function ComingSoon() {
     ogDescription: "Es kann nur eines geben. Sei dabei, wenn The One öffnet.",
   });
 
-  useEffect(() => {
-    // Clash Display + Archivo (Fontshare) nur für diese Seite nachladen
-    const id = "theone-fontshare";
-    if (!document.getElementById(id)) {
-      const link = document.createElement("link");
-      link.id = id;
-      link.rel = "stylesheet";
-      link.href = "https://api.fontshare.com/v2/css?f[]=clash-display@600&f[]=archivo@300,400,500&display=swap";
-      document.head.appendChild(link);
-    }
-  }, []);
-
   return (
     <>
       <style>{`
-        .tos-nav{position:fixed;top:0;left:0;right:0;z-index:10;height:60px;padding:0 clamp(18px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(245,240,230,.94);border-bottom:1px solid rgba(31,61,92,.18);backdrop-filter:blur(12px)}
+        .tos-nav{position:fixed;top:0;left:0;right:0;z-index:10;height:60px;padding:0 clamp(18px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(245,240,230,.96);border-bottom:1px solid rgba(34,48,42,.18);backdrop-filter:blur(12px)}
         .tos-wordmark{color:${TINTE};font-family:'Dancing Script',cursive;font-size:24px;font-weight:600;line-height:1;text-decoration:none;white-space:nowrap}
-        .tos-nav-back{min-height:40px;padding:0 16px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(31,61,92,.5);color:${TINTE};font-family:'Archivo',system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
-        .tos-nav-back:hover,.tos-nav-back:focus-visible{background:${TINTE};color:${PAPIER}}
+        .tos-nav-back{min-height:40px;padding:0 16px;display:inline-flex;align-items:center;justify-content:center;border:1px solid ${C.accentStrong};color:${C.accentStrong};font-family:'Archivo',system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+        .tos-nav-back:hover,.tos-nav-back:focus-visible{background:${C.accentStrong};color:#fff}
         .tos-root{background:${PAPIER};color:${TINTE};min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(3rem + 60px) 1.5rem 3rem;position:relative;overflow:hidden;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-        .tos-grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.05;mix-blend-mode:multiply;z-index:0}
+        .tos-root.winebar-paper{background-image:var(--winebar-paper-grain)}
         .tos-wrap{position:relative;z-index:1;width:min(760px,100%)}
         .tos-bottles{display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,2.4vw,22px);margin-bottom:2rem}
         .tos-bottle{height:clamp(90px,15vh,130px);width:auto}
@@ -79,14 +67,7 @@ export default function ComingSoon() {
         <Link href="/" className="tos-nav-back">← Zurück zur Weinbar</Link>
       </header>
 
-      <section className="tos-root">
-        <svg className="tos-grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <filter id="tos-korn">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#tos-korn)" />
-        </svg>
-
+      <section className="tos-root winebar-paper">
         <div className="tos-wrap">
           <div className="tos-bottles" aria-hidden="true">
             <Bottle />

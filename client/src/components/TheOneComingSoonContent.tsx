@@ -1,4 +1,5 @@
 import RapidmailSignup from "./RapidmailSignup";
+import { WINEBAR_THEME as C } from "@/lib/winebarTheme";
 
 type TheOneComingSoonContentProps = {
   headingLevel?: "h1" | "h2";
@@ -12,9 +13,9 @@ export default function TheOneComingSoonContent({
   eagerNewsletter = false,
 }: TheOneComingSoonContentProps) {
   const Heading = headingLevel;
-  const headingColor = tone === "dark" ? "#ffffff" : "#1F3D5C";
-  const textColor = tone === "dark" ? "rgba(255,255,255,0.78)" : "rgba(31,61,92,0.82)";
-  const claimColor = tone === "dark" ? "#d4688a" : "#a13f65";
+  const headingColor = tone === "dark" ? C.paper : C.ink;
+  const textColor = tone === "dark" ? "rgba(245,240,230,0.84)" : C.inkMuted;
+  const claimColor = tone === "dark" ? C.accentLight : C.accentStrong;
 
   return (
     <div style={{ textAlign: "center", maxWidth: "760px", margin: "0 auto" }}>

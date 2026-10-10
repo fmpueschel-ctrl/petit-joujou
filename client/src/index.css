@@ -2,38 +2,36 @@
 
 /* ============================================================
    petit joujou — Global CSS
-   Palette: Pastellgrün + Dunkelgrün + Rosé + Orange
+   Palette: Familienpapier + Tusche + Hausorange + warme dunkle Sektionen
    ============================================================ */
 
 @theme {
-  /* Brand Colors — Pastellgrün + Sage + Rosé + Orange */
-  --color-sage-900: oklch(28% 0.05 160);        /* #2a4a3e Dunkelgrün */
-  --color-sage-700: oklch(38% 0.06 160);        /* #3a6a5a Sage mittel */
-  --color-sage-500: oklch(55% 0.06 160);        /* #6a9a8a Sage hell */
-  --color-sage-200: oklch(88% 0.03 160);        /* #dceee4 Pastellgrün */
-  --color-sage-100: oklch(95% 0.02 160);        /* #f2f7f4 Hintergrund */
-
-  --color-rose-400: oklch(63% 0.14 350);        /* #d4688a Rosé Akzent 1 */
-  --color-rose-500: oklch(55% 0.15 350);        /* #a84868 dunkleres Rosé */
-
-  --color-orange-300: oklch(78% 0.12 55);       /* #f4a87a helles Orange */
-  --color-orange-400: oklch(68% 0.15 45);       /* #ed7846 Orange Akzent 2 */
+  /* One house accent, family paper and ink; legacy aliases stay compatible. */
+  --color-sage-900: #29231F;
+  --color-sage-700: #A43D25;
+  --color-sage-500: #C9573B;
+  --color-sage-200: #E9E1D3;
+  --color-sage-100: #F5F0E6;
+  --color-rose-400: #C9573B;
+  --color-rose-500: #A43D25;
+  --color-orange-300: #E99677;
+  --color-orange-400: #C9573B;
 
   /* Semantic tokens */
-  --color-background: oklch(95% 0.02 160);
-  --color-foreground: oklch(20% 0.04 160);
-  --color-card: oklch(97% 0.01 160);
-  --color-card-foreground: oklch(20% 0.04 160);
-  --color-primary: oklch(63% 0.14 350);
-  --color-primary-foreground: oklch(98% 0.01 0);
-  --color-secondary: oklch(88% 0.03 160);
-  --color-secondary-foreground: oklch(28% 0.05 160);
-  --color-muted: oklch(90% 0.02 160);
-  --color-muted-foreground: oklch(45% 0.04 160);
-  --color-accent: oklch(68% 0.15 45);
-  --color-accent-foreground: oklch(98% 0.01 0);
-  --color-border: oklch(85% 0.03 160);
-  --color-ring: oklch(63% 0.14 350);
+  --color-background: #F5F0E6;
+  --color-foreground: #22302A;
+  --color-card: #FBF7EF;
+  --color-card-foreground: #22302A;
+  --color-primary: #A43D25;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #E9E1D3;
+  --color-secondary-foreground: #22302A;
+  --color-muted: #E9E1D3;
+  --color-muted-foreground: #555A52;
+  --color-accent: #C9573B;
+  --color-accent-foreground: #ffffff;
+  --color-border: #DAD2C4;
+  --color-ring: #C9573B;
 
   /* Typography */
   --font-display: "Clash Display", Arial, sans-serif;
@@ -46,25 +44,25 @@
 
 @layer base {
   :root {
-    --background: 95% 0.02 160;
-    --foreground: 20% 0.04 160;
-    --card: 97% 0.01 160;
-    --card-foreground: 20% 0.04 160;
-    --popover: 97% 0.01 160;
-    --popover-foreground: 20% 0.04 160;
-    --primary: 63% 0.14 350;
-    --primary-foreground: 98% 0.01 0;
-    --secondary: 88% 0.03 160;
-    --secondary-foreground: 28% 0.05 160;
-    --muted: 90% 0.02 160;
-    --muted-foreground: 45% 0.04 160;
-    --accent: 68% 0.15 45;
-    --accent-foreground: 98% 0.01 0;
+    --background: 95.6% 0.014 84;
+    --foreground: 29.7% 0.020 162;
+    --card: 97.6% 0.012 84;
+    --card-foreground: 29.7% 0.020 162;
+    --popover: 97.6% 0.012 84;
+    --popover-foreground: 29.7% 0.020 162;
+    --primary: 53.1% 0.147 35;
+    --primary-foreground: 100% 0 0;
+    --secondary: 91% 0.020 83;
+    --secondary-foreground: 29.7% 0.020 162;
+    --muted: 91% 0.020 83;
+    --muted-foreground: 46% 0.013 133;
+    --accent: 59.7% 0.149 35;
+    --accent-foreground: 100% 0 0;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 85% 0.03 160;
-    --input: 85% 0.03 160;
-    --ring: 63% 0.14 350;
+    --border: 86.6% 0.021 83;
+    --input: 86.6% 0.021 83;
+    --ring: 53.1% 0.147 35;
     --radius: 0.25rem;
   }
 
@@ -129,9 +127,9 @@
 .site-menu-return {
   flex: 0 0 auto;
   border: 0;
-  border-bottom: 1px solid #4a5a54;
+  border-bottom: 1px solid #555A52;
   background: transparent;
-  color: #4a5a54;
+  color: #555A52;
   padding: 6px 2px;
   font-size: 13px !important;
   line-height: 1.2;
@@ -199,7 +197,7 @@
 /* Divider */
 .divider-apricot {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #d4688a, transparent);
+  background: linear-gradient(90deg, transparent, #C9573B, transparent);
 }
 
 /* Price tag style */
@@ -394,7 +392,7 @@
 }
 
 /* Keep editorial copy compact and readable inside very wide 50/50 panels. */
-.split-section .split-content > :not(.weinbar-icon) {
+.split-section .split-content > :not(.weinbar-icon):not(.sr-only) {
   width: 100%;
   max-width: 680px;
   margin-left: auto;
@@ -448,7 +446,7 @@ div[id] {
   z-index: 1;
   isolation: isolate;
   overflow: hidden;
-  background-color: #f2f7f4 !important;
+  background-color: #F5F0E6 !important;
 }
 .events-section > .container {
   position: relative;
@@ -497,7 +495,7 @@ div[id] {
   .split-section .split-content {
     padding: 5rem clamp(5rem, 7vw, 11rem);
   }
-  .split-section .split-content > :not(.weinbar-icon) {
+  .split-section .split-content > :not(.weinbar-icon):not(.sr-only) {
     max-width: clamp(680px, 31vw, 1200px);
   }
   .hero-split .split-content > p:not(.sr-only) {
@@ -567,4 +565,41 @@ div[id] {
   .siegel-grid img {
     height: 45px !important;
   }
+}
+
+/* Joujou family paper: texture belongs to the surface, not to a page overlay.
+   This cannot cover photos, intercept clicks or leak into the next section. */
+:root {
+  --winebar-paper: #F5F0E6;
+  --winebar-ink: #22302A;
+  --winebar-accent: #C9573B;
+  --winebar-accent-strong: #A43D25;
+  --winebar-dark: #29231F;
+  --winebar-paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.085' filter='url(%23paper)'/%3E%3C/svg%3E");
+}
+.winebar-paper {
+  background-image: var(--winebar-paper-grain);
+  background-size: 240px 240px;
+}
+.winebar-dark {
+  color: var(--winebar-paper);
+  background-color: var(--winebar-dark);
+  background-image: radial-gradient(ellipse at 20% 0%, rgba(201, 87, 59, 0.09), transparent 70%);
+}
+.winebar-home .font-display {
+  font-weight: 600;
+}
+.winebar-home a:focus-visible,
+.winebar-home button:focus-visible,
+.winebar-home input:focus-visible,
+.winebar-home select:focus-visible,
+.winebar-home textarea:focus-visible {
+  outline: 2px solid var(--winebar-accent) !important;
+  outline-offset: 4px;
+}
+.site-menu-link:hover {
+  color: var(--winebar-accent-strong) !important;
+}
+.barn-season-note {
+  font-weight: 300;
 }
