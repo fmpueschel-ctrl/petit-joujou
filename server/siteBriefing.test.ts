@@ -23,8 +23,9 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("uses the approved shared The One copy and official rapidmail form 2274", () => {
-    expect(theOne).toContain("Shop | The One — bald");
-    expect(theOne).toContain("Bald wird aus unserem Shop etwas Eigenes");
+    expect(theOne).toContain("The One — der Online-Shop kommt bald.");
+    expect(theOne).toContain("Unsere Lieblingsprodukte, vom Salzstreuer bis zum Weinglas, findet ihr bald in unserem neuen Shop The One.");
+    expect(theOne).not.toContain("verlängerte Arm");
     expect(theOne).toContain("Sei dabei, wenn The One öffnet.");
     expect(theOne).toContain("bald unter theone.shop");
     expect(theOne).toContain("<RapidmailSignup compact eager={eagerNewsletter} />");

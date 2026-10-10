@@ -48,6 +48,13 @@ describe("Approved legal cleanup 2026-10-10", () => {
     expect(home).not.toContain('href="tel:');
     expect(read("client/src/pages/Impressum.tsx")).toContain("Telefon: +49 6322 7906693");
   });
+  it("places the complete supplied physical accessibility notice next to parking information", () => {
+    const footer = home.slice(home.indexOf("function Footer()"), home.indexOf("// ── Page"));
+    const copy = "Barrierefreiheit: Unser historisches Haus ist leider nicht barrierefrei. An den Eingängen gibt es Stufen oder kleine Schwellen, der Gewölbekeller ist nur über eine Treppe erreichbar, und unsere Toiletten sind nicht rollstuhlgerecht (enge Türen). Kommt ihr mit eingeschränkter Mobilität, meldet euch vorher kurz bei uns — wir helfen, wo wir können, und finden gemeinsam die beste Lösung.";
+    expect(footer).toContain(copy);
+    expect(footer.indexOf(copy)).toBeGreaterThan(footer.indexOf("Parkplätze direkt am Haus. Anfahrt über die B271."));
+    expect(footer.indexOf(copy)).toBeLessThan(footer.indexOf("{/* Newsletter Signup */}"));
+  });
   it("updates the events link, permits zoom and describes the orange hand", () => {
     expect(home).not.toContain("joujou-pfalz.de/events");
     expect(read("client/index.html")).toContain('content="width=device-width, initial-scale=1"');

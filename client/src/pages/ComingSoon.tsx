@@ -38,10 +38,10 @@ function Bottle({ accent = false }: { accent?: boolean }) {
 
 export default function ComingSoon() {
   usePageMeta({
-    title: "Shop | The One — bald | petit joujou",
-    description: "The One wird der eigenständige Shop von petit joujou. Melde dich zum Newsletter an und erfahre zuerst, wann The One öffnet.",
+    title: "The One — der Online-Shop kommt bald. | petit joujou",
+    description: "Unsere Lieblingsprodukte, vom Salzstreuer bis zum Weinglas, findet ihr bald in unserem neuen Shop The One.",
     canonical: "https://www.petit-joujou.de/shop",
-    ogTitle: "Shop | The One — bald",
+    ogTitle: "The One — der Online-Shop kommt bald.",
     ogDescription: "Es kann nur eines geben. Sei dabei, wenn The One öffnet.",
   });
 

@@ -40,7 +40,7 @@ export default function TheOneComingSoonContent({
           margin: "0 0 1.5rem",
         }}
       >
-        Shop | The One — bald
+        The One — der Online-Shop kommt bald.
       </Heading>
       <div
         className="font-body"
@@ -52,11 +52,8 @@ export default function TheOneComingSoonContent({
           margin: "0 auto 2rem",
         }}
       >
-        <p style={{ margin: "0 0 1rem" }}>
-          Bald wird aus unserem Shop etwas Eigenes: The One, der verlängerte Arm unseres Stammhauses. Für alle, die nicht immer zu uns kommen können, aber ihr Stück Joujou mit nach Hause nehmen wollen.
-        </p>
         <p style={{ margin: 0 }}>
-          Hier, wo alles begann und wo wir bis heute live testen und feiern, wählen wir das Eine je Kategorie: das, bei dem Preis, Genuss, Design und Funktion am besten zusammenkommen.
+          Unsere Lieblingsprodukte, vom Salzstreuer bis zum Weinglas, findet ihr bald in unserem neuen Shop The One.
         </p>
       </div>
       <p

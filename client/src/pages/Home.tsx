@@ -895,6 +895,9 @@ function Footer() {
             <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkSoft, marginTop: "0.75rem", lineHeight: 1.6 }}>
               Parkplätze direkt am Haus. Anfahrt über die B271.
             </p>
+            <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkMuted, marginTop: "0.75rem", lineHeight: 1.7 }}>
+              Barrierefreiheit: Unser historisches Haus ist leider nicht barrierefrei. An den Eingängen gibt es Stufen oder kleine Schwellen, der Gewölbekeller ist nur über eine Treppe erreichbar, und unsere Toiletten sind nicht rollstuhlgerecht (enge Türen). Kommt ihr mit eingeschränkter Mobilität, meldet euch vorher kurz bei uns — wir helfen, wo wir können, und finden gemeinsam die beste Lösung.
+            </p>
           </div>
         </div>
         {/* Newsletter Signup */}

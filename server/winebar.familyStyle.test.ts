@@ -89,7 +89,7 @@ describe("Joujou family style 2026-10-10", () => {
     expect(home).toContain("services.gastronovi.com/restaurants/68135/reservation/widget/entry/reservation?area=Joujou+Weinbar");
     expect(home).toContain("{iframeConsent ? (");
     expect(home).toContain("<RapidmailSignup compact />");
-    expect(teaser).toContain("Shop | The One — bald");
+    expect(teaser).toContain("The One — der Online-Shop kommt bald.");
     expect(teaser).toContain("<RapidmailSignup compact eager={eagerNewsletter} />");
     expect(comingSoon).toContain("← Zurück zur Weinbar");
   });
