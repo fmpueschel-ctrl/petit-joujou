@@ -100,15 +100,6 @@ export default function Datenschutz() {
 
           <section style={{ marginBottom: "2.5rem" }}>
             <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
-              9. Technisch notwendige Speicherung (localStorage)
-            </h2>
-            <p>
-              Unser Shop speichert eine Warenkorb-ID im localStorage Ihres Browsers (Schlüssel: „commerce:cart-id"). Dies ist technisch notwendig, um Ihren Warenkorb sitzungsübergreifend zu erhalten. Es werden keine Cookies gesetzt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Funktionsfähigkeit des Shops).
-            </p>
-          </section>
-
-          <section style={{ marginBottom: "2.5rem" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#1e3a3a", marginBottom: "0.75rem", letterSpacing: "0.05em" }}>
               10. Ihre Rechte
             </h2>
             <p style={{ marginBottom: "1rem" }}>

@@ -34,11 +34,12 @@ describe("Approved legal cleanup 2026-10-10", () => {
     expect(home.slice(home.indexOf("function Footer()"))).toContain('href="/agb"');
     expect(read("client/src/pages/Impressum.tsx")).toContain('href="/agb"');
   });
-  it("removes only obsolete privacy services while retaining the still-coded cart storage notice", () => {
+  it("removes obsolete privacy services and the inactive cart storage notice", () => {
     for (const old of ["Shopify", "Spreadconnect", "Stripe"]) expect(privacy).not.toContain(old);
-    for (const remaining of ["Manus", "Umami", "Gastronovi", "rapidmail", "CaptchaFox", "commerce:cart-id"]) expect(privacy).toContain(remaining);
-    expect(read("client/src/contexts/CartContext.tsx")).toContain("window.localStorage.setItem(CART_STORAGE_KEY, value)");
-    expect(read("client/src/main.tsx")).toContain("<CartProvider>");
+    for (const remaining of ["Manus", "Umami", "Gastronovi", "rapidmail", "CaptchaFox"]) expect(privacy).toContain(remaining);
+    expect(privacy).not.toContain("commerce:cart-id");
+    expect(privacy).not.toContain("9. Technisch notwendige Speicherung");
+    expect(read("client/src/main.tsx")).not.toContain("CartProvider");
   });
   it("shows company, address and email but no phone in the footer", () => {
     const footer = home.slice(home.indexOf("function Footer()"), home.indexOf("// ── Page"));
@@ -47,6 +48,13 @@ describe("Approved legal cleanup 2026-10-10", () => {
     expect(footer).toContain('href="mailto:hallo@joujou-pfalz.de"');
     expect(home).not.toContain('href="tel:');
     expect(read("client/src/pages/Impressum.tsx")).toContain("Telefon: +49 6322 7906693");
+  });
+  it("restores Maps to the house address and Instagram without reintroducing the phone link", () => {
+    const footer = home.slice(home.indexOf("function Footer()"), home.indexOf("// ── Page"));
+    expect(footer).toContain('href="https://maps.google.com/?q=Hauptstra%C3%9Fe+34,+67098+Bad+D%C3%BCrkheim" target="_blank" rel="noopener noreferrer"');
+    expect(footer).toContain("Route in Google Maps");
+    expect(footer).toContain('href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer"');
+    expect(footer).not.toContain('href="tel:');
   });
   it("places the complete supplied physical accessibility notice next to parking information", () => {
     const footer = home.slice(home.indexOf("function Footer()"), home.indexOf("// ── Page"));
