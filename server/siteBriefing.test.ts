@@ -71,7 +71,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("keeps Friday-only afternoon opening and weekend hours consistent everywhere", () => {
-    expect(home).toContain("Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr · Mo–Do geschlossen");
+    expect(home).toContain("Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen");
     const footer = home.slice(home.indexOf("function Footer()"));
     expect(footer).toContain('["Fr", "ab 16:00 Uhr"]');
     expect(footer).toContain('["Sa & So", "ab 12:00 Uhr"]');
@@ -87,7 +87,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("keeps the complete reservation explanation and cancellation rules on the page", () => {
-    expect(home).toContain("Für die Weinbar bucht ihr hier euren Tisch.");
+    expect(home).toContain("Alles läuft über ein Fenster.");
     expect(home).toContain("darunter eure IP-Adresse");
     expect(home).toContain("Wenn etwas dazwischenkommt");
     expect(home).toContain("30 Euro pro Person beim Brunch, 50 Euro am Abend.");

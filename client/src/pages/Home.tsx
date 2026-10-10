@@ -467,12 +467,22 @@ function ReservierungUndGesellschaftenSection() {
                 Weinbar
               </h2>
               <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMuted, marginTop: "0.75rem", lineHeight: 1.7 }}>
-                Für die Weinbar bucht ihr hier euren Tisch. Wir setzen euch nach Wetterlage drinnen oder draußen — sagt uns gern, was euch lieber ist.
+                Alles läuft über ein Fenster. Ihr wählt den Bereich „Joujou Weinbar", die Zahl der Gäste, Tag und Uhrzeit — den Rest machen wir.
               </p>
               <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMuted, marginTop: "0.5rem" }}>
-                Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr · Mo–Do geschlossen
+                Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen
               </p>
             </div>
+            <ol className="schritte font-body">
+              <li><strong>Bereich wählen.</strong> Wählt „Joujou Weinbar". „Joujou Restaurant" und „Yoga &amp; Brunch" sind die Bereiche nebenan.</li>
+              <li><strong>Personenzahl, Tag und Uhrzeit wählen.</strong> Ist eure Wunschzeit belegt, schlägt euch das Fenster andere Zeiten und den nächsten freien Tag vor.</li>
+              <li><strong>Namen und Kontakt eintragen.</strong> Besonderheiten wie Unverträglichkeiten oder Hund gehören ins Feld „Anmerkung" — dann wissen wir es vorher.</li>
+              <li><strong>Bestätigung abwarten.</strong> Ihr bekommt sie sofort per E-Mail, mit Termin zum Eintragen in den Kalender. Kommt nichts an, schaut in den Spam-Ordner oder ruft uns an.</li>
+            </ol>
+            <p className="hinweis font-body"><strong>Drinnen oder draußen:</strong> Garten oder drinnen ist ein Wunsch, keine feste Zusage — notiert ihn trotzdem gern; bei schlechtem Wetter sitzt niemand draußen.</p>
+            <p className="hinweis font-body"><strong>Veranstaltungen:</strong> Besondere Abende finden derzeit im Joujou Restaurant statt — Termine und Tickets auf <a href="https://joujou-pfalz.de/events" target="_blank" rel="noopener noreferrer">joujou-pfalz.de/events</a>.</p>
+            <p className="hinweis font-body"><strong>Brot und Kuchen für daheim:</strong> vorab im <a href="https://thepurebakery.shop/" target="_blank" rel="noopener noreferrer">Onlineshop der Pure Bakery</a> zur Abholung bestellen.</p>
+            <p className="hinweis font-body"><strong>Große Runden und Feiern:</strong> ab acht Personen lieber direkt — über unser <a href="#gesellschaften">Anfrageformular weiter unten (Private Abende)</a> oder <a href="mailto:hallo@joujou-pfalz.de">per Mail</a>.</p>
             <div style={{ backgroundColor: C.paper, border: `1px solid ${C.border}`, overflow: "hidden" }}>
               {iframeConsent ? (
                 <iframe

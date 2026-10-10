@@ -661,3 +661,56 @@ div[id] {
     grid-column: 1 / -1;
   }
 }
+
+/* Shared Joujou reservation explanation; existing consent widget stays intact. */
+#reservierung-widget .schritte {
+  counter-reset: schritt;
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  max-width: 640px;
+  color: var(--color-muted-foreground);
+}
+#reservierung-widget .schritte li {
+  counter-increment: schritt;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+#reservierung-widget .schritte li::before {
+  content: counter(schritt);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--winebar-accent-strong);
+}
+#reservierung-widget .hinweis {
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 12px;
+  color: var(--color-muted-foreground);
+}
+#reservierung-widget .schritte strong,
+#reservierung-widget .hinweis strong {
+  font-weight: 600;
+  color: var(--winebar-ink);
+}
+#reservierung-widget .hinweis a {
+  color: var(--winebar-accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#reservierung-widget .hinweis + div {
+  margin-top: 28px;
+}
