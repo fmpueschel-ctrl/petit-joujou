@@ -24,8 +24,8 @@ export default function AGB() {
 <p>{"Diese Bedingungen gelten für alle Verträge zwischen dir und der "}<b>{"Joujou GmbH"}</b>{",\n    Hauptstraße 34, 67098 Bad Dürkheim (Leistadt) — also für das Joujou Restaurant, die\n    Weinbar petit joujou, unsere Veranstaltungen und unsere Gutscheine."}</p>
 <p>{"Wenn du bei uns reservierst, einen Platz bei einer Veranstaltung buchst oder einen\n    Gutschein kaufst, gelten sie in der Fassung, die zu diesem Zeitpunkt auf unserer Seite\n    steht. Eigene Bedingungen von Gästen gelten nur, wenn wir ihnen schriftlich zustimmen."}</p>
 <h2>{"2. Reservierung"}</h2>
-<p>{"Reservieren kannst du über unser Reservierungsfenster, per E-Mail oder am Telefon.\n    Der Vertrag kommt zustande, sobald wir deine Reservierung bestätigen — im Fenster\n    passiert das sofort per E-Mail. Kommt keine Bestätigung an, schau bitte in den\n    Spam-Ordner oder melde dich bei uns."}</p>
-<p>{"Wir halten den Tisch nach der vereinbarten Zeit noch eine angemessene Zeit frei. Wenn\n    es später wird, ruf uns kurz an — dann halten wir ihn, so gut es geht."}</p>
+<p>{"Reservieren kannst du über unser Reservierungsfenster oder per E-Mail.\n    Der Vertrag kommt zustande, sobald wir deine Reservierung bestätigen — im Fenster\n    passiert das sofort per E-Mail. Kommt keine Bestätigung an, schau bitte in den\n    Spam-Ordner oder melde dich bei uns."}</p>
+<p>{"Wir halten den Tisch nach der vereinbarten Zeit noch eine angemessene Zeit frei. Wenn\n    es später wird, sag uns kurz Bescheid — dann halten wir ihn, so gut es geht."}</p>
 <p>{"Ob ihr drinnen oder draußen sitzt, können wir nicht fest zusagen. Wir setzen euch nach\n    Wetter und Besetzung; euren Wunsch notieren wir gern."}</p>
 <h2>{"3. Wenn etwas dazwischenkommt"}</h2>
 <p>{"Sag uns bitte Bescheid, wenn du deine Reservierung nicht wahrnehmen kannst oder sich\n    die Zahl der Gäste ändert. Bis "}<b>{"24 Stunden"}</b>{" vor dem Termin ist das jederzeit\n    kostenfrei möglich."}</p>
