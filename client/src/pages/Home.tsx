@@ -897,6 +897,9 @@ function Footer() {
               <a href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 joujou.bistro
+              </a>{" · "}
+              <a href="https://www.tiktok.com/@thepurebakery" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "none" }}>
+                TikTok @thepurebakery
               </a>
             </p>
             <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkSoft, marginTop: "0.75rem", lineHeight: 1.6 }}>
@@ -920,6 +923,11 @@ function Footer() {
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkSoft, letterSpacing: "0.05em", marginTop: "0.5rem" }}>
             Unsere weiteren Angebote findest du auf:{" "}
             <a href="https://www.joujou-pfalz.de" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "none" }}>www.joujou-pfalz.de</a>
+          </p>
+          <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkSoft, letterSpacing: "0.05em", marginTop: "0.5rem", lineHeight: 1.8 }}>
+            <a href="https://thepurebakery.shop" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "none" }}>The Pure Bakery</a>{" · "}
+            <a href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "none" }}>Joujou Restaurant</a>{" · "}
+            <span>The One — bald</span>
           </p>
         </div>
       </div>

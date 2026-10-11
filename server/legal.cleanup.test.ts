@@ -18,21 +18,30 @@ describe("Approved legal cleanup 2026-10-10", () => {
   const home = read("client/src/pages/Home.tsx");
   const agb = renderToStaticMarkup(React.createElement(AGB));
   const privacy = renderToStaticMarkup(React.createElement(Datenschutz));
-  it("copies the complete original AGB main text verbatim including all eleven headings", () => {
+  it("copies the complete original AGB main text verbatim including all twelve headings", () => {
     const original = read("server/fixtures/joujou-agb-2026-10.html");
     const main = agb.match(/<main[^>]*>([\s\S]*?)<\/main>/)![1];
     expect(plain(main)).toBe(plain(original));
-    expect(main.match(/<h2>/g)).toHaveLength(11);
+    expect(main.match(/<h2(?:\s[^>]*)?>/g)).toHaveLength(12);
     for (const fragment of ["14 Tage", "13 bis 7 Tage", "ab 6 Tagen", "50 Prozent des Preises", "der volle Preis", "Stand: Oktober 2026"]) expect(plain(main)).toContain(fragment);
   });
   it("uses the local AGB title and removes shop terms and withdrawal links", () => {
     expect(read("client/src/pages/AGB.tsx")).toContain('title: "Allgemeine Geschäftsbedingungen — petit joujou"');
-    for (const old of ["Shop Pay", "Checkout", "Eigentumsvorbehalt", "Widerrufsbelehrung", "href=\"/widerruf\""]) expect(agb).not.toContain(old);
+    for (const old of ["Shop Pay", "Checkout", "Eigentumsvorbehalt", "href=\"/widerruf\""]) expect(agb).not.toContain(old);
     expect(read("client/src/App.tsx")).not.toContain('path={"/widerruf"}');
     expect(read("server/_core/index.ts")).not.toContain('loc: "/widerruf"');
     expect(home).not.toContain("joujou-pfalz.de/agb");
     expect(home.slice(home.indexOf("function Footer()"))).toContain('href="/agb"');
     expect(read("client/src/pages/Impressum.tsx")).toContain('href="/agb"');
+  });
+  it("preserves the voucher withdrawal instructions including Sie address, phone and source anchors", () => {
+    expect(agb).toContain('<h2 id="widerruf">7. Widerruf beim Kauf von Gutscheinen</h2>');
+    expect(agb).toContain('<h2 id="storno">');
+    expect(agb).toContain('<h2 id="veranstaltungen">');
+    for (const fragment of ["Widerrufsbelehrung", "Muster-Widerrufsformular", "Sie haben das Recht, binnen vierzehn Tagen", "Telefon +49 6322 7906693", "Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)", "(*) Unzutreffendes streichen."]) expect(plain(agb)).toContain(fragment);
+    expect(plain(agb)).toContain("Reservieren kannst du über unser Reservierungsfenster oder per E-Mail.");
+    expect(plain(agb)).toContain("Wenn es später wird, sag uns kurz Bescheid — dann halten wir ihn, so gut es geht.");
+    expect(plain(agb)).not.toContain("per E-Mail oder am Telefon");
   });
   it("removes obsolete privacy services and the inactive cart storage notice", () => {
     for (const old of ["Shopify", "Spreadconnect", "Stripe"]) expect(privacy).not.toContain(old);
@@ -55,6 +64,17 @@ describe("Approved legal cleanup 2026-10-10", () => {
     expect(footer).toContain("Route in Google Maps");
     expect(footer).toContain('href="https://www.instagram.com/joujou.bistro" target="_blank" rel="noopener noreferrer"');
     expect(footer).not.toContain('href="tel:');
+  });
+  it("names both linked siblings and unlinked The One while preserving the umbrella and Instagram", () => {
+    const footer = home.slice(home.indexOf("function Footer()"), home.indexOf("// ── Page"));
+    expect(footer).toContain('href="https://thepurebakery.shop" target="_blank" rel="noopener noreferrer"');
+    expect(footer).toContain('href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer"');
+    expect(footer).toContain('<span>The One — bald</span>');
+    expect(footer).not.toMatch(/href=["'][^"']*theone\.shop/);
+    expect(footer).toContain('href="https://www.joujou-pfalz.de"');
+    expect(footer).toContain('href="https://www.instagram.com/joujou.bistro"');
+    expect(footer).toContain('href="https://www.tiktok.com/@thepurebakery" target="_blank" rel="noopener noreferrer"');
+    expect(footer).toContain("TikTok @thepurebakery");
   });
   it("places the complete supplied physical accessibility notice next to parking information", () => {
     const footer = home.slice(home.indexOf("function Footer()"), home.indexOf("// ── Page"));
