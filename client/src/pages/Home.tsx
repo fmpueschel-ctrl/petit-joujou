@@ -387,10 +387,10 @@ function GartenSection() {
           height={800}
         />
         <img loading="lazy"
-          src="/manus-storage/20260802_214909_f13ce581.jpg"
-          alt="Joujou Fassade bei Nacht — neues Glasfenster im Tor"
-          width={4000}
-          height={3000}
+          src="/manus-storage/petit-joujou-lampenreihe_cda90d12.webp"
+          alt="Warme Korbleuchten in einer Reihe entlang der Steinwand im Joujou-Hof am Abend"
+          width={1600}
+          height={1200}
         />
       </div>
     </section>
