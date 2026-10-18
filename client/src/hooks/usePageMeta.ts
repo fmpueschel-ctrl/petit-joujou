@@ -40,7 +40,7 @@ export function usePageMeta(meta: PageMeta) {
     // Cleanup: restore defaults on unmount
     return () => {
       document.title = "petit joujou — Weinbar Bad Dürkheim Pfalz | Bio-Weine, Entrecôte, Steak & Events";
-      if (descEl) descEl.setAttribute("content", "petit joujou — Weinbar in Bad Dürkheim, Pfalz. 500 Bio-Weine im Gewölbekeller von 1709. Sharing-Küche, Entrecôte & Pinsa. Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr · Mo–Do geschlossen.");
+      if (descEl) descEl.setAttribute("content", "petit joujou — Weinbar in Bad Dürkheim, Pfalz. 500 Bio-Weine im Gewölbekeller von 1709. Sharing-Küche, Entrecôte & Pinsa. Do & Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr · Mo–Mi geschlossen.");
       const link = document.querySelector('link[rel="canonical"]');
       if (link) link.setAttribute("href", "https://www.petit-joujou.de/");
       if (ogTitleEl) ogTitleEl.setAttribute("content", "petit joujou — Weinbar Bad Dürkheim Pfalz");

@@ -1,0 +1,106 @@
+.steak-announcement {
+  width: 100%;
+  background: #C9573B;
+  color: #FFF9F2;
+}
+
+.steak-announcement__inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 16px;
+}
+
+.steak-announcement__content {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.steak-announcement__text {
+  margin: 0;
+  color: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.steak-announcement__menu-link {
+  flex: 0 0 auto;
+  color: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-underline-offset: 3px;
+}
+
+.steak-announcement__menu-link:hover {
+  color: #FFFFFF;
+}
+
+.steak-announcement__close {
+  display: inline-grid;
+  flex: 0 0 44px;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: #FFF9F2;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.steak-announcement__close:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+}
+
+.winebar-home .steak-announcement__close:focus-visible,
+.winebar-home .steak-announcement__menu-link:focus-visible {
+  outline: 3px solid #FFFFFF !important;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .steak-announcement__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: start;
+    gap: 8px;
+    padding: 6px 12px;
+  }
+
+  .steak-announcement__content {
+    display: block;
+    padding: 7px 0;
+    line-height: 1.4;
+  }
+
+  .steak-announcement__text {
+    display: inline;
+    text-align: left;
+  }
+
+  .steak-announcement__menu-link {
+    display: inline;
+    margin-left: 8px;
+  }
+
+  .steak-announcement__close {
+    align-self: center;
+  }
+}

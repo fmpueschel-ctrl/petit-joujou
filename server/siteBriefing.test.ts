@@ -71,20 +71,22 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(events).not.toContain("instagram.com");
   });
 
-  it("keeps Friday-only afternoon opening and weekend hours consistent everywhere", () => {
-    expect(home).toContain("Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen");
+  it("keeps Thursday/Friday afternoon opening and weekend hours consistent everywhere", () => {
+    expect(home).toContain("Donnerstag und Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Mittwoch geschlossen");
     const footer = home.slice(home.indexOf("function Footer()"));
-    expect(footer).toContain('["Fr", "ab 16:00 Uhr"]');
+    expect(footer).toContain('["Do & Fr", "ab 16:00 Uhr"]');
     expect(footer).toContain('["Sa & So", "ab 12:00 Uhr"]');
-    expect(footer).toContain('["Mo–Do", "geschlossen"]');
-    expect(home).not.toContain("Do & Fr ab");
+    expect(footer).toContain('["Mo–Mi", "geschlossen"]');
+    expect(home).not.toContain("Montag bis Donnerstag geschlossen");
     const business = JSON.parse(indexHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]);
     expect(business.openingHoursSpecification.map((hours: { dayOfWeek: string[]; opens: string }) => ({ days: hours.dayOfWeek, opens: hours.opens }))).toEqual([
+      { days: ["Thursday"], opens: "16:00" },
       { days: ["Friday"], opens: "16:00" },
       { days: ["Saturday", "Sunday"], opens: "12:00" },
     ]);
-    expect(indexHtml).not.toContain("Do–Fr ab 16");
-    expect(read("client/src/hooks/usePageMeta.ts")).not.toContain("Do–Fr ab 16");
+    expect(business.openingHoursSpecification[0].validFrom).toBe("2026-10-22");
+    expect(indexHtml).toContain("Do & Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr · Mo–Mi geschlossen");
+    expect(read("client/src/hooks/usePageMeta.ts")).toContain("Do & Fr ab 16:00 Uhr · Sa & So ab 12:00 Uhr · Mo–Mi geschlossen");
   });
 
   it("keeps the complete reservation explanation and cancellation rules on the page", () => {
@@ -106,7 +108,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(home).toContain('className="font-body site-menu-return"');
     expect(home).toContain("Zurück zur Seite");
     expect(home).toContain("document.body.style.overflow = \"hidden\"");
-    expect(css).toContain("height: calc(100dvh - 60px);");
+    expect(css).toContain("height: calc(100dvh - var(--winebar-header-height, 60px));");
     expect(css).toContain("font-size: clamp(22px, 4vh, 44px) !important;");
     expect(css).toMatch(/\.nav-menu-close\s*\{[^}]*color:\s*#fff;/s);
     expect(css).toContain("min-width: 112px;");

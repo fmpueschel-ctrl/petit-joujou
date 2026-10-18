@@ -3,17 +3,37 @@
    klein. fein. wein.
    ============================================================ */
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import RapidmailSignup from "@/components/RapidmailSignup";
 import TheOneComingSoonContent from "@/components/TheOneComingSoonContent";
+import SteakAnnouncement from "@/components/SteakAnnouncement";
+import { STEAK_EVENING_MENU_URL } from "@/lib/steakEvening";
 
 import { WINEBAR_THEME as C } from "@/lib/winebarTheme";
 
 // ── Nav ──────────────────────────────────────────────────────
 function Nav() {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    const root = document.documentElement;
+    const previousHeight = root.style.getPropertyValue("--winebar-header-height");
+    const updateHeight = () => {
+      root.style.setProperty("--winebar-header-height", `${header.getBoundingClientRect().height}px`);
+    };
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(header);
+    return () => {
+      observer.disconnect();
+      if (previousHeight) root.style.setProperty("--winebar-header-height", previousHeight);
+      else root.style.removeProperty("--winebar-header-height");
+    };
+  }, []);
   const links = [
     { label: "Weinkeller", href: "#weinkeller" },
     { label: "Scheune", href: "#scheune" },
@@ -41,6 +61,7 @@ function Nav() {
   return (
     <>
       <nav
+        ref={headerRef}
         className="fixed top-0 left-0 right-0 z-50"
         style={{
           backgroundColor: "rgba(34,48,42,0.96)",
@@ -48,6 +69,7 @@ function Nav() {
           borderBottom: "1px solid rgba(255,255,255,0.15)",
         }}
       >
+        <SteakAnnouncement menuHref={STEAK_EVENING_MENU_URL} />
         <div className="container flex items-center justify-between" style={{ height: "60px" }}>
           <a href="#" className="winebar-brandmark" onClick={() => setOpen(false)} style={{ textDecoration: "none", flexShrink: 0 }}>
             <span className="font-script" style={{ fontSize: "clamp(1.2rem, 4vw, 1.7rem)", color: "#ffffff", letterSpacing: "0.02em", whiteSpace: "nowrap" }}>
@@ -221,6 +243,17 @@ function Hero() {
             >
               Weinkarte
             </a>
+            {STEAK_EVENING_MENU_URL && (
+              <a
+                href={STEAK_EVENING_MENU_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body steak-evening-menu-button"
+                style={{ padding: "0.75rem 2rem", border: `1px solid ${C.accentStrong}`, color: C.accentStrong, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
+              >
+                Donnerstag · Steak-Abend
+              </a>
+            )}
             <a
               href="/shop"
               className="font-body"
@@ -474,7 +507,7 @@ function ReservierungUndGesellschaftenSection() {
             <p className="hinweis font-body"><strong>Brot und Kuchen für daheim:</strong> Backwaren aus unserer Bio-Backmanufaktur bestellt ihr am besten vorab zur Abholung im <a href="https://thepurebakery.shop/" target="_blank" rel="noopener noreferrer">Onlineshop der Pure Bakery</a>.</p>
             <p className="hinweis font-body"><strong>Große Runden und Feiern:</strong> Ab acht Personen oder für einen eigenen Abend schreibt uns lieber direkt an <a href="mailto:hallo@joujou-pfalz.de">hallo@joujou-pfalz.de</a>.</p>
             <p className="font-body" style={{ fontSize: "0.9rem", color: C.inkMuted, marginTop: "1.5rem", marginBottom: "1.5rem", lineHeight: 1.7 }}>
-              Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen
+              Donnerstag und Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Mittwoch geschlossen
             </p>
             <div style={{ backgroundColor: C.paper, border: `1px solid ${C.border}`, overflow: "hidden" }}>
               {iframeConsent ? (
@@ -797,6 +830,9 @@ src="/manus-storage/20260725_203546_1de1a1ad.jpg"
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMuted, lineHeight: 1.8, marginBottom: "1.5rem" }}>
                 Dry-Aged Entrecôte · puristisch · 100-Gramm-weise · Signature Cut
               </p>
+              <p className="font-body" style={{ fontSize: "0.95rem", color: C.accentStrong, fontWeight: 600, marginBottom: "1.5rem" }}>
+                Jetzt jeden Donnerstag: Steak-Abend.
+              </p>
               <a href="/manus-storage/einleger_entrecote_c0034170.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
                 Mehr erfahren
               </a>
@@ -871,9 +907,9 @@ function Footer() {
               Öffnungszeiten
             </p>
             {[
-              ["Fr", "ab 16:00 Uhr"],
+              ["Do & Fr", "ab 16:00 Uhr"],
               ["Sa & So", "ab 12:00 Uhr"],
-              ["Mo–Do", "geschlossen"],
+              ["Mo–Mi", "geschlossen"],
             ].map(([day, time]) => (
               <div key={day} style={{ display: "flex", gap: "0.75rem", marginBottom: "0.4rem" }}>
                 <span className="font-body" style={{ fontSize: "0.85rem", color: C.inkMuted, minWidth: "5rem" }}>{day}</span>

@@ -28,7 +28,7 @@ describe("Final shared Joujou reservation explanation", () => {
     expect(prefix).toContain("Tisch reservieren");
     expect(prefix).not.toContain("<p ");
     expect(section).not.toContain("Alles läuft über ein Fenster.");
-    const markers = ["Tisch reservieren", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "Freitag ab 16 Uhr", "{iframeConsent ? (", "Außerdem im selben Fenster: Gutschein kaufen", "Wenn etwas dazwischenkommt"];
+    const markers = ["Tisch reservieren", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "Donnerstag und Freitag ab 16 Uhr", "{iframeConsent ? (", "Außerdem im selben Fenster: Gutschein kaufen", "Wenn etwas dazwischenkommt"];
     const indices = markers.map(marker => section.indexOf(marker));
     expect(indices.every(index => index >= 0)).toBe(true);
     expect(indices).toEqual([...indices].sort((a, b) => a - b));
@@ -58,7 +58,7 @@ describe("Final shared Joujou reservation explanation", () => {
     expect(section).toContain("30 Euro pro Person beim Brunch, 50 Euro am Abend.");
   });
   it("preserves hours and offers only the voucher in the post-window line", () => {
-    expect(section).toContain("Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Donnerstag geschlossen");
+    expect(section).toContain("Donnerstag und Freitag ab 16 Uhr · Samstag und Sonntag ab 12 Uhr · Montag bis Mittwoch geschlossen");
     const voucher = section.slice(section.indexOf("Außerdem im selben Fenster:"), section.indexOf("Wenn etwas dazwischenkommt"));
     expect(voucher).toContain("Gutschein kaufen");
     expect(voucher).not.toContain("Veranstaltungen");
