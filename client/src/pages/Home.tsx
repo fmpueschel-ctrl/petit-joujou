@@ -186,8 +186,11 @@ function Hero() {
           />
 
           {/* Kurzbeschreibung */}
-          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMuted, lineHeight: 1.85, marginBottom: "2.5rem", maxWidth: "380px" }}>
+          <p className="font-body" style={{ fontSize: "1rem", color: C.inkMuted, lineHeight: 1.85, marginBottom: "1rem", maxWidth: "380px" }}>
             <span style={{ fontWeight: 700, color: C.ink }}>Die Weinbar im Joujou.</span> Wir möchten euch verzaubern. Schnappt euch eine Flasche Wein, genießt die Sharing-Kreationen von Chef Franz und vergesst einfach die Zeit.
+          </p>
+          <p className="hero-season-note font-body" style={{ fontSize: "0.84rem", color: C.inkMuted, lineHeight: 1.7, maxWidth: "430px", marginBottom: "2.5rem", paddingLeft: "0.9rem", borderLeft: `2px solid ${C.accentStrong}` }}>
+            An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.
           </p>
 
           {/* CTAs */}
@@ -507,9 +510,6 @@ function ReservierungUndGesellschaftenSection() {
               <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink }}>
                 Tisch reservieren
               </h2>
-              <p className="reservation-season-note font-body" style={{ fontSize: "0.9rem", color: C.inkMuted, marginTop: "1rem", lineHeight: 1.7, maxWidth: "620px" }}>
-                An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.
-              </p>
             </div>
             <ol className="schritte font-body">
               <li><strong>Bereich wählen.</strong> „Joujou Weinbar" für euren Tisch hier. „Joujou Restaurant" (Brunch &amp; Dinner, <a href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer">joujou.restaurant</a>) und „Yoga &amp; Brunch" sind die anderen Bereiche im selben Fenster.</li>

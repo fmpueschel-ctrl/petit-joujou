@@ -23,12 +23,15 @@ const hints = [
 ];
 
 describe("Final shared Joujou reservation explanation", () => {
-  it("shows the quiet cold-days note after the heading and before the steps", () => {
+  it("shows the quiet cold-days note directly below the hero introduction, not again in the reservation instructions", () => {
+    const hero = home.slice(home.indexOf("function Hero()"), home.indexOf("function WeinkellerSection()"));
     const prefix = section.slice(0, section.indexOf('<ol className="schritte font-body">'));
     expect(prefix).toContain("Tisch reservieren");
-    expect(prefix).toContain("An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.");
+    expect(hero).toContain('className="hero-season-note font-body"');
+    expect(hero).toContain("An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.");
+    expect(section).not.toContain("An kühleren Tagen findet die Weinbar");
     expect(section).not.toContain("Alles läuft über ein Fenster.");
-    const markers = ["Tisch reservieren", "An kühleren Tagen findet die Weinbar", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "Donnerstag und Freitag ab 16 Uhr", "{iframeConsent ? (", "Außerdem im selben Fenster: Gutschein kaufen", "Ohne das Fenster geht es auch:", "Wenn etwas dazwischenkommt"];
+    const markers = ["Tisch reservieren", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "Donnerstag und Freitag ab 16 Uhr", "{iframeConsent ? (", "Außerdem im selben Fenster: Gutschein kaufen", "Ohne das Fenster geht es auch:", "Wenn etwas dazwischenkommt"];
     const indices = markers.map(marker => section.indexOf(marker));
     expect(indices.every(index => index >= 0)).toBe(true);
     expect(indices).toEqual([...indices].sort((a, b) => a - b));
