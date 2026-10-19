@@ -9,8 +9,8 @@ Die PDF-Datei enthält exakt diese zwei Seiten in derselben Reihenfolge. Sie wir
 
 Bei einer neuen freigegebenen Kartenfassung alle drei Archivdateien ersetzen, die neue PDF in den WebDev-Dateispeicher hochladen und anschließend nur die zentrale URL in `client/src/lib/steakEvening.ts` ändern. Preise und Texte nicht eigenmächtig bearbeiten.
 
-## Einseitiger DIN-A4-Einleger — 19.10.2026
+## Preisfreier Steak-Flyer — 19.10.2026
 
-`petit-joujou-steak-abend-din-a4-einleger-18-euro.html` ist die editierbare, einseitige DIN-A4-Vorlage zum Versenden. Die daraus erzeugte PDF liegt unter `../../../../deliverables/petit-joujou-steak-abend-din-a4-einleger.pdf`.
+`petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4.html` ist die editierbare, einseitige DIN-A4-Vorlage des bisherigen Steak-Flyers „Das wahrscheinlich beste Steak der Pfalz“. Die daraus erzeugte PDF liegt unter `../../../../deliverables/petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4.pdf` und wird auf der Website aus der Steak-Signature verlinkt.
 
-Der Premium-Entrecôte-Preis ist dabei ausdrücklich aus dem vorhandenen Einleger „Das wahrscheinlich beste Steak der Pfalz“ übernommen: **18 € pro 100 g**. Die dortige Quelle ist unter der Website-Adresse `/manus-storage/einleger_entrecote_c0034170.pdf` erreichbar. Die neue einseitige Fassung ist ein eigenständiger Versand-Einleger und ersetzt die zweitseitige Steak-Abend-Karte nicht auf der Website.
+Die historische, zweitseitige Ausgangsfassung ist als `petit-joujou-das-beste-steak-der-pfalz-original-2026-07.pdf` archiviert. In der neuen A4-Fassung sind sämtliche Preis- und Mengenangaben entfernt; Rindillustration, Herkunft, #tierglück-Aussagen und Zubereitungshinweis wurden erhalten.

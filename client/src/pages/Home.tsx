@@ -851,7 +851,7 @@ src="/manus-storage/20260725_203546_1de1a1ad.jpg"
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.accentStrong, fontWeight: 600, marginBottom: "1.5rem" }}>
                 Jetzt jeden Donnerstag: Steak-Abend.
               </p>
-              <a href="/manus-storage/einleger_entrecote_c0034170.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
+              <a href="/manus-storage/petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4_776c943e.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
                 Mehr erfahren
               </a>
             </div>

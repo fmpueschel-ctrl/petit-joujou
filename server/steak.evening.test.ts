@@ -70,4 +70,14 @@ describe("Donnerstag-Steak-Abend ab 22.10.2026", () => {
     expect(home).toContain("Getränkekarte");
     expect(read("client/src/lib/wineCards.ts")).toContain("Original-PDF vom 19.10.2026: 15 A4-Seiten");
   });
+
+  it("links the Steak-Signature only to the new one-page A4 flyer without a price", () => {
+    const home = read("client/src/pages/Home.tsx");
+    expect(home).toContain('/manus-storage/petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4_776c943e.pdf');
+    expect(home).not.toContain('/manus-storage/einleger_entrecote_c0034170.pdf');
+    const flyerSource = read("references/steak-abend/2026-10-19/petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4.html");
+    expect(flyerSource).toContain("Das wahrscheinlich beste Steak der Pfalz.");
+    expect(flyerSource).toContain("#tierglück");
+    expect(flyerSource).not.toMatch(/(?:18\s*€|Preis|pro\s*100|100\s*g)/i);
+  });
 });
