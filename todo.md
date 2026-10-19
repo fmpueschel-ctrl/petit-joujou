@@ -168,9 +168,9 @@
 - [x] Öffnungszeiten: Donnerstag und Freitag ab 16 Uhr, Wochenende ab 12 Uhr, Montag bis Mittwoch geschlossen; Footer, Reservierungszeile und Meta-Fallback synchronisiert.
 - [x] Donnerstag auch in JSON-LD ergänzt, gültig ab 22.10.2026; keine nicht freigegebene Donnerstags-Schließzeit erfunden.
 - [x] Schließbare Terracotta-Ankündigungsleiste über der Kopfzeile, ohne Modal; Schließen via localStorage mit try/catch, dynamische Kopfzeilenhöhe für Hero, Menü und Anker.
-- [x] Beide am 18.10.2026 gelieferten Kartenbilder unverändert zum PDF zusammengefügt: Seite 1 „Steak nach Wahl“, Seite 2 „Steak-Flaschenfreunde“; von Frank ausdrücklich vorläufig trotz bekannter Kartenfehler freigegeben.
+- [x] Kartenfassung vom 19.10.2026: beide gelieferten Originalbilder unverändert zum PDF zusammengefügt, Seite 1 „Steak nach Wahl“, Seite 2 „Steak-Flaschenfreunde“.
 - [x] Banner „Zur Karte“ und Hero-Knopf „Donnerstag · Steak-Abend“ auf dieselbe gehostete Karte verlinkt; zentrale Adresse in client/src/lib/steakEvening.ts.
 - [x] Signature ergänzt: „Jetzt jeden Donnerstag: Steak-Abend.“
 - [x] Reservierung/Gastronovi, Zwei-Klick-Lösung, Storno, Newsletter, Rechtstexte und bestehende Karten unangetastet; Tests, TypeScript und Build erfolgreich, Browserabnahme von Mobil bis 4K.
 
-Hinweis für spätere Korrektur: Die Karte ist ausdrücklich nur die vorläufige Fassung (noch Platzhalter bei einzelnen Weinangaben). Nicht eigenmächtig korrigieren; bei neuer freigegebener Karte die gemeinsame URL austauschen.
+Hinweis für spätere Korrektur: Bei einer erneut geänderten und freigegebenen Karte ausschließlich die gemeinsame URL in client/src/lib/steakEvening.ts austauschen; keine Preise oder Weinangaben eigenmächtig bearbeiten.

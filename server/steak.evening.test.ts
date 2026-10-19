@@ -17,6 +17,7 @@ afterEach(() => vi.unstubAllGlobals());
 describe("Donnerstag-Steak-Abend ab 22.10.2026", () => {
   it("shows the exact announcement, an accessible close control and the real two-page menu", () => {
     const html = render();
+    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-donnerstag-steak-abend-2026-10-19_6ef6ba7d.pdf");
     expect(html).toContain("Neu: donnerstags Steak-Abend im petit joujou — Weinbar geöffnet.");
     expect(html).toContain('aria-label="Steak-Ankündigung schließen"');
     expect(html).toContain(`href="${STEAK_EVENING_MENU_URL}"`);
