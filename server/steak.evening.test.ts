@@ -62,12 +62,12 @@ describe("Donnerstag-Steak-Abend ab 22.10.2026", () => {
     expect(bannerCss).toContain("font-weight: 700");
     expect(bannerCss).not.toMatch(/position:\s*(fixed|absolute)/);
   });
-  it("keeps the bottle-wine slot before the beverage card and never substitutes the old Flaschenfreunde PDF", () => {
+  it("uses the delivered bottle-wine menu before the beverage card and never substitutes the old Flaschenfreunde PDF", () => {
     const home = read("client/src/pages/Home.tsx");
-    expect(BOTTLE_WINE_MENU_URL).toBeNull();
+    expect(BOTTLE_WINE_MENU_URL).toBe("/manus-storage/Joujou_Flaschenweinkarte_b6c08177.pdf");
     expect(home).toContain('import { BOTTLE_WINE_MENU_URL } from "@/lib/wineCards"');
     expect(home.indexOf("{BOTTLE_WINE_MENU_URL && (")).toBeLessThan(home.indexOf("petit-joujou-getraenkekarte-weinbar-2026-09"));
     expect(home).toContain("Getränkekarte");
-    expect(read("client/src/lib/wineCards.ts")).toContain("Die bestehende Flaschenfreunde-Karte ist nicht automatisch Ersatz");
+    expect(read("client/src/lib/wineCards.ts")).toContain("Original-PDF vom 19.10.2026: 15 A4-Seiten");
   });
 });
