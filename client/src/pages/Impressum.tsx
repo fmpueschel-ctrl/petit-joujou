@@ -143,6 +143,9 @@ export default function Impressum() {
           <a href="/agb" style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#40818a", textDecoration: "none", borderBottom: "1px solid #40818a", paddingBottom: "2px" }}>
             AGB
           </a>
+          <a href="/barrierefreiheit" style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#40818a", textDecoration: "none", borderBottom: "1px solid #40818a", paddingBottom: "2px" }}>
+            Barrierefreiheit
+          </a>
           <a
             href="/"
             style={{

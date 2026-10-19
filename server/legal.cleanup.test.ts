@@ -5,6 +5,7 @@ import { resolve } from "node:path";
 import { afterAll, describe, expect, it, vi } from "vitest";
 import AGB from "../client/src/pages/AGB";
 import Datenschutz from "../client/src/pages/Datenschutz";
+import Barrierefreiheit from "../client/src/pages/Barrierefreiheit";
 
 vi.stubGlobal("React", React);
 afterAll(() => vi.unstubAllGlobals());
@@ -18,6 +19,7 @@ describe("Approved legal cleanup 2026-10-10", () => {
   const home = read("client/src/pages/Home.tsx");
   const agb = renderToStaticMarkup(React.createElement(AGB));
   const privacy = renderToStaticMarkup(React.createElement(Datenschutz));
+  const accessibility = renderToStaticMarkup(React.createElement(Barrierefreiheit));
   it("copies the complete original AGB main text verbatim including all twelve headings", () => {
     const original = read("server/fixtures/joujou-agb-2026-10.html");
     const main = agb.match(/<main[^>]*>([\s\S]*?)<\/main>/)![1];
@@ -78,10 +80,16 @@ describe("Approved legal cleanup 2026-10-10", () => {
   });
   it("places the complete supplied physical accessibility notice next to parking information", () => {
     const footer = home.slice(home.indexOf("function Footer()"), home.indexOf("// ── Page"));
-    const copy = "Barrierefreiheit: Unser historisches Haus ist leider nicht barrierefrei. An den Eingängen gibt es Stufen oder kleine Schwellen, der Gewölbekeller ist nur über eine Treppe erreichbar, und unsere Toiletten sind nicht rollstuhlgerecht (enge Türen). Kommt ihr mit eingeschränkter Mobilität, meldet euch vorher kurz bei uns — wir helfen, wo wir können, und finden gemeinsam die beste Lösung.";
-    expect(footer).toContain(copy);
-    expect(footer.indexOf(copy)).toBeGreaterThan(footer.indexOf("Parkplätze direkt am Haus. Anfahrt über die B271."));
-    expect(footer.indexOf(copy)).toBeLessThan(footer.indexOf("{/* Newsletter Signup */}"));
+    expect(footer).toContain('href="/barrierefreiheit"');
+    expect(footer).toContain("Unser historisches Haus ist leider nicht barrierefrei.");
+    expect(footer).toContain("Wer mit dem Online-Reservierungsfenster nicht zurechtkommt, schreibt uns einfach — Tisch und Gutschein legen wir von Hand an.");
+    expect(footer.indexOf("Unser historisches Haus ist leider nicht barrierefrei.")).toBeGreaterThan(footer.indexOf("Parkplätze direkt am Haus. Anfahrt über die B271."));
+    expect(footer.indexOf("Unser historisches Haus ist leider nicht barrierefrei.")).toBeLessThan(footer.indexOf("{/* Newsletter Signup */}"));
+  });
+  it("adds exactly the three approved review links and no Facebook link", () => {
+    const footer = home.slice(home.indexOf("function Footer()"), home.indexOf("// ── Page"));
+    for (const href of ["https://de.restaurantguru.com/Joujou-Bad-Durkheim", "https://www.tripadvisor.com/Restaurant_Review-g198626-d23851573-Reviews-Joujou-Bad_Durkheim_Rhineland_Palatinate.html", "https://www.google.com/maps?cid=16096501785747683906"]) expect(footer).toContain(href);
+    expect(footer).not.toContain("facebook.com");
   });
   it("updates the events link, permits zoom and describes the orange hand", () => {
     expect(home).not.toContain("joujou-pfalz.de/events");

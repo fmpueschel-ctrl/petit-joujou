@@ -5,6 +5,7 @@ import { resolve } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import SteakAnnouncement from "../client/src/components/SteakAnnouncement";
 import { STEAK_EVENING_MENU_URL } from "../client/src/lib/steakEvening";
+import { BOTTLE_WINE_MENU_URL } from "../client/src/lib/wineCards";
 
 const root = resolve(import.meta.dirname, "..");
 const read = (path: string) => readFileSync(resolve(root, path), "utf8");
@@ -60,5 +61,13 @@ describe("Donnerstag-Steak-Abend ab 22.10.2026", () => {
     expect(bannerCss).toContain("font-size: 19px");
     expect(bannerCss).toContain("font-weight: 700");
     expect(bannerCss).not.toMatch(/position:\s*(fixed|absolute)/);
+  });
+  it("keeps the bottle-wine slot before the beverage card and never substitutes the old Flaschenfreunde PDF", () => {
+    const home = read("client/src/pages/Home.tsx");
+    expect(BOTTLE_WINE_MENU_URL).toBeNull();
+    expect(home).toContain('import { BOTTLE_WINE_MENU_URL } from "@/lib/wineCards"');
+    expect(home.indexOf("{BOTTLE_WINE_MENU_URL && (")).toBeLessThan(home.indexOf("petit-joujou-getraenkekarte-weinbar-2026-09"));
+    expect(home).toContain("Getränkekarte");
+    expect(read("client/src/lib/wineCards.ts")).toContain("Die bestehende Flaschenfreunde-Karte ist nicht automatisch Ersatz");
   });
 });

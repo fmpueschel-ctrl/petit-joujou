@@ -10,6 +10,7 @@ import RapidmailSignup from "@/components/RapidmailSignup";
 import TheOneComingSoonContent from "@/components/TheOneComingSoonContent";
 import SteakAnnouncement from "@/components/SteakAnnouncement";
 import { STEAK_EVENING_MENU_URL } from "@/lib/steakEvening";
+import { BOTTLE_WINE_MENU_URL } from "@/lib/wineCards";
 
 import { WINEBAR_THEME as C } from "@/lib/winebarTheme";
 
@@ -225,6 +226,17 @@ function Hero() {
             >
               Speisekarte
             </a>
+            {BOTTLE_WINE_MENU_URL && (
+              <a
+                href={BOTTLE_WINE_MENU_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body"
+                style={{ display: "inline-block", padding: "0.75rem 2rem", border: `1px solid ${C.ink}`, color: C.ink, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
+              >
+                Weinkarte
+              </a>
+            )}
             <a
               href="/manus-storage/petit-joujou-getraenkekarte-weinbar-2026-09_bd5bcde3.pdf"
               target="_blank"
@@ -241,7 +253,7 @@ function Hero() {
                 textDecoration: "none",
               }}
             >
-              Weinkarte
+              Getränkekarte
             </a>
             {STEAK_EVENING_MENU_URL && (
               <a
@@ -495,6 +507,9 @@ function ReservierungUndGesellschaftenSection() {
               <h2 className="font-display" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", color: C.ink }}>
                 Tisch reservieren
               </h2>
+              <p className="reservation-season-note font-body" style={{ fontSize: "0.9rem", color: C.inkMuted, marginTop: "1rem", lineHeight: 1.7, maxWidth: "620px" }}>
+                An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.
+              </p>
             </div>
             <ol className="schritte font-body">
               <li><strong>Bereich wählen.</strong> „Joujou Weinbar" für euren Tisch hier. „Joujou Restaurant" (Brunch &amp; Dinner, <a href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer">joujou.restaurant</a>) und „Yoga &amp; Brunch" sind die anderen Bereiche im selben Fenster.</li>
@@ -554,6 +569,9 @@ function ReservierungUndGesellschaftenSection() {
             </p>
             <p className="font-body" style={{ fontSize: "0.82rem", color: C.inkMuted, marginTop: "0.75rem", lineHeight: 1.7 }}>
               Außerdem im selben Fenster: Gutschein kaufen
+            </p>
+            <p className="font-body reservation-email-alternative" style={{ fontSize: "0.82rem", color: C.inkMuted, marginTop: "1rem", lineHeight: 1.7 }}>
+              Ohne das Fenster geht es auch: Einen Tisch und Gutscheine bekommt ihr genauso per E-Mail an <a href="mailto:hallo@joujou-pfalz.de" style={{ color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "3px" }}>hallo@joujou-pfalz.de</a>. Wir legen sie von Hand an und schicken euch die Bestätigung.
             </p>
             <div style={{ marginTop: "2rem", padding: "1.5rem", backgroundColor: C.paper, borderLeft: `4px solid ${C.accentStrong}` }}>
               <h3 className="font-display" style={{ fontSize: "1.2rem", color: C.ink, marginBottom: "0.75rem" }}>
@@ -938,11 +956,22 @@ function Footer() {
                 TikTok @thepurebakery
               </a>
             </p>
+            <p className="font-body" style={{ display: "flex", gap: "0.45rem", flexWrap: "wrap", marginTop: "0.65rem" }}>
+              {[
+                { label: "Restaurant Guru", initials: "RG", href: "https://de.restaurantguru.com/Joujou-Bad-Durkheim" },
+                { label: "Tripadvisor", initials: "TA", href: "https://www.tripadvisor.com/Restaurant_Review-g198626-d23851573-Reviews-Joujou-Bad_Durkheim_Rhineland_Palatinate.html" },
+                { label: "Google-Bewertungen", initials: "G", href: "https://www.google.com/maps?cid=16096501785747683906" },
+              ].map(({ label, initials, href }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} className="review-link">
+                  <span aria-hidden="true">{initials}</span>
+                </a>
+              ))}
+            </p>
             <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkSoft, marginTop: "0.75rem", lineHeight: 1.6 }}>
               Parkplätze direkt am Haus. Anfahrt über die B271.
             </p>
             <p className="font-body" style={{ fontSize: "0.78rem", color: C.inkMuted, marginTop: "0.75rem", lineHeight: 1.7 }}>
-              Barrierefreiheit: Unser historisches Haus ist leider nicht barrierefrei. An den Eingängen gibt es Stufen oder kleine Schwellen, der Gewölbekeller ist nur über eine Treppe erreichbar, und unsere Toiletten sind nicht rollstuhlgerecht (enge Türen). Kommt ihr mit eingeschränkter Mobilität, meldet euch vorher kurz bei uns — wir helfen, wo wir können, und finden gemeinsam die beste Lösung.
+              <a href="/barrierefreiheit" style={{ color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "3px" }}>Barrierefreiheit</a>: Unser historisches Haus ist leider nicht barrierefrei. An den Eingängen gibt es Stufen oder kleine Schwellen, der Gewölbekeller ist nur über eine Treppe erreichbar, und unsere Toiletten sind nicht rollstuhlgerecht (enge Türen). Kommt ihr mit eingeschränkter Mobilität, meldet euch vorher kurz bei uns — wir helfen, wo wir können, und finden gemeinsam die beste Lösung. Wer mit dem Online-Reservierungsfenster nicht zurechtkommt, schreibt uns einfach — Tisch und Gutschein legen wir von Hand an.
             </p>
           </div>
         </div>
@@ -955,6 +984,7 @@ function Footer() {
             <a href="/impressum" style={{ color: C.accentStrong, textDecoration: "none" }}>Impressum</a>{" · "}
             <a href="/datenschutz" style={{ color: C.accentStrong, textDecoration: "none" }}>Datenschutz</a>{" · "}
             <a href="/agb" style={{ color: C.accentStrong, textDecoration: "none" }}>AGB</a>
+            {" · "}<a href="/barrierefreiheit" style={{ color: C.accentStrong, textDecoration: "none" }}>Barrierefreiheit</a>
           </p>
           <p className="font-body" style={{ fontSize: "0.72rem", color: C.inkSoft, letterSpacing: "0.05em", marginTop: "0.5rem" }}>
             Unsere weiteren Angebote findest du auf:{" "}

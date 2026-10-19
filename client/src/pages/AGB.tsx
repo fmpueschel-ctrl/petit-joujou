@@ -89,6 +89,7 @@ export default function AGB() {
         <nav aria-label="Rechtliche Seiten">
           <Link href="/impressum">Impressum</Link>{" · "}
           <Link href="/datenschutz">Datenschutz</Link>{" · "}
+          <Link href="/barrierefreiheit">Barrierefreiheit</Link>{" · "}
           <Link href="/">Startseite</Link>
         </nav>
       </footer>

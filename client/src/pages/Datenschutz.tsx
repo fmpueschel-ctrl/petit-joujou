@@ -136,6 +136,16 @@ export default function Datenschutz() {
             Impressum
           </Link>
           <Link
+            href="/barrierefreiheit"
+            style={{
+              fontFamily: "var(--font-body)", fontSize: "0.78rem", letterSpacing: "0.12em",
+              textTransform: "uppercase", color: "#40818a", textDecoration: "none",
+              borderBottom: "1px solid #40818a", paddingBottom: "2px",
+            }}
+          >
+            Barrierefreiheit
+          </Link>
+          <Link
             href="/"
             style={{
               fontFamily: "var(--font-body)", fontSize: "0.78rem", letterSpacing: "0.12em",

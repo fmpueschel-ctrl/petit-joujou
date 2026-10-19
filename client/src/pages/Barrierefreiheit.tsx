@@ -1,0 +1,64 @@
+import { Link } from "wouter";
+import { usePageMeta } from "@/hooks/usePageMeta";
+
+export default function Barrierefreiheit() {
+  usePageMeta({
+    title: "Barrierefreiheit — petit joujou",
+    description: "Erklärung zur Barrierefreiheit der Weinbar petit joujou: unser Haus, unsere Webseite und das Buchungsfenster — und wie ihr uns ohne das Fenster erreicht.",
+    canonical: "https://www.petit-joujou.de/barrierefreiheit",
+  });
+
+  return (
+    <div className="winebar-legal-page">
+      <header className="winebar-legal-header">
+        <div className="winebar-legal-wrap">
+          <Link className="winebar-legal-brand" href="/">petit joujou <span>organic wine bar</span></Link>
+          <Link href="/">Zurück zur Seite</Link>
+        </div>
+      </header>
+      <main className="winebar-legal-wrap" data-accessibility-content>
+        <h1>Barrierefreiheit</h1>
+        <p className="lead">Was bei uns geht, was nicht geht, und wie ihr zu einem Platz kommt, wenn das Buchungsfenster für euch nicht funktioniert.</p>
+
+        <h2>Der kürzeste Weg</h2>
+        <div className="block">
+          <p>Schreibt uns an <a href="mailto:hallo@joujou-pfalz.de">hallo@joujou-pfalz.de</a>.</p>
+          <p>Tisch und Gutschein — all das legen wir von Hand an und schicken euch die Bestätigung. Ihr braucht dafür weder unser Buchungsfenster noch ein Konto, und es dauert nicht länger als online.</p>
+        </div>
+
+        <h2>Unser Haus</h2>
+        <p>Das Joujou steckt in einem historischen Haus, und das ist leider nicht barrierefrei. An den Eingängen gibt es Stufen oder kleine Schwellen, im Haus gibt es Treppen, und unsere Toiletten sind nicht rollstuhlgerecht. Daran können wir kurzfristig nichts ändern — wir sagen es lieber vorher, als dass jemand vor der Tür steht.</p>
+        <p>Kommt ihr mit eingeschränkter Mobilität, meldet euch vorher kurz bei uns. Wir helfen, wo wir können, und finden gemeinsam die beste Lösung.</p>
+
+        <h2>Diese Webseite</h2>
+        <p>Die Seite ist bewusst einfach gebaut. Der Text lässt sich vergrößern, die Seite funktioniert auch auf schmalen Schirmen, alle Bilder haben eine Beschreibung, und es gibt keine Pop-ups, keine automatischen Weiterleitungen und keine Inhalte, die sich von selbst bewegen und sich nicht anhalten lassen. Die Seitensprache ist als Deutsch ausgezeichnet, damit Vorleseprogramme sie richtig aussprechen.</p>
+        <p>Die Papierstruktur im Hintergrund ist reine Dekoration. Sie trägt keine Information; wer sie nicht sieht, verpasst nichts.</p>
+
+        <h2>Das Buchungsfenster</h2>
+        <p>Reservierungen und Gutscheine laufen über ein Fenster der Gastronovi GmbH, Buschhöhe 2, 28357 Bremen. Dieses Fenster haben wir nicht gebaut und können wir nicht verändern. Ob es alle Anforderungen an die digitale Barrierefreiheit erfüllt, hat uns der Anbieter bisher nicht bestätigt; wir haben ihn dazu angefragt und ergänzen diese Seite, sobald wir eine Antwort haben.</p>
+        <p>Solange gilt der Weg ganz oben: <b>per E-Mail geht alles genauso.</b> Niemand muss das Fenster benutzen, um bei uns einen Tisch zu buchen oder einen Gutschein zu verschenken.</p>
+
+        <h2>Wenn euch etwas auffällt</h2>
+        <p>Wenn ihr auf eine Hürde stoßt — auf dieser Seite, im Buchungsfenster oder bei uns im Haus —, schreibt uns an <a href="mailto:hallo@joujou-pfalz.de">hallo@joujou-pfalz.de</a>. Wir antworten und sagen ehrlich, was wir ändern können und was nicht.</p>
+
+        <h2>Zuständige Marktüberwachungsbehörde</h2>
+        <p>Marktüberwachungsstelle der Länder für die Barrierefreiheit von Produkten und Dienstleistungen (MLBF AöR)<br />
+          Carl-Miller-Straße 6, 39112 Magdeburg<br />
+          Telefon +49 391 289 230 23<br />
+          <a href="mailto:kontakt@mlbf-barrierefrei.de">kontakt@mlbf-barrierefrei.de</a>
+        </p>
+
+        <p className="stand">Stand: Oktober 2026. Diese Erklärung betrifft die Dienstleistungen, die wir über diese Webseite anbieten, und wird ergänzt, sobald uns neue Angaben vorliegen.</p>
+      </main>
+      <footer className="winebar-legal-wrap">
+        <span>Joujou GmbH, Mareile Haider und Frank Püschel</span>
+        <nav aria-label="Rechtliche Seiten">
+          <Link href="/impressum">Impressum</Link>{" · "}
+          <Link href="/datenschutz">Datenschutz</Link>{" · "}
+          <Link href="/agb">AGB</Link>{" · "}
+          <Link href="/">Startseite</Link>
+        </nav>
+      </footer>
+    </div>
+  );
+}

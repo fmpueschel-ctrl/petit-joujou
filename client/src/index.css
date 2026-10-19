@@ -628,6 +628,32 @@ div[id] {
   white-space: nowrap;
   line-height: 1.2;
 }
+.review-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  text-decoration: none;
+}
+.review-link span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--winebar-accent);
+  border-radius: 999px;
+  color: var(--winebar-accent-strong);
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1;
+}
+.review-link:hover span { background: var(--winebar-accent); color: #fff; }
 @media (max-width: 768px) {
   .winebar-brandmark {
     flex-direction: column;

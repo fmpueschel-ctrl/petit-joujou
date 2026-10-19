@@ -23,12 +23,12 @@ const hints = [
 ];
 
 describe("Final shared Joujou reservation explanation", () => {
-  it("starts directly with the heading and steps, without an introduction", () => {
+  it("shows the quiet cold-days note after the heading and before the steps", () => {
     const prefix = section.slice(0, section.indexOf('<ol className="schritte font-body">'));
     expect(prefix).toContain("Tisch reservieren");
-    expect(prefix).not.toContain("<p ");
+    expect(prefix).toContain("An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.");
     expect(section).not.toContain("Alles läuft über ein Fenster.");
-    const markers = ["Tisch reservieren", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "Donnerstag und Freitag ab 16 Uhr", "{iframeConsent ? (", "Außerdem im selben Fenster: Gutschein kaufen", "Wenn etwas dazwischenkommt"];
+    const markers = ["Tisch reservieren", "An kühleren Tagen findet die Weinbar", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "Donnerstag und Freitag ab 16 Uhr", "{iframeConsent ? (", "Außerdem im selben Fenster: Gutschein kaufen", "Ohne das Fenster geht es auch:", "Wenn etwas dazwischenkommt"];
     const indices = markers.map(marker => section.indexOf(marker));
     expect(indices.every(index => index >= 0)).toBe(true);
     expect(indices).toEqual([...indices].sort((a, b) => a - b));
@@ -62,6 +62,8 @@ describe("Final shared Joujou reservation explanation", () => {
     const voucher = section.slice(section.indexOf("Außerdem im selben Fenster:"), section.indexOf("Wenn etwas dazwischenkommt"));
     expect(voucher).toContain("Gutschein kaufen");
     expect(voucher).not.toContain("Veranstaltungen");
+    expect(section).toContain("Ohne das Fenster geht es auch: Einen Tisch und Gutscheine bekommt ihr genauso per E-Mail an");
+    expect(section).toContain("Wir legen sie von Hand an und schicken euch die Bestätigung.");
   });
   it("keeps the supplied counter spacing and visible links", () => {
     for (const rule of ["counter-reset: schritt;", "counter-increment: schritt;", "content: counter(schritt);", "padding-left: 40px;", "max-width: 640px;", "#reservierung-widget .schritte a,"]) expect(css).toContain(rule);

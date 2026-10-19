@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
+import Barrierefreiheit from "./pages/Barrierefreiheit";
 import Versand from "./pages/Versand";
 import Flaschenfreunde from "./pages/Flaschenfreunde";
 import ComingSoon from "./pages/ComingSoon";
@@ -25,6 +26,7 @@ function Router() {
       <Route path={"/impressum"} component={Impressum} />
       <Route path={"/datenschutz"} component={Datenschutz} />
       <Route path={"/agb"} component={AGB} />
+      <Route path={"/barrierefreiheit"} component={Barrierefreiheit} />
       <Route path={"/versand"} component={Versand} />
       <Route path={"/flaschenfreunde"} component={Flaschenfreunde} />
       <Route path={"/404"} component={NotFound} />
