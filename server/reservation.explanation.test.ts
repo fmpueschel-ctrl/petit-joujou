@@ -28,7 +28,7 @@ describe("Final shared Joujou reservation explanation", () => {
     const prefix = section.slice(0, section.indexOf('<ol className="schritte font-body">'));
     expect(prefix).toContain("Tisch reservieren");
     expect(hero).toContain('className="hero-season-note font-body"');
-    expect(hero).toContain("An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.");
+    expect(hero).toContain("An kühleren Tagen findet die Weinbar im Erdgeschoss des Restaurants statt — gemütlich beieinander.");
     expect(section).not.toContain("An kühleren Tagen findet die Weinbar");
     expect(section).not.toContain("Alles läuft über ein Fenster.");
     const markers = ["Tisch reservieren", '<ol className="schritte font-body">', "Drinnen oder draußen:", "Veranstaltungen:", "Brot und Kuchen für daheim:", "Große Runden und Feiern:", "Donnerstag und Freitag ab 16 Uhr", "{iframeConsent ? (", "Außerdem im selben Fenster: Gutschein kaufen", "Ohne das Fenster geht es auch:", "Wenn etwas dazwischenkommt"];

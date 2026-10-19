@@ -190,7 +190,7 @@ function Hero() {
             <span style={{ fontWeight: 700, color: C.ink }}>Die Weinbar im Joujou.</span> Wir möchten euch verzaubern. Schnappt euch eine Flasche Wein, genießt die Sharing-Kreationen von Chef Franz und vergesst einfach die Zeit.
           </p>
           <p className="hero-season-note font-body" style={{ fontSize: "0.84rem", color: C.inkMuted, lineHeight: 1.7, maxWidth: "430px", marginBottom: "2.5rem", paddingLeft: "0.9rem", borderLeft: `2px solid ${C.accentStrong}` }}>
-            An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.
+            An kühleren Tagen findet die Weinbar im Erdgeschoss des Restaurants statt — gemütlich beieinander.
           </p>
 
           {/* CTAs */}
@@ -374,7 +374,7 @@ function ScheuneSection() {
             Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.
           </p>
           <p className="font-body barn-season-note" style={{ fontSize: "0.85rem", color: "rgba(245,240,230,0.82)", lineHeight: 1.8, marginTop: "1.75rem", paddingTop: "1.25rem", borderTop: `1px solid ${C.accentStrong}` }}>
-            An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.
+            An kühleren Tagen findet die Weinbar im Erdgeschoss des Restaurants statt — gemütlich beieinander.
           </p>
         </div>
       </div>

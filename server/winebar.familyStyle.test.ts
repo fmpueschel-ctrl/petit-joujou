@@ -24,7 +24,7 @@ describe("Joujou family style 2026-10-10", () => {
   it("adds exactly the approved seasonal explanation below the existing barn copy", () => {
     const barn = home.slice(home.indexOf("function ScheuneSection()"), home.indexOf("function GartenSection()"));
     const original = "Alte Balken, flackerndes Kerzenlicht, Stimmengewirr und diese Stimmung, die man nicht planen kann — sie passiert einfach.";
-    const note = "An kühleren Tagen findet die Weinbar im Restaurantbereich statt — im Erdgeschoss des Restaurants, gemütlich beieinander.";
+    const note = "An kühleren Tagen findet die Weinbar im Erdgeschoss des Restaurants statt — gemütlich beieinander.";
     expect(barn).toContain(original);
     expect(barn).toContain(note);
     expect(barn.indexOf(note)).toBeGreaterThan(barn.indexOf(original));
