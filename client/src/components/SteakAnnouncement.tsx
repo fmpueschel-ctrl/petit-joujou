@@ -48,7 +48,7 @@ export default function SteakAnnouncement({ menuHref = null }: SteakAnnouncement
       <div className="steak-announcement__inner">
         <div className="steak-announcement__content">
           <p className="steak-announcement__text">
-            Neu: donnerstags Steak-Abend im petit joujou — Weinbar geöffnet.
+            Neu: Steak im petit joujou — an allen Weinbartagen.
           </p>
           {hasMenuLink && (
             <a

@@ -15,11 +15,12 @@ const render = (menuHref: string | null = STEAK_EVENING_MENU_URL) => renderToSta
 beforeEach(() => vi.stubGlobal("React", React));
 afterEach(() => vi.unstubAllGlobals());
 
-describe("Donnerstag-Steak-Abend ab 22.10.2026", () => {
-  it("shows the exact announcement, an accessible close control and the real two-page menu", () => {
+describe("Steak-Karte an allen Weinbartagen", () => {
+  it("shows the all-days announcement, an accessible close control and the real two-page menu", () => {
     const html = render();
-    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-donnerstag-steak-abend-2026-10-27_574f03be.pdf");
-    expect(html).toContain("Neu: donnerstags Steak-Abend im petit joujou — Weinbar geöffnet.");
+    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steak-karte-alle-weinbartage-2026-10-27_89b83cf6.pdf");
+    expect(html).toContain("Neu: Steak im petit joujou — an allen Weinbartagen.");
+    expect(html).not.toContain("donnerstags Steak-Abend");
     expect(html).toContain('aria-label="Steak-Ankündigung schließen"');
     expect(html).toContain(`href="${STEAK_EVENING_MENU_URL}"`);
     expect(html).toContain("Zur Karte");
@@ -39,7 +40,7 @@ describe("Donnerstag-Steak-Abend ab 22.10.2026", () => {
   });
   it("still shows the announcement when localStorage is blocked", () => {
     vi.stubGlobal("window", { get localStorage() { throw new Error("SecurityError"); } });
-    expect(render()).toContain("Neu: donnerstags Steak-Abend");
+    expect(render()).toContain("Neu: Steak im petit joujou");
     const source = read("client/src/components/SteakAnnouncement.tsx");
     expect(source).toContain("setIsDismissed(true)");
     expect(source).toContain('window.localStorage.setItem(STORAGE_KEY, "dismissed")');
@@ -49,8 +50,9 @@ describe("Donnerstag-Steak-Abend ab 22.10.2026", () => {
     const home = read("client/src/pages/Home.tsx");
     expect(home.indexOf("<SteakAnnouncement menuHref={STEAK_EVENING_MENU_URL} />")).toBeLessThan(home.indexOf('className="winebar-brandmark"'));
     expect(home).toContain("new ResizeObserver(updateHeight)");
-    expect(home).toContain("Donnerstag · Steak-Abend");
-    expect(home).toContain("Jetzt jeden Donnerstag: Steak-Abend.");
+    expect(home).toContain("Steak-Karte");
+    expect(home).not.toContain("Donnerstag · Steak-Abend");
+    expect(home).not.toContain("Jetzt jeden Donnerstag: Steak-Abend.");
     expect(home).toContain("href={STEAK_EVENING_MENU_URL}");
     const css = read("client/src/index.css");
     expect(css).toContain("padding-top: var(--winebar-header-height, 60px)");
