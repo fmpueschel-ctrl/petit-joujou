@@ -1,4 +1,6 @@
-# Donnerstag · Steak-Abend — Kartenfassung vom 19.10.2026
+# Donnerstag · Steak-Abend — Kartenfassung vom 19.10.2026 (abgelöst)
+
+Diese Kartenfassung ist seit dem 27.10.2026 nicht mehr öffentlich verlinkt. Die freigegebene Nachfolgefassung liegt unter `../2026-10-27/`.
 
 Diese Dateien sind die vom Nutzer am 19.10.2026 gelieferten Originalseiten, in der Reihenfolge:
 
