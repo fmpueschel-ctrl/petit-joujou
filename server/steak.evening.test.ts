@@ -1,6 +1,6 @@
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import SteakAnnouncement from "../client/src/components/SteakAnnouncement";
@@ -16,9 +16,9 @@ beforeEach(() => vi.stubGlobal("React", React));
 afterEach(() => vi.unstubAllGlobals());
 
 describe("Steak-Karte an allen Weinbartagen", () => {
-  it("shows the all-days announcement, an accessible close control and the real two-page menu", () => {
+  it("shows the all-days announcement, an accessible close control and the current Do–So menu", () => {
     const html = render();
-    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steak-karte-alle-weinbartage-2026-10-27_89b83cf6.pdf");
+    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-do-so-2026-10-29_0e43560d.pdf");
     expect(html).toContain("Neu: Steak im petit joujou — an allen Weinbartagen.");
     expect(html).not.toContain("donnerstags Steak-Abend");
     expect(html).toContain('aria-label="Steak-Ankündigung schließen"');
@@ -73,13 +73,21 @@ describe("Steak-Karte an allen Weinbartagen", () => {
     expect(read("client/src/lib/wineCards.ts")).toContain("Original-PDF vom 19.10.2026: 15 A4-Seiten");
   });
 
-  it("links the Steak-Signature only to the new one-page A4 flyer without a price", () => {
+  it("links the Steak-Signature only to the current one-page premium Entrecôte flyer", () => {
     const home = read("client/src/pages/Home.tsx");
-    expect(home).toContain('/manus-storage/petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4_776c943e.pdf');
+    expect(home).toContain('/manus-storage/petit-joujou-premium-entrecote-2026-10-29_a6caaf10.pdf');
+    expect(home).toContain("Dry-Aged Entrecôte · Bio-Angus von Land.Luft · 300 g · Signature Cut");
+    expect(home).not.toContain('/manus-storage/petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4_776c943e.pdf');
     expect(home).not.toContain('/manus-storage/einleger_entrecote_c0034170.pdf');
-    const flyerSource = read("references/steak-abend/2026-10-19/petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4.html");
-    expect(flyerSource).toContain("Das wahrscheinlich beste Steak der Pfalz.");
-    expect(flyerSource).toContain("#tierglück");
-    expect(flyerSource).not.toMatch(/(?:18\s*€|Preis|pro\s*100|100\s*g)/i);
+    expect(existsSync(resolve(root, "references/karten/2026-10-29/petit-joujou-premium-entrecote-2026-10-29.pdf"))).toBe(true);
+  });
+
+  it("uses the delivered Kleine Karte and removes all three superseded menu URLs from product code", () => {
+    const home = read("client/src/pages/Home.tsx");
+    expect(home).toContain('/manus-storage/petit-joujou-kleine-karte-2026-10-29_205b6758.pdf');
+    expect(home).not.toContain('/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf');
+    expect(home).not.toContain('/manus-storage/petit-joujou-steak-karte-alle-weinbartage-2026-10-27_89b83cf6.pdf');
+    expect(existsSync(resolve(root, "references/karten/2026-10-29/petit-joujou-kleine-karte-2026-10-29.pdf"))).toBe(true);
+    expect(existsSync(resolve(root, "references/karten/2026-10-29/petit-joujou-steakkarte-do-so-2026-10-29.pdf"))).toBe(true);
   });
 });

@@ -128,8 +128,9 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(home).toContain("document.getElementById(targetId)?.scrollIntoView()");
   });
 
-  it("uses stable WebDev copies of both current Weinbar menus", () => {
-    expect(home).toContain("/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf");
+  it("uses stable WebDev copies of the current Kleine Karte and Getränkekarte", () => {
+    expect(home).toContain("/manus-storage/petit-joujou-kleine-karte-2026-10-29_205b6758.pdf");
+    expect(home).not.toContain("/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf");
     expect(home).toContain("/manus-storage/petit-joujou-getraenkekarte-weinbar-2026-09_bd5bcde3.pdf");
   });
 

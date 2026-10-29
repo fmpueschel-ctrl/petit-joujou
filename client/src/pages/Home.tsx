@@ -212,7 +212,7 @@ function Hero() {
               Reservieren
             </a>
             <a
-              href="/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf"
+              href="/manus-storage/petit-joujou-kleine-karte-2026-10-29_205b6758.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body"
@@ -846,9 +846,9 @@ src="/manus-storage/20260725_203546_1de1a1ad.jpg"
                 Das wahrscheinlich beste Steak der Pfalz.
               </h3>
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMuted, lineHeight: 1.8, marginBottom: "1.5rem" }}>
-                Dry-Aged Entrecôte · puristisch · 100-Gramm-weise · Signature Cut
+                Dry-Aged Entrecôte · Bio-Angus von Land.Luft · 300 g · Signature Cut
               </p>
-              <a href="/manus-storage/petit-joujou-das-beste-steak-der-pfalz-ohne-preis-a4_776c943e.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
+              <a href="/manus-storage/petit-joujou-premium-entrecote-2026-10-29_a6caaf10.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
                 Mehr erfahren
               </a>
             </div>
