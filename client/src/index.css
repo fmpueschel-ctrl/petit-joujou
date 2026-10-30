@@ -433,6 +433,13 @@
   pointer-events: none;
 }
 
+/* Keep the two related wine cards adjacent on desktop; narrow screens may wrap safely. */
+.wine-menu-pair {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
 /* Fixed navigation must not cover headings reached through hash links. */
 section[id],
 div[id] {
@@ -536,6 +543,9 @@ div[id] {
   .weinbar-icon {
     width: clamp(150px, 45vw, 190px);
     margin-bottom: 1rem;
+  }
+  .wine-menu-pair {
+    flex-wrap: wrap;
   }
   .rapidmail-signup-frame {
     height: 460px;

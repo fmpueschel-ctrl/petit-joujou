@@ -128,10 +128,13 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(home).toContain("document.getElementById(targetId)?.scrollIntoView()");
   });
 
-  it("uses stable WebDev copies of the current Kleine Karte and Getränkekarte", () => {
+  it("uses stable WebDev copies of the current Kleine Karte, offene Weine and Getränkekarte", () => {
     expect(home).toContain("/manus-storage/petit-joujou-kleine-karte-2026-10-29_205b6758.pdf");
     expect(home).not.toContain("/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf");
-    expect(home).toContain("/manus-storage/petit-joujou-getraenkekarte-weinbar-2026-09_bd5bcde3.pdf");
+    expect(home).toContain("OPEN_WINE_MENU_URL");
+    expect(home).toContain("Offene Weine");
+    expect(home).toContain("BEVERAGE_MENU_URL");
+    expect(home).not.toContain("/manus-storage/petit-joujou-getraenkekarte-weinbar-2026-09_bd5bcde3.pdf");
   });
 
   it("keeps product URLs out of the sitemap while the shop is coming soon", () => {

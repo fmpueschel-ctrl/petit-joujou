@@ -1,0 +1,19 @@
+# Weinbar-Karten — November 2026
+
+Am 30.10.2026 wurden ausschließlich die für `petit-joujou.de` freigegebenen Karten übernommen. Die Restaurantkarten aus dem Upload wurden nicht verwendet.
+
+| Archivdatei | Verwendung auf petit-joujou.de | Manus-Storage-Pfad |
+| --- | --- | --- |
+| `petit-joujou-flaschenweinkarte-2026-11.pdf` | Hero-Knopf **Weinkarte** | `/manus-storage/petit-joujou-flaschenweinkarte-2026-11_08b4c73b.pdf` |
+| `petit-joujou-offene-weine-aus-dem-wingert-2026-11.pdf` | Hero-Knopf **Offene Weine** | `/manus-storage/petit-joujou-offene-weine-aus-dem-wingert-2026-11_06de8222.pdf` |
+| `petit-joujou-getraenkekarte-2026-11.pdf` | Hero-Knopf **Getränkekarte** | `/manus-storage/petit-joujou-getraenkekarte-2026-11_bba0ccfd.pdf` |
+| `petit-joujou-steakkarte-do-so-mit-wein-2026-10-30.pdf` | Hero-Knopf **Steak-Karte** und Bannerlink **Zur Karte** | `/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-10-30_ce75178b.pdf` |
+| `petit-joujou-flaschenfreunde-herbst-2026-11.pdf` | Seite `/flaschenfreunde` | `/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11_8f4fc429.pdf` |
+
+Die finale Steakkarte besteht aus den zwei unveränderten Originalseiten `quelle-steakkarte-seite-1.pdf` und `quelle-steakkarte-weinseite-2.pdf`. Die zweite Seite ist die beauftragte Weinseite.
+
+Das Vorschaubild für `/flaschenfreunde` wurde ausschließlich aus Seite 1 der Herbst-PDF erzeugt:
+
+`/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-vorschau_a2a91771.webp`
+
+Nicht verändert: Kleine Karte (Speisekarte) und Premium-Entrecôte-Einleger.

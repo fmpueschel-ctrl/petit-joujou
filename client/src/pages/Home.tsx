@@ -10,7 +10,7 @@ import RapidmailSignup from "@/components/RapidmailSignup";
 import TheOneComingSoonContent from "@/components/TheOneComingSoonContent";
 import SteakAnnouncement from "@/components/SteakAnnouncement";
 import { STEAK_EVENING_MENU_URL } from "@/lib/steakEvening";
-import { BOTTLE_WINE_MENU_URL } from "@/lib/wineCards";
+import { BEVERAGE_MENU_URL, BOTTLE_WINE_MENU_URL, OPEN_WINE_MENU_URL } from "@/lib/wineCards";
 
 import { WINEBAR_THEME as C } from "@/lib/winebarTheme";
 
@@ -229,19 +229,35 @@ function Hero() {
             >
               Speisekarte
             </a>
-            {BOTTLE_WINE_MENU_URL && (
-              <a
-                href={BOTTLE_WINE_MENU_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-body"
-                style={{ display: "inline-block", padding: "0.75rem 2rem", border: `1px solid ${C.ink}`, color: C.ink, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
-              >
-                Weinkarte
-              </a>
+            {(BOTTLE_WINE_MENU_URL || OPEN_WINE_MENU_URL) && (
+              <div className="wine-menu-pair">
+                {BOTTLE_WINE_MENU_URL && (
+                  <a
+                    href={BOTTLE_WINE_MENU_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body"
+                    style={{ display: "inline-block", padding: "0.75rem 2rem", border: `1px solid ${C.ink}`, color: C.ink, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
+                  >
+                    Weinkarte
+                  </a>
+                )}
+                {OPEN_WINE_MENU_URL && (
+                  <a
+                    href={OPEN_WINE_MENU_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body"
+                    style={{ display: "inline-block", padding: "0.75rem 2rem", border: `1px solid ${C.ink}`, color: C.ink, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
+                  >
+                    Offene Weine
+                  </a>
+                )}
+              </div>
             )}
-            <a
-              href="/manus-storage/petit-joujou-getraenkekarte-weinbar-2026-09_bd5bcde3.pdf"
+            {BEVERAGE_MENU_URL && (
+              <a
+              href={BEVERAGE_MENU_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-body"
@@ -258,6 +274,7 @@ function Hero() {
             >
               Getränkekarte
             </a>
+            )}
             {STEAK_EVENING_MENU_URL && (
               <a
                 href={STEAK_EVENING_MENU_URL}

@@ -15,13 +15,13 @@ const C = {
   border: "#d0e0d8",
 };
 
-const KARTE_IMG = "/manus-storage/flaschenfreunde_karte-1_925590f9.png";
-const KARTE_PDF = "/manus-storage/PetitJoujou_Flaschenfreunde_A4_FINAL-2_49e8acbc.pdf";
+const KARTE_IMG = "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-vorschau_a2a91771.webp";
+const KARTE_PDF = "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11_8f4fc429.pdf";
 
 export default function Flaschenfreunde() {
   usePageMeta({
     title: "Flaschenfreunde — Flaschenweinkarte — petit joujou",
-    description: "Unsere Flaschenfreunde: Die besten Weine ihrer jeweiligen Art, kuratiert vom petit joujou. Mitnahmepreise und Korkgeld.",
+    description: "Unsere Flaschenfreunde: Die besten Weine ihrer jeweiligen Art, kuratiert vom petit joujou. Preise zum Mitnehmen und vor Ort.",
     canonical: "https://www.petit-joujou.de/flaschenfreunde",
   });
 
@@ -33,7 +33,7 @@ export default function Flaschenfreunde() {
         <div style={{ marginBottom: "2rem", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}>
           <img
             src={KARTE_IMG}
-            alt="Petit Joujou Flaschenfreunde — Flaschenweinkarte für den Sommer"
+            alt="Petit Joujou Flaschenfreunde — Flaschenweinkarte für den Herbst"
             style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>

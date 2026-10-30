@@ -5,7 +5,7 @@ import { resolve } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import SteakAnnouncement from "../client/src/components/SteakAnnouncement";
 import { STEAK_EVENING_MENU_URL } from "../client/src/lib/steakEvening";
-import { BOTTLE_WINE_MENU_URL } from "../client/src/lib/wineCards";
+import { BEVERAGE_MENU_URL, BOTTLE_WINE_MENU_URL, OPEN_WINE_MENU_URL } from "../client/src/lib/wineCards";
 
 const root = resolve(import.meta.dirname, "..");
 const read = (path: string) => readFileSync(resolve(root, path), "utf8");
@@ -16,9 +16,9 @@ beforeEach(() => vi.stubGlobal("React", React));
 afterEach(() => vi.unstubAllGlobals());
 
 describe("Steak-Karte an allen Weinbartagen", () => {
-  it("shows the all-days announcement, an accessible close control and the current Do–So menu", () => {
+  it("shows the all-days announcement, an accessible close control and the current Do–So menu with wine page", () => {
     const html = render();
-    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-do-so-2026-10-29_0e43560d.pdf");
+    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-10-30_ce75178b.pdf");
     expect(html).toContain("Neu: Steak im petit joujou — an allen Weinbartagen.");
     expect(html).not.toContain("donnerstags Steak-Abend");
     expect(html).toContain('aria-label="Steak-Ankündigung schließen"');
@@ -64,13 +64,18 @@ describe("Steak-Karte an allen Weinbartagen", () => {
     expect(bannerCss).toContain("font-weight: 700");
     expect(bannerCss).not.toMatch(/position:\s*(fixed|absolute)/);
   });
-  it("uses the delivered bottle-wine menu before the beverage card and never substitutes the old Flaschenfreunde PDF", () => {
+  it("uses the November bottle-wine, open-wine and beverage cards in the requested order", () => {
     const home = read("client/src/pages/Home.tsx");
-    expect(BOTTLE_WINE_MENU_URL).toBe("/manus-storage/Joujou_Flaschenweinkarte_b6c08177.pdf");
-    expect(home).toContain('import { BOTTLE_WINE_MENU_URL } from "@/lib/wineCards"');
-    expect(home.indexOf("{BOTTLE_WINE_MENU_URL && (")).toBeLessThan(home.indexOf("petit-joujou-getraenkekarte-weinbar-2026-09"));
+    expect(BOTTLE_WINE_MENU_URL).toBe("/manus-storage/petit-joujou-flaschenweinkarte-2026-11_08b4c73b.pdf");
+    expect(OPEN_WINE_MENU_URL).toBe("/manus-storage/petit-joujou-offene-weine-aus-dem-wingert-2026-11_06de8222.pdf");
+    expect(BEVERAGE_MENU_URL).toBe("/manus-storage/petit-joujou-getraenkekarte-2026-11_bba0ccfd.pdf");
+    expect(home).toContain('import { BEVERAGE_MENU_URL, BOTTLE_WINE_MENU_URL, OPEN_WINE_MENU_URL } from "@/lib/wineCards"');
+    expect(home).toContain('className="wine-menu-pair"');
+    expect(home.indexOf("{BOTTLE_WINE_MENU_URL && (")).toBeLessThan(home.indexOf("{OPEN_WINE_MENU_URL && ("));
+    expect(home.indexOf("{OPEN_WINE_MENU_URL && (")).toBeLessThan(home.indexOf("{BEVERAGE_MENU_URL && ("));
+    expect(home).toContain("Offene Weine");
     expect(home).toContain("Getränkekarte");
-    expect(read("client/src/lib/wineCards.ts")).toContain("Original-PDF vom 19.10.2026: 15 A4-Seiten");
+    expect(read("client/src/lib/wineCards.ts")).toContain("Freigegebene Weinbar-Karten für November 2026");
   });
 
   it("links the Steak-Signature only to the current one-page premium Entrecôte flyer", () => {
@@ -88,6 +93,6 @@ describe("Steak-Karte an allen Weinbartagen", () => {
     expect(home).not.toContain('/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf');
     expect(home).not.toContain('/manus-storage/petit-joujou-steak-karte-alle-weinbartage-2026-10-27_89b83cf6.pdf');
     expect(existsSync(resolve(root, "references/karten/2026-10-29/petit-joujou-kleine-karte-2026-10-29.pdf"))).toBe(true);
-    expect(existsSync(resolve(root, "references/karten/2026-10-29/petit-joujou-steakkarte-do-so-2026-10-29.pdf"))).toBe(true);
+    expect(existsSync(resolve(root, "references/karten/2026-10-30/petit-joujou-steakkarte-do-so-mit-wein-2026-10-30.pdf"))).toBe(true);
   });
 });
