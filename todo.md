@@ -16,8 +16,13 @@
 - **Weinkarte:** neue Flaschenweinkarte im Joujou-Design (Novemberfassung) hinter dem Hero-Knopf.
 - **Offene Weine:** neuer Hero-Knopf direkt neben Weinkarte; verlinkt auf „Aus dem Wingert“.
 - **Getränkekarte:** Novemberfassung verlinkt; enthält die nicht-weinbezogenen Getränke einschließlich Schorle.
-- **Steak-Karte:** Hero-Knopf und Banner „Zur Karte“ führen auf die gemeinsame zweitseitige Karte (Steak + Weinseite). Beide Originalseiten sind unverändert im Archiv und wurden technisch gegen die zusammengeführte PDF geprüft.
+- **Steak-Karte:** Hero-Knopf und Banner „Zur Karte“ führen auf die einseitige Karte für alle Weinbartage. Die neue Käseauswahl ist übernommen; Weinseite, Tageskopf und Verweis auf eine Folgeseite sind entfernt.
 - **Flaschenfreunde:** Herbstfassung auf `/flaschenfreunde`, einschließlich Seite-1-Vorschau, Herbst-Alt-Text und neuer Meta-Beschreibung für Preise zum Mitnehmen und vor Ort.
 - **Unverändert:** Kleine Karte / Speisekarte sowie Premium-Entrecôte-Einleger; Restaurantkarten aus dem Upload wurden nicht übernommen.
 
 Originale und Zuordnungen: `references/karten/2026-10-30/README.md`.
+
+## Steak-Karte ohne Weinseite — umgesetzt am 30.10.2026
+
+- Die gelieferte Steak-Karte mit geänderter Käseauswahl ersetzt die vorherige zweitseitige Steak- und Weinseiten-PDF.
+- Der Hero-Knopf **Steak-Karte** und der Bannerlink **Zur Karte** verwenden dieselbe einseitige Karte für alle Weinbartage.

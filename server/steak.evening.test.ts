@@ -16,9 +16,9 @@ beforeEach(() => vi.stubGlobal("React", React));
 afterEach(() => vi.unstubAllGlobals());
 
 describe("Steak-Karte an allen Weinbartagen", () => {
-  it("shows the all-days announcement, an accessible close control and the current Do–So menu with wine page", () => {
+  it("shows the all-days announcement, an accessible close control and the current one-page menu", () => {
     const html = render();
-    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-10-30_ce75178b.pdf");
+    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-alle-weinbartage-2026-10-30_f3db5117.pdf");
     expect(html).toContain("Neu: Steak im petit joujou — an allen Weinbartagen.");
     expect(html).not.toContain("donnerstags Steak-Abend");
     expect(html).toContain('aria-label="Steak-Ankündigung schließen"');
@@ -87,12 +87,13 @@ describe("Steak-Karte an allen Weinbartagen", () => {
     expect(existsSync(resolve(root, "references/karten/2026-10-29/petit-joujou-premium-entrecote-2026-10-29.pdf"))).toBe(true);
   });
 
-  it("uses the delivered Kleine Karte and removes all three superseded menu URLs from product code", () => {
+  it("uses the delivered Kleine Karte and removes all superseded Steak-card URLs from product code", () => {
     const home = read("client/src/pages/Home.tsx");
     expect(home).toContain('/manus-storage/petit-joujou-kleine-karte-2026-10-29_205b6758.pdf');
     expect(home).not.toContain('/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf');
     expect(home).not.toContain('/manus-storage/petit-joujou-steak-karte-alle-weinbartage-2026-10-27_89b83cf6.pdf');
+    expect(read("client/src/lib/steakEvening.ts")).not.toContain('/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-10-30_ce75178b.pdf');
     expect(existsSync(resolve(root, "references/karten/2026-10-29/petit-joujou-kleine-karte-2026-10-29.pdf"))).toBe(true);
-    expect(existsSync(resolve(root, "references/karten/2026-10-30/petit-joujou-steakkarte-do-so-mit-wein-2026-10-30.pdf"))).toBe(true);
+    expect(existsSync(resolve(root, "references/karten/2026-10-30/petit-joujou-steakkarte-alle-weinbartage-2026-10-30.pdf"))).toBe(true);
   });
 });
