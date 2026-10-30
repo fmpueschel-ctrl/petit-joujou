@@ -15,8 +15,8 @@ describe("petit-joujou briefing 2026-09-24", () => {
   const indexHtml = read("client/index.html");
   const serverIndex = read("server/_core/index.ts");
 
-  it("removes Shop from navigation while keeping one intentional hero link", () => {
-    expect(home.match(/href="\/shop"/g)).toHaveLength(1);
+  it("removes Shop from navigation and the hero", () => {
+    expect(home.match(/href="\/shop"/g)).toBeNull();
     expect(home).not.toMatch(/nav-cta-hide-mobile[^\n]*>Shop<\/a>/);
     expect(app).toContain('<Route path={"/shop"} component={ComingSoon} />');
     expect(app).toContain('<Route path={"/shop/:handle"} component={ComingSoon} />');

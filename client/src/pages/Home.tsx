@@ -286,22 +286,6 @@ function Hero() {
                 Steak-Karte
               </a>
             )}
-            <a
-              href="/shop"
-              className="font-body"
-              style={{
-                display: "inline-block",
-                padding: "0.75rem 2rem",
-                border: `1px solid ${C.ink}`,
-                color: C.ink,
-                fontSize: "0.78rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                textDecoration: "none",
-              }}
-            >
-              Shop | The One
-            </a>
           </div>
 
           {/* Zwei Pillars */}
