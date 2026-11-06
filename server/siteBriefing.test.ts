@@ -60,12 +60,11 @@ describe("petit-joujou briefing 2026-09-24", () => {
     expect(css).toContain("scroll-margin-top: 84px;");
   });
 
-  it("points visitors to the three approved Restaurant events and their ticket overview", () => {
+  it("points visitors to the Advent market and Allie’s Kitchen with the unchanged Restaurant link", () => {
     const events = home.slice(home.indexOf("function EventsSection()"), home.indexOf("function ReservierungUndGesellschaftenSection()"));
-    expect(events).toContain("Aktuell finden besondere Abende im Joujou Restaurant statt:");
-    expect(events).toContain("Pilates & Brunch (17.10.)");
-    expect(events).toContain("Joujou × Vinaturel – Österreich im Glas (04.11.)");
-    expect(events).toContain("Allie’s Kitchen meets Joujou (29.11.)");
+    expect(events).toContain("Aktuell im Joujou Restaurant: der Adventsmarkt „Markt der achtsamen Dinge“ am Samstag 21. und Sonntag 22.11., jeweils 12 bis 18 Uhr, und der Pop-up-Abend Allie’s Kitchen meets Joujou (29.11.). Alle Termine und Tickets auf");
+    expect(events).not.toContain("Pilates & Brunch (17.10.)");
+    expect(events).not.toContain("Österreich im Glas (04.11.)");
     expect(events).toContain('href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer"');
     expect(events).toContain("Ausgesuchte Abende mit ausgesuchten Winzern.");
     expect(events).not.toContain("instagram.com");

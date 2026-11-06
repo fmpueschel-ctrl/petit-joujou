@@ -19,7 +19,7 @@ describe("Steak-Karte an allen Weinbartagen", () => {
   it("shows the all-days announcement, an accessible close control and the current one-page menu", () => {
     const html = render();
     expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-alle-weinbartage-2026-10-30_f3db5117.pdf");
-    expect(html).toContain("Neu: Steak im petit joujou — an allen Weinbartagen.");
+    expect(html).toContain("Neu: Entrecôte im petit joujou — an allen Weinbartagen.");
     expect(html).not.toContain("donnerstags Steak-Abend");
     expect(html).toContain('aria-label="Steak-Ankündigung schließen"');
     expect(html).toContain(`href="${STEAK_EVENING_MENU_URL}"`);
@@ -40,7 +40,7 @@ describe("Steak-Karte an allen Weinbartagen", () => {
   });
   it("still shows the announcement when localStorage is blocked", () => {
     vi.stubGlobal("window", { get localStorage() { throw new Error("SecurityError"); } });
-    expect(render()).toContain("Neu: Steak im petit joujou");
+    expect(render()).toContain("Neu: Entrecôte im petit joujou");
     const source = read("client/src/components/SteakAnnouncement.tsx");
     expect(source).toContain("setIsDismissed(true)");
     expect(source).toContain('window.localStorage.setItem(STORAGE_KEY, "dismissed")');
