@@ -1,0 +1,18 @@
+{
+  "pdf": "petit-joujou-steakkarte-do-so-mit-wein-2026-11-24-v2.pdf",
+  "sha256": "25035385fa50224870c15e2d2c895a707748426fda546c76487428cb469f0f3c",
+  "pages": [
+    {
+      "page": 1,
+      "original": "Petit_Joujou_Steakkarte_Do-So_NOV26.pdf",
+      "pixel_equal": true,
+      "sha256_original": "59192737c35166e6d8bc178fc813b29dc0846e314a0af437b9cd54c7ef431f4d"
+    },
+    {
+      "page": 2,
+      "original": "Petit_Joujou_Wein_nach_Lust_Leistadt_A4.pdf",
+      "pixel_equal": true,
+      "sha256_original": "b9fba4022fbb35052e4d694521b8d1e06458d2cd5e3078b3e0300fd53cf3091c"
+    }
+  ]
+}

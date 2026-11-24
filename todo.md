@@ -43,3 +43,11 @@ Originale und Zuordnungen: `references/karten/2026-10-30/README.md`.
 Veröffentlichungsverlauf: Um 13:06 Uhr zeigte die öffentliche Seite noch den bisherigen Stand. Nach der Veröffentlichungsbestätigung um 13:08 Uhr wurde die öffentliche Domain frisch und vollständig geprüft — nicht allein aus Checkpoint oder GitHub auf eine Veröffentlichung geschlossen. Der Dokumentationscheckpoint dcf9e7a121adfa3763e1e055a17472a527cb0817 wurde ebenfalls unabhängig identisch auf GitHub main bestätigt.
 
 Zuordnung und Speicherpfade: `references/karten/2026-11-24/README.md`.
+
+## Steak-Karten-Nachtrag aus Outlook — 24.11.2026, nachmittags
+
+- [x] Beide neuen PDF-Anhänge aus der MSG-Datei extrahiert, Seitenzahl und Änderungen gegenüber dem Vormittagsstand technisch bestätigt. Signaturbild und Mailtexte nicht als Website-Inhalt übernommen.
+- [x] Neue Steak-Karte und Wein nach Lust unverändert zusammengeführt; beide Seiten pixelgleich mit ihren Quellen geprüft. Quellen, finale PDF und Treuenachweis unter `references/karten/2026-11-24-nachtrag` archiviert.
+- [x] Gemeinsamen Link für Steak-Karte und Banner Zur Karte auf die neue v2-PDF aktualisiert. Alle anderen Website-Inhalte unverändert.
+- [x] 67 Regressionstests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build und diff-check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; alle anderen Ziele unverändert. Neue Steak-PDF über öffentliche Speicherroute bytegleich ausgeliefert.
+- [ ] Checkpoint und GitHub-Backup sichern; Veröffentlichung und neue Live-Ziele separat bestätigen.

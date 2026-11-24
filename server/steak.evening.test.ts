@@ -18,7 +18,7 @@ afterEach(() => vi.unstubAllGlobals());
 describe("Steak-Karte an allen Weinbartagen", () => {
   it("shows the unchanged all-days announcement, an accessible close control and the current two-page menu", () => {
     const html = render();
-    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-11-24_68f59eb8.pdf");
+    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-11-24-v2_858ccdd5.pdf");
     expect(html).toContain("Neu: Entrecôte im petit joujou — an allen Weinbartagen.");
     expect(html).not.toContain("donnerstags Steak-Abend");
     expect(html).toContain('aria-label="Steak-Ankündigung schließen"');
