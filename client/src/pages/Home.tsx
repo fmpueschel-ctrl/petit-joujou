@@ -212,7 +212,7 @@ function Hero() {
               Reservieren
             </a>
             <a
-              href="/manus-storage/petit-joujou-kleine-karte-2026-10-29_205b6758.pdf"
+              href="/manus-storage/petit-joujou-kleine-karte-2026-11-24_ca5a0fe6.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="font-body"
@@ -286,6 +286,15 @@ function Hero() {
                 Steak-Karte
               </a>
             )}
+            <a
+              href="/manus-storage/petit-joujou-eis-und-suesses-2026-11-24_680b0097.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body"
+              style={{ display: "inline-block", padding: "0.75rem 2rem", border: `1px solid ${C.ink}`, color: C.ink, fontSize: "0.78rem", letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none" }}
+            >
+              Eis & Süßes
+            </a>
           </div>
 
           {/* Zwei Pillars */}
@@ -849,7 +858,7 @@ src="/manus-storage/20260725_203546_1de1a1ad.jpg"
               <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMuted, lineHeight: 1.8, marginBottom: "1.5rem" }}>
                 Dry-Aged Entrecôte · Bio-Angus von Land.Luft · 300 g · Signature Cut
               </p>
-              <a href="/manus-storage/petit-joujou-premium-entrecote-2026-10-29_a6caaf10.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
+              <a href="/manus-storage/petit-joujou-premium-entrecote-2026-11-24_07ffeb34.pdf" target="_blank" rel="noopener noreferrer" className="font-body" style={{ fontSize: "0.85rem", color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "4px", letterSpacing: "0.05em" }}>
                 Mehr erfahren
               </a>
             </div>

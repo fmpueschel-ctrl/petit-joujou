@@ -128,7 +128,7 @@ describe("petit-joujou briefing 2026-09-24", () => {
   });
 
   it("uses stable WebDev copies of the current Kleine Karte, offene Weine and Getränkekarte", () => {
-    expect(home).toContain("/manus-storage/petit-joujou-kleine-karte-2026-10-29_205b6758.pdf");
+    expect(home).toContain("/manus-storage/petit-joujou-kleine-karte-2026-11-24_ca5a0fe6.pdf");
     expect(home).not.toContain("/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf");
     expect(home).toContain("OPEN_WINE_MENU_URL");
     expect(home).toContain("Offene Weine");

@@ -26,3 +26,18 @@ Originale und Zuordnungen: `references/karten/2026-10-30/README.md`.
 
 - Die gelieferte Steak-Karte mit geänderter Käseauswahl ersetzt die vorherige zweitseitige Steak- und Weinseiten-PDF.
 - Der Hero-Knopf **Steak-Karte** und der Bannerlink **Zur Karte** verwenden dieselbe einseitige Karte für alle Weinbartage.
+
+## Kartenupdate und Eis & Süßes — 24.11.2026
+
+- [x] Ausgangsstand 80146250 unabhängig mit GitHub main abgeglichen: identisch.
+- [x] Alle acht neuen Original-PDFs unter `references/karten/2026-11-24/originale` archiviert.
+- [x] Sechs eindeutig zugeordnete PDFs unverändert gehostet und verlinkt: Speisekarte, Offene Weine, Getränkekarte, Premium-Entrecôte, Eis & Süßes, Flaschenfreunde.
+- [x] Neue Seite-1-Vorschau für Flaschenfreunde erzeugt; Alt-Text und Beschreibung unverändert.
+- [x] Eis & Süßes direkt nach Steak-Karte ergänzt; Shop | The One bleibt ausgeblendet.
+- [x] Frank hat die große Flaschenweinkarte nachgereicht und Wein nach Lust als Steak-Weinseite bestätigt. Normale A4-Flaschenweinkarte (15 Seiten) bytegleich übernommen; Broschüren nur archiviert. Steak-Seite und Weinseite unverändert zusammengeführt, beide Seiten pixelgleich geprüft.
+- [x] Weinkarte, Steak-Karte und Banner Zur Karte auf die neuen gemeinsamen Ziele umgestellt.
+- [x] Abnahme: 66 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build, git diff --check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; alle zehn Zielpfade exakt bestätigt. Alle acht PDFs und die Vorschau über die öffentliche Speicherroute bytegleich ausgeliefert.
+- [ ] Checkpoint und unabhängigen GitHub-Abgleich abschließen.
+- [ ] Veröffentlichen und alle zehn Ziele auf der öffentlichen Domain prüfen.
+
+Zuordnung und Speicherpfade: `references/karten/2026-11-24/README.md`.

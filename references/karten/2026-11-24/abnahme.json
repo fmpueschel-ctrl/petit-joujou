@@ -1,0 +1,32 @@
+{
+  "base": "http://localhost:3000",
+  "ok": true,
+  "summary": {
+    "pages": 4,
+    "checks": 112,
+    "passed": 112,
+    "failed": 0,
+    "unique_assets": 9,
+    "asset_checks_failed": 0
+  },
+  "exact_target_matches": 10,
+  "widths": [
+    390,
+    1440
+  ],
+  "tests_passed": 66,
+  "tests_skipped": 1,
+  "typescript": "passed",
+  "build": "passed",
+  "unchanged": [
+    "Events-Termin-Satz",
+    "Banner-Text",
+    "Öffnungszeiten",
+    "Farben",
+    "bestehende Beschriftungen",
+    "Gastronovi-Zwei-Klick",
+    "Newsletter",
+    "Rechtstexte",
+    "Flaschenfreunde-Alt und Beschreibung"
+  ]
+}

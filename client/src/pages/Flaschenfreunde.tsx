@@ -15,8 +15,8 @@ const C = {
   border: "#d0e0d8",
 };
 
-const KARTE_IMG = "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-vorschau_a2a91771.webp";
-const KARTE_PDF = "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11_8f4fc429.pdf";
+const KARTE_IMG = "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-24-vorschau_926d2ac7.webp";
+const KARTE_PDF = "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-24_6415c3a1.pdf";
 
 export default function Flaschenfreunde() {
   usePageMeta({

@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/manus-storage/petit-joujou-eis-und-suesses-2026-11-24_680b0097.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 27122,
+    "sha256": "336a007488f045de6a1ee5c768a2ae6f6f079d79fa920cb1b5909a7aa34cd26d",
+    "byte_equal": true,
+    "pages": 1
+  },
+  {
+    "path": "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-24-vorschau_926d2ac7.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 179468,
+    "sha256": "5a7c96b3522fb1a77d882453636d22b5e9d54528573eaa1b54000be0691da416",
+    "byte_equal": true
+  },
+  {
+    "path": "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-24_6415c3a1.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 79549,
+    "sha256": "77dfd2ba5f0713a51bd3117dd1839a0c89db0ab2dba7897e52fa5511092be58e",
+    "byte_equal": true,
+    "pages": 1
+  },
+  {
+    "path": "/manus-storage/petit-joujou-flaschenweinkarte-2026-11-24_23db203e.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 6910909,
+    "sha256": "96836097ad821e03b8664dae61b58de43382a960953aadad222a71cc01bfb4c0",
+    "byte_equal": true,
+    "pages": 15
+  },
+  {
+    "path": "/manus-storage/petit-joujou-getraenkekarte-2026-11-24_83eef494.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 57814,
+    "sha256": "69461f79824525a6477045ff3c613988f92d49e7b46e86096c516b7fd30d982f",
+    "byte_equal": true,
+    "pages": 1
+  },
+  {
+    "path": "/manus-storage/petit-joujou-kleine-karte-2026-11-24_ca5a0fe6.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 29867,
+    "sha256": "13dfb8e68e2eac4229b6dbde56a14297b947db05fe9000d9581c6a3019fa0fd5",
+    "byte_equal": true,
+    "pages": 1
+  },
+  {
+    "path": "/manus-storage/petit-joujou-offene-weine-aus-dem-wingert-2026-11-24_f23b2314.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 80351,
+    "sha256": "a5d652cfcfd78c380450dacd90ac886ed622b5573044115485c43a7d488957b5",
+    "byte_equal": true,
+    "pages": 1
+  },
+  {
+    "path": "/manus-storage/petit-joujou-premium-entrecote-2026-11-24_07ffeb34.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 2452002,
+    "sha256": "e753bb24d84b9be1f93676aca901d7b58a2ee8aedd0ee7ff93f1bb331124f275",
+    "byte_equal": true,
+    "pages": 1
+  },
+  {
+    "path": "/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-11-24_68f59eb8.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "bytes": 137980,
+    "sha256": "813c627e6cd8fe6eeb77f3cde0254e6c6143b0143f865286a4fc6aad10a7f952",
+    "byte_equal": true,
+    "pages": 2
+  }
+]
