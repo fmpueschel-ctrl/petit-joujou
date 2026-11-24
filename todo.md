@@ -37,7 +37,9 @@ Originale und Zuordnungen: `references/karten/2026-10-30/README.md`.
 - [x] Frank hat die große Flaschenweinkarte nachgereicht und Wein nach Lust als Steak-Weinseite bestätigt. Normale A4-Flaschenweinkarte (15 Seiten) bytegleich übernommen; Broschüren nur archiviert. Steak-Seite und Weinseite unverändert zusammengeführt, beide Seiten pixelgleich geprüft.
 - [x] Weinkarte, Steak-Karte und Banner Zur Karte auf die neuen gemeinsamen Ziele umgestellt.
 - [x] Abnahme: 66 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build, git diff --check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; alle zehn Zielpfade exakt bestätigt. Alle acht PDFs und die Vorschau über die öffentliche Speicherroute bytegleich ausgeliefert.
-- [ ] Checkpoint und unabhängigen GitHub-Abgleich abschließen.
+- [x] Vollständiger Funktions-Checkpoint cbadfc2c3340b9c63b37e9859eb7e48612600108 gesichert. GitHub main unabhängig gefetcht und auf exakt dieselbe SHA geprüft; Arbeitsbaum zum Zeitpunkt dieses Abgleichs sauber.
 - [ ] Veröffentlichen und alle zehn Ziele auf der öffentlichen Domain prüfen.
+
+Live-Stichprobe am 24.11.2026 um 13:06 Uhr: Die öffentliche Seite zeigt noch die bisherigen PDF-/Bildziele; Eis & Süßes fehlt dort noch. Es gibt in dieser Sitzung kein direktes Publish-Werkzeug. Nächster Schritt: Frank veröffentlicht den neuen Checkpoint über „Veröffentlichen“, danach werden die zehn öffentlichen Ziele separat geprüft. Keine Warteschleife und keine Gleichsetzung von Checkpoint/GitHub mit Veröffentlichung.
 
 Zuordnung und Speicherpfade: `references/karten/2026-11-24/README.md`.
