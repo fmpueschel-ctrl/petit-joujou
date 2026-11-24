@@ -38,8 +38,8 @@ Originale und Zuordnungen: `references/karten/2026-10-30/README.md`.
 - [x] Weinkarte, Steak-Karte und Banner Zur Karte auf die neuen gemeinsamen Ziele umgestellt.
 - [x] Abnahme: 66 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build, git diff --check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; alle zehn Zielpfade exakt bestätigt. Alle acht PDFs und die Vorschau über die öffentliche Speicherroute bytegleich ausgeliefert.
 - [x] Vollständiger Funktions-Checkpoint cbadfc2c3340b9c63b37e9859eb7e48612600108 gesichert. GitHub main unabhängig gefetcht und auf exakt dieselbe SHA geprüft; Arbeitsbaum zum Zeitpunkt dieses Abgleichs sauber.
-- [ ] Veröffentlichen und alle zehn Ziele auf der öffentlichen Domain prüfen.
+- [x] Veröffentlichung bestätigt und anschließend auf der öffentlichen Domain geprüft: um 13:08 Uhr alle zehn neuen Link-/Bildziele exakt bestätigt. 112 Live-Browserprüfungen bei 390/1440px bestanden, alle neun eindeutigen Speicherziele mit korrektem Inhaltstyp ausgeliefert.
 
-Live-Stichprobe am 24.11.2026 um 13:06 Uhr: Die öffentliche Seite zeigt noch die bisherigen PDF-/Bildziele; Eis & Süßes fehlt dort noch. Es gibt in dieser Sitzung kein direktes Publish-Werkzeug. Nächster Schritt: Frank veröffentlicht den neuen Checkpoint über „Veröffentlichen“, danach werden die zehn öffentlichen Ziele separat geprüft. Keine Warteschleife und keine Gleichsetzung von Checkpoint/GitHub mit Veröffentlichung.
+Veröffentlichungsverlauf: Um 13:06 Uhr zeigte die öffentliche Seite noch den bisherigen Stand. Nach der Veröffentlichungsbestätigung um 13:08 Uhr wurde die öffentliche Domain frisch und vollständig geprüft — nicht allein aus Checkpoint oder GitHub auf eine Veröffentlichung geschlossen. Der Dokumentationscheckpoint dcf9e7a121adfa3763e1e055a17472a527cb0817 wurde ebenfalls unabhängig identisch auf GitHub main bestätigt.
 
 Zuordnung und Speicherpfade: `references/karten/2026-11-24/README.md`.

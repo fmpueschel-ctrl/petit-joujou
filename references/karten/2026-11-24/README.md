@@ -30,3 +30,11 @@ Bestehende Knopf-Beschriftungen, Banner, Öffnungszeiten, Termin-Satz, Farben, R
 Sämtliche ersetzten alten PDFs und die alte Flaschenfreunde-Vorschau werden im Produktivcode nicht mehr referenziert. Frühere Fassungen bleiben ausschließlich als nachvollziehbares Archiv erhalten.
 
 Ein Checkpoint und GitHub-Backup sind keine Veröffentlichung. Die öffentliche Domain muss nach dem Veröffentlichen separat auf die acht PDF-Ziele und die neue Vorschau geprüft werden.
+
+## Live-Abnahme — 24.11.2026, 13:08 Uhr
+
+Nach der Veröffentlichungsbestätigung wurde `https://www.petit-joujou.de` frisch geprüft. Homepage und Flaschenfreunde-Seite haben bei 390 und 1440 Pixeln insgesamt 112 Browserprüfungen bestanden. Alle zehn angeforderten Link- und Bildziele stimmen exakt mit `links.json` überein. Alle neun eindeutigen Speicherziele liefern HTTP 200 und den passenden PDF-/Bild-Inhaltstyp. Die zuvor separat geprüfte Speicherauslieferung war bytegleich mit den acht finalen PDFs und der Vorschau.
+
+Die neue Schaltfläche Eis & Süßes ist live direkt nach Steak-Karte sichtbar; kein horizontaler Überlauf. Shop | The One bleibt im Hero ausgeblendet. Events, Banner, Öffnungszeiten, sichere PDF-Tabs und das Gastronovi-Zwei-Klick-Prinzip wurden auch live bestätigt.
+
+Der vollständige Kartenstand und die Originale wurden auf GitHub gesichert; Funktionscheckpoint `cbadfc2c3340b9c63b37e9859eb7e48612600108` und Dokumentationscheckpoint `dcf9e7a121adfa3763e1e055a17472a527cb0817` wurden jeweils unabhängig identisch mit GitHub main bestätigt. Dieser Live-Nachweis wird anschließend ebenfalls gesichert.
