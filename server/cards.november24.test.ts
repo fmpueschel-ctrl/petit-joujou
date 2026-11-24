@@ -43,6 +43,8 @@ describe("Kartenupdate 24.11.2026", () => {
       "petit-joujou-getraenkekarte-2026-11_bba0ccfd.pdf",
       "petit-joujou-flaschenfreunde-herbst-2026-11_8f4fc429.pdf",
       "petit-joujou-flaschenfreunde-herbst-2026-11-vorschau_a2a91771.webp",
+      "petit-joujou-flaschenfreunde-herbst-2026-11-24_6415c3a1.pdf",
+      "petit-joujou-flaschenfreunde-herbst-2026-11-24-vorschau_926d2ac7.webp",
     ]) expect(active).not.toContain(obsolete);
   });
 

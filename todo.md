@@ -50,4 +50,11 @@ Zuordnung und Speicherpfade: `references/karten/2026-11-24/README.md`.
 - [x] Neue Steak-Karte und Wein nach Lust unverändert zusammengeführt; beide Seiten pixelgleich mit ihren Quellen geprüft. Quellen, finale PDF und Treuenachweis unter `references/karten/2026-11-24-nachtrag` archiviert.
 - [x] Gemeinsamen Link für Steak-Karte und Banner Zur Karte auf die neue v2-PDF aktualisiert. Alle anderen Website-Inhalte unverändert.
 - [x] 67 Regressionstests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build und diff-check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; alle anderen Ziele unverändert. Neue Steak-PDF über öffentliche Speicherroute bytegleich ausgeliefert.
-- [ ] Checkpoint und GitHub-Backup sichern; Veröffentlichung und neue Live-Ziele separat bestätigen.
+- [x] Checkpoint a677ce8a98233054c8085ee8f2e72c9162fc16df unabhängig identisch auf GitHub main bestätigt. Nach Veröffentlichung um 17:19 Uhr separat live geprüft: Steak-Karte und Zur Karte zeigen beide auf die neue v2-PDF.
+
+## Flaschenfreunde erneut austauschen — 24.11.2026, 17:19 Uhr
+
+- [x] Neue einseitige DIN-A4-PDF unverändert archiviert und gehostet; Seite-1-Vorschau vollständig ohne Beschnitt erneuert.
+- [x] Flaschenfreunde-Seite auf neue PDF-/Bildziele umgestellt, Alt-Text und Beschreibung unverändert. Alle anderen Inhalte bleiben unangetastet.
+- [x] 68 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build und diff-check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; neue PDF und Vorschau HTTP200 und bytegleich ausgeliefert, alle übrigen Zielpfade unverändert.
+- [ ] Checkpoint/GitHub sichern; tatsächliche Veröffentlichung und neue Flaschenfreunde-Ziele separat bestätigen.
