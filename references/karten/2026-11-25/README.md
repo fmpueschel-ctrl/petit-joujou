@@ -24,4 +24,8 @@ Alle übrigen Karten, Flaschenfreunde-PDF und Vorschau, Texte, Gestaltung, Öffn
 
 ## Abnahme und Veröffentlichung
 
-Preview-Prüfung und exakter Zielpfadvergleich werden in `abnahme.json` dokumentiert. Der tatsächliche öffentliche Stand wird nach dem Checkpoint separat geprüft. Ein Checkpoint oder GitHub-Abgleich allein bestätigt keine Veröffentlichung.
+Preview-Prüfung und exakter Zielpfadvergleich sind in `abnahme.json` dokumentiert: 69 Tests bestanden, ein externer Test bewusst übersprungen; TypeScript, Build und 112 Browserprüfungen bei 390/1440px erfolgreich.
+
+Nach der Veröffentlichungs-Erfolgsmeldung am 25.11.2026 um 09:33 Uhr wurde die öffentliche Domain frisch geprüft. Beide Steak-Links und der Events-Wortlaut stimmen exakt; alle übrigen Zielpfade bleiben unverändert. 112 Live-Browserprüfungen und die korrekte Erreichbarkeit aller neun eindeutigen Speicherziele bestanden. Nachweis: `live-nach-veroeffentlichung.json`.
+
+Die frühere Stichprobe um 09:31 Uhr (`live-stichprobe.json`) zeigte noch den alten Stand. Ein Checkpoint oder GitHub-Abgleich wurde daher ausdrücklich nicht als Veröffentlichungsnachweis behandelt.

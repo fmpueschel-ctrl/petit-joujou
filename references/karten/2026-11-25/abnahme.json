@@ -53,6 +53,14 @@
     ],
     "sha256": "b04e2789e159db602016cea59703fc8c499c53513a4cd7f79b18c74c0c9c0670"
   },
-  "publication": "Öffentliche Stichprobe 25.11.2026 09:31 MEZ: noch alte Steak-v2-Ziele und alter Events-Satz; Veröffentlichen durch Nutzer erforderlich. Nicht live bestätigt.",
-  "github_verified_function_checkpoint": "b8291472142d20692d7e4f9fb372ed6803df4eb8"
+  "publication": "Veröffentlichung am 25.11.2026 um09:33 MEZ frisch auf www.petit-joujou.de bestätigt. BeideSteak-Linkziele und Events-Wortlaut exakt;112 Live-Browserprüfungen bestanden,9 eindeutige Speicherziele erreichbar.",
+  "github_verified_function_checkpoint": "b8291472142d20692d7e4f9fb372ed6803df4eb8",
+  "live_summary": {
+    "pages": 4,
+    "checks": 112,
+    "passed": 112,
+    "failed": 0,
+    "unique_assets": 9,
+    "asset_checks_failed": 0
+  }
 }
