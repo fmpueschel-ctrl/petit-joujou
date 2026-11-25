@@ -66,7 +66,9 @@ Zuordnung und Speicherpfade: `references/karten/2026-11-24/README.md`.
 - [x] Neue einseitige PDF dauerhaft gehostet; Steak-Karte und Banner Zur Karte verwenden denselben neuen 25.11-Pfad, alte v2 nicht mehr aktiv referenziert. Auslieferung über öffentliche Speicherroute HTTP200, application/pdf und bytegleich geprüft.
 - [x] Events-Satz exakt durch den freigegebenen Wortlaut zu Pilates, monatlichem Yoga-Brunch, Christmas Kitchenparty und Weihnachtsmenü ersetzt; End-Link unverändert.
 - [x] 69 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Produktionsbuild und diff-check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; unveränderte übrige Karten-Zielpfade separat exakt verglichen.
-- [ ] Checkpoint und unabhängige GitHub-Sicherung bestätigen.
-- [ ] Tatsächliche Veröffentlichung mit beiden neuen Steak-Linkzielen und exaktem Events-Wortlaut separat bestätigen.
+- [x] Funktionscheckpoint b8291472142d20692d7e4f9fb372ed6803df4eb8 unabhängig identisch mit GitHub main bestätigt (0/0 Abweichung).
+- [x] Tatsächlichen öffentlichen Stand separat geprüft: 25.11. um 09:31 Uhr zeigen beide Steak-Links noch auf die alte v2 und Events noch auf Adventsmarkt/Allie. Kein Live-Erfolg behauptet; Nutzer unmittelbar auf notwendiges Veröffentlichen hingewiesen.
+
+**Offen, benötigt Veröffentlichung:** Frank muss den aktuellen Checkpoint über „Veröffentlichen“ publizieren. Anschließend sind die zwei neuen öffentlichen Steak-Linkziele und der genaue Events-Wortlaut erneut zu bestätigen. Kein direkter Publish-Tool in dieser Sitzung verfügbar. `live-stichprobe.json` belegt den tatsächlichen bisherigen Stand; `abnahme.json` den geprüften neuen Preview-Stand.
 
 Quellen, neue PDF und Korrektur-Nachweis: `references/karten/2026-11-25/README.md`.
