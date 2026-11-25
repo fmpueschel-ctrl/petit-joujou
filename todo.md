@@ -78,6 +78,8 @@ Quellen, neue PDF und Korrektur-Nachweis: `references/karten/2026-11-25/README.m
 - [x] Neue angehängte PDF unverändert archiviert und dauerhaft gehostet; zentralen Getränkekarten-Link aktualisiert, alte Datei nicht mehr aktiv referenziert. Alle anderen Inhalte und Links unverändert.
 - [x] Original und neue Speicherdatei bytegleich bestätigt: HTTP200, application/pdf, eine A4-Seite.
 - [x] 70 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build und diff-check erfolgreich. 112 Browserprüfungen bei390/1440px bestanden; alle zehn Ziele exakt verglichen, nur Getränkekarte geändert.
-- [ ] Checkpoint/GitHub sichern und tatsächlichen Veröffentlichungsstatus separat prüfen.
+- [x] Checkpoint 9d7d56d70c3a8d9bdca81a060b6c493efdcd361f unabhängig identisch mit GitHub main bestätigt; tatsächlichen öffentlichen Stand um15:23 separat geprüft: noch alter Getränkekarten-Link. Nutzer auf notwendiges Veröffentlichen hingewiesen; kein Live-Erfolg behauptet.
+
+**Veröffentlichung noch erforderlich:** Nach Freigabe über „Veröffentlichen“ neuen Getränkekarten-Link öffentlich bestätigen. Der aktuelle neue Pfad ist vollständig geprüft und vorbereitet, aber laut `live-stichprobe.json` noch nicht auf der öffentlichen Homepage verlinkt.
 
 Quelle und Nachweise: `references/karten/2026-11-25-getraenkekarte/README.md`.
