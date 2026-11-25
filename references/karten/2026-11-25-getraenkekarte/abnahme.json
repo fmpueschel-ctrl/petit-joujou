@@ -1,0 +1,29 @@
+{
+  "preview_ok": true,
+  "summary": {
+    "pages": 4,
+    "checks": 112,
+    "passed": 112,
+    "failed": 0,
+    "unique_assets": 9,
+    "asset_checks_failed": 0
+  },
+  "exact_targets": {
+    "Speisekarte": "/manus-storage/petit-joujou-kleine-karte-2026-11-24_ca5a0fe6.pdf",
+    "Weinkarte": "/manus-storage/petit-joujou-flaschenweinkarte-2026-11-24_23db203e.pdf",
+    "Offene Weine": "/manus-storage/petit-joujou-offene-weine-aus-dem-wingert-2026-11-24_f23b2314.pdf",
+    "Getränkekarte": "/manus-storage/petit-joujou-getraenkekarte-2026-11-25_3143f9ad.pdf",
+    "Steak-Karte": "/manus-storage/petit-joujou-steakkarte-do-so-2026-11-25_a6f5afea.pdf",
+    "Zur Karte": "/manus-storage/petit-joujou-steakkarte-do-so-2026-11-25_a6f5afea.pdf",
+    "Mehr erfahren": "/manus-storage/petit-joujou-premium-entrecote-2026-11-24_07ffeb34.pdf",
+    "Eis & Süßes": "/manus-storage/petit-joujou-eis-und-suesses-2026-11-24_680b0097.pdf",
+    "Flaschenfreunde PDF": "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-24-v2_7f88474f.pdf",
+    "Flaschenfreunde Bild": "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-24-v2-vorschau_a6005d20.webp"
+  },
+  "only_beverage_target_changed": true,
+  "tests_passed": 70,
+  "tests_skipped": 1,
+  "typescript": true,
+  "build": true,
+  "publication": "Nach Checkpoint separat zu prüfen."
+}

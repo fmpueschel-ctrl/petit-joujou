@@ -68,7 +68,8 @@ describe("Steak-Karte an allen Weinbartagen", () => {
     const home = read("client/src/pages/Home.tsx");
     expect(BOTTLE_WINE_MENU_URL).toBe("/manus-storage/petit-joujou-flaschenweinkarte-2026-11-24_23db203e.pdf");
     expect(OPEN_WINE_MENU_URL).toBe("/manus-storage/petit-joujou-offene-weine-aus-dem-wingert-2026-11-24_f23b2314.pdf");
-    expect(BEVERAGE_MENU_URL).toBe("/manus-storage/petit-joujou-getraenkekarte-2026-11-24_83eef494.pdf");
+    expect(BEVERAGE_MENU_URL).toBe("/manus-storage/petit-joujou-getraenkekarte-2026-11-25_3143f9ad.pdf");
+    expect(read("client/src/lib/wineCards.ts")).not.toContain("/manus-storage/petit-joujou-getraenkekarte-2026-11-24_83eef494.pdf");
     expect(home).toContain('import { BEVERAGE_MENU_URL, BOTTLE_WINE_MENU_URL, OPEN_WINE_MENU_URL } from "@/lib/wineCards"');
     expect(home).toContain('className="wine-menu-pair"');
     expect(home.indexOf("{BOTTLE_WINE_MENU_URL && (")).toBeLessThan(home.indexOf("{OPEN_WINE_MENU_URL && ("));

@@ -72,3 +72,12 @@ Zuordnung und Speicherpfade: `references/karten/2026-11-24/README.md`.
 Verlauf: Um 09:31 Uhr war öffentlich noch der alte Stand sichtbar (`live-stichprobe.json`), daher wurde zunächst korrekt auf notwendiges Veröffentlichen hingewiesen. Nach der Erfolgsmeldung wurde frisch öffentlich geprüft, nicht allein aus dem Checkpoint auf Veröffentlichung geschlossen. `live-nach-veroeffentlichung.json` dokumentiert den bestätigten neuen Live-Stand. Auch der Dokumentationscheckpoint cb8dbda1b253f2f2056283b861b9134874b55ab3 wurde unabhängig identisch mit GitHub main bestätigt.
 
 Quellen, neue PDF und Korrektur-Nachweis: `references/karten/2026-11-25/README.md`.
+
+## Getränkekarte ersetzen — 25.11.2026, nachmittags
+- [x] Ausgangsstand sauber und unabhängig identisch mit GitHub main bestätigt.
+- [x] Neue angehängte PDF unverändert archiviert und dauerhaft gehostet; zentralen Getränkekarten-Link aktualisiert, alte Datei nicht mehr aktiv referenziert. Alle anderen Inhalte und Links unverändert.
+- [x] Original und neue Speicherdatei bytegleich bestätigt: HTTP200, application/pdf, eine A4-Seite.
+- [x] 70 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build und diff-check erfolgreich. 112 Browserprüfungen bei390/1440px bestanden; alle zehn Ziele exakt verglichen, nur Getränkekarte geändert.
+- [ ] Checkpoint/GitHub sichern und tatsächlichen Veröffentlichungsstatus separat prüfen.
+
+Quelle und Nachweise: `references/karten/2026-11-25-getraenkekarte/README.md`.
