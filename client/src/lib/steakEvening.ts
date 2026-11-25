@@ -1,5 +1,5 @@
-// Freigegebene zweitseitige Steakkarte für alle Weinbartage — Nachtrag 24.11.2026.
-// Seite 1: Steak-Karte; Seite 2: Wein nach Lust. Beide neuen Originalseiten unverändert.
-// Quellen und PDF-Treuenachweis: references/karten/2026-11-24-nachtrag.
+// Freigegebene einseitige Steakkarte für alle Weinbartage — Korrektur 25.11.2026.
+// Nur Seite 2 und der nächste-Seite-Verweis auf Seite 1 wurden entfernt.
+// Alle übrigen Inhalte und das Layout bleiben unverändert; Nachweis: references/karten/2026-11-25.
 // Banner und Hero verwenden ausschließlich diese gemeinsame URL.
-export const STEAK_EVENING_MENU_URL: string | null = "/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-11-24-v2_858ccdd5.pdf";
+export const STEAK_EVENING_MENU_URL: string | null = "/manus-storage/petit-joujou-steakkarte-do-so-2026-11-25_a6f5afea.pdf";

@@ -1,0 +1,15 @@
+{
+  "path": "/manus-storage/petit-joujou-steakkarte-do-so-2026-11-25_a6f5afea.pdf",
+  "http_status": 200,
+  "content_type": "application/pdf",
+  "byte_equal": true,
+  "bytes": 87484,
+  "pages": 1,
+  "mediabox": [
+    0,
+    0,
+    594.95999,
+    841.92
+  ],
+  "sha256": "b04e2789e159db602016cea59703fc8c499c53513a4cd7f79b18c74c0c9c0670"
+}

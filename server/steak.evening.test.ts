@@ -16,9 +16,9 @@ beforeEach(() => vi.stubGlobal("React", React));
 afterEach(() => vi.unstubAllGlobals());
 
 describe("Steak-Karte an allen Weinbartagen", () => {
-  it("shows the unchanged all-days announcement, an accessible close control and the current two-page menu", () => {
+  it("shows the unchanged all-days announcement, an accessible close control and the current one-page menu", () => {
     const html = render();
-    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-11-24-v2_858ccdd5.pdf");
+    expect(STEAK_EVENING_MENU_URL).toBe("/manus-storage/petit-joujou-steakkarte-do-so-2026-11-25_a6f5afea.pdf");
     expect(html).toContain("Neu: Entrecôte im petit joujou — an allen Weinbartagen.");
     expect(html).not.toContain("donnerstags Steak-Abend");
     expect(html).toContain('aria-label="Steak-Ankündigung schließen"');
@@ -89,11 +89,12 @@ describe("Steak-Karte an allen Weinbartagen", () => {
 
   it("uses the delivered Kleine Karte and removes all superseded Steak-card URLs from product code", () => {
     const home = read("client/src/pages/Home.tsx");
+    const steakEvening = read("client/src/lib/steakEvening.ts");
     expect(home).toContain('/manus-storage/petit-joujou-kleine-karte-2026-11-24_ca5a0fe6.pdf');
     expect(home).not.toContain('/manus-storage/petit-joujou-speisekarte-weinbar-2026-09_fe3d9398.pdf');
     expect(home).not.toContain('/manus-storage/petit-joujou-steak-karte-alle-weinbartage-2026-10-27_89b83cf6.pdf');
-    expect(read("client/src/lib/steakEvening.ts")).not.toContain('/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-10-30_ce75178b.pdf');
+    expect(steakEvening).not.toContain('/manus-storage/petit-joujou-steakkarte-do-so-mit-wein-2026-11-24-v2_858ccdd5.pdf');
     expect(existsSync(resolve(root, "references/karten/2026-11-24/petit-joujou-kleine-karte-2026-11-24.pdf"))).toBe(true);
-    expect(existsSync(resolve(root, "references/karten/2026-11-24/petit-joujou-steakkarte-do-so-mit-wein-2026-11-24.pdf"))).toBe(true);
+    expect(existsSync(resolve(root, "references/karten/2026-11-25/petit-joujou-steakkarte-do-so-2026-11-25.pdf"))).toBe(true);
   });
 });

@@ -1,0 +1,22 @@
+{
+  "source": "petit-joujou-steakkarte-do-so-mit-wein-2026-11-24-v2.pdf",
+  "output": "petit-joujou-steakkarte-do-so-2026-11-25.pdf",
+  "pages_before": 2,
+  "pages_after": 1,
+  "removed_text": "Weinkarte mit passenden Weinen auf der nächsten Seite.",
+  "removed_operations": [
+    1821,
+    1931
+  ],
+  "all_remaining_content_operations_identical": true,
+  "all_remaining_extracted_text_identical": true,
+  "page_size_unchanged": true,
+  "render_difference_bbox_150dpi": [
+    100,
+    1492,
+    687,
+    1515
+  ],
+  "only_single_text_line_removed": true,
+  "sha256": "b04e2789e159db602016cea59703fc8c499c53513a4cd7f79b18c74c0c9c0670"
+}

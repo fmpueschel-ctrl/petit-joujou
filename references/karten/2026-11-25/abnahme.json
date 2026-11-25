@@ -1,0 +1,57 @@
+{
+  "preview_ok": true,
+  "summary": {
+    "pages": 4,
+    "checks": 112,
+    "passed": 112,
+    "failed": 0,
+    "unique_assets": 9,
+    "asset_checks_failed": 0
+  },
+  "exact_targets": {
+    "Speisekarte": "/manus-storage/petit-joujou-kleine-karte-2026-11-24_ca5a0fe6.pdf",
+    "Weinkarte": "/manus-storage/petit-joujou-flaschenweinkarte-2026-11-24_23db203e.pdf",
+    "Offene Weine": "/manus-storage/petit-joujou-offene-weine-aus-dem-wingert-2026-11-24_f23b2314.pdf",
+    "Getränkekarte": "/manus-storage/petit-joujou-getraenkekarte-2026-11-24_83eef494.pdf",
+    "Steak-Karte": "/manus-storage/petit-joujou-steakkarte-do-so-2026-11-25_a6f5afea.pdf",
+    "Zur Karte": "/manus-storage/petit-joujou-steakkarte-do-so-2026-11-25_a6f5afea.pdf",
+    "Mehr erfahren": "/manus-storage/petit-joujou-premium-entrecote-2026-11-24_07ffeb34.pdf",
+    "Eis & Süßes": "/manus-storage/petit-joujou-eis-und-suesses-2026-11-24_680b0097.pdf",
+    "Flaschenfreunde PDF": "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-24-v2_7f88474f.pdf",
+    "Flaschenfreunde Bild": "/manus-storage/petit-joujou-flaschenfreunde-herbst-2026-11-24-v2-vorschau_a6005d20.webp"
+  },
+  "viewport_targets": [
+    {
+      "width": 390,
+      "exact_targets_match": true
+    },
+    {
+      "width": 1440,
+      "exact_targets_match": true
+    }
+  ],
+  "events_exact": "Aktuell im Joujou Restaurant: Pilates & Brunch am 28.11., der Yoga-Brunch an jedem ersten Samstag im Monat, die Christmas Kitchenparty am 21.12. und das Weihnachtsmenü an beiden Feiertagen. Alle Termine und Tickets auf joujou.restaurant",
+  "tests": {
+    "passed": 69,
+    "skipped": 1,
+    "typescript": true,
+    "build": true,
+    "diff_check": true
+  },
+  "new_pdf_storage": {
+    "path": "/manus-storage/petit-joujou-steakkarte-do-so-2026-11-25_a6f5afea.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "byte_equal": true,
+    "bytes": 87484,
+    "pages": 1,
+    "mediabox": [
+      0,
+      0,
+      594.95999,
+      841.92
+    ],
+    "sha256": "b04e2789e159db602016cea59703fc8c499c53513a4cd7f79b18c74c0c9c0670"
+  },
+  "publication": "Noch separat zu prüfen nach Checkpoint."
+}

@@ -57,4 +57,16 @@ Zuordnung und Speicherpfade: `references/karten/2026-11-24/README.md`.
 - [x] Neue einseitige DIN-A4-PDF unverändert archiviert und gehostet; Seite-1-Vorschau vollständig ohne Beschnitt erneuert.
 - [x] Flaschenfreunde-Seite auf neue PDF-/Bildziele umgestellt, Alt-Text und Beschreibung unverändert. Alle anderen Inhalte bleiben unangetastet.
 - [x] 68 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Build und diff-check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; neue PDF und Vorschau HTTP200 und bytegleich ausgeliefert, alle übrigen Zielpfade unverändert.
-- [ ] Checkpoint/GitHub sichern; tatsächliche Veröffentlichung und neue Flaschenfreunde-Ziele separat bestätigen.
+- [x] Checkpoint 04a04b005c55c90ca52248a0a49ccf3b786e32b4 unabhängig identisch mit GitHub main gesichert. Nach Veröffentlichungsbenachrichtigung am 25.11. um 09:28 Uhr neue Flaschenfreunde-PDF und Vorschau separat auf www.petit-joujou.de bestätigt.
+
+## Steak-Karte und Events — 25.11.2026
+
+- [x] Ausgangsstand 04a04b00 unabhängig identisch mit GitHub main bestätigt.
+- [x] Von der aktuell verlinkten Steak-v2 ausschließlich Seite 2 und auf Seite 1 „Weinkarte mit passenden Weinen auf der nächsten Seite.“ entfernt. Übrige PDF-Operationen und Text unverändert; Bildvergleich zeigt nur die entfernte Zeile.
+- [x] Neue einseitige PDF dauerhaft gehostet; Steak-Karte und Banner Zur Karte verwenden denselben neuen 25.11-Pfad, alte v2 nicht mehr aktiv referenziert. Auslieferung über öffentliche Speicherroute HTTP200, application/pdf und bytegleich geprüft.
+- [x] Events-Satz exakt durch den freigegebenen Wortlaut zu Pilates, monatlichem Yoga-Brunch, Christmas Kitchenparty und Weihnachtsmenü ersetzt; End-Link unverändert.
+- [x] 69 Tests bestanden, 1 externer Test bewusst übersprungen; TypeScript, Produktionsbuild und diff-check erfolgreich. 112 Browserprüfungen bei 390/1440px bestanden; unveränderte übrige Karten-Zielpfade separat exakt verglichen.
+- [ ] Checkpoint und unabhängige GitHub-Sicherung bestätigen.
+- [ ] Tatsächliche Veröffentlichung mit beiden neuen Steak-Linkzielen und exaktem Events-Wortlaut separat bestätigen.
+
+Quellen, neue PDF und Korrektur-Nachweis: `references/karten/2026-11-25/README.md`.

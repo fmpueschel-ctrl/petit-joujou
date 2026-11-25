@@ -476,10 +476,10 @@ function EventsSection() {
 
         <div className="events-follow" style={{ textAlign: "center" }}>
           <p className="font-body" style={{ fontSize: "0.95rem", color: C.inkMuted, maxWidth: "680px", margin: "0 auto", lineHeight: 1.8 }}>
-            Aktuell im Joujou Restaurant: der Adventsmarkt „Markt der achtsamen Dinge“ am Samstag 21. und Sonntag 22.11., jeweils 12 bis 18 Uhr, und der Pop-up-Abend Allie’s Kitchen meets Joujou (29.11.). Alle Termine und Tickets auf{" "}
+            Aktuell im Joujou Restaurant: Pilates & Brunch am 28.11., der Yoga-Brunch an jedem ersten Samstag im Monat, die Christmas Kitchenparty am 21.12. und das Weihnachtsmenü an beiden Feiertagen. Alle Termine und Tickets auf{" "}
             <a href="https://joujou.restaurant" target="_blank" rel="noopener noreferrer" style={{ color: C.accentStrong, textDecoration: "underline", textUnderlineOffset: "3px", fontWeight: 600 }}>
               joujou.restaurant
-            </a>.
+            </a>
           </p>
         </div>
       </div>
